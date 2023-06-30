@@ -57,8 +57,8 @@ jobs:
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
-	    --configDIR starter-academic/config \
-	    --config hugo.yml
+	    --configDIR "./starter-academic/config" \
+	    --config "hugo.yml"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
