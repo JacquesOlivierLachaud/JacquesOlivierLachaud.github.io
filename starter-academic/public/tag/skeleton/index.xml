@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>skeleton | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/skeleton/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/skeleton/index.xml" rel="self" type="application/rss+xml" />
+    <description>skeleton</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 2001 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>skeleton</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/skeleton/</link>
+    </image>
+    
+    <item>
+      <title>Delaunay conforming iso-surface; skeleton extraction and noise removal</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-01-a/</link>
+      <pubDate>Mon, 01 Jan 2001 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-01-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Constructing Iso-Surfaces Satisfying the Delaunay Constraint; Application to the Skeleton Computation</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</link>
+      <pubDate>Fri, 01 Jan 1999 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

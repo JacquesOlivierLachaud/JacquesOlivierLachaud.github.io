@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lagrangian mechanics | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/lagrangian-mechanics/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/lagrangian-mechanics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Lagrangian mechanics</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2003 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Lagrangian mechanics</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/lagrangian-mechanics/</link>
+    </image>
+    
+    <item>
+      <title>Deformable Model with Adaptive Mesh and Automated Topology Changes</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-d/</link>
+      <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deformable Model with non-Euclidean Metrics</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/taton-02-b/</link>
+      <pubDate>Tue, 01 Jan 2002 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/taton-02-b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

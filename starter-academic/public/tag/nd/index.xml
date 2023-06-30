@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nD | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/nd/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/nd/index.xml" rel="self" type="application/rss+xml" />
+    <description>nD</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>nD</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/nd/</link>
+    </image>
+    
+    <item>
+      <title>An Alternative Definition for Digital Convexity</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-jmiv/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-jmiv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Full convexity for polyhedral models in digital spaces</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/feschet-2022-dgmm/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/feschet-2022-dgmm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graduate School on Digital Geometry</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</link>
+      <pubDate>Sun, 11 Jul 2021 13:30:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</guid>
+      <description>&lt;p&gt;The code related to the paper is implemented in
+&lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Laplace--Beltrami Operator on Digital Surfaces</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2019-jmiv/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2019-jmiv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CoMeDiC</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
+and standard calculus in the case of the digital space Zn. The global
+idea is to reliably estimate a metric on digital curves and surfaces
+such that solving PDEs on these domains with discrete calculus
+converges toward standard calculus solutions. This approach, a kind of
+digital calculus, is now conceivable due to recent progresses in
+digital geometry about the multigrid convergence of length, area,
+normal and even curvature estimators. Such estimators should induce
+convergent metrics for many different subsets of digital
+spaces. Digital calculus would then address an important bottleneck
+faced by most standard numerical discretization schemes: how to handle
+variational problems involving objects or functions of dimension k &amp;lt; n
+(e.g. surfaces in R3 or Z3, curves on surfaces, etc). This project
+focuses on three domains of application for digital calculus — image
+analysis, digital geometry processing and shape optimization — both to
+guide and nourish theoretical developments, as well as to serve as
+testbed for digital calculus.&lt;/p&gt;
+&lt;h2 id=&#34;consortium&#34;&gt;Consortium&lt;/h2&gt;
+&lt;p&gt;This project gathers members of four laboratories: LAMA (Leader, Chambéry), LIRIS (Lyon), LJK (Grenoble), LIGM (Marne-la-vallée).&lt;/p&gt;
+&lt;h2 id=&#34;events&#34;&gt;Events&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dgdvc.sciencesconf.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Conference on Digital Geometry and Discrete Variational Calculus&lt;/a&gt;, March 29, 2021 &amp;ndash; April 2, 2021.
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dgdvc.sciencesconf.org/resource/page/id/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;videos of presentations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Extraction of Connected Region Boundary in Multidimensional Images</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-ipol/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-ipol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DGtal</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Equivalence between Closed Connected n-G-Maps without Multi-Incidence and n-Surfaces</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-08-a/</link>
+      <pubDate>Mon, 01 Sep 2008 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-08-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Géométrie discréte et images numériques</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-b/</link>
+      <pubDate>Mon, 01 Jan 2007 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computation of homology groups and generators</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-06-b/</link>
+      <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-06-b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computation of homology groups and generators</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-05-a/</link>
+      <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-05-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Equivalence between Regular n-G-maps and n-surfaces</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-04-a/</link>
+      <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-04-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Coding cells of digital spaces: a framework to write generic digital topology algorithms</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-b/</link>
+      <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Geometric measures on arbitrary dimensional digital surfaces</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-c/</link>
+      <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Equivalence Between Order and Cell Complex Representations</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-02-a/</link>
+      <pubDate>Fri, 01 Feb 2002 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-02-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Discrete deformable boundaries for the segmentation of multidimensional images</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-01-a/</link>
+      <pubDate>Mon, 01 Jan 2001 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-01-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Continuous analogs of digital boundaries: A topological approach to iso-surfaces</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-00-a/</link>
+      <pubDate>Sat, 01 Jan 2000 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-00-a/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

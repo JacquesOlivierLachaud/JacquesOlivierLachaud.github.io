@@ -1,0 +1,63 @@
+---
+# Documentation: https://wowchemy.com/docs/managing-content/
+
+title: An Elastica-Driven Digital Curve Evolution Model for Image Segmentation
+subtitle: ''
+summary: ''
+authors:
+- Daniel Martins Antunes
+- admin
+- Hugues Talbot
+tags: [ "image segmentation", "image analysis", "variational model", "geometric prior", "elastica model", "shape optimization" ]
+categories: []
+date: '2021-01-01'
+lastmod: 2022-11-03T17:39:45+01:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: [ "comedic" ]
+publishDate: '2022-11-03T16:39:45.735788Z'
+publication_types:
+- '2'
+
+abstract: 'Geometric priors have been shown to be useful in image
+segmentation to regularize results. For example, the classical
+Mumford-Shah functional uses region perimeter as prior. This has
+inspired much research in the last few decades, with classical
+approaches like the Rudin-Osher-Fatemi and most graph-cut
+formulations, which all use a weighted or binary perimeter prior.  It
+has been observed that this prior is not suitable in many
+applications, for example for segmenting thin objects or some
+textures, which may have high perimeter/surface ratio. Mumford
+observed that an interesting prior for natural objects is the Euler
+Elastical model, which involves the squared curvature. In other areas
+of science, researchers have noticed that some physical binarization
+processes, like emulsion unmixing can be well-approximated by
+curvature-related flow like the Willmore flow. However,
+curvature-related flows are not easy to compute because curvature is
+difficult to estimate accurately, and the underlying optimisation
+processes are not convex. In this article, we propose to formulate a
+digital flow that approximates an Elastica-related flow using a
+multigrid-convergent curvature estimator, within a discrete
+variational framework. We also present an application of this model as
+a post-processing step to a segmentation framework.'
+
+publication: '*J. Math. Imaging Vis.*, 63(1): 1-17, 2021'
+doi: 10.1007/s10851-020-00983-4
+links:
+- name: URL
+  url: https://doi.org/10.1007/s10851-020-00983-4
+---

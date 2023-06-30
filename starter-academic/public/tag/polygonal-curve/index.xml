@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>polygonal curve | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/polygonal-curve/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/polygonal-curve/index.xml" rel="self" type="application/rss+xml" />
+    <description>polygonal curve</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>polygonal curve</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/polygonal-curve/</link>
+    </image>
+    
+    <item>
+      <title>Meaningful Thickness Detection On Polygonal Curve</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-icpram/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-icpram/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

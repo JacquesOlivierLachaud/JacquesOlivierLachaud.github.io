@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shape optimization | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/shape-optimization/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/shape-optimization/index.xml" rel="self" type="application/rss+xml" />
+    <description>shape optimization</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>shape optimization</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/shape-optimization/</link>
+    </image>
+    
+    <item>
+      <title>StableProxies</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</guid>
+      <description>&lt;p&gt;Start date: Feb. 2023&lt;/p&gt;
+&lt;p&gt;The objective of the project is to propose new calculus models for the
+geometry processing of large, heterogeneous and complex geometrical
+objects. The targeted geometrical models (polygonal meshes, point
+clouds, surfaces of voxel sets) are usually defective for direct
+geometry processing: deficient or missing topology,
+self-intersections, holes, non-manifold parts, perturbations,
+outliers. Their common characteristic is to be approximations of an
+underlying smooth object and not an interpolation of its boundary. Our
+approach is to build stable geometric proxies (embedded in a regular
+lattice) for these various data, for two main goals: first to
+guarantee that the estimates or the results of the calculus are
+theoretically accurate or stable (when compared to their counterpart
+from the continuous analysis), second to design practical algorithms
+that scale well in terms of performance, numerical stability,
+capability to represent various dimensional objects (volumes,
+surfaces, 1d curves in space), and memory efficiency (thanks to a
+multiscale approach). This unified approach provides generic tools to
+measure quantities and perform calculus on such discrete data, and
+allows modeling and simulation of complex and natural phenomena on
+various real geometric data. We will more specifically explore
+applications in material engineering (analysis and calculus on high
+resolution volumetric surfaces from micro-tomographic images, fracture
+simulation on materials&amp;hellip;), the geometry processing of acquired
+massive, highly detailed, 3D point clouds (e.g, billions of points
+acquired with LiDAR or photogrammetry).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An Elastica-Driven Digital Curve Evolution Model for Image Segmentation</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-jmiv/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-jmiv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital Curvature Evolution Model for Image Segmentation</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2019-dgci/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2019-dgci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CoMeDiC</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
+and standard calculus in the case of the digital space Zn. The global
+idea is to reliably estimate a metric on digital curves and surfaces
+such that solving PDEs on these domains with discrete calculus
+converges toward standard calculus solutions. This approach, a kind of
+digital calculus, is now conceivable due to recent progresses in
+digital geometry about the multigrid convergence of length, area,
+normal and even curvature estimators. Such estimators should induce
+convergent metrics for many different subsets of digital
+spaces. Digital calculus would then address an important bottleneck
+faced by most standard numerical discretization schemes: how to handle
+variational problems involving objects or functions of dimension k &amp;lt; n
+(e.g. surfaces in R3 or Z3, curves on surfaces, etc). This project
+focuses on three domains of application for digital calculus — image
+analysis, digital geometry processing and shape optimization — both to
+guide and nourish theoretical developments, as well as to serve as
+testbed for digital calculus.&lt;/p&gt;
+&lt;h2 id=&#34;consortium&#34;&gt;Consortium&lt;/h2&gt;
+&lt;p&gt;This project gathers members of four laboratories: LAMA (Leader, Chambéry), LIRIS (Lyon), LJK (Grenoble), LIGM (Marne-la-vallée).&lt;/p&gt;
+&lt;h2 id=&#34;events&#34;&gt;Events&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dgdvc.sciencesconf.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Conference on Digital Geometry and Discrete Variational Calculus&lt;/a&gt;, March 29, 2021 &amp;ndash; April 2, 2021.
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dgdvc.sciencesconf.org/resource/page/id/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;videos of presentations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

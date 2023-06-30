@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>asymptotic digital geometry | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/asymptotic-digital-geometry/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/asymptotic-digital-geometry/index.xml" rel="self" type="application/rss+xml" />
+    <description>asymptotic digital geometry</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>asymptotic digital geometry</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/asymptotic-digital-geometry/</link>
+    </image>
+    
+    <item>
+      <title>Scale-space feature extraction on digital surfaces</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2015-cg-smi/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2015-cg-smi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital Shape Analysis with Maximal Segments</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2012-adgmm/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2012-adgmm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meaningful Scales Detection along Digital Contours for Unsupervised Local Noise Estimation</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Asymptotic linear digital geometry</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry/</link>
+      <pubDate>Tue, 08 Feb 2011 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Asymptotic linear digital geometry and applications</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry-and-applications/</link>
+      <pubDate>Tue, 08 Feb 2011 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry-and-applications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multiscale Analysis of Discrete Contours for Unsupervised Noise Detection</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

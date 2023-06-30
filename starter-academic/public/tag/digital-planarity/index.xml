@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>digital planarity | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-planarity/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-planarity/index.xml" rel="self" type="application/rss+xml" />
+    <description>digital planarity</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>digital planarity</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-planarity/</link>
+    </image>
+    
+    <item>
+      <title>An Optimized Framework for Plane-Probing Algorithms</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-jmiv/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-jmiv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital Plane Recognition with Fewer Probes</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2019-dgci/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2019-dgci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Two Plane-Probing Algorithms for the Computation of the Normal Vector to a Digital Plane</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-jmiv/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-jmiv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An output-sensitive algorithm to compute the normal vector of a digital plane</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-tcs/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-tcs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computation of the Normal Vector to a Digital Plane by Sampling Significant Points</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maximal Planes and Multiscale Tangential Cover of 3D Digital Objects</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/charrier-2011-iwcia/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/charrier-2011-iwcia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GeoDIB</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/geodib/</link>
+      <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/geodib/</guid>
+      <description>&lt;p&gt;This project gathered members of four laboratories: LORIA (Leader, Nancy), LIRIS (Lyon), LAIC (Clermont), LaBRI (Bordeaux) then LAMA (Chambéry).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

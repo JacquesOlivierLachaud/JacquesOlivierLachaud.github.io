@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cloud of points | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/cloud-of-points/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/cloud-of-points/index.xml" rel="self" type="application/rss+xml" />
+    <description>cloud of points</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>cloud of points</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/cloud-of-points/</link>
+    </image>
+    
+    <item>
+      <title>StableProxies</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</guid>
+      <description>&lt;p&gt;Start date: Feb. 2023&lt;/p&gt;
+&lt;p&gt;The objective of the project is to propose new calculus models for the
+geometry processing of large, heterogeneous and complex geometrical
+objects. The targeted geometrical models (polygonal meshes, point
+clouds, surfaces of voxel sets) are usually defective for direct
+geometry processing: deficient or missing topology,
+self-intersections, holes, non-manifold parts, perturbations,
+outliers. Their common characteristic is to be approximations of an
+underlying smooth object and not an interpolation of its boundary. Our
+approach is to build stable geometric proxies (embedded in a regular
+lattice) for these various data, for two main goals: first to
+guarantee that the estimates or the results of the calculus are
+theoretically accurate or stable (when compared to their counterpart
+from the continuous analysis), second to design practical algorithms
+that scale well in terms of performance, numerical stability,
+capability to represent various dimensional objects (volumes,
+surfaces, 1d curves in space), and memory efficiency (thanks to a
+multiscale approach). This unified approach provides generic tools to
+measure quantities and perform calculus on such discrete data, and
+allows modeling and simulation of complex and natural phenomena on
+various real geometric data. We will more specifically explore
+applications in material engineering (analysis and calculus on high
+resolution volumetric surfaces from micro-tomographic images, fracture
+simulation on materials&amp;hellip;), the geometry processing of acquired
+massive, highly detailed, 3D point clouds (e.g, billions of points
+acquired with LiDAR or photogrammetry).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

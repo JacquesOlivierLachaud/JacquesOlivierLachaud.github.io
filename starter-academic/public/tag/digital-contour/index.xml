@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>digital contour | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-contour/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-contour/index.xml" rel="self" type="application/rss+xml" />
+    <description>digital contour</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2014 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>digital contour</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-contour/</link>
+    </image>
+    
+    <item>
+      <title>Meaningful Scales Detection: an Unsupervised Noise Detection Algorithm for Digital Contours</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2014-ipol/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2014-ipol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A combined multi-scale/irregular algorithm for the vectorization of noisy digital contours</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/vacavant-2013-cviu/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/vacavant-2013-cviu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital Shape Analysis with Maximal Segments</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2012-adgmm/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2012-adgmm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meaningful Scales Detection along Digital Contours for Unsupervised Local Noise Estimation</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Circular arc reconstruction of digital contours with chosen Hausdorff error</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2011-dgci/</link>
+      <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2011-dgci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Accurate Curvature Estimation along Digital Contours with Maximal Digital Circular Arcs</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-iwcia/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-iwcia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regularization of Discrete Contour by Willmore Energy</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2011-jmiv/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2011-jmiv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unsupervised, Fast and Precise Recognition of Digital Arcs in Noisy Images</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/nguyen-2010-iccvg/</link>
+      <pubDate>Wed, 01 Sep 2010 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/nguyen-2010-iccvg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparison and improvement of tangent estimators on digital curves</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-pr/</link>
+      <pubDate>Sat, 01 Aug 2009 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-pr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Curvature estimation along noisy digital contours by approximate global optimization </title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-pr/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-pr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digital Deformable Model Simulating Active Contours</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-dgci/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-dgci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multiscale Analysis of Discrete Contours for Unsupervised Noise Detection</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multiscale Discrete Geometry</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2009-dgci/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2009-dgci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Top-Down Segmentation of Histological Images Using a Digital Deformable Model</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-isvc/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-isvc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Comparison of Discrete Curvature Estimators and Application to Corner Detection</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-b/</link>
+      <pubDate>Mon, 01 Dec 2008 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combinatorial view of digital convexity</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-08-a/</link>
+      <pubDate>Tue, 01 Apr 2008 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-08-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robust estimation of curvature along digital contours with global optimization</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-a/</link>
+      <pubDate>Tue, 01 Apr 2008 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experimental Comparison of Continuous and Discrete Tangent Estimators Along Digital Curves</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-08-a/</link>
+      <pubDate>Sat, 01 Mar 2008 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-08-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Curvature based corner detector for discrete, noisy and multi-scale contours</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2008-ijsm/</link>
+      <pubDate>Tue, 01 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2008-ijsm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fast, Accurate and Convergent Tangent Estimation on Digital Contours</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-a/</link>
+      <pubDate>Mon, 01 Oct 2007 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maximal digital straight segments and convergence of discrete geometric estimators</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-07-a/</link>
+      <pubDate>Thu, 01 Feb 2007 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-07-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Analysis and comparative evaluation of discrete tangent estimators</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-a/</link>
+      <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-a/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

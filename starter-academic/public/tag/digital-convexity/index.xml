@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>digital convexity | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-convexity/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-convexity/index.xml" rel="self" type="application/rss+xml" />
+    <description>digital convexity</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>digital convexity</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-convexity/</link>
+    </image>
+    
+    <item>
+      <title>An Alternative Definition for Digital Convexity</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-jmiv/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-jmiv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Full convexity for polyhedral models in digital spaces</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/feschet-2022-dgmm/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/feschet-2022-dgmm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An Alternative Definition for Digital Convexity</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2021-dgmm/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2021-dgmm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DGtal</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lyndon &#43; Christoffel = digitally convex</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-2009-pr/</link>
+      <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-2009-pr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Combinatorial view of digital convexity</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-08-a/</link>
+      <pubDate>Tue, 01 Apr 2008 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-08-a/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Convex shapes and convergence speed of discrete tangent estimators</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-b/</link>
+      <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-b/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

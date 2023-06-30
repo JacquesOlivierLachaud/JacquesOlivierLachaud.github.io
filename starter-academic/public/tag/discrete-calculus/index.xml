@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>discrete calculus | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-calculus/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-calculus/index.xml" rel="self" type="application/rss+xml" />
+    <description>discrete calculus</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 16 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>discrete calculus</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-calculus/</link>
+    </image>
+    
+    <item>
+      <title>Joint optimization of distortion and cut location for mesh parameterization using an Ambrosio-Tortorelli functional</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/weill-duflos-2023-gmp/</link>
+      <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/weill-duflos-2023-gmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>StableProxies</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</guid>
+      <description>&lt;p&gt;Start date: Feb. 2023&lt;/p&gt;
+&lt;p&gt;The objective of the project is to propose new calculus models for the
+geometry processing of large, heterogeneous and complex geometrical
+objects. The targeted geometrical models (polygonal meshes, point
+clouds, surfaces of voxel sets) are usually defective for direct
+geometry processing: deficient or missing topology,
+self-intersections, holes, non-manifold parts, perturbations,
+outliers. Their common characteristic is to be approximations of an
+underlying smooth object and not an interpolation of its boundary. Our
+approach is to build stable geometric proxies (embedded in a regular
+lattice) for these various data, for two main goals: first to
+guarantee that the estimates or the results of the calculus are
+theoretically accurate or stable (when compared to their counterpart
+from the continuous analysis), second to design practical algorithms
+that scale well in terms of performance, numerical stability,
+capability to represent various dimensional objects (volumes,
+surfaces, 1d curves in space), and memory efficiency (thanks to a
+multiscale approach). This unified approach provides generic tools to
+measure quantities and perform calculus on such discrete data, and
+allows modeling and simulation of complex and natural phenomena on
+various real geometric data. We will more specifically explore
+applications in material engineering (analysis and calculus on high
+resolution volumetric surfaces from micro-tomographic images, fracture
+simulation on materials&amp;hellip;), the geometry processing of acquired
+massive, highly detailed, 3D point clouds (e.g, billions of points
+acquired with LiDAR or photogrammetry).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Simple Discrete Calculus for Digital Surfaces</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2022-dgmm/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2022-dgmm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conference on Digital Geometry and Discrete Variational Calculus</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
+      <pubDate>Mon, 29 Mar 2021 09:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
+      <description>&lt;h2 id=&#34;post-conference-information&#34;&gt;Post conference information&lt;/h2&gt;
+&lt;p&gt;Slides and videos of the conference are available on the &lt;a href=&#34;https://dgdvc.sciencesconf.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;conference
+website&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;keynote-speakers&#34;&gt;Keynote speakers&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;a href=&#34;https://www.gipsa-lab.grenoble-inp.fr/~dominique.attali/&#34;&gt;Dominique Attali&lt;/a&gt; (CNRS - Universit&amp;eacute; Grenoble Alpes)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;a href=&#34;https://cs.uwaterloo.ca/~yboykov/&#34;&gt;Yuri Boykov&lt;/a&gt; (The University of Waterloo)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #2a2a2a;&#34;&gt;&lt;a href=&#34;https://delon.wp.imt.fr/&#34;&gt;Julie Delon&lt;/a&gt; (Universit&amp;eacute; Paris Descartes)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;a href=&#34;https://perso.liris.cnrs.fr/julie.digne/&#34;&gt;Julie Digne&lt;/a&gt; (CNRS - Universit&amp;eacute; Lyon 1)&lt;/span&gt;&lt;span style=&#34;color: #2a2a2a;&#34;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #2a2a2a;&#34;&gt;&lt;a href=&#34;http://quentin.mrgt.fr/&#34;&gt;Quentin M&amp;eacute;rigot&lt;/a&gt; (Universit&amp;eacute; Paris-Saclay)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;a href=&#34;https://page.math.tu-berlin.de/~pinkall/&#34;&gt;Ulrich Pinkall&lt;/a&gt; (TU Berlin)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;a href=&#34;https://sites.google.com/site/erodola/&#34;&gt;Emanuele Rodol&amp;agrave;&lt;/a&gt; (Sapienza University of Rome)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;a href=&#34;https://perso.liris.cnrs.fr/tristan.roussillon/&#34;&gt;Tristan Roussillon&lt;/a&gt; (INSA Lyon)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;a href=&#34;https://ljk.imag.fr/membres/Boris.Thibert/&#34;&gt;Boris Thibert&lt;/a&gt; (Universit&amp;eacute; Grenoble Alpes)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;a href=&#34;https://webspace.science.uu.nl/~vaxma001/&#34;&gt;Amir Vaxman&lt;/a&gt; (Utrecht University)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;scientific-committees&#34;&gt;Scientific committees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cs.uwaterloo.ca/~yboykov/&#34;&gt;Yuri Boykov&lt;/a&gt; (&lt;span style=&#34;color: #000000;&#34;&gt;The University of Waterloo&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://perso.liris.cnrs.fr/david.coeurjolly/&#34;&gt;David Coeurjolly&lt;/a&gt; (CNRS - Universit&amp;eacute; de Lyon)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://users.cms.caltech.edu/~mathieu/&#34;&gt;Mathieu Desbrun&lt;/a&gt; (California Institute of Technology)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://math.univ-lyon1.fr/homes-www/masnou/&#34;&gt;Simon Masnou&lt;/a&gt; (Universit&amp;eacute; Lyon 1)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;organizing-committees&#34;&gt;Organizing committees&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://igm.univ-mlv.fr/~kenmochi/&#34;&gt;Yukiko Kenmochi&lt;/a&gt; (CNRS - Universit&amp;eacute; Gustave Eiffel)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.lama.univ-savoie.fr/pagesmembres/lachaud/People/LACHAUD-JO/person.html&#34;&gt;Jacques-Olivier Lachaud&lt;/a&gt; (Universit&amp;eacute; Savoie Mont-Blanc)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://perso-math.univ-mlv.fr/users/romon.pascal/&#34;&gt;Pascal Romon&lt;/a&gt; (Universit&amp;eacute; Gustave Eiffel)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://num.math.uni-goettingen.de/~wardetzky/&#34;&gt;Max Wardetzky&lt;/a&gt; (Georg-August-University G&amp;ouml;ttingen)&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A discrete calculus model of Ambrosio-Tortorelli’s functional</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Discrete calculus model of Ambrosio-Tortorelli’s functional</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mumford-Shah Mesh Processing using the Ambrosio-Tortorelli Functional</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bonneel-2018-cgf/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bonneel-2018-cgf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Image restoration and segmentation using the Ambrosio-Tortorelli functional and discrete calculus</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-icpr/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-icpr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Numerical implementation of the Ambrosio-Tortorelli functional using discrete calculus and application to image restoration and inpainting</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-rrpr/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-rrpr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Piecewise smooth reconstruction of normal vector field on digital data</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2016-pg/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2016-pg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CoMeDiC</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
+and standard calculus in the case of the digital space Zn. The global
+idea is to reliably estimate a metric on digital curves and surfaces
+such that solving PDEs on these domains with discrete calculus
+converges toward standard calculus solutions. This approach, a kind of
+digital calculus, is now conceivable due to recent progresses in
+digital geometry about the multigrid convergence of length, area,
+normal and even curvature estimators. Such estimators should induce
+convergent metrics for many different subsets of digital
+spaces. Digital calculus would then address an important bottleneck
+faced by most standard numerical discretization schemes: how to handle
+variational problems involving objects or functions of dimension k &amp;lt; n
+(e.g. surfaces in R3 or Z3, curves on surfaces, etc). This project
+focuses on three domains of application for digital calculus — image
+analysis, digital geometry processing and shape optimization — both to
+guide and nourish theoretical developments, as well as to serve as
+testbed for digital calculus.&lt;/p&gt;
+&lt;h2 id=&#34;consortium&#34;&gt;Consortium&lt;/h2&gt;
+&lt;p&gt;This project gathers members of four laboratories: LAMA (Leader, Chambéry), LIRIS (Lyon), LJK (Grenoble), LIGM (Marne-la-vallée).&lt;/p&gt;
+&lt;h2 id=&#34;events&#34;&gt;Events&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dgdvc.sciencesconf.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Conference on Digital Geometry and Discrete Variational Calculus&lt;/a&gt;, March 29, 2021 &amp;ndash; April 2, 2021.
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dgdvc.sciencesconf.org/resource/page/id/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;videos of presentations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DGtal</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

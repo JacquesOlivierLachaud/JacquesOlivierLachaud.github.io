@@ -1,0 +1,47 @@
+---
+# Documentation: https://wowchemy.com/docs/managing-content/
+
+title: Maximal digital straight segments and convergence of discrete geometric estimators
+subtitle: ''
+summary: ''
+authors:
+- F. de Vieilleville
+- admin
+- F. Feschet
+tags:
+- discrete geometry
+- digital straight segments
+- lattice convex polygon
+- asymptotic convergence
+- multigrid convergence
+- digital curvature estimation
+categories: []
+date: '2005-01-01'
+lastmod: 2022-11-03T17:40:06+01:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+publishDate: '2022-11-03T16:40:06.008297Z'
+publication_types:
+- '1'
+abstract: ''
+publication: "*Proc. 14th Scandinavian Conference on Image Analysis (SCIA'2005), Joensuu,\
+  \ Finland*"
+links:
+- name: URL
+  url: http://www.lama.univ-savoie.fr/~lachaud/Publications/LACHAUD-JO/publications.html#deVieilleville05a
+---

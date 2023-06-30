@@ -1,0 +1,59 @@
+---
+# Documentation: https://wowchemy.com/docs/managing-content/
+
+title: Revisiting Digital Straight Segment Recognition
+subtitle: ''
+summary: ''
+authors:
+- F. de Vieilleville
+- admin
+tags:
+- discrete geometry
+- digital straight segment recognition
+- stern-brocot tree
+- continued fraction
+- maximal segments
+categories: []
+date: '2006-10-01'
+lastmod: 2022-11-03T17:40:05+01:00
+featured: false
+draft: false
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder.
+# Focal points: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight.
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: false
+
+# Projects (optional).
+#   Associate this post with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects: []
+publishDate: '2022-11-03T16:40:05.727046Z'
+publication_types:
+- '1'
+abstract: 'This paper presents new results about digital straight segments, their
+recognition and related properties. They come from the study of the
+arithmetically based recognition algorithm proposed by
+I. Debled-Rennesson and J.-P. Reveillès in 1995. We indeed exhibit
+the relations describing the possible changes in the parameters of the
+digital straight segment under investigation.  This description is
+achieved by considering new parameters on digital segments: instead of
+their arithmetic description, we examine the parameters related to
+their combinatoric description. As a result we have a better
+understanding of their evolution during recognition and analytical
+formulas to compute them. We also show how this evolution can be
+projected onto the Stern-Brocot tree. These new relations have
+interesting consequences on the geometry of digital curves. We show
+how they can for instance be used to bound the slope difference
+between consecutive maximal segments.
+'
+publication: "*Proc. Int. Conf. Discrete Geometry for Computer Imagery (DGCI'2006), Szeged, Hungary*"
+links:
+- name: URL
+  url: http://www.lama.univ-savoie.fr/~lachaud/Publications/LACHAUD-JO/publications.html#deVieilleville06a
+---

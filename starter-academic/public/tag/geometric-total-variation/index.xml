@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>geometric total variation | Jacques-Olivier Lachaud</title>
+    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-total-variation/</link>
+      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-total-variation/index.xml" rel="self" type="application/rss+xml" />
+    <description>geometric total variation</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>geometric total variation</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-total-variation/</link>
+    </image>
+    
+    <item>
+      <title>Geometric Total Variation for Image Vectorization, Zooming and Pixel Art Depixelizing</title>
+      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2019-acpr/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2019-acpr/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Click on each icon below to see its zoomedx16 version !&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-000.jpg&#34;&gt;&lt;img src=&#34;input/pok-000.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-001.jpg&#34;&gt;&lt;img src=&#34;input/pok-001.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-002.jpg&#34;&gt;&lt;img src=&#34;input/pok-002.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-003.jpg&#34;&gt;&lt;img src=&#34;input/pok-003.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-004.jpg&#34;&gt;&lt;img src=&#34;input/pok-004.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-005.jpg&#34;&gt;&lt;img src=&#34;input/pok-005.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-006.jpg&#34;&gt;&lt;img src=&#34;input/pok-006.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-007.jpg&#34;&gt;&lt;img src=&#34;input/pok-007.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-008.jpg&#34;&gt;&lt;img src=&#34;input/pok-008.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-010.jpg&#34;&gt;&lt;img src=&#34;input/pok-010.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-011.jpg&#34;&gt;&lt;img src=&#34;input/pok-011.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-012.jpg&#34;&gt;&lt;img src=&#34;input/pok-012.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-013.jpg&#34;&gt;&lt;img src=&#34;input/pok-013.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-014.jpg&#34;&gt;&lt;img src=&#34;input/pok-014.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-015.jpg&#34;&gt;&lt;img src=&#34;input/pok-015.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-016.jpg&#34;&gt;&lt;img src=&#34;input/pok-016.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-017.jpg&#34;&gt;&lt;img src=&#34;input/pok-017.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-018.jpg&#34;&gt;&lt;img src=&#34;input/pok-018.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-020.jpg&#34;&gt;&lt;img src=&#34;input/pok-020.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-021.jpg&#34;&gt;&lt;img src=&#34;input/pok-021.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-022.jpg&#34;&gt;&lt;img src=&#34;input/pok-022.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-023.jpg&#34;&gt;&lt;img src=&#34;input/pok-023.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-024.jpg&#34;&gt;&lt;img src=&#34;input/pok-024.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-025.jpg&#34;&gt;&lt;img src=&#34;input/pok-025.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-026.jpg&#34;&gt;&lt;img src=&#34;input/pok-026.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-027.jpg&#34;&gt;&lt;img src=&#34;input/pok-027.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-028.jpg&#34;&gt;&lt;img src=&#34;input/pok-028.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-030.jpg&#34;&gt;&lt;img src=&#34;input/pok-030.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-031.jpg&#34;&gt;&lt;img src=&#34;input/pok-031.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-032.jpg&#34;&gt;&lt;img src=&#34;input/pok-032.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-033.jpg&#34;&gt;&lt;img src=&#34;input/pok-033.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-034.jpg&#34;&gt;&lt;img src=&#34;input/pok-034.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-035.jpg&#34;&gt;&lt;img src=&#34;input/pok-035.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-036.jpg&#34;&gt;&lt;img src=&#34;input/pok-036.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-037.jpg&#34;&gt;&lt;img src=&#34;input/pok-037.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-038.jpg&#34;&gt;&lt;img src=&#34;input/pok-038.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-040.jpg&#34;&gt;&lt;img src=&#34;input/pok-040.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-041.jpg&#34;&gt;&lt;img src=&#34;input/pok-041.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-042.jpg&#34;&gt;&lt;img src=&#34;input/pok-042.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-043.jpg&#34;&gt;&lt;img src=&#34;input/pok-043.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-044.jpg&#34;&gt;&lt;img src=&#34;input/pok-044.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-045.jpg&#34;&gt;&lt;img src=&#34;input/pok-045.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-046.jpg&#34;&gt;&lt;img src=&#34;input/pok-046.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-047.jpg&#34;&gt;&lt;img src=&#34;input/pok-047.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-048.jpg&#34;&gt;&lt;img src=&#34;input/pok-048.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-050.jpg&#34;&gt;&lt;img src=&#34;input/pok-050.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-051.jpg&#34;&gt;&lt;img src=&#34;input/pok-051.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-052.jpg&#34;&gt;&lt;img src=&#34;input/pok-052.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-053.jpg&#34;&gt;&lt;img src=&#34;input/pok-053.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-054.jpg&#34;&gt;&lt;img src=&#34;input/pok-054.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-055.jpg&#34;&gt;&lt;img src=&#34;input/pok-055.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-056.jpg&#34;&gt;&lt;img src=&#34;input/pok-056.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-057.jpg&#34;&gt;&lt;img src=&#34;input/pok-057.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-058.jpg&#34;&gt;&lt;img src=&#34;input/pok-058.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-060.jpg&#34;&gt;&lt;img src=&#34;input/pok-060.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-061.jpg&#34;&gt;&lt;img src=&#34;input/pok-061.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-062.jpg&#34;&gt;&lt;img src=&#34;input/pok-062.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-063.jpg&#34;&gt;&lt;img src=&#34;input/pok-063.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-064.jpg&#34;&gt;&lt;img src=&#34;input/pok-064.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-065.jpg&#34;&gt;&lt;img src=&#34;input/pok-065.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-066.jpg&#34;&gt;&lt;img src=&#34;input/pok-066.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-067.jpg&#34;&gt;&lt;img src=&#34;input/pok-067.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-068.jpg&#34;&gt;&lt;img src=&#34;input/pok-068.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-070.jpg&#34;&gt;&lt;img src=&#34;input/pok-070.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-071.jpg&#34;&gt;&lt;img src=&#34;input/pok-071.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-072.jpg&#34;&gt;&lt;img src=&#34;input/pok-072.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-073.jpg&#34;&gt;&lt;img src=&#34;input/pok-073.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-074.jpg&#34;&gt;&lt;img src=&#34;input/pok-074.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-075.jpg&#34;&gt;&lt;img src=&#34;input/pok-075.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-076.jpg&#34;&gt;&lt;img src=&#34;input/pok-076.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-077.jpg&#34;&gt;&lt;img src=&#34;input/pok-077.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-078.jpg&#34;&gt;&lt;img src=&#34;input/pok-078.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-080.jpg&#34;&gt;&lt;img src=&#34;input/pok-080.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-081.jpg&#34;&gt;&lt;img src=&#34;input/pok-081.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-082.jpg&#34;&gt;&lt;img src=&#34;input/pok-082.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-083.jpg&#34;&gt;&lt;img src=&#34;input/pok-083.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-084.jpg&#34;&gt;&lt;img src=&#34;input/pok-084.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-085.jpg&#34;&gt;&lt;img src=&#34;input/pok-085.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-086.jpg&#34;&gt;&lt;img src=&#34;input/pok-086.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-087.jpg&#34;&gt;&lt;img src=&#34;input/pok-087.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-088.jpg&#34;&gt;&lt;img src=&#34;input/pok-088.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-090.jpg&#34;&gt;&lt;img src=&#34;input/pok-090.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-091.jpg&#34;&gt;&lt;img src=&#34;input/pok-091.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-092.jpg&#34;&gt;&lt;img src=&#34;input/pok-092.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-093.jpg&#34;&gt;&lt;img src=&#34;input/pok-093.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-094.jpg&#34;&gt;&lt;img src=&#34;input/pok-094.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-095.jpg&#34;&gt;&lt;img src=&#34;input/pok-095.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-096.jpg&#34;&gt;&lt;img src=&#34;input/pok-096.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-097.jpg&#34;&gt;&lt;img src=&#34;input/pok-097.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-098.jpg&#34;&gt;&lt;img src=&#34;input/pok-098.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-100.jpg&#34;&gt;&lt;img src=&#34;input/pok-100.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-101.jpg&#34;&gt;&lt;img src=&#34;input/pok-101.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-102.jpg&#34;&gt;&lt;img src=&#34;input/pok-102.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-103.jpg&#34;&gt;&lt;img src=&#34;input/pok-103.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-104.jpg&#34;&gt;&lt;img src=&#34;input/pok-104.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-105.jpg&#34;&gt;&lt;img src=&#34;input/pok-105.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-106.jpg&#34;&gt;&lt;img src=&#34;input/pok-106.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-107.jpg&#34;&gt;&lt;img src=&#34;input/pok-107.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-108.jpg&#34;&gt;&lt;img src=&#34;input/pok-108.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-110.jpg&#34;&gt;&lt;img src=&#34;input/pok-110.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-111.jpg&#34;&gt;&lt;img src=&#34;input/pok-111.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-112.jpg&#34;&gt;&lt;img src=&#34;input/pok-112.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-113.jpg&#34;&gt;&lt;img src=&#34;input/pok-113.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-114.jpg&#34;&gt;&lt;img src=&#34;input/pok-114.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-115.jpg&#34;&gt;&lt;img src=&#34;input/pok-115.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-116.jpg&#34;&gt;&lt;img src=&#34;input/pok-116.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-117.jpg&#34;&gt;&lt;img src=&#34;input/pok-117.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-118.jpg&#34;&gt;&lt;img src=&#34;input/pok-118.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-120.jpg&#34;&gt;&lt;img src=&#34;input/pok-120.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-121.jpg&#34;&gt;&lt;img src=&#34;input/pok-121.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-122.jpg&#34;&gt;&lt;img src=&#34;input/pok-122.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-123.jpg&#34;&gt;&lt;img src=&#34;input/pok-123.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-124.jpg&#34;&gt;&lt;img src=&#34;input/pok-124.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-125.jpg&#34;&gt;&lt;img src=&#34;input/pok-125.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-126.jpg&#34;&gt;&lt;img src=&#34;input/pok-126.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-127.jpg&#34;&gt;&lt;img src=&#34;input/pok-127.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-128.jpg&#34;&gt;&lt;img src=&#34;input/pok-128.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-130.jpg&#34;&gt;&lt;img src=&#34;input/pok-130.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-131.jpg&#34;&gt;&lt;img src=&#34;input/pok-131.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-132.jpg&#34;&gt;&lt;img src=&#34;input/pok-132.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-133.jpg&#34;&gt;&lt;img src=&#34;input/pok-133.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-134.jpg&#34;&gt;&lt;img src=&#34;input/pok-134.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-135.jpg&#34;&gt;&lt;img src=&#34;input/pok-135.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-136.jpg&#34;&gt;&lt;img src=&#34;input/pok-136.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-137.jpg&#34;&gt;&lt;img src=&#34;input/pok-137.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-138.jpg&#34;&gt;&lt;img src=&#34;input/pok-138.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-140.jpg&#34;&gt;&lt;img src=&#34;input/pok-140.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-141.jpg&#34;&gt;&lt;img src=&#34;input/pok-141.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-142.jpg&#34;&gt;&lt;img src=&#34;input/pok-142.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-143.jpg&#34;&gt;&lt;img src=&#34;input/pok-143.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-144.jpg&#34;&gt;&lt;img src=&#34;input/pok-144.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-145.jpg&#34;&gt;&lt;img src=&#34;input/pok-145.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-146.jpg&#34;&gt;&lt;img src=&#34;input/pok-146.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-147.jpg&#34;&gt;&lt;img src=&#34;input/pok-147.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-148.jpg&#34;&gt;&lt;img src=&#34;input/pok-148.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-150.jpg&#34;&gt;&lt;img src=&#34;input/pok-150.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-151.jpg&#34;&gt;&lt;img src=&#34;input/pok-151.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-152.jpg&#34;&gt;&lt;img src=&#34;input/pok-152.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-153.jpg&#34;&gt;&lt;img src=&#34;input/pok-153.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-154.jpg&#34;&gt;&lt;img src=&#34;input/pok-154.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-155.jpg&#34;&gt;&lt;img src=&#34;input/pok-155.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-156.jpg&#34;&gt;&lt;img src=&#34;input/pok-156.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-157.jpg&#34;&gt;&lt;img src=&#34;input/pok-157.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-158.jpg&#34;&gt;&lt;img src=&#34;input/pok-158.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-160.jpg&#34;&gt;&lt;img src=&#34;input/pok-160.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-161.jpg&#34;&gt;&lt;img src=&#34;input/pok-161.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-162.jpg&#34;&gt;&lt;img src=&#34;input/pok-162.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-163.jpg&#34;&gt;&lt;img src=&#34;input/pok-163.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-164.jpg&#34;&gt;&lt;img src=&#34;input/pok-164.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-165.jpg&#34;&gt;&lt;img src=&#34;input/pok-165.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-166.jpg&#34;&gt;&lt;img src=&#34;input/pok-166.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-167.jpg&#34;&gt;&lt;img src=&#34;input/pok-167.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;together/pok-168.jpg&#34;&gt;&lt;img src=&#34;input/pok-168.png&#34;&gt;&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
