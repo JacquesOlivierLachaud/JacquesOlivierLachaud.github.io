@@ -58,11 +58,12 @@ seam visibility).'
 
 
 publication: '*Computer Aided Geometric Design*, Proc. International Conference on Geometric Modeling and Processing (GMP 2023), Genoa, Italy. Accepted. To appear.'
+doi: 10.1016/j.cagd.2023.102231
 
+links:
 - name: Slides
   url: 'slides.pdf'
-- name: Code
-  url:  https://github.com/Lieunoir/UV-AT.git
-
+- name: URL
+  url: https://doi.org/10.1016/j.cagd.2023.102231
 
 ---
