@@ -1,8 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: An Envelope Operator for Full Convexity to Define Polyhedral Models in Digital Spa\
-ces
+title: An Envelope Operator for Full Convexity to Define Polyhedral Models in Digital Spaces
 subtitle: ''
 summary: ''
 authors:
