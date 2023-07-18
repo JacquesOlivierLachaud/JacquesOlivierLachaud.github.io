@@ -16,7 +16,7 @@ tags: [ "digital geometry", "digital convexity", "nD", "polyhedral model" ]
 categories: []
 date: '2022-01-01'
 lastmod: 2022-11-03T17:39:54+01:00
-featured: true
+featured: false
 draft: false
 url_slides: 'slides.pdf'
 url_code: 'https://dgtal-team.github.io/doc-nightly/moduleDigitalConvexity.html'
