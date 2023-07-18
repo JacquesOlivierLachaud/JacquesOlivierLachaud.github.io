@@ -6,7 +6,7 @@ subtitle: ''
 summary: ''
 authors:
 - admin
-tags: [ "digital geometry", "digital convexity", "shortest paths", "nD", "geometric analysis", "tangential cover", "reconstruction" ]
+tags: [ "digital geometry", "digital convexity", "full convexity", "shortest paths", "nD", "geometric analysis", "tangential cover", "reconstruction" ]
 categories: []
 date: '2022-01-01'
 lastmod: 2022-11-03T17:39:45+01:00

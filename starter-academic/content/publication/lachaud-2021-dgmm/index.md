@@ -6,7 +6,7 @@ subtitle: ''
 summary: ''
 authors:
 - admin
-tags: [ "digital geometry", "digital convexity", "simple connectedness", "arithmetic planes", "tangential cover", "digital surface reconstruction"]
+tags: [ "digital geometry", "digital convexity", "simple connectedness", "arithmetic planes", "tangential cover", "digital surface reconstruction", "full convexity" ]
 categories: []
 date: '2021-01-01'
 lastmod: 2022-11-03T17:39:55+01:00

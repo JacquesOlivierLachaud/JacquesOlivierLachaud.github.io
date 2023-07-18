@@ -6,10 +6,10 @@ subtitle: ''
 summary: ''
 authors:
 - admin
-tags: [ "digital geometry", "digital convexity", "full convexity", "polyhedral model", "envelope operator" ]
+tags: [ "digital geometry", "digital convexity", "full convexity", "polyhedral model", "envelope operator", "nD" ]
 categories: []
-date: '2022-01-01'
-lastmod: 2022-11-03T17:39:45+01:00
+date: '2023-07-17'
+lastmod: '2023-07-17'
 featured: true
 draft: false
 url_code: 'https://dgtal-team.github.io/doc-nightly/moduleEnvelope.html'

@@ -12,7 +12,7 @@ authors:
 #   - 'Equal contribution'
 #   - 'Equal contribution'
 
-tags: [ "digital geometry", "digital convexity", "nD", "polyhedral model" ]
+tags: [ "digital geometry", "digital convexity", "full convexity", "nD", "polyhedral model" ]
 categories: []
 date: '2022-01-01'
 lastmod: 2022-11-03T17:39:54+01:00
