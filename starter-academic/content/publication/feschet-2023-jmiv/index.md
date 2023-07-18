@@ -5,6 +5,7 @@ title: An Envelope Operator for Full Convexity to Define Polyhedral Models in Di
 subtitle: ''
 summary: ''
 authors:
+- Fabien Feschet
 - admin
 tags: [ "digital geometry", "digital convexity", "full convexity", "polyhedral model", "envelope operator", "nD" ]
 categories: []
