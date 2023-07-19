@@ -46,6 +46,13 @@ gallery_item:
 - album: demo
   image: bunny64-NAdd-VCM-h1-dirs-fine-1.png
   caption: 'Estimated principal directions of curvature on a digitized Stanford bunny shape (resolution 64x64x64) using corrected curvature measures; principal curvatures are depicted using colors (blue is very low negative, cyan is low negative, black is zero, yellow is high positive, red is very high positive).' 
+- album: demo
+  image: murex-k1.jpg
+  caption: 'Lowest principal curvatures on a "Murex" point cloud, estimated using randomized corrected curvature measures.'
+- album: demo
+  image: murex-k2.jpg
+  caption: 'Highest principal curvatures on a "Murex" point cloud, estimated using randomized corrected curvature measures.'
+
 ---
 
 {{< gallery album="demo" >}}
