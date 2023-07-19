@@ -1,8 +1,7 @@
 ---
 # Documentation: https://wowchemy.com/docs/managing-content/
 
-title: Lightweight Curvature Estimation on Point Clouds with Randomized Corrected Cu\
-rvature Measures
+title: Lightweight Curvature Estimation on Point Clouds with Randomized Corrected Curvature Measures
 subtitle: ''
 summary: ''
 authors:
