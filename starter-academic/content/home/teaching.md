@@ -31,7 +31,7 @@ experience:
     date_end: '2024-08-01'
     description: |2-
 
-      [Page des cours](lectures)
+      [Page des cours](lectures/info505)
       Most of my lectures are accesible on LAMA's [wiki](http://os-vps418.infomaniak.ch:1250/mediawiki).
       *  L1 CMI Info: [VISI201](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI201_CMI_:_visite_de_laboratoire) Laboratory discovery (tutored project)
       *  L2 CMI Info: [VISI301](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI301_CMI_:_projet_de_recherche_et_développement) Software project
