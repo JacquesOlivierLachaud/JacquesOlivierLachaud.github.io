@@ -10,7 +10,7 @@ headless: true
 weight: 55
 
 title: Current Teaching Activities
-subtitle: Year 2022-2023
+subtitle: Year 2023-2024 (in progress)
 
 # Date format for experience
 #   Refer to https://wowchemy.com/docs/customization/#date-format
@@ -27,11 +27,11 @@ experience:
     company_url: 'www.univ-smb.fr'
     company_logo: logo-usmb-wo-txt
     location: Chambéry, France
-    date_start: '2022-09-01'
-    date_end: '2023-08-01'
+    date_start: '2023-09-01'
+    date_end: '2024-08-01'
     description: |2-
     
-      Most of my lectures are accesible on LAMA's [wiki](www.lama.univ-smb.fr/wiki).
+      Most of my lectures are accesible on LAMA's [wiki](http://os-vps418.infomaniak.ch:1250/mediawiki).
       *  L1 CMI Info: [VISI201](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI201_CMI_:_visite_de_laboratoire) Laboratory discovery (tutored project)
       *  L2 CMI Info: [VISI301](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI301_CMI_:_projet_de_recherche_et_développement) Software project
       *  L2 CMI Info: [VISI401](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI401_CMI_:_bibliographie_scientifique) Scientific bibliography (tutored project)
@@ -45,8 +45,8 @@ experience:
     company_url: 'www.univ-smb.fr'
     company_logo: logo-usmb-wo-txt
     location: Chambéry, France
-    date_start: '2022-09-01'
-    date_end: '2023-08-01'
+    date_start: '2023-09-01'
+    date_end: '2024-08-01'
     description: |2-
     
       Most of my lectures are accesible on LAMA's [wiki](http://os-vps418.infomaniak.ch:1250/mediawiki).
