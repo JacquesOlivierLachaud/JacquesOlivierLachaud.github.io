@@ -31,12 +31,13 @@ experience:
     date_end: '2024-08-01'
     description: |2-
 
-      [Page des cours](lectures/info505)
+      
       Most of my lectures are accesible on LAMA's [wiki](http://os-vps418.infomaniak.ch:1250/mediawiki).
       *  L1 CMI Info: [VISI201](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI201_CMI_:_visite_de_laboratoire) Laboratory discovery (tutored project)
       *  L2 CMI Info: [VISI301](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI301_CMI_:_projet_de_recherche_et_développement) Software project
       *  L2 CMI Info: [VISI401](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI401_CMI_:_bibliographie_scientifique) Scientific bibliography (tutored project)
-      *  L3 Info / L3 CMI Info: [INFO505](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO505_:_Programmation_C) Programming in C II, (Lectures/Seminars/Practicals)
+      *  L3 Info / L3 CMI Info / L3 Math-Info: [INFO505 Programmation C II](lectures/info505)
+      	 * old website: [INFO505](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO505_:_Programmation_C) Programming in C II, (Lectures/Seminars/Practicals)
       *  L3 Info / L3 CMI Info: [INFO607](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO607_:_Algorithmique_II) Algorithms  II, (Lectures/Seminars/Practicals)
       *  L3 CMI Info/Math: [VISI601](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI601_CMI_:_Algorithmique_numérique) Numerical algorithms, (Lectures/Seminars/Practicals)
       * L3 CMI Info: [PROJ602](https://codimd.math.cnrs.fr/s/udVspaGrG) Tutored research project
