@@ -1,8 +1,8 @@
 ---
-title: Full convexity: new characterisations and applications (Invited talk)
+title: 'Full convexity: new characterisations and applications (Invited talk)'
 
-event: Meeting on Tomography and Applications (May 15, 2023 – May 17, 2023)
-event_url: https://www.mate.polimi.it/events/TAIR2023/
+event: 'Meeting on Tomography and Applications (May 15, 2023 – May 17, 2023)'
+event_url: 'https://www.mate.polimi.it/events/TAIR2023/'
 
 location: Politecnico di Milano
 
