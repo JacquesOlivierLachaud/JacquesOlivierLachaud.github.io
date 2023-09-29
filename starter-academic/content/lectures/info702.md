@@ -12,7 +12,9 @@ Ces ressources sont des outils de travail et de révision. Elles ne
 remplacent pas les cours et/ou les td, qui peuvent contenir d'autres
 informations.
 
-### [Notes de cours (PDF)](Cours/notes-de-cours.pdf), mise à jour en 2019.
+### [Notes de cours (PDF)](Cours/notes-de-cours.pdf), mise à jour en 9/2023.
+
+Intègre notamment les concepts du standard c++20.
 
 ### Quelques exemples de code C++
 
