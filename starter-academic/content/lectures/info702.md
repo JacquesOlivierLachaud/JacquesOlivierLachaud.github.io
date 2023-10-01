@@ -16,6 +16,12 @@ informations.
 
 Intègre notamment les concepts du standard c++20.
 
+### Fiches de TDs
+
+* [TD1](TDs/td-1.pdf) Références, POO, surcharge d'opérateurs, polymorphisme
+  - correction matrices, vecteurs: [Vecteur.hpp](TDs/Vecteur.hpp) [Vecteur.cpp](TDs/Vecteur.cpp) [Matrice.hpp](TDs/Matrice.hpp) [Matrice.cpp](TDs/Matrice.cpp) [spirograph.cpp](TDs/spirograph.cpp)
+  - correction damier [damier.cpp](TDs/damier.cpp)
+
 ### Quelques exemples de code C++
 
 Les codes sont compilés à l'aide de la commande:
@@ -43,5 +49,5 @@ g++ -std=c++11 lesson-x-y.cpp
     [lesson-2-e.cpp](Lessons/lesson-2-e.cpp)
     [lesson-2-f.cpp](Lessons/lesson-2-f.cpp)
 
-4. Programmation fonctionnelle avec des lambda-expressions.
+5. Programmation fonctionnelle avec des lambda-expressions.
     [lesson-2-g.cpp](Lessons/lesson-2-g.cpp)        
