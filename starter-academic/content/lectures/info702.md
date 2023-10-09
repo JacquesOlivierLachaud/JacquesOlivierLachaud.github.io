@@ -22,6 +22,9 @@ Intègre notamment les concepts du standard c++20.
   - correction matrices, vecteurs: [Vecteur.hpp](TDs/Vecteur.hpp) [Vecteur.cpp](TDs/Vecteur.cpp) [Matrice.hpp](TDs/Matrice.hpp) [Matrice.cpp](TDs/Matrice.cpp) [spirograph.cpp](TDs/spirograph.cpp)
   - correction damier [damier.cpp](TDs/damier.cpp)
 
+### [Pages des TPs](Tests/html)
+
+
 ### Quelques exemples de code C++
 
 Les codes sont compilés à l'aide de la commande:
