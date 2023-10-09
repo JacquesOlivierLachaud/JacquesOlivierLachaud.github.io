@@ -1,0 +1,34 @@
+\_form#0:$H_I$
+\_form#1:$ H_I( i ) = \#\{(x,y), I(x,y)=i \} / \#\{(x,y)\} $
+\_form#2:\[ H_I( i ) = \frac{\#\{(x,y), I(x,y)=i \}}{\#\{(x,y)\}} \]
+\_form#3:$h_I$
+\_form#4:\[ h_I: {0,\ldots,255} \rightarrow \lbrack 0,1 \rbrack, \quad i \mapsto h_I( i ) = \frac{\#\{(x,y), I(x,y)=i \}}{\#\{(x,y)\}} \]
+\_form#5:$I$
+\_form#6:\[ h_I: \{0,\ldots,255 \} \rightarrow \lbrack 0,1 \rbrack, \quad i \mapsto h_I( i ) = \frac{\#\{(x,y), I(x,y)=i \}}{\#\{(x,y)\}} \]
+\_form#7:\[ H_I: \{0,\ldots,255 \} \rightarrow \lbrack 0,1 \rbrack, \quad i \mapsto H_I( i ) = \frac{\#\{(x,y), I(x,y) \le i \}}{\#\{(x,y)\}} \]
+\_form#8:$ H_I(g) = \sum_i=0^g h_I(i) $
+\_form#9:$ H_I(g) = \sum_{i=0}^g h_I(i) $
+\_form#10:$ f: \{0,\ldots,255\} \rightarrow \{0,\ldots,255\} $
+\_form#11:$ i \mapsto i/255 $
+\_form#12:\[ \frac{i}{255} = H_{f \circ I}(i) \\ = \frac{\#\{(x,y), f \circ I(x,y) \le i \}}{\#\{(x,y)\}} \\ \]
+\_form#13:\[ \frac{i}{255} = H_{f \circ I}(i) \]
+\_form#14:\[ \quad = \frac{\#\{(x,y), f \circ I(x,y) \le i \}}{\#\{(x,y)\}} \\ \]
+\_form#15:\[ \frac{i}{255} = H_{f \circ I}(i) \quad = \frac{\#\{(x,y), f \circ I(x,y) \le i \}}{\#\{(x,y)\}} \quad = \frac{\#\{(x,y), I(x,y) \le f^{-1}(i) \}}{\#\{(x,y)\}} \]
+\_form#16:\[ \frac{i}{255} = H_{f \circ I}(i) \quad = \frac{\#\{(x,y), f \circ I(x,y) \le i \}}{\#\{(x,y)\}} \quad = \frac{\#\{(x,y), I(x,y) \le f^{-1}(i) \}}{\#\{(x,y)\}} \quad = H_{I}( f^{-1}(i)) \]
+\_form#17:$ j=f^{-1}(i) $
+\_form#18:$ i = f(i) $
+\_form#19:\[ \frac{f(j)}{255} = H_{I}( j ) \]
+\_form#20:\[ f : j \mapsto f(j) = 255 * H_{I}( j ) \]
+\_form#21:$ i = f(j) $
+\_form#22:$ A := \begin{array}{|c|c|c|} a_{-1,-1} & a_{0,-1} & a_{1,-1} \\ \hline a_{-1,0} & a_{0,0} & a_{1,0} \\ \hline a_{-1,1} & a_{0,1} & a_{1,1} \\ \hline \end{array}$
+\_form#23:$ p(x,y) $
+\_form#24:$A$
+\_form#25:$ p(x,y) := a_{-1,-1} p(x-1,y-1) + a_{0,-1} p(x,y-1) + a_{1,-1} p(x+1,y-1) + \ldots + a_{1,1} p(x+1,y+1) $
+\_form#26:\[ A := \begin{array}{|c|c|c|} \hline a_{-1,-1} & a_{0,-1} & a_{1,-1} \\ \hline a_{-1,0} & a_{0,0} & a_{1,0} \\ \hline a_{-1,1} & a_{0,1} & a_{1,1} \\ \hline \end{array}\]
+\_form#27:\[ p(x,y) := a_{-1,-1} p(x-1,y-1) + a_{0,-1} p(x,y-1) + a_{1,-1} p(x+1,y-1) + \ldots + a_{1,1} p(x+1,y+1) \]
+\_form#28:\[ p(x,y) := a_{-1,-1} p(x-1,y-1) + a_{0,-1} p(x,y-1) + a_{1,-1} p(x+1,y-1) + \cdots + a_{1,1} p(x+1,y+1) \]
+\_form#29:\[ M :=\begin{array}{|c|c|c|}\hline 1/16 & 1/16 & 1/16 \\ \hline 1/16 & 1/2 & 1/16 \\ \hline 1/16 & 1/16 & 1/16 \\ \hline \end{array} \qquad L :=\begin{array}{|c|c|c|}\hline 0 & -1/4 & 0 \\ \hline -1/4 & 1 & -1/4 \\ \hline 0 & -1/4 & 0 \\ \hline \end{array} \]
+\_form#30:$ R_\alpha $
+\_form#31:$ \alpha $
+\_form#32:\[ R_\alpha := \begin{array}{|c|c|c|}\hline 0 & -\alpha/4 & 0 \\ \hline -\alpha/4 & 1+\alpha & -\alpha/4 \\ \hline 0 & -\alpha/4 & 0 \\ \hline \end{array} \]
+\_form#33:\[ M :=\begin{array}{|c|c|c|}\hline 1/9 & 1/9 & 1/9 \\ \hline 1/9 & 1/9 & 1/9 \\ \hline 1/9 & 1/9 & 1/9 \\ \hline \end{array} \qquad L :=\begin{array}{|c|c|c|}\hline 0 & -1/4 & 0 \\ \hline -1/4 & 1 & -1/4 \\ \hline 0 & -1/4 & 0 \\ \hline \end{array} \]
