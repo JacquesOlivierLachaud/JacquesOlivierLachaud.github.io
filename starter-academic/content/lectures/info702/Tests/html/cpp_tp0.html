@@ -83,6 +83,8 @@ $(function() {
 <ul><li class="level1"><a href="#cpp_tp0_1">1 - Objectifs, pointeurs utiles</a></li>
 <li class="level1"><a href="#cpp_tp0_2">2 - Prise en main du code, compilation avec Qt</a></li>
 <li class="level1"><a href="#cpp_tp0_3">3 - Premiers objets graphiques</a></li>
+<li class="level1"><a href="#cpp_tp0_3_1">3.1 - classe Rectangle (graphique)</a></li>
+<li class="level1"><a href="#cpp_tp0_3_2">3.2 - classe SpaceTruck</a></li>
 <li class="level1"><a href="#cpp_tp0_4">4 - Objets complexes par assemblage de formes simples</a></li>
 <li class="level1"><a href="#cpp_tp0_5">5 - Transformations géométriques</a></li>
 <li class="level1"><a href="#cpp_tp0_6">6 - Des images, des figures</a></li>
@@ -104,12 +106,13 @@ $(function() {
 <li>[<a href="http://www.cppreference.com/">http://www.cppreference.com/</a> Site C/C++: références très complètes]</li>
 <li>[<a href="http://www.cplusplus.com/">http://www.cplusplus.com/</a> Site C++: tutoriels, références]</li>
 <li>[<a href="http://www.parashift.com/c++-faq-lite/index.html">http://www.parashift.com/c++-faq-lite/index.html</a> C++ FAQ]</li>
-<li>[<a href="https://doc.qt.io/qt-5">https://doc.qt.io/qt-5</a>]</li>
+<li>[<a href="https://doc.qt.io/qt-5">https://doc.qt.io/qt-5</a> doc Qt5] [<a href="https://doc.qt.io/qt-6">https://doc.qt.io/qt-6</a> doc Qt6].</li>
 </ul>
+<dl class="section warning"><dt>Warning</dt><dd>Normalement le code fonctionne indifféremment sous Qt5 ou Qt6 (en tous cas sous MacOS).</dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Il n'y a pas d'IDE recommandé plus particulièrement qu'un autre, mais je constate:<ul>
 <li>un étudiant sous Linux avec un éditeur de texte (vim, emacs, sublime text, gedit) et la compilation via <code>make</code> démarre le TP en 5 minutes.</li>
 <li>un étudiant avec son IDE déjà bien configuré avant d'arriver en TP gagne 1h sur l'étudiant qui installe son IDE pendant le TP.</li>
-<li>la plupart des étudiants utilisent CodeBlocks, parfois Eclipse, parfois Visual C++ ou CLion</li>
+<li>la plupart des étudiants utilisent CodeBlocks, parfois Eclipse, parfois Visual Studio C++ ou CLion</li>
 <li>Windows entraîne des problèmes supplémentaires: bibliothèques manquantes, programme exécuté qui ne s'arrête jamais (vérifiez votre antivirus, certains avaient des problèmes avec AVAST), gestion des fichiers bizarre (Windows a deux modes: texte et binaire; il faut donc rajouter le mode <code>ios::binary</code> ou <code>ios::text</code> à l'ouverture des fichiers)</li>
 <li>Ce [<a href="https://github.com/MASTER-UNIV-SMB/INFO702-ENVIRONNEMENT-WINDOWS">https://github.com/MASTER-UNIV-SMB/INFO702-ENVIRONNEMENT-WINDOWS</a> site], gracieusement écrit par un ancien de la promotion, peut vous aider à installer Qt correctement sur un système Windows.</li>
 </ul>
@@ -127,12 +130,13 @@ $(function() {
 <p>Pour compiler un projet Qt, on utilise <code>qmake</code>, qui va créer un fichier <code>Makefile</code>, puis <code>make</code>. Si vous avez installé Qt dans un répertoire exotique, il faut donne le chemin complet de <code>qmake</code>. Ensuite tout est bien configuré.</p>
 <pre class="fragment">$ qmake
 $ make
-$ ./collider</pre><p>Normalement, vous avez un programme qui vous affiche quelque chose du genre ci-dessous:</p>
+$ ./collider                              # sous Linux
+$ ./collider.app/Contents/MacOS/collider  # sous MacOS</pre><p>Normalement, vous avez un programme qui vous affiche quelque chose du genre ci-dessous:</p>
 <div class="image">
 <img src="tp0-2.png" alt=""/>
 <div class="caption">
 Application Qt initiale</div></div>
-<p>Prenez le temps de regarder le code fourni (en commençant par <a class="el" href="collider_8cpp_source.html">collider.cpp</a>, puis <a class="el" href="objects_8hpp_source.html">objects.hpp</a> and <a class="el" href="objects_8cpp_source.html">objects.cpp</a>) et éventuellement chercher quelques explications dans la doc Qt [<a href="https://doc.qt.io/qt-5">https://doc.qt.io/qt-5</a>].</p>
+<p>Prenez le temps de regarder le code fourni (en commençant par <a class="el" href="collider_8cpp_source.html">collider.cpp</a>, puis <a class="el" href="objects_8hpp_source.html">objects.hpp</a> and <a class="el" href="objects_8cpp_source.html">objects.cpp</a>) et éventuellement chercher quelques explications dans la doc Qt [<a href="https://doc.qt.io/qt-5">https://doc.qt.io/qt-5</a> doc Qt5] [<a href="https://doc.qt.io/qt-6">https://doc.qt.io/qt-6</a> doc Qt6].</p>
 <p>On notera la hiérarchie suivante pour nos formes graphiques (cf. class <a class="el" href="structGraphicalShape.html" title="Abstract class that describes a graphical object with additional methods for testing collisions.">GraphicalShape</a>):</p>
 <div class="image">
 <img src="class-hierarchy.png" alt=""/>
@@ -148,30 +152,61 @@ Hiérarchie des classes utilisées pour représenter les éléments graphiques</
 </ul>
 <h1><a class="anchor" id="cpp_tp0_3"></a>
 3 - Premiers objets graphiques</h1>
+<h1><a class="anchor" id="cpp_tp0_3_1"></a>
+3.1 - classe Rectangle (graphique)</h1>
 <p>Vous allez définir deux classes. D'abord une classe <code>Rectangle</code>, qui, sur le modèle de <a class="el" href="structDisk.html" title="A disk is a simple graphical shape.">Disk</a>, hérite de <a class="el" href="structGraphicalShape.html" title="Abstract class that describes a graphical object with additional methods for testing collisions.">GraphicalShape</a>. Elle représente un rectangle quelconque. Pour afficher un rectangle avec Qt, on utilise la méthode QPainter::drawRect. N'oubliez pas de redéfinir toutes les méthodes abstraites (i.e. virtuelles pures) de <a class="el" href="structGraphicalShape.html" title="Abstract class that describes a graphical object with additional methods for testing collisions.">GraphicalShape</a>.</p>
+<div class="fragment"><div class="line"><span class="comment">// A rectangle is a simple graphical shape. It points to its master shape</span></div>
+<div class="line"><span class="comment">// in order to know in which color it must be painted.</span></div>
+<div class="line"><span class="keyword">struct </span>Rectangle : <span class="keyword">public</span> <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a></div>
+<div class="line">{</div>
+<div class="line">  Rectangle( QPointF lo, QPointF hi, <span class="keyword">const</span> <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* master_shape );</div>
+<div class="line">  <span class="keyword">virtual</span> <span class="keywordtype">void</span>    paint( QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option,</div>
+<div class="line">                         QWidget *widget) <span class="keyword">override</span>;</div>
+<div class="line">  <span class="keyword">virtual</span> QPointF randomPoint() <span class="keyword">const override</span>;</div>
+<div class="line">  <span class="keyword">virtual</span> <span class="keywordtype">bool</span>    isInside( <span class="keyword">const</span> QPointF&amp; p ) <span class="keyword">const override</span>;</div>
+<div class="line">  <span class="keyword">virtual</span> QRectF  boundingRect() <span class="keyword">const override</span>;</div>
+<div class="line">  <span class="keyword">const</span> QPointF      _lo, _hi;</div>
+<div class="line">  <span class="keyword">const</span> <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* _master_shape;</div>
+<div class="line">};</div>
+<div class="ttc" id="astructGraphicalShape_html"><div class="ttname"><a href="structGraphicalShape.html">GraphicalShape</a></div><div class="ttdoc">Abstract class that describes a graphical object with additional methods for testing collisions.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00023">objects.hpp:24</a></div></div>
+<div class="ttc" id="astructMasterShape_html"><div class="ttname"><a href="structMasterShape.html">MasterShape</a></div><div class="ttdoc">Polymorphic class that represents the top class of any complex shape.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00037">objects.hpp:38</a></div></div>
+</div><!-- fragment --><h1><a class="anchor" id="cpp_tp0_3_2"></a>
+3.2 - classe SpaceTruck</h1>
 <p>Vous ferez ensuite une classe <code>SpaceTruck</code>, qui hérite de <a class="el" href="structMasterShape.html" title="Polymorphic class that represents the top class of any complex shape.">MasterShape</a>, et dont la représentation graphique est un rectangle vert, qui devient jaune lors d'une collision. Au niveau des mouvements, il se déplacera en avant et en tournant à droite en permanence. On utilisera opportunément les méthodes héritées de QGraphicsItem, <code>QGraphicsItem::rotation</code> et <code>QGraphicsItem::setRotation</code>, pour faire ce mouvement dans <code>SpaceTruck::advance</code>.</p>
 <p>Voilà un résultat possible avec 10 astéroides, 5 space trucks de taille 100x20.</p>
 <div class="image">
 <img src="tp0-3s.png" alt=""/>
 <div class="caption">
 Astéroïdes et space trucks...</div></div>
-<dl class="section note"><dt>Note</dt><dd>On observe que la rotation s'applique avant le déplacement.</dd>
+<dl class="section note"><dt>Note</dt><dd>Le constructeur de Spacetruck s'occupe d'instancier le rectangle et d'appeler <code>this-&gt;setGraphicalShape</code> sur cet objet graphique.</dd>
 <dd>
-Pour le déplacement observez le code ci-dessous de <code>Asteroid::advance</code>. Le principe pour avancer tout droit est de faire un point (speed,0) (donc un peu à droite ou à l'"avant" de la forme qui est centré en (0,0)), et de demander les coordonnées correspondantes dans le repère du parent. Comme on change la position via <code>setPos</code>, ça déplace l'astéroïde.</dd></dl>
+On observe que la rotation s'applique avant le déplacement.</dd>
+<dd>
+Pour le déplacement observez le code ci-dessous de <code>Asteroid::advance</code>. Le principe pour avancer tout droit est de faire un point (speed,0) (donc un peu à l'"avant" de la forme qui est centré en (0,0)), et de demander les coordonnées correspondantes dans le repère du parent. Comme on change la position via <code>setPos</code>, ça déplace l'astéroïde.</dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span></div>
 <div class="line">Asteroid::advance(<span class="keywordtype">int</span> step)</div>
 <div class="line">{</div>
 <div class="line">  <span class="keywordflow">if</span> (!step) <span class="keywordflow">return</span>;</div>
 <div class="line">  setPos( mapToParent( _speed, 0.0 ) ); <span class="comment">// avance dans le repère local</span></div>
+<div class="line">  setRotation( rotation() + angle );    <span class="comment">// si vous voulez tourner, angle != 0</span></div>
 <div class="line">  MasterShape::advance( step );         <span class="comment">// regarde si la forme a dépassé les bords</span></div>
 <div class="line">}</div>
 </div><!-- fragment --><h1><a class="anchor" id="cpp_tp0_4"></a>
 4 - Objets complexes par assemblage de formes simples</h1>
 <p>On va fabriquer des formes plus complexes par assemblage de formes simples. Pour ce faire on va créer une forme graphique <code>Union</code>, qui hérite de <a class="el" href="structGraphicalShape.html" title="Abstract class that describes a graphical object with additional methods for testing collisions.">GraphicalShape</a>, et dont le seul rôle est de grouper deux <a class="el" href="structGraphicalShape.html" title="Abstract class that describes a graphical object with additional methods for testing collisions.">GraphicalShape</a>. On note les points suivants:</p>
 <ul>
-<li>dans <code>Union::randomPoint</code> : il faudra tirer une fois sur deux un point dans la forme 1 et un point dans la forme 2. Il suffit pour faire cela de stocker une donnée membre booléenne que l'on changera à chaque appel. Comme cette méthode est <code>const</code>, il faudra définir ce booléen comme <code>mutable</code>.</li>
+<li>dans <code>Union::randomPoint</code> : il faudra tirer une fois sur deux un point dans la forme 1 et un point dans la forme 2. Le plus simple est de tirer un entier aléatoire et d'appeler l'un ou l'autre en fonction de la parité. Une solution plus évoluée est de calculer les aires A1 et A2 des boites englobantes des deux formes, et de demander un point dans la forme 1, si <code>rand01() &lt; A1/(A1+A2</code>, sinon de demander le point dans la forme 2.</li>
 <li>dans <code>Union::isInside</code> il faudra bien tester si le point appartient à une des formes.</li>
 <li>dans &lsquo;Union::boundingRect&rsquo; on note que Qt donne un <code>operator|</code> sur les QRect pour calculer le rectangle englobant de deux rectangles.</li>
+<li><p class="startli">dans <code>Union::Union</code> il faut préciser à Qt la hiérarchie d'objets graphiques pour qu'il s'occupe de leur affichage. On utiliser <code>setParentItem</code> ainsi:</p>
+<div class="fragment"><div class="line">Union::Union( <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a>* f1, <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a>* f2 )</div>
+<div class="line">  : _f1( f1 ), _f2( f2 )</div>
+<div class="line">{</div>
+<div class="line">  _f1-&gt;setParentItem( <span class="keyword">this</span> );</div>
+<div class="line">  _f2-&gt;setParentItem( <span class="keyword">this</span> );</div>
+<div class="line">}     </div>
+</div><!-- fragment --></li>
+<li>la méthode <code>Union::paint(...)</code> est alors définie, mais ne contient pas de code, car Qt (grâce à <code>setParentItem</code>) peut aller chercher tout seul les autres objets graphiques.</li>
 </ul>
 <p>On pourra ensuite mettre à jour <code>SpaceTruck</code> pour qu'il soit composé de formes simples différentes.</p>
 <div class="fragment"><div class="line"><span class="comment">// In SpaceTruck constructor</span></div>
@@ -188,20 +223,26 @@ Pour le déplacement observez le code ci-dessous de <code>Asteroid::advance</cod
 De plus jolis space trucks...</div></div>
 <h1><a class="anchor" id="cpp_tp0_5"></a>
 5 - Transformations géométriques</h1>
-<p>Pour composer des formes complexes, il nous reste à nous donner des transformations géométriques pour pouvoir tourner et placer nos formes. On va définir une classe <code>Transformation</code>, qui prendra en paramètre un <a class="el" href="structGraphicalShape.html" title="Abstract class that describes a graphical object with additional methods for testing collisions.">GraphicalShape</a> <em>f</em>, un vecteur de déplacement <em>dx</em> et un angle de rotation \angle:</p>
+<p>Pour composer des formes complexes, il nous reste à nous donner des transformations géométriques pour pouvoir tourner et placer nos formes. On va définir une classe <code>Transformation</code>, qui prendra en paramètre un <a class="el" href="structGraphicalShape.html" title="Abstract class that describes a graphical object with additional methods for testing collisions.">GraphicalShape</a> <em>f</em>, un vecteur de déplacement <em>dx</em> et un angle de rotation <em>angle:</em> </p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>Transformation: <span class="keyword">public</span> <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a> {</div>
 <div class="line">  Transformation( <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a>* f, QPointF dx, qreal angle );</div>
 <div class="line">  ...</div>
 <div class="line">};</div>
-<div class="ttc" id="astructGraphicalShape_html"><div class="ttname"><a href="structGraphicalShape.html">GraphicalShape</a></div><div class="ttdoc">Abstract class that describes a graphical object with additional methods for testing collisions.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00023">objects.hpp:24</a></div></div>
-</div><!-- fragment --><p>Il faut alors utiliser <code>this-&gt;setPos</code> et <code>this-&gt;setRotation</code> pour placer <code>Transformation</code> correctement dans son repère. On veillera ensuite à redéfinir les méthodes usuelles:</p>
+</div><!-- fragment --><ul>
+<li>dans le constructeur, ne pas oubliez le <code>setParentItem( _f )</code> puis utiliser <code>this-&gt;setPos</code> et <code>this-&gt;setRotation</code> pour placer <code>Transformation</code> correctement dans son repère. On mémorisera aussi en donnée membre, à la fois le déplacement <code>dx</code> et l'angle <code>angle</code>, voire même on peut précalculer <code>cos( angle * pi/180 )</code>et <code>sin( angle * pi/180 )</code>.</li>
+</ul>
+<p>On veillera ensuite à redéfinir les méthodes usuelles:</p>
 <ul>
 <li>dans <code>Transformation::randomPoint</code> : on tire le point aléatoire dans la forme <em>f</em>, puis on applique la rotation et enfin la translation.</li>
 <li>dans <code>Transformation::isInside( p )</code> : on va dans l'autre sens, on soustrait le déplacement, on applique la rotation inverse et on demande à <em>f</em> si le point obtenu est dedans.</li>
-<li>dans &lsquo;Transformation::boundingRect&rsquo; il suffit d'utiliser la méthode héritée <code>mapRectToParent</code>.</li>
+<li>dans <code>Transformation::boundingRect</code> il suffit d'utiliser la méthode héritée <code>mapRectToParent</code> qui fait tout le calcul voulu de rotation d'une boite !</li>
+<li>dans <code>Transformation::paint(...)</code> le code est vide, car Qt (grâce à <code>setParentItem</code>) peut aller chercher tout seul les autres objets graphiques.</li>
 </ul>
+<dl class="section note"><dt>Note</dt><dd>On rappelle qu'une rotation de centre \( (0,0) \) et d'angle <em>a</em> (en radian) d'un point \( p=(x,y) \) donne le point \(
+  q=(x&#39;,y&#39;) \) ainsi:</dd></dl>
+<p>\( x&#39; = x * \cos(a) - y * \sin(a),  \qquad y&#39; = x * \sin(a) + y * \cos(a) \).</p>
 <p>On pourra alors s'amuser à faire des objets plus complexes en composant nos formes. On pourra ainsi créer un vaisseau spatial sous la forme d'une classe <code>Enterprise</code> qui hérite de <a class="el" href="structMasterShape.html" title="Polymorphic class that represents the top class of any complex shape.">MasterShape</a>. On choisira une couleur grise pour le vaisseau et rouge en cas de collision.</p>
-<p>Le code suivant vous plae les éléments graphiques dans le constructeur de <code>Enterprise</code>:</p>
+<p>Le code suivant vous place les éléments graphiques dans le constructeur de <code>Enterprise</code>:</p>
 <div class="fragment"><div class="line">Rectangle*      r1 = <span class="keyword">new</span> Rectangle( QPointF( -100, -8 ), QPointF( 0, 8 ), <span class="keyword">this</span> );</div>
 <div class="line">Rectangle*      r2 = <span class="keyword">new</span> Rectangle( QPointF( -100, -8 ), QPointF( 0, 8 ), <span class="keyword">this</span> );</div>
 <div class="line">Rectangle*      rb = <span class="keyword">new</span> Rectangle( QPointF( -40, -9 ), QPointF( 40, 9 ), <span class="keyword">this</span> );</div>
@@ -232,22 +273,23 @@ This is starship USS Enterprise NCC-1701 exploring new galaxies, but stalled in 
 <p>En fait, on peut étendre le principe précédent à des images quelconques. L'idée est la suivante:</p>
 <ul>
 <li>Une image a une partie "pleine" (là où il y a des couleurs) et une partie "vide" (là où elle est transparente, c'est-à-dire là où son "alpha-channel" est à 0).</li>
-<li>A partir du QPixmap de l'image, on fabrique un QBitmap qui est son masque plein/vide.</li>
+<li>A partir du <code>QPixmap</code> de l'image, on fabrique un <code>QBitmap</code> qui est son masque plein/vide.</li>
 <li>tirer un point aléatoire dans une telle image revient à tirer un point aléatoire dans l'image et à le retirer tant qu'on tombe dans un pixel vide du masque.</li>
-<li>un point est dans l'image (isInside) lorsqu'il tombe dans un pixel plein du masque.</li>
+<li>un point est dans l'image (<code>isInside</code>) lorsqu'il tombe dans un pixel plein du masque.</li>
 </ul>
-<p>Pour charger une image, il suffit de déclarer un QPixmap et de lui donner un nom de fichier listé dans les ressources (cf <code>collider.qrc</code>). On utilisera le format GIF qui peut stocker de la transparence.</p>
-<div class="fragment"><div class="line">QPixmap asteroid_pixmap(<span class="stringliteral">&quot;:/images/asteroid.gif&quot;</span>);</div>
-</div><!-- fragment --><p>On écrira donc ensuite une classe <code>ImageShape</code> qui hérite de <a class="el" href="structGraphicalShape.html" title="Abstract class that describes a graphical object with additional methods for testing collisions.">GraphicalShape</a>. On la construit en lui donnant un QPixmap et un <a class="el" href="structMasterShape.html" title="Polymorphic class that represents the top class of any complex shape.">MasterShape</a>.</p>
+<p>Pour charger une image, il suffit de déclarer un <code>QPixmap</code> et de lui donner un nom de fichier listé dans les ressources (cf <code>collider.qrc</code>). On utilisera le format GIF qui peut stocker de la transparence.</p>
+<div class="fragment"><div class="line"><span class="comment">// dans collider.cpp, le pixmap ne doit être chargé qu&#39;une fois.</span></div>
+<div class="line">QPixmap asteroid_pixmap(<span class="stringliteral">&quot;:/images/asteroid.gif&quot;</span>);</div>
+</div><!-- fragment --><p>On écrira donc ensuite une classe <code>ImageShape</code> qui hérite de <a class="el" href="structGraphicalShape.html" title="Abstract class that describes a graphical object with additional methods for testing collisions.">GraphicalShape</a>. On la construit en lui donnant un <code>QPixmap</code> et un <a class="el" href="structMasterShape.html" title="Polymorphic class that represents the top class of any complex shape.">MasterShape</a>. On suppose qu'elle occupe les coordonnées (0,0) -&gt; (w-1,h-1) où w et h sont la largeur et la hauteur de l'image.</p>
 <div class="fragment"><div class="line">ImageShape::ImageShape( <span class="keyword">const</span> QPixmap &amp; pixmap, <span class="keyword">const</span> <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* master_shape )</div>
 <div class="line">  : _pixmap( pixmap ), _master_shape( master_shape )</div>
 <div class="line">{</div>
-<div class="line">  _mask = _pixmap.mask();</div>
+<div class="line">  _mask     = _pixmap.mask(); <span class="comment">// donnée membre QBitmap pour affichage</span></div>
 <div class="line">  _mask_img = QImage( _mask.toImage().convertToFormat( QImage::Format_Mono ) );</div>
 <div class="line">}</div>
-<div class="ttc" id="astructMasterShape_html"><div class="ttname"><a href="structMasterShape.html">MasterShape</a></div><div class="ttdoc">Polymorphic class that represents the top class of any complex shape.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00037">objects.hpp:38</a></div></div>
 </div><!-- fragment --><p>Le <code>QBitmap</code> <code>_mask</code> servira lors des affichages de collision. C'est une structure optimisée pour l'affichage. Le <code>QImage</code> _mask_img est quant à lui optimisé pour les requêtes pixel par pixel et servira pour <code>ImageShape::randomPoint</code> et <code>ImageShape::isInside</code>.</p>
 <p>Ecrivez ces méthodes selon le principe explicité ci-dessus. On utilisera la méthode <code>QImage::pixelIndex</code> qui retourne 0 sur du vide et 1 sur du plein.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Attention, <code>_mask_img.pixel( p )</code> fonctionne si le <code>QPoint p</code> est à l'intérieur de l'image. Dans la méthode <code>ImageShape::isInside</code>, on vérifie donc d'abord si le point est dans la boite englobante de l'image <code>ImageShape::boundingRect</code> avant de tester si ce point touche un pixel du masque de l'image.</dd></dl>
 <p>Pour l'affichage, on peut utiliser le code suivant:</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span></div>
 <div class="line">ImageShape::paint(QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *, QWidget *)</div>
@@ -294,17 +336,17 @@ TP à rendre</h1>
 <li>Vous écrirez un petit README (texte) dans lequel vous préciserez les points suivants :<ul>
 <li>nom(s), prénom(s), groupe (monôme ou binôme)</li>
 <li>Vous listerez d'abord les points du TP que vous avez abordés, en précisant si selon vous, vous avez traité complètement ou traité partiellement la question. Précisez aussi pour chaque question si votre code fonctionne ou dans quelle mesure il fonctionne.</li>
-</ul>
-</li>
 <li>vous placerez dans une archive (zip ou tar.gz) votre README ainsi que vos sources/entêtes/fichiers de config/images utiles, de façon à ce que je puisse tout recompiler en tapant "qmake" puis "make".</li>
 <li>le nom de votre archive sera de la forme <code>TP-XXX-YYY.*</code> où <code>XXX</code> et <code>YYY</code> désignent les noms respectifs des étudiants du binôme.</li>
-<li>vous m'enverrez votre archive via <a href="https://www.lama.univ-savoie.fr/TPLab">TPLab </a> avant le <b>lundi</b> <b>11</b> <b>octobre</b> <b>2021</b> <b>minuit</b>. </li>
+<li>vous m'enverrez votre archive via <a href="https://tplab.apps.math.cnrs.fr">TPLab </a>, une première version à la fin du TP, une autre avant le <b>mardi</b> <b>17</b> <b>octobre</b> <b>2023</b> <b>minuit</b>. </li>
+</ul>
+</li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 9 2023 11:45:37 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Oct 9 2023 16:15:33 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
