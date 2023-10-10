@@ -23,6 +23,8 @@ informations.
 * [Fiche 4 - mécanismes d'allocation mémoire (PDF)](Cours/fiche-4.pdf) accompagne le quatrième cours 
 * [Fiche 5 - structures auto-référentes, pointeurs de fonction, préprocesseur (PDF)](Cours/fiche-5.pdf) accompagne le cinquième cours
 
+### [Pages des TPs](Tests/html)
+
 ### Quelques exemples de code C
 
 * [labyrinthes](Lessons/lesson-3-a.c) [labyrinthes (résolution progressive)](Lessons/lesson-3-b.c)
