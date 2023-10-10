@@ -17,7 +17,7 @@ var searchData=
   ['3_208_20effacement_20de_20lignes_14',['3.8 - Effacement de lignes',['../tp2.html#TP2-effacement',1,'']]],
   ['3_209_20pièces_20générales_15',['3.9 - Pièces générales',['../tp2.html#TP2-pieces-complexes',1,'']]],
   ['3_20affichage_20de_20la_20pièce_20en_20attente_16',['4.3 - Affichage de la pièce en attente',['../tp3.html#TP3-affichepiece',1,'']]],
-  ['3_20debugger_20ddd_17',['3 - Debugger ddd',['../tp1.html#Trois',1,'']]],
+  ['3_20debugger_20ddd_20xxgdb_20gdb_17',['3 - Debugger ddd / xxgdb / gdb',['../tp1.html#Trois',1,'']]],
   ['3_20jeu_20complet_18',['5.3 - Jeu complet',['../tp3.html#TP3-jeu_complet',1,'']]],
   ['3_20l_20interface_20gtk_19',['3 - L&apos;interface GTK',['../tp3.html#TP3-fenetre',1,'']]],
   ['3_20réalisation_20du_20programme_20en_20c_20',['3 - Réalisation du programme en C',['../tp2.html#TP2-prog',1,'']]]

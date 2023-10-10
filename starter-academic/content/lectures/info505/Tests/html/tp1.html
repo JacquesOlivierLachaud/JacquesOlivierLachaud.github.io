@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>INFO505 Programmation C: TP1 - Enoncé - Quelques algorithmes simples, tracés, et récursivité, debugger ddd</title>
+<title>INFO505 Programmation C: TP1 - Enoncé - Quelques algorithmes simples, tracés, et récursivité, debugger</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -76,7 +76,7 @@ $(function() {
 
 </div><!-- top -->
 <div><div class="header">
-  <div class="headertitle"><div class="title">TP1 - Enoncé - Quelques algorithmes simples, tracés, et récursivité, debugger ddd</div></div>
+  <div class="headertitle"><div class="title">TP1 - Enoncé - Quelques algorithmes simples, tracés, et récursivité, debugger</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
@@ -85,7 +85,7 @@ $(function() {
 </ul>
 </li>
 <li class="level1"><a href="#deux">2 - Les années bissextiles</a></li>
-<li class="level1"><a href="#Trois">3 - Debugger ddd</a></li>
+<li class="level1"><a href="#Trois">3 - Debugger ddd / xxgdb / gdb</a></li>
 <li class="level1"><a href="#quatre">4 - Correction d&#39;un tri à bulle avec ddd</a></li>
 <li class="level1"><a href="#Cinq">5 - Puissance 4</a><ul><li class="level2"><a href="#OptP4">Développements optionnels</a></li>
 </ul>
@@ -101,13 +101,19 @@ $(function() {
 <li class="level2"><a href="#plus_loin">Autres fractales</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#huit">9 - Pointeurs, pile d&#39;exécution, ddd</a></li>
+<li class="level1"><a href="#huit">9 - Pointeurs, pile d&#39;exécution, débuggeur</a></li>
 <li class="level1"><a href="#dix">10 - Double boucles</a></li>
-<li class="level1"><a href="#fin">11 - Conclusion</a></li>
+<li class="level1"><a href="#onze">11 - Génération de terrain sur grille hexagonale</a></li>
+<li class="level1"><a href="#fin">12 - Conclusion</a></li>
 </ul>
 </div>
-<div class="textblock"><p>Ce TP est un échauffement pour les TPs ultérieurs, afin que vous retrouvez vite vos réflexes sur le C. Passez vite sur les éléments que vous maitrisez. Les points importants ci-dessous sont l'utilisation de tableaux à deux dimensions (puissance 4), les structures et pointeurs vers structure (le logo), et l'utilisation du débuggeur.</p>
+<div class="textblock"><p>Ce TP est un échauffement pour les TPs ultérieurs, afin que vous retrouvez vite vos réflexes sur le C. Passez vite sur les éléments que vous maitrisez. Les points importants ci-dessous sont l'utilisation de tableaux à deux dimensions (puissance 4, génération de terrain), les structures et pointeurs vers structure (le logo), et l'utilisation d'un débuggeur.</p>
 <dl class="section note"><dt>Note</dt><dd>Si vous n'êtes pas à l'aise, ça vaut le coup de perdre du temps au début sur les premières questions afin de se familiariser avec le langage C.</dd></dl>
+<p><b>Environnements</b> <b>de</b> <b>développement</b> <b>C</b>. Il y a plusieurs choix possibles. On peut:</p>
+<ul>
+<li>soit utiliser un environnement intégré (IDE) genre <code>Anjuta</code>, <code>Eclipse</code>, <code>Visual studio</code>, etc.</li>
+<li>soit utiliser un éditeur de code (<code>emacs</code>, <code>vim</code>, <code>sublime</code>) et les lignes de commande pour compiler (<code>gcc</code> ou faire des fichiers <code>Makefile</code>).</li>
+</ul>
 <h1><a class="anchor" id="intro"></a>
 1 - Premier programme en C</h1>
 <p>Cette section vise uniquement à vous faire comprendre comment un exécutable C communique avec le terminal d'où il est lancé.</p>
@@ -139,14 +145,14 @@ Valeur de retour et paramètres d'un programme C.</h2>
 </div><!-- fragment --><p>On va observer maintenant les paramètres en entrée avec le programme C suivant (<code>essai2.c</code>)</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> affiche( <span class="keywordtype">int</span> n, <span class="keywordtype">char</span>** str )</div>
+<div class="line"><span class="keywordtype">void</span> affiche( <span class="keywordtype">int</span> n, <span class="keywordtype">char</span>* str[] )</div>
 <div class="line">{</div>
 <div class="line">  <span class="keywordtype">int</span> i;</div>
 <div class="line">  <span class="keywordflow">for</span> ( i = 0; i &lt; n; i++ )</div>
 <div class="line">    printf( <span class="stringliteral">&quot;argv[ %d ] = %s\n&quot;</span>, i, str[ i ] );</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv )</div>
+<div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[] )</div>
 <div class="line">{</div>
 <div class="line">  affiche( argc, argv );</div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
@@ -165,17 +171,18 @@ Valeur de retour et paramètres d'un programme C.</h2>
 <dl class="section note"><dt>Note</dt><dd>Attention les paramètres envoyés au programme C via la variable <code>argv</code> sont des <b>chaînes</b> <b>de</b> <b>caractères</b>. Par exemple ci-dessus, <code>argv[ 4 ]</code> pointe vers 3 caractères consécutifs en mémoire ('1', '0', '\0').</dd></dl>
 <h1><a class="anchor" id="deux"></a>
 2 - Les années bissextiles</h1>
-<p>On va implémenter l'algorithme qui détermine si une année est bissextile. L'année <code>n</code> est bissextile si et seulement si <code>n</code> est divisible par 4 et <code>n</code> n'est pas divisible par 100, ou alors <code>n</code> est divisible par 400.</p>
+<p>On va implémenter l'algorithme qui détermine si une année est bissextile:</p>
+<p><em>L'année <code>n</code> est bissextile si et seulement si <code>n</code> est divisible par 4 et <code>n</code> n'est pas divisible par 100, ou alors <code>n</code> est divisible par 400.</em></p>
 <p>On peut commencer par faire un programme qui demande interactivement à l'utilisateur d'entrer une année et lui répond si elle est bissextile ou non.</p>
 <div class="fragment"><div class="line">[you] ./bissextile</div>
 <div class="line">Quelle année souhaitez vous tester ?</div>
 <div class="line">2001</div>
 <div class="line"> </div>
 <div class="line">L<span class="stringliteral">&#39;année 2001 n&#39;</span>est pas une année bissextile.</div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>On utilisera opportunément la fonction scanf pour demander à l'utilisateur de saisir un entier sous la forme: <div class="fragment"><div class="line"><span class="keywordtype">int</span> annee;</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>On utilisera opportunément la fonction <code>scanf</code> pour demander à l'utilisateur de saisir un entier sous la forme: <div class="fragment"><div class="line"><span class="keywordtype">int</span> annee;</div>
 <div class="line">scanf(<span class="stringliteral">&quot;%d&quot;</span>,&amp;annee); <span class="comment">// annee contiendra le nombre saisi au clavier.</span></div>
 </div><!-- fragment --></dd></dl>
-<p>On peut modifier le programme précédent pour que l'année soit récupérée comme argument sur la ligne de commande.</p>
+<p>Dans un deuxième temps, on peut modifier le programme précédent pour que l'année soit récupérée comme argument sur la ligne de commande.</p>
 <div class="fragment"><div class="line">[you] ./bissextile2 2001</div>
 <div class="line">L<span class="stringliteral">&#39;année 2001 n&#39;</span>est pas une année bissextile.</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Dans ce cas, il faut convertir le paramètre donné au programme C via <code>argv</code> (une chaîne de caractère) en un entier, via la fonction <code>atoi</code> (définie dans <code>stdlib.h</code>).</dd></dl>
@@ -185,10 +192,11 @@ Valeur de retour et paramètres d'un programme C.</h2>
 <div class="line"><span class="comment">// retourne le nombre d&#39;annees bissextiles entre debut et fin inclus.</span></div>
 <div class="line"><span class="keywordtype">int</span> nb_annees_bissextiles( <span class="keywordtype">int</span> debut, <span class="keywordtype">int</span> fin );</div>
 </div><!-- fragment --><p>On appelera le programme ainsi: </p><div class="fragment"><div class="line">[you] ./bissextile2 1900 2000</div>
-<div class="line">Il y a 25 années bisextiles entre 1900 et 2000.</div>
+<div class="line">Il y a 25 années bissextiles entre 1900 et 2000.</div>
 </div><!-- fragment --><h1><a class="anchor" id="Trois"></a>
-3 - Debugger ddd</h1>
-<p>Le but est de se familiariser au debugger ddd, afin de plus facilement trouver ses bugs et les corriger. Un debugger permet (entre autres) d'executer un programme en l'arrêtant à un point donné, d'afficher les valeurs des variables locales à un moment donné, d'afficher les paramètres donnés à une fonction, d'afficher l'état du programme lors d'un crash...</p>
+3 - Debugger ddd / xxgdb / gdb</h1>
+<p>Le but est de se familiariser avec un debugger, afin de plus facilement trouver ses bugs et les corriger. Normalement vous devez avoir au moins <code>gdb</code>, <code>xxgdb</code> et <code>ddd</code> installés. Les deux derniers sont un peu plus user-friendly que <code>gdb</code>.</p>
+<p>Un debugger permet (entre autres) d'executer un programme en l'arrêtant à un point donné, d'afficher les valeurs des variables locales à un moment donné, d'afficher les paramètres donnés à une fonction, d'afficher l'état du programme lors d'un crash...</p>
 <dl class="section note"><dt>Note</dt><dd>Toujours utiliser l'option <code>-g</code> en compilant un programme pour le debugger! Le debugger peut fonctionner sans, mais sera très limité.</dd></dl>
 <p>Voilà un programme avec une fonction calculant les termes de la suite de Fibonacci et les affichant, que l'on appellera <code>fibo</code>.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
@@ -209,11 +217,17 @@ Valeur de retour et paramètres d'un programme C.</h2>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p> Compilez-le (sans oublier l'option <code>-g</code>), puis lancez-le depuis <code>ddd</code> avec la commande <code>ddd fibo</code>. Vous pouvez executer le programme avec <code>run</code>, et tout devrait fonctionner normalement, les valeurs devraient s'afficher dans la console du debugger.</p>
-<p>Placer un breakpoint à la ligne 15, celle du <code>printf</code>. Cliquer dessus (à un endoit tel qu'il soit bien marqué <code><a class="el" href="fibo_8c_source.html">fibo.c</a>:15</code> en haut de l'écran et pas <code>printf</code> ou autre) puis sur le bouton break. Vous pouvez également utiliser la console gdb disponible (la commande <code>break <a class="el" href="fibo_8c_source.html">fibo.c</a>:15</code> rajoute le breakpoint). Si tout va bien, un symbole stop est placé sur la ligne. Lancer le programme avec run, il devrait s'arrêter au breakpoint. Pour lui dire de reprendre son execution, <code>cont</code> devrait le lancer jusqu'à ce qu'il rencontre de nouveau le breakpoint.</p>
-<p>Pour afficher les variables locales, Data -&gt; Display local variables et Data -&gt; Display local arguments. Vous devriez pouvoir tracker la valeur de <code>i</code>. Retirer le breackpoint de la ligne du printf, puis en mettre aux deux <code>return</code> de la fonction fibo. Voir le changement de variables locales et des arguments affichés.</p>
-<p>On peut dans <code>Status -&gt; Backtrace</code> afficher la "backtrace", qui indique la fonction dans laquelle on se trouve, depuis quelle fonction cette fonction a été appelée et ainsi de suite... Par exemple, en faisant tourner ce programme on peut avoir la fonction <code>fibo</code> appelée depuis <code>fibo</code>, elle même appelée depuis <code>fibo</code> appelée depuis <code>main</code>. Avec up et down, on peut parcourir la backtrace et voir les variables locales à l'emplacement de ces appels de fonction. On devrait par exemple voir que chaque appel de <code>fibo</code> dans la backtrace se fait avec un argument différent et dans la 'appel de <code>fibo</code> depuis <code>main</code> on peut voir la valeur de <code>i</code>.</p>
-<p>A partir de maintenant, n'hésitez pas à lancer vos programmes depuis <code>ddd</code> afin d'identifier des erreurs, vérifier que tout ce passe comme vous le voulez dans vos boucles etc...</p>
+</div><!-- fragment --><p>Compilez-le (sans oublier l'option <code>-g</code>), puis lancez-le avec un débuggueur, par exemple avec la commande <code>ddd fibo</code>.</p>
+<pre class="fragment">[you] mygcc -g fibo.c -o fibo
+[you] ddd fibo
+</pre><p>Vous pouvez executer le programme avec <code>run</code>, et tout devrait fonctionner normalement, les valeurs devraient s'afficher dans la console du debugger.</p>
+<p>Placer un breakpoint à la ligne 15, celle du <code>printf</code>. Cliquer dessus (à un endoit tel qu'il soit bien marqué <code><a class="el" href="fibo_8c_source.html">fibo.c</a>:15</code> en haut de l'écran et pas <code>printf</code> ou autre) puis sur le bouton break. Vous pouvez également utiliser la console gdb disponible (la commande <code>break <a class="el" href="fibo_8c_source.html">fibo.c</a>:15</code> rajoute le breakpoint). Si tout va bien, un symbole stop est placé sur la ligne.</p>
+<p>Lancer le programme avec run, il devrait s'arrêter au breakpoint. Pour lui dire de reprendre son execution, <code>cont</code> devrait le lancer jusqu'à ce qu'il rencontre de nouveau le breakpoint.</p>
+<p>Pour afficher les variables locales, <code>Data -&gt; Display local variables</code> et <code>Data -&gt; Display local arguments</code>.</p>
+<p>Vous devriez pouvoir tracker la valeur de <code>i</code>. Retirer le breackpoint de la ligne du <code>printf</code>, puis en mettre aux deux <code>return</code> de la fonction <code>fibo</code>. Voir le changement de variables locales et des arguments affichés.</p>
+<p>On peut dans <code>Status -&gt; Backtrace</code> afficher la "backtrace", i.e. la <b>pile</b> <b>d'</b> <b>éxecution</b>, qui indique la fonction dans laquelle on se trouve, depuis quelle fonction cette fonction a été appelée et ainsi de suite...</p>
+<p>Par exemple, en faisant tourner ce programme on peut avoir la fonction <code>fibo</code> appelée depuis <code>fibo</code>, elle même appelée depuis <code>fibo</code> appelée depuis <code>main</code>. Avec up et down, on peut parcourir la backtrace et voir les variables locales à l'emplacement de ces appels de fonction. On devrait par exemple voir que chaque appel de <code>fibo</code> dans la backtrace se fait avec un argument différent et dans la 'appel de <code>fibo</code> depuis <code>main</code> on peut voir la valeur de <code>i</code>.</p>
+<p>A partir de maintenant, n'hésitez pas à lancer vos programmes depuis un débuggeur afin d'identifier des erreurs, vérifier que tout ce passe comme vous le voulez dans vos boucles etc...</p>
 <h1><a class="anchor" id="quatre"></a>
 4 - Correction d'un tri à bulle avec ddd</h1>
 <p>On vous donne le code suivant, qui est censé implémenter un tri à bulle:</p>
@@ -257,7 +271,7 @@ Valeur de retour et paramètres d'un programme C.</h2>
 <div class="line">  tri( t, t+20 );</div>
 <div class="line">  affiche( t, t+20 );</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>Si vous le compilez et l'exécutez, vous allez voir qu'il "plante" après le premier affichage (segmentation fault). Recompilez bien le programme avec l'option <code>-g</code> pour le débuggeur (par exemple en utilisant <code>mygcc</code>). Exécutez-le pas à pas avec <code>ddd</code> et observez où et quand se produit l'erreur. Corrigez le programme pour qu'il affiche plutôt:</p>
+</div><!-- fragment --><p>Si vous le compilez et l'exécutez, vous allez voir qu'il "plante" après le premier affichage (segmentation fault). Recompilez bien le programme avec l'option <code>-g</code> pour le débuggeur (par exemple en utilisant <code>mygcc</code>). Exécutez-le pas à pas avec un débuggueur et observez où et quand se produit l'erreur. Corrigez le programme pour qu'il affiche plutôt:</p>
 <pre class="fragment">[you] ./a.out 
  83 86 77 15 93 35 86 92 49 21 62 27 90 59 63 26 40 26 72 36
  15 21 26 26 27 35 36 40 49 59 62 63 72 77 83 86 86 90 92 93
@@ -295,7 +309,7 @@ Valeur de retour et paramètres d'un programme C.</h2>
 <div class="line">| . | . | . | . | . | . | . |</div>
 <div class="line"> </div>
 <div class="line">  1   2   3   4   5   6   7 </div>
-</div><!-- fragment --><p>Ensuite vous pouvez écrire une action <code>joue</code> qui met le tableau à jour lorsque le joueur <code>j</code> joue dans la colonne <code>i</code>. </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> joue (<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> c, Jeu p)</div>
+</div><!-- fragment --><p>Ensuite vous pouvez écrire une action <code>joue</code> qui met le tableau <code>p</code> à jour lorsque le joueur <code>j</code> joue dans la colonne <code>i</code>. </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> joue (<span class="keywordtype">int</span> j, <span class="keywordtype">int</span> c, Jeu p)</div>
 </div><!-- fragment --><p>Vous pouvez tester tout cela en modifiant le <code>main</code> précédent. Par exemple lors de l'exécution de ce code... </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
 <div class="line">  Jeu game;</div>
@@ -332,7 +346,8 @@ Valeur de retour et paramètres d'un programme C.</h2>
 <div class="line"> </div>
 <div class="line">  1   2   3   4   5   6   7 </div>
 </div><!-- fragment --><p>En réalité on se rend compte qu'on a besoin d'une fonction <code>n_est_pas_pleine</code> qui teste si il reste une place dans une colonne donnée.</p>
-<p>L'écrire de manière à ce qu'elle soit utilisable avec le <code>main</code> du fichier <a class="el" href="puissance4_8c_source.html">puissance4.c</a> (cliquez dessus pour le récupérer). On affichera une erreur "C'est impossible !" dans ce cas.</p>
+<p>L'écrire de manière à ce qu'elle soit utilisable avec le <code>main</code> du fichier <a class="el" href="puissance4_8c_source.html">puissance4.c</a> (cliquez dessus pour le récupérer, code des fonctions à compléter). On affichera une erreur "C'est
+  impossible !" dans ce cas.</p>
 <p>On peut enfin ajouter un peu de couleur sur le terminal en utilisant les caractères graphiques "Escape". Définissez d'abord la macro suivante: </p><div class="fragment"><div class="line"><span class="preprocessor">#define COLOR(X) printf(&quot;\033[&quot;X&quot;m&quot;)</span></div>
 </div><!-- fragment --><p>Utilisez ensuite <code>COLOR("31");</code> pour passer en rouge et <code>COLOR("33");</code> pour passer en jaune. <code>Color("0");</code> réinitialise au défaut.</p>
 <h2><a class="anchor" id="OptP4"></a>
@@ -425,7 +440,6 @@ Codage de la tortue</h2>
 <li><code>affiche</code> : affiche les coordonnées de la tortue.</li>
 <li><code>tourneG</code> : tourne à gauche d'un angle donné</li>
 <li><code>tourneD</code> : tourne à droite d'un angle donné</li>
-<li><code>allezA</code> : déplace la tortue à de nouvelles coordonnées données, en gardant sa tête dans la même direction.</li>
 </ul>
 <p>Par exemple, les fonctions <code>init</code> et <code>avance</code> s'écrivent ainsi :</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
@@ -436,18 +450,18 @@ Codage de la tortue</h2>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// On note le passage en entree/sortie du C. </span></div>
-<div class="line"><span class="keywordtype">void</span> init( Tortue* ptrTortue )</div>
+<div class="line"><span class="keywordtype">void</span> init( Tortue* pT )</div>
 <div class="line">{</div>
-<div class="line">  ptrTortue-&gt;x = 0.0f;</div>
-<div class="line">  ptrTortue-&gt;y = 0.0f;</div>
-<div class="line">  ptrTortue-&gt;t = 0.0f;</div>
+<div class="line">  pT-&gt;x = 0.0f;</div>
+<div class="line">  pT-&gt;y = 0.0f;</div>
+<div class="line">  pT-&gt;t = 0.0f;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// On note le passage en entree/sortie du C pour des paramètres à modifier. </span></div>
-<div class="line"><span class="keywordtype">void</span> avance( Tortue* ptrTortue, <span class="keywordtype">float</span> d )</div>
+<div class="line"><span class="keywordtype">void</span> avance( Tortue* pT, <span class="keywordtype">float</span> d )</div>
 <div class="line">{</div>
-<div class="line">  ptrTortue-&gt;x = ptrTortue-&gt;x + d * cos( ptrTortue-&gt;t * M_PI / 180.0 );</div>
-<div class="line">  ptrTortue-&gt;y = ptrTortue-&gt;y + d * sin( ptrTortue-&gt;t * M_PI / 180.0 );</div>
+<div class="line">  pT-&gt;x = pT-&gt;x + d * cos( pT-&gt;t * M_PI / 180.0 ); <span class="comment">// notez la conversion degrés</span></div>
+<div class="line">  pT-&gt;y = pT-&gt;y + d * sin( pT-&gt;t * M_PI / 180.0 ); <span class="comment">// vers radians</span></div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Un passage en entree est suffisant lorsqu&#39;aucune modification n&#39;est nécessaire.</span></div>
@@ -456,7 +470,7 @@ Codage de la tortue</h2>
 <div class="line">  printf( <span class="stringliteral">&quot;%f %f\n&quot;</span>, tortue.x, tortue.y );</div>
 <div class="line">}</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Notez que le paramètre <code>tortue</code> est passé par valeur lorsqu'il n'est pas modifié, et par adresse lorsqu'il est modifié. Pour accéder à un champ d'une structure on utiliser la notation pointée '<code></code>.'. Pour accéder à un champ d'une structure pointée par un pointeur on utilise la notation fléchée '<code>-&gt;'</code>.</dd></dl>
-<p>Ecrivez <code>tourneG</code>. On pourra par exemple utiliser la tortue pour tracer un triangle équilatéral :</p>
+<p>Ecrivez <code>tourneG</code> et <code>tourneD</code>, qui consistent juste à changer l'angle courant de la tortue. On pourra par exemple utiliser la tortue pour tracer un triangle équilatéral :</p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> main( ... )</div>
 <div class="line">{</div>
 <div class="line">  Tortue T;</div>
@@ -498,7 +512,6 @@ Codage de la tortue</h2>
 </div>
  </td></tr>
 </table>
-<p>Avant de passer à la suite, écrivez les fonctions <code>tourneD</code> et <code>allezA</code>.</p>
 <h2><a class="anchor" id="logo_maison"></a>
 Tracez une maison</h2>
 <p>Tracez maintenant la maison de gauche en utilisant votre tortue. La maison de droite est-elle facile à tracer ? Quelle ruse ai-je employée ?</p>
@@ -580,7 +593,7 @@ Autres fractales</h2>
  </td></tr>
 </table>
 <h1><a class="anchor" id="huit"></a>
-9 - Pointeurs, pile d'exécution, ddd</h1>
+9 - Pointeurs, pile d'exécution, débuggeur</h1>
 <p>On considère le programme ci-dessous. On note que son objectif est d'afficher les 100 caractères à partir de l'adresse de la variable locale <code>t</code>.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"> </div>
@@ -623,20 +636,21 @@ Autres fractales</h2>
 <div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">void</span> )</div>
 <div class="line">{</div>
 <div class="line">  <span class="keywordtype">char</span> nom1[] = <span class="stringliteral">&quot;Bonjour Tutu&quot;</span>; <span class="comment">/* alloué sur la pile, modifiable */</span></div>
-<div class="line">  <span class="keywordtype">char</span>* nom2 = <span class="stringliteral">&quot;Bonjour Tata&quot;</span>;  <span class="comment">/* alloué sur le segment de données, non modifiable */</span></div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">char</span>* nom2 = <span class="stringliteral">&quot;Bonjour Tata&quot;</span>;  <span class="comment">/* alloué sur le segment de données, non modifiable */</span></div>
 <div class="line">  affiche();</div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>Compilez, exécutez-le. Premièrement, il fait une erreur à l'exécution: la fameuse "erreur de segmentation". En fait, ce programme tente de lire en dehors dela mémoire allouée à ce processus. Rien de surprenant, il tente de lire 10000 octets au-dessus de votre variable locale. Deuxièmement, on voit "Bonjour Toto", "Bonjour Tutu" mais jamais "Bonjour Tata", ce qui montre les constantes textes sont sauvegardées ailleurs. Enfin, il affiche toutes les variables d'environnement de votre shell, plus les paramètres données en ligne de commande.</p>
+</div><!-- fragment --><p>Compilez, exécutez-le. Premièrement, il fait une erreur à l'exécution: la fameuse "erreur de segmentation". En fait, ce programme tente de lire en dehors dela mémoire allouée à ce processus. Rien de surprenant, il tente de lire 10000 octets au-dessus de votre variable locale. Deuxièmement, on voit "Bonjour
+  Toto", "Bonjour Tutu" mais jamais "Bonjour Tata", ce qui montre les constantes textes sont sauvegardées ailleurs. Enfin, il affiche toutes les variables d'environnement de votre shell, plus les paramètres données en ligne de commande.</p>
 <p>Par exemple, voilà ce que l'on obtient: </p><pre class="fragment">[you] ./voir-pile2 "J'adore INFO523" "Ceci n'est pas une méthode subliminale" 3.14159625
 @Bonjour Toto�]�E&#x2404;���B��@��s*�
                              @Bonjour Tutu༿B��]�E&#x2404;�M�t*�輿B�&#x2404;�@�9�@�S��@@s�9�&#x2418;I�s�0@輿B�&#x2404;@@༿B�i@ؼ�B�&#x241C;&#x2404;�ſB��ſB��ſB�&#x241B;ƿB�&amp;ƿB�IƿB�\ƿB�gƿB�wƿB��ƿB��ƿB�&#x2403;ǿB�#ǿB�0ǿB��˿B��˿B�)̿B�}̿B��B��̿B��̿B�/ͿB�cͿB�~ͿB��B��ͿB��ͿB��ͿB��ͿB�&#x2412;οB�&#x241A;οB�-οB�YοB�iοB��οB�ϿB�(ϿB�5ϿB�WϿB��ϿB��ϿB��ϿB�!��B�&#x2410;����&#x2410;&#x2411;d&#x2403;@@&#x2404;8    ��*�   @
                           t$
 t$t$&#x2417;&#x2419;y��B�&#x241F;�ϿB����B��]�E&#x2404;�1k ЩyF��x86_64./voir-pile2J'adore INFO523Ceci n'est pas une méthode subliminale3.14159625ORBIT_SOCKETDIR=/tmp/orbit-lachaudSSH_AGENT_PID=2290TERM=xtermSHELL=/bin/bashXDG_SESSION_COOKIE=0c39205e673ea33abf7a50734b01422a-1313149062.947966-206217221WINDOWID=77747177GNOME_KEYRING_CONTROL=/tmp/keyring-GJ0q1cGTK_MODULES=canberra-gtk-moduleUSER=lachaudLS_COLORS=rs=0:di=01;34:ln=01;36:hl=44;37:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.axa=00;36:*.oga=00;36:*.spx=00;36:*.xspf=00;36:SSH_AUTH_SOCK=/tmp/keyring-GJ0q1c/sshDEFAULTS_PATH=/usr/share/gconf/gnome.default.pathSESSION_MANAGER=local/imagine:@/tmp/.ICE-unix/2256,unix/imagine:/tmp/.ICE-unix/2256USERNAME=lachaudXDG_CONFIG_DIRS=/etc/xdg/xdg-gnome:/etc/xdgDESKTOP_SESSION=gnomePATH=/home/lachaud/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/gamesPWD=/home/lachaud/Cours/2011-2012/INFO523/Tests/TP1GDM_KEYBOARD_LAYOUT=fr    macLANG=fr_FR.utf8GNOME_KEYRING_PID=2238MANDATORY_PATH=/usr/share/gconf/gnome.mandatory.pathGDM_LANG=fr_FR.utf8GDMSESSION=gnomeSPEECHD_PORT=15892SHLVL=1HOME=/home/lachaudGNOME_DESKTOP_SESSION_ID=this-is-deprecatedLOGNAME=lachaudXDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-uxIR0vnSsg,guid=5af7a10fd498543d804b80614e451087LESSOPEN=| /usr/bin/lesspipe %sDISPLAY=:0.0LESSCLOSE=/usr/bin/lesspipe %s %sXAUTHORITY=/var/run/gdm/auth-for-lachaud-LP0bBr/databaseCOLORTERM=gnome-terminal_=./voir-pile2OLDPWD=/home/lachaud/Cours/2011-2012/INFO523/Tests./voir-pile2Erreur de segmentation
 </pre><p>Plein de caractères sont illisibles, mais on reconnaît les paramètres passés sur la ligne de commande et l'environnement. En réalité, l'entrée <code>main</code> d'un programme C s'écrit:</p>
-<div class="fragment"><div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv, <span class="keywordtype">char</span>** env )</div>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[], <span class="keywordtype">char</span>* env[] )</div>
 <div class="line">...</div>
-</div><!-- fragment --><p>Le programme fait une erreur de segmentation. Pour voir où, tapez </p><pre class="fragment">[you] ddd ./voir-pile2
+</div><!-- fragment --><p>Le programme fait une erreur de segmentation. Pour voir où, tapez </p><pre class="fragment">[you] ddd ./voir-pile2   # ou gdb, xxgdb
 </pre><p> qui est un debuggeur. Cliquez sur 'run'. Il doit bloquer sur une ligne qu'il affiche. Passez la souris sur les variables : il affiche leur valeur. Vous savez donc à quel moment votre programme sort de sa zone mémoire. Avec ce debuggeur, vous pouvez exécutez des instructions pas à pas (via next/step), mettre un point d'arrêt (set breakpoint), etc.</p>
 <h1><a class="anchor" id="dix"></a>
 10 - Double boucles</h1>
@@ -688,8 +702,127 @@ _   | |          |     |               |           \                   /
                               \_/                        \       |
                                                           \    _/
                                                            \__/</pre><p>Ecrivez ce programme, en adaptant la fonction précédente <code>affiche_histogramme</code>. Il faudra regarder les valeurs précédentes et suivantes pour déterminer le symbole courant à afficher.</p>
+<h1><a class="anchor" id="onze"></a>
+11 - Génération de terrain sur grille hexagonale</h1>
+<p>On va représenter un terrain (avec des altitudes) sous forme d'une grille hexagonale. En fait on peut encore utiliser un tableau à deux dimensions:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#define M 60</span></div>
+<div class="line"><span class="preprocessor">#define N 70</span></div>
+<div class="line"><span class="comment">// Grille hexagonale : les lignes impaires sont décalées à droite</span></div>
+<div class="line"><span class="keyword">typedef</span> <span class="keywordtype">int</span> Grille[ M ][ N ];</div>
+</div><!-- fragment --><p>L'idée est de décaler d'une moitié de case (symboliquement) une ligne sur deux. Voilà du coup où sont placés les cases les unes par rapport aux autres (chaque case interne a donc six voisins):</p>
+<pre class="fragment">+---------+---------+---------+---------+----
+| T[0][0] | T[0][1] | T[0][2] | T[0][3] | ...
++----+----+----+----+----+----+----+----+----+
+     | T[1][0] | T[1][1] | T[1][2] | T[1][3] | ...
++---------+---------+---------+---------+----+ 
+| T[2][0] | T[2][1] | T[2][2] | T[2][3] | ...
++----+----+----+----+----+----+----+----+----+
+     |   ...   |   ...   |   ...   |   ...   |
+</pre><p>On va représenter l'altitude d'une case par un entier (&lt;0: sous la mer, &gt;= 0 plage/plaine/foret/montagne. On affichera une case sous forme de deux espaces colorés avec la fonction suivante :</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#define COLOR(X)   printf( &quot;\033[&quot;X&quot;m&quot; )</span></div>
+<div class="line"><span class="preprocessor">#define COLORBG(X) printf(&quot;\e[48;&quot;X&quot;m&quot;)</span></div>
+<div class="line"><span class="preprocessor">#define COLORFG(X) printf(&quot;\e[38;&quot;X&quot;m&quot;)</span></div>
+<div class="line"><span class="comment">// Vous pouvez étoffer si ça vous amuse. Notez que, dans votre terminal,</span></div>
+<div class="line"><span class="comment">// on peut donc définir des couleurs RGB (par exemple 255;255;0 = jaune).</span></div>
+<div class="line"><span class="keywordtype">void</span> affiche( <span class="keywordtype">int</span> v )</div>
+<div class="line">{</div>
+<div class="line">  <span class="keywordflow">if</span> ( v &lt; -4 ) v = -4;</div>
+<div class="line">  <span class="keywordflow">if</span> ( v &gt;  9 ) v =  9;</div>
+<div class="line">  <span class="keywordflow">switch</span>( v ) {</div>
+<div class="line">  <span class="keywordflow">case</span> -4: COLORBG( <span class="stringliteral">&quot;2;0;0;128&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span> -3: COLORBG( <span class="stringliteral">&quot;2;0;0;200&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span> -2: COLORBG( <span class="stringliteral">&quot;2;0;128;255&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span> -1: COLORBG( <span class="stringliteral">&quot;2;0;250;255&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span>  0: COLORBG( <span class="stringliteral">&quot;2;255;255;128&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span>  1: COLORBG( <span class="stringliteral">&quot;2;255;255;0&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span>  2: COLORBG( <span class="stringliteral">&quot;2;128;255;0&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span>  3: COLORBG( <span class="stringliteral">&quot;2;0;255;0&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span>  4: COLORBG( <span class="stringliteral">&quot;2;0;200;0&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span>  5: COLORBG( <span class="stringliteral">&quot;2;0;128;0&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span>  6: COLORBG( <span class="stringliteral">&quot;2;64;128;64&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span>  7: COLORBG( <span class="stringliteral">&quot;2;128;128;128&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span>  8: COLORBG( <span class="stringliteral">&quot;2;192;192;192&quot;</span> ); <span class="keywordflow">break</span>;</div>
+<div class="line">  <span class="keywordflow">case</span>  9: COLORBG( <span class="stringliteral">&quot;2;255;255;255&quot;</span> ); <span class="keywordflow">break</span>;                                    </div>
+<div class="line">  }</div>
+<div class="line">  printf( <span class="stringliteral">&quot;  &quot;</span> );</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Ensuite on peut initialiser la grille avec des altitudes aléatoires. La fonction ci-dessous fait que le coin haut gauche est plus haut que le coin bas droit (ça fera de la montagne et de la mer ensuite).</p>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> initialise( Grille G )</div>
+<div class="line">{</div>
+<div class="line">  <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; M; i++ )</div>
+<div class="line">    <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> j = 0; j &lt; N; j++ )</div>
+<div class="line">      G[ i ][ j ] = ( rand() % (35 - (<span class="keywordtype">int</span>)( (i+j)/6 - 5 ) ) ) - 12;</div>
+<div class="line">  <span class="comment">// G[ i ][ j ] = ( rand() % 30 ) - 12; // plus homogène</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Ecrivez maintenant une fonction <code>grille_affiche(Grille G)</code> qui affiche la grille donnée en paramètre, en décalant d'un espace les lignes impaires. Cela donne</p>
+<div class="image">
+<img src="terrain-random.jpg" alt="" width="30%"/>
+<div class="caption">
+Terrain hexagonal aléatoire</div></div>
+<p>Malheureusement le terrain obtenu est beaucoup trop accidenté pour être réaliste. Il faut le transformer avec des fonctions qui agissent sur une case et son voisinage.</p>
+<p>On commence par définir des structures <code>Case</code> et <code>Voisinage</code> ainsi</p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>SCase {</div>
+<div class="line">  <span class="keywordtype">int</span> i, j;</div>
+<div class="line">} Case;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>SVoisinage {</div>
+<div class="line">  Case cases[ 6 ];</div>
+<div class="line">} Voisinage;</div>
+</div><!-- fragment --><p>Il faut ensuite définir une fonction pour tester si une case est valide (i.e. dans la grille MxN), puis des fonctions pour retourner chaque voisin, et enfin la fonction qui retourne tous les voisins.</p>
+<div class="fragment"><div class="line"><span class="keywordtype">bool</span> estValide( Case c );</div>
+<div class="line">Case ouest( Case c );  <span class="comment">// (i,j) -&gt; (i,j-1) facile</span></div>
+<div class="line">Case est  ( Case c );  <span class="comment">// (i,j) -&gt; (i,j+1) facile</span></div>
+<div class="line">Case nordouest( Case c ); <span class="comment">// soit (i-1,j-1) soit (i-1,j) selon la parité de i</span></div>
+<div class="line">Case nordest( Case c ); <span class="comment">// ...</span></div>
+<div class="line">Case sudouest( Case c );</div>
+<div class="line">Case sudest( Case c );</div>
+<div class="line">Voisinage voisins( Case c ); <span class="comment">// juste écriture des six voisins dans la structure.</span></div>
+</div><!-- fragment --><p>Une fois ceci fait, on écrit une fonction <code>void arase( Grille G,
+  Case c )</code> dont l'objectif est de modifier l'altitude d'une case de telle manière à ce qu'elle soit égale à la moyenne des altitudes des voisins.</p>
+<p>Ensuite dans le programme principale, on va araser pas mal de sommets aléatoirement ainsi:</p>
+<div class="fragment"><div class="line"><span class="keywordflow">for</span> ( <span class="keywordtype">int</span> k = 0; k &lt; 3*M*N; k++ )</div>
+<div class="line">  {</div>
+<div class="line">    Case c = { rand() % M, rand() % N };</div>
+<div class="line">    arase( G, c );</div>
+<div class="line">  }</div>
+</div><!-- fragment --><p>Le résultat est déjà beaucoup plus joli !</p>
+<div class="image">
+<img src="terrain-arase.jpg" alt="" width="30%"/>
+<div class="caption">
+Terrain hexagonal arasé</div></div>
+<p>On peut enfin écrire des fonctions pour creuser ou remblayer du terrain</p>
+<div class="fragment"><div class="line"><span class="comment">// Creuse de 1 tous les voisins de c dont l&#39;altitude est plus grande.</span></div>
+<div class="line"><span class="comment">// Si aucun voisin n&#39;est creusé, creuse la case c de 1.</span></div>
+<div class="line"><span class="keywordtype">void</span> creuse( Grille G, Case c );</div>
+<div class="line"><span class="comment">// Remblaie de 1 tous les voisins de c dont l&#39;altitude est plus petite.</span></div>
+<div class="line"><span class="comment">// Si aucun voisin n&#39;est remblayé, remblaie la case c de 1.</span></div>
+<div class="line"><span class="keywordtype">void</span> remblaie( Grille G, Case c );</div>
+</div><!-- fragment --><p>Une fois ceci fait, on peut creuser et remblayer quelques milliers de cases ainsi:</p>
+<div class="fragment"><div class="line"><span class="keywordflow">for</span> ( <span class="keywordtype">int</span> k = 0; k &lt; 2*M*N; k++ )</div>
+<div class="line">  {</div>
+<div class="line">    Case d = { rand() % M, rand() % N };</div>
+<div class="line">    remblaie( G, d );</div>
+<div class="line">    Case c = { rand() % M, rand() % N };</div>
+<div class="line">    creuse( G, c );</div>
+<div class="line">  }</div>
+</div><!-- fragment --><p>Voilà le type de résultats que vous pouvez obtenir.</p>
+<table class="doxtable">
+<tr>
+<td><div class="image">
+<img src="terrain1.jpg" alt="" width="90%"/>
+</div>
+ </td><td><div class="image">
+<img src="terrain2.jpg" alt="" width="90%"/>
+</div>
+ </td><td><div class="image">
+<img src="terrain3.jpg" alt="" width="90%"/>
+</div>
+ </td></tr>
+</table>
+<p>Une fois ceci fait, on peut s'amuser à faire des rivières qui partent d'un endroit aléatoire et se déplace vers leur voisin le plus bas jusqu'à arriver à la mer. On réserve alors une altitude spéciale pour les rivières pour les afficher différemment.</p>
+<p>On pourrait s'amuser à tracer des rivières en récursif en descendant les plus grandes pentes, simuler de l'érosion, etc.</p>
 <h1><a class="anchor" id="fin"></a>
-11 - Conclusion</h1>
+12 - Conclusion</h1>
 <p>A l'issue de ce TP, vous devez avoir assimilé les points suivants :</p><ul>
 <li>comment compiler un programme en C et créer un fichier exécutable,</li>
 <li>comment obtenir les paramètres données sur la ligne de commande et comment retourner un entier au <em>shell</em>,</li>
@@ -705,7 +838,7 @@ _   | |          |     |               |           \                   /
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 10 2023 08:18:03 for INFO505 Programmation C by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Oct 10 2023 19:33:25 for INFO505 Programmation C by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

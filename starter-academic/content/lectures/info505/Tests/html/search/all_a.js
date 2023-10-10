@@ -9,7 +9,7 @@ var searchData=
   ['aide_20d_20une_20liste_20chaînée_6',['4 - Implémentation à l&apos;aide d&apos;une liste chaînée',['../tp2.html#TP2-liste',1,'']]],
   ['ajouter_20une_20réaction_7',['3.5 - Ajouter une réaction',['../tp3.html#TP3-reaction',1,'']]],
   ['algorithmes_20simples_8',['6 - Un peu de tracé pour illustrer des algorithmes simples',['../tp1.html#trace',1,'']]],
-  ['algorithmes_20simples_20tracés_20et_20récursivité_20debugger_20ddd_9',['TP1 - Enoncé - Quelques algorithmes simples, tracés, et récursivité, debugger ddd',['../tp1.html',1,'']]],
+  ['algorithmes_20simples_20tracés_20et_20récursivité_20debugger_9',['TP1 - Enoncé - Quelques algorithmes simples, tracés, et récursivité, debugger',['../tp1.html',1,'']]],
   ['améliorations_20optionnelles_10',['5 - Améliorations optionnelles',['../tp2.html#TP2-bonus',1,'']]],
   ['années_20bissextiles_11',['2 - Les années bissextiles',['../tp1.html#deux',1,'']]],
   ['attente_12',['4.3 - Affichage de la pièce en attente',['../tp3.html#TP3-affichepiece',1,'']]],

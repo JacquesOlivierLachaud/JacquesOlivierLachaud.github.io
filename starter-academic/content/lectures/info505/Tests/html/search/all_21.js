@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['écriture_20dans_20la_20grille_0',['3.5 - Écriture dans la grille',['../tp2.html#TP2-ecriture',1,'']]]
+  ['zone_20de_20dessin_0',['4 - Affichage du Tetris dans la zone de dessin.',['../tp3.html#TP3-dessin',1,'']]]
 ];
