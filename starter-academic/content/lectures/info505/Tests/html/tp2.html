@@ -114,12 +114,12 @@ $(function() {
 <li>Votre code devra compiler avec <code>gcc</code> sans erreurs ni warnings, et fonctionner sous Linux.</li>
 <li>Toute mémoire allouée devra être libérée.</li>
 <li>Ce TP peut être fait par binôme (mais mettez les deux noms !).</li>
-<li>Vous m'enverrez une première version de votre TP à la fin de votre séance de TP (dépend des groupes), via <a href="https://www.lama.univ-savoie.fr/TPLab">TPLab</a>. Vous aurez 7 jours ensuite pour envoyer une version finale (dépend des groupes aussi). Il faudra une archive (ZIP, ou TAR.GZ) nommée TP2-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, le README mis à jour, éventuellement un makefile.</li>
+<li>Vous m'enverrez une première version de votre TP à la fin de votre séance de TP (dépend des groupes), via <a href="https://tplab.apps.math.cnrs.fr">TPLab</a>. Vous aurez 7 jours ensuite pour envoyer une version finale (dépend des groupes aussi). Il faudra une archive (ZIP, ou TAR.GZ) nommée TP2-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, le README mis à jour, éventuellement un makefile.</li>
 </ul>
 <h1><a class="anchor" id="TP2-jeu"></a>
 2 - Une version simplifiée du jeu Tetris</h1>
 <p>Dans le cadre de ce TP, le jeu sera implémenté uniquement en texte et son déroulement se fera entièrement dans le terminal. Vous aurez ainsi toute la partie logique du jeu qui fonctionne à la fin du TP. Pour cette partie, vous écrirez tout dans un fichier <code>tp2-[votre nom]-tableau.c</code></p>
-<dl class="section note"><dt>Note</dt><dd>Vous étofferez votre jeu en mode graphique temps-réel dans les 2 séances suivantes.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Vous étofferez votre jeu en mode graphique temps-réel à la séance suivante.</dd></dl>
 <p>Tout d'abord nous allons simplifier grandement le déroulement du jeu.</p>
 <ol type="1">
 <li>L'interactivité du jeu sera réduite au minimum :</li>
@@ -175,7 +175,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line">Dans quelle colonne placer cette piece?</div>
 <div class="line">&gt; </div>
-</div><!-- fragment --><p>Par convention, la grille de jeu est modélisée de <b>bas</b> <b>en</b> <b>haut</b>, c'est-à-dire que la ligne 0 est en bas, la ligne 1 est juste au-dessus, etc. Attention, pour l'affichage sur la console, il faudra donc partir de la dernière ligne et afficher jusqu'à la première ligne. Ci-dessous, vous avez à gauche le numéro de ligne et en bas le numéro de colonne de chaque case. Les barres <code>|</code> ne font pas partie de la grille et sont juste affichés.</p>
+</div><!-- fragment --><p>Par convention, la grille de jeu est modélisée de <b>bas</b> <b>en</b> <b>haut</b>, c'est-à-dire que la <b>ligne</b> <b>0</b> <b>est</b> <b>en</b> <b>bas</b>, la ligne 1 est juste au-dessus, etc. Attention, pour l'affichage sur la console, il faudra donc partir de la dernière ligne et afficher jusqu'à la première ligne. Ci-dessous, vous avez à gauche le numéro de ligne et en bas le numéro de colonne de chaque case. Les barres <code>|</code> ne font pas partie de la grille et sont juste affichés.</p>
 <div class="fragment"><div class="line">9 ||               ||</div>
 <div class="line">8 ||               ||</div>
 <div class="line">7 ||               ||</div>
@@ -198,8 +198,8 @@ $(function() {
 <div class="line">pièces valides         pièces non-valides</div>
 </div><!-- fragment --><p>Comme nous le verrons plus tard, cette contrainte simplifie grandement le positionnement des pièces.</p>
 <p>Remarques :</p><ul>
-<li>Les bords de la grille de jeu sont représentés par le symbole '|' (pipe)</li>
-<li>Les pièces sont représentées à l'aide de n'importe quels caractères autre qu'un espace (' ') ou un pipe ('|').</li>
+<li>Les bords de la grille de jeu sont représentés par le symbole <code>'|'</code> (pipe)</li>
+<li>Les pièces sont représentées à l'aide de n'importe quels caractères autre qu'un espace (<code>' '</code>) ou un pipe (<code>'|'</code>).</li>
 </ul>
 <h1><a class="anchor" id="TP2-prog"></a>
 3 - Réalisation du programme en C</h1>
@@ -211,6 +211,7 @@ $(function() {
 <li>NB_PIECES : le nombre de pièces différentes. À fixer en fonction du nombre de pièces que vous déciderez d'include.</li>
 <li>HAUTEUR_MAX_DES_PIECES : le nombre maximum de lignes qui peut occuper une pièce. On fixe cette valeur à 4. <div class="fragment"><div class="line"><span class="preprocessor">#define HAUTEUR 4</span></div>
 <div class="line">...</div>
+<div class="line">typedef <span class="keywordtype">char</span> Grille[ HAUTEUR ][ LARGEUR ];</div>
 </div><!-- fragment --></li>
 </ul>
 <h2><a class="anchor" id="TP2-types"></a>
@@ -236,9 +237,9 @@ $(function() {
 <h2><a class="anchor" id="TP2-affichage"></a>
 3.3 - Initialisation et affichage de la grille</h2>
 <ul>
-<li>Écrivez une procédure <code>initialiseGrille</code> qui remplit une grille de jeu passé en paramètre avec le caractère ' ' (espace).</li>
-<li>Écrivez une procédure <code>lireCase</code> qui, pour une grille, un numéro de ligne et un numéro de colonne passés en paramètre, retourne le contenu de la case correspondante de cette grille. Vous devez toujours utiliser cette procédure lorsque vous voulez lire le contenu d'une case la grille de jeu. Ajoutez dans cette procédure un test vérifiant que la ligne et la colonne sont valides. Si tel n'est pas le cas, une erreur doit être affichée.</li>
-<li>Écrivez une procédure <code>afficheGrille</code> afin d'afficher le contenu d'une grille donnée en entrée en l'encadrant à gauche, à droite et en dessous avec le caractère '|' (pipe). Ajoutez également des nombres qui indiquent le numéro de chacune des colonnes (voir l'exemple plus haut).</li>
+<li>Écrivez une procédure <code>void initialiseGrille( Grille G )</code> qui remplit une grille de jeu <code>G</code> passé en paramètre avec le caractère <code>' '</code> (espace).</li>
+<li>Écrivez une procédure <code>char lireCase( Grille G, int i, int j )</code> qui, pour une grille, un numéro de ligne et un numéro de colonne passés en paramètre, retourne le contenu de la case correspondante de cette grille. Vous devez toujours utiliser cette procédure lorsque vous voulez lire le contenu d'une case la grille de jeu. Ajoutez dans cette procédure un test vérifiant que la ligne et la colonne sont valides. Si tel n'est pas le cas, une erreur doit être affichée.</li>
+<li>Écrivez une procédure <code>void afficheGrille( Grille G )</code> afin d'afficher le contenu d'une grille donnée en entrée en l'encadrant à gauche, à droite et en dessous avec le caractère <code>'|'</code> (pipe). Ajoutez également des nombres qui indiquent le numéro de chacune des colonnes (voir l'exemple plus haut).</li>
 <li><p class="startli">Écrivez une procédure <code>main</code> qui vous permet de tester le fonctionnement des deux procédures précédentes. C'est au début du <code>main</code> qu'il faudra instancier une grille.</p>
 <p class="startli"><b>TESTEZ</b> <b>VOTRE</b> <b>PROGRAMME</b> <b>À</b> <b>CHAQUE</b> <b>ÉTAPE</b> <b>DE</b> <b>SON</b> <b>DÉVELOPPEMENT!!</b> </p>
 </li>
@@ -277,12 +278,16 @@ l    %%
 <h2><a class="anchor" id="TP2-ecriture"></a>
 3.5 - Écriture dans la grille</h2>
 <ul>
-<li>Écrivez une procédure <code>ecrireCase</code> qui, pour une grille, un numéro de ligne et un numéro de colonne passés en paramètre, inscrit dans la case correspondante de la grille de jeu un caractère également spécifié en paramètre. Vous devez toujours utiliser cette procédure pour écrire dans la grille de jeu. Il est là aussi fortement conseillé de tester la validité des numéros de ligne et colonne et d'afficher une erreur dans le cas contraire.</li>
+<li>Écrivez une procédure <code>void ecrireCase( Grille G, int i, int j,
+     char c )</code> qui, pour une grille, un numéro de ligne et un numéro de colonne passés en paramètre, inscrit dans la case correspondante de la grille de jeu un caractère également spécifié en paramètre. Vous devez toujours utiliser cette procédure pour écrire dans la grille de jeu. Il est là aussi fortement conseillé de tester la validité des numéros de ligne et colonne et d'afficher une erreur dans le cas contraire.</li>
 </ul>
 <p>Lorsqu'un joueur décide de placer une pièce dans une colonne donnée, il faut être en mesure de déterminer à quelle hauteur la pièce sera déposée. On a imposé une forme particulière aux pièces de manière à simplifier cette étape. Comme la ligne la plus basse d'une pièce est forcément la plus large, il suffit de déterminer, pour chacune des colonnes que va occuper cette pièce, quelle est hauteur de la plus haute case occupée.</p>
 <ul>
-<li>Écrivez une procédure <code>hauteurPlat</code> qui, étant donné une grille et un intervalle de colonnes, retourne la ligne la plus basse où on peut placer une pièce sans écraser une pièce déjà placée. C'est équivalent à retourner un plus la hauteur maximale où se trouve une case occupée entre les colonnes spécifiées. Cette procédure sera mise à jour dans un <b>deuxième</b> <b>temps</b> pour prendre en compte des pièces plus complexes (voir plus loin).</li>
-<li>Écrivez une procédure <code>ecrirePiece</code> qui reçoit en paramètre une grille, une pièce, un numéro de colonne ainsi qu'une hauteur et ajoute cette pièce à la grille de manière à ce que la colonne la plus à gauche de la pièce corresponde au numéro de colonne spécifiée. Faites bien attention à ne <b>rien</b> <b>écrire</b> là ou la pièce est vide (ie. un espace). Ce sera important pour la section <a class="el" href="tp2.html#TP2-pieces-complexes">3.9 - Pièces générales</a>.</li>
+<li>Écrivez une procédure <code>int hauteurPlat( Grille g, int c1, int c2
+     )</code> qui, étant donné une grille et un intervalle de colonnes, retourne la ligne la plus basse où on peut placer une pièce sans écraser une pièce déjà placée. C'est équivalent à retourner un plus la hauteur maximale où se trouve une case occupée entre les colonnes spécifiées. Cette procédure sera mise à jour dans un <b>deuxième</b> <b>temps</b> pour prendre en compte des pièces plus complexes (voir <code>hauteurExacte</code> plus loin).</li>
+<li>Écrivez une procédure <code>void ecrirePiece( Grille G, Piece P, int
+     c, int h )</code> qui reçoit en paramètre une grille, une pièce, un numéro de colonne ainsi qu'une hauteur et ajoute cette pièce à la grille de manière à ce que la colonne la plus à gauche de la pièce corresponde au numéro de colonne spécifiée. <dl class="section warning"><dt>Warning</dt><dd>Faites bien attention à ne <b>rien</b> <b>écrire</b> là où la pièce est vide (ie. un espace). Ce sera important pour la section <a class="el" href="tp2.html#TP2-pieces-complexes">3.9 - Pièces générales</a>.</dd></dl>
+</li>
 </ul>
 <h2><a class="anchor" id="TP2-lecture"></a>
 3.6 - Lecture des entrées</h2>
@@ -300,6 +305,13 @@ l    %%
 </ul>
 </li>
 </ul>
+<dl class="section note"><dt>Note</dt><dd>Vous noterez que l'aléatoire ne semble pas si aléatoire que ça, avec toujours la même suite de pièces successives. C'est voulu ! En fait, ce sont des suites pseudo-aléatoires, c'est-à-dire qu'elles donnent des résultats déterministes. Si on veut un peu plus d'aléatoire, on change alors la graine (<em>seed</em> en anglais) du générateur pseudo-aléatoire pour l'initialiser à une valeur différente à chaque run. Par exemple, on peut mettre au début de la fonction <code>main</code> : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line">...</div>
+<div class="line">int main(...)</div>
+<div class="line">{</div>
+<div class="line">  srand( time( NULL ) );</div>
+<div class="line">  ...</div>
+</div><!-- fragment --></dd></dl>
 <h2><a class="anchor" id="TP2-fin"></a>
 3.7 - Détection de la fin de la partie</h2>
 <ul>
@@ -308,18 +320,30 @@ l    %%
 <h2><a class="anchor" id="TP2-effacement"></a>
 3.8 - Effacement de lignes</h2>
 <ul>
-<li>Écrivez une procédure <code>supprimerLigne</code> qui efface le contenu d'une ligne dont le numéro est passé en paramètre et fait descendre toutes celles au-dessus. Plus précisément, lorsqu'une ligne est <code>supprimée</code>, le contenu de chacune des lignes au dessus de celle-ci doit être recopié dans la ligne d'en dessous et la ligne la plus haute de la grille de jeu est remplacée par une ligne vide.</li>
-<li>Écrivez une fonction <code>nettoyer</code> qui supprime toutes les lignes ne contenant aucune case vide et qui retourne le nombre de lignes supprimées (utile si on veut gérer le score).</li>
+<li>Écrivez une procédure <code>void supprimerLigne( Grille G, int i )</code> qui efface le contenu d'une ligne dont le numéro est passé en paramètre et fait descendre toutes celles au-dessus. Plus précisément, lorsqu'une ligne est <code>supprimée</code>, le contenu de chacune des lignes au dessus de celle-ci doit être recopié dans la ligne d'en dessous et la ligne la plus haute de la grille de jeu est remplacée par une ligne vide.</li>
+<li>Écrivez une fonction <code>int nettoyer( Grille G )</code> qui supprime toutes les lignes ne contenant aucune case vide et qui retourne le nombre de lignes supprimées (utile si on veut gérer le score).</li>
 <li>Modifiez votre code de manière à ce qu'à chaque fois que le joueur place une pièce, un appel à <code>nettoyer</code> soit effectué.</li>
 </ul>
-<p>Vous devriez avoir maintenant une version jouable. Malheureusement, les pièces étant toutes plus larges à la base, vous allez voir qu'il est difficile de gagner à ce Tetris.</p>
+<p>Vous devriez avoir maintenant une version <em>jouable</em>. Malheureusement, les pièces étant toutes plus larges à la base, vous allez voir qu'il est difficile de gagner à ce Tetris.</p>
 <h2><a class="anchor" id="TP2-pieces-complexes"></a>
 3.9 - Pièces générales</h2>
 <p>On autorise maintenant le type de pièces ci-dessous: </p><div class="fragment"><div class="line">                      LL                  Z         </div>
 <div class="line">@@@                    L                  ZZ       </div>
 <div class="line"> @                     L                   Z       </div>
-</div><!-- fragment --><p>Il n'est plus suffisant d'utiliser <code>hauteurPlat</code> pour détecter la position où va tomber la pièce. On peut juste dire que <code>hauteurPlat</code> donne la "pire" hauteur possible, mais potentiellement la pièce peut aller plus bas. Ecrivez donc la fonction </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> hauteurExacte( Grille g, <span class="keywordtype">int</span> col_gauche, <a class="code hl_struct" href="structSPiece.html">Piece</a>* piece );</div>
+</div><!-- fragment --><p>Il n'est plus suffisant d'utiliser <code>hauteurPlat</code> pour détecter la position où va tomber la pièce. On peut juste dire que <code>hauteurPlat</code> donne la "pire" hauteur possible, mais potentiellement la pièce peut aller plus bas. Ecrivez donc la fonction</p>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> hauteurExacte( Grille g, <span class="keywordtype">int</span> col_gauche, <a class="code hl_struct" href="structSPiece.html">Piece</a>* piece );</div>
 </div><!-- fragment --><p>qui vous retourne cette hauteur exacte. Substituez ensuite <code>hauteurExacte</code> à <code>hauteurMax</code> dans le code. Si la procédure <code>ecrirePiece</code> est correctement écrite, alors cela devrait fonctionner du premier coup.</p>
+<dl class="section note"><dt>Note</dt><dd>L'idée est de calculer colonne par colonne de la pièce à quelle hauteur on peut poser la pièce. Ensuite, la hauteur où on peut poser est le maximum des hauteurs calculées pour chaque colonne. <pre class="fragment">H   01      colonne piece
+    ##        0 : hauteur_grille(2+0) = 3, hauteur_piece(0) = 2
+     #          =&gt; hauteur_exacte(0) = 3 - 2 = 1
+     #        1 : hauteur_grille(2+1) = 2, hauteur_piece(1) = 0
+                =&gt; hauteur_exacte(1) = 2 - 0 = 2
+3        L    =&gt; hauteur_exacte = max(1,2) = 2
+2  AA  AAL
+1  LLLLAAL
+0 BBAABBAA
+  01234567  colonne grille     
+</pre></dd></dl>
 <h2><a class="anchor" id="TP2-tourner-les-pieces"></a>
 3.10 - Tourner les pieces</h2>
 <p>On peut aussi implémenter les rotations. Cela se fait simplement en créant les rotations d'une pièce comme autant de pièces différentes. On mémorise ensuite dans un tableau <code>rotD</code> que la rotation d'une pièce à droite donne le numéro d'une autre pièce et similairement avec un tableau <code>rotG</code>. Enfin, l'utilisateur tape 'g' ou 'd' pour tourner la pièce avant de choisir la colonne. La lecture au clavier se fera plutôt en lisant une chaîne de caractères et en l'analysant. En pseudo-code, ça peut ressembler à ça:</p>
@@ -338,10 +362,17 @@ l    %%
 <div class="line">  réaffiche la pièce</div>
 <div class="line">}</div>
 <div class="line">...</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Les tableaux rotD et rotG sont de simples tableaux d'entiers, pour aller de numéro de pièces en numéro de pièces. Par exemple, dans la situation suivante, on aurait :</dd></dl>
+<div class="fragment"><div class="line"><span class="preprocessor">      #                ##        </span></div>
+<div class="line"><span class="preprocessor">      #         #       #       ###      %%</span></div>
+<div class="line"><span class="preprocessor">      ##      ###       #       #        %%   ...</span></div>
+<div class="line">n°    0        1        2        3        4</div>
+<div class="line">rotG  1        2        3        0        4</div>
+<div class="line">rotD  3        0        1        2        4   ...</div>
 </div><!-- fragment --><h1><a class="anchor" id="TP2-liste"></a>
 4 - Implémentation à l'aide d'une liste chaînée</h1>
 <p>Cette partie est à faire dans un deuxième temps, une fois que le tetris "tableau" fonctionne (en effet, il servira pour le tetris graphique).</p>
-<p>On propose une autre structure de données pour représenter la grille de jeu, où chaque ligne est indépendante des autres et où elles sont placées dans une liste chaînée. Ainsi, lorsqu'une ou plusieurs lignes seront supprimées, il suffira de supprimer un oud des éléments de la liste, les autres lignes seront donc automatiquement déplacées. Pour cela, nous allons remplacer le tableau servant à représenter la grille de jeu par une liste doublement chaînée.</p>
+<p>On propose une autre structure de données pour représenter la grille de jeu, où chaque ligne est indépendante des autres et où elles sont placées dans une liste chaînée. Ainsi, lorsqu'une ou plusieurs lignes seront supprimées, il suffira de supprimer un ou des éléments de la liste, les autres lignes seront donc automatiquement déplacées. Pour cela, nous allons remplacer le tableau servant à représenter la grille de jeu par une liste doublement chaînée.</p>
 <ul>
 <li>Commencez par effectuer une copie de sauvegarde de votre code. Appelez ce fichier <div class="fragment"><div class="line">tp2-[votre nom]-tableau.c</div>
 </div><!-- fragment --></li>
@@ -523,7 +554,7 @@ l    %%
 <ul>
 <li>Écrivez une procédure <code>construireGrille</code> qui construit la grille de jeu.</li>
 <li>Écrivez une procédure <code>détruireGrille</code> qui libère la mémoire occupée par la grille.</li>
-<li>Modifier le corps des procédures <code>lireCase</code> et <code>ecrireCase</code> afin de les adapter à la nouvelle structure de données employée pour la grille de jeu.</li>
+<li>Modifiez le corps des procédures <code>lireCase</code> et <code>ecrireCase</code> afin de les adapter à la nouvelle structure de données employée pour la grille de jeu. Ces dexu procédures nécessite de parcourir la liste pour arriver à la bonne ligne.</li>
 </ul>
 <p>Votre programme devrait maintenant être redevenu fonctionnel.</p>
 <ul>
@@ -532,12 +563,12 @@ l    %%
 <div class="fragment"><div class="line">tp2-[votre nom]-liste.c</div>
 </div><!-- fragment --></li>
 <li>Tout devrait fonctionner.</li>
-<li>Si vous avez terminé les étapes précédentes et que tout fonctionne bien, vous pouvez améliorer votre code en modifiant les procédures <code>afficherGrille</code>, <code>initialiser</code> et <code>hauteurMax</code> afin de remplacer les appels à <code>ecrireCase</code>, <code>lireCase</code> par une utilisation séquentielle de la liste chaînée.</li>
+<li>Si vous avez terminé les étapes précédentes et que tout fonctionne bien, vous pouvez améliorer votre code en modifiant les procédures <code>afficherGrille</code>, <code>initialiser</code>, <code>ecrirePiece</code> et <code>hauteurMax</code> afin de remplacer les appels à <code>ecrireCase</code>, <code>lireCase</code> par une utilisation séquentielle de la liste chaînée.</li>
 </ul>
 <h1><a class="anchor" id="TP2-bonus"></a>
 5 - Améliorations optionnelles</h1>
 <ul>
-<li>Vous pouvez rajouter des couleurs sur votre console, voir par exemple <a href="https://www.admin-linux.fr/bash-de-la-couleur-dans-le-shell/">https://www.admin-linux.fr/bash-de-la-couleur-dans-le-shell/</a> qui vous met un joli tableau des couleurs possibles.</li>
+<li>Vous pouvez rajouter des couleurs sur votre console, voir par exemple le TP précédent (<a class="el" href="tp1.html#onze">11 - Génération de terrain sur grille hexagonale</a>) qui vous met un joli tableau des couleurs possibles.</li>
 </ul>
 <div class="fragment"><div class="line"><span class="preprocessor">#define COLOR(X) printf(&quot;\033[&quot;X&quot;m&quot;)</span></div>
 <div class="line">...</div>
@@ -558,7 +589,7 @@ l    %%
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 10 2023 19:33:25 for INFO505 Programmation C by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Oct 24 2023 19:35:42 for INFO505 Programmation C by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
