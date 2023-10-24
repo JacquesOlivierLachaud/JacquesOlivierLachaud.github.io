@@ -22,6 +22,9 @@ Intègre notamment les concepts du standard c++20.
   - correction matrices, vecteurs: [Vecteur.hpp](TDs/Vecteur.hpp) [Vecteur.cpp](TDs/Vecteur.cpp) [Matrice.hpp](TDs/Matrice.hpp) [Matrice.cpp](TDs/Matrice.cpp) [spirograph.cpp](TDs/spirograph.cpp)
   - correction damier [damier.cpp](TDs/damier.cpp)
 
+* [TD2](TDs/td-2.pdf) Fonctions génériques, classes génériques, spécialisation, lambdas
+  - correction arbres/ABR [arbres.cpp](TDs/arbres.cpp)
+
 ### [Pages des TPs](Tests/html)
 
 ### Annales
