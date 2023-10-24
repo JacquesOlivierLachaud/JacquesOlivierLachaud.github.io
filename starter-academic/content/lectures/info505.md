@@ -6,7 +6,9 @@ type: page
 
 Cours du semestre 5 de Licence Informatique, CMI3 Informatique, Licence Mathématique parcours Math-Info.
 
-# Quelques ressources pour l'étudiant
+(Responsable 2023-2024 Cours/TD/TP : J.-O. Lachaud)
+
+## Quelques ressources pour l'étudiant
 
 Ces ressources sont des outils de travail et de révision. Elles ne
 remplacent pas les cours et/ou les td, qui peuvent contenir d'autres
@@ -22,6 +24,21 @@ informations.
 * [Fiche 3 - structures et pointeurs en C (PDF)](Cours/fiche-3.pdf) accompagne les deuxième et troisième cours 
 * [Fiche 4 - mécanismes d'allocation mémoire (PDF)](Cours/fiche-4.pdf) accompagne le quatrième cours 
 * [Fiche 5 - structures auto-référentes, pointeurs de fonction, préprocesseur (PDF)](Cours/fiche-5.pdf) accompagne le cinquième cours
+
+### Problèmes
+
+* [Problème 1 - Analyse de textes (PDF)](Problemes/probleme-1.pdf) / [Corrigé (PDF)](Problemes/probleme-1-sol.pdf):
+  Tableaux mono-dimensionnels, chaînes de caractères, fonctions,
+  structures de données, pointeurs, passage par adresse, hachage.
+* [Problème 2 - Plus grand rectangle vide (PDF)](Problemes/probleme-2.pdf) / [Corrigé (PDF)](Problemes/probleme-2-sol.pdf): :
+  tableaux bidimensionnels, boucles, structures, optimisation
+* [Problème 3 - Tableaux associatifs (PDF)](Problemes/probleme-3.pdf) : (Listes, pile d’exécution, table de hachage, pointeurs de fonction, généricité)
+
+### Fiches de TDs
+
+* [TD3 - skip-listes (PDF)](TDs/td-3.pdf) : structures auto-référentes (listes), pointeurs, allocation dynamique.
+* [TD4 - tableaux de bits (PDF)](TDs/td-4.pdf) : pointeurs, manipulation de bits et tableau de bits, ensembles par fonction caractéristique
+
 
 ### [Pages des TPs](Tests/html)
 

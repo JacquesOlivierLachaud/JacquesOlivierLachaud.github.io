@@ -6,7 +6,9 @@ type: page
 
 Cours du semestre 7 de Master Informatique, CMI4 Informatique.
 
-# Quelques ressources pour l'étudiant
+(Responsable 2023-2024 Cours/TD/TP : J.-O. Lachaud)
+
+## Quelques ressources pour l'étudiant
 
 Ces ressources sont des outils de travail et de révision. Elles ne
 remplacent pas les cours et/ou les td, qui peuvent contenir d'autres
@@ -18,11 +20,11 @@ Intègre notamment les concepts du standard c++20.
 
 ### Fiches de TDs
 
-* [TD1](TDs/td-1.pdf) Références, POO, surcharge d'opérateurs, polymorphisme
+* [TD1  (PDF)](TDs/td-1.pdf) Références, POO, surcharge d'opérateurs, polymorphisme
   - correction matrices, vecteurs: [Vecteur.hpp](TDs/Vecteur.hpp) [Vecteur.cpp](TDs/Vecteur.cpp) [Matrice.hpp](TDs/Matrice.hpp) [Matrice.cpp](TDs/Matrice.cpp) [spirograph.cpp](TDs/spirograph.cpp)
   - correction damier [damier.cpp](TDs/damier.cpp)
 
-* [TD2](TDs/td-2.pdf) Fonctions génériques, classes génériques, spécialisation, lambdas
+* [TD2  (PDF)](TDs/td-2.pdf) Fonctions génériques, classes génériques, spécialisation, lambdas
   - correction arbres/ABR [arbres.cpp](TDs/arbres.cpp)
 
 ### [Pages des TPs](Tests/html)
