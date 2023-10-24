@@ -24,6 +24,10 @@ Intègre notamment les concepts du standard c++20.
 
 ### [Pages des TPs](Tests/html)
 
+### Annales
+
+* [Examen 2022-2023 (PDF)](Annales/examen-2022-2023.pdf) [Corrigé examen 2022-2023  (PDF)](Annales/examen-2022-2023-sol.pdf)
+
 
 ### Quelques exemples de code C++
 
