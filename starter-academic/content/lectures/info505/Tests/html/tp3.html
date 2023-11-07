@@ -114,6 +114,10 @@ $(function() {
 <p>On va donc se servir d'une interface graphique classique, appelée GTK (<a href="http://www.gtk.org">http://www.gtk.org</a>). Cette interface, écrite en C, mais avec une philosophie objet, a été écrite pour réaliser le projet GIMP, qui est une très bonne alternative libre au logiciel de retouche d'image Photoshop. GTK est aussi à la base de l'environnement graphique GNOME.</p>
 <p>On se servira aussi de Cairo (<a href="http://www.cairographics.org/">http://www.cairographics.org/</a>) qui est une bibliothèque très polyvalente pour du dessin vectoriel dans n'importe quel tampon (image, fichier svg, buffer OpenGL, et fenêtre). C'est depuis GTK+ 2.8 la façon officielle de faire du dessin dans les fenêtres.</p>
 <p><b>Note</b> <b>importante</b>. Ce TP vous guide pas à pas pour que vous ayez les meilleures chances possibles de réussir un tetris graphique simplifié. Si vous trouvez ce canevas trop rigide, libre à vous de faire votre propre tetris graphique en suivant votre propre cheminement.</p>
+<p>Pointeurs utiles:</p>
+<ul>
+<li>la doc GTK3 : <a href="https://docs.gtk.org/gtk3/">https://docs.gtk.org/gtk3/</a></li>
+</ul>
 <h1><a class="anchor" id="TP3-compilation-separee"></a>
 2 - Compilation séparée</h1>
 <p>On va réutiliser votre travail de la dernière fois. Pour bien faire les choses, on va faire des modules distincts. Le premier module sera la partie logique du Tetris, c'est-à-dire en gros votre dernier TP. Ce travail sera placé dans le module <code>tetris</code>, constitué du fichier entête <code>tetris.h</code> et du fichier source <code>tetris.c</code>. Le deuxième module sera la partie graphique du tetris et contiendra le programme principal. On créera donc un fichier <code><a class="el" href="gtktetris_8c_source.html">gtktetris.c</a></code>.</p>
@@ -121,7 +125,8 @@ $(function() {
 <h2><a class="anchor" id="TP3-module-tetris"></a>
 2.1 - Module tetris</h2>
 <p>Vous récupérez votre TP de la dernière fois (version tableau ou liste, peu importe, du moment qu'elle fonctionne). Vous allez écrire un fichier <code>tetris.h</code> ne contenant que les prototypes des fonctions que vous avez écrite la dernière fois ainsi que les types de données.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#ifndef _TETRIS_H_</span></div>
+<div class="fragment"><div class="line"><span class="comment">// tetris.h</span></div>
+<div class="line"><span class="preprocessor">#ifndef _TETRIS_H_</span></div>
 <div class="line"><span class="preprocessor">#define _TETRIS_H_</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/* Constantes. */</span></div>
@@ -143,9 +148,10 @@ $(function() {
 <div class="line"><span class="comment">/* ... */</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#endif </span><span class="comment">/* ifndef _TETRIS_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="astructSPiece_html"><div class="ttname"><a href="structSPiece.html">SPiece</a></div><div class="ttdef"><b>Definition</b> <a href="tetris-1_8h_source.html#l00012">tetris-1.h:12</a></div></div>
+<div class="ttc" id="astructSPiece_html"><div class="ttname"><a href="structSPiece.html">SPiece</a></div><div class="ttdef"><b>Definition</b> <a href="tetris-1_8h_source.html#l00013">tetris-1.h:13</a></div></div>
 </div><!-- fragment --><p>Vous placerez ensuite les fonctions (prototypes et corps) dans un fichier <code>tetris.c</code>. Il faudra aussi enlever la fonction <code>main</code> car un programme C n'a qu'un seul <code>main</code>. Une façon élégante de le faire est de tout simplement renommer votre fonction <code>main</code>, par exemple en <code>main_console</code>. Enfin, il faudra inclure le fichier entête <code>tetris.h</code> au début de votre fichier <code>tetris.c</code>, juste après les inclusions d'entêtes systèmes.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="comment">// tetris.c</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;tetris.h&quot;</span></div>
 <div class="line"> </div>
@@ -163,8 +169,9 @@ all: tetris.o
 
 tetris.o: tetris.h tetris.c
 	$(CC) -c $(CFLAGS) tetris.c</pre><p>Celui-ci compile simplement le fichier <code>tetris.c</code> en son fichier objet <code>tetris.o</code>. On voit que l'on peut définir des variables pour ensuite les utiliser.</p>
-<p>On rajoute maintenant de quoi compiler notre futur programme <code>gtktetris</code>. Recopier ce mini-fichier source <code><a class="el" href="gtktetris_8c_source.html">gtktetris.c</a></code>.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<p>On rajoute maintenant de quoi compiler notre futur programme <code>gtktetris</code>. Recopier ce mini-fichier source <code><a class="el" href="gtktetris-1_8c_source.html">gtktetris-1.c</a></code>.</p>
+<div class="fragment"><div class="line"><span class="comment">// gtktetris.c</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;math.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;gtk/gtk.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;tetris.h&quot;</span></div>
@@ -215,7 +222,8 @@ clean:
 <h2><a class="anchor" id="TP3-debut"></a>
 3.1 - Première fenêtre</h2>
 <p>Voilà un programme minimaliste pour créer une fenêtre GTK.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
+<div class="fragment"><div class="line"><span class="comment">// gtktetris.c</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;math.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;gtk/gtk.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;tetris.h&quot;</span></div>
@@ -249,7 +257,7 @@ clean:
 <div class="line"><span class="comment">// Connecte la réaction gtk_main_quit à l&#39;événement &quot;clic&quot; sur ce bouton.</span></div>
 <div class="line">g_signal_connect( button_quit, <span class="stringliteral">&quot;clicked&quot;</span>,</div>
 <div class="line">                  G_CALLBACK( gtk_main_quit ),</div>
-<div class="line">          NULL);</div>
+<div class="line">                  NULL);</div>
 <div class="line"><span class="comment">// Rajoute le bouton dans le conteneur window.</span></div>
 <div class="line">gtk_container_add( GTK_CONTAINER( window ), button_quit );</div>
 <div class="line"><span class="comment">// Rend visible le bouton.</span></div>
@@ -275,7 +283,9 @@ clean:
 <div class="image">
 <img src="gtktetris-3_3.png" alt=""/>
 </div>
-<dl class="section note"><dt>Note</dt><dd>On peut rendre visible chaque composant avec <code>gtk_widget_show</code>. On peut rendre visible <b>tous</b> les composants contenus dans un conteneur avec <code>gtk_widget_show_all</code>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>On peut rendre visible chaque composant avec <code>gtk_widget_show</code>. On peut rendre visible <b>tous</b> les composants contenus dans un conteneur avec <code>gtk_widget_show_all</code>.</dd>
+<dd>
+On peut voir comment GTK normalise les <em>casts</em> à la C via des macros, par exemple <code>GTK_CONTAINER( hbox1 )</code> transforme un pointeur <code>GtkWidget*</code> en un pointeur <code>GtkContainer*</code>: c'est valide car c'est bien ainsi que le composant a été créé. Cela permet à GTK de <b>simuler l'héritage </b> en C, et de vérifier à l'exécution que le transtypage est valide.</dd></dl>
 <h2><a class="anchor" id="TP3-mise_en_page"></a>
 3.4 - Mise en page de l'IHM</h2>
 <p>On se propose de faire la mise en page suivante pour notre IHM. Il vous faut créer autant de hbox et vbox nécessaires pour structurer cette mise en page. On note qu'il y aura des boutons (New, Quit et les 3 flèches), des labels (Score et Delay) et des labels qu'on va modifier (la valeur du score et le temps restant). Il y aura enfin une zone de dessin (GtkDrawingArea).</p>
@@ -294,21 +304,27 @@ clean:
 <h2><a class="anchor" id="TP3-reaction"></a>
 3.5 - Ajouter une réaction</h2>
 <p>On peut écrire ses propres fonctions <em>réactions</em> pour les événements. Par exemple, si on veut que le bouton "gauche" appelle la fonction <code>Gauche</code> lorsqu'il est cliqué, on connecte le composant à cette fonction grâce à <code>g_signal_connect</code>. On note qu'on peut passer un pointeur en paramètre de plus.</p>
-<div class="fragment"><div class="line">gboolean Gauche( GtkWidget *widget, gpointer data )</div>
+<div class="fragment"><div class="line"><span class="comment">// Réaction à un clic sur `button_left`</span></div>
+<div class="line"><span class="comment">// @param widget le widget qui a déclenché l&#39;appel de cette réaction (ici `button_left`)</span></div>
+<div class="line"><span class="comment">// @param data   le pointeur donné lors du `g_signal_connect` (ici `global_val0`)</span></div>
+<div class="line">gboolean Gauche( GtkWidget *widget, gpointer data )</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">// Recupère la valeur passée en paramètre.</span></div>
-<div class="line">  <span class="keywordtype">int</span> val1 = * ( (<span class="keywordtype">int</span>*) data ); </div>
-<div class="line">  printf( <span class="stringliteral">&quot;Gauche, val=%d\n&quot;</span>, val1 ); <span class="comment">// affichera 17</span></div>
+<div class="line">  <span class="keywordtype">int</span>* ptr_val0 = (<span class="keywordtype">int</span>*) data;</div>
+<div class="line">  <span class="keywordtype">int</span>  val0     = *ptr_val0;</div>
+<div class="line">  printf( <span class="stringliteral">&quot;Gauche, val=%d\n&quot;</span>, val0 ); <span class="comment">// affichera 17</span></div>
 <div class="line">  <span class="keywordflow">return</span> TRUE; <span class="comment">// Tout s&#39;est bien passé</span></div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// ...</span></div>
 <div class="line"><span class="comment">// variable globale</span></div>
-<div class="line"><span class="keywordtype">int</span> val0 = 17;</div>
+<div class="line"><span class="keywordtype">int</span> global_val0 = 17;</div>
 <div class="line"><span class="comment">// ...</span></div>
-<div class="line">  g_signal_connect( button_left, <span class="stringliteral">&quot;clicked&quot;</span>,</div>
-<div class="line">                G_CALLBACK( Gauche ), &amp;val0 );</div>
-</div><!-- fragment --><p>Ecrivez des réactions similaires pour les boutons flèches gauche, bas, droite et "New". On les réécrira plus tard pour nos besoins. Il est important de remarquer que dans l'exemple ci-dessus, la valeur affichée est celle de <code>val0</code> lorsque le bouton sera cliqué, il est donc primordial que cette variable existe encore à ce moment là. On note que ce mécanisme de <code>réaction</code> est basé sur la notion de pointeur de fonction.</p>
-<dl class="section note"><dt>Note</dt><dd>Comme la variable <code>val0</code> doit exister lorsque <code>Gauche</code> est appelé, ce ne peut être une variable définie dans le fonction <code>creerIHM</code>. <code>&amp;val0</code> doit désigner soit l'adresse d'une variable globale, soit l'adresse d'une variable définie dans la fonction appelante, i.e. la fonction <code>main</code>.</dd></dl>
+<div class="line"><span class="comment">// Connecte au bouton `button_left` la réaction `Gauche`.</span></div>
+<div class="line"><span class="comment">// Quand on clique sur ce bouton, le pointeur vers `global_val0` est donnée en second</span></div>
+<div class="line"><span class="comment">// paramètre à la fonction `Gauche`.</span></div>
+<div class="line">g_signal_connect( button_left, <span class="stringliteral">&quot;clicked&quot;</span>, G_CALLBACK( Gauche ), &amp;global_val0 );</div>
+</div><!-- fragment --><p>Ecrivez des réactions similaires pour les boutons flèches gauche, bas, droite et "New". On les réécrira plus tard pour nos besoins. Il est important de remarquer que dans l'exemple ci-dessus, la valeur affichée est celle de <code>global_val0</code> lorsque le bouton sera cliqué, il est donc primordial que cette variable existe encore à ce moment là. On note que ce mécanisme de <code>réaction</code> est basé sur la notion de pointeur de fonction.</p>
+<dl class="section note"><dt>Note</dt><dd>Comme la variable <code>global_val0</code> doit exister lorsque <code>Gauche</code> est appelée, ce ne peut être une variable définie dans le fonction <code>creerIHM</code>. <code>&amp;global_val0</code> doit désigner soit l'adresse d'une variable globale, soit l'adresse d'une variable définie dans la fonction appelante, i.e. la fonction <code>main</code>.</dd></dl>
 <h2><a class="anchor" id="TP3-donnees"></a>
 3.6 - Accès à toutes les données</h2>
 <p>Nous allons avoir besoin d'accéder à la partie logique du jeu (grille tetris ainsi que pièces, score, autres) à partir de l'IHM. Or, dans les réactions que l'on va associer aux événements, une seule donnée (un pointeur) est envoyée en même temps. On va donc se créer un type qui rassemble toutes nos données en un seul endroit et on passera l'adresse d'une variable de ce type à toutes nos réactions.</p>
@@ -316,7 +332,7 @@ clean:
 <div class="line">  Grille g;</div>
 <div class="line">  <a class="code hl_struct" href="structSPiece.html">Piece</a> tab[ NB_PIECES ];</div>
 <div class="line">  <span class="keywordtype">int</span> piece; <span class="comment">// la piece &quot;en cours&quot; que l&#39;on cherche à placer.</span></div>
-<div class="line">  <span class="keywordtype">int</span> col; <span class="comment">// la colonne actuelle pour la pièce que l&#39;on cherche à caser.</span></div>
+<div class="line">  <span class="keywordtype">int</span> col;   <span class="comment">// la colonne actuelle pour la pièce que l&#39;on cherche à caser.</span></div>
 <div class="line">  <span class="keywordtype">int</span> score; <span class="comment">// le score</span></div>
 <div class="line">  <span class="keywordtype">int</span> delay; <span class="comment">// le delay</span></div>
 <div class="line">  <span class="comment">// ... peut-être d&#39;autres choses.</span></div>
@@ -342,16 +358,20 @@ clean:
 <div class="line">  ...</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Il faudra donc rajouter un paramètre à <code>creerIHM</code>. Son prototype deviendra <code>void creerIHM( Jeu* ptrJeu )</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>Dans la suite, vous aurez à mettre des pointeurs vers des <code>GtkWidget</code> dans la structure <code>Jeu</code>. Et <code>ptrJeu</code> sera la donnée que vous passerez aux différentes réactions/callbacks.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd><b>Important</b>. Dans la suite, vous aurez à mettre des pointeurs vers des <code>GtkWidget</code> dans la structure <code>Jeu</code>. Et <code>ptrJeu</code> sera la donnée que vous passerez aux différentes réactions/callbacks.</dd></dl>
 <h1><a class="anchor" id="TP3-dessin"></a>
 4 - Affichage du Tetris dans la zone de dessin.</h1>
 <p>On va se servir de Cairo (<a href="http://www.cairographics.org/">http://www.cairographics.org/</a>) pour dessiner notre grille tetris ainsi que les pièces.</p>
 <h2><a class="anchor" id="TP3-expose"></a>
 4.1 - Realize et draw events</h2>
-<p>Lorsqu'un composant est placé dans une fenêtre affichée à l'écran, il reçoit des signaux pour lui dire quand se réafficher. Cela arrive bien sûr la première fois que l'IHM est affichée, mais aussi par la suite si jamais la fenêtre a subie une occlusion partielle et doit donc être redessinée. Le composant GtkDrawingArea est par défaut rempli de gris, c'est tout ! On va donc se connecter aux signaux "realize" (appelé une seule fois lors du premier affichage) et "draw" (appelé régulièrement par le serveur de fenêtre) pour tracer notre tetris. On part donc du squelette suivant.</p>
-<div class="fragment"><div class="line"> gboolean</div>
+<p>Lorsqu'un composant est placé dans une fenêtre affichée à l'écran, il reçoit des signaux pour lui dire quand se réafficher. Cela arrive bien sûr la première fois que l'IHM est affichée, mais aussi par la suite si jamais la fenêtre a subi une occlusion partielle et doit donc être redessinée. Le composant GtkDrawingArea est par défaut rempli de gris, c'est tout ! On va donc se connecter aux signaux "realize" (appelé une seule fois lors du premier affichage) et "draw" (appelé régulièrement par le serveur de fenêtre) pour tracer notre tetris. On part donc du squelette suivant.</p>
+<div class="fragment"><div class="line"> <span class="comment">// Pas indispensable, appelé au début de la création du widget.</span></div>
+<div class="line"> <span class="comment">// Force ici un réaffichage.</span></div>
+<div class="line"> gboolean</div>
 <div class="line"> realize_evt_reaction( GtkWidget *widget, gpointer data )</div>
 <div class="line"> { <span class="comment">// force un événement &quot;draw&quot; juste derrière.</span></div>
+<div class="line">   <span class="comment">// La même ligne est utile pour les fonctions `Gauche`, `Droite`, pour forcer</span></div>
+<div class="line">   <span class="comment">// le réaffichage de la fenêtre (la pièce a bougé).</span></div>
 <div class="line">   gtk_widget_queue_draw( widget ); </div>
 <div class="line">   <span class="keywordflow">return</span> TRUE;</div>
 <div class="line"> }</div>
@@ -360,7 +380,7 @@ clean:
 <div class="line"> on_draw( GtkWidget *widget, GdkEventExpose *event, gpointer data )</div>
 <div class="line"> {</div>
 <div class="line">   <span class="comment">// Ces premières lignes permettent de récupérer la zone d&#39;affichage</span></div>
-<div class="line">   <span class="comment">// et d&#39;initialiser un objet Cairographics cr qui permettra de dessiner</span></div>
+<div class="line">   <span class="comment">// et d&#39;initialiser un objet Cairographics `cr` qui permettra de dessiner</span></div>
 <div class="line">   <span class="comment">// sur cette zone.</span></div>
 <div class="line">   GdkWindow* window = gtk_widget_get_window(widget);</div>
 <div class="line">   cairo_region_t* cairoRegion = cairo_region_create();</div>
@@ -384,7 +404,7 @@ clean:
 <div class="line"> </div>
 <div class="line">   <span class="comment">// (B) On a fini, on peut détruire la structure.</span></div>
 <div class="line">   gdk_window_end_draw_frame(window,drawingContext);</div>
-<div class="line">   <span class="comment">// cleanup</span></div>
+<div class="line">   <span class="comment">// On vide la mémoire utilisée.</span></div>
 <div class="line">   cairo_region_destroy(cairoRegion);</div>
 <div class="line">   <span class="keywordflow">return</span> TRUE;</div>
 <div class="line"> }</div>
@@ -419,16 +439,18 @@ clean:
 <div class="image">
 <img src="gtktetris-4_2.png" alt=""/>
 </div>
+<dl class="section note"><dt>Note</dt><dd>On choisit la couleur de tracé via <code>cairo_set_source_rgb(cr, r, g, b)</code>, où r,g,b sont les intensités (entre 0.0 et 1.0) des couleurs rouge, vert et bleu.</dd></dl>
 <h2><a class="anchor" id="TP3-affichepiece"></a>
 4.3 - Affichage de la pièce en attente</h2>
-<p>On voit que, dans la structure Jeu, on mémorise la pièce courante ainsi que sa colonne courante. On va faire une fonction qui met à jour une structure Jeu en choisissant aléatoirement une nouvelle pièce courante et la place arbitrairement dans la colonne (LARGEUR-piece.largeur)/2. Appelons-là <code>nouvellePiece</code>.</p>
-<p>Ecrivez ensuite la fonction <code>dessinePiece( cairo_t* cr, Jeu* pJeu )</code> qui l'affiche.</p>
+<p>On voit que, dans la structure Jeu, on mémorise la pièce courante ainsi que sa colonne courante. On va faire une fonction qui met à jour une structure Jeu en choisissant aléatoirement une nouvelle pièce courante et la place arbitrairement dans la colonne (LARGEUR-piece.largeur)/2. Appelons-là <code>nouvellePiece</code>. Elle sera appelée en début de partie et à chaque fois que le joueur vient de poser une pièce.</p>
+<p>Ecrivez ensuite la fonction <code>dessinePiece( cairo_t* cr, Jeu* pJeu
+   )</code> qui l'affiche, et qui sera appelée depuis <code>on_draw</code> (comme tous les dessins dans la zone graphique).</p>
 <div class="image">
 <img src="gtktetris-4_3.png" alt=""/>
 </div>
 <h2><a class="anchor" id="TP3-deplacepiece"></a>
 4.4 - Déplacement de la pièce</h2>
-<p>On peut maintenant écrire proprement les <em>réactions</em> <code>Gauche</code> et <code>Droite</code>. Elles doivent recevoir la donnée <code>jeu</code> aussi. Ensuite, leur seul rôle est de changer la colonne courante de la pièce, en la bloquant sur les bords. Il faut ensuite redessiner la <b>zone_de_dessin</b>. On procède alors de la même manière que dans <code>realize_evt_reaction</code>, c'est-à-dire avec la commande </p><div class="fragment"><div class="line">gtk_widget_queue_draw( window ); <span class="comment">// nb: drawing_area suffit</span></div>
+<p>On peut maintenant écrire proprement les <em>réactions</em> <code>Gauche</code> et <code>Droite</code>. Elles doivent recevoir la donnée <code>jeu</code> aussi. Ensuite, leur seul rôle est de changer la colonne courante de la pièce, en la bloquant sur les bords. Il faut ensuite redessiner la <b>zone_de_dessin</b>. On procède alors de la même manière que dans <code>realize_evt_reaction</code>, c'est-à-dire avec la commande </p><div class="fragment"><div class="line">gtk_widget_queue_draw( pJeu-&gt;drawing_area ); <span class="comment">//&lt; drawing_area doit être stocké dans Jeu.</span></div>
 </div><!-- fragment --><p>Chaque clic sur les flèches gauche ou droite doit maintenant réafficher votre pièce déplacée dans la bonne direction.</p>
 <h2><a class="anchor" id="TP3-placepiece"></a>
 4.5 - Placement de la pièce</h2>
@@ -454,10 +476,11 @@ clean:
 <div class="line">g_timeout_add (20, tic, (gpointer) ptrJeu );</div>
 </div><!-- fragment --><p>Pour simplifier, on va supposer que le label pour le délai a été placé dans une variable globale du genre</p>
 <div class="fragment"><div class="line">GtkWidget* valeur_delai;</div>
-</div><!-- fragment --><p>En utilisant <code>gtk_label_set_text</code>( <code>GTK_LABEL</code>( <code>valeur_delai</code> ), <code>str</code> ), vous remplacez le texte stocké dans ce label par le contenu de la chaine de caractère <code>str</code>. On va donc stocker le délai courant dans la structure Jeu ainsi que le délai maximum redonné à chaque fois. Votre fonction <code>tic</code> doit décrémenter ce compteur délai et l'afficher. Lorsqu'il arrive à zéro, la réaction <code>Bas</code> doit être appelée et le compteur réinitialisé au délai maximum. Eventuellement, vous pouvez vous amuser à diminuer prgressivement le délai maximum, avec le même timer ou un autre timer.</p>
+</div><!-- fragment --><p>En utilisant <code>gtk_label_set_text</code>( <code>GTK_LABEL</code>( <code>valeur_delai</code> ), <code>str</code> ), vous remplacez le texte stocké dans ce label par le contenu de la chaine de caractère <code>str</code>. On va donc stocker le délai courant dans la structure Jeu ainsi que le délai maximum redonné à chaque fois. Votre fonction <code>tic</code> doit décrémenter ce compteur délai et l'afficher. Lorsqu'il arrive à zéro, la réaction <code>Bas</code> doit être appelée et le compteur réinitialisé au délai maximum. Eventuellement, vous pouvez vous amuser à diminuer progressivement le délai maximum, avec le même timer ou un autre timer.</p>
 <div class="image">
 <img src="gtktetris-5_1.png" alt=""/>
 </div>
+<dl class="section note"><dt>Note</dt><dd>Pour convertir un entier (le délai) en chaîne de caractère, on rappelle qu'il suffit d'utiliser <code>sprintf( buffer, "%d", delai)</code>, où buffer est un tableau de caractère suffisament grand.</dd></dl>
 <h2><a class="anchor" id="TP3-touches"></a>
 5.2 - Touches pour déplacer la pièce</h2>
 <p>Le tetris sera beaucoup plus sympa à jouer si au lieu de cliquer sur les boutons, vous utilisez des touches pour déplacer les pièces. On peut mettre des événements "touches pressées" en Gtk/Gdk.</p>
@@ -483,22 +506,22 @@ clean:
 <ul>
 <li>On peut mettre un booléen qui indique si une partie est en cours ou non. Cela permet de lancer un nouveau Jeu lorsqu'on clique sur New et de bloquer la partie lorsque le placement de la pièce dépasse le haut de la grille.</li>
 <li>On peut changer le score à chaque pièce placée, ainsi qu'à chaque fois qu'on fait des lignes.</li>
-<li>on peut s'occuper de la rotation des pièces. Il suffit de prévoir déjà les pièces qui sont rotations l'une de l'autre, de rajouter un bouton "rotation"/ touche "rotation" et de faire un tableau qui dit quel est l'indice de la pièce tournée.</li>
+<li>on peut s'occuper de la rotation des pièces. Il suffit de prévoir déjà les pièces qui sont rotations l'une de l'autre, de rajouter des boutons "rotation g/d"/ touches "rotation g/d" et de faire un tableau qui dit quel est l'indice de la pièce tournée.</li>
 <li>on peut mettre des couleurs sympas...</li>
 </ul>
 <h1><a class="anchor" id="TP3-divers"></a>
 6 - Remise du tp</h1>
 <ul>
 <li>Ce TP peut être fait par binôme.</li>
-<li>A la fin de votre séance TP, vous m'enverrez votre TP via <a href="http://www.lama.univ-savoie.fr/TPLab">TPLab</a>. Ce mail devra contenir une archive nommée TP3-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, makefile. Vous placerez un <b>README</b> précisant l'état d'avancement (ce qui marche, ce qui marche à moitié, et ce qui ne marche pas).</li>
-<li>Vous m'enverrez la version finale de votre TP avant le <b>dimanche</b> <b>23</b> <b>octobre</b> <b>minuit</b> via <a href="https://www.lama.univ-savoie.fr/TPLab">TPLab</a>. Ce mail devra contenir une archive nommée TP3-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, makefile. Vous complèterez le README en précisant l'état d'avancement (ce qui marche, ce qui marche à moitié, et ce qui ne marche pas) <b>relativement</b> à la version initiale.</li>
+<li>A la fin de votre séance TP, vous m'enverrez votre TP via <a href="https://tplab.apps.math.cnrs.fr">TPLab</a>. Ce mail devra contenir une archive nommée TP3-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, makefile. Vous placerez un <b>README</b> précisant l'état d'avancement (ce qui marche, ce qui marche à moitié, et ce qui ne marche pas).</li>
+<li>Vous m'enverrez la version finale de votre TP avant le <b>mercredi</b> <b>15</b> <b>novembre</b> <b>minuit</b> via <a href="https://www.lama.univ-savoie.fr/TPLab">TPLab</a>. Ce mail devra contenir une archive nommée TP3-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, makefile. Vous complèterez le README en précisant l'état d'avancement (ce qui marche, ce qui marche à moitié, et ce qui ne marche pas) <b>relativement</b> à la version initiale.</li>
 <li>Bien entendu, il faut que vos programmes compilent sous Linux lorsque j'écris <code>make</code> dans le terminal. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 27 2023 15:03:36 for INFO505 Programmation C by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Nov 7 2023 12:01:56 for INFO505 Programmation C by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
