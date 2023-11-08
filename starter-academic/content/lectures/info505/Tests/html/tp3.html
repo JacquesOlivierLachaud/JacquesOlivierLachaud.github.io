@@ -218,7 +218,7 @@ clean:
 3 - L'interface GTK</h1>
 <p>Pour créer une interface graphique, GTK propose un système classique à base de composants. On dispose du type générique GtkWidget pour les désigner. La fenêtre (GtkWindow) est le composant dans lequel on place les autres. Certains composants peuvent contenir d'autres composants, on les appelle des conteneurs (GtkWindow est un conteneur ne contenant pas plus d'un composant, le GtkBox est un conteneur permettant de stocker autant d'autres composants que l'on souhaite). On dispose de plus de beaucoup de composants classiques pour les IHM : boutons, menus, checkbox, roulettes, zones de dessin, onglets, etc.</p>
 <p>Ensuite, on associe à ces composants des <em>réactions</em> à certains événements. On pourra ainsi spécifier que la fonction <code>quitter</code> sera appelée lorsqu'on clique sur un bouton.</p>
-<p>Une fois ces composants créés puis assemblés dans le bon ordre, on peut lancer l'application en donnant la main à GTK (appel de <code>gtk_main_loop</code>). Ce sera GTK qui appelera automatiquement nos <em>réactions</em> selon les événements induits par le comportement de l'utilisateur. On parle de <b>programmation</b> <b>événementielle</b>.</p>
+<p>Une fois ces composants créés puis assemblés dans le bon ordre, on peut lancer l'application en donnant la main à GTK (appel de <code>gtk_main</code>). Ce sera GTK qui appelera automatiquement nos <em>réactions</em> selon les événements induits par le comportement de l'utilisateur. On parle de <b>programmation</b> <b>événementielle</b>.</p>
 <h2><a class="anchor" id="TP3-debut"></a>
 3.1 - Première fenêtre</h2>
 <p>Voilà un programme minimaliste pour créer une fenêtre GTK.</p>
@@ -247,10 +247,10 @@ clean:
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>On note qu'il faut un pointeur (de type <code>GtkWidget*</code>) pour pointer vers les composants créés. Chaque composant est créé avec une fonction de la forme <code>gtk_xxxx_new( ... )</code>, où xxxx désigne le type de composant voulu. Enfin, on doit appeler la fonction <code>gtk_widget_show</code> sur <b>chaque</b> composant créé pour le rendre visible. De la même façon, vous pouvez rendre invisible tout composant (et les composants qu'il contient) en appelant la fonction <code>gtk_widget_hide</code>.</p>
-<p>Une fois tout en place, on appelle la boucle d'attente d'événements de GTK avec <code>gtk_main_loop</code>. Compilez et exécutez ce code. Notez qu'il faut interrompre le programme car rien n'est prévu pour quitter la boucle.</p>
+<p>Une fois tout en place, on appelle la boucle d'attente d'événements de GTK avec <code>gtk_main</code>. Compilez et exécutez ce code. Notez qu'il faut interrompre le programme car rien n'est prévu pour quitter la boucle.</p>
 <h2><a class="anchor" id="TP3-bouton"></a>
 3.2 - Premier bouton et réaction</h2>
-<p>On va créer un bouton (cliquable) avec <code>gtk_button_new_with_label</code>. Rajouter les lignes suivantes dans votre programme <b>avant</b> l'appel au <code>gtk_main_loop</code>.</p>
+<p>On va créer un bouton (cliquable) avec <code>gtk_button_new_with_label</code>. Rajouter les lignes suivantes dans votre programme <b>avant</b> l'appel au <code>gtk_main</code>.</p>
 <div class="fragment"><div class="line">GtkWidget* button_quit;</div>
 <div class="line"><span class="comment">// Crée le bouton.</span></div>
 <div class="line">button_quit = gtk_button_new_with_label ( <span class="stringliteral">&quot;Quit&quot;</span> );</div>
@@ -521,7 +521,7 @@ On peut voir comment GTK normalise les <em>casts</em> à la C via des macros, pa
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 7 2023 13:41:28 for INFO505 Programmation C by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Nov 8 2023 09:02:56 for INFO505 Programmation C by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
