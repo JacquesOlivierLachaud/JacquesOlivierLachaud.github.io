@@ -272,9 +272,7 @@ clean:
 3.3 - Boîte pour mettre plusieurs composants</h2>
 <p>Comme une fenêtre ne contient qu'un composant au maximum, on place un autre composant (la boîte) dans la fenêtre et c'est dans cette boîte qu'on mettra plusieurs composants.</p>
 <p>Les boîtes permettent de ranger des composants, mais ne rajoutent pas de décor autour des composants. Elles servent à mettre en page votre IHM. Il y a les boîtes horizontales (créées avec <code>gtk_box_new(GTK_ORIENTATION_HORIZONTAL,...)</code> pour placer les composants horizontalement et les boîtes verticales (créées avec <code>gtk_box_new(GTK_ORIENTATION_VERTICAL,...)</code>) pour placer les composants en vertical.</p>
-<div class="fragment"><div class="line"><span class="comment">// FALSE: les composants internes n&#39;auront pas forcément la même largeur. </span></div>
-<div class="line"><span class="comment">// TRUE: les composants internes auront forcément la même largeur. </span></div>
-<div class="line"><span class="comment">// 10: bords autour des composants.</span></div>
+<div class="fragment"><div class="line"><span class="comment">// 10: bords autour des composants.</span></div>
 <div class="line">GtkWidget* hbox1 = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 10);</div>
 <div class="line"><span class="comment">// Crée un label</span></div>
 <div class="line">GtkWidget* label = gtk_label_new( <span class="stringliteral">&quot;Grille TETRIS&quot;</span> );</div>
@@ -521,7 +519,7 @@ On peut voir comment GTK normalise les <em>casts</em> à la C via des macros, pa
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 8 2023 09:02:56 for INFO505 Programmation C by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Wed Nov 8 2023 11:06:19 for INFO505 Programmation C by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
