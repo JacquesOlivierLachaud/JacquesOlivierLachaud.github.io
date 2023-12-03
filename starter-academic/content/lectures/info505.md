@@ -36,7 +36,7 @@ informations.
 
 ### Fiches de TDs
 
-* [TD3 - skip-listes (PDF)](TDs/td-3.pdf) : structures auto-référentes (listes), pointeurs, allocation dynamique.
+* [TD3 - skip-listes (PDF)](TDs/td-3.pdf) [Corrigé (PDF)](TDs/td-3-sol.pdf): structures auto-référentes (listes), pointeurs, allocation dynamique.
 * [TD4 - tableaux de bits (PDF)](TDs/td-4.pdf) : pointeurs, manipulation de bits et tableau de bits, ensembles par fonction caractéristique
 
 
