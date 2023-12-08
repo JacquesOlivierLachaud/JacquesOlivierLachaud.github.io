@@ -39,9 +39,14 @@ informations.
 * [TD3 - skip-listes (PDF)](TDs/td-3.pdf) [Corrigé (PDF)](TDs/td-3-sol.pdf): structures auto-référentes (listes), pointeurs, allocation dynamique.
 * [TD4 - tableaux de bits (PDF)](TDs/td-4.pdf) : pointeurs, manipulation de bits et tableau de bits, ensembles par fonction caractéristique
 
-
 ### [Pages des TPs](Tests/html)
 
 ### Quelques exemples de code C
 
 * [labyrinthes](Lessons/lesson-3-a.c) [labyrinthes (résolution progressive)](Lessons/lesson-3-b.c)
+
+### Annales
+
+* [Examen 2022-2023 (PDF)](Examens/examen-2022-2023.pdf) [Corrigé exos 2 et 3 (PDF)](Examens/examen-sol-2022-2023.pdf)
+* [Examen 2021-2022 (PDF)](Examens/examen-2021-2022.pdf) [Corrigé complet (PDF)](Examens/examen-sol-2021-2022.pdf)
+* [Examen 2017-2018 (PDF)](Examens/examen-2017-2018.pdf) [Corrigé exo 1 (PDF)](Examens/examen-sol-exo1-2017-2018.pdf)
