@@ -54,7 +54,8 @@ experience:
       Most of my lectures are accesible on LAMA's [wiki](http://os-vps418.infomaniak.ch:1250/mediawiki).
       * M1 Info / M1 CMI Info: [INFO702 Programmation générique et C++](lectures/info702) (Lectures/Seminars/Practicals)
          * (old website) [INFO702](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO702_:_Programmation_générique_et_C%2B%2B) Generic programming in C++, (Lectures/Seminars/Practicals)
-      * M1 Info / M1 CMI Info: [INFO804](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO804_:_Introduction_à_l%27Informatique_Graphique) Computer graphics, (Lectures/Seminars/Practicals)
+      * M1 Info / M1 CMI Info: [INFO804 Introduction à l'informatique graphique](lectures/info804) (Lectures/Seminars/Practicals)
+         * (old website) [INFO804](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO804_:_Introduction_à_l%27Informatique_Graphique) Computer graphics, (Lectures/Seminars/Practicals)
       * M2 Info/Math / M2 CMI Info/Math: [INFO911](https://codimd.math.cnrs.fr/s/UE_B59gMy) Image processing and analysis, (Lectures/Seminars/Practicals)
       * M2 CMI Info: [INFO001](https://codimd.math.cnrs.fr/s/U_hz-OPpK) Image processing and analysis (advanced), (Lectures/Seminars/Practicals)
       * M2 CMI Info: [PROJ002](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/PROJ002_CMI_:_Projet_en_traitement_et_analyse_d%27image) Project in image processing and analysis, (Lectures/Seminars/Practicals)

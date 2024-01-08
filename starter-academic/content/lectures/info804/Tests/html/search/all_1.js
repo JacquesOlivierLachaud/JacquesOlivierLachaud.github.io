@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['2_201_20code_20fourni_0',['2.1 - Code fourni',['../ig_tp2.html#ig_tp2_2_1',1,'']]],
+  ['2_201_20d_20autres_20géométries_1',['2.1 - D&apos;autres géométries',['../ig_tp3.html#ig_tp3_2_1',1,'']]],
+  ['2_202_20construire_20l_20application_20initiale_2',['2.2 - Construire l&apos;application initiale',['../ig_tp2.html#ig_tp2_2_2',1,'']]],
+  ['2_202_20matériaux_20et_20lumières_3',['2.2 - Matériaux et lumières',['../ig_tp3.html#ig_tp3_2_2',1,'']]],
+  ['2_203_20groupes_20et_20transformations_20géométriques_4',['2.3 - Groupes et transformations géométriques',['../ig_tp3.html#ig_tp3_2_3',1,'']]],
+  ['2_203_20observation_20du_20code_5',['2.3 - Observation du code',['../ig_tp2.html#ig_tp2_2_3',1,'']]],
+  ['2_204_20contrôle_20de_20la_20caméra_20par_20le_20programme_6',['2.4 - Contrôle de la caméra par le programme',['../ig_tp3.html#ig_tp3_2_4',1,'']]],
+  ['2_205_20contrôle_20de_20la_20caméra_20par_20la_20souris_7',['2.5 - Contrôle de la caméra par la souris',['../ig_tp3.html#ig_tp3_2_5',1,'']]],
+  ['2_206_20mettre_20un_20fond_20à_20votre_20scène_8',['2.6 - Mettre un fond à votre scène',['../ig_tp3.html#ig_tp3_2_6',1,'']]],
+  ['2_207_20calculer_20des_20ombres_20entre_20objets_9',['2.7 - Calculer des ombres entre objets',['../ig_tp3.html#ig_tp3_2_7',1,'']]],
+  ['2_20classe_20trianglesoup_20et_20chargement_10',['3.2 - Classe TriangleSoup et chargement.',['../ig_tp1.html#ig_tp1_3_2',1,'']]],
+  ['2_20code_20initial_20application_20minimale_20libqglviewer_11',['2 - Code initial, application minimale libQGLViewer',['../ig_tp1.html#ig_tp1_2',1,'']]],
+  ['2_20parties_20essentielles_20d_20un_20code_20webgl_20avec_20three_20js_12',['1.2 - Parties essentielles d&apos;un code WebGL avec three.js',['../ig_tp3.html#ig_tp3_1_2',1,'']]],
+  ['2_20premiers_20pas_20en_20three_20js_13',['2 - Premiers pas en three.js',['../ig_tp3.html#ig_tp3_2',1,'']]],
+  ['2_20prise_20en_20main_20du_20code_14',['2 - Prise en main du code',['../ig_tp2.html#ig_tp2_2',1,'']]],
+  ['2_20réflexions_15',['4.2 - Réflexions',['../ig_tp2.html#ig_tp2_4_2',1,'']]],
+  ['2_20rendu_20minimal_20intersection_20avec_20l_20objet_20le_20plus_20proche_20sur_20le_20trajet_20du_20rayon_16',['3.2 - Rendu minimal, intersection avec l&apos;objet le plus proche sur le trajet du rayon.',['../ig_tp2.html#ig_tp2_3_2',1,'']]],
+  ['2_20une_20variante_20du_20plan_20infini_20l_20eau_20calme_17',['5.2 Une variante du plan infini, l&apos;eau calme (***)',['../ig_tp2.html#ig_tp2_5_2',1,'']]],
+  ['2_20zipper_20et_20index_20d_20une_20cellule_18',['4.2 - Zipper et index d&apos;une cellule',['../ig_tp1.html#ig_tp1_4_2',1,'']]],
+  ['2023_202024_19',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]],
+  ['2024_20',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]]
+];
