@@ -1,5 +1,5 @@
 ---
-title: Privacy
+title: Privacy policy and legal mentions
 date: '2018-06-28T00:00:00+01:00'
 draft: false
 share: false
@@ -8,11 +8,11 @@ editable: false
 
 # Optional header image (relative to `static/media/` folder).
 header:
-  caption: 'Privacy policy / Legal mentions'
+  caption: ''
   image: ''
 ---
 
-# privacy policy
+# Privacy policy
 
 ## Collection of your personal information
 
