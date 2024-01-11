@@ -17,8 +17,8 @@ marketing:
   seo:
     site_type: Person
     local_business_type: ''
-    org_name: ''
-    description: 'Jacques-Olivier Lachaud homepage.'
+    org_name: 'Laboratory of Mathematics, University Savoie Mont Blanc'
+    description: 'Jacques-Olivier Lachaud homepage'
     twitter: 'wowchemy'
   analytics:
     google_analytics: ''
@@ -43,7 +43,7 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {year} Jacques-Olivier Lachaud. This work is licensed under {license}'
     license:
       enable: true
       allow_derivatives: false

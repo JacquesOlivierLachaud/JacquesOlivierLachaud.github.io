@@ -37,7 +37,7 @@ main:
   - name: Contact
     url: '#contact'
     weight: 80
-  - name: Privacy
+  - name: Privacy/Legal mentions
     url: '/privacy'
     weight: 100
     
