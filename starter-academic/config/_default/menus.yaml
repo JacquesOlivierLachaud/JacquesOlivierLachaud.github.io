@@ -38,7 +38,7 @@ main:
     url: '#contact'
     weight: 80
   - name: Privacy
-    url: '#privacy'
+    url: '/privacy'
     weight: 100
     
 # - name: Awards
