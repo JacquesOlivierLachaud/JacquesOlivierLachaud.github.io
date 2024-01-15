@@ -102,7 +102,7 @@ $(function() {
 1 - Objectifs, pointeurs utiles</h1>
 <p>L'objectif de ce TP est de vous familiariser avec l'informatique graphique, d'une part avec quelques petits traitements OpenGL, d'autre part avec un peu d'algorithmique sur des modèles géométriques simples. Le langage utilisé sera le C++. On utilisera pour l'interface graphique la bibliothèque <a href="https://github.com/GillesDebunne/libQGLViewer">libQGLViewer</a>. Celle-ci utilise Qt et OpenGL. L'avantage de ne pas faire de l'OpenGL directement est que libQGLViewer gère déjà pour vous la caméra, ainsi que le déplacement de la caméra. A l'issue de cette séance, vous maîtriserez:</p>
 <ul>
-<li>l'affichage de triangles via OpenGL</li>
+<li>l'affichage de triangles via OpenGL (méthode old-school OpenGL1 &amp; 2)</li>
 <li>un modèle géométrique simple : la soupe de triangles</li>
 <li>le problème de l'illumination "réaliste" de triangles</li>
 <li>un algorithme de compression <em>out-of-core</em> de soupes de triangles</li>
@@ -122,7 +122,7 @@ $(function() {
 </ul>
 <h1><a class="anchor" id="ig_tp1_2"></a>
 2 - Code initial, application minimale libQGLViewer</h1>
-<p>On vous donne trois fichiers <a class="el" href="main_8cpp_source.html">main.cpp</a>, Viewer.h, Viewer.cpp, et un fichier de configuration Qt <a class="el" href="viewer_8pro_source.html">viewer.pro</a>. Il faut donc avoir installé <code>libqglviewer-dev</code> et Qt (qt5, qt6 pas testé). A priori, tout le code peut marcher sous Windows ou MacOS. On utilise <code>qmake</code> pour construire un <code>Makefile</code> à partir du fichier <a class="el" href="viewer_8pro_source.html">viewer.pro</a>. Le fichier a la forme ci-dessous, à adapter selon votre configuration:</p>
+<p>On vous donne trois fichiers <a class="el" href="main_8cpp_source.html">main.cpp</a>, Viewer.h, Viewer.cpp, et un fichier de configuration Qt <a class="el" href="viewer_8pro_source.html">viewer.pro</a>. Il faut donc avoir installé <code>libqglviewer-dev</code> et Qt (qt5 ou qt6). A priori, tout le code peut marcher sous Windows ou MacOS. On utilise <code>qmake</code> pour construire un <code>Makefile</code> à partir du fichier <a class="el" href="viewer_8pro_source.html">viewer.pro</a>. Le fichier a la forme ci-dessous, à adapter selon votre configuration:</p>
 <div class="fragment"><div class="line"># Ceci est un fichier de configuration pour une application Qt</div>
 <div class="line"># Il faut peut-etre legerement l adapter pour votre ordinateur.</div>
 <div class="line"> </div>
@@ -133,9 +133,11 @@ $(function() {
 <div class="line">CONFIG *= qt opengl release c++11</div>
 <div class="line"> </div>
 <div class="line"># config de Qt</div>
-<div class="line">QT     *= opengl xml</div>
-<div class="line"># Qt6</div>
-<div class="line">QT     += openglwidgets</div>
+<div class="line">QT *= xml opengl widgets gui</div>
+<div class="line"># Spécifique à Qt6</div>
+<div class="line">equals (QT_MAJOR_VERSION, 6) {</div>
+<div class="line">        QT *= gui widgets openglwidgets</div>
+<div class="line">        }</div>
 <div class="line"> </div>
 <div class="line"># Noms de vos fichiers entete</div>
 <div class="line">HEADERS = Viewer.h</div>
@@ -155,9 +157,9 @@ $(function() {
 <div class="line"># INCLUDEPATH *= /opt/local/include</div>
 <div class="line"># LIBS *= -L/opt/local/lib -lQGLViewer </div>
 <div class="line"> </div>
-<div class="line"># Exemple de configuration MacOSX/Qt6 avec frameworks</div>
-<div class="line"># INCLUDEPATH *= /Users/lachaud/local/src/libQGLViewer-2.9.1</div>
-<div class="line"># LIBS *= -F/Users/lachaud/local/src/libQGLViewer-2.9.1/QGLViewer -framework QGLViewer</div>
+<div class="line"># Exemple de configuration MacOSX/Qt5 ou Qt6 avec frameworks</div>
+<div class="line"># INCLUDEPATH *= /Users/me/local/src/libQGLViewer-2.9.1</div>
+<div class="line"># LIBS *= -F/Users/me/local/src/libQGLViewer-2.9.1/QGLViewer -framework QGLViewer</div>
 <div class="line"> </div>
 <div class="line"># Exemple de configuration Windows :</div>
 <div class="line"># LIBS *= -lopengl32 -lglu32</div>
@@ -424,10 +426,10 @@ istream, string )</code> dans une chaîne de caractères <code>str</code>. Ensui
 <td><div class="image">
 <img src="ig1-3.png" alt=""/>
 </div>
-td </td><td><div class="image">
+ </td><td><div class="image">
 <img src="ig1-4.png" alt=""/>
 </div>
-td  </td></tr>
+  </td></tr>
 </table>
 <h2><a class="anchor" id="ig_tp1_3_5"></a>
 3.5 - Couleur ambiente / diffuse / spéculaire</h2>
@@ -519,10 +521,10 @@ td  </td></tr>
 <td><div class="image">
 <img src="ig1-7.png" alt=""/>
 </div>
-td </td><td><div class="image">
+ </td><td><div class="image">
 <img src="ig1-8.png" alt=""/>
 </div>
-td  </td></tr>
+  </td></tr>
 <tr>
 <td>bunny258.tri (464588 triangles)  </td><td>pour une décomposition 50x50x50 (19637 triangles)   </td></tr>
 </table>
@@ -562,22 +564,22 @@ td  </td></tr>
 <td><div class="image">
 <img src="ig1-9.png" alt=""/>
 </div>
-td </td><td><div class="image">
+ </td><td><div class="image">
 <img src="ig1-10.png" alt=""/>
 </div>
-td  </td></tr>
+  </td></tr>
 <tr>
-<td>bunny258.tri (464588 triangles)  </td><td>pour une décomposition 20x20x20 (3184 triangles)   </td></tr>
+<td><b> Input </b>: bunny258.tri (464588 triangles)  </td><td><b> Output </b>: pour une décomposition 20x20x20 (3184 triangles)   </td></tr>
 <tr>
 <td><div class="image">
 <img src="ig1-11.png" alt=""/>
 </div>
-td </td><td><div class="image">
+ </td><td><div class="image">
 <img src="ig1-12.png" alt=""/>
 </div>
-td  </td></tr>
+  </td></tr>
 <tr>
-<td>pour une décomposition 50x50x50 (19637 triangles)  </td><td>pour une décomposition 100x100x100 (74060 triangles)   </td></tr>
+<td><b> Output </b>: pour une décomposition 50x50x50 (19637 triangles)  </td><td><b> Output </b>: pour une décomposition 100x100x100 (74060 triangles)   </td></tr>
 </table>
 <h1><a class="anchor" id="ig_tp1_5"></a>
 5 - Conclusion et remise du TP</h1>
@@ -587,12 +589,12 @@ td  </td></tr>
 <li>Un programme non graphique qui prend 5 arguments, le nom du fichier contenant la soupe de triangles en entrée, le nom du fichier contenant la soupe de triangles en sortie, et les 3 entiers décrivant la subdivision. Ce programme affichera le nombre de triangles en entrée, en sortie, et le taux de compression (nb_triangles_output / nb_triangles_input * 100).</li>
 </ol>
 <p>Et un README à la racine qui précise quelles sont les questions traitées complètement, partiellement, ou non-traitées.</p>
-<p>Tout cela sera à remettre via <a href="https://www.lama.univ-savoie.fr/TPLab">TPLab</a> en binôme avant <b>mercredi</b> <b>8</b> <b>janvier</b> <b>minuit</b>. </p>
+<p>Tout cela sera à remettre via <a href="https://tplab.apps.math.cnrs.fr">TPLab</a> en binôme avant <b>dimanche</b> <b>4</b> <b>février</b> <b>minuit</b>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 8 2024 11:06:49 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Jan 15 2024 14:45:31 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
