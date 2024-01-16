@@ -221,7 +221,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      <span class="comment">// Look for intersection in this direction.</span></div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      <a class="code hl_typedef" href="namespacert.html#a31304cdacdb1cd0eaab05bcd2e641242">Real</a> ri = <a class="code hl_variable" href="structrt_1_1Renderer.html#a960f2d4bf657536ad5b52b3818e43f71">ptrScene</a>-&gt;<a class="code hl_function" href="structrt_1_1Scene.html#a3a72879a8e5988b69352a3e5f00235b1">rayIntersection</a>( ray, obj_i, p_i );</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      <span class="comment">// Nothing was intersected</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      <span class="keywordflow">if</span> ( ri &gt;= 0.0f ) <span class="keywordflow">return</span> <a class="code hl_struct" href="structrt_1_1Color.html">Color</a>( 0.0, 0.0, 0.0 ); <span class="comment">// some background color</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      <span class="keywordflow">if</span> ( ri &gt;= 0.0f ) <span class="keywordflow">return</span> result; <span class="comment">// some background color</span></div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      <span class="keywordflow">return</span> <a class="code hl_struct" href="structrt_1_1Color.html">Color</a>( 1.0, 1.0, 1.0 );</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
 </div>
@@ -255,11 +255,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="astructrt_1_1Renderer_html_ae12e755cf4e70e1f92cf2d20df67b298"><div class="ttname"><a href="structrt_1_1Renderer.html#ae12e755cf4e70e1f92cf2d20df67b298">rt::Renderer::myOrigin</a></div><div class="ttdeci">Point3 myOrigin</div><div class="ttdoc">The origin of the camera in space.</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8h_source.html#l00054">Renderer.h:54</a></div></div>
 <div class="ttc" id="astructrt_1_1Renderer_html_aeca19cc2de6839aada6f4524e63bb45f"><div class="ttname"><a href="structrt_1_1Renderer.html#aeca19cc2de6839aada6f4524e63bb45f">rt::Renderer::render</a></div><div class="ttdeci">void render(Image2D&lt; Color &gt; &amp;image, int max_depth)</div><div class="ttdoc">The main rendering routine.</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8h_source.html#l00093">Renderer.h:93</a></div></div>
 <div class="ttc" id="astructrt_1_1Scene_html"><div class="ttname"><a href="structrt_1_1Scene.html">rt::Scene</a></div><div class="ttdef"><b>Definition</b> <a href="Scene_8h_source.html#l00026">Scene.h:26</a></div></div>
-<div class="ttc" id="astructrt_1_1Scene_html_a3a72879a8e5988b69352a3e5f00235b1"><div class="ttname"><a href="structrt_1_1Scene.html#a3a72879a8e5988b69352a3e5f00235b1">rt::Scene::rayIntersection</a></div><div class="ttdeci">Real rayIntersection(const Ray &amp;ray, GraphicalObject *&amp;object, Point3 &amp;p)</div><div class="ttdoc">returns the closest object intersected by the given ray.</div><div class="ttdef"><b>Definition</b> <a href="Scene_8h_source.html#l00082">Scene.h:82</a></div></div>
+<div class="ttc" id="astructrt_1_1Scene_html_a3a72879a8e5988b69352a3e5f00235b1"><div class="ttname"><a href="structrt_1_1Scene.html#a3a72879a8e5988b69352a3e5f00235b1">rt::Scene::rayIntersection</a></div><div class="ttdeci">Real rayIntersection(const Ray &amp;ray, GraphicalObject *&amp;object, Point3 &amp;p)</div><div class="ttdef"><b>Definition</b> <a href="Scene_8h_source.html#l00093">Scene.h:93</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 15 2024 15:07:40 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jan 16 2024 10:55:06 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

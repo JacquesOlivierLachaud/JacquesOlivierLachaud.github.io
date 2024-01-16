@@ -114,7 +114,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad37a08d9cea4e62f807c603757305334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new light to the scene.  <br /></td></tr>
 <tr class="separator:ad37a08d9cea4e62f807c603757305334"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a72879a8e5988b69352a3e5f00235b1" id="r_a3a72879a8e5988b69352a3e5f00235b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacert.html#a31304cdacdb1cd0eaab05bcd2e641242">Real</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrt_1_1Scene.html#a3a72879a8e5988b69352a3e5f00235b1">rayIntersection</a> (const <a class="el" href="structrt_1_1Ray.html">Ray</a> &amp;ray, <a class="el" href="structrt_1_1GraphicalObject.html">GraphicalObject</a> *&amp;object, <a class="el" href="namespacert.html#a82b401d949a79dfd801b458fc7363214">Point3</a> &amp;p)</td></tr>
-<tr class="memdesc:a3a72879a8e5988b69352a3e5f00235b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the closest object intersected by the given ray.  <br /></td></tr>
 <tr class="separator:a3a72879a8e5988b69352a3e5f00235b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -415,14 +414,21 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ray</td><td>the ray that is traveling in the scene</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">object</td><td>either a null pointer (0) if no object is intersected by the ray or a pointer to the closest object intersected by the given ray.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">p</td><td>if <em>object</em> is not null, then it is the point of intersection between the ray and this object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a non-positive value if there was an intersection, positive otherwise (e.g. could be like the distance to the closest object to the ray). </dd></dl>
 
-<p>returns the closest object intersected by the given ray. </p>
-
-<p class="definition">Definition at line <a class="el" href="Scene_8h_source.html#l00082">82</a> of file <a class="el" href="Scene_8h_source.html">Scene.h</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   84</span>    {</div>
-<div class="line"><span class="lineno">   85</span>      <span class="keywordtype">object</span> = 0;</div>
-<div class="line"><span class="lineno">   86</span>      <span class="keywordflow">return</span> 1.0f;</div>
-<div class="line"><span class="lineno">   87</span>    }</div>
+<p class="definition">Definition at line <a class="el" href="Scene_8h_source.html#l00093">93</a> of file <a class="el" href="Scene_8h_source.html">Scene.h</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>    {</div>
+<div class="line"><span class="lineno">   97</span>      <span class="keywordtype">object</span> = 0;</div>
+<div class="line"><span class="lineno">   98</span>      <span class="keywordflow">return</span> 1.0f;</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -469,7 +475,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 15 2024 15:07:47 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jan 16 2024 10:55:11 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

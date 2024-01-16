@@ -151,8 +151,8 @@ $(function() {
 <li>éventuellement, aller jusqu'à faire un film ou une animation.</li>
 </ul>
 <p>Les sites suivants pourront être utile pendant le TP:</p><ul>
-<li>[<a href="http://libqglviewer.com/">http://libqglviewer.com/</a> Site libQGLViewer: exemples, doc, références]</li>
-<li>[<a href="http://www.cplusplus.com/">http://www.cplusplus.com/</a> Site C++: tutoriels, références]</li>
+<li>[<a href="https://github.com/GillesDebunne/libQGLViewer">https://github.com/GillesDebunne/libQGLViewer</a> Site libQGLViewer: exemples, doc, références]</li>
+<li>[<a href="https://en.cppreference.com/w/">https://en.cppreference.com/w/</a> Référence C++: description détaillée des bibliothèques]</li>
 <li>[<a href="http://www.parashift.com/c++-faq-lite/index.html">http://www.parashift.com/c++-faq-lite/index.html</a> C++ FAQ]</li>
 <li>[<a href="https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-ray-tracing/how-does-it-work">https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-ray-tracing/how-does-it-work</a> Learn computer graphics from scratch]</li>
 </ul>
@@ -181,7 +181,7 @@ Objectif du TP avec un peu tous les effets en même temps</div></div>
 <dl class="section note"><dt>Note</dt><dd>Tout le code est dans le namespace <code>rt</code>.</dd></dl>
 <h2><a class="anchor" id="ig_tp2_2_2"></a>
 2.2 - Construire l'application initiale</h2>
-<p>En plus d'un compilateur C++ (version c++11), il faut que vous ayez Qt (<a href="https://www.qt.io/">https://www.qt.io/</a>) et libQGLViewer (<a href="http://libqglviewer.com/">http://libqglviewer.com/</a>) installés pour que l'application fournie fonctionne. Ce n'est pas obligatoire d'avoir tout ça pour faire du ray-tracing mais c'est tellement plus agréable de placer sa caméra et ses lumières de façon interactive !</p>
+<p>En plus d'un compilateur C++ (version c++11 au moins), il faut que vous ayez Qt (<a href="https://www.qt.io/">https://www.qt.io/</a>) et libQGLViewer (<a href="https://github.com/GillesDebunne/libQGLViewer">https://github.com/GillesDebunne/libQGLViewer</a>) installés pour que l'application fournie fonctionne. Ce n'est pas obligatoire d'avoir tout ça pour faire du ray-tracing mais c'est tellement plus agréable de placer sa caméra et ses lumières de façon interactive !</p>
 <p>Pour faire le <code>Makefile</code>: </p><pre class="fragment">$ qmake
 </pre><p>Si <code>qmake</code> ne marche pas, modifiez le fichier <code><a class="el" href="ray-tracer_8pro_source.html">ray-tracer.pro</a></code> pour votre système.</p>
 <p>Pour compiler: </p><pre class="fragment">$ make
@@ -201,6 +201,7 @@ Rendu noir pour le moment</div></div>
 </table>
 <p>C'est normal que le rendu soit noir.</p>
 <dl class="section note"><dt>Note</dt><dd>Vous pouvez déplacer les lumières avec la souris (passez dessus avec la souris, puis déplacement avec bouton droit ou la molette).</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Vous avez normalement 2 warnings, liés aux méthodes <a class="el" href="structrt_1_1Scene.html#a3a72879a8e5988b69352a3e5f00235b1">rt::Scene::rayIntersection</a> et <a class="el" href="structrt_1_1Sphere.html#aa6c3f41a30ad7cdee39d6396d8270467">rt::Sphere::rayIntersection</a>. C'est normal, vous devez écrire du code à ces deux endroits.</dd></dl>
 <h2><a class="anchor" id="ig_tp2_2_3"></a>
 2.3 - Observation du code</h2>
 <p>Tout le code est nécessaire, mais vous devez regarder avec attention notamment ces parties du code:</p>
@@ -306,7 +307,7 @@ Rendu par pixel obtenu en lançant un rayon par pixel (méthode Renderer::render
 </ul>
 <h2><a class="anchor" id="ig_tp2_3_2"></a>
 3.2 - Rendu minimal, intersection avec l'objet le plus proche sur le trajet du rayon.</h2>
-<p>Pour le moment, rien n'a changé à l'affichage normalement. En effet la méthode <a class="el" href="structrt_1_1Scene.html#a3a72879a8e5988b69352a3e5f00235b1" title="returns the closest object intersected by the given ray.">Scene::rayIntersection</a> est vide aussi. On l'écrit ainsi:</p>
+<p>Pour le moment, rien n'a changé à l'affichage normalement. En effet la méthode <a class="el" href="structrt_1_1Scene.html#a3a72879a8e5988b69352a3e5f00235b1">Scene::rayIntersection</a> est vide aussi. On l'écrit ainsi:</p>
 <ul>
 <li>On fait une boucle sur tous les objets de la scène<ul>
 <li>si le rayon intersecte l'objet, alors<ul>
@@ -331,6 +332,7 @@ Application ray-tracer</div></div>
 Rendu noir et blanc pour le moment (après Q3.2)</div></div>
   </td></tr>
 </table>
+<dl class="section note"><dt>Note</dt><dd>Pour un rayon <code>[o,u)</code>, avec <code>u</code> vecteur unitaire, on peut calculer la distance entre le point <code>p</code> d'intersection et le point <code>o</code> de départ du rayon simplement en calculant le produit scalaire <code>u.(p-o)</code>. Cela évite de potentiels problèmes de signe.</dd></dl>
 <h2><a class="anchor" id="ig_tp2_3_3"></a>
 3.3 - Couleur directe de l'objet intersecté</h2>
 <p>Une fois que le premier objet touché par le rayon a été trouvé, on peut tout simplement afficher sa couleur ambiente (une sorte de couleur d'émission) et sa couleur diffuse. Il suffit d'aller modifier la méthode <a class="el" href="structrt_1_1Renderer.html#a9e6a3e7879649ff7d80d8c038dc471a6">Renderer::trace</a>. On voit qu'elle n'affiche que blanc ou noir pour le moment:</p>
@@ -342,7 +344,7 @@ Rendu noir et blanc pour le moment (après Q3.2)</div></div>
 <div class="line"><span class="comment">// Nothing was intersected</span></div>
 <div class="line"><span class="keywordflow">if</span> ( ri &gt;= 0.0f ) <span class="keywordflow">return</span> result; <span class="comment">// should be some background color</span></div>
 <div class="line"><span class="keywordflow">return</span> Color( 1.0, 1.0, 1.0 );</div>
-</div><!-- fragment --><p>On voit qu'il faut modifier la dernière ligne. Comme on a un objet, il suffit de demander à cet objet son <a class="el" href="structrt_1_1Material.html">Material</a> (via <a class="el" href="structrt_1_1GraphicalObject.html#a26e737f6816e3465206d925efe2790f2">GraphicalObject::getMaterial</a>) au point d'intersection. A partir du "Material", on pourra calculer la somme des couleurs diffuses et ambientses. Cela donne:</p>
+</div><!-- fragment --><p>On voit qu'il faut modifier la dernière ligne. Comme on a un objet, il suffit de demander à cet objet son <a class="el" href="structrt_1_1Material.html">Material</a> (via <a class="el" href="structrt_1_1GraphicalObject.html#a26e737f6816e3465206d925efe2790f2">GraphicalObject::getMaterial</a>) au point d'intersection. A partir du "Material", on pourra calculer la somme des couleurs diffuses et ambientes. Cela donne:</p>
 <table class="doxtable">
 <tr>
 <td><div class="image">
@@ -355,7 +357,7 @@ Application ray-tracer</div></div>
 Rendu couleur simple (après Q3.3). Une des boules est devant l'autre.</div></div>
   </td></tr>
 </table>
-<dl class="section note"><dt>Note</dt><dd>Notez que vous pouvez sommer directement des couleurs, grâce aux nombreuses surcharges d'opérateur dans la classe <a class="el" href="structrt_1_1Color.html">Color</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Notez que vous pouvez sommer directement des couleurs, grâce aux nombreuses surcharges d'opérateurs dans la classe <a class="el" href="structrt_1_1Color.html">Color</a>.</dd></dl>
 <h2><a class="anchor" id="ig_tp2_3_4"></a>
 3.4 - Couleurs diffuses</h2>
 <p>Evidemment, le rendu précédent est très grossier. On voudrait prendre en compte les sources de lumières, car on sait qu'elles vont changer la couleur perçue des objets. Dans le modèle usuel d'illumination, la couleur diffuse d'un objet ne dépend que de l'orientation de la normale et de la position de la source de lumière.</p>
@@ -371,7 +373,7 @@ Modèle d'illumination de Phong</div></div>
 <li>la couleur résultante sera <em>C</em> </li>
 <li>Pour chaque source de lumière <em>l</em> <ul>
 <li>On récupère sa direction <em>L</em> </li>
-<li>On calcule le coefficient de diffusion \( k_d \) comme le cosinus de l'angle entre <em>L</em> et la normale <em>N</em> au point <em>p</em> (<em>d</em> = 0.0 si négatif), i.e. \( k_d \leftarrow  \vec{L} \cdot \vec{N} \).</li>
+<li>On calcule le coefficient de diffusion \( k_d \) comme le cosinus de l'angle entre <em>L</em> et la normale <em>N</em> au point <em>p</em> , i.e. \( k_d \leftarrow  \vec{L} \cdot \vec{N} \), ( \( k_d = 0.0 \) si négatif)</li>
 <li>On ajoute à C la couleur produit entre la couleur de la lumière B, la couleur diffuse du matériau D et son coefficient de diffusion \( k_d \). <p class="formulaDsp">
 \[ C \leftarrow C + k_d D * B  \]
 </p>
@@ -441,8 +443,9 @@ Rendu avec diffusion + spécularité (après Q3.5). </div></div>
 <div class="line">  Color backgroundColor( <span class="keyword">const</span> Ray&amp; ray )</div>
 <div class="line">  { ... }</div>
 <div class="line">};</div>
-</div><!-- fragment --><p>Pour faire un dégradé pour le ciel, il suffit de regarder seulement la composante z du rayon <em>ray</em>. Par exemple, si z est entre 0 et 0.5, on retourne une couleur entre blanc (<code>Color(1,1,1)</code>) et bleu (<code><a class="el" href="structrt_1_1Color.html">Color</a>(0.0,0.0,1.0)</code>), puis si z est entre 0.5 et 1.0, on retourne une couleur entre bleu (<code><a class="el" href="structrt_1_1Color.html">Color</a>(0.0,0.0,1.0)</code>) et noir ((<code><a class="el" href="structrt_1_1Color.html">Color</a>(0.0,0.0,0.0)</code>). On rappelle que l'on peut mélanger des couleurs avec des multiplications, par exemple: </p><div class="fragment"><div class="line"><span class="comment">// Mélange 2/5*rouge et 3/5*jaune</span></div>
-<div class="line">Color orange = 0.4 * Color(1,0,0) + 0.6 * Color(1,1,0);</div>
+</div><!-- fragment --><p>Pour faire un dégradé pour le ciel, il suffit de regarder seulement la composante z de la <b>direction</b> du rayon <em>ray</em>. Par exemple, si z est entre 0 et 0.5, on retourne une couleur entre blanc (<code>Color(1,1,1)</code>) et bleu (<code><a class="el" href="structrt_1_1Color.html">Color</a>(0.0,0.0,1.0)</code>), puis si z est entre 0.5 et 1.0, on retourne une couleur entre bleu (<code><a class="el" href="structrt_1_1Color.html">Color</a>(0.0,0.0,1.0)</code>) et noir ((<code><a class="el" href="structrt_1_1Color.html">Color</a>(0.0,0.0,0.0)</code>). On rappelle que l'on peut mélanger des couleurs avec des multiplications, par exemple: </p><div class="fragment"><div class="line"> <span class="comment">// Mélange</span></div>
+<div class="line">2/5*rouge et 3/5*jaune Color orange = 0.4 * Color(1,0,0) + 0.6 *</div>
+<div class="line">Color(1,1,0); </div>
 </div><!-- fragment --><p>Ensuite, on associe un objet <code>Background</code> au <a class="el" href="structrt_1_1Renderer.html" title="This structure takes care of rendering a scene.">Renderer</a> à sa création (dans Viewer::render donc). Enfin, on rajoute la méthode <code>Renderer::background</code> qui s'occupe d'afficher les sources de lumière et votre fond:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>Renderer { </div>
 <div class="line"> ...</div>
@@ -516,7 +519,7 @@ Que signifie 'être dans l'ombre' ?</div></div>
 <li>Soit C &lt;- couleur de lumière en entrée.</li>
 <li>Tant que C.max() &gt; 0.003f faire // tant que c'est pas noir<ul>
 <li>on déplace légèrement p vers L pour éviter d'intersecter l'objet initial.</li>
-<li>si ce rayon [p,L) intersecte un autre objet (<a class="el" href="structrt_1_1Scene.html#a3a72879a8e5988b69352a3e5f00235b1" title="returns the closest object intersected by the given ray.">Scene::rayIntersection</a>)<ul>
+<li>si ce rayon [p,L) intersecte un autre objet (<a class="el" href="structrt_1_1Scene.html#a3a72879a8e5988b69352a3e5f00235b1">Scene::rayIntersection</a>)<ul>
 <li>on récupère le matériau m de l'objet au point p' d'intersection</li>
 <li>C est multiplié par la couleur diffuse et le coefficient de refraction de m</li>
 <li>p &lt;- p'</li>
@@ -772,7 +775,7 @@ Mur de building infini réfléchissant à gauche, et plan infini 'eau' en bas.</
 <li>\( \phi \): la phase, ou l'angle lorsque t vaut 0</li>
 </ul>
 <p>Vous écrirez votre <code>WaterPlane::getNormal</code> en retournant le vecteur normal à ces sommes de sinusoïdes.</p>
-<p>Ce système de perturber les normales marchent pour plein de matériaux !!</p>
+<p>Ce système de perturber les normales marche pour plein de matériaux !!</p>
 <table class="doxtable">
 <tr>
 <td><div class="image">
@@ -905,7 +908,7 @@ Pas de prise en compte des coefficiens de réfraction et diffusion dans le calcu
 </table>
 <h1><a class="anchor" id="ig_tp2_7"></a>
 7 - A rendre</h1>
-<p>Vous me remettrez votre TP via <a href="http://www.lama.univ-savoie.fr/TPLab">TPLab</a> en binôme avant le <b>lundi</b> <b>20</b> <b>février</b> <b>2023</b>.</p>
+<p>Vous me remettrez votre TP via <a href="https://tplab.apps.math.cnrs.fr">TPLab</a> en binôme avant le <b>lundi</b> <b>12</b> <b>février</b> <b>2024</b> minuit.</p>
 <p>L'archive doit contenir:</p><ul>
 <li>tous les sources .cpp, en-têtes .h, configuration .pro, et votre exécutable <a class="el" href="ray-tracer_8cpp_source.html">ray-tracer.cpp</a> (éventuellement le fichier .qglviewer pour avoir la position de la caméra),</li>
 <li>qmake, puis make doivent créer l'exécutable sans erreur,</li>
@@ -923,11 +926,12 @@ Pas de prise en compte des coefficiens de réfraction et diffusion dans le calcu
 Apparition à l'aube.</div></div>
    </td></tr>
 </table>
+<p>Pour voir quelques résultats des promotions précédentes, c'est ici : <a class="el" href="ig_tp2_etds.html">Quelques images faites par les étudiants sur le tp ray-tracing</a> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 15 2024 15:07:41 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Jan 16 2024 10:55:06 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
