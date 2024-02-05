@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.js webgl - geometries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+  </head>
+  <body>
+
+    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> Basic effect</div>
+
+    <script type="importmap">
+      {
+	  "imports": {
+	      "three": "./three.module.js",
+	      "three/addons/": "./jsm/"
+	  }
+      }
+    </script>
+    <script id="post-vert" type="x-shader/x-vertex">
+      //in vec3 normal;
+      //uniform mat4 projection;
+      //uniform mat4 modelview;
+      //uniform mat4 normalMat;
+      out vec3 vertPos;
+      out vec3 vcolor;
+      out float depth;
+      void main(){
+	  vec3 nposition= position + 3.0 * normal;
+	  vec4 vertPos4 = modelViewMatrix * vec4( nposition, 1.0);
+	  vertPos       = position; // vec3(vertPos4) / vertPos4.w;
+	  gl_Position   = projectionMatrix * vertPos4;
+	  float id      = float(gl_VertexID);
+	  float r       = mod( id, 16.0 ) / 16.0;
+	  float g       = mod( id, 64.0 ) / 64.0;
+	  float b       = mod( id, 256.0 ) / 256.0;	  
+	  vcolor        = vec3( r, g, b );
+	  depth         = gl_Position.z;
+      }
+    </script>
+    <script id="post-frag" type="x-shader/x-fragment">
+      uniform float cameraNear;
+      uniform float cameraFar;
+      in vec3  vertPos;
+      in float depth;
+      in vec3 vcolor;
+      out vec4 outColor;
+      void main() {
+	  // outColor.rgb = vec3( vertPos.x / 50.0, vertPos.y / 50.0,
+	  // 		       clamp( 6.*(10.-vertPos.z)/(cameraFar-cameraNear), 0., 1.) );
+	  // outColor.rgb = vec3( vertPos.x / 100.0, vertPos.y / 100.0, (depth-150.)/50.0 );
+	  // outColor.rgb = vec3( 1.0, 0.0, 1.0 );
+	  vec2 pixel = gl_FragCoord.xy;
+	  vec2 q = vec2( 700., 500.);
+	  if ( distance( pixel, q ) < 100.0 )
+	  {
+	      outColor.rgb = vec3( 1.0, 1.0, 0.0 );
+	  }
+	  else outColor.rgb = vcolor;
+	  outColor.a = 1.0;
+      }
+    </script>
+
+    <script type="module">
+
+      import * as THREE from 'three';
+      import { GUI } from 'three/addons/lil-gui.module.min.js';
+
+      let camera, scene, renderer, object;
+      let distance = 200.0;
+      let map;
+      let shader;
+      var uniforms;
+      init();
+      animate();
+      
+      function init() {
+	  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+	  camera.position.y = 0;
+	  uniforms = {
+	      cameraNear: { value: camera.near },
+	      cameraFar: { value: camera.far },
+	      lightDirection : { value : new THREE.Vector3( 0.0, 1.0, 0.0 ) },
+	      gouraud: { value: true },
+	      moment: { value: 0.0 }
+	  };
+	  console.log( camera.near );
+	  console.log( camera.far );	  
+	  scene = new THREE.Scene();
+
+	  const ambientLight = new THREE.AmbientLight( 0xcccccc, 1.5 );
+	  scene.add( ambientLight );
+
+	  const pointLight = new THREE.PointLight( 0xffffff, 2.5, 0, 0 );
+	  camera.add( pointLight );
+	  scene.add( camera );
+
+          shader = new THREE.ShaderMaterial( {
+	      vertexShader: document.querySelector( '#post-vert' ).textContent.trim(),
+	      fragmentShader: document.querySelector( '#post-frag' ).textContent.trim(),
+	      uniforms: uniforms
+	  } );
+	  shader.glslVersion = THREE.GLSL3;
+	  //
+	  object = new THREE.Mesh( new THREE.TorusKnotGeometry( 50, 10, 50, 10, 2, 3 ),
+				   shader ); // material );
+	  object.position.set( 0, 0, 0 );
+	  scene.add( object );
+
+	  //
+	  renderer = new THREE.WebGLRenderer( { antialias: true } );
+	  renderer.setPixelRatio( window.devicePixelRatio );
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+	  document.body.appendChild( renderer.domElement );
+
+	  //
+	  window.addEventListener( 'resize', onWindowResize );
+
+      }
+
+      function onWindowResize() {
+	  camera.aspect = window.innerWidth / window.innerHeight;
+	  camera.updateProjectionMatrix();
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+      }
+
+      //
+      function animate() {
+	  requestAnimationFrame( animate );
+	  render();
+      }
+
+      function render() {
+	  const timer = Date.now() * 0.0001;
+	  camera.position.x = Math.cos( timer ) * distance;
+	  camera.position.z = Math.sin( timer ) * distance;
+	  camera.lookAt( scene.position );
+	  
+	  //map.offset = new THREE.Vector2( (timer*2.0) % 1.0, 0.0 );
+	  scene.traverse( function ( object ) {
+	      if ( object.isMesh === true ) {
+		  //object.rotation.x = timer * 5;
+		  //object.rotation.y = timer * 2.5;
+	      }
+	  } );
+	  renderer.render( scene, camera );
+      }
+    </script>
+
+  </body>
+</html>

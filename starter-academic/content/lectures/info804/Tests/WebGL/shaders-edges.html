@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.js webgl - geometries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> Vertex / Edge / face display</div>
+
+    <script type="importmap">
+      {
+	  "imports": {
+	      "three": "./three.module.js",
+	      "three/addons/": "./jsm/"
+	  }
+      }
+    </script>
+    <script id="post-vert" type="x-shader/x-vertex">
+      //in vec3 normal;
+      //uniform mat4 projection;
+      //uniform mat4 modelview;
+uniform int cycle;
+out vec3 vertPos;
+out vec4 bary;
+out float depth;
+out vec3 tnormal;
+      void main(){
+	  vec3 nposition= position;
+	  vec4 vertPos4 = modelViewMatrix * vec4( nposition, 1.0);
+	  vertPos       = position; // vec3(vertPos4) / vertPos4.w;
+	  tnormal       = normalMatrix * normal;
+	  gl_Position   = projectionMatrix * vertPos4;
+	  float i   = float( gl_VertexID );
+	  float p   = mod( i, 2. );
+	  float q   = mod( round( i/float(cycle) ), 2. );
+	  bary = vec4( 1.0, 1.0, 1.0, 1.0 );
+	  if ( p < 0.5 && q < 0.5 ) bary.x = 0.0;
+	  if ( p > 0.5 && q < 0.5 ) bary.y = 0.0;
+	  if ( p < 0.5 && q > 0.5 ) bary.z = 0.0;
+	  if ( p > 0.5 && q > 0.5 ) bary.w = 0.0;	  	  
+	  depth         = gl_Position.z;
+      }
+</script>
+    <script id="post-frag" type="x-shader/x-fragment">
+    uniform vec3 lightDirection;
+    uniform float thickness;
+uniform float hole;
+uniform vec3 v_color;
+uniform vec3 e_color;
+uniform vec3 f_color;
+    in vec3 vertPos;
+    in float depth;
+    in vec4  bary;
+    in vec3 tnormal;
+out vec4 outColor;
+
+void main() {
+    vec3  n  = normalize( tnormal );
+    float ca = max( 0.01, dot( n, normalize( lightDirection ) ) );
+    float l  = thickness;
+    float h  = hole;
+    float u  = 1.0 - l - h;
+    float v  = 1.0 - l;
+    int nb  = ( bary.x > u ) ? 1 : 0;
+    nb     += ( bary.y > u ) ? 1 : 0;
+    nb     += ( bary.z > u ) ? 1 : 0;
+    nb     += ( bary.w > u ) ? 1 : 0;
+    int nb2 = ( bary.x >= v ) ? 1 : 0;
+    nb2    += ( bary.y >= v ) ? 1 : 0;
+    nb2    += ( bary.z >= v ) ? 1 : 0;
+    nb2    += ( bary.w >= v ) ? 1 : 0;
+    outColor.rgb = f_color;
+    if ( nb >= 2 )   outColor.rgb = e_color;
+    if ( nb >= 3 )   outColor.rgb = v_color;
+    if ( nb != nb2 ) outColor.rgb = vec3( 0.0, 0.0, 0.0 );
+    outColor.rgb = ca * outColor.rgb;
+    outColor.a = 1.0;
+}
+</script>
+
+    <script type="module">
+
+      import * as THREE from 'three';
+      import { GUI } from 'three/addons/lil-gui.module.min.js';
+
+      let camera, scene, renderer, object;
+      let distance = 200.0;
+      let map;
+      let shader;
+      var uniforms;
+      let settings = {
+          thickness: 0.05,
+	  hole: 0.05,
+          v_color: [ 0.,1.,1. ],
+          e_color: [ 1.,0.,0. ],
+          f_color: [ 1.,1.,0. ],
+	  p : 100,
+	  q : 8
+      };
+      init();
+      animate();
+      initGui();
+
+      // Init gui
+      function initGui() {
+	  const gui = new GUI();
+	  //let gui = gui.addFolder( "Material" );
+	  gui.add( settings, 'thickness' ).min( 0.0 ).max( 0.9 ).onChange(
+	      function ( value ) {
+		  shader.uniforms.thickness.value = value;
+	      } );
+	  gui.add( settings, 'hole' ).min( 0.0 ).max( 0.5 ).onChange(
+	      function ( value ) {
+		  shader.uniforms.hole.value = value;
+	      } );
+	  gui.addColor( settings, 'v_color' ).onChange(
+	      function ( value ) {
+		  shader.uniforms.v_color.value = value;
+	      } );
+	  gui.addColor( settings, 'e_color' ).onChange(
+	      function ( value ) {
+		  shader.uniforms.e_color.value = value;
+	      } );
+	  gui.addColor( settings, 'f_color' ).onChange(
+	      function ( value ) {
+		  shader.uniforms.f_color.value = value;
+	      } );
+      }
+      
+      function init() {
+	  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+	  camera.position.y = 0;
+	  uniforms = {
+	      lightDirection : { value : new THREE.Vector3( 0.0, 1.0, 1.0 ) },
+              thickness: { value : 0.05},
+	      hole: { value: 0.05},
+              v_color: { value : new THREE.Vector3( 0.0, 1.0, 1.0 ) },
+              e_color: { value : new THREE.Vector3( 1.0, 0.0, 0.0 ) },
+              f_color: { value : new THREE.Vector3( 1.0, 1.0, 0.0 ) },
+	      cycle: { value : settings.q }
+	      
+	  };
+	  scene = new THREE.Scene();
+
+	  const ambientLight = new THREE.AmbientLight( 0xcccccc, 1.5 );
+	  scene.add( ambientLight );
+
+	  const pointLight = new THREE.PointLight( 0xffffff, 2.5, 0, 0 );
+	  camera.add( pointLight );
+	  scene.add( camera );
+
+          shader = new THREE.ShaderMaterial( {
+	      vertexShader: document.querySelector( '#post-vert' ).textContent.trim(),
+	      fragmentShader: document.querySelector( '#post-frag' ).textContent.trim(),
+	      uniforms: uniforms
+	  } );
+	  shader.glslVersion = THREE.GLSL3;
+	  //
+	  object = new THREE.Mesh
+	  ( new THREE.TorusKnotGeometry( 50, 10,
+					 settings.p, settings.q,
+					 2, 3 ),
+	    shader );
+	  object.position.set( 0, 0, 0 );
+	  scene.add( object );
+
+	  //
+	  renderer = new THREE.WebGLRenderer( { antialias: true } );
+	  renderer.setPixelRatio( window.devicePixelRatio );
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+	  document.body.appendChild( renderer.domElement );
+
+	  //
+	  window.addEventListener( 'resize', onWindowResize );
+
+      }
+
+      function onWindowResize() {
+	  camera.aspect = window.innerWidth / window.innerHeight;
+	  camera.updateProjectionMatrix();
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+      }
+
+      //
+      function animate() {
+	  requestAnimationFrame( animate );
+	  render();
+      }
+
+      function render() {
+	  const timer = Date.now() * 0.0001;
+	  camera.position.x = Math.cos( timer ) * distance;
+	  camera.position.z = Math.sin( timer ) * distance;
+	  camera.lookAt( scene.position );
+	  
+	  //map.offset = new THREE.Vector2( (timer*2.0) % 1.0, 0.0 );
+	  scene.traverse( function ( object ) {
+	      if ( object.isMesh === true ) {
+		  //object.rotation.x = timer * 5;
+		  //object.rotation.y = timer * 2.5;
+	      }
+	  } );
+	  renderer.render( scene, camera );
+      }
+    </script>
+
+  </body>
+</html>

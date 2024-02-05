@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.js webgl - geometries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+  </head>
+  <body>
+
+    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> Drawings effect</div>
+
+    <script type="importmap">
+      {
+	  "imports": {
+	      "three": "./three.module.js",
+	      "three/addons/": "./jsm/"
+	  }
+      }
+    </script>
+    <script id="post-vert" type="x-shader/x-vertex">
+      out vec3 vertPos;
+      out vec3 fn;
+      out float depth;
+      void main()
+      {
+          fn = vec3(normalMatrix * normal );
+	  vec3 nposition= position + 3.0 * normal;
+	  vec4 vertPos4 = modelViewMatrix * vec4( nposition, 1.0);
+	  vertPos       = position; // vec3(vertPos4) / vertPos4.w;
+	  gl_Position   = projectionMatrix * vertPos4;
+	  depth         = gl_Position.z;
+      }
+    </script>
+    <script id="post-frag" type="x-shader/x-fragment">
+      uniform bool video_inverse;
+      uniform vec3 light_direction;
+      uniform int  mode;
+      uniform float low_threshold;
+      uniform float high_threshold;
+      uniform float frequency1;
+      uniform float frequency2;
+    in vec3  vertPos;
+    in float depth;
+    in vec3  fn;
+      out vec4 outColor;
+      const vec2 u1 = vec2( 1.0, 0.5 );
+      const vec2 o1 = vec2( 0.0, 0.0 );
+      const vec2 u2 = vec2(-0.5, 0.9 );
+      const vec2 o2 = vec2( 0.5, 2.0 );
+      float hachure( vec2 p )
+      {
+	  if ( mode % 2 == 0 ) // traits
+	      return 0.5*(sin( frequency1 * dot( u1, p - o1 ) )+1.0);
+	  else // hachures
+	      return max( 0.5*(sin( frequency1 * dot( u1, p - o1 ) )+1.0), 
+			  0.5*(sin( frequency2 * dot( u2, p - o2 ) )+1.0) );
+      }
+      float hachure_n( vec2 p, vec3 n )
+      {
+	  vec2 pn  = n.xy;
+	  vec2 ppn = vec2( -n.y, n.x );
+	  // return 0.5*(sin( dot( u1, p - o1 ) )+1.0);
+	  if ( mode % 2 == 0 ) // traits
+	      return 0.5*(sin( frequency1*dot( pn, p ) )+1.0);
+	  else
+	      return max( 0.5*(sin( frequency1*dot( pn,  p ) )+1.0),
+			  0.5*(sin( frequency2*dot( ppn, p ) )+1.0) );
+      }
+      void main()
+      {
+	  vec2  p     = gl_FragCoord.xy;
+	  vec3  n     = normalize( fn );
+	  bool  draw  = false;
+	  float angle = abs( dot( n, -light_direction ) );
+	  float delta = max( 0.02, high_threshold - low_threshold );
+	  if ( mode < 2 ) { // 2D
+	      float h = pow( hachure( p ), 0.75 );
+	      draw    = ( angle >= ( delta*h + low_threshold ) );
+	  } else {
+	      float h = pow( hachure_n( p, n ), 0.75 );	  
+	      draw    = ( angle >= ( delta*h + low_threshold ) );
+	  }
+	  if ( ! draw )    draw = ( angle >= high_threshold );
+	  else if ( draw ) draw = ! ( angle <= low_threshold );
+	  // if ( n.z >= h )
+	  if ( draw ^^ video_inverse )
+	      outColor.rgb = vec3( 1.0, 1.0, 1.0 );
+	  else
+              outColor.rgb = vec3( 0.0, 0.0, 0.0 );
+	  outColor.a = 1.0;
+      }
+    </script>
+
+    <script type="module">
+
+      import * as THREE from 'three';
+      import { GUI } from 'three/addons/lil-gui.module.min.js';
+
+      let camera, scene, renderer, object;
+      let object_id;
+      let distance = 200.0;
+      let shader;
+      let settings = { video_inverse  : false,
+		       light_direction: new THREE.Vector3( 0.0, 0.0, -1.0 ),
+		       light          : 2,
+		       mode           : 0,
+		       low_threshold  : 0.3,
+		       high_threshold : 0.95,
+		       frequency1     : 0.2,
+		       frequency2     : 0.1,
+		       shape          : 0
+		     };
+      var uniforms;
+      init();
+      animate();
+      initGui();
+
+      // Init gui
+      function initGui() {
+	  const gui = new GUI();
+	  gui.add( settings, 'video_inverse' ).name( "video inverse" ).onChange
+	  ( function( value ) { shader.uniforms.video_inverse.value = value; } );
+	  gui.add( settings, 'light',
+		   { 'X': 0, 'Y': 1, '-Z': 2, 'X+Y-Z': 3 } )
+	      .name( "light dir." ).onChange
+	  ( function ( value ) {
+	      if ( value == 0 ) shader.uniforms.light_direction.value
+		  = new THREE.Vector3( 1.0, 0.0, 0.0 );
+	      if ( value == 1 ) shader.uniforms.light_direction.value
+		  = new THREE.Vector3( 0.0, 1.0, 0.0 );
+	      if ( value == 2 ) shader.uniforms.light_direction.value
+		  = new THREE.Vector3( 0.0, 0.0, -1.0 );
+	      if ( value == 3 ) shader.uniforms.light_direction.value
+		  = new THREE.Vector3( 1.0, 1.0, -1.0 );
+	  } );
+	  gui.add( settings, 'mode', { 'traits 2d': 0, 'hachures 2d': 1,
+				       'traits 3d': 2, 'hachures 3d': 3 } )
+	      .onChange
+	  ( function ( value ) { shader.uniforms.mode.value = value; } );
+	  gui.add( settings, 'low_threshold' ).name( "low threshold" )
+	      .min( 0. ).max( 1. ).onChange
+	  ( function( value ) { shader.uniforms.low_threshold.value = value; } );
+	  gui.add( settings, 'high_threshold' ).name( "high threshold" )
+	      .min( 0. ).max( 1. ).onChange
+	  ( function( value ) { shader.uniforms.high_threshold.value = value; } );
+	  gui.add( settings, 'frequency1' )
+	      .min( 0. ).max( 1. ).onChange
+	  ( function( value ) { shader.uniforms.frequency1.value = value; } );
+	  gui.add( settings, 'frequency2' )
+	      .min( 0. ).max( 1. ).onChange
+	  ( function( value ) { shader.uniforms.frequency2.value = value; } );
+	  gui.add( settings, 'shape',
+		   { 'TorusKnot': 0, 'Dodecahedron': 1,
+		     'Icosahedron': 2, 'Sphere': 3, 'TorusKnot35': 4 } )
+	      .onChange
+	  ( function ( value ) {
+	      if ( value == 0 )
+		  object.geometry = new THREE.TorusKnotGeometry( 50, 10, 500, 32, 2, 3 );
+	      if ( value == 1 )
+		  object.geometry = new THREE.DodecahedronGeometry( 50, 0 );
+	      if ( value == 2 )
+		  object.geometry = new THREE.IcosahedronGeometry( 50, 0 );
+	      if ( value == 3 )
+		  object.geometry = new THREE.IcosahedronGeometry( 50, 4 );
+	      if ( value == 4 )
+		  object.geometry = new THREE.TorusKnotGeometry( 50, 10, 500, 32, 3, 5 );
+	  } );
+      }
+
+      // init the camera and the scene, and creates the shaders.
+      function init() {
+	  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+	  camera.position.y = 0;
+	  uniforms = {
+	      video_inverse   : { value: settings.video_inverse },
+	      light_direction : { value: settings.light_direction },
+	      mode            : { value: settings.mode },
+	      low_threshold   : { value: settings.low_threshold },
+	      high_threshold  : { value: settings.high_threshold },
+	      frequency1      : { value: settings.frequency1 },
+	      frequency2      : { value: settings.frequency2 },	      
+	      moment          : { value: 0.0 }
+	  };
+
+	  scene = new THREE.Scene();
+
+          shader = new THREE.ShaderMaterial( {
+	      vertexShader: document.querySelector( '#post-vert' ).textContent.trim(),
+	      fragmentShader: document.querySelector( '#post-frag' ).textContent.trim(),
+	      uniforms: uniforms
+	  } );
+	  shader.glslVersion = THREE.GLSL3;
+	  //
+	  object = new THREE.Mesh( new THREE.TorusKnotGeometry( 50, 10, 500, 32, 2, 3 ),
+				   shader ); // material );
+	  object.position.set( 0, 0, 0 );
+	  scene.add( object );
+
+	  //
+	  renderer = new THREE.WebGLRenderer( { antialias: true } );
+	  renderer.setPixelRatio( window.devicePixelRatio );
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+	  document.body.appendChild( renderer.domElement );
+
+	  //
+	  window.addEventListener( 'resize', onWindowResize );
+
+      }
+
+      function onWindowResize() {
+	  camera.aspect = window.innerWidth / window.innerHeight;
+	  camera.updateProjectionMatrix();
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+      }
+
+      //
+      function animate() {
+	  requestAnimationFrame( animate );
+	  render();
+      }
+
+      function render() {
+	  const timer = Date.now() * 0.0001;
+	  camera.position.x = Math.cos( timer ) * distance;
+	  camera.position.z = Math.sin( timer ) * distance;
+	  camera.lookAt( scene.position );
+	  
+	  //map.offset = new THREE.Vector2( (timer*2.0) % 1.0, 0.0 );
+	  scene.traverse( function ( object ) {
+	      if ( object.isMesh === true ) {
+		  object.rotation.x = timer * 2.5;
+		  object.rotation.y = timer * 1.25;
+	      }
+	  } );
+	  renderer.render( scene, camera );
+      }
+    </script>
+
+  </body>
+</html>

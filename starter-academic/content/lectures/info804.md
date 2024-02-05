@@ -27,6 +27,16 @@ informations.
 
 ### [Pages des TPs](Tests/html)
 
+### Exemples de shaders WebGL / OpenGLES
+
+* [rendu simple](Tests/WebGL/shaders-basic.html)
+* [rendu Gouraud/Phong](Tests/WebGL/shaders-gouraud-phong-interpolation.html)
+* [rendu halo](Tests/WebGL/shaders-halo.html)
+* [rendu Gouraud/Phong + halo autour](Tests/WebGL/shaders-halo-shape.html)
+* [rendu décomposition sommets + arêtes + faces](Tests/WebGL/shaders-edges.html)
+* [rendu esquisse non photo-réaliste](Tests/WebGL/shaders-drawing.html)
+
+
 ### Annales
 
 ### Ancien site web [INFO804](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO804_:_Introduction_à_l%27Informatique_Graphique) Computer graphics, (Lectures/Seminars/Practicals)
