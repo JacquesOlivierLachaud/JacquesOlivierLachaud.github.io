@@ -29,6 +29,9 @@ informations.
 
 ### Annales
 
+### Ancien site web [INFO804](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO804_:_Introduction_à_l%27Informatique_Graphique) Computer graphics, (Lectures/Seminars/Practicals)
+
+
 ## Historique
 
 * responsable 2016-2023 Cours/TD/TP : J.-O. Lachaud

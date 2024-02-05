@@ -62,4 +62,6 @@ g++ -std=c++11 lesson-x-y.cpp
     [lesson-2-f.cpp](Lessons/lesson-2-f.cpp)
 
 5. Programmation fonctionnelle avec des lambda-expressions.
-    [lesson-2-g.cpp](Lessons/lesson-2-g.cpp)        
+    [lesson-2-g.cpp](Lessons/lesson-2-g.cpp)
+
+### Ancien site web [INFO702](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO702_:_Programmation_générique_et_C%2B%2B) Generic programming in C++, (Lectures/Seminars/Practicals)

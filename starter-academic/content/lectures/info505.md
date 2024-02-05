@@ -50,3 +50,5 @@ informations.
 * [Examen 2022-2023 (PDF)](Examens/examen-2022-2023.pdf) [Corrigé exos 2 et 3 (PDF)](Examens/examen-sol-2022-2023.pdf)
 * [Examen 2021-2022 (PDF)](Examens/examen-2021-2022.pdf) [Corrigé complet (PDF)](Examens/examen-sol-2021-2022.pdf)
 * [Examen 2017-2018 (PDF)](Examens/examen-2017-2018.pdf) [Corrigé exo 1 (PDF)](Examens/examen-sol-exo1-2017-2018.pdf)
+
+### Ancien site web [INFO505](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO505_:_Programmation_C) Programming in C II 
