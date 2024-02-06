@@ -373,7 +373,7 @@ Modèle d'illumination de Phong</div></div>
 <li>la couleur résultante sera <em>C</em> </li>
 <li>Pour chaque source de lumière <em>l</em> <ul>
 <li>On récupère sa direction <em>L</em> </li>
-<li>On calcule le coefficient de diffusion \( k_d \) comme le cosinus de l'angle entre <em>L</em> et la normale <em>N</em> au point <em>p</em> , i.e. \( k_d \leftarrow  \vec{L} \cdot \vec{N} \), ( \( k_d = 0.0 \) si négatif)</li>
+<li>On calcule l'irradiance \( k_d \) comme le cosinus de l'angle entre <em>L</em> et la normale <em>N</em> au point <em>p</em> , i.e. \( k_d \leftarrow  \vec{L} \cdot \vec{N} \), ( \( k_d = 0.0 \) si négatif)</li>
 <li>On ajoute à C la couleur produit entre la couleur de la lumière B, la couleur diffuse du matériau D et son coefficient de diffusion \( k_d \). <p class="formulaDsp">
 \[ C \leftarrow C + k_d D * B  \]
 </p>
@@ -412,7 +412,7 @@ Taches spéculaires sur des matériaux brillants (les points blancs)</div></div>
 <li>si il est négatif il n'y a pas de spécularité.</li>
 <li>on utilise la brillance <em>s</em> du matériau (<em>shinyness</em>) pour régler la taille de la tache</li>
 <li>le coefficient de spécularité \( k_s \leftarrow \beta^s \) (utilisez <code>pow</code>)</li>
-<li>On ajoute à C la couleur produit entre la couleur de la lumière, la couleur spéculaire du matériau et son coefficient de spécularité \( k_s \).</li>
+<li>On ajoute à C la couleur produit entre la couleur de la lumière, la couleur spéculaire du matériau et son coefficient de spécularité \( k_s \), tout ça multiplié encore par l'irradiance (déjà calculé pour la couleur diffuse).</li>
 </ul>
 </li>
 </ul>
@@ -931,7 +931,7 @@ Apparition à l'aube.</div></div>
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 17 2024 14:04:59 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Feb 6 2024 08:44:13 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
