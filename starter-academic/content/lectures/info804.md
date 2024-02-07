@@ -35,6 +35,7 @@ informations.
 * [rendu Gouraud/Phong + halo autour](Tests/WebGL/shaders-halo-shape.html)
 * [rendu décomposition sommets + arêtes + faces](Tests/WebGL/shaders-edges.html)
 * [rendu esquisse non photo-réaliste](Tests/WebGL/shaders-drawing.html)
+* [rendu tramage couleur non photo-réaliste](Tests/WebGL/shaders-color-drawing.html)
 
 
 ### Annales
