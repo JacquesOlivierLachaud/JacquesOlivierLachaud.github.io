@@ -446,7 +446,7 @@ Rendu avec diffusion + spécularité (après Q3.5). </div></div>
 </div><!-- fragment --><p>Pour faire un dégradé pour le ciel, il suffit de regarder seulement la composante z de la <b>direction</b> du rayon <em>ray</em>. Par exemple, si z est entre 0 et 0.5, on retourne une couleur entre blanc (<code>Color(1,1,1)</code>) et bleu (<code><a class="el" href="structrt_1_1Color.html">Color</a>(0.0,0.0,1.0)</code>), puis si z est entre 0.5 et 1.0, on retourne une couleur entre bleu (<code><a class="el" href="structrt_1_1Color.html">Color</a>(0.0,0.0,1.0)</code>) et noir ((<code><a class="el" href="structrt_1_1Color.html">Color</a>(0.0,0.0,0.0)</code>). On rappelle que l'on peut mélanger des couleurs avec des multiplications, par exemple: </p><div class="fragment"><div class="line"> <span class="comment">// Mélange</span></div>
 <div class="line">2/5*rouge et 3/5*jaune Color orange = 0.4 * Color(1,0,0) + 0.6 *</div>
 <div class="line">Color(1,1,0); </div>
-</div><!-- fragment --><p>Ensuite, on associe un objet <code>Background</code> au <a class="el" href="structrt_1_1Renderer.html" title="This structure takes care of rendering a scene.">Renderer</a> à sa création (dans Viewer::render donc). Enfin, on rajoute la méthode <code>Renderer::background</code> qui s'occupe d'afficher les sources de lumière et votre fond:</p>
+</div><!-- fragment --><p>Ensuite, on associe un objet <code>Background</code> au <a class="el" href="structrt_1_1Renderer.html" title="This structure takes care of rendering a scene.">Renderer</a> à sa création (dans <code>Renderer::Renderer</code> donc). Enfin, on rajoute la méthode <code>Renderer::background</code> qui s'occupe d'afficher les sources de lumière et votre fond:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>Renderer { </div>
 <div class="line"> ...</div>
 <div class="line">    <span class="comment">// On rajoute un pointeur vers un objet Background</span></div>
@@ -473,7 +473,7 @@ Rendu avec diffusion + spécularité (après Q3.5). </div></div>
 <div class="line">...</div>
 <div class="line">};</div>
 <div class="ttc" id="astructrt_1_1Renderer_html_a960f2d4bf657536ad5b52b3818e43f71"><div class="ttname"><a href="structrt_1_1Renderer.html#a960f2d4bf657536ad5b52b3818e43f71">rt::Renderer::ptrScene</a></div><div class="ttdeci">Scene * ptrScene</div><div class="ttdoc">The scene to render.</div><div class="ttdef"><b>Definition</b> <a href="Renderer_8h_source.html#l00052">Renderer.h:52</a></div></div>
-</div><!-- fragment --><p>Il ne reste plus qu'à appeler <code>Renderer::background</code> depuis <a class="el" href="structrt_1_1Renderer.html#a9e6a3e7879649ff7d80d8c038dc471a6">Renderer::trace</a> lorsque le rayon n'intersecte rien.</p>
+</div><!-- fragment --><p>Il ne reste plus qu'à appeler <code>Renderer::background</code> depuis <code><a class="el" href="structrt_1_1Renderer.html#a9e6a3e7879649ff7d80d8c038dc471a6">Renderer::trace</a></code> lorsque le rayon n'intersecte rien.</p>
 <table class="doxtable">
 <tr>
 <td><div class="image">
@@ -931,7 +931,7 @@ Apparition à l'aube.</div></div>
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 6 2024 08:44:13 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Thu Feb 8 2024 15:17:09 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
