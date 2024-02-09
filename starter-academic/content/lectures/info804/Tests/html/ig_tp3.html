@@ -91,6 +91,7 @@ $(function() {
 <li class="level2"><a href="#ig_tp3_2_5">2.5 - Contrôle de la caméra par la souris</a></li>
 <li class="level2"><a href="#ig_tp3_2_6">2.6 - Mettre un fond à votre scène</a></li>
 <li class="level2"><a href="#ig_tp3_2_7">2.7 - Calculer des ombres entre objets</a></li>
+<li class="level2"><a href="#ig_tp3_2_8">2.8 - Ecrire votre propre shader</a></li>
 </ul>
 </li>
 <li class="level1"><a href="#ig_tp3_3">3 - A vous de jouer</a></li>
@@ -99,13 +100,15 @@ $(function() {
 <div class="textblock"><p><b>author:</b> <b>Jacques-Olivier</b> <b>Lachaud</b> </p>
 <h1><a class="anchor" id="ig_tp3_1"></a>
 1 - Objectifs, pointeurs utiles, mise en place</h1>
-<p>L'objectif de ce TP est de vous montrer comment utiliser la puissance graphique de vos ordinateurs dans de simples pages web. Ainsi, vous pourrez intégrer dans vos pages web de la 3D, du rendu (presque) réaliste temps réel, des jeux, des effets spéciaux 2D ou 3D, etc. Les technologies utilisées ici sont le javascript, la bibliothèque WebGL (une surcouche d'OpenGL pour le javascript), et la bibliothèque <a href="threejs.org">three.js</a>, qui simplifie considérablement l'utilisation à WebGL. Nous toucherons aussi un petit peu aux shaders, qui sont des programmes compilés par et exécutés sur la carte graphique.</p>
+<p>L'objectif de ce TP est de vous montrer comment utiliser la puissance graphique de vos ordinateurs dans de simples pages web. Ainsi, vous pourrez intégrer dans vos pages web de la 3D, du rendu (presque) réaliste temps réel, des jeux, des effets spéciaux 2D ou 3D, etc. Les technologies utilisées ici sont le javascript, la bibliothèque WebGL (une surcouche d'OpenGL pour le javascript), et la bibliothèque <a href="threejs.org">three.js</a>, qui simplifie considérablement l'utilisation de WebGL. Nous toucherons aussi un petit peu aux shaders, qui sont des programmes compilés par et exécutés sur la carte graphique.</p>
 <h2><a class="anchor" id="ig_tp3_1_1"></a>
 1.1 - Installation de three.js et d'un serveur web local</h2>
 <p>Il suffit de le télécharger de son site officiel (<a href="https://threejs.org">https://threejs.org</a>). Il est mis aussi dans l'archive du TP. Ensuite, pour pouvoir exécuter facilement vos codes html/js/webgl, il faut qu'il y ait un serveur web (http/https) qui tourne sur votre machine. C'est nécessaire, car pour des raisons de sécurité, votre navigateur interdirait le chargement de fichiers extérieurs. Si vous n'en avez pas déjà un (il suffit de voir si <a href="http://localhost:8080">http://localhost:8080</a> donne qqchose), vous pouvez installer Servez (<a href="https://github.com/greggman/servez">https://github.com/greggman/servez</a>), qui s'installe et se lance facilement. Ensuite, normalement le premier <a href="question-1.html">exemple</a> de code three.js devrait s'exécuter sans problème.</p>
-<dl class="section note"><dt>Note</dt><dd>Lorsque ça ne marche pas (en général, la fenêtre WebGL reste noire), avec Chrome, allez dans <code>View -&gt; Developer &gt; Developer</code> tools. Les erreurs sont affichées. Vous pouvez exécuter pas à pas votre code, comme dans un débuggeur classique.</dd>
+<dl class="section note"><dt>Note</dt><dd>Lorsque ça ne marche pas (en général, la fenêtre WebGL reste noire), avec Chrome, allez dans <code>View -&gt; Developer &gt; Developer tools</code> ou <code>Afficher -&gt; Options pour les développeurs -&gt; Console JavaScript</code>. Les erreurs sont affichées, la console, etc.</dd>
 <dd>
-Un bon point de départ est <a href="https://threejs.org/docs/index.html#manual/introduction/Creating-a-scene">la documentation three.js</a>. Les exemples sont aussi une mine d'information.</dd></dl>
+Un bon point de départ est <a href="https://threejs.org/docs/index.html#manual/introduction/Creating-a-scene">la documentation three.js</a>. Les exemples sont aussi une mine d'information.</dd>
+<dd>
+J'utilise ici la release r160 de <code>three.js</code>.</dd></dl>
 <h2><a class="anchor" id="ig_tp3_1_2"></a>
 1.2 - Parties essentielles d'un code WebGL avec three.js</h2>
 <p>Comme vous fabriquez une page web, vous avez besoin d'un fichier HTML, éventuellement d'un fichier de style CSS. De plus, il faut charger les bibliothèques javascript utiles dans la page. Enfin, il faut prévoir un champ <code>canvas</code> qui contiendra la fenêtre WebGL et lui donner un nom (ici <code>webglcanvas</code>).</p>
@@ -116,55 +119,57 @@ Un bon point de départ est <a href="https://threejs.org/docs/index.html#manual/
 <div class="line">    &lt;meta charset=<span class="stringliteral">&quot;utf-8&quot;</span>&gt;</div>
 <div class="line">    &lt;meta name=<span class="stringliteral">&quot;viewport&quot;</span> content=<span class="stringliteral">&quot;width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0&quot;</span>&gt;</div>
 <div class="line">    &lt;link rel=<span class="stringliteral">&quot;stylesheet&quot;</span> href=<span class="stringliteral">&quot;css/basic.css&quot;</span>&gt;</div>
-<div class="line">  </div>
-<div class="line">    &lt;script src=<span class="stringliteral">&quot;three.js&quot;</span>&gt;&lt;/script&gt;</div>
-<div class="line">    &lt;script src=<span class="stringliteral">&quot;js/Detector.js&quot;</span>&gt;&lt;/script&gt;</div>
-<div class="line">    &lt;script type=<span class="stringliteral">&quot;text/javascript&quot;</span>&gt;</div>
-<div class="line">    <span class="comment">// (I) Put all your code here.</span></div>
-<div class="line">    &lt;/script&gt;</div>
 <div class="line">  &lt;/head&gt;</div>
 <div class="line">  &lt;body&gt;</div>
-<div class="line">    &lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;info&quot;</span>&gt; a first three.js example &lt;/div&gt;</div>
+<div class="line">    &lt;div <span class="keywordtype">id</span>=<span class="stringliteral">&quot;info&quot;</span>&gt;&lt;a href=<span class="stringliteral">&quot;https://threejs.org&quot;</span> target=<span class="stringliteral">&quot;_blank&quot;</span> rel=<span class="stringliteral">&quot;noopener&quot;</span>&gt;three.js&lt;/a&gt; Q1: a rotating WebGL cube&lt;/div&gt;</div>
 <div class="line">    &lt;canvas <span class="keywordtype">id</span>=<span class="stringliteral">&quot;webglcanvas&quot;</span> style=<span class="stringliteral">&quot;border: none;background-color:#000000&quot;</span></div>
-<div class="line">        width=<span class="stringliteral">&quot;600&quot;</span> height=<span class="stringliteral">&quot;500&quot;</span>&gt;&lt;/canvas&gt;</div>
-<div class="line">    &lt;!-- We run the WebGL code at the end to be sure that the document is loaded.</div>
-<div class="line">      --&gt;</div>
-<div class="line">    &lt;script&gt;</div>
-<div class="line">      <span class="comment">// We put the starting point of the javascript here, so that the whole page</span></div>
-<div class="line">      <span class="comment">// is loaded before WebGL code is executed.</span></div>
-<div class="line">      init(); run();</div>
-<div class="line">    &lt;/script&gt; </div>
+<div class="line">        width=<span class="stringliteral">&quot;800&quot;</span> height=<span class="stringliteral">&quot;600&quot;</span>&gt;&lt;/canvas&gt;</div>
+<div class="line">    </div>
+<div class="line">    &lt;script type=<span class="stringliteral">&quot;importmap&quot;</span>&gt;</div>
+<div class="line">      {</div>
+<div class="line">      <span class="stringliteral">&quot;imports&quot;</span>: {</div>
+<div class="line">          <span class="stringliteral">&quot;three&quot;</span>: <span class="stringliteral">&quot;./three.module.js&quot;</span>,</div>
+<div class="line">          <span class="stringliteral">&quot;three/addons/controls/&quot;</span>: <span class="stringliteral">&quot;./examples/jsm/controls/&quot;</span></div>
+<div class="line">      }</div>
+<div class="line">      }</div>
+<div class="line">    &lt;/script&gt;</div>
+<div class="line">  </div>
+<div class="line">    &lt;script type=<span class="stringliteral">&quot;module&quot;</span>&gt;</div>
+<div class="line">      <span class="keyword">import</span> * as THREE from &#39;three&#39;;</div>
+<div class="line">          <span class="comment">// (I) Put all your code here.  </span></div>
+<div class="line">    &lt;/script&gt;</div>
 <div class="line">  &lt;/body&gt;</div>
 <div class="line">&lt;/html&gt;</div>
-</div><!-- fragment --><p>Maintenant voilà le code javascript pour faire un rendu minimal 3D. Notez que l'utilisation de three.js facilite grandement la création de scènes 3D et leur rendu. Le même code WebGL "bas niveau" prendrait pas loin de 150 lignes. Notamment il faudrait gérer à la main la communication des données entre le javascript et les shaders. Ici, three.js se charge de tout ou presque.</p>
-<div class="fragment"><div class="line">&lt;script type=<span class="stringliteral">&quot;text/javascript&quot;</span>&gt;</div>
-<div class="line"><span class="comment">// (I) Put all your code here.</span></div>
-<div class="line"> </div>
-<div class="line">  <span class="comment">// Checks that your browser supports WebGL. </span></div>
-<div class="line">  <span class="keywordflow">if</span> ( ! Detector.webgl ) Detector.addGetWebGLMessage();</div>
+</div><!-- fragment --><p>Maintenant voilà le code javascript pour faire un rendu minimal 3D. Notez que l'utilisation de <code>three.js</code> facilite grandement la création de scènes 3D et leur rendu. Le même code WebGL "bas niveau" prendrait pas loin de 150 lignes. Notamment il faudrait gérer à la main la communication des données entre le javascript et les shaders. Ici, <code>three.js</code> se charge de tout ou presque.</p>
+<div class="fragment"><div class="line">&lt;script type=<span class="stringliteral">&quot;module&quot;</span>&gt;</div>
+<div class="line">  <span class="keyword">import</span> * as THREE from &#39;three&#39;;</div>
 <div class="line">  </div>
 <div class="line">  var renderer = null; </div>
 <div class="line">  var scene    = null;</div>
 <div class="line">  var camera   = null;</div>
 <div class="line">  var cube     = null;</div>
 <div class="line">  var curTime  = Date.now();</div>
+<div class="line">  var canvas = document.getElementById(<span class="stringliteral">&quot;webglcanvas&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Checks that your browser supports WebGL. </span></div>
+<div class="line">  <span class="keywordflow">if</span> ( ! ( window.WebGLRenderingContext</div>
+<div class="line">           &amp;&amp; ( canvas.getContext(<span class="stringliteral">&#39;webgl&#39;</span>)</div>
+<div class="line">                || canvas.getContext(<span class="stringliteral">&#39;experimental-webgl&#39;</span>)) ) )</div>
+<div class="line">      console.log( <span class="stringliteral">&quot;WebGL not supported on your browser.&quot;</span> );</div>
+<div class="line">  </div>
+<div class="line">  init();</div>
+<div class="line">  run();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// This function is called whenever the document is loaded</span></div>
 <div class="line">  function init() {</div>
-<div class="line">      <span class="comment">// Get display canvas</span></div>
-<div class="line">      var canvas = document.getElementById(<span class="stringliteral">&quot;webglcanvas&quot;</span>);</div>
-<div class="line">      console.log( canvas );</div>
-<div class="line">      </div>
 <div class="line">      <span class="comment">// Create the Three.js renderer and attach it to our canvas</span></div>
-<div class="line">      renderer = <span class="keyword">new</span> THREE.WebGLRenderer( { canvas: canvas,</div>
-<div class="line">                                            antialias: <span class="keyword">true</span> } );</div>
+<div class="line">      renderer = <span class="keyword">new</span> THREE.WebGLRenderer({ canvas: canvas, antialias: <span class="keyword">true</span> } );</div>
 <div class="line">      <span class="comment">// Set the viewport size</span></div>
 <div class="line">      renderer.setSize( canvas.width, canvas.height );</div>
 <div class="line">      <span class="comment">// Create a new Three.js scene</span></div>
 <div class="line">      scene = <span class="keyword">new</span> THREE.Scene();</div>
 <div class="line">      <span class="comment">// Add  a camera so we can view the scene</span></div>
-<div class="line">      camera = <span class="keyword">new</span> THREE.PerspectiveCamera( 45, canvas.width / canvas.height,</div>
-<div class="line">                                            1, 4000 );</div>
+<div class="line">      camera = <span class="keyword">new</span> THREE.PerspectiveCamera( 45, canvas.width / canvas.height, 1, 4000 );</div>
 <div class="line">      <span class="comment">// Create a texture-mapped cube and add it to the scene</span></div>
 <div class="line">      <span class="comment">// First, create the texture map</span></div>
 <div class="line">      var mapUrl = <span class="stringliteral">&quot;images/webgl-logo-256.jpg&quot;</span>;</div>
@@ -218,9 +223,8 @@ Un bon point de départ est <a href="https://threejs.org/docs/index.html#manual/
 <div class="line">      var angle = 0.1 * Math.PI * 2 * fracTime; <span class="comment">// one turn per 10 second.</span></div>
 <div class="line">      cube.rotation.y += angle;</div>
 <div class="line">  }</div>
-<div class="line">  </div>
 <div class="line">&lt;/script&gt;</div>
-</div><!-- fragment --><p>En gros, un code WebGL a suit toujours les étapes suivantes:</p>
+</div><!-- fragment --><p>En gros, un code WebGL suit toujours les étapes suivantes:</p>
 <p>D'abord l'initialisation:</p>
 <ol type="1">
 <li>vérification que votre navigateur comprend WebGL,</li>
@@ -235,40 +239,46 @@ Un bon point de départ est <a href="https://threejs.org/docs/index.html#manual/
 </ul>
 <p>Dans l'exemple précédent, la scène se réduit à un cube, placé en <code>(0,0,-8)</code>, avec un <code>material</code> qui est juste une texture. La caméra est elle placée en ses coordonnées par défaut <code>(0,0,0)</code> et regarde vers les z négatifs. L'animation fait juste tourner l'axe y du cube (au sens des coordonnées d'Euler).</p>
 <div class="image">
-<img src="tp3-q1.png" alt=""/>
+<img src="tp3-q1.png" alt="" width="50%"/>
 <div class="caption">
 Premier exemple webgl</div></div>
-<h1><a class="anchor" id="ig_tp3_2"></a>
+<dl class="section note"><dt>Note</dt><dd>Si vous voulez afficher sur toute la fenêtre plutôt que juste un canvas, vous pouvez remplacer la création du <code>WebGLRenderer</code> ainsi</dd></dl>
+<div class="fragment"><div class="line">renderer = <span class="keyword">new</span> THREE.WebGLRenderer( { antialias: <span class="keyword">true</span> } );</div>
+<div class="line">renderer.setSize( window.innerWidth, window.innerHeight );</div>
+</div><!-- fragment --><h1><a class="anchor" id="ig_tp3_2"></a>
 2 - Premiers pas en three.js</h1>
 <h2><a class="anchor" id="ig_tp3_2_1"></a>
 2.1 - D'autres géométries</h2>
-<p>Les objets géométriques 3D sont représentés à l'aide de <code>Mesh</code>, et combine deux propriétés: leur géométrie (simple comme cube ou sphère, complexe comme des surfaces triangulées ou des extrusions de splines), et leur matériau (couleur, propriétés diffuses ou spéculaires, textures (diffuses ou spéculaires), carte de normales et bumpmap, etc).</p>
-<p>Three.js vous fournit plein de classes toutes faites pour la géométrie:</p><ul>
-<li>BoxGeometry, SphereGeometry, CylinderGeometry, etc, pour les formes élémentaires,</li>
-<li>PolyhedronGeometry, LatheGeometry for more complex ones,</li>
-<li>BufferGeometry versions of most of them exist for performance.</li>
+<p>Les objets géométriques 3D sont représentés à l'aide de <code>Mesh</code>, et combinent deux propriétés: leur géométrie (simple comme cube ou sphère, complexe comme des surfaces triangulées ou des extrusions de splines), et leur matériau (couleur, propriétés diffuses ou spéculaires, textures (diffuses ou spéculaires), carte de normales et bumpmap, etc).</p>
+<p><a href="threejs.org">Three.js</a> vous fournit plein de classes toutes faites pour la géométrie:</p><ul>
+<li><a href="https://threejs.org/docs/index.html?q=geometry#api/en/geometries/BoxGeometry">BoxGeometry </a>, <a href="https://threejs.org/docs/index.html?q=geometry#api/en/geometries/SphereGeometry">SphereGeometry </a>, <a href="https://threejs.org/docs/index.html?q=geometry#api/en/geometries/CylinderGeometry">CylinderGeometry </a>, etc, pour les formes élémentaires,</li>
+<li><a href="https://threejs.org/docs/index.html?q=geometry#api/en/geometries/PolyhedronGeometry">PolyhedronGeometry </a> pour des surfaces polygonales quelconques,</li>
+<li><a href="https://threejs.org/docs/index.html?q=geometry#api/en/core/BufferGeometry">BufferGeometry </a> si on cherche la performance.</li>
 </ul>
-<p><b>Exercice</b> <b>2.1</b>. Remplacez le cube par une sphère de rayon 1. Remplacez la texture webgl par la texture earth_atmos_2048.jpg.</p>
+<p><b>Exercice</b> <b>2.1</b>. Remplacez le cube (<code>BoxGeometry</code>) par une sphère de rayon 1. Remplacez la texture <code>webgl</code> par la texture <code>earth_atmos_2048.jpg</code>.</p>
 <p>Pour faire plusieurs objets, il suffit de les ajouter à la scène. On verra ci-dessous comment les grouper, ce qui facilitera grandement le placement et l'animation des objets.</p>
-<dl class="section note"><dt>Note</dt><dd>Three.js, contrairement à ce que son nom indique, propose aussi des géométries "2D", et peut faire du rendu 2D.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd><code>three.js</code>, contrairement à ce que son nom indique, propose aussi des géométries "2D", et peut faire du rendu 2D.</dd></dl>
 <h2><a class="anchor" id="ig_tp3_2_2"></a>
 2.2 - Matériaux et lumières</h2>
 <p>Pour donner un aspect plus 3D à nos scènes, il manque deux ingrédients fondamentaux: des lumières et des matériaux sensibles à la position des lumières et de la caméra. Là encore, nous disposons de plusieurs classes pour faire de l'illumination: AmbientLight, DirectionalLight, PointLight, SpotLight sont les plus courantes.</p>
 <p>Il suffit aussi d'instancier et d'ajouter une lumière à une scène pour qu'elle soit prise en compte.</p>
-<div class="fragment"><div class="line">    <span class="comment">// Add a white point light</span></div>
-<div class="line">light = <span class="keyword">new</span> THREE.PointLight( 0xffffff, 1.5);</div>
+<div class="fragment"><div class="line"><span class="comment">// Add a white point light, which lights at infinite distance and without decay</span></div>
+<div class="line"><span class="comment">// with the distance.</span></div>
+<div class="line">var light = <span class="keyword">new</span> THREE.PointLight( 0xffffff, 2.5, 0.0, 0.0 );</div>
 <div class="line">light.position.x = ...;</div>
-<div class="line">    scene.add( light );</div>
-</div><!-- fragment --><p>Ensuite, on peut créer un matériau qui est sensible aux lumières. Plusieurs matériaux classiques ou moins classiques sont fournis par three.js: MeshBasicMaterial, MeshDepthMaterial, MeshLambertMaterial, MeshNormalMaterial, MeshPhongMaterial, MeshPhysicalMaterial MeshStandardMaterial MeshToonMaterial, etc. Ce qui est pratique, c'est que three.js genère tout le code du vertex shader et du fragment shader à votre place.</p>
-<dl class="section note"><dt>Note</dt><dd>Si vous voulez écrire votre propre shader, la classe ShaderMaterial permet de le faire.</dd></dl>
-<p>Le côté remarquable est que l'on peut choisir comme on veut les matériaux pour des objets différents. Toute la difficulté d'associer le bon shader aux bons objets est géré en interne par three.js.</p>
-<p><b>Exercice</b> <b>2.2</b>. Remplacez le matériau de votre sphère par un MeshPhongNormal. Donnez-lui une spécularité blanche bien visible.</p>
+<div class="line">scene.add( light );</div>
+</div><!-- fragment --><p>Ensuite, on peut créer un matériau qui est sensible aux lumières. Plusieurs matériaux classiques ou moins classiques sont fournis par <code>three.js</code>: <a href="https://threejs.org/docs/?q=meshbasic#api/en/materials/MeshBasicMaterial">MeshBasicMaterial </a>, <a href="https://threejs.org/docs/?q=meshde#api/en/materials/MeshDepthMaterial">MeshDepthMaterial </a>, <a href="https://threejs.org/docs/?q=meshlam#api/en/materials/MeshLambertMaterial">MeshLambertMaterial </a>, <a href="https://threejs.org/docs/?q=meshn#api/en/materials/MeshNormalMaterial">MeshNormalMaterial </a>, <a href="https://threejs.org/docs/?q=meshphon#api/en/materials/MeshPhongMaterial">MeshPhongMaterial </a>, <a href="https://threejs.org/docs/?q=meshph#api/en/materials/MeshPhysicalMaterial">MeshPhysicalMaterial </a>, <a href="https://threejs.org/docs/?q=meshs#api/en/materials/MeshStandardMaterial">MeshStandardMaterial </a>, <a href="https://threejs.org/docs/?q=mesh#api/en/materials/MeshToonMaterial">MeshToonMaterial </a>, etc. Ce qui est pratique, c'est que <code>three.js</code> genère tout le code du vertex shader et du fragment shader à votre place.</p>
+<dl class="section note"><dt>Note</dt><dd>Si vous voulez écrire votre propre shader, la classe <a href="https://threejs.org/docs/?q=material#api/en/materials/ShaderMaterial">ShaderMaterial </a> permet de le faire.</dd></dl>
+<p>Le côté remarquable est que l'on peut choisir comme on veut les matériaux pour des objets différents. Toute la difficulté d'associer le bon shader aux bons objets est géré en interne par <code>three.js</code>.</p>
+<p><b>Exercice</b> <b>2.2</b>. Remplacez le matériau de votre sphère par un <a href="https://threejs.org/docs/?q=meshphon#api/en/materials/MeshPhongMaterial">MeshPhongMaterial </a>. Donnez-lui une spécularité blanche bien visible.</p>
 <h2><a class="anchor" id="ig_tp3_2_3"></a>
 2.3 - Groupes et transformations géométriques</h2>
-<p>Les objets géométriques ne sont pas seulement listés dans une scène géométrique, mais sont plutôt organisés sous forme d'une hiérarchie. L'intérêt (en dehors des aspects performances lorsqu'on ajoute des niveaux de détails) est qu'un transformation géométrique appliquée à un noeud est appliquée à tous les descendants du noeud. Ainsi, si on veut créer une voiture, on créera un noeud voiture, puis des descendants comme le chassis ou la carosserie, et les roues seront des descendants du chassis. On pourra faire tourner les roues par rapport au chassis, et un mouvement global de la voiture déplacera tout ce beau monde.</p>
+<p><b> La scène est organisée sous forme d'un arbre. </b> Les objets géométriques ne sont pas seulement listés dans une scène géométrique, mais sont plutôt organisés sous forme d'une hiérarchie. L'intérêt (en dehors des aspects performances lorsqu'on ajoute des niveaux de détails) est qu'un transformation géométrique appliquée à un noeud est appliquée à tous les descendants du noeud. Ainsi, si on veut créer une voiture, on créera un noeud voiture, puis des descendants comme le chassis ou la carosserie, et les roues seront des descendants du chassis. On pourra faire tourner les roues par rapport au chassis, et un mouvement global de la voiture déplacera tout ce beau monde.</p>
 <p>Tout objet géométrique (descendant de <code>Object3D</code>) peut avoir des fils, mais en général on préfère utiliser un <code>Group</code> pour rassembler des objets géométriques.</p>
 <p><b>Exercice</b> <b>2.3</b>. Créer une scène de type "système solaire" avec au centre le soleil (vous placez une lumière <code>PointLight</code> et une sphère), autour une planète terre (qui tourne autour du soleil), et autour de la terre une lune qui tourne autour. Vous pouvez aussi faire tourner la terre sur elle-même, sachant qu'elle a un axe tourné par rapport au soleil !</p>
-<dl class="section note"><dt>Note</dt><dd>N'oubliez pas qu'il y a des champs <code>position.x</code>, <code>position.y</code>, <code>rotation.x</code>, etc, dans chaque objet géométrique ou groupe. Vous aurez besoin de rajouter des variables globales et de créer des groupes pour rassembler les planètes et aussi les faire tourner autour du soleil. Le déplacement des angles dans <code>animate</code> devraient ressembler à ça:</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// la terre est inclinée par rapport à son orbite.</span></div>
+<div class="line">earth.rotation.x = Math.PI / 5;</div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>N'oubliez pas qu'il y a des champs <code>position.x</code>, <code>position.y</code>, <code>rotation.x</code>, etc, dans chaque objet géométrique ou groupe. Vous aurez besoin de rajouter des variables globales et de créer des groupes pour rassembler les planètes et aussi les faire tourner autour du soleil. Le déplacement des angles dans <code>animate</code> devraient ressembler à ça:</dd></dl>
 <div class="fragment"><div class="line">var angle = fracTime * Math.PI * 2;</div>
 <div class="line"><span class="comment">// Notez que l&#39;axe y est l&#39;axe &quot;vertical&quot; usuellement.</span></div>
 <div class="line">earthGroup.rotation.y += angle / 365; <span class="comment">// la terre tourne en 365 jours</span></div>
@@ -276,20 +286,21 @@ Premier exemple webgl</div></div>
 <div class="line">moonGroup.rotation.y  += angle / 28; <span class="comment">// la lune tourne en 28 jours autour de la terre</span></div>
 <div class="line">moon.rotation.y       += angle /28; <span class="comment">// et en 28 jours aussi sur elle-même pour faire face à la terre</span></div>
 </div><!-- fragment --><div class="image">
-<img src="tp3-q2-3.png" alt=""/>
+<img src="tp3-q2-3.png" alt="" width="50%"/>
 <div class="caption">
 Un petit système solaire</div></div>
+<dl class="section note"><dt>Note</dt><dd>Il faut bien réfléchir aux groupes pour placer les planètes, si on veut que la terre puisse tourner autour du soleil et autour d'elle-même et que la lune puisse tourner autour de la terre. Un <code>earthGroup</code> est positionné sur le soleil et va tourner sur lui-même en 1 an. Un <code>earthSystem</code>, fils de <code>earthGroup</code> est translaté relativement à son père (par exemple de 5 selon x). La terre <code>earth</code>, fille de <code>earthSystem</code> tourne sur elle-même en 1 jour...</dd></dl>
 <h2><a class="anchor" id="ig_tp3_2_4"></a>
 2.4 - Contrôle de la caméra par le programme</h2>
 <p>De la même façon qu'on peut déplacer les objets, on peut déplacer la caméra pour voir la scène sous d'autres angles et positions. Il suffit par exemple de modifier les champs <code>camera.position</code> ou <code>camera.lookAt</code> pour déplacer la caméra. Ajoutez la ligne ci-dessous dans <code>animate</code>:</p>
 <div class="fragment"><div class="line">camera.lookAt( earth.matrixWorld.getPosition() );</div>
 </div><!-- fragment --><p>De façon remarquable, la caméra pointe toujours vers la terre. Notez que l'on doit demander les coordonnées de la terre en coordonnées absolues dans le monde, car ses coordonnées relatives sont fixes en fait (ici, <code>(5,0,0)</code>).</p>
-<p><b>Exercice</b> <b>2.4</b>. Mettez la camera sur une orbite elliptique en définissant une variable globale <code>cameraAngle</code> que vous mettrez à jour dans <code>animate</code>, puis utilisez l'équation paramétrique de l'ellipse pour placer directement la camera:</p>
+<p><b>Exercice</b> <b>2.4</b>. Mettez la camera sur une orbite elliptique en définissant une variable globale <code>cameraAngle</code> que vous mettrez à jour dans <code>animate()</code>, puis utilisez l'équation paramétrique de l'ellipse pour placer directement la camera:</p>
 <div class="fragment"><div class="line"><span class="comment">// Avec un grand demi-axe de 5 et un petit demi-axe de 3</span></div>
 <div class="line">camera.position.x = 5 * Math.cos( cameraAngle );</div>
 <div class="line">camera.position.y = 3 * Math.sin( cameraAngle );</div>
 </div><!-- fragment --><div class="image">
-<img src="tp3-q2-4.png" alt=""/>
+<img src="tp3-q2-4.png" alt="" width="50%"/>
 <div class="caption">
 Un petit système solaire, vue d'un astéroïde</div></div>
 <h2><a class="anchor" id="ig_tp3_2_5"></a>
@@ -303,18 +314,21 @@ Un petit système solaire, vue d'un astéroïde</div></div>
 <div class="line">domElement.addEventListener( <span class="stringliteral">&#39;touchmove&#39;</span>, onTouchMove, <span class="keyword">false</span> );</div>
 <div class="line">...</div>
 </div><!-- fragment --><p>Faire une caméra manipulable prend beaucoup de temps. Heureusement, three.js fournit quelques classes toutes faites pour contrôler la caméra. Nous utiliserons le script <code>OrbitControls.js</code> (tiré des exemples). Une fois chargé, il suffit d'instancier un <code>OrbitControls</code>, de le paramétrer, et d'appeler régulièrement sa méthode <code>update</code>.</p>
-<div class="fragment"><div class="line">controls = <span class="keyword">new</span> THREE.OrbitControls( camera, renderer.domElement );</div>
-<div class="line"><span class="comment">//controls.addEventListener( &#39;change&#39;, render ); // call this only in static scenes (i.e., if there is no animation loop)</span></div>
-<div class="line">controls.enableDamping = <span class="keyword">true</span>; <span class="comment">// an animation loop is required when either damping or auto-rotation are enabled</span></div>
-<div class="line">controls.dampingFactor = 0.25;</div>
+<div class="fragment"><div class="line"><span class="comment">// Après import de three.js</span></div>
+<div class="line"><span class="keyword">import</span> { OrbitControls} from &#39;three/addons/controls/OrbitControls.js&#39;;</div>
+</div><!-- fragment --><p> et dans <code>init()</code> </p><div class="fragment"><div class="line">controls = <span class="keyword">new</span> THREE.OrbitControls( camera, renderer.domElement );</div>
+<div class="line"><span class="comment">// controls.addEventListener( &#39;change&#39;, render ); // call this only in static scenes (i.e., if there is no animation loop)</span></div>
+<div class="line">controls.enableDamping      = <span class="keyword">true</span>; <span class="comment">// an animation loop is required when either damping or auto-rotation are enabled</span></div>
+<div class="line">controls.dampingFactor      = 0.25;</div>
 <div class="line">controls.screenSpacePanning = <span class="keyword">false</span>;</div>
-<div class="line">controls.minDistance = 1;</div>
-<div class="line">controls.maxDistance = 20;</div>
+<div class="line">controls.minDistance        = 1;</div>
+<div class="line">controls.maxDistance        = 10;</div>
+<div class="line">controls.maxPolarAngle      = Math.PI / 2;</div>
 </div><!-- fragment --><p>Et dans <code>animate</code>: </p><div class="fragment"><div class="line">controls.update();</div>
 </div><!-- fragment --><p><b>Exercice</b> <b>2.5</b>. Ajouter un contrôleur "orbite" qui pilote maintenant la camera (vous devez enlever certaines lignes faites à la question précédent). Modifiez la cible du contrôleur (<code>target</code>) pour que ce soit la terre.</p>
 <h2><a class="anchor" id="ig_tp3_2_6"></a>
 2.6 - Mettre un fond à votre scène</h2>
-<p>Pour mettre un fond à une scène, on fabrique une sphère ou un cube "lointain" et on plaque dessus &ndash; plus précisément dessous &ndash; une texture. Ces fonds sont souvent utilisés aussi en tant qu'<em>environmentMap</em> pour faire des effets de reflets jolis (e.g. <a href="https://threejs.org/examples/?q=en#webgl_materials_envmaps">https://threejs.org/examples/?q=en#webgl_materials_envmaps</a>). Three.js donne même un champ <code>background</code> à une scène pour représenter un fond. Voilà comment rajouter la voie lactée en fond.</p>
+<p>Pour mettre un fond à une scène, on fabrique une sphère ou un cube "lointain" et on plaque dessus &ndash; plus précisément dessous &ndash; une texture. Ces fonds sont souvent utilisés aussi en tant qu' <code>environment map</code> pour faire des effets de reflets jolis (e.g. <a href="https://threejs.org/examples/?q=en#webgl_materials_envmaps">https://threejs.org/examples/?q=en#webgl_materials_envmaps</a>). Three.js donne même un champ <code>background</code> à une scène pour représenter un fond. Voilà comment rajouter la voie lactée en fond.</p>
 <div class="fragment"><div class="line"><span class="comment">// dans init()</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Add background</span></div>
@@ -327,11 +341,12 @@ Un petit système solaire, vue d'un astéroïde</div></div>
 <div class="line">];</div>
 <div class="line"> </div>
 <div class="line">var textureCube    = <span class="keyword">new</span> THREE.CubeTextureLoader().load( urls );</div>
-<div class="line">textureCube.format = THREE.RGBFormat;</div>
+<div class="line">textureCube.type   = THREE.UnsignedByteType;</div>
+<div class="line">textureCube.format = THREE.RGBAFormat;</div>
 <div class="line">scene.background   = textureCube;</div>
 </div><!-- fragment --><p><b>Exercice</b> <b>2.6</b>. Ajouter le fond "MilkyWay" ou "skybox". Cela donne:</p>
 <div class="image">
-<img src="tp3-q2-6.png" alt=""/>
+<img src="tp3-q2-6.png" alt="" width="50%"/>
 <div class="caption">
 Avec la voie lactée en fond</div></div>
 <h2><a class="anchor" id="ig_tp3_2_7"></a>
@@ -339,36 +354,113 @@ Avec la voie lactée en fond</div></div>
 <p>Par défaut, le rendu graphique ne tient pas compte d'ombres possibles entre objets suivant la position de la lumière. Comme on a pu voir dans le TP ray-tracing, c'était un peu coûteux à calculer.</p>
 <p>Le principe pour calculer des ombres (assez) efficacement est de faire des "cartes d'ombres" (<em>shadowmap</em>). En fait, pour chaque source de lumière qui peut faire de l'ombre, on fait un rendu (très simplifié, juste la profondeur est conservée) des objets qui peuvent faire de l'ombre <em>du</em> <em>point</em> <em>de</em> <em>vue</em> <em>de</em> <em>la</em> <em>lumière</em>. La profondeur mémorisée en chaque point permet ensuite, lorsqu'on fait le rendu du point de vue de la caméra, de voir si le point considéré est dans l'ombre, en regardant la profondeur en ce point.</p>
 <dl class="section note"><dt>Note</dt><dd>On voit néanmoins que le renderer est obligé de faire plusieurs rendu suivant chaque lumière, ce qui peut être coûteux lorsque les scènes sont complexes.</dd></dl>
-<p>En three.js, c'est très simple de rajouter de l'ombre. Il faut d'abord indiquer au renderer qu'il y aura des ombres à calculer:</p>
+<p>En <code>three.js</code>, c'est très simple de rajouter de l'ombre. Il faut d'abord indiquer au renderer qu'il y aura des ombres à calculer:</p>
 <div class="fragment"><div class="line">renderer.shadowMap.enabled = <span class="keyword">true</span>;</div>
 <div class="line"><span class="comment">// rendu coûteux mais plus joli (default: THREE.PCFShadowMap)</span></div>
 <div class="line">renderer.shadowMap.type = THREE.PCFSoftShadowMap; </div>
 </div><!-- fragment --><p>Ensuite, il faut préciser quelles sont les lumières qui peuvent faire de l'ombre. Nous, on va faire en sorte que la lumière du soleil puisse faire de l'ombre.</p>
 <div class="fragment"><div class="line">light.castShadow = <span class="keyword">true</span>;</div>
 <div class="line"><span class="comment">// On peut aussi paramétrer la qualité du calcul</span></div>
-<div class="line">light.shadow.mapSize.width = 512;  <span class="comment">// default</span></div>
+<div class="line">light.shadow.mapSize.width  = 512; <span class="comment">// default</span></div>
 <div class="line">light.shadow.mapSize.height = 512; <span class="comment">// default</span></div>
-<div class="line">light.shadow.camera.near = 0.5;    <span class="comment">// default</span></div>
-<div class="line">light.shadow.camera.far = 50;</div>
+<div class="line">light.shadow.camera.near    = 0.5; <span class="comment">// default</span></div>
+<div class="line">light.shadow.camera.far     = 50;</div>
 </div><!-- fragment --><p>Enfin, on précise quels objets peuvent faire de l'ombre, et quels objets peuvent recevoir de l'ombre.</p>
-<div class="fragment"><div class="line">earth.castShadow = <span class="keyword">true</span>;</div>
+<div class="fragment"><div class="line">sun.castShadow      = <span class="keyword">false</span>;</div>
+<div class="line">sun.receiveShadow   = <span class="keyword">false</span>;</div>
+<div class="line">earth.castShadow    = <span class="keyword">true</span>;</div>
 <div class="line">earth.receiveShadow = <span class="keyword">true</span>;</div>
-<div class="line">moon.castShadow = <span class="keyword">true</span>;</div>
-<div class="line">moon.receiveShadow = <span class="keyword">true</span>;</div>
+<div class="line">moon.castShadow     = <span class="keyword">true</span>;</div>
+<div class="line">moon.receiveShadow  = <span class="keyword">true</span>;</div>
 </div><!-- fragment --><p><b>Exercice</b> <b>2.7</b>. Ajouter l'ombrage de la terre et de la lune. Vous devriez maintenant voir des éclipses !</p>
+<h2><a class="anchor" id="ig_tp3_2_8"></a>
+2.8 - Ecrire votre propre shader</h2>
+<p>On va écrire un nouveau material en utilisant la classe <a href="https://threejs.org/docs/?q=material#api/en/materials/ShaderMaterial">ShaderMaterial </a>. Il faut d'abord écrire 2 scripts, l'un pour le vertex shader, l'autre pour le fragment shader.</p>
+<p>Le vertex shader s'occupe de calculer les coordonnées de chaque sommet de l'objet dans la vue de la caméra, ainsi que le vecteur normal en ce sommet. On note les 2 variables <code>moment</code> et <code>scale</code> (dites uniform) qui sont partagés par les shaders et envoyés par le ShaderMaterial (voir ci-dessous). Par rapport à un shader classique, celui-ci s'amuse à gonfler et dégonfler périodiquement l'objet.</p>
+<div class="fragment"><div class="line">&lt;script <span class="keywordtype">id</span>=<span class="stringliteral">&quot;post-vert&quot;</span> type=<span class="stringliteral">&quot;x-shader/x-vertex&quot;</span>&gt;</div>
+<div class="line">  <span class="comment">// Vertex shader</span></div>
+<div class="line">  uniform <span class="keywordtype">float</span> moment; <span class="comment">// (général) temps écoulé depuis le début</span></div>
+<div class="line">  uniform <span class="keywordtype">float</span> scale;  <span class="comment">// (général) paramètre donnant le gonflement périodique</span></div>
+<div class="line">  out vec3 fn;          <span class="comment">// (sortie) normale au sommet (repère écran)</span></div>
+<div class="line">  out vec3 vertPos;     <span class="comment">// (sortie) coordonnées 3D du sommet (repère écran)</span></div>
+<div class="line">  out vec3 gblPos;      <span class="comment">// (sortie) coordonnées 3D du sommet (repère général)</span></div>
+<div class="line">  <span class="keywordtype">void</span> main() {</div>
+<div class="line">  <span class="keywordtype">float</span> t = mod( moment, 6.28318530717958647688 );</div>
+<div class="line">  <span class="comment">// On gonfle légèrement le soleil périodiquement en fonction du temps.</span></div>
+<div class="line">  vec3 scaled_pos = position + scale * (1.0+cos( 2.0*t)) * normal;</div>
+<div class="line">  gblPos          = scaled_pos;</div>
+<div class="line">  <span class="comment">// On calcule le vecteur normal au sommet dans le repère écran      </span></div>
+<div class="line">  fn              = vec3( normalMatrix * normal );</div>
+<div class="line">  <span class="comment">// On calcule la position du sommet dans le repère caméra</span></div>
+<div class="line">  vec4 vertPos4   = modelViewMatrix * vec4( scaled_pos, 1.0 );</div>
+<div class="line">  <span class="comment">// On envoie au fragment shader la position du sommet dans</span></div>
+<div class="line">  <span class="comment">// le repère camera.</span></div>
+<div class="line">  vertPos         = vec3(vertPos4) / vertPos4.w;</div>
+<div class="line">  <span class="comment">// On indique à OpenGL la position du sommet dans le repère écran/pixel</span></div>
+<div class="line">  gl_Position     = projectionMatrix * vertPos4;</div>
+<div class="line">  }</div>
+<div class="line">&lt;/script&gt;</div>
+</div><!-- fragment --><p>Le fragment shader s'occupe de calculer un couleur pour chaque pixel de l'objet à afficher. On récupère le temps (variable uniform <code>moment</code>) et on mélange coordonnées globales et vecteur normal pour fabriquer une couleur.</p>
+<div class="fragment"><div class="line">&lt;script <span class="keywordtype">id</span>=<span class="stringliteral">&quot;post-frag&quot;</span> type=<span class="stringliteral">&quot;x-shader/x-fragment&quot;</span>&gt;</div>
+<div class="line">  <span class="comment">// Fragment/pixel shader</span></div>
+<div class="line">in vec3 fn;      <span class="comment">// (entrée) normale du pixel (repère écran) (interpolée)</span></div>
+<div class="line">in vec3 vertPos; <span class="comment">// (entrée) coordonnées 3D du pixel (repère écran)(interpolées)</span></div>
+<div class="line">in vec3 gblPos;  <span class="comment">// (entrée) coordonnées 3D du pixel (repère général)(interpolées)</span></div>
+<div class="line">  uniform <span class="keywordtype">float</span> moment; <span class="comment">// (général) temps écoulé depuis le début</span></div>
+<div class="line">  out vec4 outColor; <span class="comment">// (sortie) la couleur de sortie du pixel</span></div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordtype">void</span> main() {</div>
+<div class="line">  <span class="keywordtype">float</span> t = mod( moment, 6.28318530717958647688 ); <span class="comment">// temps</span></div>
+<div class="line">  vec3 n1 = normalize(fn); <span class="comment">// vecteur normal au soleil (repère écran)</span></div>
+<div class="line">  <span class="keywordtype">float</span> l = abs( n1.z );   <span class="comment">// proche de 0 sur les bords du soleil</span></div>
+<div class="line">  outColor.rgb = vec3( 1.0 , 0.6+0.4* cos( 4.*gblPos.x + 3.*t ), l );</div>
+<div class="line">  outColor.a   = 1.0;</div>
+<div class="line">  }</div>
+<div class="line">&lt;/script&gt;</div>
+</div><!-- fragment --><p>Il faut maintenant créer le ShaderMaterial et l'associer à une géométrie.</p>
+<div class="fragment"><div class="line">var shader;</div>
+<div class="line">var uniforms;</div>
+<div class="line">...</div>
+<div class="line"><span class="comment">// dans init()</span></div>
+<div class="line">      uniforms = {</div>
+<div class="line">          moment: { value: 0.0 },</div>
+<div class="line">          scale:  { value: 0.02 }</div>
+<div class="line">      };</div>
+<div class="line">      shader = <span class="keyword">new</span> THREE.ShaderMaterial( {</div>
+<div class="line">          vertexShader: document.querySelector( <span class="stringliteral">&#39;#post-vert&#39;</span> ).textContent.trim(),</div>
+<div class="line">          fragmentShader: document.querySelector( <span class="stringliteral">&#39;#post-frag&#39;</span> ).textContent.trim(),</div>
+<div class="line">          uniforms: uniforms</div>
+<div class="line">      } );</div>
+<div class="line">      shader.glslVersion = THREE.GLSL3;</div>
+<div class="line">      <span class="comment">// On réutilise la géométrie de sphère de rayon 1.</span></div>
+<div class="line">      var sunHalo  = <span class="keyword">new</span> THREE.Mesh( geometry, shader );</div>
+<div class="line">      sunHalo.castShadow = <span class="keyword">false</span>;</div>
+<div class="line">      sunHalo.receiveShadow = <span class="keyword">false</span>;</div>
+<div class="line">      sunGroup.add( sunHalo );</div>
+<div class="line">...</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// dans animate()</span></div>
+<div class="line">          <span class="comment">// On change le `moment` pour le shader.</span></div>
+<div class="line">      shader.uniforms.moment.value += fracTime;</div>
+</div><!-- fragment --><p>Ici on a rajouté un halo au soleil, mais on pourrait remplacer le soleil ou créer une autre planète sur le même principe.</p>
+<div class="image">
+<img src="tp3-q2-8.jpg" alt="" width="50%"/>
+<div class="caption">
+Le soleil est sur le point d'exploser en super-nova</div></div>
+<dl class="section note"><dt>Note</dt><dd>Pour aller plus loin, les shaders par défaut de <code>three.js</code> sont écrits par morceaux sous formes de chunks (dans three.js/src/renderers/shaders/ShaderChunk) puis assemblés par des #include dans les matériaux (dans three.js/src/renderers/shaders/ShaderLib).</dd></dl>
 <h1><a class="anchor" id="ig_tp3_3"></a>
 3 - A vous de jouer</h1>
-<p>Il y a bien sûr plein d'autres fonctionnalités dans three.js et WebGL. Nous n'avons fait qu'effleurer le sujet. Ceux intéressés par l'écriture de shader "à la mano" peuvent utiliser la classe ShaderMaterial. Ceux par défaut sont écrits par morceaux sous formes de chunks (dans three.js/src/renderers/shaders/ShaderChunk) puis assemblés par des #include dans les matériaux (dans three.js/src/renderers/shaders/ShaderLib).</p>
-<p>Je vous invite à regarder les multiples exemples de three.js, qui donnent plein d'idées.</p>
-<p>Vous pouvez compléter le système solaire, faire des planètes métalliques, des planètes de lave, des astéroïdes multiples sous forme de particules. <br  />
-</p>
-<p>Vous pouvez aussi faire quelque chose de complètement différent.</p>
-<p>Bref, étonnez-moi ! </p>
+<p>Il y a bien sûr plein d'autres fonctionnalités dans <code>three.js</code> et WebGL. Nous n'avons fait qu'effleurer le sujet.</p>
+<p>Je vous invite à regarder les multiples exemples de <code>three.js</code>, qui donnent plein d'idées.</p>
+<p>Vous pouvez compléter le système solaire, faire des planètes métalliques, des planètes de lave, des astéroïdes multiples sous forme de particules, utiliser d'autres materials, ou faire vos shaders, en vous inspirant de celui donné plus haut ou en regardant quelques exemples que j'ai mis sur mon site <a href="https://jacquesolivierlachaud.github.io/lectures/info804/">https://jacquesolivierlachaud.github.io/lectures/info804/</a> .</p>
+<p>Vous pouvez aussi faire quelque chose de complètement différent, dans la mesure où c'est un travail personnel.</p>
+<p>Bref, étonnez-moi !</p>
+<p>Vous me remettrez votre TP via <a href="https://tplab.apps.math.cnrs.fr">TPLab</a> seul ou en binôme avant le <b>vendredi</b> <b>23</b> <b>février</b> <b>2024</b> minuit, avec un README expliquant ce que vous avez fait d'original en plus des questions posées. Si vous préférez, vous pouvez aussi uploader votre TP sur un serveur web et me donner le lien. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 8 2024 15:17:09 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Feb 9 2024 18:39:39 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

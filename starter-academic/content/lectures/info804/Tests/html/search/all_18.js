@@ -33,5 +33,6 @@ var searchData=
   ['proche_20sur_20le_20trajet_20du_20rayon_30',['3.2 - Rendu minimal, intersection avec l&apos;objet le plus proche sur le trajet du rayon.',['../ig_tp2.html#ig_tp2_3_2',1,'']]],
   ['profondeur_20de_20réflexion_20réfraction_31',['4.4 - De l&apos;influence de la profondeur de réflexion / réfraction',['../ig_tp2.html#ig_tp2_4_4',1,'']]],
   ['programme_32',['2.4 - Contrôle de la caméra par le programme',['../ig_tp3.html#ig_tp3_2_4',1,'']]],
-  ['ptrscene_33',['ptrscene',['../classrt_1_1Viewer.html#adfce1fb6769a1802ca7428742fa27320',1,'rt::Viewer::ptrScene'],['../structrt_1_1Renderer.html#a960f2d4bf657536ad5b52b3818e43f71',1,'rt::Renderer::ptrScene']]]
+  ['propre_20shader_33',['2.8 - Ecrire votre propre shader',['../ig_tp3.html#ig_tp3_2_8',1,'']]],
+  ['ptrscene_34',['ptrscene',['../classrt_1_1Viewer.html#adfce1fb6769a1802ca7428742fa27320',1,'rt::Viewer::ptrScene'],['../structrt_1_1Renderer.html#a960f2d4bf657536ad5b52b3818e43f71',1,'rt::Renderer::ptrScene']]]
 ];
