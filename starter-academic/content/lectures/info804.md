@@ -36,6 +36,9 @@ informations.
 * [rendu décomposition sommets + arêtes + faces](Tests/WebGL/shaders-edges.html)
 * [rendu esquisse non photo-réaliste](Tests/WebGL/shaders-drawing.html)
 * [rendu tramage couleur non photo-réaliste](Tests/WebGL/shaders-color-drawing.html)
+* [coordonnées UV + texture map](Tests/WebGL/shaders-texture-map.html)
+* [texture map variable](Tests/WebGL/shaders-texture.html)
+* [comparaison rendus Gouraud/Phong + texture map + normal map + occlusion](Tests/WebGL/shaders-full.html)
 
 
 ### Annales

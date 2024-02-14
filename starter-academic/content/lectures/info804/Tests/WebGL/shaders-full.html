@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.js webgl - geometries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+  </head>
+  <body>
+
+    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> Vertex/pixel shading + textures + normal map</div>
+
+    <script type="importmap">
+      {
+	  "imports": {
+	      "three": "./three.module.js",
+	      "three/addons/": "./jsm/",
+	      "three/addons/loaders/": "./examples/jsm/loaders/"
+	  }
+      }
+    </script>
+    <script id="post-vert" type="x-shader/x-vertex">
+uniform vec3 ambient_color;
+uniform vec3 diffuse_color;
+uniform vec3 specular_color;
+uniform float shininess;
+uniform vec3 light_direction;
+uniform vec3 light_color;
+uniform vec3 light2_direction;
+uniform vec3 light2_color;
+uniform bool pixel;
+uniform bool details;
+uniform bool normalmap;
+uniform sampler2D tex_d;
+uniform sampler2D tex_n;
+uniform sampler2D tex_o;
+out vec3 fn;
+out vec3 vertPos;
+out vec3 vcolor;
+out vec3 lightDir;
+out vec3 light2Dir;
+out vec2 vUv;
+
+vec3 phongModel(vec3 lightDir, vec3 viewDir, vec3 normal,
+		vec3 lightCol, vec3 phongDiffuseCol,
+		vec3 phongSpecularCol, float phongShininess)
+{
+    float irradiance = max(dot(lightDir, normal), 0.0);
+    vec3 color = vec3(0.,0.,0.); 
+    if ( irradiance > 0.0 )
+    {
+	color           = phongDiffuseCol;
+	vec3 reflectDir = reflect(-lightDir, normal);
+	float specDot   = max(dot(reflectDir, viewDir), 0.0);
+	color          += pow(specDot, phongShininess) * phongSpecularCol;
+	color          *= lightCol * irradiance;
+    }
+    return color;
+}
+
+void main(){
+    vUv = uv;
+    vec3 detailColor   = vec3( texture(tex_d, vUv) );
+    vec4 ambientColor  = vec4( ambient_color,  1.0 );
+    vec4 diffuseColor  = vec4( details ? detailColor : diffuse_color,  1.0 );
+    vec4 specularColor = vec4( specular_color, 1.0 );
+    vec4 lightColor    = vec4( light_color,    1.0 );
+    vec4 light2Color   = vec4( light2_color,   1.0 );
+    fn            = vec3(normalMatrix * normal );
+
+    vec4 vertPos4 = modelViewMatrix * vec4(position, 1.0);
+    vec4 lDir4    = modelViewMatrix * vec4( -light_direction, 0.0);
+    lightDir      = normalize( vec3(lDir4.xyz) );
+    vec4 l2Dir4   = modelViewMatrix * vec4( -light2_direction, 0.0);
+    light2Dir     = normalize( vec3(l2Dir4.xyz) );
+    vertPos       = vec3(vertPos4) / vertPos4.w;
+
+    
+    gl_Position   = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+
+    
+    vcolor        = diffuseColor.rgb;
+    if ( ! pixel )
+    {
+	vec3 n         = normalize(fn);
+	vec3 viewDir   = normalize(-vertPos);
+	vec3 radiance  = ambientColor.rgb;
+	vcolor  = phongModel( lightDir, viewDir, n, lightColor.rgb,
+			      diffuseColor.rgb, specularColor.rgb,
+                              shininess );
+	vcolor += phongModel( light2Dir, viewDir, n, light2Color.rgb,
+			      diffuseColor.rgb, specularColor.rgb,
+                              shininess );
+	vcolor += ambientColor.rgb;
+	vcolor = pow(vcolor, vec3(1.0 / 2.2) ); // gamma correction
+    }
+}
+</script>
+    <script id="post-frag" type="x-shader/x-fragment">
+    in vec2 vUv;
+    in vec3 fn;
+    in vec3 vertPos;
+    in vec3 vcolor;
+    in vec3 lightDir;
+    in vec3 light2Dir;
+uniform vec3 ambient_color;
+uniform vec3 diffuse_color;
+uniform vec3 specular_color;
+uniform float shininess;
+uniform vec3 light_direction;
+uniform vec3 light_color;
+uniform vec3 light2_direction;
+uniform vec3 light2_color;
+uniform bool pixel;
+uniform bool details;
+uniform bool normalmap;
+uniform bool occlusions;
+uniform sampler2D tex_d;
+uniform sampler2D tex_n;
+uniform sampler2D tex_o;
+out vec4 outColor;
+
+vec3 phongModel(vec3 lightDir, vec3 viewDir, vec3 normal,
+		vec3 lightCol, vec3 phongDiffuseCol,
+		vec3 phongSpecularCol, float phongShininess)
+{
+    float irradiance = max(dot(lightDir, normal), 0.0);
+    vec3 color = vec3(0.,0.,0.); 
+    if ( irradiance > 0.0 )
+    {
+	color           = phongDiffuseCol;
+	vec3 reflectDir = reflect(-lightDir, normal);
+	float specDot   = max(dot(reflectDir, viewDir), 0.0);
+	color          += pow(specDot, phongShininess) * phongSpecularCol;
+	color          *= lightCol * irradiance;
+    }
+    return color;
+}
+
+void main() {
+    vec3 radiance      = vcolor;
+    vec3 detailColor   = vec3( texture(tex_d, vUv) );
+    vec3 occlusionColor= detailColor * vec3( texture(tex_o, vUv) );
+    vec4 ambientColor  = vec4( ambient_color,  1.0 );
+    vec4 specularColor = vec4( specular_color, 1.0 );
+    vec4 lightColor    = vec4( light_color,    1.0 );
+    vec4 light2Color   = vec4( light2_color,   1.0 );	  
+    if ( pixel )
+    {
+	// Get detail and occlusion texture color
+	vec4 diffuseColor
+	    = vec4( details ? ( occlusions ? occlusionColor : detailColor )
+		    : radiance,  1.0 );
+	// Get normal map correction vector and add it to face normal normal
+	vec3 nm        = texture(tex_n, vUv).xyz * 2.0 - 1.0 + fn;
+	vec3 n         = normalize( normalmap ? nm : fn );
+        vec3 viewDir   = normalize( -vertPos);
+        radiance  = phongModel( lightDir, viewDir, n, lightColor.rgb,
+				diffuseColor.rgb, specularColor.rgb,
+                                shininess );
+	radiance += phongModel( light2Dir, viewDir, n, light2Color.rgb,
+				diffuseColor.rgb, specularColor.rgb,
+                                shininess );
+	radiance += ambientColor.rgb;
+	radiance  = pow(radiance, vec3(1.0 / 2.2) ); // gamma correction
+    }
+    outColor.rgb = radiance;
+    outColor.a = 1.0;
+}
+</script>
+
+    <script type="module">
+
+import * as THREE from 'three';
+import { GUI } from 'three/addons/lil-gui.module.min.js';
+import { OBJLoader } from 'three/addons/loaders/ObjLoader.js';
+
+let camera, scene, renderer;
+let distance = 250.0;
+let map;
+let shader;
+let settings = { pixel: true,
+		 details: false,
+		 normalmap: false,
+		 occlusions: false,
+		 ambient_color : [ 0.01, 0.0, 0.0 ],
+		 diffuse_color : [ 0.5, 0.0, 0.6 ],
+		 specular_color: [ 1.0, 1.0, 1.0 ],
+		 shininess:      10.0,
+		 light         : 1,
+		 light_color   : [ 1.0, 1.0, 1.0 ],
+		 light2        : 0,
+		 light2_color  : [ 0.0, 0.0, 0.0 ]
+	       };
+var uniforms;
+let object;
+init();
+animate();
+initGui();
+
+// Init gui
+function initGui() {
+    
+    const gui = new GUI();
+    //let gui = gui.addFolder( "Material" );
+    gui.add( settings, 'pixel' ).name( "Pixel shading" ).onChange
+    ( function( value ) { shader.uniforms.pixel.value = value; } );
+    gui.add( settings, 'details' ).name( "Texture map" ).onChange
+    ( function( value ) { shader.uniforms.details.value = value; } );
+    gui.add( settings, 'normalmap' ).name( "Normal map" ).onChange
+    ( function( value ) { shader.uniforms.normalmap.value = value; } );
+    gui.add( settings, 'occlusions' ).name( "Occlusion map" ).onChange
+    ( function( value ) { shader.uniforms.occlusions.value = value; } );
+    const colors = gui.addFolder( 'Colors' );
+    colors.addColor( settings, 'ambient_color' ).onChange
+    ( function ( value ) { shader.uniforms.ambient_color.value = value; } );
+    colors.addColor( settings, 'diffuse_color' ).onChange
+    ( function ( value ) { shader.uniforms.diffuse_color.value = value; } );
+    colors.addColor( settings, 'specular_color' ).onChange
+    ( function ( value ) { shader.uniforms.specular_color.value = value; } );
+    colors.add( settings, 'shininess' ).min( 0. ).max( 100. ).onChange
+    ( function ( value ) { shader.uniforms.shininess.value = value; } );
+    const lights = gui.addFolder( 'Lights' );
+    lights.add( settings, 'light', { 'X': 0, 'Y': 1, '-Z': 2, 'X+Y-Z': 3 } ).onChange
+    ( function ( value ) {
+	if ( value == 0 ) shader.uniforms.light_direction.value
+	    = new THREE.Vector3( 1.0, 0.0, 0.0 );
+	if ( value == 1 ) shader.uniforms.light_direction.value
+	    = new THREE.Vector3( 0.0, 1.0, 0.0 );
+	if ( value == 2 ) shader.uniforms.light_direction.value
+	    = new THREE.Vector3( 0.0, 0.0, -1.0 );
+	if ( value == 3 ) shader.uniforms.light_direction.value
+	    = new THREE.Vector3( 1.0, 1.0, -1.0 );
+    } );
+    lights.addColor( settings, 'light_color' ).onChange
+    ( function ( value ) { shader.uniforms.light2_color.value = value; } );
+    lights.add( settings, 'light2', { 'X': 0, 'Y': 1, '-Z': 2, 'X+Y-Z': 3 } ).onChange
+    ( function ( value ) {
+	if ( value == 0 ) shader.uniforms.light2_direction.value
+	    = new THREE.Vector3( 1.0, 0.0, 0.0 );
+	if ( value == 1 ) shader.uniforms.light2_direction.value
+	    = new THREE.Vector3( 0.0, 1.0, 0.0 );
+	if ( value == 2 ) shader.uniforms.light2_direction.value
+	    = new THREE.Vector3( 0.0, 0.0, -1.0 );
+	if ( value == 3 ) shader.uniforms.light2_direction.value
+	    = new THREE.Vector3( 1.0, 1.0, -1.0 );
+    } );
+    lights.addColor( settings, 'light2_color' ).onChange
+    ( function ( value ) { shader.uniforms.light2_color.value = value; } );
+    
+}
+
+function init() {
+    camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+    camera.position.y = 0;
+    uniforms = {
+	time: { value: 1.0 },
+	ambient_color   : { value : new THREE.Vector3( 0.01, 0.0, 0.0 ) },
+	diffuse_color   : { value : new THREE.Vector3( 0.5, 0.0, 0.6 ) },
+	specular_color  : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },
+	shininess: { value: 10.0 },
+	light_color     : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },
+	light_direction : { value : new THREE.Vector3( 0.0, 1.0, 0.0 ) },
+	light2_color    : { value : new THREE.Vector3( 0.0, 0.0, 0.0 ) },
+	light2_direction: { value : new THREE.Vector3( 1.0, 0.0, 0.0 ) },
+	pixel           : { value: true  },
+	details         : { value: false },
+	normalmap       : { value: false },
+	occlusions      : {value: false },
+	tex_d: { type: "t",
+		 value: new THREE.TextureLoader().load( "models/Lion_Details.jpg" ) },
+	tex_n: { type: "t",
+		 value: new THREE.TextureLoader().load( "models/Lion_normals.jpg" ) },
+	tex_o: { type: "t",
+		 value: new THREE.TextureLoader().load( "models/Lion_occlusion.jpg" ) }
+    };
+	  
+    scene = new THREE.Scene();
+    scene.add( camera );
+    
+    shader = new THREE.ShaderMaterial( {
+	vertexShader: document.querySelector( '#post-vert' ).textContent.trim(),
+	fragmentShader: document.querySelector( '#post-frag' ).textContent.trim(),
+	uniforms: uniforms
+    } );
+    shader.glslVersion = THREE.GLSL3;
+    
+    // Load OBJ geometry
+    function onProgress( xhr ) {
+	if ( xhr.lengthComputable ) {
+	    const percentComplete = xhr.loaded / xhr.total * 100;
+	    console.log( 'model ' + percentComplete.toFixed( 2 ) + '% downloaded' );
+	}
+    }
+    function onError() {}
+    const manager = new THREE.LoadingManager();
+    const loader = new OBJLoader( manager );
+    loader.load( 'models/LionLowPoly3DModel.OBJ', function ( obj ) {
+	console.log( "Success" );
+	object = obj;
+	obj.traverse( function( child ) {
+	    if ( child instanceof THREE.Mesh ) {
+                child.material = shader;
+	    }
+        } );
+	object.position.set( 0, -40, 0. );
+	scene.add( object );
+    }, onProgress, onError );
+    //
+    
+    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+    
+    //
+    window.addEventListener( 'resize', onWindowResize );
+}
+
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+}
+
+//
+
+function animate() {
+    requestAnimationFrame( animate );
+    render();
+}
+
+function render() {
+    const timer = Date.now() * 0.0001;
+    camera.position.x = Math.cos( timer ) * distance;
+    camera.position.z = Math.sin( timer ) * distance;
+    camera.lookAt( scene.position );
+    scene.traverse( function ( object ) {
+	if ( object.isMesh === true ) {
+	    // object.rotation.x = timer * 5;
+	    // object.rotation.y = timer * 2.5;
+	    //object.rotation.y = -timer;
+	}
+    } );
+    renderer.render( scene, camera );
+}
+</script>
+
+</body>
+    </html>
