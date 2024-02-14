@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.js webgl - geometries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+  </head>
+  <body>
+
+    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a>Playing with textures</div>
+
+    <script type="importmap">
+      {
+	  "imports": {
+	      "three": "./three.module.js",
+	      "three/addons/": "./jsm/"
+	  }
+      }
+    </script>
+    <script id="post-vert-1" type="x-shader/x-vertex">
+      out vec2 vUv;
+      out vec3 vertPos;
+      out vec3 vcolor;
+      out vec4 bary;
+      uniform float moment;
+      uniform float scale;
+      uniform float speed;
+      uniform int   cycle_p;
+      uniform int   cycle_q;
+      void main()
+      {
+          vec3 nposition= position;
+          vec4 vertPos4 = modelViewMatrix * vec4( nposition, 1.0);
+          vertPos       = position; // vec3(vertPos4) / vertPos4.w;
+          gl_Position   = projectionMatrix * vertPos4;
+	  float i   = float( gl_VertexID );
+	  float p   = mod( i, 2. );
+	  float m   = float(cycle_p)+1.;
+	  float q   = mod( round( i/(m+1.) ), 2. );
+	  bary = vec4( 1.0, 1.0, 1.0, 1.0 );
+	  if ( p < 0.5 && q < 0.5 ) bary.x = 0.0;
+	  if ( p > 0.5 && q < 0.5 ) bary.y = 0.0;
+	  if ( p < 0.5 && q > 0.5 ) bary.z = 0.0;
+	  if ( p > 0.5 && q > 0.5 ) bary.w = 0.0;
+	  vcolor = vec3( mod( i, 8. ) / 7.0,
+			 mod( 13.*i, 8. ) / 7.0,
+			 mod( 111.*i, 8. ) / 7.0 );
+	  // On bouge les coordonnées de texture
+	  float s       = speed * moment;
+	  float t       = 5.0 * moment;
+	  float v       = 1.+0.25*mod( i, 7. );
+	  vUv           = vec2( uv.x + 0.01  *scale*cos( v*t + 583.*i ),
+				uv.y + 0.0075*scale*sin( v*t + 583.*i ) );
+	  vUv           = vec2( 0.025+0.95*vUv.x,
+				0.5+0.35*cos( 3.14*vUv.y + s ) );
+	  //vUv           = uv;
+      }
+    </script>
+    <script id="post-vert-2" type="x-shader/x-vertex">
+      out vec2 vUv;
+      out vec3 vertPos;
+      out vec3 vcolor;
+      out vec4 bary;
+      uniform float moment;
+      uniform float scale;
+      uniform float speed;
+      uniform int   cycle_p;
+      uniform int   cycle_q;
+      void main()
+      {
+          vec3 nposition= position;
+          vec4 vertPos4 = modelViewMatrix * vec4( nposition, 1.0);
+          vertPos       = position; // vec3(vertPos4) / vertPos4.w;
+	  // On détermine la couleur de chaque sommet par son index
+	  float i   = float( gl_VertexID );
+	  float p   = mod( i, 2. );
+	  float m   = float(cycle_p)+1.;
+	  float q   = mod( round( i/(m+1.) ), 2. );
+	  bary = vec4( 1.0, 1.0, 1.0, 1.0 );
+	  if ( p < 0.5 && q < 0.5 ) bary.x = 0.0;
+	  if ( p > 0.5 && q < 0.5 ) bary.y = 0.0;
+	  if ( p < 0.5 && q > 0.5 ) bary.z = 0.0;
+	  if ( p > 0.5 && q > 0.5 ) bary.w = 0.0;	  	  
+	  vcolor = vec3( mod( i, 8. ) / 7.0,
+			 mod( 13.*i, 8. ) / 7.0,
+			 mod( 111.*i, 8. ) / 7.0 );
+	  // On bouge les coordonnées de texture
+	  float s       = speed * moment;
+	  float t       = 5.0 * moment;
+	  float v       = 1.+0.25*mod( i, 7. );
+	  vUv           = vec2( uv.x + 0.01  *scale*cos( v*t + 583.*i ),
+				uv.y + 0.0075*scale*sin( v*t + 583.*i ) );
+	  vUv           = vec2( 0.025+0.95*vUv.x,
+				0.5+0.35*cos( 3.14*vUv.y + s ) );
+	  //vUv           = uv;
+          gl_Position   = vec4( 1.9*(vUv.x-0.5), 1.9*(vUv.y-0.5),
+				1.0, 1.0 ); //projectionMatrix * vertPos4;
+      }
+    </script>
+    <script id="post-frag" type="x-shader/x-fragment">
+    in vec3  vertPos;
+    in vec3 vcolor;
+    in vec2 vUv;
+    in vec4 bary;
+      out vec4 outColor;
+      uniform sampler2D tex;
+      void main() {
+	  // On récupère la texture
+	  vec3       c = vec3( texture(tex, vUv) );
+	  // On échange vert et bleu pour changer un peu de jupiter.
+	  outColor.rgb = vec3( c.r, c.g, c.b );
+	  outColor.a   = 1.0;
+	  float l  = 0.025;
+	  float h  = 0.01;
+	  float u  = 1.0 - l - h;
+	  float v  = 1.0 - l;
+	  int nb  = ( bary.x > u ) ? 1 : 0;
+	  nb     += ( bary.y > u ) ? 1 : 0;
+	  nb     += ( bary.z > u ) ? 1 : 0;
+	  nb     += ( bary.w > u ) ? 1 : 0;
+	  int nb2 = ( bary.x >= v ) ? 1 : 0;
+	  nb2    += ( bary.y >= v ) ? 1 : 0;
+	  nb2    += ( bary.z >= v ) ? 1 : 0;
+	  nb2    += ( bary.w >= v ) ? 1 : 0;
+	  if ( nb >= 2 )   outColor.rgb = vcolor;//outColor.rgb = vec3( 0.0, 0.0, 1.0 );
+	  if ( nb >= 3 )   outColor.rgb = vcolor;
+	  if ( nb != nb2 ) outColor.rgb = vec3( 0.0, 0.0, 0.0 );
+      }
+    </script>
+
+    <script type="module">
+
+      import * as THREE from 'three';
+      import { GUI } from 'three/addons/lil-gui.module.min.js';
+
+      let camera, scene, renderer, object;
+      let distance = 200.0;
+      let map;
+      let shader1, shader2;
+      var uniforms;
+      let oldtimer = Date.now() * 0.0001;
+      let  p = 16;
+      let  q = 10;
+      let object1, object2;
+      let settings = {
+	  scale : 0.0,
+	  speed : 0.0,
+      };
+      init();
+      animate();
+      initGui();
+
+      // Init gui
+      function initGui() {
+	  const gui = new GUI();
+	  gui.add( settings, 'scale' ).min( 0.0 ).max( 1.0 ).onChange(
+	      function ( value ) {
+		  shader1.uniforms.scale.value = value;
+		  shader2.uniforms.scale.value = value;		  
+	      } );
+	  gui.add( settings, 'speed' ).min( 0.0 ).max( 1.0 ).onChange(
+	      function ( value ) {
+		  shader1.uniforms.speed.value = value;
+		  shader2.uniforms.speed.value = value;		  
+	      } );
+      }
+      
+      function init() {
+	  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+	  camera.position.y = 0;
+
+	  // var map = new THREE.TextureLoader().load( "textures.jupiter.jpg" );
+	  uniforms = {
+	      lightDirection : { value : new THREE.Vector3( 0.0, 1.0, 0.0 ) },
+	      moment:  { value: 0.0 },
+	      scale:   { value: settings.scale },
+	      speed:   { value: settings.speed },	      
+	      cycle_p: { value: p },
+	      cycle_q: { value: q },	      
+	      tex:     { type: "t",
+			 value: new THREE.TextureLoader().load( "textures/jupiter.jpg" ) }
+	  };
+
+	  scene = new THREE.Scene();
+
+	  const ambientLight = new THREE.AmbientLight( 0xcccccc, 1.5 );
+	  scene.add( ambientLight );
+
+	  const pointLight = new THREE.PointLight( 0xffffff, 2.5, 0, 0 );
+	  camera.add( pointLight );
+	  scene.add( camera );
+
+          shader1  = new THREE.ShaderMaterial( {
+	      vertexShader: document.querySelector( '#post-vert-1' ).textContent.trim(),
+	      fragmentShader: document.querySelector( '#post-frag' ).textContent.trim(),
+	      uniforms: uniforms
+	  } );
+	  shader1.glslVersion = THREE.GLSL3;
+	  shader1.side = THREE.DoubleSide;
+          shader2  = new THREE.ShaderMaterial( {
+	      vertexShader: document.querySelector( '#post-vert-2' ).textContent.trim(),
+	      fragmentShader: document.querySelector( '#post-frag' ).textContent.trim(),
+	      uniforms: uniforms
+	  } );
+	  shader2.glslVersion = THREE.GLSL3;
+	  shader2.side = THREE.DoubleSide;	  
+	  //
+	  let geometry = new THREE.SphereGeometry( 50, p, q );
+	  object1 = new THREE.Mesh( geometry, shader1 ); 
+	  object1.position.set( 0., 0, 0 );
+	  scene.add( object1 );
+	  object2 = new THREE.Mesh( geometry, shader2 ); 
+	  object2.position.set( 0, 0, 0 );
+	  scene.add( object2 );
+
+	  //
+	  renderer = new THREE.WebGLRenderer( { antialias: true } );
+	  renderer.setPixelRatio( window.devicePixelRatio );
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+	  document.body.appendChild( renderer.domElement );
+
+	  //
+	  window.addEventListener( 'resize', onWindowResize );
+
+      }
+
+      function onWindowResize() {
+	  camera.aspect = window.innerWidth / window.innerHeight;
+	  camera.updateProjectionMatrix();
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+      }
+
+      //
+      function animate() {
+	  requestAnimationFrame( animate );
+	  render();
+      }
+
+      function render() {
+	  const timer = Date.now() * 0.0001;
+	  camera.position.x = Math.cos( timer ) * distance;
+	  camera.position.z = Math.sin( timer ) * distance;
+	  camera.lookAt( scene.position );
+	  
+	  //map.offset = new THREE.Vector2( (timer*2.0) % 1.0, 0.0 );
+	  scene.traverse( function ( object ) {
+	      if ( object.isMesh === true ) {
+		  //object.rotation.x = timer * 0.5;
+		  //object.rotation.y = timer * 0.25;
+	      }
+	  } );
+	  object1.position.x  = 100.0 * Math.cos( -timer );
+	  object1.rotation.z += (timer - oldtimer);
+	  shader1.uniforms.moment.value += timer - oldtimer ;
+	  shader2.uniforms.moment.value += timer - oldtimer ;	  
+	  oldtimer = timer;
+	  renderer.render( scene, camera );
+      }
+    </script>
+
+  </body>
+</html>
