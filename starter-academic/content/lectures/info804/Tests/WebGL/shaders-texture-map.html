@@ -103,29 +103,32 @@
     in vec3 vcolor;
     in vec2 vUv;
     in vec4 bary;
-      out vec4 outColor;
+      out     vec4      outColor;
       uniform sampler2D tex;
+      uniform bool      edges;
       void main() {
 	  // On récupère la texture
 	  vec3       c = vec3( texture(tex, vUv) );
 	  // On échange vert et bleu pour changer un peu de jupiter.
 	  outColor.rgb = vec3( c.r, c.g, c.b );
 	  outColor.a   = 1.0;
-	  float l  = 0.025;
-	  float h  = 0.01;
-	  float u  = 1.0 - l - h;
-	  float v  = 1.0 - l;
-	  int nb  = ( bary.x > u ) ? 1 : 0;
-	  nb     += ( bary.y > u ) ? 1 : 0;
-	  nb     += ( bary.z > u ) ? 1 : 0;
-	  nb     += ( bary.w > u ) ? 1 : 0;
-	  int nb2 = ( bary.x >= v ) ? 1 : 0;
-	  nb2    += ( bary.y >= v ) ? 1 : 0;
-	  nb2    += ( bary.z >= v ) ? 1 : 0;
-	  nb2    += ( bary.w >= v ) ? 1 : 0;
-	  if ( nb >= 2 )   outColor.rgb = vcolor;//outColor.rgb = vec3( 0.0, 0.0, 1.0 );
-	  if ( nb >= 3 )   outColor.rgb = vcolor;
-	  if ( nb != nb2 ) outColor.rgb = vec3( 0.0, 0.0, 0.0 );
+	  if ( edges )
+	  {
+	      float l  = 0.025;
+	      float h  = 0.01;
+	      float u  = 1.0 - l - h;
+	      float v  = 1.0 - l;
+	      int nb  = ( bary.x > u ) ? 1 : 0;
+	      nb     += ( bary.y > u ) ? 1 : 0;
+	      nb     += ( bary.z > u ) ? 1 : 0;
+	      nb     += ( bary.w > u ) ? 1 : 0;
+	      int nb2 = ( bary.x >= v ) ? 1 : 0;
+	      nb2    += ( bary.y >= v ) ? 1 : 0;
+	      nb2    += ( bary.z >= v ) ? 1 : 0;
+	      nb2    += ( bary.w >= v ) ? 1 : 0;
+	      if ( nb >= 2 )   outColor.rgb = vcolor;
+	      if ( nb != nb2 ) outColor.rgb = vec3( 0.0, 0.0, 0.0 );
+	  }
       }
     </script>
 
@@ -144,9 +147,12 @@
       let  q = 10;
       let object1, object2;
       let settings = {
-	  scale : 0.0,
-	  speed : 0.0,
+	  edges  : true,
+	  uv_map : false,
+	  scale  : 0.0,
+	  speed  : 0.0,
       };
+      let tex1, tex2;
       init();
       animate();
       initGui();
@@ -154,6 +160,16 @@
       // Init gui
       function initGui() {
 	  const gui = new GUI();
+          gui.add( settings, 'edges' ).name( "Edges" ).onChange
+          ( function( value ) {
+	      shader1.uniforms.edges.value = value;
+	      shader2.uniforms.edges.value = value;	      
+	  } );
+          gui.add( settings, 'uv_map' ).name( "UV map" ).onChange
+          ( function( value ) {
+	      shader1.uniforms.tex.value = value ? tex2 : tex1;
+	      shader2.uniforms.tex.value = value ? tex2 : tex1;	      
+	  } );
 	  gui.add( settings, 'scale' ).min( 0.0 ).max( 1.0 ).onChange(
 	      function ( value ) {
 		  shader1.uniforms.scale.value = value;
@@ -179,8 +195,12 @@
 	      cycle_p: { value: p },
 	      cycle_q: { value: q },	      
 	      tex:     { type: "t",
-			 value: new THREE.TextureLoader().load( "textures/jupiter.jpg" ) }
+			 value: new THREE.TextureLoader().load( "textures/jupiter.jpg" ) },
+	      edges:   { value: true }
 	  };
+
+	  tex1 = new THREE.TextureLoader().load( "textures/jupiter.jpg" );
+      	  tex2 = new THREE.TextureLoader().load( "textures/uv_grid_opengl.jpg" );
 
 	  scene = new THREE.Scene();
 
