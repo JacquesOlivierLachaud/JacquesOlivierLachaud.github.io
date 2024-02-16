@@ -293,7 +293,9 @@ Un petit système solaire</div></div>
 <h2><a class="anchor" id="ig_tp3_2_4"></a>
 2.4 - Contrôle de la caméra par le programme</h2>
 <p>De la même façon qu'on peut déplacer les objets, on peut déplacer la caméra pour voir la scène sous d'autres angles et positions. Il suffit par exemple de modifier les champs <code>camera.position</code> ou <code>camera.lookAt</code> pour déplacer la caméra. Ajoutez la ligne ci-dessous dans <code>animate</code>:</p>
-<div class="fragment"><div class="line">camera.lookAt( earth.matrixWorld.getPosition() );</div>
+<div class="fragment"><div class="line">var pos = <span class="keyword">new</span> THREE.Vector3;</div>
+<div class="line">pos.setFromMatrixPosition( earth.matrixWorld );</div>
+<div class="line">camera.lookAt( pos );</div>
 </div><!-- fragment --><p>De façon remarquable, la caméra pointe toujours vers la terre. Notez que l'on doit demander les coordonnées de la terre en coordonnées absolues dans le monde, car ses coordonnées relatives sont fixes en fait (ici, <code>(5,0,0)</code>).</p>
 <p><b>Exercice</b> <b>2.4</b>. Mettez la camera sur une orbite elliptique en définissant une variable globale <code>cameraAngle</code> que vous mettrez à jour dans <code>animate()</code>, puis utilisez l'équation paramétrique de l'ellipse pour placer directement la camera:</p>
 <div class="fragment"><div class="line"><span class="comment">// Avec un grand demi-axe de 5 et un petit demi-axe de 3</span></div>
@@ -460,7 +462,7 @@ Le soleil est sur le point d'exploser en super-nova</div></div>
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 16 2024 15:12:45 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Feb 16 2024 16:17:56 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
