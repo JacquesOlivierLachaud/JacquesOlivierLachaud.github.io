@@ -316,7 +316,7 @@ Un petit système solaire, vue d'un astéroïde</div></div>
 </div><!-- fragment --><p>Faire une caméra manipulable prend beaucoup de temps. Heureusement, three.js fournit quelques classes toutes faites pour contrôler la caméra. Nous utiliserons le script <code>OrbitControls.js</code> (tiré des exemples). Une fois chargé, il suffit d'instancier un <code>OrbitControls</code>, de le paramétrer, et d'appeler régulièrement sa méthode <code>update</code>.</p>
 <div class="fragment"><div class="line"><span class="comment">// Après import de three.js</span></div>
 <div class="line"><span class="keyword">import</span> { OrbitControls} from &#39;three/addons/controls/OrbitControls.js&#39;;</div>
-</div><!-- fragment --><p> et dans <code>init()</code> </p><div class="fragment"><div class="line">controls = <span class="keyword">new</span> THREE.OrbitControls( camera, renderer.domElement );</div>
+</div><!-- fragment --><p> et dans <code>init()</code> </p><div class="fragment"><div class="line">controls = <span class="keyword">new</span> OrbitControls( camera, renderer.domElement );</div>
 <div class="line"><span class="comment">// controls.addEventListener( &#39;change&#39;, render ); // call this only in static scenes (i.e., if there is no animation loop)</span></div>
 <div class="line">controls.enableDamping      = <span class="keyword">true</span>; <span class="comment">// an animation loop is required when either damping or auto-rotation are enabled</span></div>
 <div class="line">controls.dampingFactor      = 0.25;</div>
@@ -460,7 +460,7 @@ Le soleil est sur le point d'exploser en super-nova</div></div>
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 9 2024 18:39:39 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Fri Feb 16 2024 15:12:45 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
