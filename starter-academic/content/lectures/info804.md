@@ -31,17 +31,19 @@ informations.
 
 * [rendu simple](Tests/WebGL/shaders-basic.html)
 * [rendu Gouraud/Phong](Tests/WebGL/shaders-gouraud-phong-interpolation.html)
-* [rendu halo](Tests/WebGL/shaders-halo.html)
-* [rendu Gouraud/Phong + halo autour](Tests/WebGL/shaders-halo-shape.html)
+* [rendu halo statique](Tests/WebGL/shaders-halo.html)
+* [rendu Gouraud/Phong + halo dynamique autour](Tests/WebGL/shaders-halo-shape.html)
 * [rendu décomposition sommets + arêtes + faces](Tests/WebGL/shaders-edges.html)
 * [rendu esquisse non photo-réaliste](Tests/WebGL/shaders-drawing.html)
 * [rendu tramage couleur non photo-réaliste](Tests/WebGL/shaders-color-drawing.html)
 * [coordonnées UV + texture map](Tests/WebGL/shaders-texture-map.html)
 * [texture map variable](Tests/WebGL/shaders-texture.html)
 * [comparaison rendus Gouraud/Phong + texture map + normal map + occlusion](Tests/WebGL/shaders-full.html)
-
+* [carte de profondeur + clipping space + camera fov](Tests/WebGL/shaders-depth.html)
 
 ### Annales
+
+* [Examen 2022-2023 (PDF)](Examens/examen-2023-2023.pdf) [Corrigé (PDF)](Examens/examen-sol-2022-2023.pdf)
 
 ### Ancien site web [INFO804](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO804_:_Introduction_à_l%27Informatique_Graphique) Computer graphics, (Lectures/Seminars/Practicals)
 
