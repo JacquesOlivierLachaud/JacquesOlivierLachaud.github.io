@@ -43,9 +43,9 @@ informations.
 
 ### Annales
 
-* [Examen 2022-2023 (PDF)](Examens/examen-2023-2023.pdf) [Corrigé (PDF)](Examens/examen-sol-2022-2023.pdf)
+* [Examen 2022-2023 (PDF)](Examens/examen-2022-2023.pdf) [Corrigé (PDF)](Examens/examen-sol-2022-2023.pdf)
 
-### Ancien site web [INFO804](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO804_:_Introduction_à_l%27Informatique_Graphique) Computer graphics, (Lectures/Seminars/Practicals)
+### Ancien site web [INFO804 Informatique graphique](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO804_:_Introduction_à_l%27Informatique_Graphique)
 
 
 ## Historique
