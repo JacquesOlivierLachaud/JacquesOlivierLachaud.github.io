@@ -1,5 +1,5 @@
 ---
-title: INFO506 Algorithmique numérique
+title: INFO601_CMI Algorithmique numérique
 date: 2024-03-04
 type: page
 ---

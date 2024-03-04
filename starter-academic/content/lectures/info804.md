@@ -40,6 +40,7 @@ informations.
 * [texture map variable](Tests/WebGL/shaders-texture.html)
 * [comparaison rendus Gouraud/Phong + texture map + normal map + occlusion](Tests/WebGL/shaders-full.html)
 * [carte de profondeur + clipping space + camera fov](Tests/WebGL/shaders-depth.html)
+* [cube subdivisé dans le fragment shader](Tests/WebGL/shaders-cube.html)
 
 ### Annales
 
