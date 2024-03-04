@@ -33,7 +33,7 @@ informations.
 ### Cours, Exercices, Tps
 
 * [Transparents du cours, Exercices, Rappels, TPs](https://codimd.math.cnrs.fr/s/IWTaBkA9m)
-* [Introduction par la méthode des moindres carrés (PDF)](moindres-carres.pdf)
+* [Introduction par la méthode des moindres carrés (PDF)](Cours/moindres-carres.pdf)
 * [Notes de cours (PDF)](Cours/notes-de-cours.pdf)
 
 ### Fiches de TDs
