@@ -20,12 +20,14 @@
     </script>
     <script id="post-vert" type="x-shader/x-vertex">
       out vec3 vertPos;
-      out mat3 normalMatInv;
+      out vec3 projPos;
+      out mat4 projViewInv;
       void main(){
 	  vec4 vertPos4 = modelViewMatrix * vec4( position, 1.0);
 	  vertPos       = position; 
 	  gl_Position   = projectionMatrix * vertPos4;
-	  normalMatInv  = inverse( normalMatrix );	  
+	  projPos       = gl_Position.xyz / gl_Position.w;
+	  projViewInv   = inverse( projectionMatrix * modelViewMatrix );
       }
     </script>
     <script id="post-frag" type="x-shader/x-fragment">
@@ -33,7 +35,8 @@
       uniform float cubesize;
       uniform int   shape;
     in vec3 vertPos;
-    in mat3 normalMatInv;      
+    in vec3 projPos;
+    in mat4 projViewInv;
       out vec4 outColor;
 
       // 3D function in cube
@@ -59,8 +62,8 @@
 		  abs( mod( p.z, grid ) - c );
 	  }
       }
-      const float eps  = 0.0001;
-      const float step = 0.04;
+      const float eps  = 0.00001;
+      const float step = 0.02;
       vec3 gradf( vec3 p ) {
 	  // numerical centered derivatives
 	  float gfx = f( p + vec3( eps, 0.0, 0.0 ) ) - f( p - vec3( eps, 0.0, 0.0 ) );
@@ -103,7 +106,11 @@
       void main() {
 	  // we must compute the direction of the tracing ray within the cube
 	  vec3 view  = vec3( 0.0, 0.0, 1.0 ); // the observer is along the z-axis
-	  vec3 viewp = normalMatInv * view;
+	  vec3 v1    = projPos;
+	  vec3 v2    = v1 + view;
+	  vec4 bv1   = projViewInv * vec4( v1, 1.0 );
+	  vec4 bv2   = projViewInv * vec4( v2, 1.0 );
+	  vec3 viewp = normalize( ( bv2.xyz / bv2.w ) - ( bv1.xyz / bv1.w ) );
 	  float  grid = width/float(subdivision);
 	  float   iso = 0.5 * cubesize * grid; // size of each subelement
 	  vec3 pos   = ray_trace( vertPos, -viewp, iso );
@@ -120,7 +127,6 @@
 	      g      /= 2.*m; // in [0,1]^3
 	      outColor.rgb = g;
 	  }
-	  // outColor.rgb = (vertPos / width)+vec3(0.5,0.5,0.5);
 	  outColor.a   = 1.0;
       }
     </script>
