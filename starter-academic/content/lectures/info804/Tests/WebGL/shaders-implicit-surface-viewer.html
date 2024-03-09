@@ -46,6 +46,9 @@
       uniform float a;
       uniform float b;
       uniform float scale;
+      uniform float grid_size;
+      uniform float grid_thickness;
+      uniform float grid_attenuation;
       uniform int   shape;
       uniform int   color_model;
     in vec3 vertPos;
@@ -53,12 +56,21 @@
     in mat4 projViewInv;
       out vec4 outColor;
 
-      vec3 phongModel(vec3 viewDir, vec3 normal,
+      vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal,
 		      vec3 rayDir, vec3 lightDir, vec3 lightCol )
       {
 	  float sirradiance = dot(lightDir, normal);
 	  float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
 	  vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
+	  float  bound      = grid_size * grid_thickness;
+	  if ( ( color_model >= 2 && color_model <= 3 )
+	       && ( mod( pos.x, grid_size ) < bound
+		    || mod( pos.y, grid_size ) < bound
+		    || mod( pos.z, grid_size ) < bound ) )
+	      color *= grid_attenuation;
+	  else if ( color_model >= 4
+		    && ( mod( length( pos ), grid_size ) < bound ) )
+	      color *= grid_attenuation;
 	  vec3  reflectDir  = reflect(-lightDir, normal);
 	  float  specDot    = max(dot(reflectDir, viewDir), 0.0);
 	  color            += pow(specDot, shininess) * specular_color;
@@ -118,10 +130,11 @@
 	  return vec3( gfx, gfy, gfz ) / ( 2.0 * eps );
       }
 
-      // f(p) < lvl <= f(q)
+      // Invariant: f(p) < lvl <= f(q)
       vec3 bissection( vec3 p, vec3 q, float lvl )
-      {
-	  for ( int i = 0; i < 10; i++ )
+      {   // 10: precision is 0.001
+	  // 8: precision is 0.004
+	  for ( int i = 0; i < 8; i++ )
 	  {
 	      vec3 m = 0.5*(p + q);
 	      float fm = f( m );
@@ -131,9 +144,8 @@
 	  return 0.5*(p + q);
       }
       
-      vec3 ray_trace( vec3 p, vec3 d, float lvl, float step )
+      vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
       {
-	  int   n   = int( ceil( sqrt(3.0) * width / step ) );
 	  vec3  q   = p;
 	  float val = f( p );
 	  for ( int i = 0; i < n; i++ )
@@ -154,28 +166,25 @@
 	  vec3 view  = vec3( 0.0, 0.0, -1.0 ); // the observer is along the z-axis
 	  vec4 viewp4= projViewInv * vec4( view, 1.0 );
 	  vec3 viewp = normalize( viewp4.xyz / viewp4.w );
-	  float step = accuracy / scale;
-	  vec3 pos   = ray_trace( vertPos / scale , -viewp / scale, iso, step );
-	  outColor.a   = 1.0;
+	  float step = 0.1 * accuracy / scale;
+	  int   n    = int( ceil( sqrt(3.0) * width / (scale*step) ) );
+	  vec3 pos   = ray_trace( vertPos / scale , -viewp, iso, n, step );
+	  outColor.a = 1.0;
 	  if ( length( pos ) > width ) // f( pos ) > ( iso + 0.01 ) )
 	      outColor.rgb = bg_color;
-	  else if ( color_model == 1 )
+	  else if ( (color_model & 1) == 1 )
 	  {
 	      vec3 radiance;
 	      vec3       n = normalize( gradf( pos ) );
               vec3 viewDir = normalize( -vertPos);
-	      //vec4 ld1_4   = projViewInv * vec4( light1_direction, 1.0 );
-	      //vec4 ld2_4   = projViewInv * vec4( light2_direction, 1.0 );
-	      //vec3 ld1     = normalize( ld1_4.xyz / ld1_4.w );
-	      //vec3 ld2     = normalize( ld2_4.xyz / ld2_4.w );
 	      vec3 ld1  = normalize( light1_direction );
 	      vec3 ld2  = normalize( light2_direction );
-              radiance  = phongModel( viewDir, n, 
+              radiance  = phongModel( pos, viewDir, n, 
 				      viewp, ld1, light1_color );
-              radiance += phongModel( viewDir, n, 
+              radiance += phongModel( pos, viewDir, n, 
 				      viewp, ld2, light2_color );
 	      const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
-              radiance += phongModel( viewDir, n, 
+              radiance += phongModel( pos, viewDir, n, 
 				      viewp, viewp, front_light );
 	      radiance += ambient_color;
 	      //radiance  = pow(radiance, vec3(1.0 / 2.2) ); // gamma correction
@@ -185,6 +194,15 @@
 	  {   // color_model == 0
 	      vec3       n = normalize( gradf( pos ) );
               outColor.rgb = vec3( abs( n.x ), abs( n.y ), abs( n.z ) );
+	      float  bound = grid_size * grid_thickness;
+	      if ( ( color_model == 2 )
+		   && ( mod( pos.x, grid_size ) < bound
+			|| mod( pos.y, grid_size ) < bound
+			|| mod( pos.z, grid_size ) < bound ) )
+		  outColor.rgb *= grid_attenuation;
+	      else if ( color_model == 4
+			&& ( mod( length( pos ), grid_size ) < bound ) )
+		  outColor.rgb *= grid_attenuation;
 	  }
       }
     </script>
@@ -218,6 +236,9 @@
 	  color_model   : 1,
 	  view_shape    : 0,
 	  view_radius   : 100.0,
+	  grid_size     : 1.0,
+	  grid_thickness: 0.1,
+	  grid_attenuation: 0.5,	  	  
 	  rotation_x    : 0.5,
 	  rotation_y    : 0.25,
 	  rotation_z    : 0.0,
@@ -279,7 +300,11 @@
 		  shader.uniforms.scale.value = value;
 	      } );
 	  const colors = gui.addFolder( 'Colors' );
-	  colors.add( settings, 'color_model', { RGB: 0, Phong: 1 } ).onChange(
+	  colors.add( settings, 'color_model',
+		      { 'RGB': 0, 'Phong': 1,
+			'RGB+Grid': 2, 'Phong+Grid': 3,
+			'RGB+Spheres': 4, 'Phong+Spheres': 5
+		      } ).onChange(
 	      function ( value ) {
 		  shader.uniforms.color_model.value = value;
 	      } );
@@ -330,6 +355,12 @@
 	  ( function( value ) { makeViewShape( value, settings.view_radius ) } );
           view.add( settings, 'view_radius' ).min( 50.0 ).max( 200.0 ).onChange
 	  ( function ( value ) { makeViewShape( settings.view_shape, value ) } );
+          view.add( settings, 'grid_size' ).min( 0.1 ).max( 5.0 ).onChange
+	  ( function ( value ) { shader.uniforms.grid_size.value = value; } );
+          view.add( settings, 'grid_thickness' ).min( 0.01 ).max( 1.0 ).onChange
+	  ( function ( value ) { shader.uniforms.grid_thickness.value = value; } );
+          view.add( settings, 'grid_attenuation' ).min( 0.0 ).max( 2.0 ).onChange
+	  ( function ( value ) { shader.uniforms.grid_attenuation.value = value; } );
 	  view.add( settings, 'rotation_x' ).min( -1.0 ).max( 1.0 ).listen().onChange
 	  ( function( value ) { settings.rotation_x = value; } );
 	  view.add( settings, 'rotation_y' ).min( -1.0 ).max( 1.0 ).listen().onChange
@@ -359,18 +390,14 @@
 	      iso             : { value: settings.iso },
 	      a               : { value: settings.a },
 	      b               : { value: settings.b },
+	      grid_size       : { value: settings.grid_size },
+	      grid_thickness  : { value: settings.grid_thickness },
+	      grid_attenuation: { value: settings.grid_attenuation },	      	      
 	      color_model     : { value: settings.color_model },	      
 	      moment          : { value: 0.0 }
 	  };
-	  console.log( camera.near );
-	  console.log( camera.far );	  
+
 	  scene = new THREE.Scene();
-
-	  const ambientLight = new THREE.AmbientLight( 0xcccccc, 1.5 );
-	  scene.add( ambientLight );
-
-	  const pointLight = new THREE.PointLight( 0xffffff, 2.5, 0, 0 );
-	  camera.add( pointLight );
 	  scene.add( camera );
 
           shader = new THREE.ShaderMaterial( {
@@ -380,8 +407,6 @@
 	  } );
 	  shader.glslVersion = THREE.GLSL3;
 	  //
-	  //object = new THREE.Mesh( new THREE.TorusKnotGeometry( 50, 10, 50, 10, 2, 3 ),
-	  //shader ); // material );
           object = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ), shader );
 	  // object = new THREE.Mesh( new THREE.SphereGeometry( 100, 32, 16 ), shader );
 	  object.position.set( 0, 0, 0 );
