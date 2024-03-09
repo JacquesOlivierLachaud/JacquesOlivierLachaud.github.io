@@ -8,8 +8,7 @@
   </head>
   <body>
 
-    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> A simple implicit surface viewer (by J.-O. Lachaud)</div>
-
+    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> A simple implicit surface viewer (by J.-O. Lachaud), fps: <span id="fps"></span></div>
     <script type="importmap">
       {
 	  "imports": {
@@ -80,7 +79,8 @@
       }
       
       // 3D function in cube
-      const float width = 100.0; // cube width  
+      const float width  = 100.0; // cube width  
+      const float width2 = width*width; // cube width  
       float f( vec3 p ) {
 	  float x2 = p.x*p.x;
 	  float y2 = p.y*p.y;
@@ -147,17 +147,18 @@
       
       vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
       {
-	  vec3  q   = p;
-	  float val = f( p );
-	  for ( int i = 0; i < n; i++ )
-	  {
-	      q += step * d;
-	      float nval = f( q );
-	      if ( ( val < lvl ) && ( nval >= lvl ) )
-		  return bissection( q - step * d, q, lvl );
-	      else if ( ( val >= lvl ) && ( nval < lvl ) )
-		  return bissection( q, q - step * d, lvl );
-	      val = nval;
+	  d     *= step;
+	  vec3 q = p;
+	  if ( f( p ) < lvl ) {
+	      for ( int i = 0; i < n; i++ ) {
+		  q  += d;
+		  if ( f( q ) >= lvl ) return bissection( q - d, q, lvl );
+	      }
+	  } else {
+	      for ( int i = 0; i < n; i++ ) {
+		  q  += d;
+		  if ( f( q ) < lvl ) return bissection( q, q - d, lvl );
+	      }
 	  }
 	  return q + normalize( d ) * 2. * width;
       }
@@ -171,8 +172,8 @@
 	  int   n    = int( ceil( sqrt(3.0) * width / (scale*step) ) );
 	  vec3 pos   = ray_trace( vertPos / scale , -viewp, iso, n, step );
 	  outColor.a = 1.0;
-	  if ( length( pos ) > width ) // f( pos ) > ( iso + 0.01 ) )
-	      outColor.rgb = bg_color;
+	  if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+	      outColor.rgb = bg_color; // ray did not find a surface
 	  else if ( (color_model & 1) == 1 )
 	  {
 	      vec3 radiance;
@@ -252,6 +253,9 @@
       };
       let controls;
       var uniforms;
+      let then=0;
+      const fpsElem = document.querySelector("#fps");
+
       init();
       animate();
       initGui();
@@ -440,8 +444,6 @@
 	  controls.minDistance = 1;
 	  controls.maxDistance = 200.0;
 	  controls.maxPolarAngle = Math.PI / 2;
-	  
-
       }
 
       function onWindowResize() {
@@ -457,7 +459,12 @@
       }
 
       function render() {
-	  const timer = Date.now() * 0.0001;
+	  const now = Date.now() * 0.001;
+	  const deltaTime = now - then;          // compute time since last frame
+	  then = now;                            // remember time for next frame
+	  const fps = 1 / deltaTime;             // compute frames per second
+	  fpsElem.textContent = fps.toFixed(1);
+	  
 	  // camera.position.x = distance; // Math.cos( timer ) * distance;
 	  // camera.position.z = 0.0; // Math.sin( timer ) * distance;
 	  camera.lookAt( scene.position );
