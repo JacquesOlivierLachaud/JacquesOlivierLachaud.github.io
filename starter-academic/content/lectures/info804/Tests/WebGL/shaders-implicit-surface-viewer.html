@@ -14,7 +14,8 @@
       {
 	  "imports": {
 	      "three": "./three.module.js",
-	      "three/addons/": "./jsm/"
+	      "three/addons/": "./jsm/",
+	      "three/addons/controls/": "./examples/jsm/controls/"
 	  }
       }
     </script>
@@ -211,6 +212,7 @@
 
       import * as THREE from 'three';
       import { GUI } from 'three/addons/lil-gui.module.min.js';
+      import { OrbitControls} from 'three/addons/controls/OrbitControls.js';
 
       let camera, scene, renderer, object;
       let distance = 200.0;
@@ -248,6 +250,7 @@
 	      settings.rotation_z = 0;
 	  }
       };
+      let controls;
       var uniforms;
       init();
       animate();
@@ -264,6 +267,11 @@
 	      object.geometry = new THREE.IcosahedronGeometry( radius, 4 );
 	  if ( value == 4 )
 	      object.geometry = new THREE.SphereGeometry( radius, 32, 16 );
+	  if ( value == 5 )
+	      object.geometry = new THREE.CylinderGeometry( 0.5*radius, 0.5*radius, radius,
+							    32 );
+	  if ( value == 6 )
+	      object.geometry = new THREE.PlaneGeometry( radius, radius );
       }
       
       // Init gui
@@ -350,7 +358,8 @@
 	  const view = gui.addFolder( 'View' );
 	  view.add( settings, 'view_shape',
 		   { 'Cube': 0, 'Dodecahedron': 1,
-		     'Icosahedron': 2, 'SubIcosahedron' : 3, 'Sphere': 4 } )
+		     'Icosahedron': 2, 'SubIcosahedron' : 3, 'Sphere': 4,
+		     'Cylinder': 5, 'Plane': 6 } )
 	      .onChange
 	  ( function( value ) { makeViewShape( value, settings.view_radius ) } );
           view.add( settings, 'view_radius' ).min( 50.0 ).max( 200.0 ).onChange
@@ -372,6 +381,8 @@
       
       function init() {
 	  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+	  camera.position.x = distance; // Math.cos( timer ) * distance;
+	  camera.position.z = 0.0; // Math.sin( timer ) * distance;
 	  camera.position.y = 0;
 	  uniforms = {
 	      bg_color        : { value : new THREE.Vector3( settings.bg_color ) },
@@ -419,7 +430,17 @@
 	  document.body.appendChild( renderer.domElement );
 
 	  //
-	  window.addEventListener( 'resize', onWindowResize );
+          window.addEventListener( 'resize', onWindowResize );
+	  
+	  //
+	  controls = new OrbitControls( camera, renderer.domElement );
+	  controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+	  controls.dampingFactor = 0.15;
+	  controls.screenSpacePanning = false;
+	  controls.minDistance = 1;
+	  controls.maxDistance = 200.0;
+	  controls.maxPolarAngle = Math.PI / 2;
+	  
 
       }
 
@@ -437,8 +458,8 @@
 
       function render() {
 	  const timer = Date.now() * 0.0001;
-	  camera.position.x = distance; // Math.cos( timer ) * distance;
-	  camera.position.z = 0.0; // Math.sin( timer ) * distance;
+	  // camera.position.x = distance; // Math.cos( timer ) * distance;
+	  // camera.position.z = 0.0; // Math.sin( timer ) * distance;
 	  camera.lookAt( scene.position );
 	  
 	  //map.offset = new THREE.Vector2( (timer*2.0) % 1.0, 0.0 );
