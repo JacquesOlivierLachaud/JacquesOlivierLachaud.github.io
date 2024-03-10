@@ -7,8 +7,54 @@
     <link type="text/css" rel="stylesheet" href="main.css">
   </head>
   <body>
+    <style>
+textarea {
+  padding: 2px 2px;
+  box-sizing: border-box;
+  border: 2px solid #808080;
+  border-radius: 4px;
+  color: #eeeeee;
+  background-color: #111111;
+  font-size: 12px;
+  resize: both;
+}
+button {
+  padding: 2px 2px;
+  box-sizing: border-box;
+  border: 2px solid #808080;
+  border-radius: 4px;
+  color: #ff88dd;
+  background-color: #111111;
+  font-size: 14px;
+  vertical-align: top;
+}
+    </style>
 
-    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> A simple implicit surface viewer (by J.-O. Lachaud), fps: <span id="fps"></span></div>
+    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> A simple implicit surface viewer, by <a href="https://jacquesolivierlachaud.github.io" target="_blank" rel="noopener">J.-O. Lachaud</a>, fps: <span id="fps"></span></div>
+    <div id="update-fct">
+      <table>
+	<tr>
+	  <td><table>
+	      <tr>
+		<td><button type="button" onclick="displayInfo()">Help</button></td>
+		<td><button type="button" onclick="updateRenderer()">View surface</button></td>
+	      </tr>
+	      <tr>
+		<td></td>
+		<td><button type="button" onclick="clearFunction()">Restart</button></td>
+	      </tr>
+	  </table></td>
+	  <td><textarea spellcheck="false" rows="4" cols="60" id="editable-code-fct">
+      // Computes f(x,y,z). You may use x2 for x*x, x3 for x*x*x,
+      // same holds for y and z. Constant must be floating numbers.
+      // Durckblick + ball
+      return ( x2 + y2 + z2 - a*a ) * ( x3 * y + x * z3 + y3 * z + 5. * z );
+	  </textarea></td>
+	  <td><textarea spellcheck="false" rows="4" cols="60" id="editable-code-fct_error" style="color: #88ff88;" readonly>
+	  </textarea></td>
+	</tr>
+      </table>
+    </div>
     <script type="importmap">
       {
 	  "imports": {
@@ -18,6 +64,377 @@
 	  }
       }
     </script>
+
+    <script type="module">
+    import * as THREE from 'three';
+      import { GUI } from 'three/addons/lil-gui.module.min.js';
+      import { OrbitControls} from 'three/addons/controls/OrbitControls.js';
+
+      let camera, scene, renderer, object;
+      let distance = 200.0;
+      let map;
+      let shader;
+      let settings = {
+	  bg_color      : [ 0.1, 0.1, 0.1 ],
+	  ambient_color : [ 0.01, 0.0, 0.0 ],
+	  ext_diff_color: [ 1.0, 0.25, 0.1 ],
+	  int_diff_color: [ 0.25, 0.8, 1.0 ],
+	  specular_color: [ 1.0, 1.0, 1.0 ],
+	  shininess     : 10.0,
+	  light1        : 1,
+	  light1_color  : [ 0.95, 0.8, 0.0 ],
+	  light2        : 0,
+	  light2_color  : [ 0.1, 0.1, 1.0 ],
+	  accuracy      : 5.0,
+	  scale         : 10.0,
+	  shape         : 0,
+	  iso           : 0.0,
+	  a             : 1.0,
+	  b             : 1.0,
+	  c             : 1.0,
+	  color_model   : 3,
+	  view_shape    : 0,
+	  view_radius   : 100.0,
+	  grid_size     : 1.0,
+	  grid_thickness: 0.1,
+	  grid_attenuation: 0.5,	  	  
+	  rotation_x    : 0.2,
+	  rotation_y    : 0.1,
+	  rotation_z    : 0.0,
+	  stop          : function() {
+	      settings.rotation_x = 0;
+	      settings.rotation_y = 0;
+	      settings.rotation_z = 0;
+	  }
+      };
+      let controls;
+      var uniforms;
+      let then=0;
+      const fpsElem = document.querySelector("#fps");
+
+      init();
+      animate();
+      initGui();
+      window.updateRenderer = updateRenderer;
+      window.clearFunction  = clearFunction;
+      window.displayInfo    = displayInfo;
+
+      // Changes the geometry of the viewing "window".
+      function makeViewShape( value, radius ) {
+	  if ( value == 0 )
+	      object.geometry = new THREE.BoxGeometry( radius, radius, radius );
+	  if ( value == 1 )
+	      object.geometry = new THREE.DodecahedronGeometry( radius, 0 );
+	  if ( value == 2 )
+	      object.geometry = new THREE.IcosahedronGeometry( radius, 0 );
+	  if ( value == 3 )
+	      object.geometry = new THREE.IcosahedronGeometry( radius, 4 );
+	  if ( value == 4 )
+	      object.geometry = new THREE.SphereGeometry( radius, 32, 16 );
+	  if ( value == 5 )
+	      object.geometry = new THREE.CylinderGeometry( 0.5*radius, 0.5*radius, radius,
+							    32 );
+	  if ( value == 6 )
+	      object.geometry = new THREE.PlaneGeometry( radius, radius );
+      }
+
+      // Changes the predefined shape function.
+      function updateShape( value ) {
+	  switch ( value ) {
+          case 0: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-durchball").value;
+	      break;
+          case 1: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-crixxi").value;
+	      break;
+          case 2: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-cayleycubic").value;
+	      break;
+          case 3: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-durchblick").value;
+	      break;
+          case 4: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-barthsextic").value;
+	      break;
+          case 5: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-clebschdcubic").value;
+	      break;
+          case 6: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-bohemiandome").value;
+	      break;
+          case 7: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-gyroid").value;
+	      break;
+          case 8: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-neovius").value;
+	      break;
+          case 9: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-kleinbottle").value;
+	      break;
+          case 10: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-pluckerconoid").value;
+	      break;
+          case 11: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-ball").value;
+	      break;
+	  }
+	  updateRenderer();
+      }
+
+      // Update the fragment shader from the different chunks.
+      function updateShader() {
+	  // var vertSrc = document.getElementById("#post-vert").value;
+	  // Build fragment shader from chunks
+	  var fragSrc = document.getElementById("frag-chunk-begin").value
+	      + document.getElementById("frag-chunk-fct-begin").value
+	      + document.getElementById("editable-code-fct").value
+	      + document.getElementById("frag-chunk-fct-end").value
+	      + document.getElementById("frag-chunk-end").value;
+          shader = new THREE.ShaderMaterial( {
+	      vertexShader: document.querySelector( '#post-vert' ).textContent.trim(),
+	      fragmentShader: fragSrc, // document.querySelector( '#post-frag' ).textContent.trim(),
+	      uniforms: uniforms
+	  } );
+	  shader.glslVersion = THREE.GLSL3;
+      }
+
+      // Update the renderer (here, only the material/shader of the viewing object).
+      export function updateRenderer() {
+	  document.getElementById("editable-code-fct_error").value = "";
+	  updateShader();
+	  object.material             = shader;
+	  object.material.needsUpdate = true;
+      }
+      export function clearFunction() {
+	  settings.a   = 1.0;
+	  settings.b   = 1.0;
+	  settings.c   = 1.0;
+	  settings.iso = 0.0;
+	  settings.color_model = 3;
+	  shader.uniforms.color_model.value = settings.color_model;
+	  settings.shape = 0;
+	  updateShape( settings.shape );
+      }
+      export function displayInfo() {
+	  document.getElementById("editable-code-fct_error").value
+	      = document.getElementById("display-info").value;
+      }
+      
+      // Init gui
+      function initGui() {
+	  const gui   = new GUI();
+	  const shape = gui.addFolder( 'Shape' );
+	  shape.add( settings, 'shape', { Durchball: 0, Crixxi: 1,
+					  CayleyCubic: 2, Durchblick: 3,
+				          BarthSextic: 4, ClebschDCubic : 5,
+					  BohemianDome: 6, Gyroid: 7,
+					  Neovius : 8, KleinBottle : 9,
+					  PluckerConoid : 10,
+					  Ball : 11 } )
+	      .name( "Predefined shape" ).listen().onChange(
+	    function ( value ) {
+		updateShape( value );
+		shader.uniforms.shape.value = value;
+	      } );
+	  shape.add( settings, 'a' ).min( -2.0 ).max( 2.0 ).step(0.025).listen().onChange(
+	      function ( value ) {
+		  shader.uniforms.a.value = value;
+	      } );
+	  shape.add( settings, 'b' ).min( -2.0 ).max( 2.0 ).step(0.025).listen().onChange(
+	      function ( value ) {
+		  shader.uniforms.b.value = value;
+	      } );
+	  shape.add( settings, 'c' ).min( -2.0 ).max( 2.0 ).step(0.025).listen().onChange(
+	      function ( value ) {
+		  shader.uniforms.c.value = value;
+	      } );
+	  shape.add( settings, 'iso' ).name("isolevel")
+	      .min( -1.0 ).max( 1.0 ).step(0.025).listen().onChange(
+	      function ( value ) {
+		  shader.uniforms.iso.value = value;
+	      } );
+	  shape.add( settings, 'scale' ).min( 1.0 ).max( 100.0 ).onChange(
+	      function ( value ) {
+		  shader.uniforms.scale.value = value;
+	      } );
+	  shape.add( settings, 'accuracy' ).min( 0.2 ).max( 20. ).step(0.1).onChange(
+	      function ( value ) {
+		  shader.uniforms.accuracy.value = value;
+	      } );
+	  const colors = gui.addFolder( 'Colors' );
+	  colors.add( settings, 'color_model',
+		      { 'RGB': 0, 'Phong': 1,
+			'RGB+Grid': 2, 'Phong+Grid': 3,
+			'RGB+Spheres': 4, 'Phong+Spheres': 5
+		      } ).listen().onChange(
+	      function ( value ) {
+		  shader.uniforms.color_model.value = value;
+	      } );
+	  colors.addColor( settings, 'bg_color' ).onChange
+	  ( function ( value ) { shader.uniforms.bg_color.value = value; } );
+	  colors.addColor( settings, 'ambient_color' ).onChange
+	  ( function ( value ) { shader.uniforms.ambient_color.value = value; } );
+	  colors.addColor( settings, 'ext_diff_color' ).onChange
+	  ( function ( value ) { shader.uniforms.ext_diff_color.value = value; } );
+	  colors.addColor( settings, 'int_diff_color' ).onChange
+	  ( function ( value ) { shader.uniforms.int_diff_color.value = value; } );
+	  colors.addColor( settings, 'specular_color' ).onChange
+	  ( function ( value ) { shader.uniforms.specular_color.value = value; } );
+	  colors.add( settings, 'shininess' ).min( 0. ).max( 100. ).onChange
+	  ( function ( value ) { shader.uniforms.shininess.value = value; } );
+	  const lights = gui.addFolder( 'Lights' );
+	  lights.add( settings, 'light1', { 'X': 0, 'Y': 1, '-Z': 2, 'X+Y-Z': 3 } ).onChange
+	  ( function ( value ) {
+	      if ( value == 0 ) shader.uniforms.light1_direction.value
+		  = new THREE.Vector3( 1.0, 0.0, 0.0 );
+	      if ( value == 1 ) shader.uniforms.light1_direction.value
+		  = new THREE.Vector3( 0.0, 1.0, 0.0 );
+	      if ( value == 2 ) shader.uniforms.light1_direction.value
+		  = new THREE.Vector3( 0.0, 0.0, -1.0 );
+	      if ( value == 3 ) shader.uniforms.light1_direction.value
+		  = new THREE.Vector3( 1.0, 1.0, -1.0 );
+	  } );
+	  lights.addColor( settings, 'light1_color' ).onChange
+	  ( function ( value ) { shader.uniforms.light1_color.value = value; } );
+	  lights.add( settings, 'light2', { 'X': 0, 'Y': 1, '-Z': 2, 'X+Y-Z': 3 } ).onChange
+	  ( function ( value ) {
+	      if ( value == 0 ) shader.uniforms.light2_direction.value
+		  = new THREE.Vector3( 1.0, 0.0, 0.0 );
+	      if ( value == 1 ) shader.uniforms.light2_direction.value
+		  = new THREE.Vector3( 0.0, 1.0, 0.0 );
+	      if ( value == 2 ) shader.uniforms.light2_direction.value
+		  = new THREE.Vector3( 0.0, 0.0, -1.0 );
+	      if ( value == 3 ) shader.uniforms.light2_direction.value
+		  = new THREE.Vector3( 1.0, 1.0, -1.0 );
+	  } );
+	  lights.addColor( settings, 'light2_color' ).onChange
+	  ( function ( value ) { shader.uniforms.light2_color.value = value; } );
+	  const view = gui.addFolder( 'View' );
+	  view.add( settings, 'view_shape',
+		   { 'Cube': 0, 'Dodecahedron': 1,
+		     'Icosahedron': 2, 'SubIcosahedron' : 3, 'Sphere': 4,
+		     'Cylinder': 5, 'Plane': 6 } )
+	      .onChange
+	  ( function( value ) { makeViewShape( value, settings.view_radius ) } );
+          view.add( settings, 'view_radius' ).min( 50.0 ).max( 200.0 ).onChange
+	  ( function ( value ) { makeViewShape( settings.view_shape, value ) } );
+          view.add( settings, 'grid_size' ).min( 0.1 ).max( 5.0 ).onChange
+	  ( function ( value ) { shader.uniforms.grid_size.value = value; } );
+          view.add( settings, 'grid_thickness' ).min( 0.01 ).max( 1.0 ).onChange
+	  ( function ( value ) { shader.uniforms.grid_thickness.value = value; } );
+          view.add( settings, 'grid_attenuation' ).min( 0.0 ).max( 2.0 ).onChange
+	  ( function ( value ) { shader.uniforms.grid_attenuation.value = value; } );
+	  view.add( settings, 'rotation_x' ).min( -1.0 ).max( 1.0 ).listen().onChange
+	  ( function( value ) { settings.rotation_x = value; } );
+	  view.add( settings, 'rotation_y' ).min( -1.0 ).max( 1.0 ).listen().onChange
+	  ( function( value ) { settings.rotation_y = value; } );
+	  view.add( settings, 'rotation_z' ).min( -1.0 ).max( 1.0 ).listen().onChange
+	  ( function( value ) { settings.rotation_z = value; } );
+	  view.add( settings, 'stop' );
+      }
+      
+      function init() {
+	  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+	  camera.position.x = distance; // Math.cos( timer ) * distance;
+	  camera.position.z = 0.0; // Math.sin( timer ) * distance;
+	  camera.position.y = 0;
+	  uniforms = {
+	      bg_color        : { value : new THREE.Vector3( settings.bg_color[0],
+							     settings.bg_color[1],
+							     settings.bg_color[2] ) },
+	      ambient_color   : { value : new THREE.Vector3( 0.01, 0.0, 0.0 ) },
+	      ext_diff_color  : { value : new THREE.Vector3( 1.0, 0.25, 0.1 ) },
+	      int_diff_color  : { value : new THREE.Vector3( 0.25, 0.8, 1.0 ) },
+	      specular_color  : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },
+	      shininess       : { value: 10.0 },
+	      light1_color    : { value : new THREE.Vector3( 0.95, 0.8, 0.0 ) },
+	      light1_direction: { value : new THREE.Vector3( 0.0, 1.0, 0.0 ) },
+	      light2_color    : { value : new THREE.Vector3( 0.1, 0.1, 1.0 ) },
+	      light2_direction: { value : new THREE.Vector3( 1.0, 0.0, 0.0 ) },
+	      accuracy        : { value: settings.accuracy },
+	      scale           : { value: settings.scale },
+	      shape           : { value: settings.shape },
+	      iso             : { value: settings.iso },
+	      a               : { value: settings.a },
+	      b               : { value: settings.b },
+	      c               : { value: settings.c },
+	      grid_size       : { value: settings.grid_size },
+	      grid_thickness  : { value: settings.grid_thickness },
+	      grid_attenuation: { value: settings.grid_attenuation },	      	      
+	      color_model     : { value: settings.color_model },	      
+	      moment          : { value: 0.0 }
+	  };
+
+	  scene = new THREE.Scene();
+	  scene.add( camera );
+
+	  updateShader();
+          object = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ), shader );
+	  object.position.set( 0, 0, 0 );
+	  scene.add( object );
+
+	  //
+	  renderer = new THREE.WebGLRenderer( { antialias: true } );
+	  renderer.setPixelRatio( window.devicePixelRatio );
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+	  renderer.debug.onShaderError =
+	      ( gl, program, vertexShader, fragmentShader ) => {
+    		  const vertexShaderSource = gl.getShaderSource( vertexShader );
+  		  const fragmentShaderSource = gl.getShaderSource( fragmentShader );
+		  const error = gl.getShaderInfoLog( fragmentShader );
+		  document.getElementById("editable-code-fct_error").value =
+		      error;
+	      };
+	  document.body.appendChild( renderer.domElement );
+
+	  //
+          window.addEventListener( 'resize', onWindowResize );
+	  
+	  //
+	  controls = new OrbitControls( camera, renderer.domElement );
+	  controls.enableDamping = true; 
+	  controls.dampingFactor = 0.15;
+	  controls.screenSpacePanning = false;
+	  controls.minDistance = 1;
+	  controls.maxDistance = 200.0;
+	  controls.maxPolarAngle = Math.PI / 2;
+      }
+
+      function onWindowResize() {
+	  camera.aspect = window.innerWidth / window.innerHeight;
+	  camera.updateProjectionMatrix();
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+      }
+
+      //
+      function animate() {
+	  requestAnimationFrame( animate );
+	  render();
+      }
+
+      function render() {
+	  const now = Date.now() * 0.001;
+	  const deltaTime = now - then;          // compute time since last frame
+	  then = now;                            // remember time for next frame
+	  const fps = 1 / deltaTime;             // compute frames per second
+	  fpsElem.textContent = fps.toFixed(1);
+	  
+	  // camera.position.x = distance; // Math.cos( timer ) * distance;
+	  // camera.position.z = 0.0; // Math.sin( timer ) * distance;
+	  camera.lookAt( scene.position );
+	  
+	  scene.traverse( function ( object ) {
+	      if ( object.isMesh === true ) {
+		  object.rotation.x += 0.01 * settings.rotation_x;
+		  object.rotation.y += 0.01 * settings.rotation_y;
+		  object.rotation.z += 0.01 * settings.rotation_z;		  
+	      }
+	  } );
+	  renderer.render( scene, camera );
+      }
+    </script>
+
+    
     <script id="post-vert" type="x-shader/x-vertex">
       out vec3 vertPos;
       out vec3 projPos;
@@ -27,10 +444,12 @@
 	  vertPos       = position; 
 	  gl_Position   = projectionMatrix * vertPos4;
 	  projPos       = gl_Position.xyz / gl_Position.w;
-	  projViewInv   = inverse( projectionMatrix * modelViewMatrix );
+	  projViewInv   = inverse( modelViewMatrix );
+	  //inverse( projectionMatrix * modelViewMatrix );
       }
     </script>
-    <script id="post-frag" type="x-shader/x-fragment">
+
+    <textarea spellcheck="false" id="frag-chunk-begin" style="display: none;">
       uniform vec3 ambient_color;
       uniform vec3 int_diff_color;
       uniform vec3 ext_diff_color;
@@ -45,6 +464,7 @@
       uniform float iso;
       uniform float a;
       uniform float b;
+      uniform float c;      
       uniform float scale;
       uniform float grid_size;
       uniform float grid_thickness;
@@ -55,9 +475,86 @@
     in vec3 projPos;
     in mat4 projViewInv;
       out vec4 outColor;
+      
+      // 3D function in cube
+      const float width  = 100.0; // cube width  
+      const float width2 = width*width; // cube width
+      </textarea>
+    
+    <textarea spellcheck="false" id="frag-chunk-fct-begin" style="display: none;">
+    float f( vec3 p ) {
+	float x  = p.x;
+	float y  = p.y;
+	float z  = p.z;	
+	float x2 = x*x;
+	float y2 = y*y;
+	float z2 = z*z;
+	float x3 = x2*x;
+	float y3 = y2*y;
+	float z3 = z2*z;
+    </textarea>
 
-      vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal,
-		      vec3 rayDir, vec3 lightDir, vec3 lightCol )
+    <textarea spellcheck="false" id="frag-chunk-fct-end" style="display: none;">
+      }
+    </textarea>
+    
+    <textarea spellcheck="false" id="frag-chunk-fct-durchball" style="display: none;">
+      // Computes f(x,y,z). You may use x2 for x*x, x3 for x*x*x,
+      // same holds for y and z. Constant must be floating numbers.
+      // Durckblick + ball
+      return ( x2 + y2 + z2 - a*a ) * ( x3 * y + x * z3 + y3 * z + 5. * z );
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-crixxi" style="display: none;">
+      // Crixxi
+      return -0.9*pow( y2 + z2 - a*a, 2.0 ) - pow( x2 + y2 - a*a, 3.0 );
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-cayleycubic" style="display: none;">
+      // CayleyCubic
+      return x2 + y2 + z2 + x2*z - y2*z - 1.;
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-durchblick" style="display: none;">	  
+      // Durchblick
+      return x3 * y + x * z3 + y3 * z + z3 + 5. * z;
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-barthsextic" style="display: none;">
+      // BarthSextic
+      float x4 = x2*x2; float y4 = y2*y2; float z4 = z2*z2;
+      return z4*z2 + 5.*(x2+y2)*(-z4 + (x2+y2)*z2) - 2.*(x4 - 10.*x2*y2+5.*y4)*x*z
+	  + 1.25*pow(a*(x2+y2+z2-a*a),2.0);
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-clebschdcubic" style="display: none;">
+      // ClebschDCubic
+      return x3 + y3 + z3 + a*a*a - pow(x + y + z + a,3.0);
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-bohemiandome" style="display: none;">
+      // BohemianDome
+      return pow( (x2 + y2 + z2 - a*a - b*b), 2.0 ) - 4.*(a*a - x2)*(b*b - y2);
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-gyroid" style="display: none;">
+      // Gyroid
+      return a*cos(x)*sin(y)+b*cos(y)*sin(z)+cos(z)*sin(x);
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-neovius" style="display: none;">
+      // Neovius
+      return 3.*a*(cos(x) + cos(y) + cos(z)) + 4.*b*cos(x)*cos(y)*cos(z);
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-kleinbottle" style="display: none;">
+      // KleinBottle (Ian Stewart)
+      float l2 = a*(x2+y2+z2);
+      float w  = l2 - 2.0*y - b;
+      return (l2 + 2.0*y - b)*(w*w - 8.0*z2) + 16.0*x*z*w;
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-pluckerconoid" style="display: none;">
+      // PluckerConoid
+      return z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*x*y2*y2);
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-ball" style="display: none;">
+      // Ball
+      return (x2+y2+z2-a*a);
+    </textarea>
+    
+    <textarea spellcheck="false" id="frag-chunk-end" style="display: none;">      
+      vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
       {
 	  float sirradiance = dot(lightDir, normal);
 	  float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
@@ -78,50 +575,6 @@
 	  return color;
       }
       
-      // 3D function in cube
-      const float width  = 100.0; // cube width  
-      const float width2 = width*width; // cube width  
-      float f( vec3 p ) {
-	  float x2 = p.x*p.x;
-	  float y2 = p.y*p.y;
-	  float z2 = p.z*p.z;
-	  float x3 = x2*p.x;
-	  float y3 = y2*p.y;
-	  float z3 = z2*p.z;
-	  switch( shape ) {
-	  case 0: // Durchblick+ball
-	      return ( x2 + y2 + z2 - a*a ) * ( x3 * p.y + p.x * z3 + y3 * p.z + 5. * p.z );
-	  case 1: // Crixxi
-	      return -0.9*pow( y2 + z2 - a*a, 2.0 ) - pow( x2 + y2 - a*a, 3.0 );
-	  case 2: // CayleyCubic
-	      return x2 + y2 + z2 + x2*p.z - y2*p.z - 1.;
-	  case 3: // Durchblick
-	      return x3 * p.y + p.x * z3 + y3 * p.z + z3 + 5. * p.z;
-	  case 4: // BarthSextic
-	      float x4 = x2*x2;
-	      float y4 = y2*y2;	      
-	      float z4 = z2*z2;
-	      return z4*z2 + 5.*(x2+y2)*(-z4 + (x2+y2)*z2)
-		  - 2.*(x4 - 10.*x2*y2+5.*y4)*p.x*p.z
-		  + 1.25*pow(a*(x2+y2+z2-a*a),2.0);
-	  case 5: // ClebschDCubic
-	      return x3 + y3 + z3 + a*a*a - pow(p.x + p.y + p.z + a,3.0);
-	  case 6: // BohemianDome
-	      return pow( (x2 + y2 + z2 - a*a - b*b), 2.0 ) - 4.*(a*a - x2)*(b*b - y2);
-	  case 7: // Gyroid
-	      return a*cos(p.x)*sin(p.y)+b*cos(p.y)*sin(p.z)+cos(p.z)*sin(p.x);
-	  case 8: // Neovius
-	      return 3.*a*(cos(p.x) + cos(p.y) + cos(p.z)) + 4.*b*cos(p.x)*cos(p.y)*cos(p.z);
-	  case 9: // KleinBottle
-	      float l2 = a*(x2+y2+z2);
-	      float w  = l2 - 2.0*p.y - b;
-	      return (l2 + 2.0*p.y - b)*(w*w - 8.0*z2) + 16.0*p.x*p.z*w;
-	  case 10: // PluckerConoid
-	      return p.z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*p.x*y2*y2);
-	  default: // Ball
-	      return (x2+y2+z2-a*a);
-	  }
-      }
       vec3 gradf( vec3 p ) {
 	  float eps  = scale * 0.0001;
 	  // numerical centered derivatives
@@ -207,279 +660,44 @@
 		  outColor.rgb *= grid_attenuation;
 	  }
       }
-    </script>
+  </textarea>
 
-    <script type="module">
-
-      import * as THREE from 'three';
-      import { GUI } from 'three/addons/lil-gui.module.min.js';
-      import { OrbitControls} from 'three/addons/controls/OrbitControls.js';
-
-      let camera, scene, renderer, object;
-      let distance = 200.0;
-      let map;
-      let shader;
-      let settings = {
-	  bg_color      : [ 0.1, 0.1, 0.1 ],
-	  ambient_color : [ 0.01, 0.0, 0.0 ],
-	  ext_diff_color: [ 1.0, 0.25, 0.1 ],
-	  int_diff_color: [ 0.25, 0.8, 1.0 ],
-	  specular_color: [ 1.0, 1.0, 1.0 ],
-	  shininess     : 10.0,
-	  light1        : 1,
-	  light1_color  : [ 0.95, 0.8, 0.0 ],
-	  light2        : 0,
-	  light2_color  : [ 0.1, 0.1, 1.0 ],
-	  accuracy      : 5.0,
-	  scale         : 10.0,
-	  shape         : 0,
-	  iso           : 0.0,
-	  a             : 1.0,
-	  b             : 1.0,
-	  color_model   : 1,
-	  view_shape    : 0,
-	  view_radius   : 100.0,
-	  grid_size     : 1.0,
-	  grid_thickness: 0.1,
-	  grid_attenuation: 0.5,	  	  
-	  rotation_x    : 0.5,
-	  rotation_y    : 0.25,
-	  rotation_z    : 0.0,
-	  stop          : function() {
-	      settings.rotation_x = 0;
-	      settings.rotation_y = 0;
-	      settings.rotation_z = 0;
-	  }
-      };
-      let controls;
-      var uniforms;
-      let then=0;
-      const fpsElem = document.querySelector("#fps");
-
-      init();
-      animate();
-      initGui();
-
-      function makeViewShape( value, radius ) {
-	  if ( value == 0 )
-	      object.geometry = new THREE.BoxGeometry( radius, radius, radius );
-	  if ( value == 1 )
-	      object.geometry = new THREE.DodecahedronGeometry( radius, 0 );
-	  if ( value == 2 )
-	      object.geometry = new THREE.IcosahedronGeometry( radius, 0 );
-	  if ( value == 3 )
-	      object.geometry = new THREE.IcosahedronGeometry( radius, 4 );
-	  if ( value == 4 )
-	      object.geometry = new THREE.SphereGeometry( radius, 32, 16 );
-	  if ( value == 5 )
-	      object.geometry = new THREE.CylinderGeometry( 0.5*radius, 0.5*radius, radius,
-							    32 );
-	  if ( value == 6 )
-	      object.geometry = new THREE.PlaneGeometry( radius, radius );
-      }
-      
-      // Init gui
-      function initGui() {
-	  const gui = new GUI();
-	  gui.add( settings, 'shape', { Durchball: 0, Crixxi: 1,
-					CayleyCubic: 2, Durchblick: 3,
-				        BarthSextic: 4, ClebschDCubic : 5,
-					BohemianDome: 6, Gyroid: 7,
-					Neovius : 8, KleinBottle : 9,
-					PluckerConoid : 10,
-					Ball : 11 } ).onChange(
-	      function ( value ) {
-		  shader.uniforms.shape.value = value;
-	      } );
-	  gui.add( settings, 'a' ).min( -2.0 ).max( 2.0 ).step(0.025).onChange(
-	      function ( value ) {
-		  shader.uniforms.a.value = value;
-	      } );
-	  gui.add( settings, 'b' ).min( -2.0 ).max( 2.0 ).step(0.025).onChange(
-	      function ( value ) {
-		  shader.uniforms.b.value = value;
-	      } );
-	  gui.add( settings, 'iso' ).min( -1.0 ).max( 1.0 ).step(0.025).onChange(
-	      function ( value ) {
-		  shader.uniforms.iso.value = value;
-	      } );
-	  gui.add( settings, 'accuracy' ).min( 0.2 ).max( 20. ).step(0.1).onChange(
-	      function ( value ) {
-		  shader.uniforms.accuracy.value = value;
-	      } );
-	  gui.add( settings, 'scale' ).min( 1.0 ).max( 100.0 ).onChange(
-	      function ( value ) {
-		  shader.uniforms.scale.value = value;
-	      } );
-	  const colors = gui.addFolder( 'Colors' );
-	  colors.add( settings, 'color_model',
-		      { 'RGB': 0, 'Phong': 1,
-			'RGB+Grid': 2, 'Phong+Grid': 3,
-			'RGB+Spheres': 4, 'Phong+Spheres': 5
-		      } ).onChange(
-	      function ( value ) {
-		  shader.uniforms.color_model.value = value;
-	      } );
-	  colors.addColor( settings, 'bg_color' ).onChange
-	  ( function ( value ) { shader.uniforms.bg_color.value = value; } );
-	  colors.addColor( settings, 'ambient_color' ).onChange
-	  ( function ( value ) { shader.uniforms.ambient_color.value = value; } );
-	  colors.addColor( settings, 'ext_diff_color' ).onChange
-	  ( function ( value ) { shader.uniforms.ext_diff_color.value = value; } );
-	  colors.addColor( settings, 'int_diff_color' ).onChange
-	  ( function ( value ) { shader.uniforms.int_diff_color.value = value; } );
-	  colors.addColor( settings, 'specular_color' ).onChange
-	  ( function ( value ) { shader.uniforms.specular_color.value = value; } );
-	  colors.add( settings, 'shininess' ).min( 0. ).max( 100. ).onChange
-	  ( function ( value ) { shader.uniforms.shininess.value = value; } );
-	  const lights = gui.addFolder( 'Lights' );
-	  lights.add( settings, 'light1', { 'X': 0, 'Y': 1, '-Z': 2, 'X+Y-Z': 3 } ).onChange
-	  ( function ( value ) {
-	      if ( value == 0 ) shader.uniforms.light1_direction.value
-		  = new THREE.Vector3( 1.0, 0.0, 0.0 );
-	      if ( value == 1 ) shader.uniforms.light1_direction.value
-		  = new THREE.Vector3( 0.0, 1.0, 0.0 );
-	      if ( value == 2 ) shader.uniforms.light1_direction.value
-		  = new THREE.Vector3( 0.0, 0.0, -1.0 );
-	      if ( value == 3 ) shader.uniforms.light1_direction.value
-		  = new THREE.Vector3( 1.0, 1.0, -1.0 );
-	  } );
-	  lights.addColor( settings, 'light1_color' ).onChange
-	  ( function ( value ) { shader.uniforms.light1_color.value = value; } );
-	  lights.add( settings, 'light2', { 'X': 0, 'Y': 1, '-Z': 2, 'X+Y-Z': 3 } ).onChange
-	  ( function ( value ) {
-	      if ( value == 0 ) shader.uniforms.light2_direction.value
-		  = new THREE.Vector3( 1.0, 0.0, 0.0 );
-	      if ( value == 1 ) shader.uniforms.light2_direction.value
-		  = new THREE.Vector3( 0.0, 1.0, 0.0 );
-	      if ( value == 2 ) shader.uniforms.light2_direction.value
-		  = new THREE.Vector3( 0.0, 0.0, -1.0 );
-	      if ( value == 3 ) shader.uniforms.light2_direction.value
-		  = new THREE.Vector3( 1.0, 1.0, -1.0 );
-	  } );
-	  lights.addColor( settings, 'light2_color' ).onChange
-	  ( function ( value ) { shader.uniforms.light2_color.value = value; } );
-	  const view = gui.addFolder( 'View' );
-	  view.add( settings, 'view_shape',
-		   { 'Cube': 0, 'Dodecahedron': 1,
-		     'Icosahedron': 2, 'SubIcosahedron' : 3, 'Sphere': 4,
-		     'Cylinder': 5, 'Plane': 6 } )
-	      .onChange
-	  ( function( value ) { makeViewShape( value, settings.view_radius ) } );
-          view.add( settings, 'view_radius' ).min( 50.0 ).max( 200.0 ).onChange
-	  ( function ( value ) { makeViewShape( settings.view_shape, value ) } );
-          view.add( settings, 'grid_size' ).min( 0.1 ).max( 5.0 ).onChange
-	  ( function ( value ) { shader.uniforms.grid_size.value = value; } );
-          view.add( settings, 'grid_thickness' ).min( 0.01 ).max( 1.0 ).onChange
-	  ( function ( value ) { shader.uniforms.grid_thickness.value = value; } );
-          view.add( settings, 'grid_attenuation' ).min( 0.0 ).max( 2.0 ).onChange
-	  ( function ( value ) { shader.uniforms.grid_attenuation.value = value; } );
-	  view.add( settings, 'rotation_x' ).min( -1.0 ).max( 1.0 ).listen().onChange
-	  ( function( value ) { settings.rotation_x = value; } );
-	  view.add( settings, 'rotation_y' ).min( -1.0 ).max( 1.0 ).listen().onChange
-	  ( function( value ) { settings.rotation_y = value; } );
-	  view.add( settings, 'rotation_z' ).min( -1.0 ).max( 1.0 ).listen().onChange
-	  ( function( value ) { settings.rotation_z = value; } );
-	  view.add( settings, 'stop' );
-      }
-      
-      function init() {
-	  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-	  camera.position.x = distance; // Math.cos( timer ) * distance;
-	  camera.position.z = 0.0; // Math.sin( timer ) * distance;
-	  camera.position.y = 0;
-	  uniforms = {
-	      bg_color        : { value : new THREE.Vector3( settings.bg_color ) },
-	      ambient_color   : { value : new THREE.Vector3( 0.01, 0.0, 0.0 ) },
-	      ext_diff_color  : { value : new THREE.Vector3( 1.0, 0.25, 0.1 ) },
-	      int_diff_color  : { value : new THREE.Vector3( 0.25, 0.8, 1.0 ) },
-	      specular_color  : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },
-	      shininess       : { value: 10.0 },
-	      light1_color    : { value : new THREE.Vector3( 0.95, 0.8, 0.0 ) },
-	      light1_direction: { value : new THREE.Vector3( 0.0, 1.0, 0.0 ) },
-	      light2_color    : { value : new THREE.Vector3( 0.1, 0.1, 1.0 ) },
-	      light2_direction: { value : new THREE.Vector3( 1.0, 0.0, 0.0 ) },
-	      accuracy        : { value: settings.accuracy },
-	      scale           : { value: settings.scale },
-	      shape           : { value: settings.shape },
-	      iso             : { value: settings.iso },
-	      a               : { value: settings.a },
-	      b               : { value: settings.b },
-	      grid_size       : { value: settings.grid_size },
-	      grid_thickness  : { value: settings.grid_thickness },
-	      grid_attenuation: { value: settings.grid_attenuation },	      	      
-	      color_model     : { value: settings.color_model },	      
-	      moment          : { value: 0.0 }
-	  };
-
-	  scene = new THREE.Scene();
-	  scene.add( camera );
-
-          shader = new THREE.ShaderMaterial( {
-	      vertexShader: document.querySelector( '#post-vert' ).textContent.trim(),
-	      fragmentShader: document.querySelector( '#post-frag' ).textContent.trim(),
-	      uniforms: uniforms
-	  } );
-	  shader.glslVersion = THREE.GLSL3;
-	  //
-          object = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ), shader );
-	  // object = new THREE.Mesh( new THREE.SphereGeometry( 100, 32, 16 ), shader );
-	  object.position.set( 0, 0, 0 );
-	  scene.add( object );
-
-	  //
-	  renderer = new THREE.WebGLRenderer( { antialias: true } );
-	  renderer.setPixelRatio( window.devicePixelRatio );
-	  renderer.setSize( window.innerWidth, window.innerHeight );
-	  document.body.appendChild( renderer.domElement );
-
-	  //
-          window.addEventListener( 'resize', onWindowResize );
-	  
-	  //
-	  controls = new OrbitControls( camera, renderer.domElement );
-	  controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
-	  controls.dampingFactor = 0.15;
-	  controls.screenSpacePanning = false;
-	  controls.minDistance = 1;
-	  controls.maxDistance = 200.0;
-	  controls.maxPolarAngle = Math.PI / 2;
-      }
-
-      function onWindowResize() {
-	  camera.aspect = window.innerWidth / window.innerHeight;
-	  camera.updateProjectionMatrix();
-	  renderer.setSize( window.innerWidth, window.innerHeight );
-      }
-
-      //
-      function animate() {
-	  requestAnimationFrame( animate );
-	  render();
-      }
-
-      function render() {
-	  const now = Date.now() * 0.001;
-	  const deltaTime = now - then;          // compute time since last frame
-	  then = now;                            // remember time for next frame
-	  const fps = 1 / deltaTime;             // compute frames per second
-	  fpsElem.textContent = fps.toFixed(1);
-	  
-	  // camera.position.x = distance; // Math.cos( timer ) * distance;
-	  // camera.position.z = 0.0; // Math.sin( timer ) * distance;
-	  camera.lookAt( scene.position );
-	  
-	  //map.offset = new THREE.Vector2( (timer*2.0) % 1.0, 0.0 );
-	  scene.traverse( function ( object ) {
-	      if ( object.isMesh === true ) {
-		  object.rotation.x += 0.01 * settings.rotation_x;
-		  object.rotation.y += 0.01 * settings.rotation_y;
-		  object.rotation.z += 0.01 * settings.rotation_z;		  
-	      }
-	  } );
-	  renderer.render( scene, camera );
-      }
-    </script>
-
+    <textarea spellcheck="false" id="display-info" style="display: none;">
+      A real-time visualisation tool for implicit surfaces, i.e. isolevels
+      of real-value functions f(x,y,z). It casts rays through each
+      pixel and computes intersections with the surface.
+      - left-clicking on the shape with the mouse change the camera position.
+      - you can use `predefined shape` or write your custom
+        function (glsl, C-like) and press `View Surface`.
+      - you can change shape parameters (`a`,`b`,`c`) and use them in your
+        functions.
+      - you can change the viewed `isolevel` (default is 0).
+      - `scale` allows you to zoom in/out of the surface.
+      - you may decrease `accuracy` to get better details, at the price
+        of increased computational burden (check fps above)
+      - you may change the `color_model` to change the color display of
+        surfaces:
+        + `RGB`: color is the absolute value of the surface normal vector.
+        + `RGB+Grid`: same as above but add shaded lines depending on
+          the position (grid).
+        + `RGB+Spheres`: same as above but add shaded lines depending on
+          the position (spheres).
+        + `Phong`: color is an illmuniation model taking into account
+          colors and lights.
+        + `Phong+Grid`: same as above but add shaded lines depending on
+          the position (grid).
+        + `Phon+Spheres`: same as above but add shaded lines depending
+          on the position (spheres).
+      - you may change the colors of the surface (inside/outside).
+      - you may change `lights` colors and directions.
+      - `view_shape` changes the volume that encloses the isosurface.
+      - `view_radius` changes the sizes of the previous volume.
+      - `grid_size`, `grid_thickness` and `grid_attenuation` changes the
+        display of overlayed grids/spheres.
+      - `rotation_x`, `rotation_y`, `rotation_z` changes the current object
+        rotation.
+      - `stop` stops the rotations.
+    </textarea>
+    
   </body>
 </html>
