@@ -80,11 +80,13 @@ button {
 	  ext_diff_color: [ 1.0, 0.25, 0.1 ],
 	  int_diff_color: [ 0.25, 0.8, 1.0 ],
 	  specular_color: [ 1.0, 1.0, 1.0 ],
+	  sing_color    : [ 1.0, 1.0, 1.0 ],	  
 	  shininess     : 10.0,
 	  light1        : 1,
 	  light1_color  : [ 0.95, 0.8, 0.0 ],
 	  light2        : 0,
 	  light2_color  : [ 0.1, 0.1, 1.0 ],
+	  singularity   : 0.6,
 	  accuracy      : 5.0,
 	  scale         : 10.0,
 	  shape         : 0,
@@ -190,7 +192,50 @@ button {
 	      + document.getElementById("frag-chunk-fct-begin").value
 	      + document.getElementById("editable-code-fct").value
 	      + document.getElementById("frag-chunk-fct-end").value
-	      + document.getElementById("frag-chunk-end").value;
+	      + document.getElementById("frag-chunk-gradf").value
+	      + document.getElementById("frag-chunk-raytrace").value;	  	  
+	  switch (settings.color_model) {
+	  case 0: // RGB
+	      fragSrc += document.getElementById("frag-chunk-main-common-begin").value
+		  + document.getElementById("frag-chunk-main-rgb").value
+	      	  + document.getElementById("frag-chunk-main-common-end").value;
+	      break;
+	  case 1: // Phong
+	      fragSrc += document.getElementById("frag-chunk-phong").value
+	          + document.getElementById("frag-chunk-main-common-begin").value
+		  + document.getElementById("frag-chunk-main-phong").value
+	      	  + document.getElementById("frag-chunk-main-common-end").value;
+	      break;
+	  case 2: // RGB+Grid
+	      fragSrc += document.getElementById("frag-chunk-main-common-begin").value
+		  + document.getElementById("frag-chunk-main-rgb-grid").value
+	      	  + document.getElementById("frag-chunk-main-common-end").value;
+	      break;
+	  case 3: // Phong+Grid
+	      fragSrc += document.getElementById("frag-chunk-phong-grid").value
+	          + document.getElementById("frag-chunk-main-common-begin").value
+		  + document.getElementById("frag-chunk-main-phong").value
+	      	  + document.getElementById("frag-chunk-main-common-end").value;
+	      break;
+	  case 4: // RGB+Spheres
+	      fragSrc += document.getElementById("frag-chunk-main-common-begin").value
+		  + document.getElementById("frag-chunk-main-rgb-spheres").value
+	      	  + document.getElementById("frag-chunk-main-common-end").value;
+	      break;
+	  case 5: // Phong+Spheres
+	      fragSrc += document.getElementById("frag-chunk-phong-spheres").value
+	          + document.getElementById("frag-chunk-main-common-begin").value
+		  + document.getElementById("frag-chunk-main-phong").value
+	      	  + document.getElementById("frag-chunk-main-common-end").value;
+	      break;
+	  case 6: // Phong2Layers
+	      fragSrc += document.getElementById("frag-chunk-phong").value
+	          + document.getElementById("frag-chunk-main-common-begin").value
+		  + document.getElementById("frag-chunk-main-phong-two-layers").value
+	      	  + document.getElementById("frag-chunk-main-common-end").value;
+	      break;
+	  }
+	  //console.log( fragSrc );
           shader = new THREE.ShaderMaterial( {
 	      vertexShader: document.querySelector( '#post-vert' ).textContent.trim(),
 	      fragmentShader: fragSrc, // document.querySelector( '#post-frag' ).textContent.trim(),
@@ -263,14 +308,19 @@ button {
 	      function ( value ) {
 		  shader.uniforms.accuracy.value = value;
 	      } );
+	  shape.add( settings, 'singularity' ).min( 0.01 ).max( 1.0 ).step(0.01).onChange(
+	      function ( value ) {
+		  shader.uniforms.singularity.value = Math.pow(2.0, -1./value);
+	      } );
 	  const colors = gui.addFolder( 'Colors' );
 	  colors.add( settings, 'color_model',
 		      { 'RGB': 0, 'Phong': 1,
 			'RGB+Grid': 2, 'Phong+Grid': 3,
-			'RGB+Spheres': 4, 'Phong+Spheres': 5
+			'RGB+Spheres': 4, 'Phong+Spheres': 5, 'Phong+2-layers': 6
 		      } ).listen().onChange(
 	      function ( value ) {
 		  shader.uniforms.color_model.value = value;
+		  updateRenderer();
 	      } );
 	  colors.addColor( settings, 'bg_color' ).onChange
 	  ( function ( value ) { shader.uniforms.bg_color.value = value; } );
@@ -282,6 +332,8 @@ button {
 	  ( function ( value ) { shader.uniforms.int_diff_color.value = value; } );
 	  colors.addColor( settings, 'specular_color' ).onChange
 	  ( function ( value ) { shader.uniforms.specular_color.value = value; } );
+	  colors.addColor( settings, 'sing_color' ).name('singularity_color').onChange
+	  ( function ( value ) { shader.uniforms.sing_color.value = value; } );
 	  colors.add( settings, 'shininess' ).min( 0. ).max( 100. ).onChange
 	  ( function ( value ) { shader.uniforms.shininess.value = value; } );
 	  const lights = gui.addFolder( 'Lights' );
@@ -348,12 +400,14 @@ button {
 	      ext_diff_color  : { value : new THREE.Vector3( 1.0, 0.25, 0.1 ) },
 	      int_diff_color  : { value : new THREE.Vector3( 0.25, 0.8, 1.0 ) },
 	      specular_color  : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },
+	      sing_color      : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },	      
 	      shininess       : { value: 10.0 },
 	      light1_color    : { value : new THREE.Vector3( 0.95, 0.8, 0.0 ) },
 	      light1_direction: { value : new THREE.Vector3( 0.0, 1.0, 0.0 ) },
 	      light2_color    : { value : new THREE.Vector3( 0.1, 0.1, 1.0 ) },
 	      light2_direction: { value : new THREE.Vector3( 1.0, 0.0, 0.0 ) },
-	      accuracy        : { value: settings.accuracy },
+	      singularity     : { value: settings.singularity },
+	      accuracy        : { value: settings.accuracy },	      
 	      scale           : { value: settings.scale },
 	      shape           : { value: settings.shape },
 	      iso             : { value: settings.iso },
@@ -450,18 +504,20 @@ button {
 	  projViewInv   = inverse( projectionMatrix * modelViewMatrix );
       }
     </script>
-
+    
     <textarea spellcheck="false" id="frag-chunk-begin" style="display: none;">
       uniform vec3 ambient_color;
       uniform vec3 int_diff_color;
       uniform vec3 ext_diff_color;
       uniform vec3 specular_color;
+      uniform vec3 sing_color;
       uniform float shininess;
       uniform vec3 light1_direction;
       uniform vec3 light1_color;
       uniform vec3 light2_direction;
       uniform vec3 light2_color;
       uniform vec3  bg_color;
+      uniform float singularity;
       uniform float accuracy;
       uniform float iso;
       uniform float a;
@@ -555,29 +611,62 @@ button {
       return (x2+y2+z2-a*a);
     </textarea>
     
-    <textarea spellcheck="false" id="frag-chunk-end" style="display: none;">      
-      vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
-      {
-	  float sirradiance = dot(lightDir, normal);
-	  float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
-	  vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
-	  float  bound      = grid_size * grid_thickness;
-	  if ( ( color_model >= 2 && color_model <= 3 )
-	       && ( mod( pos.x, grid_size ) < bound
-		    || mod( pos.y, grid_size ) < bound
-		    || mod( pos.z, grid_size ) < bound ) )
-	      color *= grid_attenuation;
-	  else if ( color_model >= 4
-		    && ( mod( length( pos ), grid_size ) < bound ) )
-	      color *= grid_attenuation;
-	  vec3  reflectDir  = reflect(-lightDir, normal);
-	  float  specDot    = max(dot(reflectDir, viewDir), 0.0);
-	  color            += pow(specDot, shininess) * specular_color;
-	  color            *= lightCol * irradiance;
-	  return color;
-      }
-      
-      vec3 gradf( vec3 p ) {
+    <textarea spellcheck="false" id="frag-chunk-phong" style="display: none;">
+    // Computes the Phong illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-phong-grid" style="display: none;">
+    // Computes the Phong+Grid illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    if (( mod( pos.x, grid_size ) < bound
+	  || mod( pos.y, grid_size ) < bound
+	  || mod( pos.z, grid_size ) < bound ) )
+	color *= grid_attenuation;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-phong-spheres" style="display: none;">
+    // Computes the Phong+Spheres illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    if ( mod( length( pos ), grid_size ) < bound )
+	color *= grid_attenuation;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+</textarea>
+
+
+    <textarea spellcheck="false" id="frag-chunk-gradf" style="display: none;">
+    // Estimates the gradient of f at position p
+    vec3 gradf( vec3 p ) {
 	  float eps  = scale * 0.0001;
 	  // numerical centered derivatives
 	  float gfx = f( p + vec3( eps, 0.0, 0.0 ) ) - f( p - vec3( eps, 0.0, 0.0 ) );
@@ -585,84 +674,166 @@ button {
 	  float gfz = f( p + vec3( 0.0, 0.0, eps ) ) - f( p - vec3( 0.0, 0.0, eps ) );
 	  return vec3( gfx, gfy, gfz ) / ( 2.0 * eps );
       }
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-raytrace" style="display: none;">
+    // Approximates the solution f(x)=0 by bissection around two positions.
+// Invariant: f(p) < lvl <= f(q)
+vec3 bissection( vec3 p, vec3 q, float lvl )
+{   // 10: precision is 0.001
+    // 8: precision is 0.004
+    for ( int i = 0; i < 8; i++ )
+    {
+	vec3 m = 0.5*(p + q);
+	float fm = f( m );
+	if ( fm < lvl ) p = m;
+	else            q = m;
+    }
+    return 0.5*(p + q);
+}
 
-      // Invariant: f(p) < lvl <= f(q)
-      vec3 bissection( vec3 p, vec3 q, float lvl )
-      {   // 10: precision is 0.001
-	  // 8: precision is 0.004
-	  for ( int i = 0; i < 8; i++ )
-	  {
-	      vec3 m = 0.5*(p + q);
-	      float fm = f( m );
-	      if ( fm < lvl ) p = m;
-	      else            q = m;
-	  }
-	  return 0.5*(p + q);
-      }
-      
-      vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
-      {
-	  d     *= step;
-	  vec3 q = p;
-	  if ( f( p ) < lvl ) {
-	      for ( int i = 0; i < n; i++ ) {
-		  q  += d;
-		  if ( f( q ) >= lvl ) return bissection( q - d, q, lvl );
-	      }
-	  } else {
-	      for ( int i = 0; i < n; i++ ) {
-		  q  += d;
-		  if ( f( q ) < lvl ) return bissection( q, q - d, lvl );
-	      }
-	  }
-	  return q + normalize( d ) * 2. * width;
-      }
-      
-      void main() {
-	  // we must compute the direction of the tracing ray within the cube
-	  vec3 view  = vec3( 0.0, 0.0, -1.0 ); // the observer is along the z-axis
-	  vec4 viewp4= projViewInv * vec4( view, 1.0 );
-	  vec3 viewp = normalize( viewp4.xyz / viewp4.w );
-	  float step = 0.1 * accuracy / scale;
-	  int   n    = int( ceil( sqrt(3.0) * width / (scale*step) ) );
-	  vec3 pos   = ray_trace( vertPos / scale , -viewp, iso, n, step );
-	  outColor.a = 1.0;
-	  if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
-	      outColor.rgb = bg_color; // ray did not find a surface
-	  else if ( (color_model & 1) == 1 )
-	  {
-	      vec3 radiance;
-	      vec3       n = normalize( gradf( pos ) );
-              vec3 viewDir = normalize( -vertPos);
-	      vec3 ld1  = normalize( light1_direction );
-	      vec3 ld2  = normalize( light2_direction );
-              radiance  = phongModel( pos, viewDir, n, 
-				      viewp, ld1, light1_color );
-              radiance += phongModel( pos, viewDir, n, 
-				      viewp, ld2, light2_color );
-	      const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
-              radiance += phongModel( pos, viewDir, n, 
-				      viewp, viewp, front_light );
-	      radiance += ambient_color;
-	      //radiance  = pow(radiance, vec3(1.0 / 2.2) ); // gamma correction
-	      outColor.rgb = radiance;
-	  }
-	  else 
-	  {   // color_model == 0
-	      vec3       n = normalize( gradf( pos ) );
-              outColor.rgb = vec3( abs( n.x ), abs( n.y ), abs( n.z ) );
-	      float  bound = grid_size * grid_thickness;
-	      if ( ( color_model == 2 )
-		   && ( mod( pos.x, grid_size ) < bound
-			|| mod( pos.y, grid_size ) < bound
-			|| mod( pos.z, grid_size ) < bound ) )
-		  outColor.rgb *= grid_attenuation;
-	      else if ( color_model == 4
-			&& ( mod( length( pos ), grid_size ) < bound ) )
-		  outColor.rgb *= grid_attenuation;
-	  }
-      }
-  </textarea>
+// Roughly approximates a position p, such that f(p)=0.
+// In practice, finds the first change of sign.
+vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
+{
+    d     *= step;
+    vec3 q = p;
+    if ( f( p ) < lvl ) {
+	for ( int i = 0; i < n; i++ ) {
+	    q  += d;
+	    if ( f( q ) >= lvl ) return bissection( q - d, q, lvl );
+	}
+    } else {
+	for ( int i = 0; i < n; i++ ) {
+	    q  += d;
+	    if ( f( q ) < lvl ) return bissection( q, q - d, lvl );
+	}
+    }
+    return q + normalize( d ) * 2. * width;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-common-begin" style="display: none;">
+    // main common to all color models
+void main() {
+    // we must compute the direction of the tracing ray within the cube
+    vec3 view  = vec3( 0.0, 0.0, -1.0 ); // the observer is along the z-axis
+    vec4 viewp4= projViewInv * vec4( view, 1.0 );
+    vec3 viewp = normalize( viewp4.xyz / viewp4.w );
+    float step = 0.1 * accuracy / scale;
+    int   n    = int( ceil( sqrt(3.0) * width / (scale*step) ) );
+    vec3 pos   = ray_trace( vertPos / scale , -viewp, iso, n, step );
+    vec3  g    = gradf( pos );
+    outColor.a = 1.0;
+    </textarea>
+	<textarea spellcheck="false" id="frag-chunk-main-common-end" style="display: none;">
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-rgb" style="display: none;">
+    // RGB model
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-rgb-grid" style="display: none;">
+    // RGB+Grid model
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+    float  bound = grid_size * grid_thickness;
+    if ( ( mod( pos.x, grid_size ) < bound
+	   || mod( pos.y, grid_size ) < bound
+	   || mod( pos.z, grid_size ) < bound ) )
+	outColor.rgb *= grid_attenuation;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-rgb-spheres" style="display: none;">
+    // RGB+Spheres model
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+    float  bound = grid_size * grid_thickness;
+    if ( mod( length( pos ), grid_size ) < bound )
+	outColor.rgb *= grid_attenuation;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-phong" style="display: none;">    
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else
+{
+    vec3 radiance;
+    vec3 viewDir = normalize( -vertPos);
+    vec3 ld1  = normalize( light1_direction );
+    vec3 ld2  = normalize( light2_direction );
+    vec3 vn   = normalize( g );
+    radiance  = phongModel( pos, viewDir, vn, 
+			    viewp, ld1, light1_color );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, ld2, light2_color );
+    const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, viewp, front_light );
+    radiance += ambient_color;
+    outColor.rgb = radiance;
+}
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-phong-two-layers" style="display: none;">    
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else
+{
+    const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
+    vec3 radiance;
+    vec3 viewDir = normalize( -vertPos);
+    vec3 ld1  = normalize( light1_direction );
+    vec3 ld2  = normalize( light2_direction );
+    vec3 vn   = normalize( g );
+    radiance  = phongModel( pos, viewDir, vn, 
+			    viewp, ld1, light1_color );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, ld2, light2_color );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, viewp, front_light );
+    vec3 radiance2;
+    vec3 spos  = pos - viewp * step;
+    vec3 pos2  = ray_trace( spos, -viewp, iso, n, step );
+    vec3  g2   = gradf( pos2 );
+    if ( dot( pos2, pos2 ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+	radiance2 = bg_color; // ray did not find a surface
+    else if ( dot( g2, g2 ) < singularity )
+	radiance2 = sing_color; // singularity
+    else
+    {
+	vec3 vn2  = normalize( g2 );
+	radiance2 = phongModel( pos2, viewDir, vn2, 
+				viewp, ld1, light1_color );
+	radiance2+= phongModel( pos2, viewDir, vn2, 
+				viewp, ld2, light2_color );
+    }
+    outColor.rgb = ambient_color + 0.5*(radiance + radiance2);
+}
+</textarea>
+
 
     <textarea spellcheck="false" id="display-info" style="display: none;">
       A real-time visualisation tool for implicit surfaces, i.e. isolevels
