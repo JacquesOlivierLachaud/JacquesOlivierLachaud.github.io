@@ -115,6 +115,7 @@ button {
       init();
       animate();
       initGui();
+      displayInfo();
       window.updateRenderer = updateRenderer;
       window.clearFunction  = clearFunction;
       window.displayInfo    = displayInfo;
@@ -214,6 +215,7 @@ button {
 	  shader.uniforms.color_model.value = settings.color_model;
 	  settings.shape = 0;
 	  updateShape( settings.shape );
+	  displayInfo();
       }
       export function displayInfo() {
 	  document.getElementById("editable-code-fct_error").value
@@ -444,8 +446,8 @@ button {
 	  vertPos       = position; 
 	  gl_Position   = projectionMatrix * vertPos4;
 	  projPos       = gl_Position.xyz / gl_Position.w;
-	  projViewInv   = inverse( modelViewMatrix );
-	  //inverse( projectionMatrix * modelViewMatrix );
+	  // projViewInv   = inverse( modelViewMatrix );
+	  projViewInv   = inverse( projectionMatrix * modelViewMatrix );
       }
     </script>
 

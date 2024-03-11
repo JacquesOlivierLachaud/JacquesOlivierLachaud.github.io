@@ -42,6 +42,7 @@ informations.
 
 ## Autres ressources
 
+* [Visualiseur de surfaces implicites, i.e. les solutions de F(x,y,z)=0](https://jacquesolivierlachaud.github.io/lectures/info804/Tests/WebGL/shaders-implicit-surface-viewer.html)
 * [Notations pour les dérivées partielles, K. Santugini (PDF)](Cours/PolyDeriveesPartielles.pdf)
 * Ancien site web [VISI601_CMI Algorithmique numérique](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI601_CMI_:_Algorithmique_numérique)
 
