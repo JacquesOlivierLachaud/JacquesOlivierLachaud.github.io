@@ -82,6 +82,7 @@ button {
 	  specular_color: [ 1.0, 1.0, 1.0 ],
 	  sing_color    : [ 1.0, 1.0, 1.0 ],	  
 	  shininess     : 10.0,
+	  opacity       : 0.6,
 	  light1        : 1,
 	  light1_color  : [ 0.95, 0.8, 0.0 ],
 	  light2        : 0,
@@ -336,6 +337,8 @@ button {
 	  ( function ( value ) { shader.uniforms.sing_color.value = value; } );
 	  colors.add( settings, 'shininess' ).min( 0. ).max( 100. ).onChange
 	  ( function ( value ) { shader.uniforms.shininess.value = value; } );
+	  colors.add( settings, 'opacity' ).min( 0.5 ).max( 0.9 ).onChange
+	  ( function ( value ) { shader.uniforms.opacity.value = value; } );
 	  const lights = gui.addFolder( 'Lights' );
 	  lights.add( settings, 'light1', { 'X': 0, 'Y': 1, '-Z': 2, 'X+Y-Z': 3 } ).onChange
 	  ( function ( value ) {
@@ -401,7 +404,8 @@ button {
 	      int_diff_color  : { value : new THREE.Vector3( 0.25, 0.8, 1.0 ) },
 	      specular_color  : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },
 	      sing_color      : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },	      
-	      shininess       : { value: 10.0 },
+	      shininess       : { value: settings.shininess },
+	      opacity         : { value: settings.opacity },
 	      light1_color    : { value : new THREE.Vector3( 0.95, 0.8, 0.0 ) },
 	      light1_direction: { value : new THREE.Vector3( 0.0, 1.0, 0.0 ) },
 	      light2_color    : { value : new THREE.Vector3( 0.1, 0.1, 1.0 ) },
@@ -512,6 +516,7 @@ button {
       uniform vec3 specular_color;
       uniform vec3 sing_color;
       uniform float shininess;
+      uniform float opacity;
       uniform vec3 light1_direction;
       uniform vec3 light1_color;
       uniform vec3 light2_direction;
@@ -715,9 +720,9 @@ vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
     // main common to all color models
 void main() {
     // we must compute the direction of the tracing ray within the cube
-    vec3 view  = vec3( 0.0, 0.0, -1.0 ); // the observer is along the z-axis
-    vec4 viewp4= projViewInv * vec4( view, 1.0 );
-    vec3 viewp = normalize( viewp4.xyz / viewp4.w );
+    vec3 focal = vec3( 0.0, 0.0, -200.0 );
+    vec4 viewp4= projViewInv * vec4( focal, 1.0 );
+    vec3 viewp = normalize( viewp4.xyz / viewp4.w - vertPos );
     float step = 0.1 * accuracy / scale;
     int   n    = int( ceil( sqrt(3.0) * width / (scale*step) ) );
     vec3 pos   = ray_trace( vertPos / scale , -viewp, iso, n, step );
@@ -830,7 +835,7 @@ else
 	radiance2+= phongModel( pos2, viewDir, vn2, 
 				viewp, ld2, light2_color );
     }
-    outColor.rgb = ambient_color + 0.5*(radiance + radiance2);
+    outColor.rgb = ambient_color + opacity*radiance + (1.0-opacity)*radiance2;
 }
 </textarea>
 
