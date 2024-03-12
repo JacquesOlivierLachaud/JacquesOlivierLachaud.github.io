@@ -104,8 +104,8 @@ button {
 	  grid_size     : 1.0,
 	  grid_thickness: 0.1,
 	  grid_attenuation: 0.5,	  	  
-	  rotation_x    : 0.2,
-	  rotation_y    : 0.1,
+	  rotation_x    : 0.0,
+	  rotation_y    : 0.0,
 	  rotation_z    : 0.0,
 	  stop          : function() {
 	      settings.rotation_x = 0;
@@ -328,7 +328,8 @@ button {
 	      function ( value ) {
 		  shader.uniforms.singularity.value = Math.pow(2.0, -1./value);
 	      } );
-	  const colors = gui.addFolder( 'Colors' );
+	  const colors = gui.addFolder( 'Display mode & Colors' );
+	  colors.open( false );
 	  colors.add( settings, 'color_model',
 		      { 'RGB': 0, 'Phong': 1,
 			'RGB+Grid': 2, 'Phong+Grid': 3,
@@ -354,7 +355,9 @@ button {
 	  ( function ( value ) { shader.uniforms.shininess.value = value; } );
 	  colors.add( settings, 'opacity' ).min( 0.5 ).max( 0.9 ).onChange
 	  ( function ( value ) { shader.uniforms.opacity.value = value; } );
+	  
 	  const lights = gui.addFolder( 'Lights' );
+	  lights.open( false );
 	  lights.add( settings, 'light1', { 'X': 0, 'Y': 1, '-Z': 2, 'X+Y-Z': 3 } ).onChange
 	  ( function ( value ) {
 	      if ( value == 0 ) shader.uniforms.light1_direction.value
@@ -382,6 +385,7 @@ button {
 	  lights.addColor( settings, 'light2_color' ).onChange
 	  ( function ( value ) { shader.uniforms.light2_color.value = value; } );
 	  const view = gui.addFolder( 'View' );
+	  view.open( false );
 	  view.add( settings, 'view_shape',
 		   { 'Cube': 0, 'Dodecahedron': 1,
 		     'Icosahedron': 2, 'SubIcosahedron' : 3, 'Sphere': 4,
@@ -866,9 +870,9 @@ else
 
 
     <textarea spellcheck="false" id="display-info" style="display: none;">
-      A real-time visualisation tool for implicit surfaces, i.e. isolevels
-      of real-value functions f(x,y,z). It casts rays through each
-      pixel and computes intersections with the surface.
+    A real-time visualisation tool for implicit surfaces, i.e. isolevels
+    of real-value functions f(x,y,z). It casts rays through each
+    pixel and computes intersections with the surface.
       - left-clicking on the shape with the mouse change the camera position.
       - you can use `predefined shape` or write your custom
         function (glsl, C-like) and press `View Surface`.
@@ -876,8 +880,11 @@ else
         functions.
       - you can change the viewed `isolevel` (default is 0).
       - `scale` allows you to zoom in/out of the surface.
+      - `center_x`, `center_y`, `center_z` changes the center of view
       - you may decrease `accuracy` to get better details, at the price
         of increased computational burden (check fps above)
+      - `singularity` controls how singularity are detected, 1.0: large band
+        0.0: invisible.
       - you may change the `color_model` to change the color display of
         surfaces:
         + `RGB`: color is the absolute value of the surface normal vector.
@@ -889,16 +896,20 @@ else
           colors and lights.
         + `Phong+Grid`: same as above but add shaded lines depending on
           the position (grid).
-        + `Phon+Spheres`: same as above but add shaded lines depending
+        + `Phong+Spheres`: same as above but add shaded lines depending
           on the position (spheres).
-      - you may change the colors of the surface (inside/outside).
+        + `Phong+2-layers`: Phong illimunation but the first surface has
+          some transparency (see `opacity`), two surface sheets are displayed
+          at most.
+      - you may change the colors of the surface (diffuse inside/outside),
+        specular, singularities.
       - you may change `lights` colors and directions.
       - `view_shape` changes the volume that encloses the isosurface.
       - `view_radius` changes the sizes of the previous volume.
       - `grid_size`, `grid_thickness` and `grid_attenuation` changes the
         display of overlayed grids/spheres.
       - `rotation_x`, `rotation_y`, `rotation_z` changes the current object
-        rotation.
+        rotation speed.
       - `stop` stops the rotations.
     </textarea>
     
