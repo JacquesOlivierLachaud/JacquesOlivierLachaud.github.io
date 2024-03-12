@@ -40,7 +40,7 @@ informations.
 * [texture map variable](Tests/WebGL/shaders-texture.html)
 * [comparaison rendus Gouraud/Phong + texture map + normal map + occlusion](Tests/WebGL/shaders-full.html)
 * [carte de profondeur + clipping space + camera fov](Tests/WebGL/shaders-depth.html)
-* [cube subdivisé dans le fragment shader](Tests/WebGL/shaders-cube.html)
+* [cube subdivisé dans le fragment shader (fixed on March 12, 2024)](Tests/WebGL/shaders-cube-2.html)
 * [algebraic surface/implicit surface viewer](Tests/WebGL/shaders-implicit-surface-viewer.html)
 
 ### Annales

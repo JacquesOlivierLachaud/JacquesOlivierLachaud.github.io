@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.js webgl - cube decomposition</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+  </head>
+  <body>
+
+    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> Cube subdivision effect</div>
+
+    <script type="importmap">
+      {
+	  "imports": {
+	      "three": "./three.module.js",
+	      "three/addons/": "./jsm/"
+	  }
+      }
+    </script>
+    <script id="post-vert" type="x-shader/x-vertex">
+      out vec3 vertPos;
+      out vec3 projPos;
+      out mat4 projViewInv;
+      void main(){
+	  vec4 vertPos4 = modelViewMatrix * vec4( position, 1.0);
+	  vertPos       = position; 
+	  gl_Position   = projectionMatrix * vertPos4;
+	  projPos       = gl_Position.xyz / gl_Position.w;
+	  projViewInv   = inverse( projectionMatrix * modelViewMatrix );
+      }
+    </script>
+    <script id="post-frag" type="x-shader/x-fragment">
+    uniform int   subdivision;
+uniform float cubesize;
+uniform int   shape;
+    in vec3 vertPos;
+    in vec3 projPos;
+    in mat4 projViewInv;
+out vec4 outColor;
+
+// 3D function in cube
+const float width = 100.0; // cube width  
+float f( vec3 p ) {
+    float  grid   = width/float(subdivision);
+    float     c   = 0.5*grid;
+    float n_infty = max( abs( p.x ),
+			 max( abs( p.y ), abs( p.z ) ) );
+    if ( n_infty >= width/2.0 ) return n_infty;
+    switch ( shape ) {
+    case 0: 	  // to get a cube
+	return max( abs( mod( p.x, grid ) - c ),
+	  	    max( abs( mod( p.y, grid ) - c  ),
+	  		 abs( mod( p.z, grid ) - c ) ) );
+    case 1:	  // to get a ball
+	return length( vec3( mod( p.x, grid ) - c,
+			     mod( p.y, grid ) - c,
+			     mod( p.z, grid ) - c) );
+    default:        // To get diamonds
+	return abs( mod( p.x, grid ) - c ) +
+	    abs( mod( p.y, grid ) - c ) +
+	    abs( mod( p.z, grid ) - c );
+    }
+}
+const float eps  = 0.00001;
+const float step = 0.02;
+vec3 gradf( vec3 p ) {
+    // numerical centered derivatives
+    float gfx = f( p + vec3( eps, 0.0, 0.0 ) ) - f( p - vec3( eps, 0.0, 0.0 ) );
+    float gfy = f( p + vec3( 0.0, eps, 0.0 ) ) - f( p - vec3( 0.0, eps, 0.0 ) );
+    float gfz = f( p + vec3( 0.0, 0.0, eps ) ) - f( p - vec3( 0.0, 0.0, eps ) );
+    return vec3( gfx, gfy, gfz ) / ( 2.0 * eps );
+}
+
+// Approximates the solution f(x)=0 by bissection around two positions.
+// Invariant: f(p) < lvl <= f(q)
+vec3 bissection( vec3 p, vec3 q, float lvl )
+{   // 10: precision is 0.001
+    // 8: precision is 0.004
+    for ( int i = 0; i < 8; i++ )
+    {
+	vec3 m = 0.5*(p + q);
+	float fm = f( m );
+	if ( fm < lvl ) p = m;
+	else            q = m;
+    }
+    return 0.5*(p + q);
+}
+
+// Roughly approximates a position p, such that f(p)=0.
+// In practice, finds the first change of sign.
+vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
+{
+    d     *= step;
+    vec3 q = p;
+    if ( f( p ) < lvl ) {
+	for ( int i = 0; i < n; i++ ) {
+	    q  += d;
+	    if ( f( q ) >= lvl ) return bissection( q - d, q, lvl );
+	}
+    } else {
+	for ( int i = 0; i < n; i++ ) {
+	    q  += d;
+	    if ( f( q ) < lvl ) return bissection( q, q - d, lvl );
+	}
+    }
+    return q + normalize( d ) * 2. * width;
+}
+
+void main() {
+    // we must compute the direction of the tracing ray within the cube
+    const float accuracy = 1.0;
+    const float scale    = 1.0;    
+    vec3 focal  = vec3( 0.0, 0.0, -200.0 );
+    vec4 viewp4 = projViewInv * vec4( focal, 1.0 );
+    vec3 viewp  = normalize( viewp4.xyz / viewp4.w - vertPos );
+    float step  = 0.1 * accuracy / scale;
+    int   n     = int( ceil( sqrt(3.0) * width / (scale*step) ) );
+    float  grid = width/float(subdivision);
+    float   iso = 0.5 * cubesize * grid; // size of each subelement
+    vec3 pos    = ray_trace( vertPos , -viewp, iso, n, step );
+    
+    // vec3 view  = vec3( 0.0, 0.0, 1.0 ); // the observer is along the z-axis
+    // vec3 v1    = projPos;
+    // vec3 v2    = v1 + view;
+    // vec4 bv1   = projViewInv * vec4( v1, 1.0 );
+    // vec4 bv2   = projViewInv * vec4( v2, 1.0 );
+    // vec3 viewp = normalize( ( bv2.xyz / bv2.w ) - ( bv1.xyz / bv1.w ) );
+    // float  grid = width/float(subdivision);
+    // float   iso = 0.5 * cubesize * grid; // size of each subelement
+    // vec3 pos   = ray_trace( vertPos, -viewp, iso );
+    if ( length( pos ) > width ) // f( pos ) > ( iso + 0.01 ) )
+	outColor.rgb = vec3( 0.2, 0.2, 0.2 );
+    else if ( shape < 2 )
+    {
+	vec3 g = normalize( gradf( pos ) );
+	outColor.rgb = vec3( abs( g.x ), abs( g.y ), abs( g.z ) );
+    } else { // diamond
+	vec3  g = gradf( pos );
+	float m = abs( g.x ); // any gives the same result
+	g      += vec3( m, m, m ); // center color
+	g      /= 2.*m; // in [0,1]^3
+	outColor.rgb = g;
+    }
+    outColor.a   = 1.0;
+}
+</script>
+
+    <script type="module">
+
+      import * as THREE from 'three';
+      import { GUI } from 'three/addons/lil-gui.module.min.js';
+
+      let camera, scene, renderer, object;
+      let distance = 200.0;
+      let map;
+      let shader;
+      let settings = { subdivision: 10, cubesize: 0.5, shape: 0 };
+      var uniforms;
+      init();
+      animate();
+      initGui();
+
+      // Init gui
+      function initGui() {
+	  const gui = new GUI();
+	  gui.add( settings, 'subdivision' ).min( 2 ).max( 20 ).step(2).onChange(
+	      function ( value ) {
+		  shader.uniforms.subdivision.value = value;
+	      } );
+	  gui.add( settings, 'cubesize' ).min( 0.0 ).max( 1.0 ).onChange(
+	      function ( value ) {
+		  shader.uniforms.cubesize.value = value;
+	      } );
+	  gui.add( settings, 'shape', { Cube: 0, Sphere: 1, Diamond: 2 } ).onChange(
+	      function ( value ) {
+		  shader.uniforms.shape.value = value;
+	      } );
+	  
+      }
+      
+      function init() {
+	  camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+	  camera.position.y = 0;
+	  uniforms = {
+	      lightDirection : { value : new THREE.Vector3( 0.0, 1.0, 0.0 ) },
+	      subdivision: { value: settings.subdivision },
+	      cubesize: { value: settings.cubesize },
+	      shape: { value: settings.shape },
+	      moment: { value: 0.0 }
+	  };
+	  console.log( camera.near );
+	  console.log( camera.far );	  
+	  scene = new THREE.Scene();
+
+	  const ambientLight = new THREE.AmbientLight( 0xcccccc, 1.5 );
+	  scene.add( ambientLight );
+
+	  const pointLight = new THREE.PointLight( 0xffffff, 2.5, 0, 0 );
+	  camera.add( pointLight );
+	  scene.add( camera );
+
+          shader = new THREE.ShaderMaterial( {
+	      vertexShader: document.querySelector( '#post-vert' ).textContent.trim(),
+	      fragmentShader: document.querySelector( '#post-frag' ).textContent.trim(),
+	      uniforms: uniforms
+	  } );
+	  shader.glslVersion = THREE.GLSL3;
+	  //
+	  //object = new THREE.Mesh( new THREE.TorusKnotGeometry( 50, 10, 50, 10, 2, 3 ),
+	  //shader ); // material );
+	  object = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ),
+	  shader ); // material );
+	  object.position.set( 0, 0, 0 );
+	  scene.add( object );
+
+	  //
+	  renderer = new THREE.WebGLRenderer( { antialias: true } );
+	  renderer.setPixelRatio( window.devicePixelRatio );
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+	  document.body.appendChild( renderer.domElement );
+
+	  //
+	  window.addEventListener( 'resize', onWindowResize );
+
+      }
+
+      function onWindowResize() {
+	  camera.aspect = window.innerWidth / window.innerHeight;
+	  camera.updateProjectionMatrix();
+	  renderer.setSize( window.innerWidth, window.innerHeight );
+      }
+
+      //
+      function animate() {
+	  requestAnimationFrame( animate );
+	  render();
+      }
+
+      function render() {
+	  const timer = Date.now() * 0.0001;
+	  camera.position.x = Math.cos( timer ) * distance;
+	  camera.position.z = Math.sin( timer ) * distance;
+	  camera.lookAt( scene.position );
+	  
+	  //map.offset = new THREE.Vector2( (timer*2.0) % 1.0, 0.0 );
+	  scene.traverse( function ( object ) {
+	      if ( object.isMesh === true ) {
+		  object.rotation.x = timer * 0.5;
+		  object.rotation.y = timer * 0.25;
+	      }
+	  } );
+	  renderer.render( scene, camera );
+      }
+    </script>
+
+  </body>
+</html>
