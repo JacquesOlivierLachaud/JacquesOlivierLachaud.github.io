@@ -95,6 +95,9 @@ button {
 	  a             : 1.0,
 	  b             : 1.0,
 	  c             : 1.0,
+	  center_x      : 0.0,
+	  center_y      : 0.0,
+	  center_z      : 0.0, 	  	  
 	  color_model   : 3,
 	  view_shape    : 0,
 	  view_radius   : 100.0,
@@ -138,8 +141,13 @@ button {
 	  if ( value == 5 )
 	      object.geometry = new THREE.CylinderGeometry( 0.5*radius, 0.5*radius, radius,
 							    32 );
-	  if ( value == 6 )
-	      object.geometry = new THREE.PlaneGeometry( radius, radius );
+	  if ( value == 6 ) {
+	      object.geometry = new THREE.BoxGeometry( 0.5*radius, radius, radius );
+	      object.geometry.translate( -0.25*radius, 0.0, 0.0 );
+	  }
+	  if ( value == 7 ) {
+	      object.geometry = new THREE.BoxGeometry( 0.001, radius, radius );
+	  }
       }
 
       // Changes the predefined shape function.
@@ -305,6 +313,13 @@ button {
 	      function ( value ) {
 		  shader.uniforms.scale.value = value;
 	      } );
+	  shape.add( settings, 'center_x' ).min( -5.0 ).max( 5.0 ).step(0.025).onChange(
+              function ( value ) { shader.uniforms.center_x.value = value; } );
+	  shape.add( settings, 'center_y' ).min( -5.0 ).max( 5.0 ).step(0.025).onChange(
+              function ( value ) { shader.uniforms.center_y.value = value; } );
+	  shape.add( settings, 'center_z' ).min( -5.0 ).max( 5.0 ).step(0.025).onChange(
+              function ( value ) { shader.uniforms.center_z.value = value; } );
+
 	  shape.add( settings, 'accuracy' ).min( 0.2 ).max( 20. ).step(0.1).onChange(
 	      function ( value ) {
 		  shader.uniforms.accuracy.value = value;
@@ -370,7 +385,7 @@ button {
 	  view.add( settings, 'view_shape',
 		   { 'Cube': 0, 'Dodecahedron': 1,
 		     'Icosahedron': 2, 'SubIcosahedron' : 3, 'Sphere': 4,
-		     'Cylinder': 5, 'Plane': 6 } )
+		     'Cylinder': 5, 'Half-Cube': 6, 'Plane': 7 } )
 	      .onChange
 	  ( function( value ) { makeViewShape( value, settings.view_radius ) } );
           view.add( settings, 'view_radius' ).min( 50.0 ).max( 200.0 ).onChange
@@ -418,6 +433,9 @@ button {
 	      a               : { value: settings.a },
 	      b               : { value: settings.b },
 	      c               : { value: settings.c },
+	      center_x        : { value: settings.center_x },
+	      center_y        : { value: settings.center_y },
+	      center_z        : { value: settings.center_z },	      	      
 	      grid_size       : { value: settings.grid_size },
 	      grid_thickness  : { value: settings.grid_thickness },
 	      grid_attenuation: { value: settings.grid_attenuation },	      	      
@@ -496,70 +514,77 @@ button {
 
     
     <script id="post-vert" type="x-shader/x-vertex">
-      out vec3 vertPos;
-      out vec3 projPos;
-      out mat4 projViewInv;
-      void main(){
-	  vec4 vertPos4 = modelViewMatrix * vec4( position, 1.0);
-	  vertPos       = position; 
-	  gl_Position   = projectionMatrix * vertPos4;
-	  projPos       = gl_Position.xyz / gl_Position.w;
-	  // projViewInv   = inverse( modelViewMatrix );
-	  projViewInv   = inverse( projectionMatrix * modelViewMatrix );
-      }
-    </script>
+    // Vertex shader
+out vec3 vertPos;
+out vec3 projPos;
+out mat4 projViewInv;
+void main(){
+    vec4 vertPos4 = modelViewMatrix * vec4( position, 1.0);
+    vertPos       = position; 
+    gl_Position   = projectionMatrix * vertPos4;
+    projPos       = gl_Position.xyz / gl_Position.w;
+    projViewInv   = inverse( projectionMatrix * modelViewMatrix );
+}
+</script>
     
     <textarea spellcheck="false" id="frag-chunk-begin" style="display: none;">
-      uniform vec3 ambient_color;
-      uniform vec3 int_diff_color;
-      uniform vec3 ext_diff_color;
-      uniform vec3 specular_color;
-      uniform vec3 sing_color;
-      uniform float shininess;
-      uniform float opacity;
-      uniform vec3 light1_direction;
-      uniform vec3 light1_color;
-      uniform vec3 light2_direction;
-      uniform vec3 light2_color;
-      uniform vec3  bg_color;
-      uniform float singularity;
-      uniform float accuracy;
-      uniform float iso;
-      uniform float a;
-      uniform float b;
-      uniform float c;      
-      uniform float scale;
-      uniform float grid_size;
-      uniform float grid_thickness;
-      uniform float grid_attenuation;
-      uniform int   shape;
-      uniform int   color_model;
+    // Fragment shader: initial chunk 
+uniform vec3 ambient_color;
+uniform vec3 int_diff_color;
+uniform vec3 ext_diff_color;
+uniform vec3 specular_color;
+uniform vec3 sing_color;
+uniform float shininess;
+uniform float opacity;
+uniform vec3 light1_direction;
+uniform vec3 light1_color;
+uniform vec3 light2_direction;
+uniform vec3 light2_color;
+uniform vec3  bg_color;
+uniform float singularity;
+uniform float accuracy;
+uniform float iso;
+uniform float a;
+uniform float b;
+uniform float c;      
+uniform float scale;
+uniform float center_x;
+uniform float center_y;
+uniform float center_z;
+uniform float grid_size;
+uniform float grid_thickness;
+uniform float grid_attenuation;
+uniform int   shape;
+uniform int   color_model;
     in vec3 vertPos;
     in vec3 projPos;
     in mat4 projViewInv;
-      out vec4 outColor;
-      
-      // 3D function in cube
-      const float width  = 100.0; // cube width  
-      const float width2 = width*width; // cube width
-      </textarea>
+out vec4 outColor;
+
+// 3D function in cube
+const float width  = 100.0; // cube width  
+const float width2 = width*width; // cube width
+</textarea>
     
     <textarea spellcheck="false" id="frag-chunk-fct-begin" style="display: none;">
-    float f( vec3 p ) {
-	float x  = p.x;
-	float y  = p.y;
-	float z  = p.z;	
-	float x2 = x*x;
-	float y2 = y*y;
-	float z2 = z*z;
-	float x3 = x2*x;
-	float y3 = y2*y;
-	float z3 = z2*z;
+    // chunk for opening function definition.
+// As a user, do not use `p`, but use `x`, `y`, `z` instead, which have been translated.
+float f( vec3 p ) {
+    float x  = p.x + center_x;
+    float y  = p.y + center_y;
+    float z  = p.z + center_z;	
+    float x2 = x*x;
+    float y2 = y*y;
+    float z2 = z*z;
+    float x3 = x2*x;
+    float y3 = y2*y;
+    float z3 = z2*z;
     </textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-fct-end" style="display: none;">
-      }
-    </textarea>
+	
+	<textarea spellcheck="false" id="frag-chunk-fct-end" style="display: none;">
+	// chunk for closing function definition.
+}
+</textarea>
     
     <textarea spellcheck="false" id="frag-chunk-fct-durchball" style="display: none;">
       // Computes f(x,y,z). You may use x2 for x*x, x3 for x*x*x,
