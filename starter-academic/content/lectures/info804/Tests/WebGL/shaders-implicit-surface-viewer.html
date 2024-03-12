@@ -187,7 +187,10 @@ button {
 		  document.getElementById("frag-chunk-fct-pluckerconoid").value;
 	      break;
           case 11: document.getElementById("editable-code-fct").value =
-		  document.getElementById("frag-chunk-fct-ball").value;
+		  document.getElementById("frag-chunk-fct-ellipsoid").value;
+	      break;
+          case 12: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-infinite-cubes").value;
 	      break;
 	  }
 	  updateRenderer();
@@ -286,7 +289,7 @@ button {
 					  BohemianDome: 6, Gyroid: 7,
 					  Neovius : 8, KleinBottle : 9,
 					  PluckerConoid : 10,
-					  Ball : 11 } )
+					  Ellipsoid : 11, InfiniteCubes: 12 } )
 	      .name( "Predefined shape" ).listen().onChange(
 	    function ( value ) {
 		updateShape( value );
@@ -640,10 +643,17 @@ float f( vec3 p ) {
       // PluckerConoid
       return z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*x*y2*y2);
     </textarea>
-    <textarea spellcheck="false" id="frag-chunk-fct-ball" style="display: none;">
-      // Ball
-      return (x2+y2+z2-a*a);
-    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-ellipsoid" style="display: none;">
+    // Ellpisoid
+return (x2/(a*a)+y2/(b*b)+z2/(c*c)-1.);
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-infinite-cubes" style="display: none;">
+    // Cubes in infinite directions
+float     d   = 0.5*a;
+return -0.25 + max( abs( mod( p.x, a ) - d ),
+		    max( abs( mod( p.y, a ) - d  ),
+	  		 abs( mod( p.z, a ) - d ) ) );
+</textarea>
     
     <textarea spellcheck="false" id="frag-chunk-phong" style="display: none;">
     // Computes the Phong illumination model
