@@ -192,7 +192,11 @@ button {
           case 12: document.getElementById("editable-code-fct").value =
 		  document.getElementById("frag-chunk-fct-infinite-cubes").value;
 	      break;
+          case 13: document.getElementById("editable-code-fct").value =
+		  document.getElementById("frag-chunk-fct-kleinian").value;
+	      break;
 	  }
+	  
 	  updateRenderer();
       }
 
@@ -246,6 +250,12 @@ button {
 		  + document.getElementById("frag-chunk-main-phong-two-layers").value
 	      	  + document.getElementById("frag-chunk-main-common-end").value;
 	      break;
+	  case 7: // SimplePhong
+	      fragSrc += document.getElementById("frag-chunk-phong").value
+	          + document.getElementById("frag-chunk-main-common-begin").value
+		  + document.getElementById("frag-chunk-main-simple-phong").value
+	      	  + document.getElementById("frag-chunk-main-common-end").value;
+	      break;
 	  }
 	  //console.log( fragSrc );
           shader = new THREE.ShaderMaterial( {
@@ -289,7 +299,8 @@ button {
 					  BohemianDome: 6, Gyroid: 7,
 					  Neovius : 8, KleinBottle : 9,
 					  PluckerConoid : 10,
-					  Ellipsoid : 11, InfiniteCubes: 12 } )
+					  Ellipsoid : 11, InfiniteCubes: 12,
+					  Kleinian : 13 } )
 	      .name( "Predefined shape" ).listen().onChange(
 	    function ( value ) {
 		updateShape( value );
@@ -336,7 +347,8 @@ button {
 	  colors.add( settings, 'color_model',
 		      { 'RGB': 0, 'Phong': 1,
 			'RGB+Grid': 2, 'Phong+Grid': 3,
-			'RGB+Spheres': 4, 'Phong+Spheres': 5, 'Phong+2-layers': 6
+			'RGB+Spheres': 4, 'Phong+Spheres': 5,
+			'Phong+2-layers': 6, 'Fast-Phong' : 7
 		      } ).listen().onChange(
 	      function ( value ) {
 		  shader.uniforms.color_model.value = value;
@@ -482,7 +494,7 @@ button {
 	  controls.screenSpacePanning = false;
 	  controls.minDistance = 1;
 	  controls.maxDistance = 200.0;
-	  controls.maxPolarAngle = Math.PI / 2;
+	  // controls.maxPolarAngle = Math.PI / 2;
       }
 
       function onWindowResize() {
@@ -577,9 +589,12 @@ const float width2 = width*width; // cube width
     // chunk for opening function definition.
 // As a user, do not use `p`, but use `x`, `y`, `z` instead, which have been translated.
 float f( vec3 p ) {
-    float x  = p.x + center_x;
-    float y  = p.y + center_y;
-    float z  = p.z + center_z;	
+    p.x     += center_x;
+    p.y     += center_y;
+    p.z     += center_z;
+    float x  = p.x; 
+    float y  = p.y;
+    float z  = p.z;
     float x2 = x*x;
     float y2 = y*y;
     float z2 = z*z;
@@ -594,55 +609,59 @@ float f( vec3 p ) {
 </textarea>
     
     <textarea spellcheck="false" id="frag-chunk-fct-durchball" style="display: none;">
-      // Computes f(x,y,z). You may use x2 for x*x, x3 for x*x*x,
-      // same holds for y and z. Constant must be floating numbers.
-      // Durckblick + ball
-      return ( x2 + y2 + z2 - a*a ) * ( x3 * y + x * z3 + y3 * z + 5. * z );
-    </textarea>
+    // Computes f(x,y,z). You may use x2 for x*x, x3 for x*x*x,
+// same holds for y and z. Constant must be floating numbers.
+// Durckblick + ball
+return ( x2 + y2 + z2 - a*a ) * ( x3 * y + x * z3 + y3 * z + 5. * z );
+</textarea>
     <textarea spellcheck="false" id="frag-chunk-fct-crixxi" style="display: none;">
-      // Crixxi
-      return -0.9*pow( y2 + z2 - a*a, 2.0 ) - pow( x2 + y2 - a*a, 3.0 );
-    </textarea>
+    // Crixxi
+float d = y2 + z2 - a*a;
+float e = x2 + y2 - a*a;
+return -0.9*d*d - e*e*e;
+</textarea>
     <textarea spellcheck="false" id="frag-chunk-fct-cayleycubic" style="display: none;">
-      // CayleyCubic
-      return x2 + y2 + z2 + x2*z - y2*z - 1.;
-    </textarea>
+    // CayleyCubic
+return x2 + y2 + z2 + x2*z - y2*z - 1.;
+</textarea>
     <textarea spellcheck="false" id="frag-chunk-fct-durchblick" style="display: none;">	  
-      // Durchblick
-      return x3 * y + x * z3 + y3 * z + z3 + 5. * z;
-    </textarea>
+    // Durchblick
+return x3 * y + x * z3 + y3 * z + z3 + 5. * z;
+</textarea>
     <textarea spellcheck="false" id="frag-chunk-fct-barthsextic" style="display: none;">
-      // BarthSextic
-      float x4 = x2*x2; float y4 = y2*y2; float z4 = z2*z2;
-      return z4*z2 + 5.*(x2+y2)*(-z4 + (x2+y2)*z2) - 2.*(x4 - 10.*x2*y2+5.*y4)*x*z
-	  + 1.25*pow(a*(x2+y2+z2-a*a),2.0);
-    </textarea>
+    // BarthSextic
+float x4 = x2*x2; float y4 = y2*y2; float z4 = z2*z2;
+return z4*z2 + 5.*(x2+y2)*(-z4 + (x2+y2)*z2) - 2.*(x4 - 10.*x2*y2+5.*y4)*x*z
+    + 1.25*pow(a*(x2+y2+z2-a*a),2.0);
+</textarea>
     <textarea spellcheck="false" id="frag-chunk-fct-clebschdcubic" style="display: none;">
-      // ClebschDCubic
-      return x3 + y3 + z3 + a*a*a - pow(x + y + z + a,3.0);
-    </textarea>
+    // ClebschDCubic
+float d = x + y + z + a;
+return x3 + y3 + z3 + a*a*a - d*d*d;
+</textarea>
     <textarea spellcheck="false" id="frag-chunk-fct-bohemiandome" style="display: none;">
-      // BohemianDome
-      return pow( (x2 + y2 + z2 - a*a - b*b), 2.0 ) - 4.*(a*a - x2)*(b*b - y2);
-    </textarea>
+    // BohemianDome
+float d = x2 + y2 + z2 - a*a - b*b;
+return d*d - 4.*(a*a - x2)*(b*b - y2);
+</textarea>
     <textarea spellcheck="false" id="frag-chunk-fct-gyroid" style="display: none;">
-      // Gyroid
-      return a*cos(x)*sin(y)+b*cos(y)*sin(z)+cos(z)*sin(x);
-    </textarea>
+    // Gyroid
+return a*cos(x)*sin(y)+b*cos(y)*sin(z)+c*cos(z)*sin(x);
+</textarea>
     <textarea spellcheck="false" id="frag-chunk-fct-neovius" style="display: none;">
-      // Neovius
-      return 3.*a*(cos(x) + cos(y) + cos(z)) + 4.*b*cos(x)*cos(y)*cos(z);
-    </textarea>
+    // Neovius
+return 3.*a*(cos(x) + cos(y) + cos(z)) + 4.*b*cos(x)*cos(y)*cos(z);
+</textarea>
     <textarea spellcheck="false" id="frag-chunk-fct-kleinbottle" style="display: none;">
-      // KleinBottle (Ian Stewart)
-      float l2 = a*(x2+y2+z2);
-      float w  = l2 - 2.0*y - b;
-      return (l2 + 2.0*y - b)*(w*w - 8.0*z2) + 16.0*x*z*w;
-    </textarea>
+    // KleinBottle (Ian Stewart)
+float l2 = a*(x2+y2+z2);
+float w  = l2 - 2.0*y - b;
+return (l2 + 2.0*y - b)*(w*w - 8.0*z2) + 16.0*x*z*w;
+</textarea>
     <textarea spellcheck="false" id="frag-chunk-fct-pluckerconoid" style="display: none;">
-      // PluckerConoid
-      return z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*x*y2*y2);
-    </textarea>
+    // PluckerConoid
+return z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*x*y2*y2);
+</textarea>
     <textarea spellcheck="false" id="frag-chunk-fct-ellipsoid" style="display: none;">
     // Ellpisoid
 return (x2/(a*a)+y2/(b*b)+z2/(c*c)-1.);
@@ -653,6 +672,26 @@ float     d   = 0.5*a;
 return -0.25 + max( abs( mod( p.x, a ) - d ),
 		    max( abs( mod( p.y, a ) - d  ),
 	  		 abs( mod( p.z, a ) - d ) ) );
+</textarea>
+    
+    <textarea spellcheck="false" id="frag-chunk-fct-kleinian" style="display: none;">
+    // Kleinian variation (taken from shadertoy (Spudsville2018, by EvilRyu)
+const int depth = 8; //< depth of the fractal ! Increase at your own risk...
+vec3 d = vec3( a, b, c ); //< Try (1,0.225,1.15) 
+float scale = 1.0;
+for( int i = 0; i < depth; i++)
+{
+    p        = 2.0*clamp(p, -d, d) - p;
+    float r2 = dot(p,p);
+    float k  = max((1.)/(r2), 0.03);
+    p       *= k;
+    scale   *= k;
+}
+float l   = length(p.xy);
+float rxy = l - 3.;
+float n   = l * p.z;
+rxy = max(rxy, -(n) / (length(p))-0.02);
+return (rxy) / abs(scale) + 0.0001; //thicken a little bit
 </textarea>
     
     <textarea spellcheck="false" id="frag-chunk-phong" style="display: none;">
@@ -707,17 +746,16 @@ vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir,
 }
 </textarea>
 
-
     <textarea spellcheck="false" id="frag-chunk-gradf" style="display: none;">
     // Estimates the gradient of f at position p
-    vec3 gradf( vec3 p ) {
-	  float eps  = scale * 0.0001;
-	  // numerical centered derivatives
-	  float gfx = f( p + vec3( eps, 0.0, 0.0 ) ) - f( p - vec3( eps, 0.0, 0.0 ) );
-	  float gfy = f( p + vec3( 0.0, eps, 0.0 ) ) - f( p - vec3( 0.0, eps, 0.0 ) );
-	  float gfz = f( p + vec3( 0.0, 0.0, eps ) ) - f( p - vec3( 0.0, 0.0, eps ) );
-	  return vec3( gfx, gfy, gfz ) / ( 2.0 * eps );
-      }
+vec3 gradf( vec3 p ) {
+    float eps  = scale * 0.0001;
+    // numerical centered derivatives
+    float gfx = f( p + vec3( eps, 0.0, 0.0 ) ) - f( p - vec3( eps, 0.0, 0.0 ) );
+    float gfy = f( p + vec3( 0.0, eps, 0.0 ) ) - f( p - vec3( 0.0, eps, 0.0 ) );
+    float gfz = f( p + vec3( 0.0, 0.0, eps ) ) - f( p - vec3( 0.0, 0.0, eps ) );
+    return vec3( gfx, gfy, gfz ) / ( 2.0 * eps );
+}
 </textarea>
     <textarea spellcheck="false" id="frag-chunk-raytrace" style="display: none;">
     // Approximates the solution f(x)=0 by bissection around two positions.
@@ -749,7 +787,7 @@ vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
     } else {
 	for ( int i = 0; i < n; i++ ) {
 	    q  += d;
-	    if ( f( q ) < lvl ) return bissection( q, q - d, lvl );
+	    if ( f( q ) <  lvl ) return bissection( q, q - d, lvl );
 	}
     }
     return q + normalize( d ) * 2. * width;
@@ -875,6 +913,22 @@ else
 				viewp, ld2, light2_color );
     }
     outColor.rgb = ambient_color + opacity*radiance + (1.0-opacity)*radiance2;
+}
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-simple-phong" style="display: none;">
+    // Simpler Phong model for faster display
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else
+{
+    const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
+    vec3 radiance = ambient_color;
+    vec3 viewDir  = normalize( -vertPos);
+    vec3 vn       = normalize( g );
+    radiance     += phongModel( pos, viewDir, vn, 
+				viewp, -viewp, front_light );
+    outColor.rgb = radiance;
 }
 </textarea>
 
