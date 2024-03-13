@@ -220,6 +220,7 @@ button {
 	      fragSrc += document.getElementById("frag-chunk-phong").value
 	          + document.getElementById("frag-chunk-main-common-begin").value
 		  + document.getElementById("frag-chunk-main-phong").value
+	      	  + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
 	      	  + document.getElementById("frag-chunk-main-common-end").value;
 	      break;
 	  case 2: // RGB+Grid
@@ -231,6 +232,7 @@ button {
 	      fragSrc += document.getElementById("frag-chunk-phong-grid").value
 	          + document.getElementById("frag-chunk-main-common-begin").value
 		  + document.getElementById("frag-chunk-main-phong").value
+	      	  + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
 	      	  + document.getElementById("frag-chunk-main-common-end").value;
 	      break;
 	  case 4: // RGB+Spheres
@@ -242,6 +244,7 @@ button {
 	      fragSrc += document.getElementById("frag-chunk-phong-spheres").value
 	          + document.getElementById("frag-chunk-main-common-begin").value
 		  + document.getElementById("frag-chunk-main-phong").value
+	      	  + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
 	      	  + document.getElementById("frag-chunk-main-common-end").value;
 	      break;
 	  case 6: // Phong2Layers
@@ -254,6 +257,7 @@ button {
 	      fragSrc += document.getElementById("frag-chunk-phong").value
 	          + document.getElementById("frag-chunk-main-common-begin").value
 		  + document.getElementById("frag-chunk-main-simple-phong").value
+	      	  + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
 	      	  + document.getElementById("frag-chunk-main-common-end").value;
 	      break;
 	  }
@@ -854,12 +858,6 @@ else
 }
 </textarea>
     <textarea spellcheck="false" id="frag-chunk-main-phong" style="display: none;">    
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
-    outColor.rgb = bg_color; // ray did not find a surface
-else if ( dot( g, g ) < singularity )
-    outColor.rgb = sing_color; // singularity
-else
-{
     vec3 radiance;
     vec3 viewDir = normalize( -vertPos);
     vec3 ld1  = normalize( light1_direction );
@@ -873,11 +871,10 @@ else
     radiance += phongModel( pos, viewDir, vn, 
 			    viewp, viewp, front_light );
     radiance += ambient_color;
-    outColor.rgb = radiance;
-}
 </textarea>
 
-    <textarea spellcheck="false" id="frag-chunk-main-phong-two-layers" style="display: none;">    
+    <textarea spellcheck="false" id="frag-chunk-main-phong-two-layers" style="display: none;">
+    // Two layers (with transparency) Phong model.
 if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
     outColor.rgb = bg_color; // ray did not find a surface
 else if ( dot( g, g ) < singularity )
@@ -918,20 +915,30 @@ else
 
     <textarea spellcheck="false" id="frag-chunk-main-simple-phong" style="display: none;">
     // Simpler Phong model for faster display
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
-    outColor.rgb = bg_color; // ray did not find a surface
-else
-{
-    const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
-    vec3 radiance = ambient_color;
-    vec3 viewDir  = normalize( -vertPos);
-    vec3 vn       = normalize( g );
-    radiance     += phongModel( pos, viewDir, vn, 
-				viewp, -viewp, front_light );
-    outColor.rgb = radiance;
-}
+const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
+vec3 radiance = ambient_color;
+vec3 viewDir  = normalize( -vertPos);
+vec3 vn       = normalize( g );
+radiance     += phongModel( pos, viewDir, vn, 
+			    viewp, -viewp, front_light );
 </textarea>
 
+    <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-crisp" style="display: none;">
+    // Crisp singularity + background
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g2, g2 ) < singularity )
+    outColor.rgb = sing_color; // singularity
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-smooth" style="display: none;">
+    // Smooth fog background and progressive singularities.
+float delta   = max( dot( (- scale * pos), viewp ), 0.0);
+float ls      = exp( - dot( g, g ) / singularity ); //
+radiance      = (1.-ls)*radiance + ls * sing_color;
+float l       = clamp( delta / width, 0.0, 1.0 ); // compute fog
+outColor.rgb  = (1.-l)*radiance + l * bg_color;
+</textarea>
 
     <textarea spellcheck="false" id="display-info" style="display: none;">
     A real-time visualisation tool for implicit surfaces, i.e. isolevels
