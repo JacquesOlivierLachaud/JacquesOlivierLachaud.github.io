@@ -52,6 +52,31 @@ gallery_item:
 - album: demo
   image: murex-k2.jpg
   caption: 'Highest principal curvatures on a "Murex" point cloud, estimated using randomized corrected curvature measures.'
+- album: demo
+  image: algosurfer-3-11.42.17.jpg
+  caption: 'Vision of Kleinian surface'
+- album: demo
+  image: algosurfer-3-15.04.17.jpg
+  caption: 'Vision of Kleinian surface'
+- album: demo
+  image: algosurfer-4-10.13.22.jpg
+  caption: 'Vision of Kleinian surface'
+- album: demo
+  image: algosurfer-4-16.16.15.jpg
+  caption: 'Vision of Kleinian surface'
+- album: demo
+  image: algosurfer-3-13.44.10.jpg
+  caption: 'Vision of Kleinian surface'
+- album: demo
+  image: algosurfer-3-15.28.22.jpg
+  caption: 'Vision of Kleinian surface'
+- album: demo
+  image: algosurfer-4-10.15.43.jpg
+  caption: 'Vision of Kleinian surface'
+- album: demo
+  image: algosurfer-5-16.24.09.jpg
+  caption: 'Vision of Kleinian surface'
+  
 
 ---
 
