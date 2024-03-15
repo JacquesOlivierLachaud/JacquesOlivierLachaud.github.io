@@ -76,7 +76,11 @@
 import * as THREE from 'three';
 //import { GUI } from 'three/addons/lil-gui.module.min.js';
 
-const nbcanvas = 12;
+
+let nbcanvas = 12;
+if (window.matchMedia("(max-width: 767px)").matches)
+    nbcanvas = 6; // cannot support probably more than 6 webgl canvas
+
 const distance = 200.0;
 let next_canvas_id = 0;
 
