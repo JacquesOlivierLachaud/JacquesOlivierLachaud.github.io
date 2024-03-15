@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>three.js webgl - geometries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link type="text/css" rel="stylesheet" href="mcanvas.css">
+    </head>
+    <body>
+
+    <div class="titlebox"><a href="shaders-implicit-surface-viewer.html" style="color:#ffd;">AlgoSurfer</a></div>
+    <div class="subtitlebox">a simple implicit/algebraic surface viewer</div>
+    <div class="mtextbox">Choose a predefined shape, or enter your own function to display it, navigate with the mouse</div>
+    <div class="wrapper">
+    <div class="box first">
+    <canvas id="webglcanvas0" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle0"></div>
+    </div>
+    <div class="box second">
+    <canvas id="webglcanvas1" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle1"></div>
+    </div>
+    <div class="box third">
+    <canvas id="webglcanvas2" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle2"></div>
+    </div>    
+    <div class="box fourth">
+    <canvas id="webglcanvas3" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle3"></div>
+    </div>
+    <div class="box fifth">
+    <canvas id="webglcanvas4" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle4"></div>
+    </div>
+    <div class="box sixth">
+    <canvas id="webglcanvas5" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle5"></div>
+    </div>            
+    <div class="box seventh">
+    <canvas id="webglcanvas6" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle6"></div>
+    </div>
+    <div class="box eighth">
+    <canvas id="webglcanvas7" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle7"></div>
+    </div>
+    <div class="box ninth">
+    <canvas id="webglcanvas8" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle8"></div>
+    </div>
+    <div class="box tenth">
+    <canvas id="webglcanvas9" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle9"></div>
+    </div>
+    <div class="box eleventh">
+    <canvas id="webglcanvas10" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle10"></div>
+    </div>
+    <div class="box twelfth">
+    <canvas id="webglcanvas11" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <div class="mbox" id="subtitle11"></div>
+    </div>
+    </div>
+    
+    <script type="importmap">
+      {
+	  "imports": {
+	      "three": "./three.module.js",
+	      "three/addons/": "./jsm/"
+	  }
+      }
+    </script>
+
+    <script type="module">
+    
+import * as THREE from 'three';
+//import { GUI } from 'three/addons/lil-gui.module.min.js';
+
+const nbcanvas = 12;
+const distance = 200.0;
+let next_canvas_id = 0;
+
+// create several rendering canvases
+var CanvasInfo = makeStruct("id renderer camera scene settings uniforms");
+var canvas_infos = [];
+for ( let i = 0; i < nbcanvas; i++ )
+{
+    let cinfos = init( i );
+    canvas_infos.push( cinfos );
+    let canvas_name = "webglcanvas" + i;
+    var canvas = document.getElementById( canvas_name );
+    canvas.addEventListener('click', function() {
+	window.location.href = 'shaders-implicit-surface-viewer.html?shape='
+	    + cinfos.settings.shape;
+    }, false);
+}
+
+// Force resize of windows for responsiveness
+onWindowResize();
+window.addEventListener( 'resize', onWindowResize );
+animate();
+
+
+// Initialize the given canvas `canvas_id`, and add an element to `canvas_info`.
+function init( canvas_id ) {
+    var scene, object;
+    // (1) renderer in canvas
+    let canvas_name = "webglcanvas" + canvas_id;
+    var canvas = document.getElementById( canvas_name );
+    var renderer = new THREE.WebGLRenderer( { canvas : canvas,
+					      antialias: false } );
+    renderer.setSize( canvas.width, canvas.height ); // Set viewport size
+    var camera = new THREE.PerspectiveCamera( 45, canvas.width/canvas.height, 1, 2000 );
+    camera.position.x = distance; // Math.cos( timer ) * distance;
+    camera.position.z = 0.0; // Math.sin( timer ) * distance;
+    camera.position.y = 0;
+    var settings = randomizeSettings( makeSettings( canvas_id ) );
+    var uniforms = makeUniforms( settings ); 
+    //
+    scene = new THREE.Scene();
+    var shader   = makeFragmentShader( settings.shape, settings.color_model, uniforms );    
+    var geometry = makeViewShape( settings.view_shape, settings.view_radius );
+    object = new THREE.Mesh( geometry, shader );
+    object.position.set( 0, 0, 0 );
+    // var object2  = new THREE.Mesh( new THREE.BoxGeometry( 40.0, 40.0, 40.0 ),
+    // 				   new THREE.MeshBasicMaterial( {color: [0.5, 0.1, 1.0]} ) );
+    // scene.add( object2 );
+    scene.add( object );
+    // camera.lookAt( object.position ); 
+    updateCanvasSubtitle( canvas_id, stringFromShape( settings.shape ) );
+    
+    //var CanvasInfo = makeStruct("id renderer camera scene settings uniforms");
+    var cinfos = new CanvasInfo( canvas_id, renderer, camera, scene, settings, uniforms );
+    return cinfos;
+}
+
+function updateCanvasSubtitle( canvas_id, str ) {
+    let subtitle_name = "subtitle" + canvas_id;
+    document.getElementById( subtitle_name ).innerHTML = str;
+}
+
+function stringFromShape( shape ) {
+    const name = [ "Durchball", "Crixxi", "CayleyCubic",
+		   "Durchblick", "BarthSextic", "ClebschDCubic",
+		   "BohemianDome", "Gyroid", "Neovius", "KleinBottle",
+		   "PluckerConoid", "Ellipsoid", "InfiniteCubes",
+		   "Kleinian", "Virus" ];
+    return name[ shape ];
+}
+function makeUniformColor( color ) {
+    return new THREE.Vector3( color[ 0 ], color[ 1 ], color[ 2 ] );
+}
+function makeUniforms( settings ) {
+    let uniforms = {
+	bg_color        : { value : makeUniformColor( settings.bg_color ) },
+	ambient_color   : { value : new THREE.Vector3( 0.01, 0.0, 0.0 ) },
+	ext_diff_color  : { value : makeUniformColor( settings.ext_diff_color ) },
+	int_diff_color  : { value : makeUniformColor( settings.int_diff_color ) },
+	specular_color  : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },
+	sing_color      : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },	      
+	shininess       : { value: settings.shininess },
+	opacity         : { value: settings.opacity },
+	light1_color    : { value : new THREE.Vector3( 0.95, 0.8, 0.0 ) },
+	light1_direction: { value : new THREE.Vector3( 0.0, 1.0, 0.0 ) },
+	light2_color    : { value : new THREE.Vector3( 0.1, 0.1, 1.0 ) },
+	light2_direction: { value : new THREE.Vector3( 1.0, 0.0, 0.0 ) },
+	singularity     : { value: settings.singularity },
+	accuracy        : { value: settings.accuracy },	      
+	scale           : { value: settings.scale },
+	shape           : { value: settings.shape },
+	iso             : { value: settings.iso },
+	a               : { value: settings.a },
+	b               : { value: settings.b },
+	c               : { value: settings.c },
+	center_x        : { value: settings.center_x },
+	center_y        : { value: settings.center_y },
+	center_z        : { value: settings.center_z },	      	      
+	grid_size       : { value: settings.grid_size },
+	grid_thickness  : { value: settings.grid_thickness },
+	grid_attenuation: { value: settings.grid_attenuation },	      	      
+	color_model     : { value: settings.color_model },	      
+	moment          : { value: 0.0 }
+    };
+    return uniforms;
+}
+
+// integer in [min,max[
+function randomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+//
+function randomizeSettings( settings, shape ) {
+    settings.shape       = randomInt(0, 15);
+    settings.color_model = randomInt(0, 8);
+    settings.view_shape  = randomInt(0, 2)*4;
+    //settings.a           = 0.95*(0.05*Math.random()-0.05);
+    //settings.b           = 0.95*(0.05*Math.random()-0.05);
+    //settings.c           = 0.75*(0.05*Math.random()-0.05);
+    if ( settings.shape == 13 )
+    {
+	if ( randomInt(0,2) == 0 ) {
+	    settings.a = 0.475;
+	    settings.b = 0.425;
+	    settings.c = 1.15;
+	} else {
+	    settings.a = 1.0;
+	    settings.b = 0.2;
+	    settings.c = 1.25;
+	}	    
+	settings.color_model = 7;
+    }
+    settings.scale       = 10.0*(1.0+Math.random());
+    if ( settings.shape == 1 )
+	settings.scale       = 30.0;
+    settings.ext_diff_color[ 0 ] = 0.5+0.5*Math.random();
+    settings.ext_diff_color[ 1 ] = 0.5*Math.random();
+    settings.ext_diff_color[ 2 ] = 0.5*Math.random();        
+    settings.int_diff_color[ 0 ] = 0.5*Math.random();
+    settings.int_diff_color[ 1 ] = 0.5*Math.random();
+    settings.int_diff_color[ 2 ] = 0.5+0.5*Math.random();        
+    settings.rotation_x  = 0.5*(Math.random()-0.5);
+    settings.rotation_y  = 0.275*(Math.random()-0.5);
+    settings.rotation_z  = 0.25*(Math.random()-0.5);
+    return settings;
+}
+
+//
+function makeSettings( canvas_id ) {
+    var settings = {
+	id : canvas_id, 
+	bg_color      : [ 0.1, 0.1, 0.1 ],
+	ambient_color : [ 0.01, 0.0, 0.0 ],
+	ext_diff_color: [ 1.0, 0.25, 0.1 ],
+	int_diff_color: [ 0.25, 0.8, 1.0 ],
+	specular_color: [ 1.0, 1.0, 1.0 ],
+	sing_color    : [ 1.0, 1.0, 1.0 ],	  
+	shininess     : 10.0,
+	opacity       : 0.6,
+	light1        : 1,
+	light1_color  : [ 0.95, 0.8, 0.0 ],
+	light2        : 0,
+	light2_color  : [ 0.1, 0.1, 1.0 ],
+	singularity   : 0.1,
+	accuracy      : 5.0,
+	scale         : 10.0,
+	shape         : canvas_id,
+	iso           : 0.0,
+	a             : 1.0,
+	b             : 1.0,
+	c             : 1.0,
+	center_x      : 0.0,
+	center_y      : 0.0,
+	center_z      : 0.0, 	  	  
+	color_model   : 3,
+	view_shape    : 0,
+	view_radius   : 100.0,
+	grid_size     : 1.0,
+	grid_thickness: 0.1,
+	grid_attenuation: 0.5,	  	  
+	rotation_x    : 0.0,
+	rotation_y    : 0.0,
+	rotation_z    : 0.0,
+	stop          : function() {
+	    settings.rotation_x = 0;
+	    settings.rotation_y = 0;
+	    settings.rotation_z = 0;
+	}
+    };
+    return settings;
+}
+
+// return a structure constructor whose fields are given as words in a
+// string separated by a space.
+function makeStruct(names) {
+    var names = names.split(' ');
+    var count = names.length;
+    function constructor() {
+	for (var i = 0; i < count; i++) {
+	    this[names[i]] = arguments[i];
+	}
+    }
+    return constructor;
+}
+
+
+// Resize every canvas/renderer.
+function onWindowResize() {
+    let width  = 200;
+    let ratio  = 1.0;
+    if ( window.innerWidth < 600 )
+	width = Math.floor( window.innerWidth / 2.0 ) - 30.0;
+    else if ( window.innerWidth < 900 )
+	width = Math.floor( window.innerWidth / 3.0 ) - 30.0;
+    else if ( window.innerWidth < 1200 )
+	width = Math.floor( window.innerWidth / 4.0 ) - 30.0;
+    else 
+	width = Math.floor( window.innerWidth / 6.0 ) - 30.0;
+    let height= width * ratio;
+    for ( let i = 0; i < canvas_infos.length; i++ )
+    {
+	let info = canvas_infos[ i ];
+	let camera   = info.camera;
+	let renderer = info.renderer;
+	camera.aspect = ratio;
+	camera.updateProjectionMatrix();
+	renderer.setSize( width, height );
+    }
+}
+
+// Animate every canvas
+function animate() {
+    requestAnimationFrame( animate );
+    render();
+}
+
+// Update and render every canvas
+function render() {
+    const timer = Date.now() * 0.0001;
+    if ( Math.random() < 0.004 ) {
+	let cinfos = init( next_canvas_id );
+	canvas_infos[ next_canvas_id ] = cinfos;
+	next_canvas_id = ( next_canvas_id + 1 ) % canvas_infos.length;
+    }
+
+    for ( let i = 0; i < canvas_infos.length; i++ )
+    {	  
+	let info = canvas_infos[ i ];
+	let camera   = info.camera;
+	let renderer = info.renderer;
+	let settings = info.settings;
+	let scene    = info.scene;
+	scene.traverse( function ( object ) {
+	    if ( object.isMesh === true ) {
+		object.rotation.x += 0.01 * settings.rotation_x;
+		object.rotation.y += 0.01 * settings.rotation_y;
+		object.rotation.z += 0.01 * settings.rotation_z;		  
+	    }
+	} );
+	camera.rotation.y = (i - 3.5) / 8.0 * Math.PI;
+	camera.position.x = ( 1.1+(i % 4) )/2.0 * Math.cos( timer ) * distance;
+	camera.position.z = ( 1.1+((i+2) % 3) )/2.0 * Math.sin( timer ) * distance;
+	camera.lookAt( scene.position );
+	renderer.render( scene, camera );
+	
+	// renderer.render( scene, camera );
+    }
+}
+
+// Changes the geometry of the viewing "window".
+function makeViewShape( value, radius ) {
+    var geometry;
+    switch( value ) {
+    case 0: geometry = new THREE.BoxGeometry( radius, radius, radius );
+	break;
+    case 1: geometry = new THREE.DodecahedronGeometry( radius, 0 );
+	break;
+    case 2: geometry = new THREE.IcosahedronGeometry( radius, 0 );
+	break;
+    case 3: geometry = new THREE.IcosahedronGeometry( radius, 4 );
+	break;
+    case 4: geometry = new THREE.SphereGeometry( radius, 32, 16 );
+	break;
+    case 5: geometry = new THREE.CylinderGeometry( 0.5*radius, 0.5*radius, radius, 32 );
+	break;
+    case 6: geometry = new THREE.BoxGeometry( 0.5*radius, radius, radius );
+	geometry.translate( -0.25*radius, 0.0, 0.0 );
+	break;
+    case 7: geometry = new THREE.BoxGeometry( 0.001, radius, radius );
+	break;
+    }
+    return geometry;
+}
+
+// Creates the fragment shader from the different chunks.
+function makeFragmentShader( fct_value, color_model, uniforms ) {
+    // Build fragment shader from chunks
+    var fragSrc = document.getElementById("frag-chunk-begin").value
+	+ document.getElementById("frag-chunk-fct-begin").value
+	+ makeFunctionShader( fct_value )
+	+ document.getElementById("frag-chunk-fct-end").value
+	+ document.getElementById("frag-chunk-gradf").value
+	+ document.getElementById("frag-chunk-raytrace").value;	  	  
+    switch ( color_model ) {
+    case 0: // RGB
+	fragSrc += document.getElementById("frag-chunk-main-common-begin").value
+	    + document.getElementById("frag-chunk-main-rgb").value
+	    + document.getElementById("frag-chunk-main-common-end").value;
+	break;
+    case 1: // Phong
+	fragSrc += document.getElementById("frag-chunk-phong").value
+	    + document.getElementById("frag-chunk-main-common-begin").value
+	    + document.getElementById("frag-chunk-main-phong").value
+	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + document.getElementById("frag-chunk-main-common-end").value;
+	break;
+    case 2: // RGB+Grid
+	fragSrc += document.getElementById("frag-chunk-main-common-begin").value
+	    + document.getElementById("frag-chunk-main-rgb-grid").value
+	    + document.getElementById("frag-chunk-main-common-end").value;
+	break;
+    case 3: // Phong+Grid
+	fragSrc += document.getElementById("frag-chunk-phong-grid").value
+	    + document.getElementById("frag-chunk-main-common-begin").value
+	    + document.getElementById("frag-chunk-main-phong").value
+	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + document.getElementById("frag-chunk-main-common-end").value;
+	break;
+    case 4: // RGB+Spheres
+	fragSrc += document.getElementById("frag-chunk-main-common-begin").value
+	    + document.getElementById("frag-chunk-main-rgb-spheres").value
+	    + document.getElementById("frag-chunk-main-common-end").value;
+	break;
+    case 5: // Phong+Spheres
+	fragSrc += document.getElementById("frag-chunk-phong-spheres").value
+	    + document.getElementById("frag-chunk-main-common-begin").value
+	    + document.getElementById("frag-chunk-main-phong").value
+	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + document.getElementById("frag-chunk-main-common-end").value;
+	break;
+    case 6: // Phong2Layers
+	fragSrc += document.getElementById("frag-chunk-phong").value
+	    + document.getElementById("frag-chunk-main-common-begin").value
+	    + document.getElementById("frag-chunk-main-phong-two-layers").value
+	    + document.getElementById("frag-chunk-main-common-end").value;
+	break;
+    case 7: // SimplePhong
+	fragSrc += document.getElementById("frag-chunk-phong").value
+	    + document.getElementById("frag-chunk-main-common-begin").value
+	    + document.getElementById("frag-chunk-main-simple-phong").value
+	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + document.getElementById("frag-chunk-main-common-end").value;
+	break;
+    }
+    let shader = new THREE.ShaderMaterial( {
+	vertexShader: document.querySelector( '#post-vert' ).textContent.trim(),
+	fragmentShader: fragSrc, 
+	uniforms: uniforms
+    } );
+    shader.glslVersion = THREE.GLSL3;
+    return shader;
+}
+
+
+// @return the fragment shader code for the predefined function `value`
+function makeFunctionShader( value ) {
+    var code = "";
+    switch ( value ) {
+    case 0:  code = document.getElementById("frag-chunk-fct-durchball").value;
+	break;
+    case 1:  code = document.getElementById("frag-chunk-fct-crixxi").value;
+	break;
+    case 2:  code = document.getElementById("frag-chunk-fct-cayleycubic").value;
+	break;
+    case 3:  code = document.getElementById("frag-chunk-fct-durchblick").value;
+	break;
+    case 4:  code = document.getElementById("frag-chunk-fct-barthsextic").value;
+	break;
+    case 5:  code = document.getElementById("frag-chunk-fct-clebschdcubic").value;
+	break;
+    case 6:  code = document.getElementById("frag-chunk-fct-bohemiandome").value;
+	break;
+    case 7:  code = document.getElementById("frag-chunk-fct-gyroid").value;
+	break;
+    case 8:  code = document.getElementById("frag-chunk-fct-neovius").value;
+	break;
+    case 9:  code = document.getElementById("frag-chunk-fct-kleinbottle").value;
+	break;
+    case 10: code = document.getElementById("frag-chunk-fct-pluckerconoid").value;
+	break;
+    case 11: code = document.getElementById("frag-chunk-fct-ellipsoid").value;
+	break;
+    case 12: code = document.getElementById("frag-chunk-fct-infinite-cubes").value;
+	break;
+    case 13: code = document.getElementById("frag-chunk-fct-kleinian").value;
+	break;
+    case 14: code = document.getElementById("frag-chunk-fct-virus").value;
+	break;
+    }
+    return code;
+}
+
+</script>
+
+    <script id="post-vert" type="x-shader/x-vertex">
+    // Vertex shader
+out vec3 vertPos;
+out vec3 projPos;
+out mat4 projViewInv;
+void main(){
+    vec4 vertPos4 = modelViewMatrix * vec4( position, 1.0);
+    vertPos       = position; 
+    gl_Position   = projectionMatrix * vertPos4;
+    projPos       = gl_Position.xyz / gl_Position.w;
+    projViewInv   = inverse( projectionMatrix * modelViewMatrix );
+}
+</script>
+    
+    <textarea spellcheck="false" id="frag-chunk-begin" style="display: none;">
+    // Fragment shader: initial chunk 
+uniform vec3 ambient_color;
+uniform vec3 int_diff_color;
+uniform vec3 ext_diff_color;
+uniform vec3 specular_color;
+uniform vec3 sing_color;
+uniform float shininess;
+uniform float opacity;
+uniform vec3 light1_direction;
+uniform vec3 light1_color;
+uniform vec3 light2_direction;
+uniform vec3 light2_color;
+uniform vec3  bg_color;
+uniform float singularity;
+uniform float accuracy;
+uniform float iso;
+uniform float a;
+uniform float b;
+uniform float c;      
+uniform float scale;
+uniform float center_x;
+uniform float center_y;
+uniform float center_z;
+uniform float grid_size;
+uniform float grid_thickness;
+uniform float grid_attenuation;
+uniform int   shape;
+uniform int   color_model;
+    in vec3 vertPos;
+    in vec3 projPos;
+    in mat4 projViewInv;
+out vec4 outColor;
+
+// 3D function in cube
+const float width  = 100.0; // cube width  
+const float width2 = width*width; // cube width
+</textarea>
+    
+    <textarea spellcheck="false" id="frag-chunk-fct-begin" style="display: none;">
+    // chunk for opening function definition.
+// As a user, do not use `p`, but use `x`, `y`, `z` instead, which have been translated.
+float f( vec3 p ) {
+    p.x     += center_x;
+    p.y     += center_y;
+    p.z     += center_z;
+    float x  = p.x; 
+    float y  = p.y;
+    float z  = p.z;
+    float x2 = x*x;
+    float y2 = y*y;
+    float z2 = z*z;
+    float x3 = x2*x;
+    float y3 = y2*y;
+    float z3 = z2*z;
+    </textarea>
+	
+	<textarea spellcheck="false" id="frag-chunk-fct-end" style="display: none;">
+	// chunk for closing function definition.
+}
+</textarea>
+    
+    <textarea spellcheck="false" id="frag-chunk-fct-durchball" style="display: none;">
+    // Computes f(x,y,z). You may use x2 for x*x, x3 for x*x*x,
+// same holds for y and z. Constant must be floating numbers.
+// Durckblick + ball
+return ( x2 + y2 + z2 - a*a ) * ( x3 * y + x * z3 + y3 * z + 5. * z );
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-crixxi" style="display: none;">
+    // Crixxi
+float d = y2 + z2 - a*a;
+float e = x2 + y2 - a*a;
+return -0.9*d*d - e*e*e;
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-cayleycubic" style="display: none;">
+    // CayleyCubic
+return x2 + y2 + z2 + x2*z - y2*z - 1.;
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-durchblick" style="display: none;">	  
+    // Durchblick
+return x3 * y + x * z3 + y3 * z + z3 + 5. * z;
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-barthsextic" style="display: none;">
+    // BarthSextic
+float x4 = x2*x2; float y4 = y2*y2; float z4 = z2*z2;
+return z4*z2 + 5.*(x2+y2)*(-z4 + (x2+y2)*z2) - 2.*(x4 - 10.*x2*y2+5.*y4)*x*z
+    + 1.25*pow(a*(x2+y2+z2-a*a),2.0);
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-clebschdcubic" style="display: none;">
+    // ClebschDCubic
+float d = x + y + z + a;
+return x3 + y3 + z3 + a*a*a - d*d*d;
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-bohemiandome" style="display: none;">
+    // BohemianDome
+float d = x2 + y2 + z2 - a*a - b*b;
+return d*d - 4.*(a*a - x2)*(b*b - y2);
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-gyroid" style="display: none;">
+    // Gyroid
+return a*cos(x)*sin(y)+b*cos(y)*sin(z)+c*cos(z)*sin(x);
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-neovius" style="display: none;">
+    // Neovius
+return 3.*a*(cos(x) + cos(y) + cos(z)) + 4.*b*cos(x)*cos(y)*cos(z);
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-kleinbottle" style="display: none;">
+    // KleinBottle (Ian Stewart)
+float l2 = a*(x2+y2+z2);
+float w  = l2 - 2.0*y - b;
+return (l2 + 2.0*y - b)*(w*w - 8.0*z2) + 16.0*x*z*w;
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-pluckerconoid" style="display: none;">
+    // PluckerConoid
+return z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*x*y2*y2);
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-ellipsoid" style="display: none;">
+    // Ellpisoid
+return (x2/(a*a)+y2/(b*b)+z2/(c*c)-1.);
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-infinite-cubes" style="display: none;">
+    // Cubes in infinite directions
+float     d   = 0.5*a;
+return -0.25 + max( abs( mod( p.x, a ) - d ),
+		    max( abs( mod( p.y, a ) - d  ),
+	  		 abs( mod( p.z, a ) - d ) ) );
+</textarea>
+    
+    <textarea spellcheck="false" id="frag-chunk-fct-kleinian" style="display: none;">
+    // Kleinian variation (taken from shadertoy (Spudsville2018, by EvilRyu)
+const int depth = 8; //< depth of the fractal ! Increase at your own risk...
+vec3 d = vec3( a, b, c ); //< Try (1,0.225,1.15) 
+float scale = 1.0;
+for( int i = 0; i < depth; i++)
+{
+    p        = 2.0*clamp(p, -d, d) - p;
+    float r2 = dot(p,p);
+    float k  = max((1.)/(r2), 0.03);
+    p       *= k;
+    scale   *= k;
+}
+float l   = length(p.xy);
+float rxy = l - 3.;
+float n   = l * p.z;
+rxy = max(rxy, -(n) / (length(p))-0.02);
+return (rxy) / abs(scale) + 0.0001; //thicken a little bit
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-virus" style="display: none;">
+      // Kind of virus
+const vec3 xc = vec3(0.,0.,0.);
+vec3 d  = vec3(x,y,z) - xc;
+vec3 n  = normalize( d );
+vec2 theta = normalize (d.xy);
+float dd = length( n.xy );
+float t   = atan( theta.y, theta.x );
+float phi = atan( n.z, dd );
+const float nbu = 22.;
+const float nbv = 32.;
+float u  = pow(cos( t * nbu ), 9.0);
+float v  = pow(cos( phi * nbv ), 9.0);
+float d2 = dot(d,d);
+return d2-a*a - 0.2*u*v/(1.+1.*d2);
+    </textarea>
+    
+    
+    <textarea spellcheck="false" id="frag-chunk-phong" style="display: none;">
+    // Computes the Phong illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-phong-grid" style="display: none;">
+    // Computes the Phong+Grid illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    if (( mod( pos.x, grid_size ) < bound
+	  || mod( pos.y, grid_size ) < bound
+	  || mod( pos.z, grid_size ) < bound ) )
+	color *= grid_attenuation;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-phong-spheres" style="display: none;">
+    // Computes the Phong+Spheres illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    if ( mod( length( pos ), grid_size ) < bound )
+	color *= grid_attenuation;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-gradf" style="display: none;">
+    // Estimates the gradient of f at position p
+vec3 gradf( vec3 p ) {
+    float eps  = scale * 0.0001;
+    // numerical centered derivatives
+    float gfx = f( p + vec3( eps, 0.0, 0.0 ) ) - f( p - vec3( eps, 0.0, 0.0 ) );
+    float gfy = f( p + vec3( 0.0, eps, 0.0 ) ) - f( p - vec3( 0.0, eps, 0.0 ) );
+    float gfz = f( p + vec3( 0.0, 0.0, eps ) ) - f( p - vec3( 0.0, 0.0, eps ) );
+    return vec3( gfx, gfy, gfz ) / ( 2.0 * eps );
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-raytrace" style="display: none;">
+    // Approximates the solution f(x)=0 by bissection around two positions.
+// Invariant: f(p) < lvl <= f(q)
+vec3 bissection( vec3 p, vec3 q, float lvl )
+{   // 10: precision is 0.001
+    // 8: precision is 0.004
+    for ( int i = 0; i < 8; i++ )
+    {
+	vec3 m = 0.5*(p + q);
+	float fm = f( m );
+	if ( fm < lvl ) p = m;
+	else            q = m;
+    }
+    return 0.5*(p + q);
+}
+
+// Roughly approximates a position p, such that f(p)=0.
+// In practice, finds the first change of sign.
+vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
+{
+    d     *= step;
+    vec3 q = p;
+    if ( f( p ) < lvl ) {
+	for ( int i = 0; i < n; i++ ) {
+	    q  += d;
+	    if ( f( q ) >= lvl ) return bissection( q - d, q, lvl );
+	}
+    } else {
+	for ( int i = 0; i < n; i++ ) {
+	    q  += d;
+	    if ( f( q ) <  lvl ) return bissection( q, q - d, lvl );
+	}
+    }
+    return q + normalize( d ) * 2. * width;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-common-begin" style="display: none;">
+    // main common to all color models
+void main() {
+    // we must compute the direction of the tracing ray within the cube
+    vec3 focal = vec3( 0.0, 0.0, -200.0 );
+    vec4 viewp4= projViewInv * vec4( focal, 1.0 );
+    vec3 viewp = normalize( viewp4.xyz / viewp4.w - vertPos );
+    float step = 0.1 * accuracy / scale;
+    int   n    = int( ceil( sqrt(3.0) * width / (scale*step) ) );
+    vec3 pos   = ray_trace( vertPos / scale , -viewp, iso, n, step );
+    vec3  g    = gradf( pos );
+    outColor.a = 1.0;
+    </textarea>
+	<textarea spellcheck="false" id="frag-chunk-main-common-end" style="display: none;">
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-rgb" style="display: none;">
+    // RGB model
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-rgb-grid" style="display: none;">
+    // RGB+Grid model
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+    float  bound = grid_size * grid_thickness;
+    if ( ( mod( pos.x, grid_size ) < bound
+	   || mod( pos.y, grid_size ) < bound
+	   || mod( pos.z, grid_size ) < bound ) )
+	outColor.rgb *= grid_attenuation;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-rgb-spheres" style="display: none;">
+    // RGB+Spheres model
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+    float  bound = grid_size * grid_thickness;
+    if ( mod( length( pos ), grid_size ) < bound )
+	outColor.rgb *= grid_attenuation;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-phong" style="display: none;">    
+    vec3 radiance;
+    vec3 viewDir = normalize( -vertPos);
+    vec3 ld1  = normalize( light1_direction );
+    vec3 ld2  = normalize( light2_direction );
+    vec3 vn   = normalize( g );
+    radiance  = phongModel( pos, viewDir, vn, 
+			    viewp, ld1, light1_color );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, ld2, light2_color );
+    const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, viewp, front_light );
+    radiance += ambient_color;
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-phong-two-layers" style="display: none;">
+    // Two layers (with transparency) Phong model.
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else
+{
+    const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
+    vec3 radiance;
+    vec3 viewDir = normalize( -vertPos);
+    vec3 ld1  = normalize( light1_direction );
+    vec3 ld2  = normalize( light2_direction );
+    vec3 vn   = normalize( g );
+    radiance  = phongModel( pos, viewDir, vn, 
+			    viewp, ld1, light1_color );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, ld2, light2_color );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, viewp, front_light );
+    vec3 radiance2;
+    vec3 spos  = pos - viewp * step;
+    vec3 pos2  = ray_trace( spos, -viewp, iso, n, step );
+    vec3  g2   = gradf( pos2 );
+    if ( dot( pos2, pos2 ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+	radiance2 = bg_color; // ray did not find a surface
+    else if ( dot( g2, g2 ) < singularity )
+	radiance2 = sing_color; // singularity
+    else
+    {
+	vec3 vn2  = normalize( g2 );
+	radiance2 = phongModel( pos2, viewDir, vn2, 
+				viewp, ld1, light1_color );
+	radiance2+= phongModel( pos2, viewDir, vn2, 
+				viewp, ld2, light2_color );
+    }
+    outColor.rgb = ambient_color + opacity*radiance + (1.0-opacity)*radiance2;
+}
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-simple-phong" style="display: none;">
+    // Simpler Phong model for faster display
+const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
+vec3 radiance = ambient_color;
+vec3 viewDir  = normalize( -vertPos);
+vec3 vn       = normalize( g );
+radiance     += phongModel( pos, viewDir, vn, 
+			    viewp, -viewp, front_light );
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-crisp" style="display: none;">
+    // Crisp singularity + background
+if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g2, g2 ) < singularity )
+    outColor.rgb = sing_color; // singularity
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-smooth" style="display: none;">
+    // Smooth fog background and progressive singularities.
+float delta   = max( dot( (- scale * pos), viewp ), 0.0);
+float ls      = exp( - dot( g, g ) / singularity ); //
+radiance      = (1.-ls)*radiance + ls * sing_color;
+float l       = clamp( delta / width, 0.0, 1.0 ); // compute fog
+outColor.rgb  = (1.-l)*radiance + l * bg_color;
+</textarea>
+
+
+</body>
+    </html>
+    
