@@ -85,17 +85,20 @@ const distance = 200.0;
 let next_canvas_id = 0;
 
 // create several rendering canvases
-var CanvasInfo = makeStruct("id renderer camera scene settings uniforms");
-var canvas_infos = [];
+var   CanvasInfo   = makeStruct("id renderer camera scene settings uniforms");
+var   canvas_infos = [];
+const canvas_base  = "webglcanvas";
 for ( let i = 0; i < nbcanvas; i++ )
 {
     let cinfos = init( i );
     canvas_infos.push( cinfos );
-    let canvas_name = "webglcanvas" + i;
+    let canvas_name = canvas_base + i;
     var canvas = document.getElementById( canvas_name );
-    canvas.addEventListener('click', function() {
-	window.location.href = 'shaders-implicit-surface-viewer.html?shape='
-	    + cinfos.settings.shape;
+    canvas.addEventListener('click', function( event ) {
+	let index    = parseInt( event.currentTarget.id.substring( canvas_base.length ) );
+	let shape_id = canvas_infos[ index ].settings.shape; 
+	//console.log( "idx=" + index +" shape=" + shape_id  );
+	window.location.href = 'shaders-implicit-surface-viewer.html?shape=' + shape_id;
     }, false);
 }
 
@@ -199,11 +202,11 @@ function randomizeSettings( settings, shape ) {
     settings.shape       = randomInt(0, 15);
     settings.color_model = randomInt(0, 8);
     settings.view_shape  = randomInt(0, 2)*4;
-    //settings.a           = 0.95*(0.05*Math.random()-0.05);
-    //settings.b           = 0.95*(0.05*Math.random()-0.05);
-    //settings.c           = 0.75*(0.05*Math.random()-0.05);
-    if ( settings.shape == 13 )
-    {
+    if ( settings.shape  == 11 ) { // ellipsoid
+	settings.a           = 2.0 * (1.+0.5*Math.random());
+	settings.b           = 1.2 * (1.+0.5*Math.random());
+	settings.c           = 0.8 * (1.+0.5*Math.random());
+    } else if ( settings.shape == 13 ) {
 	if ( randomInt(0,2) == 0 ) {
 	    settings.a = 0.475;
 	    settings.b = 0.425;

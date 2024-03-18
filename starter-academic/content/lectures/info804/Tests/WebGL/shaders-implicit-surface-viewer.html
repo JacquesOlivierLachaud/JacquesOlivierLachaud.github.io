@@ -121,21 +121,23 @@ if ( location.search != "" ) {
     if ( parameters.length > 0 ) {
 	var temp = parameters[0].split("=");
 	var value = parseInt( unescape(temp[1]) );
-	console.log( "value=" + value );
+	// console.log( "value=" + value );
 	if ( value >= 0 && value < nbshapes ) settings.shape = value;
     }
 }
-console.log( "shape=" + settings.shape );
+//console.log( "shape=" + settings.shape );
 
 let   controls;
 var   uniforms;
-let   then=0;
-const fpsElem = document.querySelector("#fps");
+let   then     = 0;
+const fpsElem  = document.querySelector("#fps");
 
+// run everything
 init();
 animate();
 initGui();
 displayInfo();
+// set up callbacks
 window.updateRenderer = updateRenderer;
 window.clearFunction  = clearFunction;
 window.displayInfo    = displayInfo;
