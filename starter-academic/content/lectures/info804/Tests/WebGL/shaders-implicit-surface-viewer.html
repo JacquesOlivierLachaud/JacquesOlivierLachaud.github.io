@@ -84,6 +84,7 @@ let settings = {
     sing_color    : [ 1.0, 1.0, 1.0 ],	  
     shininess     : 10.0,
     opacity       : 0.6,
+    curv_scale    : 1.0,
     light1        : 1,
     light1_color  : [ 0.95, 0.8, 0.0 ],
     light2        : 0,
@@ -285,6 +286,24 @@ function updateShader() {
 	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
 	    + document.getElementById("frag-chunk-main-common-end").value;
 	break;
+    case 8: // Mean Curvatures
+	fragSrc += document.getElementById("frag-chunk-phong").value
+	    + document.getElementById("frag-chunk-hessf").value
+	    + document.getElementById("frag-chunk-curvatures").value	
+	    + document.getElementById("frag-chunk-main-common-begin").value
+	    + document.getElementById("frag-chunk-main-mean-curvatures").value
+	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + document.getElementById("frag-chunk-main-common-end").value;
+	break;
+    case 9: // Gauss Curvatures
+	fragSrc += document.getElementById("frag-chunk-phong").value
+	    + document.getElementById("frag-chunk-hessf").value
+	    + document.getElementById("frag-chunk-curvatures").value	
+	    + document.getElementById("frag-chunk-main-common-begin").value
+	    + document.getElementById("frag-chunk-main-gauss-curvatures").value
+	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + document.getElementById("frag-chunk-main-common-end").value;
+	break;
     }
     //console.log( fragSrc );
     shader = new THREE.ShaderMaterial( {
@@ -378,7 +397,8 @@ function initGui() {
 		{ 'RGB': 0, 'Phong': 1,
 		  'RGB+Grid': 2, 'Phong+Grid': 3,
 		  'RGB+Spheres': 4, 'Phong+Spheres': 5,
-		  'Phong+2-layers': 6, 'Fast-Phong' : 7
+		  'Phong+2-layers': 6, 'Fast-Phong' : 7,
+		  'Mean-Curvatures' : 8, 'Gauss-Curvatures' : 9
 		} ).listen().onChange(
 		    function ( value ) {
 			shader.uniforms.color_model.value = value;
@@ -400,6 +420,8 @@ function initGui() {
     ( function ( value ) { shader.uniforms.shininess.value = value; } );
     colors.add( settings, 'opacity' ).min( 0.5 ).max( 0.9 ).onChange
     ( function ( value ) { shader.uniforms.opacity.value = value; } );
+    colors.add( settings, 'curv_scale' ).min( 0.01 ).max( 10.0 ).onChange
+    ( function ( value ) { shader.uniforms.curv_scale.value = value; } );
     
     const lights = gui.addFolder( 'Lights' );
     lights.open( false );
@@ -470,6 +492,7 @@ function init() {
 	sing_color      : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },	      
 	shininess       : { value: settings.shininess },
 	opacity         : { value: settings.opacity },
+	curv_scale      : { value: settings.curv_scale },
 	light1_color    : { value : new THREE.Vector3( 0.95, 0.8, 0.0 ) },
 	light1_direction: { value : new THREE.Vector3( 0.0, 1.0, 0.0 ) },
 	light2_color    : { value : new THREE.Vector3( 0.1, 0.1, 1.0 ) },
@@ -589,6 +612,7 @@ uniform vec3 specular_color;
 uniform vec3 sing_color;
 uniform float shininess;
 uniform float opacity;
+uniform float curv_scale;
 uniform vec3 light1_direction;
 uniform vec3 light1_color;
 uniform vec3 light2_direction;
@@ -831,7 +855,7 @@ vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir,
     <textarea spellcheck="false" id="frag-chunk-gradf" style="display: none;">
     // Estimates the gradient of f at position p
 vec3 gradf( vec3 p ) {
-    float eps  = scale * 0.0001;
+    float eps  = 0.01 / scale;
     // numerical centered derivatives
     float gfx = f( p + vec3( eps, 0.0, 0.0 ) ) - f( p - vec3( eps, 0.0, 0.0 ) );
     float gfy = f( p + vec3( 0.0, eps, 0.0 ) ) - f( p - vec3( 0.0, eps, 0.0 ) );
@@ -839,6 +863,61 @@ vec3 gradf( vec3 p ) {
     return vec3( gfx, gfy, gfz ) / ( 2.0 * eps );
 }
 </textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-hessf" style="display: none;">
+    // Estimates the Hessian of f at position p
+mat3 hessf( vec3 p ) {
+    mat3 H;
+    float eps  = 0.1 / scale;
+    float eps2 = eps * eps;
+    // numerical centered derivatives
+    vec3  dx   = vec3( eps, 0.0, 0.0 );
+    vec3  dy   = vec3( 0.0, eps, 0.0 );
+    vec3  dz   = vec3( 0.0, 0.0, eps );
+    float fp   = f( p );
+    float fppdx= f( p+dx );
+    float fpmdx= f( p-dx );        
+    float fppdy= f( p+dy );
+    float fpmdy= f( p-dy );        
+    float fppdz= f( p+dz );
+    float fpmdz= f( p-dz );        
+    H[ 0 ][ 0 ] = ( fppdx - 2.*fp + fpmdx ) / eps2;
+    H[ 1 ][ 1 ] = ( fppdy - 2.*fp + fpmdy ) / eps2;
+    H[ 2 ][ 2 ] = ( fppdz - 2.*fp + fpmdz ) / eps2;
+    H[ 0 ][ 1 ] = ( ( f(p+dx+dy) - f(p-dx+dy) ) - ( f(p+dx-dy) - f(p-dx-dy) ) ) / (4.*eps2);
+    H[ 0 ][ 2 ] = ( ( f(p+dx+dz) - f(p-dx+dz) ) - ( f(p+dx-dz) - f(p-dx-dz) ) ) / (4.*eps2);
+    H[ 1 ][ 2 ] = ( ( f(p+dy+dz) - f(p-dy+dz) ) - ( f(p+dy-dz) - f(p-dy-dz) ) ) / (4.*eps2);
+    H[ 1 ][ 0 ] = H[ 0 ][ 1 ];
+    H[ 2 ][ 0 ] = H[ 0 ][ 2 ];
+    H[ 2 ][ 1 ] = H[ 1 ][ 2 ];        
+    return H;
+}
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-curvatures" style="display: none;">
+    // Estimates the curvatures of f at position p
+vec2 mean_gaussian_curvatures( vec3 p ) {
+    vec3  G = gradf( p );
+    float g = length( G );
+    mat3  H = hessf( p );
+    mat4  C = mat4( H );
+//    for ( int i = 0; i < 3; i ++ )
+//	for ( int j = 0; j < 3; j ++ )
+//	    C[ i ][ j ] = H[ i ][ j ];
+    C[0][3] = G[ 0 ];
+    C[1][3] = G[ 1 ];
+    C[2][3] = G[ 2 ];
+    C[3][0] = G[ 0 ];
+    C[3][1] = G[ 1 ];
+    C[3][2] = G[ 2 ];
+    C[3][3] = 0.0;
+    vec2 curv_hg;
+    curv_hg.y = - determinant( C ) / (g*g*g*g);
+    curv_hg.x = - ( dot( H*G, G ) - g * g * (H[0][0]+H[1][1]+H[2][2]) ) / (g*g*g);
+    return curv_hg;
+}
+</textarea>
+
     <textarea spellcheck="false" id="frag-chunk-raytrace" style="display: none;">
     // Approximates the solution f(x)=0 by bissection around two positions.
 // Invariant: f(p) < lvl <= f(q)
@@ -999,6 +1078,26 @@ vec3 viewDir  = normalize( -vertPos);
 vec3 vn       = normalize( g );
 radiance     += phongModel( pos, viewDir, vn, 
 			    viewp, -viewp, front_light );
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-mean-curvatures" style="display: none;">
+    // Display mean curvatures
+const vec3 white    = vec3( 1.0, 1.0, 1.0 );
+vec2 curv_hg  = mean_gaussian_curvatures( pos );
+float H = min( 1.0, max( curv_hg.x / curv_scale, -1.0 ) );
+vec3 radiance = H >= 0.0
+    ? ( (1.-H)*white + H*ext_diff_color )
+    : ( (1.+H)*white - H*int_diff_color );
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-gauss-curvatures" style="display: none;">
+    // Display mean curvatures
+const vec3 white    = vec3( 1.0, 1.0, 1.0 );
+vec2 curv_hg  = mean_gaussian_curvatures( pos );
+float G = min( 1.0, max( curv_hg.y / curv_scale, -1.0 ) );
+vec3 radiance = G >= 0.0
+    ? ( (1.-G)*white + G*ext_diff_color )
+    : ( (1.+G)*white - G*int_diff_color );
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-crisp" style="display: none;">
