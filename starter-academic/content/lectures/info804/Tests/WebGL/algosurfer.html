@@ -151,7 +151,7 @@ function stringFromShape( shape ) {
 		   "Durchblick", "BarthSextic", "ClebschDCubic",
 		   "BohemianDome", "Gyroid", "Neovius", "KleinBottle",
 		   "PluckerConoid", "Ellipsoid", "InfiniteCubes",
-		   "Kleinian", "Virus" ];
+		   "Kleinian", "Virus", "Whitney's umbrella", "Sierpinski's cube" ];
     return name[ shape ];
 }
 function makeUniformColor( color ) {
@@ -199,7 +199,7 @@ function randomInt(min, max) {
 }
 //
 function randomizeSettings( settings, shape ) {
-    settings.shape       = randomInt(0, 15);
+    settings.shape       = randomInt(0, 17);
     settings.color_model = randomInt(0, 8);
     settings.view_shape  = randomInt(0, 2)*4;
     if ( settings.shape  == 11 ) { // ellipsoid
@@ -484,6 +484,10 @@ function makeFunctionShader( value ) {
 	break;
     case 14: code = document.getElementById("frag-chunk-fct-virus").value;
 	break;
+    case 15: code = document.getElementById("frag-chunk-fct-whitney-umbrella").value;
+	break;
+    case 16: code = document.getElementById("frag-chunk-fct-sierpinski-cube").value;
+	break;
     }
     return code;
 }
@@ -666,6 +670,37 @@ float u  = pow(cos( t * nbu ), 9.0);
 float v  = pow(cos( phi * nbv ), 9.0);
 float d2 = dot(d,d);
 return d2-a*a - 0.2*u*v/(1.+1.*d2);
+    </textarea>
+    <textarea spellcheck="false" id="frag-chunk-fct-sierpinski-cube" style="display: none;">
+    // Sierpinski's cube / fractal
+const int n = 4; // depth of Sierpinski's cube (increase for less volume)
+float l = 3.0 * a;
+float d = max( max( x - l, -l - x ),
+               max( max( y - l, -l - y ), max( z - l, -l - z ) ) );
+vec3  c = vec3( 0., 0., 0. );
+for ( int i = 0; i < n && d < 0.; i++ )
+  {
+    l /= 3.0;
+    float dx = abs(x - c.x);
+    float dy = abs(y - c.y);
+    float dz = abs(z - c.z);
+    float ax = max( dy, dz );
+    float ay = max( dx, dz );
+    float az = max( dx, dy );
+    float dp = min( ax, min( ay, az ) );
+    float nd = l - dp;
+    d = max( d, nd );
+    float ll = 2.0*l;
+    c.x += ll*round( (x - c.x) / ll );
+    c.y += ll*round( (y - c.y) / ll );
+    c.z += ll*round( (z - c.z) / ll );
+  }
+return d;
+    </textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-fct-whitney-umbrella" style="display: none;">
+    // Whitney's umbrella
+return x2 - y2*z;
     </textarea>
     
     

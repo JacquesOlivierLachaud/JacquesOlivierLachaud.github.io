@@ -115,7 +115,7 @@ let settings = {
     }
 };
 
-const nbshapes = 15;
+const nbshapes = 17;
 if ( location.search != "" ) {
     var parameters = location.search.substring(1).split("&");
     if ( parameters.length > 0 ) {
@@ -213,6 +213,12 @@ function updateShape( value ) {
 	break;
     case 14: document.getElementById("editable-code-fct").value =
 	    document.getElementById("frag-chunk-fct-virus").value;
+	break;
+    case 15: document.getElementById("editable-code-fct").value =
+	    document.getElementById("frag-chunk-whitney-umbrella").value;
+	break;
+    case 16: document.getElementById("editable-code-fct").value =
+	    document.getElementById("frag-chunk-sierpinski-cube").value;
 	break;
     }
 	  
@@ -323,7 +329,8 @@ function initGui() {
 				    Neovius : 8, KleinBottle : 9,
 				    PluckerConoid : 10,
 				    Ellipsoid : 11, InfiniteCubes: 12,
-				    Kleinian : 13, Virus : 14 } )
+				    Kleinian : 13, Virus : 14,
+				    WhitneyUmbrella : 15, SierpinskiCube : 16 } )
 	.name( "Predefined shape" ).listen().onChange(
 	    function ( value ) {
 		updateShape( value );
@@ -736,7 +743,38 @@ float v  = pow(cos( phi * nbv ), 9.0);
 float d2 = dot(d,d);
 return d2-a*a - 0.2*u*v/(1.+1.*d2);
     </textarea>
-    
+    <textarea spellcheck="false" id="frag-chunk-fct-sierpinski-cube" style="display: none;">
+    // Sierpinski's cube / fractal
+const int n = 4; // depth of Sierpinski's cube (increase for less volume)
+float l = 3.0 * a;
+float d = max( max( x - l, -l - x ),
+               max( max( y - l, -l - y ), max( z - l, -l - z ) ) );
+vec3  c = vec3( 0., 0., 0. );
+for ( int i = 0; i < n && d < 0.; i++ )
+  {
+    l /= 3.0;
+    float dx = abs(x - c.x);
+    float dy = abs(y - c.y);
+    float dz = abs(z - c.z);
+    float ax = max( dy, dz );
+    float ay = max( dx, dz );
+    float az = max( dx, dy );
+    float dp = min( ax, min( ay, az ) );
+    float nd = l - dp;
+    d = max( d, nd );
+    float ll = 2.0*l;
+    c.x += ll*round( (x - c.x) / ll );
+    c.y += ll*round( (y - c.y) / ll );
+    c.z += ll*round( (z - c.z) / ll );
+  }
+return d;
+    </textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-fct-whitney-umbrella" style="display: none;">
+    // Whitney's umbrella
+return x2 - y2*z;
+    </textarea>
+
     
     <textarea spellcheck="false" id="frag-chunk-phong" style="display: none;">
     // Computes the Phong illumination model
