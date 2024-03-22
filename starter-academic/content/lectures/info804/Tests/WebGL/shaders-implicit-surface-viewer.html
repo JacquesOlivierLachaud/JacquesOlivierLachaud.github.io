@@ -304,6 +304,16 @@ function updateShader() {
 	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
 	    + document.getElementById("frag-chunk-main-common-end").value;
 	break;
+    case 10: // Convex+concave
+	fragSrc += document.getElementById("frag-chunk-phong").value
+	    + document.getElementById("frag-chunk-hessf").value
+	    + document.getElementById("frag-chunk-curvatures").value	
+	    + document.getElementById("frag-chunk-main-common-begin").value
+	    + document.getElementById("frag-chunk-main-convex-concave").value
+	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + document.getElementById("frag-chunk-main-common-end").value;
+	break;
+
     }
     //console.log( fragSrc );
     shader = new THREE.ShaderMaterial( {
@@ -398,7 +408,8 @@ function initGui() {
 		  'RGB+Grid': 2, 'Phong+Grid': 3,
 		  'RGB+Spheres': 4, 'Phong+Spheres': 5,
 		  'Phong+2-layers': 6, 'Fast-Phong' : 7,
-		  'Mean-Curvatures' : 8, 'Gauss-Curvatures' : 9
+		  'Mean-Curvatures' : 8, 'Gauss-Curvatures' : 9,
+		  'Convex+Concave' : 10
 		} ).listen().onChange(
 		    function ( value ) {
 			shader.uniforms.color_model.value = value;
@@ -1098,6 +1109,28 @@ float G = min( 1.0, max( curv_hg.y / curv_scale, -1.0 ) );
 vec3 radiance = G >= 0.0
     ? ( (1.-G)*white + G*ext_diff_color )
     : ( (1.+G)*white - G*int_diff_color );
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-convex-concave" style="display: none;">
+    // Display convex-concave zones
+const vec3 white    = vec3( 1.0, 1.0, 1.0 );
+const vec3 red      = vec3( 1.0, 0.0, 0.0 );
+const vec3 green    = vec3( 0.0, 1.0, 0.0 );
+const vec3 blue     = vec3( 0.0, 0.0, 1.0 );
+vec2 curv_hg  = mean_gaussian_curvatures( pos );
+float dk = sqrt( max( 0.0, curv_hg.x*curv_hg.x - curv_hg.y ) );
+float k1 = curv_hg.x - dk;
+float k2 = curv_hg.x + dk;
+float force = min( max( abs(k1), abs(k2) ) / curv_scale, 1.0 );
+float theta = atan( k2, k1 );
+vec3 radiance = (1.0 - force) * white;
+const float band = 1.57079632679 / 100.0;
+if ( theta <  0.0 ) theta += 4.0*1.57079632679;
+if ( theta <= 1.57079632679 - band )          radiance += force * red;
+else if ( theta <= 1.57079632679 + band )     radiance += force * (red+green);
+else if ( theta <= 2.0*1.57079632679 - band ) radiance += force * green;
+else if ( theta <= 2.0*1.57079632679 + band ) radiance += force * (green+blue);
+else radiance += force * blue;
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-crisp" style="display: none;">
