@@ -472,9 +472,10 @@ function initGui() {
     ( function( value ) { makeViewShape( value, settings.view_radius ) } );
     view.add( settings, 'view_radius' ).min( 50.0 ).max( 200.0 ).onChange
     ( function ( value ) { makeViewShape( settings.view_shape, value ) } );
-    view.add( settings, 'grid_size' ).min( 0.1 ).max( 5.0 ).onChange
-    ( function ( value ) { shader.uniforms.grid_size.value = value; } );
-    view.add( settings, 'grid_thickness' ).min( 0.01 ).max( 1.0 ).onChange
+    view.add( settings, 'grid_size' ).min( 0.1 ).max( 1.0 ).onChange
+    ( function ( value ) {
+	shader.uniforms.grid_size.value = 10.0*Math.pow(2.0, -1./value); } );
+    view.add( settings, 'grid_thickness' ).min( 0.00 ).max( 1.0 ).onChange
     ( function ( value ) { shader.uniforms.grid_thickness.value = value; } );
     view.add( settings, 'grid_attenuation' ).min( 0.0 ).max( 2.0 ).onChange
     ( function ( value ) { shader.uniforms.grid_attenuation.value = value; } );
@@ -924,7 +925,7 @@ vec2 mean_gaussian_curvatures( vec3 p ) {
     C[3][3] = 0.0;
     vec2 curv_hg;
     curv_hg.y = - determinant( C ) / (g*g*g*g);
-    curv_hg.x = - ( dot( H*G, G ) - g * g * (H[0][0]+H[1][1]+H[2][2]) ) / (g*g*g);
+    curv_hg.x = - 0.5*( dot( H*G, G ) - g * g * (H[0][0]+H[1][1]+H[2][2]) ) / (g*g*g);
     return curv_hg;
 }
 </textarea>
@@ -1099,6 +1100,9 @@ float H = min( 1.0, max( curv_hg.x / curv_scale, -1.0 ) );
 vec3 radiance = H >= 0.0
     ? ( (1.-H)*white + H*ext_diff_color )
     : ( (1.+H)*white - H*int_diff_color );
+float  bound  = grid_size * grid_thickness;
+if ( mod( abs(H), grid_size ) < bound )
+    radiance *= grid_attenuation;
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-main-gauss-curvatures" style="display: none;">
@@ -1109,6 +1113,9 @@ float G = min( 1.0, max( curv_hg.y / curv_scale, -1.0 ) );
 vec3 radiance = G >= 0.0
     ? ( (1.-G)*white + G*ext_diff_color )
     : ( (1.+G)*white - G*int_diff_color );
+float  bound  = grid_size * grid_thickness * grid_thickness;
+if ( mod( abs(G), grid_size ) < bound )
+    radiance *= grid_attenuation;
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-main-convex-concave" style="display: none;">
@@ -1124,13 +1131,34 @@ float k2 = curv_hg.x + dk;
 float force = min( max( abs(k1), abs(k2) ) / curv_scale, 1.0 );
 float theta = atan( k2, k1 );
 vec3 radiance = (1.0 - force) * white;
-const float band = 1.57079632679 / 100.0;
-if ( theta <  0.0 ) theta += 4.0*1.57079632679;
-if ( theta <= 1.57079632679 - band )          radiance += force * red;
-else if ( theta <= 1.57079632679 + band )     radiance += force * (red+green);
-else if ( theta <= 2.0*1.57079632679 - band ) radiance += force * green;
-else if ( theta <= 2.0*1.57079632679 + band ) radiance += force * (green+blue);
-else radiance += force * blue;
+const float pi_2  = 1.57079632679;
+const float pi    = 2.0*pi_2;
+const float pi_4  = 0.5*pi_2;
+const float pi3_4 = 3.0*pi_4;
+//const float band = 1.57079632679 / 100.0;
+if ( theta <  0.0 ) theta += 4.0*pi_2;
+if ( theta <= pi_2 ) {
+    float l   = (theta - pi_4) / pi_4;
+    radiance += force * vec3( 1.0, l, 0.0 );
+} else if ( theta <= pi3_4 ) {
+    float l   = (theta - pi_2) / pi_4;
+    radiance += force * vec3( 1.0-l, 1.0, 0.0 );
+} else if ( theta <= pi ) {
+    float l   = (theta - pi3_4) / pi_4;
+    radiance += force * vec3( 0.0, 1.0, l );
+} else {
+    float l   = (theta - pi) / pi_4;
+    radiance += force * vec3( 0.0, 1.0 - l, 1.0 );
+}
+// if ( theta <= 1.57079632679 - band )          radiance += force * red;
+// else if ( theta <= 1.57079632679 + band )     radiance += force * (red+green);
+// else if ( theta <= 2.0*1.57079632679 - band ) radiance += force * green;
+// else if ( theta <= 2.0*1.57079632679 + band ) radiance += force * (green+blue);
+// else radiance += force * blue;
+float  bound  = grid_size * grid_thickness;
+if ( mod( abs(force), grid_size ) < bound )
+    radiance *= grid_attenuation;
+
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-crisp" style="display: none;">
