@@ -62,6 +62,8 @@ button {
 	</tr>
       </table>
     </div>
+    <div><canvas id="webglcanvas" style="border: none; background-color:#000000" width="800" height="500"></canvas></div>
+    
     <script type="importmap">
       {
 	  "imports": {
@@ -71,9 +73,24 @@ button {
 	  }
       }
     </script>
+    <!--
+Contains the glsl code for functions used in the fragment shader,
+as well as their properties.
+    -->
+    <object type="text/html" id="functions" data="functions.html"></object>
+
+    <!--
+Contains the glsl code for the vertex and fragment shaders.
+    -->
+    <object type="text/html" id="shaders"   data="shaders.html"></object>
+
+    <!--
+Contains the help text.
+    -->
+    <object type="text/html" id="helper"   data="info.html"></object>
+
 
     <script type="module">
-
 ///////////////////////////////////////////////////////////////////////////////
 // Main script
 ///////////////////////////////////////////////////////////////////////////////
@@ -85,11 +102,18 @@ import { OrbitControls} from 'three/addons/controls/OrbitControls.js';
 // Build predefined shapes
 var shapeRE      = /^shape/;
 var shape_models = [];
-var els          = document.getElementsByTagName('*');
-let idx          = 0;
+var functions     = document.querySelector("#functions"); // in <object> tag
+var doc_functions = functions.contentDocument;
+var shaders       = document.querySelector("#shaders"); // in <object> tag
+var doc_shaders   = shaders.contentDocument;
+var helper        = document.querySelector("#helper"); // in <object> tag
+var doc_helper    = helper.contentDocument;
+var els           = doc_functions.getElementsByTagName('*');
+//var els          = document.getElementsByTagName('*');
+let idx           = 0;
 for (var e in els) {
     if ( shapeRE.test( els[ e ].id ) ) {
-	let shape = JSON.parse( document.getElementById( els[ e ].id ).value );
+	let shape = JSON.parse( doc_functions.getElementById( els[ e ].id ).value );
 	shape.id  = idx;
 	idx      += 1;
 	shape_models.push( shape );
@@ -209,6 +233,7 @@ if ( location.search != "" ) {
 
 ///////////////////////////////////////////////////////////////////////////////
 // Init main loop
+let   canvas;
 let   controls;
 var   uniforms;
 let   then     = 0;
@@ -254,7 +279,7 @@ function makeFunctionShader( value ) {
     var code = "";
     if ( "frag" in shape_models[ value ] ) {
 	var str = "frag-chunk-fct-"+shape_models[ value ].frag;
-	code    = document.getElementById( str ).value;
+	code    = doc_functions.getElementById( str ).value;
     } else {
 	console.log( "No frag in "+shape_models[ value ] );
     }
@@ -271,107 +296,107 @@ function updateShape( value ) {
 
 // Update the fragment shader from the different chunks.
 function updateShader() {
-    // var vertSrc = document.getElementById("#post-vert").value;
     // Build fragment shader from chunks
-    var fragSrc = document.getElementById("frag-chunk-begin").value
-	+ document.getElementById("frag-chunk-fct-begin").value
+    var doc     = doc_shaders;
+    var fragSrc = doc.getElementById("frag-chunk-begin").value
+	+ doc.getElementById("frag-chunk-fct-begin").value
 	+ document.getElementById("editable-code-fct").value
-	+ document.getElementById("frag-chunk-fct-end").value
-	+ document.getElementById("frag-chunk-gradf").value
-	+ document.getElementById("frag-chunk-raytrace").value;	  	  
+	+ doc.getElementById("frag-chunk-fct-end").value
+	+ doc.getElementById("frag-chunk-gradf").value
+	+ doc.getElementById("frag-chunk-raytrace").value;	  	  
     switch (settings.color_model) {
     case 0: // RGB
-	fragSrc += document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-rgb").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-rgb").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     case 1: // Phong
-	fragSrc += document.getElementById("frag-chunk-phong").value
-	    + document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-phong").value
-	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-phong").value
+	    + doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-phong").value
+	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     case 2: // RGB+Grid
-	fragSrc += document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-rgb-grid").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-rgb-grid").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     case 3: // Phong+Grid
-	fragSrc += document.getElementById("frag-chunk-phong-grid").value
-	    + document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-phong").value
-	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-phong-grid").value
+	    + doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-phong").value
+	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     case 4: // RGB+Spheres
-	fragSrc += document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-rgb-spheres").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-rgb-spheres").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     case 5: // Phong+Spheres
-	fragSrc += document.getElementById("frag-chunk-phong-spheres").value
-	    + document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-phong").value
-	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-phong-spheres").value
+	    + doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-phong").value
+	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     case 6: // Phong2Layers
-	fragSrc += document.getElementById("frag-chunk-phong").value
-	    + document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-phong-two-layers").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-phong").value
+	    + doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-phong-two-layers").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     case 7: // SimplePhong
-	fragSrc += document.getElementById("frag-chunk-phong").value
-	    + document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-simple-phong").value
-	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-phong").value
+	    + doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-simple-phong").value
+	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     case 8: // Mean Curvatures
-	fragSrc += document.getElementById("frag-chunk-phong").value
-	    + document.getElementById("frag-chunk-hessf").value
-	    + document.getElementById("frag-chunk-curvatures").value	
-	    + document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-mean-curvatures").value
-	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-phong").value
+	    + doc.getElementById("frag-chunk-hessf").value
+	    + doc.getElementById("frag-chunk-curvatures").value	
+	    + doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-mean-curvatures").value
+	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     case 9: // Gauss Curvatures
-	fragSrc += document.getElementById("frag-chunk-phong").value
-	    + document.getElementById("frag-chunk-hessf").value
-	    + document.getElementById("frag-chunk-curvatures").value	
-	    + document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-gauss-curvatures").value
-	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-phong").value
+	    + doc.getElementById("frag-chunk-hessf").value
+	    + doc.getElementById("frag-chunk-curvatures").value	
+	    + doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-gauss-curvatures").value
+	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     case 10: // Convex+concave
-	fragSrc += document.getElementById("frag-chunk-phong").value
-	    + document.getElementById("frag-chunk-hessf").value
-	    + document.getElementById("frag-chunk-curvatures").value	
-	    + document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-convex-concave").value
-	    + document.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-phong").value
+	    + doc.getElementById("frag-chunk-hessf").value
+	    + doc.getElementById("frag-chunk-curvatures").value	
+	    + doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-convex-concave").value
+	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     case 11: // Directions
-	fragSrc += document.getElementById("frag-chunk-phong").value
-	    + document.getElementById("frag-chunk-hessf").value
-	    + document.getElementById("frag-chunk-curvatures").value	
-	    + document.getElementById("frag-chunk-eigendecomposition").value	
-	    + document.getElementById("frag-chunk-principal-dirs").value	
-	    + document.getElementById("frag-chunk-main-common-begin").value
-	    + document.getElementById("frag-chunk-main-directions").value
-            + document.getElementById("frag-chunk-main-bg").value
-	    + document.getElementById("frag-chunk-main-common-end").value;
+	fragSrc += doc.getElementById("frag-chunk-phong").value
+	    + doc.getElementById("frag-chunk-hessf").value
+	    + doc.getElementById("frag-chunk-curvatures").value	
+	    + doc.getElementById("frag-chunk-eigendecomposition").value	
+	    + doc.getElementById("frag-chunk-principal-dirs").value	
+	    + doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-directions").value
+            + doc.getElementById("frag-chunk-main-bg").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
 
     }
     //console.log( fragSrc );
     shader = new THREE.ShaderMaterial( {
-	vertexShader: document.querySelector( '#post-vert' ).textContent.trim(),
+	vertexShader: doc.querySelector( '#post-vert' ).textContent.trim(),
 	fragmentShader: fragSrc, // document.querySelector( '#post-frag' ).textContent.trim(),
 	uniforms: uniforms
     } );
@@ -398,7 +423,7 @@ export function clearFunction() {
 }
 export function displayInfo() {
     document.getElementById("editable-code-fct_error").value
-	= document.getElementById("display-info").value;
+	= doc_helper.getElementById("display-info").value;
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -538,7 +563,24 @@ function initGui() {
 }
 
 function init() {
-    camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+    let canvas_name = "webglcanvas";
+    canvas = document.getElementById( canvas_name );
+    canvas.width  = window.innerWidth;
+    canvas.height = canvas.width * 9 / 16;
+    // camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+    renderer = new THREE.WebGLRenderer( { canvas : canvas, antialias: true } );
+    renderer.setSize( canvas.width, canvas.height ); // Set viewport size
+    //renderer.setPixelRatio( window.devicePixelRatio );
+    //renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.debug.onShaderError =
+	( gl, program, vertexShader, fragmentShader ) => {
+    	    const vertexShaderSource = gl.getShaderSource( vertexShader );
+  	    const fragmentShaderSource = gl.getShaderSource( fragmentShader );
+	    const error = gl.getShaderInfoLog( fragmentShader );
+	    document.getElementById("editable-code-fct_error").value =
+		error;
+	};
+    camera = new THREE.PerspectiveCamera( 45, canvas.width/canvas.height, 1, 2000 );
     camera.position.x = distance; // Math.cos( timer ) * distance;
     camera.position.z = 0.0; // Math.sin( timer ) * distance;
     camera.position.y = 0;
@@ -555,18 +597,7 @@ function init() {
     updateShape( settings.shape );
     
     //
-    renderer = new THREE.WebGLRenderer( { antialias: true } );
-    renderer.setPixelRatio( window.devicePixelRatio );
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    renderer.debug.onShaderError =
-	( gl, program, vertexShader, fragmentShader ) => {
-    	    const vertexShaderSource = gl.getShaderSource( vertexShader );
-  	    const fragmentShaderSource = gl.getShaderSource( fragmentShader );
-	    const error = gl.getShaderInfoLog( fragmentShader );
-	    document.getElementById("editable-code-fct_error").value =
-		error;
-	};
-    document.body.appendChild( renderer.domElement );
+    //document.body.appendChild( renderer.domElement );
 
     //
     window.addEventListener( 'resize', onWindowResize );
@@ -584,9 +615,13 @@ function init() {
 }
 
 function onWindowResize() {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    //camera.aspect = window.innerWidth / window.innerHeight;
+    canvas.width  = window.innerWidth;
+    canvas.height = canvas.width * 9 / 16;
+    camera.aspect = canvas.width / canvas.height;
     camera.updateProjectionMatrix();
-    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.setSize( canvas.width, canvas.height );
+    //renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
 //
@@ -656,1255 +691,6 @@ function makeUniforms( settings ) {
 
 </script>
 
-
-    <!--
-//////////////////////////////////////////////////////////////////////////////
-// VERTEX SHADERS BEGIN
-//////////////////////////////////////////////////////////////////////////////
--->
-    <script id="post-vert" type="x-shader/x-vertex">
-    // Vertex shader
-out vec3 vertPos;
-out vec3 projPos;
-out mat4 projView;
-out mat4 projViewInv;
-void main(){
-    vec4 vertPos4 = modelViewMatrix * vec4( position, 1.0);
-    vertPos       = position; 
-    gl_Position   = projectionMatrix * vertPos4;
-    projPos       = gl_Position.xyz / gl_Position.w;
-    projView      = /*projectionMatrix * */ modelViewMatrix;
-    projViewInv   = inverse( projectionMatrix *projView );
-}
-</script>
-    <!--
-//////////////////////////////////////////////////////////////////////////////
-// VERTEX SHADERS END
-//////////////////////////////////////////////////////////////////////////////
--->
-
-
-
-    <!--
-///////////////////////////////////////////////////////////////////////////////
-// PREDEFINED SHAPES FRAGMENT SHADERS BEGIN
-///////////////////////////////////////////////////////////////////////////////
--->
-    
-    <textarea spellcheck="false" id="frag-chunk-fct-durchball" style="display: none;">
-    // Computes f(x,y,z). You may use x2 for x*x, x3 for x*x*x,
-// same holds for y and z. Constant must be floating numbers.
-// Durckblick + ball
-return ( x2 + y2 + z2 - a*a ) * ( x3 * y + x * z3 + y3 * z + 5. * z );
-</textarea>
-    <textarea spellcheck="false" id="shape-durchball" style="display: none;">
-    { "name"           : "Durchball",
-      "frag"           : "durchball",
-      "color_model"    : [ 0, 1, 2, 3, 6, 8, 9, 10, 11 ],
-      "a"              : [1.0, 1.5],
-      "scale"          : [10.0, 20.0],
-      "iso"            : [-0.8, 0.8],
-      "grid_size"      : [0.1, 0.3 ],
-      "grid_thickness" : [0.0, 0.1 ],
-      "curv_scale"     : [1.0, 2.0 ],
-      "princ_curv"     : [0,2]
-    }
-</textarea>
-    
-    <textarea spellcheck="false" id="frag-chunk-fct-crixxi" style="display: none;">
-    // Crixxi
-float d = y2 + z2 - a*a;
-float e = x2 + y2 - a*a;
-return 0.9*d*d + e*e*e;
-</textarea>
-    <textarea spellcheck="false" id="shape-crixxi" style="display: none;">
-    { "name"           : "Crixxi",
-      "frag"           : "crixxi",
-      "color_model"    : [ 1, 6, 7, 8, 9, 10 ],
-      "a"              : [ 1.0, 1.0],
-      "scale"          : [30.0,30.0],
-      "iso"            : [-0.005, 0.005],
-      "curv_scale"     : [2.5, 2.5],
-      "grid_size"      : [0.1, 1.0],
-      "grid_thickness" : [0.0, 0.2]
-    }
-</textarea>
-    
-    <textarea spellcheck="false" id="frag-chunk-fct-cayleycubic" style="display: none;">
-    // CayleyCubic
-return x2 + y2 + z2 + x2*z - y2*z - 1.;
-</textarea>
-    <textarea spellcheck="false" id="shape-cayleycubic" style="display: none;">
-    { "name"           : "Cayley cubic",
-      "frag"           : "cayleycubic",
-      "color_model"    : [ 1, 2, 3, 4, 5, 6 ],
-      "scale"          : [10.0, 20.0],
-      "iso"            : [-0.1, 0.1],
-      "grid_size"      : [0.1, 1.0 ],
-      "grid_thickness" : [0.0, 0.1 ]
-    }
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-fct-durchblick" style="display: none;">	  
-    // Durchblick
-return x3 * y + x * z3 + y3 * z + a*z3 + 5. * z;
-</textarea>
-    <textarea spellcheck="false" id="shape-durchblick" style="display: none;">
-    { "name"           : "Durchblick",
-      "frag"           : "durchblick",
-      "color_model"    : [ 1, 6, 8, 9, 10 ],
-      "a"              : [1.0, 1.5],
-      "scale"          : [10.0, 20.0],
-      "iso"            : [-0.1, 0.1],
-      "grid_size"      : [0.1, 1.0 ],
-      "grid_thickness" : [0.0, 0.0 ]
-    }
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-fct-barthsextic" style="display: none;">
-    // BarthSextic
-float x4 = x2*x2; float y4 = y2*y2; float z4 = z2*z2;
-return z4*z2 + 5.*(x2+y2)*(-z4 + (x2+y2)*z2) - 2.*(x4 - 10.*x2*y2+5.*y4)*x*z
-    + 1.25*pow(a*(x2+y2+z2-a*a),2.0);
-</textarea>
-    <textarea spellcheck="false" id="shape-barthsextic" style="display: none;">
-    { "name"           : "Barth sextic",
-      "frag"           : "barthsextic",
-      "color_model"    : [ 0, 1, 6, 7, 10 ],
-      "a"              : [1.0, 1.0],
-      "scale"          : [10.0, 20.0],
-      "iso"            : [-0.2, 0.2],
-      "grid_size"      : [0.0, 0.0 ],
-      "grid_thickness" : [0.0, 0.0 ]
-    }
-</textarea>
-    
-    <textarea spellcheck="false" id="frag-chunk-fct-clebschdcubic" style="display: none;">
-    // ClebschDCubic
-float d = x + y + z + a;
-return x3 + y3 + z3 + a*a*a - d*d*d;
-</textarea>
-    <textarea spellcheck="false" id="shape-clebschdcubic" style="display: none;">
-    { "name"           : "Clebsch diag. cubic",
-      "frag"           : "clebschdcubic",
-      "color_model"    : [ 0, 1, 6, 7, 8, 10 ],
-      "a"              : [1.0, 1.0],
-      "scale"          : [20.0, 30.0],
-      "iso"            : [-0.2, 0.2],
-      "grid_size"      : [0.0, 0.0 ],
-      "grid_thickness" : [0.0, 0.0 ]
-    }
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-fct-bohemiandome" style="display: none;">
-    // BohemianDome
-float d = x2 + y2 + z2 - a*a - b*b;
-return d*d - 4.*(a*a - x2)*(b*b - y2);
-</textarea>
-    <textarea spellcheck="false" id="shape-bohemiandome" style="display: none;">
-    { "name"           : "Bohemian dome",
-      "frag"           : "bohemiandome",
-      "color_model"    : [ 1, 6, 7, 8, 9, 10 ],
-      "a"              : [0.8, 1.2],
-      "b"              : [0.8, 1.2],
-      "scale"          : [20.0, 25.0],
-      "iso"            : [-0.1, 0.1],
-      "curv_scale"     : [3.0, 3.0],
-      "grid_size"      : [0.0, 0.0 ],
-      "grid_thickness" : [0.0, 0.0 ]
-    }
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-fct-gyroid" style="display: none;">
-    // Gyroid
-return a*cos(x)*sin(y)+b*cos(y)*sin(z)+c*cos(z)*sin(x);
-</textarea>
-    <textarea spellcheck="false" id="shape-gyroid" style="display: none;">
-    { "name"           : "Gyroid",
-      "frag"           : "gyroid",
-      "color_model"    : [ 1, 2, 3, 6, 7, 8, 9 ],
-      "a"              : [0.5, 1.5],
-      "b"              : [0.5, 1.5],
-      "c"              : [0.5, 1.5],
-      "scale"          : [2.0, 20.0],
-      "iso"            : [0.0, 0.0],
-      "curv_scale"     : [0.15, 0.15],
-      "grid_size"      : [0.1, 1.0 ],
-      "grid_thickness" : [0.0, 0.1 ]
-    }
-</textarea>
-
-
-    <textarea spellcheck="false" id="frag-chunk-fct-neovius" style="display: none;">
-    // Neovius
-return 3.*a*(cos(x) + cos(y) + cos(z)) + 4.*b*cos(x)*cos(y)*cos(z);
-</textarea>
-    <textarea spellcheck="false" id="shape-neovius" style="display: none;">
-    { "name"           : "Neovius",
-      "frag"           : "neovius",
-      "color_model"    : [ 1, 2, 3, 6, 7, 8, 9 ],
-      "a"              : [0.5, 1.5],
-      "b"              : [0.5, 1.5],
-      "scale"          : [6.0, 15.0],
-      "iso"            : [-1.0, 1.0],
-      "curv_scale"     : [1.0, 1.0],
-      "grid_size"      : [0.1, 1.0 ],
-      "grid_thickness" : [0.0, 0.1 ]
-    }
-</textarea>
-    
-    <textarea spellcheck="false" id="frag-chunk-fct-kleinbottle" style="display: none;">
-    // KleinBottle (Ian Stewart)
-float l2 = a*(x2+y2+z2);
-float w  = l2 - 2.0*y - b;
-return (l2 + 2.0*y - b)*(w*w - 8.0*z2) + 16.0*x*z*w;
-</textarea>
-    <textarea spellcheck="false" id="shape-kleinbottle" style="display: none;">
-    { "name"           : "Klein bottle",
-      "frag"           : "kleinbottle",
-      "color_model"    : [ 6 ],
-      "a"              : [1.0, 1.0],
-      "scale"          : [10.0, 15.0],
-      "iso"            : [-0.1, 0.1],
-      "grid_size"      : [0.1, 1.0 ],
-      "grid_thickness" : [0.0, 0.1 ]
-    }
-</textarea>
-
-
-    <textarea spellcheck="false" id="frag-chunk-fct-pluckerconoid" style="display: none;">
-    // PluckerConoid
-return z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*x*y2*y2);
-</textarea>
-    <textarea spellcheck="false" id="shape-pluckerconoid" style="display: none;">
-    { "name"           : "Plucker conoid",
-      "frag"           : "pluckerconoid",
-      "color_model"    : [ 1, 6, 7, 8, 9, 10 ],
-      "a"              : [1.0, 1.0],
-      "scale"          : [10.0, 20.0],
-      "iso"            : [-0.01, 0.01],
-      "grid_size"      : [1.0, 1.0 ],
-      "grid_thickness" : [0.0, 0.0 ]
-    }
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-fct-ellipsoid" style="display: none;">
-    // Ellipsoid
-return (x2/(a*a)+y2/(b*b)+z2/(c*c)-1.);
-</textarea>
-    <textarea spellcheck="false" id="shape-ellipsoid" style="display: none;">
-    { "name" : "Ellipsoid",
-      "frag" : "ellipsoid",
-      "color_model" : [ 11 ],
-      "scale" : [10.0, 15.0],
-      "iso"   : [0.0, 0.0],
-      "a"     : [1.5, 4.0],
-      "b"     : [1.0, 2.0],
-      "c"     : [0.5, 1.5],
-      "grid_size" : [0.2,0.3],
-      "princ_curv": [0,1,2],
-      "curv_scale": [1.0],
-      "bg_color"  : [1.0,1.0,1.0]
-    }
-</textarea>
-    
-    <textarea spellcheck="false" id="frag-chunk-fct-torus" style="display: none;">
-    // Torus
-return (x2+y2+z2+a*a-b*b)*(x2+y2+z2+a*a-b*b)-4.*a*a*(x2+y2);
-</textarea>
-    <textarea spellcheck="false" id="shape-torus" style="display: none;">
-    { "name" : "Torus",
-      "frag" : "torus",
-      "color_model" : [ 11 ],
-      "scale" : [10.0, 15.0],
-      "iso"   : [0.0, 0.0],
-      "a"     : [2.2, 4.0],
-      "b"     : [1.0, 2.0],
-      "curv_scale" : [0.25,0.25]
-    }
-</textarea>
-
-
-    <textarea spellcheck="false" id="frag-chunk-fct-infinite-cubes" style="display: none;">
-    // Cubes in infinite directions
-float     d   = 0.5*a*b;
-return -0.25 + max( abs( mod( p.x, a ) - d ),
-		    max( abs( mod( p.y, a ) - d  ),
-	  		 abs( mod( p.z, a ) - d ) ) );
-</textarea>
-    <textarea spellcheck="false" id="shape-infinite-cubes" style="display: none;">
-    { "name" : "Infinite cubes",
-      "frag" : "infinite-cubes",
-      "color_model" : [ 1, 7 ],
-      "scale" : [5.0, 15.0],
-      "iso"   : [0.0, 0.0],
-      "a"     : [1.0, 1.0],
-      "b"     : [0.2, 1.8],
-      "view_shape" : [0]
-    }
-</textarea>
-
-
-    <textarea spellcheck="false" id="frag-chunk-fct-kleinian" style="display: none;">
-    // Kleinian variation (taken from shadertoy (Spudsville2018, by EvilRyu)
-const int depth = 8; //< depth of the fractal ! Increase at your own risk...
-vec3 d = vec3( a, b, c ); //< Try (1,0.225,1.15) 
-float scale = 1.0;
-for( int i = 0; i < depth; i++)
-{
-    p        = 2.0*clamp(p, -d, d) - p;
-    float r2 = dot(p,p);
-    float k  = max((1.)/(r2), 0.03);
-    p       *= k;
-    scale   *= k;
-}
-float l   = length(p.xy);
-float rxy = l - 3.;
-float n   = l * p.z;
-rxy = max(rxy, -(n) / (length(p))-0.02);
-return (rxy) / abs(scale) + 0.0001; //thicken a little bit
-</textarea>
-    <textarea spellcheck="false" id="shape-kleinian" style="display: none;">
-    { "name"        : "Kleinian variation",
-      "frag"        : "kleinian",
-      "color_model" : [ 1, 7, 8, 10 ],
-      "scale"       : [10.0, 35.0],
-      "iso"         : [0.0, 0.0],
-      "abc"         : [ [0.475, 0.425, 1.15], [1.0, 0.2, 1.25] ],
-      "curv_scale"  : [50.0, 50.0],
-      "grid_thickness" : [0.0, 0.0 ]
-    }
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-fct-virus" style="display: none;">
-      // Kind of virus
-const vec3 xc = vec3(0.,0.,0.);
-vec3 d  = vec3(x,y,z) - xc;
-vec3 n  = normalize( d );
-vec2 theta = normalize (d.xy);
-float dd = length( n.xy );
-float t   = atan( theta.y, theta.x );
-float phi = atan( n.z, dd );
-const float nbu = 22.;
-const float nbv = 26.;
-float u  = pow(cos( t * nbu ), 9.0);
-float v  = pow(cos( phi * nbv ), 9.0);
-float d2 = dot(d,d);
-return d2-a*a - 0.2*u*v/(1.+1.*d2);
-    </textarea>
-    <textarea spellcheck="false" id="shape-virus" style="display: none;">
-    { "name"  : "Virus",
-      "frag"  : "virus",
-      "color_model" : [ 1, 7 ],
-      "a"     : [1.0,1.0],
-      "b"     : [1.0,1.0],
-      "c"     : [1.0,1.0],
-      "scale" : [30.0,35.0],
-      "iso"   : [-1.0, 1.0]
-    }
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-fct-whitney-umbrella" style="display: none;">
-    // Whitney's umbrella
-return x2 - y2*z;
-</textarea>
-    <textarea spellcheck="false" id="shape-whitney-umbrella" style="display: none;">
-    { "name"  : "Whitney umbrella",
-      "frag"  : "whitney-umbrella",
-      "color_model" : [ 1,3,5,6,7 ],
-      "scale" : [10.0,20.0],
-      "iso"   : [0.0, 0.01]
-    }
-</textarea>
-    
-    <textarea spellcheck="false" id="frag-chunk-fct-sierpinski-cube" style="display: none;">
-    // Sierpinski's cube / fractal
-const int n = 4; // depth of Sierpinski's cube (increase for less volume)
-float l = 3.0 * a;
-float d = max( max( x - l, -l - x ),
-               max( max( y - l, -l - y ), max( z - l, -l - z ) ) );
-vec3  c = vec3( 0., 0., 0. );
-for ( int i = 0; i < n && d < 0.; i++ )
-  {
-    l /= 3.0;
-    float dx = abs(x - c.x);
-    float dy = abs(y - c.y);
-    float dz = abs(z - c.z);
-    float ax = max( dy, dz );
-    float ay = max( dx, dz );
-    float az = max( dx, dy );
-    float dp = min( ax, min( ay, az ) );
-    float nd = l - dp;
-    d = max( d, nd );
-    float ll = 2.0*l;
-    c.x += ll*round( (x - c.x) / ll );
-    c.y += ll*round( (y - c.y) / ll );
-    c.z += ll*round( (z - c.z) / ll );
-  }
-return d;
-</textarea>
-    <textarea spellcheck="false" id="shape-sierpinski-cube" style="display: none;">
-    { "name" : "Sierpinski's cube",
-      "frag" : "sierpinski-cube",
-      "color_model" : [ 1, 7 ],
-      "scale" : [10.0, 10.0],
-      "accuracy" : 2.0,
-      "iso"   : [0.0, 0.0]
-    }
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-fct-goursat-tetra" style="display: none;">
-    // Goursat'surface (quartic) with tetrahedral symmetry.
-return (x+y+z-a)*(-x-y+z-a)*(x-y-z-a)*(-x+y-z-a)+b*(x2+y2+z2-3.*a)*(x2+y2+z2-3.*a);
-</textarea>
-    <textarea spellcheck="false" id="shape-goursat-tetra" style="display: none;">
-    { "name"  : "Goursat tetra",
-      "frag"  : "goursat-tetra",
-      "color_model" : [ 1,2,3,6,7,8,10 ],
-      "scale" : [10.0,14.0],
-      "a"     : [0.5,1.0],
-      "b"     : [0.5,1.0],
-      "iso"   : [-0.1, 0.1],
-      "curv_scale"  : [1.0, 1.0],
-      "grid_size" : [0.05, 0.5 ],
-      "grid_thickness" : [0.1, 0.1 ]
-    }
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-fct-goursat-octa" style="display: none;">
-    // Goursat'surface (quartic) with octahedral/cube symmetry.
-return x2*x2+y2*y2+z2*z2+a*(x2+y2+z2)*(x2+y2+z2)+b*(x2+y2+z2)+c;
-</textarea>
-    <textarea spellcheck="false" id="shape-goursat-octa" style="display: none;">
-    { "name"  : "Goursat octa",
-      "frag"  : "goursat-octa",
-      "color_model" : [ 1,6,8,9,10 ],
-      "scale" : [15.0,20.0],
-      "abc"   : [ [0.0,-1.0,0.0], [-1.0,-0.25,0.25], [-1.0,1.0,1.0], [0.0,-2.0,2.0],
-		  [-1.0,4.0,6.0], [-0.5,-1.0,0.5] ],
-      "iso"   : [-0.01, 0.01],
-      "curv_scale"  : [3.0, 3.0],
-      "grid_size" : [0.0, 0.0 ],
-      "grid_thickness" : [0.0, 0.0 ]
-    }
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-fct-julia" style="display: none;">
-    // Julia set
-const int n = 30; //< max iterations
-float cx = a;
-float cy = b;
-float zx = y;
-float zy = z;
-int i = 0;
-for ( i = 0; i < n; i++ ){
-    vec2 nz = vec2( zx*zx - zy*zy + cx, 2.0*zx*zy + cy );
-    zx = nz.x; zy = nz.y;
-    // we know that the series is divergent when |z| > 2.0
-   if ( dot(nz,nz) > 4.0 ) break; 
-}
-return(2.0/(zx*zx+zy*zy)*float(i)/29.0) - 1.*(1.0-10.1*abs(x));
-</textarea>
-    <textarea spellcheck="false" id="shape-julia" style="display: none;">
-    { "name"           : "Julia set",
-      "frag"           : "julia",
-      "color_model"    : [ 1, 7 ],
-      "a"              : [-0.5, 0.5],
-      "b"              : [-0.5, 0.5],
-      "scale"          : [33.0, 40.0],
-      "iso"            : [0.0, 0.0],
-      "view_shape"     : [ 4,7 ],
-      "animate_a"      : [ 4.0, 0.3 ],
-      "animate_b"      : [ 2.0, 0.2 ]
-    }
-</textarea>
-
-    <!--
-///////////////////////////////////////////////////////////////////////////////
-// PREDEFINED SHAPES FRAGMENT SHADERS END
-///////////////////////////////////////////////////////////////////////////////
--->
-
-    <!--
-//////////////////////////////////////////////////////////////////////////////
-// FRAGMENT SHADERS BEGIN
-//////////////////////////////////////////////////////////////////////////////
--->
-
-    <textarea spellcheck="false" id="frag-chunk-begin" style="display: none;">
-    // Fragment shader: initial chunk 
-uniform vec3 ambient_color;
-uniform vec3 int_diff_color;
-uniform vec3 ext_diff_color;
-uniform vec3 specular_color;
-uniform vec3 sing_color;
-uniform float shininess;
-uniform float opacity;
-uniform float curv_scale;
-uniform int   princ_curv;
-uniform vec3 light1_direction;
-uniform vec3 light1_color;
-uniform vec3 light2_direction;
-uniform vec3 light2_color;
-uniform vec3  bg_color;
-uniform float singularity;
-uniform float accuracy;
-uniform float iso;
-uniform float a;
-uniform float b;
-uniform float c;      
-uniform float scale;
-uniform float center_x;
-uniform float center_y;
-uniform float center_z;
-uniform float grid_size;
-uniform float grid_thickness;
-uniform float grid_attenuation;
-uniform int   shape;
-uniform int   color_model;
-    in vec3 vertPos;
-    in vec3 projPos;
-    in mat4 projView;
-    in mat4 projViewInv;
-out vec4 outColor;
-
-// 3D function in cube
-const float width  = 100.0; // cube width  
-const float width2 = width*width; // cube width
-</textarea>
-    
-    <textarea spellcheck="false" id="frag-chunk-fct-begin" style="display: none;">
-    // chunk for opening function definition.
-// As a user, do not use `p`, but use `x`, `y`, `z` instead, which have been translated.
-float f( vec3 p ) {
-    p.x     += center_x;
-    p.y     += center_y;
-    p.z     += center_z;
-    float x  = p.x; 
-    float y  = p.y;
-    float z  = p.z;
-    float x2 = x*x;
-    float y2 = y*y;
-    float z2 = z*z;
-    float x3 = x2*x;
-    float y3 = y2*y;
-    float z3 = z2*z;
-    </textarea>
-	
-	<textarea spellcheck="false" id="frag-chunk-fct-end" style="display: none;">
-	// chunk for closing function definition.
-}
-</textarea>
-    
-    
-    <textarea spellcheck="false" id="frag-chunk-phong" style="display: none;">
-    // Computes the Phong illumination model
-vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
-{
-    float sirradiance = dot(lightDir, normal);
-    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
-    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
-    float  bound      = grid_size * grid_thickness;
-    vec3  reflectDir  = reflect(-lightDir, normal);
-    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
-    color            += pow(specDot, shininess) * specular_color;
-    color            *= lightCol * irradiance;
-    return color;
-}
-</textarea>
-    <textarea spellcheck="false" id="frag-chunk-phong-grid" style="display: none;">
-    // Computes the Phong+Grid illumination model
-vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
-{
-    float sirradiance = dot(lightDir, normal);
-    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
-    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
-    float  bound      = grid_size * grid_thickness;
-    if (( mod( pos.x, grid_size ) < bound
-	  || mod( pos.y, grid_size ) < bound
-	  || mod( pos.z, grid_size ) < bound ) )
-	color *= grid_attenuation;
-    vec3  reflectDir  = reflect(-lightDir, normal);
-    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
-    color            += pow(specDot, shininess) * specular_color;
-    color            *= lightCol * irradiance;
-    return color;
-}
-</textarea>
-    <textarea spellcheck="false" id="frag-chunk-phong-spheres" style="display: none;">
-    // Computes the Phong+Spheres illumination model
-vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
-{
-    float sirradiance = dot(lightDir, normal);
-    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
-    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
-    float  bound      = grid_size * grid_thickness;
-    if ( mod( length( pos ), grid_size ) < bound )
-	color *= grid_attenuation;
-    vec3  reflectDir  = reflect(-lightDir, normal);
-    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
-    color            += pow(specDot, shininess) * specular_color;
-    color            *= lightCol * irradiance;
-    return color;
-}
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-gradf" style="display: none;">
-    // Estimates the gradient of f at position p
-vec3 gradf( vec3 p ) {
-    float eps  = 0.01 / scale;
-    // numerical centered derivatives
-    float gfx = f( p + vec3( eps, 0.0, 0.0 ) ) - f( p - vec3( eps, 0.0, 0.0 ) );
-    float gfy = f( p + vec3( 0.0, eps, 0.0 ) ) - f( p - vec3( 0.0, eps, 0.0 ) );
-    float gfz = f( p + vec3( 0.0, 0.0, eps ) ) - f( p - vec3( 0.0, 0.0, eps ) );
-    return vec3( gfx, gfy, gfz ) / ( 2.0 * eps );
-}
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-hessf" style="display: none;">
-    // Estimates the Hessian of f at position p
-mat3 hessf( vec3 p ) {
-    mat3 H;
-    float eps  = 0.1 / scale;
-    float eps2 = eps * eps;
-    // numerical centered derivatives
-    vec3  dx   = vec3( eps, 0.0, 0.0 );
-    vec3  dy   = vec3( 0.0, eps, 0.0 );
-    vec3  dz   = vec3( 0.0, 0.0, eps );
-    float fp   = f( p );
-    float fppdx= f( p+dx );
-    float fpmdx= f( p-dx );        
-    float fppdy= f( p+dy );
-    float fpmdy= f( p-dy );        
-    float fppdz= f( p+dz );
-    float fpmdz= f( p-dz );        
-    H[ 0 ][ 0 ] = ( fppdx - 2.*fp + fpmdx ) / eps2;
-    H[ 1 ][ 1 ] = ( fppdy - 2.*fp + fpmdy ) / eps2;
-    H[ 2 ][ 2 ] = ( fppdz - 2.*fp + fpmdz ) / eps2;
-    H[ 0 ][ 1 ] = ( ( f(p+dx+dy) - f(p-dx+dy) ) - ( f(p+dx-dy) - f(p-dx-dy) ) ) / (4.*eps2);
-    H[ 0 ][ 2 ] = ( ( f(p+dx+dz) - f(p-dx+dz) ) - ( f(p+dx-dz) - f(p-dx-dz) ) ) / (4.*eps2);
-    H[ 1 ][ 2 ] = ( ( f(p+dy+dz) - f(p-dy+dz) ) - ( f(p+dy-dz) - f(p-dy-dz) ) ) / (4.*eps2);
-    H[ 1 ][ 0 ] = H[ 0 ][ 1 ];
-    H[ 2 ][ 0 ] = H[ 0 ][ 2 ];
-    H[ 2 ][ 1 ] = H[ 1 ][ 2 ];        
-    return H;
-}
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-curvatures" style="display: none;">
-    // Estimates the curvatures of f at position p
-// return a pair H,K, where H is the mean curvature and K is the Gauss curvature.
-vec2 mean_gaussian_curvatures( vec3 p ) {
-    vec3  G = gradf( p );
-    float g = length( G );
-    mat3  H = hessf( p );
-    mat4  C = mat4( H );
-    C[0][3] = G[ 0 ];
-    C[1][3] = G[ 1 ];
-    C[2][3] = G[ 2 ];
-    C[3][0] = G[ 0 ];
-    C[3][1] = G[ 1 ];
-    C[3][2] = G[ 2 ];
-    C[3][3] = 0.0;
-    vec2 curv_hg;
-    curv_hg.y = - determinant( C ) / (g*g*g*g);
-    curv_hg.x = - 0.5*( dot( H*G, G ) - g * g * (H[0][0]+H[1][1]+H[2][2]) ) / (g*g*g);
-    return curv_hg;
-}
-// Estimates the principal curvatures of f at position p
-// k1 : first principal curvature (highest value k1 >= k2)
-// k2 : second principal curvature (lowest value k2 <= k1)
-void principal_curvatures( in vec3 p, out float k1, out float k2 ) {
-    vec2 curv_hg  = mean_gaussian_curvatures( p );
-    float dk = sqrt( max( 0.0, curv_hg.x*curv_hg.x - curv_hg.y ) );
-    k2       = curv_hg.x - dk;
-    k1       = curv_hg.x + dk;
-}
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-eigendecomposition" style="display: none;">
-    // Estimates the principal directions of curvatures of f at position p
-/*
- * Copyright 2015 
- * Hélène Perrier <helene.perrier@liris.cnrs.fr>
- * Jérémy Levallois <jeremy.levallois@liris.cnrs.fr>
- * David Coeurjolly <david.coeurjolly@liris.cnrs.fr>
- * Jacques-Olivier Lachaud <jacques-olivier.lachaud@univ-savoie.fr>
- * Jean-Philippe Farrugia <jean-philippe.farrugia@liris.cnrs.fr>
- * Jean-Claude Iehl <jean-claude.iehl@liris.cnrs.fr>
- * 
- * This file is part of ICTV.
- * 
- * ICTV is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * ICTV is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with ICTV.  If not, see <http://www.gnu.org/licenses/>
- */
-void getEigenValuesVectors( in mat3 mat_data,
-			    out mat3 vectors,
-			    out vec3 values )
-{ 
-    vec3 e = vec3(0);
-    int dimension = 3;
-    int dimensionMinusOne = 2;
-    for( int j = 0; j < dimension; ++j )
-	values[ j ] =  mat_data[dimensionMinusOne][ j ];
-    // Householder reduction to tridiagonal form.
-    for( int i = dimensionMinusOne; i > 0 && i <= dimensionMinusOne; --i ) {
-	// Scale to avoid under/overflow.
-	float scale = 0.0;
-	float h =  0.0;
-	for( int k = 0; k < i; ++k )
-            scale += abs( values[ k ] );
-	if ( scale ==  0.0 ) {
-            e[ i ] = values[ i - 1 ];
-            for( int j = 0; j < i; ++j ) {
-		values[ j ] = mat_data[ ( i - 1 ) ] [  j  ];
-		mat_data[ i ][ j ] = 0.0;
-		mat_data[ j ][ i ] = 0.0;
-            }
-	} else {
-            // Generate Householder vector.
-            for ( int k = 0; k < i; ++k ) {
-		values[ k ] /= scale;
-		h += values[ k ] * values[ k ];
-            }
-            float f = values[ i - 1 ];
-            float g = sqrt( h );
-            if ( f >  0.0 ) g = -g;
-            e[ i ] = scale * g;
-            h -= f * g;
-            values[ i - 1 ] = f - g;
-            for ( int j = 0; j < i; ++j) e[ j ] =  0.0;
-            // Apply similarity transformation to remaining columns.
-            for ( int j = 0; j < i; ++j ) {
-		f = values[ j ];
-		mat_data[ j ][ i ] = f;
-		g = e[ j ] +  mat_data[ j ][ j ] * f;
-		for ( int k = j + 1; k <= i - 1; ++k ) {
-		    g +=  mat_data[ k ][ j ] * values[ k ];
-		    e[ k ] +=  mat_data[ k ][ j ] * f;
-		}
-		e[ j ] = g;
-            }
-            f = 0.0;
-            for ( int j = 0; j < i; ++j ) {
-		e[ j ] /= h;
-		f += e[ j ] * values[ j ];
-            }
-            float hh = f / ( h + h );
-            for ( int j = 0; j < i; ++j )
-		e[ j ] -= hh * values[ j ];
-            for ( int j = 0; j < i; ++j ) {
-		f = values[ j ];
-		g = e[ j ];
-		for ( int k = j; k <= i - 1; ++k )
-                    mat_data[ k ][ j ] = mat_data[ k ][ j ] - (f * e[ k ] + g * values[ k ]);
-		values[ j ] =  mat_data[ i - 1][ j ];
-		mat_data[ i ][ j ] = 0.0;
-            }
-	}
-	values[ i ] = h;
-    }
-    // Accumulate transformations.
-    for ( int i = 0; i < dimensionMinusOne; ++i ) {
-	mat_data[dimensionMinusOne][ i ] =  mat_data[ i ][ i ];
-	mat_data[ i ][ i ] = 1.0;
-	float h = values[ i + 1 ];
-	if ( h != 0.0 ) {
-            for ( int k = 0; k <= i; ++k )
-		values[ k ] =  mat_data[ k ][ i + 1 ] / h;
-            for ( int j = 0; j <= i; ++j ) {
-		float g = 0.0;
-		for ( int k = 0; k <= i; ++k )
-		    g +=  mat_data[ k ][ i + 1 ] *  mat_data[ k ][ j ];
-		for ( int k = 0; k <= i; ++k )
-                    mat_data[ k ][ j ] =   mat_data[k][ j ] - ( g * values[ k ] );
-            }
-	}
-	for ( int k = 0; k <= i; ++k )
-            mat_data[ k ][ i + 1 ] =  0.0;
-    }
-    for ( int j = 0; j < dimension; ++j ) {
-        values[ j ] =  mat_data[ dimensionMinusOne ][ j ];
-	mat_data[ dimensionMinusOne ][ j ] = 0.0;
-    }
-    mat_data[ dimensionMinusOne ][ dimensionMinusOne ] =  1.0;
-    e[ 0 ] =  0.0;
-    for ( int i = 1; i < dimension; ++i )
-	e[ i - 1 ] = e[ i ];
-    e[ dimensionMinusOne ] = 0.0;
-    float f = float( 0.0 );
-    float tst1 = float( 0.0 );
-    float eps = float( pow( 2.0, -52.0 ));
-    //float eps = float( pow( 2.0, -52.0 ));
-    for( int l = 0; l < dimension; ++l ) {
-	// Find small subdiagonal element
-	tst1 = float( max( tst1, abs ( values[ l ] ) + abs( e[ l ] )));
-	int m = l;
-	while ( m < dimension ) {
-          if ( abs ( e[ m ] ) <= eps * tst1 ) break;
-            ++m;
-        }
-	// If m == l, d[l] is an eigenvalue,
-	// otherwise, iterate.
-	if( m > l && l<2 ) {
-            int iter = 0;
-            do {
-		++iter;  // (Could check iteration count here.)
-		// Compute implicit shift
-		float g = values[ l ];
-		float p = ( values[ l + 1 ] - g ) / ( float( 2.0 ) * e[ l ] );
-		float r = float( sqrt ( p * p + float( 1.0 ) * float( 1.0 )));
-		if ( p < 0.0 ) r = -r;
-		values[ l ] = e[ l ] / ( p + r );
-		values[ l + 1 ] = e[ l ] * ( p + r );
-		float dl1 = values[ l + 1 ];
-		float h = g - values[ l ];
-		for( int i = l + 2; i < dimension; ++i )
-                    values[ i ] -= h;
-		f = f + h;
-		// Implicit QL transformation.
-		p = values[ m ];
-		float c = float( 1.0 );
-		float c2 = c;
-		float c3 = c;
-		float el1 = e[ l + 1 ];
-		float s = float( 0.0 );
-		float s2 = float( 0.0 );
-		for ( int i = m - 1; i >= l && i <= m - 1; --i ) {
-                    c3 = c2;
-                    c2 = c;
-                    s2 = s;
-                    g = c * e[ i ];
-                    h = c * p;
-                    r = float( sqrt ( p * p + e[ i ] * e[ i ] ));
-                    e[ i + 1 ] = s * r;
-                    s = e[ i ] / r;
-                    c = p / r;
-                    p = c * values[ i ] - s * g;
-                    values[ i + 1 ] = h + s * ( c * g + s * values[ i ] );
-                    // Accumulate transformation.
-                    for( int k = 0; k < dimension; ++k ) {
-			h =  mat_data[ k ][ i + 1 ];
-			mat_data[ k ][ i + 1 ] =  ( s *  mat_data[ k ][ i ] + c * h );
-			mat_data[ k ][ i ] = ( c *  mat_data[ k ][ i ] - s * h );
-                    }
-                }
-		p = - s * s2 * c3 * el1 * e[ l ] / dl1;
-		e[ l ] = s * p;
-		values[ l ] = c * p;
-		// Check for convergence.
-            } while ( abs ( e[ l ] ) > eps * tst1 && iter < 30);
-        }
-	values[ l ] = values[ l ] + f;
-	e[ l ] = float( 0.0 );
-    }
-    // Sort eigenvalues and corresponding vectors.
-    for ( int i = 0; i < dimensionMinusOne; ++i ) {
-	int k = i;
-	float p = values[ i ];
-	for ( int j = i + 1; j < dimension; ++j ) {
-            if ( values[ j ] < p ) {
-		k = j;
-		p = values[ j ];
-            }
-        }
-	if ( k != i ) {
-            values[ k ] = values[ i ];
-            values[ i ] = p;
-            for ( int j = 0; j < dimension; ++j ) {
-		p =  mat_data[ j ][ i ];
-		mat_data[ j ][ i ] =  mat_data[ j ][ k ];
-		mat_data[ j ][ k ] = p;
-            }
-        }
-    }
-    for(int i=0; i<3; i++)
-	for(int j=0; j<3; j++)
-	    vectors[i][j] = mat_data[i][j];
-}
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-principal-dirs" style="display: none;">
-    // Estimates the principal directions of curvatures of f at position p
-// @param[in]   pos a point on the surface
-// @param[out]  d1 the unit first principal direction (lowest curvature)
-// @param[out]  d2 the unit second principal direction (highest curvature)
-// @param[out]  d3 the unit normal direction
-void principal_directions( in vec3 p, out vec3 d1, out vec3 d2, out vec3 d3 )
-{
-    vec3  G = gradf( p );
-    float g = length( G );
-    mat3  H = hessf( p );
-    for ( int i = 0; i < 3; i++ )
-	for ( int j = 0; j < 3; j++ )
-	    H[ i ][ j ] += 100.0*G[i]*G[j]/ (g*g);
-    mat3  V;
-    vec3  K;
-    getEigenValuesVectors( H, V, K );
-    const int i1 = 0;
-    const int i2 = 1;
-    //int i1 = abs( K[ 0 ] ) > abs( K[ 1 ] ) ? 0 : 1;
-    //int i2 = 1 - i1;
-    d1 = normalize( vec3( V[ 0 ][ i1 ], V[ 1 ][ i1 ], V[ 2 ][ i1 ] ) );
-    d2 = normalize( vec3( V[ 0 ][ i2 ], V[ 1 ][ i2 ], V[ 2 ][ i2 ] ) );
-    d3 = normalize( vec3( V[ 0 ][ 2 ],  V[ 1 ][ 2 ],  V[ 2 ][ 2 ] )  );
-}
-</textarea>
-
-
-    <textarea spellcheck="false" id="frag-chunk-raytrace" style="display: none;">
-    // Approximates the solution f(x)=0 by bissection around two positions.
-// Invariant: f(p) < lvl <= f(q)
-vec3 bissection( vec3 p, vec3 q, float lvl )
-{   // 10: precision is 0.001
-    // 8: precision is 0.004
-    for ( int i = 0; i < 8; i++ )
-    {
-	vec3 m = 0.5*(p + q);
-	float fm = f( m );
-	if ( fm < lvl ) p = m;
-	else            q = m;
-    }
-    return 0.5*(p + q);
-}
-
-// Roughly approximates a position p, such that f(p)=0.
-// In practice, finds the first change of sign.
-vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
-{
-    d     *= step;
-    vec3 q = p;
-    if ( f( p ) < lvl ) {
-	for ( int i = 0; i < n; i++ ) {
-	    q  += d;
-	    if ( f( q ) >= lvl ) return bissection( q - d, q, lvl );
-	}
-    } else {
-	for ( int i = 0; i < n; i++ ) {
-	    q  += d;
-	    if ( f( q ) <  lvl ) return bissection( q, q - d, lvl );
-	}
-    }
-    return q + normalize( d ) * 2. * width;
-}
-</textarea>
-    <textarea spellcheck="false" id="frag-chunk-main-common-begin" style="display: none;">
-    // main common to all color models
-void main() {
-    // we must compute the direction of the tracing ray within the cube
-    vec3 focal = vec3( 0.0, 0.0, -200.0 );
-    vec4 viewp4= projViewInv * vec4( focal, 1.0 );
-    vec3 viewp = normalize( viewp4.xyz / viewp4.w - vertPos );
-    float step = 0.1 * accuracy / scale;
-    int   n    = int( ceil( sqrt(3.0) * width / (scale*step) ) );
-    vec3 pos   = ray_trace( vertPos / scale , -viewp, iso, n, step );
-    vec3  g    = gradf( pos );
-    outColor.a = 1.0;
-    </textarea>
-	<textarea spellcheck="false" id="frag-chunk-main-common-end" style="display: none;">
-}
-</textarea>
-    <textarea spellcheck="false" id="frag-chunk-main-rgb" style="display: none;">
-    // RGB model
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
-    outColor.rgb = bg_color; // ray did not find a surface
-else if ( dot( g, g ) < singularity )
-    outColor.rgb = sing_color; // singularity
-else 
-{
-    vec3 vn      = normalize( g );
-    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
-}
-</textarea>
-    <textarea spellcheck="false" id="frag-chunk-main-rgb-grid" style="display: none;">
-    // RGB+Grid model
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
-    outColor.rgb = bg_color; // ray did not find a surface
-else if ( dot( g, g ) < singularity )
-    outColor.rgb = sing_color; // singularity
-else 
-{
-    vec3 vn      = normalize( g );
-    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
-    float  bound = grid_size * grid_thickness;
-    if ( ( mod( pos.x, grid_size ) < bound
-	   || mod( pos.y, grid_size ) < bound
-	   || mod( pos.z, grid_size ) < bound ) )
-	outColor.rgb *= grid_attenuation;
-}
-</textarea>
-    <textarea spellcheck="false" id="frag-chunk-main-rgb-spheres" style="display: none;">
-    // RGB+Spheres model
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
-    outColor.rgb = bg_color; // ray did not find a surface
-else if ( dot( g, g ) < singularity )
-    outColor.rgb = sing_color; // singularity
-else 
-{
-    vec3 vn      = normalize( g );
-    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
-    float  bound = grid_size * grid_thickness;
-    if ( mod( length( pos ), grid_size ) < bound )
-	outColor.rgb *= grid_attenuation;
-}
-</textarea>
-    <textarea spellcheck="false" id="frag-chunk-main-phong" style="display: none;">    
-    vec3 radiance;
-    vec3 viewDir = normalize( -vertPos);
-    vec3 ld1  = normalize( light1_direction );
-    vec3 ld2  = normalize( light2_direction );
-    vec3 vn   = normalize( g );
-    radiance  = phongModel( pos, viewDir, vn, 
-			    viewp, ld1, light1_color );
-    radiance += phongModel( pos, viewDir, vn, 
-			    viewp, ld2, light2_color );
-    const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
-    radiance += phongModel( pos, viewDir, vn, 
-			    viewp, viewp, front_light );
-    radiance += ambient_color;
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-main-phong-two-layers" style="display: none;">
-    // Two layers (with transparency) Phong model.
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
-    outColor.rgb = bg_color; // ray did not find a surface
-else if ( dot( g, g ) < singularity )
-    outColor.rgb = sing_color; // singularity
-else
-{
-    const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
-    vec3 radiance;
-    vec3 viewDir = normalize( -vertPos);
-    vec3 ld1  = normalize( light1_direction );
-    vec3 ld2  = normalize( light2_direction );
-    vec3 vn   = normalize( g );
-    radiance  = phongModel( pos, viewDir, vn, 
-			    viewp, ld1, light1_color );
-    radiance += phongModel( pos, viewDir, vn, 
-			    viewp, ld2, light2_color );
-    radiance += phongModel( pos, viewDir, vn, 
-			    viewp, viewp, front_light );
-    vec3 radiance2;
-    vec3 spos  = pos - viewp * step;
-    vec3 pos2  = ray_trace( spos, -viewp, iso, n, step );
-    vec3  g2   = gradf( pos2 );
-    if ( dot( pos2, pos2 ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
-	radiance2 = bg_color; // ray did not find a surface
-    else if ( dot( g2, g2 ) < singularity )
-	radiance2 = sing_color; // singularity
-    else
-    {
-	vec3 vn2  = normalize( g2 );
-	radiance2 = phongModel( pos2, viewDir, vn2, 
-				viewp, ld1, light1_color );
-	radiance2+= phongModel( pos2, viewDir, vn2, 
-				viewp, ld2, light2_color );
-    }
-    outColor.rgb = ambient_color + opacity*radiance + (1.0-opacity)*radiance2;
-}
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-main-simple-phong" style="display: none;">
-    // Simpler Phong model for faster display
-const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
-vec3 radiance = ambient_color;
-vec3 viewDir  = normalize( -vertPos);
-vec3 vn       = normalize( g );
-radiance     += phongModel( pos, viewDir, vn, 
-			    viewp, -viewp, front_light );
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-main-mean-curvatures" style="display: none;">
-    // Display mean curvatures
-const vec3 white    = vec3( 1.0, 1.0, 1.0 );
-vec2 curv_hg  = mean_gaussian_curvatures( pos );
-float H = min( 1.0, max( curv_hg.x / curv_scale, -1.0 ) );
-vec3 radiance = H >= 0.0
-    ? ( (1.-H)*white + H*ext_diff_color )
-    : ( (1.+H)*white - H*int_diff_color );
-float  bound  = grid_size * grid_thickness;
-if ( mod( abs(H), grid_size ) < bound )
-    radiance *= grid_attenuation;
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-main-gauss-curvatures" style="display: none;">
-    // Display mean curvatures
-const vec3 white    = vec3( 1.0, 1.0, 1.0 );
-vec2 curv_hg  = mean_gaussian_curvatures( pos );
-float G = min( 1.0, max( curv_hg.y / curv_scale, -1.0 ) );
-vec3 radiance = G >= 0.0
-    ? ( (1.-G)*white + G*ext_diff_color )
-    : ( (1.+G)*white - G*int_diff_color );
-float  bound  = grid_size * grid_thickness * grid_thickness;
-if ( mod( abs(G), grid_size ) < bound )
-    radiance *= grid_attenuation;
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-main-convex-concave" style="display: none;">
-    // Display convex-concave zones
-const vec3 white    = vec3( 1.0, 1.0, 1.0 );
-const vec3 red      = vec3( 1.0, 0.0, 0.0 );
-const vec3 green    = vec3( 0.0, 1.0, 0.0 );
-const vec3 blue     = vec3( 0.0, 0.0, 1.0 );
-vec2 curv_hg  = mean_gaussian_curvatures( pos );
-float dk = sqrt( max( 0.0, curv_hg.x*curv_hg.x - curv_hg.y ) );
-float k1 = curv_hg.x - dk;
-float k2 = curv_hg.x + dk;
-float force = min( max( abs(k1), abs(k2) ) / curv_scale, 1.0 );
-float theta = atan( k2, k1 );
-vec3 radiance = (1.0 - force) * white;
-const float pi_2  = 1.57079632679;
-const float pi    = 2.0*pi_2;
-const float pi_4  = 0.5*pi_2;
-const float pi3_4 = 3.0*pi_4;
-//const float band = 1.57079632679 / 100.0;
-if ( theta <  0.0 ) theta += 4.0*pi_2;
-if ( theta <= pi_2 ) {
-    float l   = (theta - pi_4) / pi_4;
-    radiance += force * vec3( 1.0, l, 0.0 );
-} else if ( theta <= pi3_4 ) {
-    float l   = (theta - pi_2) / pi_4;
-    radiance += force * vec3( 1.0-l, 1.0, 0.0 );
-} else if ( theta <= pi ) {
-    float l   = (theta - pi3_4) / pi_4;
-    radiance += force * vec3( 0.0, 1.0, l );
-} else {
-    float l   = (theta - pi) / pi_4;
-    radiance += force * vec3( 0.0, 1.0 - l, 1.0 );
-}
-float  bound  = grid_size * grid_thickness;
-// if ( mod( abs(force), grid_size ) < bound )
-//     radiance *= grid_attenuation;
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-main-directions" style="display: none;">
-    // Display directions
-const float pi_2  = 1.57079632679;
-const float pi    = 2.0*pi_2;
-vec3  vn   = normalize( g );
-vec3  d1; // first principal direction (highest curvature)
-float k1; // highest curvature
-vec3  d2; // second principal direction (lowest curvature)
-float k2; // lowest curvature
-vec3  d3;
-principal_directions( pos, d1, d2, d3 );
-principal_curvatures( pos, k1, k2 );
-// we wish the direction orthogonal to first principal direction, hence d2 !
-// vec4  pd1_4 = projView * vec4( normalize( d2 ), 1.0 );
-// vec2  pd1   = normalize( pd1_4.xy / pd1_4.w ); // unit d1^perp as seen on the screen
-// vec4  pd2_4 = projView * vec4( normalize( d1 ), 1.0 );
-// vec2  pd2   = normalize( pd2_4.xy / pd2_4.w ); // unit d2^perp as seen on the screen
-
-float curv1 = min( abs( k1 / curv_scale ), 1.0 );
-float curv2 = min( abs( k2 / curv_scale ), 1.0 );
-float freq  = 10.0 / grid_size;
-// vec2  ppos  = gl_FragCoord.xy / 20.0;
-// float print1= 0.9 - abs(sin( freq * dot( pd1, ppos ) ));
-// float print2= 0.9 - abs(sin( freq * dot( pd2, ppos ) ));
-
-// float print1= 1.05 - 1.1 * abs(sin( freq * dot( d1, pos ) ) );
-// float print2= 1.05 - 1.1 * abs(sin( freq * dot( d2, pos ) ) );
-float print1= 0.1+1.2*abs(sin( freq * dot( d1, pos ) ) );
-float print2= 0.1+1.2*abs(sin( freq * dot( d2, pos ) ) );
-float lc    = max( curv1,curv2);
-vec3 radiance;
-if ( princ_curv == 0 )
-    radiance = (curv1 >= print1)
-    ? curv1 * (vec3(1.0,1.0,1.0) - bg_color) + (1.-curv1) * bg_color
-    : bg_color;
-else if ( princ_curv == 1 )
-    radiance = (curv2 >= print2)
-    ? curv2 * (vec3(1.0,1.0,1.0) - bg_color) + (1.-curv2) * bg_color
-    : bg_color;
-else // both direction
-    radiance = ( (curv1 >= print1) || (curv2 >= print2) )
-    ? lc * (vec3(1.0,1.0,1.0) - bg_color) + (1.-lc) * bg_color
-    : bg_color;
-    </textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-crisp" style="display: none;">
-    // Crisp singularity + background
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
-    outColor.rgb = bg_color; // ray did not find a surface
-else if ( dot( g2, g2 ) < singularity )
-    outColor.rgb = sing_color; // singularity
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-smooth" style="display: none;">
-    // Smooth fog background and progressive singularities.
-float delta   = max( dot( (- scale * pos), viewp ), 0.0);
-float ls      = exp( - dot( g, g ) / singularity ); //
-radiance      = (1.-ls)*radiance + ls * sing_color;
-float l       = clamp( delta / width, 0.0, 1.0 ); // compute fog
-outColor.rgb  = (1.-l)*radiance + l * bg_color;
-</textarea>
-
-    <textarea spellcheck="false" id="frag-chunk-main-bg" style="display: none;">
-    // Smooth fog background and progressive singularities.
-float delta   = max( dot( (- scale * pos), viewp ), 0.0);
-float l       = clamp( delta / width, 0.0, 1.0 ); // compute fog
-outColor.rgb  = (1.-l)*radiance + l * bg_color;
-</textarea>
-
-    <!--
-//////////////////////////////////////////////////////////////////////////////
-// FRAGMENT SHADERS END
-//////////////////////////////////////////////////////////////////////////////
--->
-
-    <textarea spellcheck="false" id="display-info" style="display: none;">
-    A real-time visualisation tool for implicit surfaces, i.e. isolevels
-    of real-value functions f(x,y,z). It casts rays through each
-    pixel and computes intersections with the surface.
-      - left-clicking on the shape with the mouse change the camera position.
-      - you can use `predefined shape` or write your custom
-        function (glsl, C-like) and press `View Surface`.
-      - you can change shape parameters (`a`,`b`,`c`) and use them in your
-        functions.
-      - you can change the viewed `isolevel` (default is 0).
-      - `scale` allows you to zoom in/out of the surface.
-      - `center_x`, `center_y`, `center_z` changes the center of view
-      - you may decrease `accuracy` to get better details, at the price
-        of increased computational burden (check fps above)
-      - `singularity` controls how singularity are detected, 1.0: large band
-        0.0: invisible.
-      - you may change the `color_model` to change the color display of
-        surfaces:
-        + `RGB`: color is the absolute value of the surface normal vector.
-        + `RGB+Grid`: same as above but add shaded lines depending on
-          the position (grid).
-        + `RGB+Spheres`: same as above but add shaded lines depending on
-          the position (spheres).
-        + `Phong`: color is an illmuniation model taking into account
-          colors and lights.
-        + `Phong+Grid`: same as above but add shaded lines depending on
-          the position (grid).
-        + `Phong+Spheres`: same as above but add shaded lines depending
-          on the position (spheres).
-        + `Phong+2-layers`: Phong illimunation but the first surface has
-          some transparency (see `opacity`), two surface sheets are displayed
-          at most.
-      - you may change the colors of the surface (diffuse inside/outside),
-        specular, singularities.
-      - you may change `lights` colors and directions.
-      - `view_shape` changes the volume that encloses the isosurface.
-      - `view_radius` changes the sizes of the previous volume.
-      - `grid_size`, `grid_thickness` and `grid_attenuation` changes the
-        display of overlayed grids/spheres.
-      - `rotation_x`, `rotation_y`, `rotation_z` changes the current object
-        rotation speed.
-      - `stop` stops the rotations.
-    </textarea>
     
   </body>
 </html>
