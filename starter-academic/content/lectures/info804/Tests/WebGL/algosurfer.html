@@ -259,7 +259,9 @@ function randomizeSettings( settings, shape_id, shape_models ) {
     if ( "color_model" in model )
 	settings.color_model = model.color_model[ randomInt( 0, model.color_model.length ) ];
     else
-	settings.color_model = randomInt(0, 11);
+	settings.color_model = randomInt(0, 12);
+    if ( settings.color_model == 11 )
+	settings.bg_color = [1.0,1.0,1.0];
     if ( "scale" in model )
 	settings.scale = randomFloat( model.scale[ 0 ], model.scale[ 1 ] );
     else
@@ -282,8 +284,6 @@ function randomizeSettings( settings, shape_id, shape_models ) {
 	settings.curv_scale = randomFloat( model.curv_scale[ 0 ], model.curv_scale[ 1 ] );
     if ( "princ_curv" in model )
 	settings.princ_curv = model.princ_curv[ randomInt( 0, model.princ_curv.length ) ];
-    if ( "bg_color" in model )
-	settings.bg_color = model.bg_color;
     if ( "center_x" in model )
 	settings.center_x = randomFloat( model.center_x[ 0 ], model.center_x[ 1 ] );
     if ( "center_y" in model )
@@ -788,14 +788,15 @@ return a*cos(x)*sin(y)+b*cos(y)*sin(z)+c*cos(z)*sin(x);
     <textarea spellcheck="false" id="shape-gyroid" style="display: none;">
     { "name"           : "Gyroid",
       "frag"           : "gyroid",
-      "color_model"    : [ 1, 2, 3, 6, 7, 8, 9 ],
+      "color_model"    : [ 1, 2, 3, 6, 7, 8, 9, 11 ],
       "a"              : [0.5, 1.5],
       "b"              : [0.5, 1.5],
       "c"              : [0.5, 1.5],
-      "scale"          : [2.0, 20.0],
+      "scale"          : [14.0, 18.0],
       "iso"            : [0.0, 0.0],
       "curv_scale"     : [0.15, 0.15],
-      "grid_size"      : [0.1, 1.0 ],
+      "princ_curv"     : [0,1,2],
+      "grid_size"      : [0.35, 0.4 ],
       "grid_thickness" : [0.0, 0.1 ]
     }
 </textarea>
@@ -845,12 +846,14 @@ return z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*x*y2*y2);
     <textarea spellcheck="false" id="shape-pluckerconoid" style="display: none;">
     { "name"           : "Plucker conoid",
       "frag"           : "pluckerconoid",
-      "color_model"    : [ 1, 6, 7, 8, 9, 10 ],
+      "color_model"    : [ 1, 6, 7, 8, 9, 10, 11 ],
       "a"              : [1.0, 1.0],
-      "scale"          : [10.0, 20.0],
+      "scale"          : [15.0, 15.0],
       "iso"            : [-0.01, 0.01],
-      "grid_size"      : [1.0, 1.0 ],
-      "grid_thickness" : [0.0, 0.0 ]
+      "grid_size"      : [0.5, 0.5 ],
+      "grid_thickness" : [0.0, 0.0 ],
+      "princ_curv"     : [0,1,2],
+      "curv_scale"     : [0.25,0.25]
     }
 </textarea>
 
@@ -869,8 +872,7 @@ return (x2/(a*a)+y2/(b*b)+z2/(c*c)-1.);
       "c"     : [1.0, 1.0],
       "grid_size" : [0.2,0.3],
       "princ_curv": [0,1,2],
-      "curv_scale": [1.0,1.0],
-      "bg_color"  : [1.0,1.0,1.0]
+      "curv_scale": [1.0,1.0]
     }
 </textarea>
 
@@ -881,17 +883,16 @@ return (x2+y2+z2+a*a-b*b)*(x2+y2+z2+a*a-b*b)-4.*a*a*(x2+y2);
     <textarea spellcheck="false" id="shape-torus" style="display: none;">
     { "name" : "Torus",
       "frag" : "torus",
-      "color_model" : [ 11 ],
+      "color_model" : [ 8,9,10,11 ],
       "scale" : [10.0, 12.5],
       "iso"   : [0.0, 0.0],
       "a"     : [1.75, 2.0],
       "b"     : [1.0, 1.5],
-      "princ_curv" : [0,1,2],
+      "princ_curv" : [0],
       "grid_size" : [0.2,0.3],
       "center_x" : [0.3,0.3],
       "center_y" : [0.1,0.2],      
       "center_z" : [-0.1,0.1],
-      "bg_color"  : [1.0,1.0,1.0],
       "curv_scale" : [0.25,0.25]
     }
 </textarea>
