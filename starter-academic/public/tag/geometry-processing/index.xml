@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>geometry processing | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometry-processing/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometry-processing/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/geometry-processing/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/geometry-processing/index.xml" rel="self" type="application/rss+xml" />
     <description>geometry processing</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>geometry processing</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometry-processing/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/geometry-processing/</link>
     </image>
     
     <item>
       <title>StableProxies</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/stable-proxies/</link>
       <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/stable-proxies/</guid>
       <description>&lt;p&gt;Start date: Feb. 2023&lt;/p&gt;
 &lt;p&gt;The objective of the project is to propose new calculus models for the
 geometry processing of large, heterogeneous and complex geometrical
@@ -48,17 +48,17 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>Mumford-Shah Mesh Processing using the Ambrosio-Tortorelli Functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bonneel-2018-cgf/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/bonneel-2018-cgf/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bonneel-2018-cgf/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/bonneel-2018-cgf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cross Border Meeting on Discrete and Computational Geometry and Applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
       <pubDate>Mon, 09 Nov 2015 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
       <description>&lt;h2 id=&#34;invited-speakers&#34;&gt;Invited speakers&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Silvia Biasotti (CNR IMATI, Genova)&lt;/li&gt;
@@ -71,9 +71,9 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>CoMeDiC</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/comedic/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/comedic/</guid>
       <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
 and standard calculus in the case of the digital space Zn. The global
 idea is to reliably estimate a metric on digital curves and surfaces
@@ -106,17 +106,17 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>DGtal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/dgtal/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/dgtal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Constructing Iso-Surfaces Satisfying the Delaunay Constraint; Application to the Skeleton Computation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/attali-99-b/</link>
       <pubDate>Fri, 01 Jan 1999 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/attali-99-b/</guid>
       <description></description>
     </item>
     

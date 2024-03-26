@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mesh parameterization | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/mesh-parameterization/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/mesh-parameterization/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/mesh-parameterization/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/mesh-parameterization/index.xml" rel="self" type="application/rss+xml" />
     <description>mesh parameterization</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 16 Apr 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>mesh parameterization</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/mesh-parameterization/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/mesh-parameterization/</link>
     </image>
     
     <item>
       <title>Joint optimization of distortion and cut location for mesh parameterization using an Ambrosio-Tortorelli functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/weill-duflos-2023-gmp/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/weill-duflos-2023-gmp/</link>
       <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/weill-duflos-2023-gmp/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/weill-duflos-2023-gmp/</guid>
       <description></description>
     </item>
     

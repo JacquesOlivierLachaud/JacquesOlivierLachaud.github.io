@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>medical imaging | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/medical-imaging/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/medical-imaging/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/medical-imaging/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/medical-imaging/index.xml" rel="self" type="application/rss+xml" />
     <description>medical imaging</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 1999 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>medical imaging</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/medical-imaging/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/medical-imaging/</link>
     </image>
     
     <item>
       <title>Deformable Meshes with Automated Topology Changes for Coarse-to-fine 3D Surface Extraction</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-99-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-99-a/</link>
       <pubDate>Fri, 01 Jan 1999 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-99-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-99-a/</guid>
       <description></description>
     </item>
     

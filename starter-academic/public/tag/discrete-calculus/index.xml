@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>discrete calculus | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-calculus/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-calculus/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/discrete-calculus/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/discrete-calculus/index.xml" rel="self" type="application/rss+xml" />
     <description>discrete calculus</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 16 Apr 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>discrete calculus</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-calculus/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/discrete-calculus/</link>
     </image>
     
     <item>
       <title>Joint optimization of distortion and cut location for mesh parameterization using an Ambrosio-Tortorelli functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/weill-duflos-2023-gmp/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/weill-duflos-2023-gmp/</link>
       <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/weill-duflos-2023-gmp/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/weill-duflos-2023-gmp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>StableProxies</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/stable-proxies/</link>
       <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/stable-proxies/</guid>
       <description>&lt;p&gt;Start date: Feb. 2023&lt;/p&gt;
 &lt;p&gt;The objective of the project is to propose new calculus models for the
 geometry processing of large, heterogeneous and complex geometrical
@@ -56,17 +56,17 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>A Simple Discrete Calculus for Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2022-dgmm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2022-dgmm/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2022-dgmm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2022-dgmm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Conference on Digital Geometry and Discrete Variational Calculus</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
       <pubDate>Mon, 29 Mar 2021 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
       <description>&lt;h2 id=&#34;post-conference-information&#34;&gt;Post conference information&lt;/h2&gt;
 &lt;p&gt;Slides and videos of the conference are available on the &lt;a href=&#34;https://dgdvc.sciencesconf.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;conference
 website&lt;/a&gt;.&lt;/p&gt;
@@ -102,57 +102,57 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>A discrete calculus model of Ambrosio-Tortorelli’s functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
       <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete calculus model of Ambrosio-Tortorelli’s functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mumford-Shah Mesh Processing using the Ambrosio-Tortorelli Functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bonneel-2018-cgf/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/bonneel-2018-cgf/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bonneel-2018-cgf/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/bonneel-2018-cgf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Image restoration and segmentation using the Ambrosio-Tortorelli functional and discrete calculus</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-icpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/foare-2016-icpr/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-icpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/foare-2016-icpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Numerical implementation of the Ambrosio-Tortorelli functional using discrete calculus and application to image restoration and inpainting</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-rrpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/foare-2016-rrpr/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-rrpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/foare-2016-rrpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Piecewise smooth reconstruction of normal vector field on digital data</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2016-pg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2016-pg/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2016-pg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2016-pg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CoMeDiC</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/comedic/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/comedic/</guid>
       <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
 and standard calculus in the case of the digital space Zn. The global
 idea is to reliably estimate a metric on digital curves and surfaces
@@ -185,9 +185,9 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>DGtal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/dgtal/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/dgtal/</guid>
       <description></description>
     </item>
     

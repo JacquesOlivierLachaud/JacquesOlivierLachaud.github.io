@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2D | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/2d/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/2d/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/2d/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/2d/index.xml" rel="self" type="application/rss+xml" />
     <description>2D</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>2D</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/2d/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/2d/</link>
     </image>
     
     <item>
       <title>Analytical description of digital intersections: Minimal parameters and multiscale representation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2019-tcs/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/said-2019-tcs/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2019-tcs/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/said-2019-tcs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Curvature Evolution Model for Image Segmentation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2019-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/antunes-2019-dgci/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2019-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/antunes-2019-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Geometric Total Variation for Image Vectorization, Zooming and Pixel Art Depixelizing</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2019-acpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2019-acpr/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2019-acpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2019-acpr/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Click on each icon below to see its zoomedx16 version !&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;tr&gt;
@@ -228,9 +228,9 @@
     
     <item>
       <title>CoMeDiC</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/comedic/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/comedic/</guid>
       <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
 and standard calculus in the case of the digital space Zn. The global
 idea is to reliably estimate a metric on digital curves and surfaces
@@ -263,314 +263,314 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>Meaningful Scales Detection: an Unsupervised Noise Detection Algorithm for Digital Contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2014-ipol/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2014-ipol/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2014-ipol/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2014-ipol/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A combined multi-scale/irregular algorithm for the vectorization of noisy digital contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/vacavant-2013-cviu/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/vacavant-2013-cviu/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/vacavant-2013-cviu/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/vacavant-2013-cviu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Two efficient algorithms for computing the characteristics of a subsegment of a digital straight line </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2013-dam/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2013-dam/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2013-dam/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2013-dam/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Shape Analysis with Maximal Segments</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2012-adgmm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2012-adgmm/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2012-adgmm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2012-adgmm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Meaningful Scales Detection along Digital Contours for Unsupervised Local Noise Estimation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-tpami/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-tpami/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Meaningful Thickness Detection On Polygonal Curve</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-icpram/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-icpram/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-icpram/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-icpram/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multigrid Convergence of Discrete Geometric Estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2012-dga/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2012-dga/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2012-dga/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2012-dga/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computing the Characteristics of a SubSegment of a Digital Straight Line in Logarithmic Time</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2011-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/said-2011-dgci/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2011-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/said-2011-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Accurate Curvature Estimation along Digital Contours with Maximal Digital Circular Arcs</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combining Topological Maps, Multi-Label Simple Points, and Minimum-Length Polygons for Efficient Digital Partition Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/damiand-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/damiand-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dynamic Minimum Length Polygon</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regularization of Discrete Contour by Willmore Energy</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2011-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/bretin-2011-jmiv/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2011-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/bretin-2011-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Two linear-time algorithms for computing the minimum length polygon of a digital contour</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2011-dam/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2011-dam/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2011-dam/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2011-dam/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unsupervised, Fast and Precise Recognition of Digital Arcs in Noisy Images</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/nguyen-2010-iccvg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/nguyen-2010-iccvg/</link>
       <pubDate>Wed, 01 Sep 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/nguyen-2010-iccvg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/nguyen-2010-iccvg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DGtal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/dgtal/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/dgtal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Comparison and improvement of tangent estimators on digital curves</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-pr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-pr/</link>
       <pubDate>Sat, 01 Aug 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-pr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-pr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Curvature estimation along noisy digital contours by approximate global optimization </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-pr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-pr/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-pr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-pr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Deformable Model Simulating Active Contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-dgci/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lyndon &#43; Christoffel = digitally convex</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-2009-pr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/brlek-2009-pr/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-2009-pr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/brlek-2009-pr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multiscale Analysis of Discrete Contours for Unsupervised Noise Detection</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-iwcia/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Top-Down Segmentation of Histological Images Using a Digital Deformable Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-isvc/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-isvc/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-isvc/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-isvc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Two linear-time algorithms for computing the minimum length polygon of a digital contour</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/provencal-2009-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/provencal-2009-dgci/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/provencal-2009-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/provencal-2009-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Comparison of Discrete Curvature Estimators and Application to Corner Detection</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-b/</link>
       <pubDate>Mon, 01 Dec 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete Contour Extraction from Reference Curvature Function</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-c/</link>
       <pubDate>Mon, 01 Dec 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combinatorial view of digital convexity</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-08-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/brlek-08-a/</link>
       <pubDate>Tue, 01 Apr 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-08-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/brlek-08-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Robust estimation of curvature along digital contours with global optimization</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-a/</link>
       <pubDate>Tue, 01 Apr 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Experimental Comparison of Continuous and Discrete Tangent Estimators Along Digital Curves</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-08-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-08-a/</link>
       <pubDate>Sat, 01 Mar 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-08-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-08-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fast, Accurate and Convergent Tangent Estimation on Digital Contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-07-a/</link>
       <pubDate>Mon, 01 Oct 2007 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-07-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maximal digital straight segments and convergence of discrete geometric estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-07-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-07-a/</link>
       <pubDate>Thu, 01 Feb 2007 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-07-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-07-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combinatorial pyramids and discrete geometry for energy-minimizing segmentation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/braure-06-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/braure-06-a/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/braure-06-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/braure-06-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convex shapes and convergence speed of discrete tangent estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-b/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GeoDIB</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/geodib/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/geodib/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/geodib/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/geodib/</guid>
       <description>&lt;p&gt;This project gathered members of four laboratories: LORIA (Leader, Nancy), LIRIS (Lyon), LAIC (Clermont), LaBRI (Bordeaux) then LAMA (Chambéry).&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Revisiting Digital Straight Segment Recognition</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-a/</link>
       <pubDate>Sun, 01 Oct 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Analysis and comparative evaluation of discrete tangent estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-05-a/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-05-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Model with a Complexity Independent from Image Resolution</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-05-b/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-05-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maximal digital straight segments and convergence of discrete geometric estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-05-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-05-a/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-05-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-05-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Resolution Independent Deformable Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-04-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-04-a/</link>
       <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-04-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-04-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Model with non-Euclidean Metrics</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/taton-02-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/taton-02-b/</link>
       <pubDate>Tue, 01 Jan 2002 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/taton-02-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/taton-02-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete deformable boundaries for the segmentation of multidimensional images</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-01-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-01-a/</link>
       <pubDate>Mon, 01 Jan 2001 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-01-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-01-a/</guid>
       <description></description>
     </item>
     

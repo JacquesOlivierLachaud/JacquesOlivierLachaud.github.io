@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cloud of points | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/cloud-of-points/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/cloud-of-points/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/cloud-of-points/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/cloud-of-points/index.xml" rel="self" type="application/rss+xml" />
     <description>cloud of points</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>cloud of points</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/cloud-of-points/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/cloud-of-points/</link>
     </image>
     
     <item>
       <title>StableProxies</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/stable-proxies/</link>
       <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/stable-proxies/</guid>
       <description>&lt;p&gt;Start date: Feb. 2023&lt;/p&gt;
 &lt;p&gt;The objective of the project is to propose new calculus models for the
 geometry processing of large, heterogeneous and complex geometrical

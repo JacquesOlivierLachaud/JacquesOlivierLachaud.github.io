@@ -2,69 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>normal estimation | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/normal-estimation/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/normal-estimation/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/normal-estimation/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/normal-estimation/index.xml" rel="self" type="application/rss+xml" />
     <description>normal estimation</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>normal estimation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/normal-estimation/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/normal-estimation/</link>
     </image>
     
     <item>
       <title>Robust and Convergent Curvature and Normal Estimators with Digital Integral Invariants</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-lnm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-lnm/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-lnm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-lnm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convergent Geometric Estimators with Digital Volume and Surface Integrals</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</link>
       <pubDate>Mon, 18 Apr 2016 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computation of the Normal Vector to a Digital Plane by Sampling Significant Points</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convergent Geometric Estimators with Digital Volume and Surface Integrals</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci-inv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci-inv/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci-inv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci-inv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Voronoi-Based Geometry Estimator for 3D Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2014-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/cuel-2014-dgci/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2014-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/cuel-2014-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maximal Planes and Multiscale Tangential Cover of 3D Digital Objects</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/charrier-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/charrier-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/charrier-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/charrier-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Geometric measures on arbitrary dimensional digital surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-03-c/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-03-c/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>geometric measure theory | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-measure-theory/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-measure-theory/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/geometric-measure-theory/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/geometric-measure-theory/index.xml" rel="self" type="application/rss+xml" />
     <description>geometric measure theory</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>geometric measure theory</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-measure-theory/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/geometric-measure-theory/</link>
     </image>
     
     <item>
       <title>StableProxies</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/stable-proxies/</link>
       <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/stable-proxies/</guid>
       <description>&lt;p&gt;Start date: Feb. 2023&lt;/p&gt;
 &lt;p&gt;The objective of the project is to propose new calculus models for the
 geometry processing of large, heterogeneous and complex geometrical
@@ -48,17 +48,17 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>Corrected Curvature Measures</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-dcg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-dcg/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-dcg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-dcg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Interpolated corrected curvature measures for polygonal surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</link>
       <pubDate>Tue, 07 Jul 2020 15:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</guid>
       <description>&lt;p&gt;The code related to the paper is implemented in
 &lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -66,9 +66,9 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>Cross Border Meeting on Discrete and Computational Geometry and Applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
       <pubDate>Mon, 09 Nov 2015 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
       <description>&lt;h2 id=&#34;invited-speakers&#34;&gt;Invited speakers&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Silvia Biasotti (CNR IMATI, Genova)&lt;/li&gt;
@@ -81,17 +81,17 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>Robust Geometry Estimation Using the Generalized Voronoi Covariance Measure</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2015-siims/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/cuel-2015-siims/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2015-siims/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/cuel-2015-siims/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Voronoi-Based Geometry Estimator for 3D Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2014-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/cuel-2014-dgci/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2014-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/cuel-2014-dgci/</guid>
       <description></description>
     </item>
     

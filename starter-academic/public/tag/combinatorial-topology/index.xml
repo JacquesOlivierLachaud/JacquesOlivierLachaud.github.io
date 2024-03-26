@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>combinatorial topology | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/combinatorial-topology/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/combinatorial-topology/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/combinatorial-topology/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/combinatorial-topology/index.xml" rel="self" type="application/rss+xml" />
     <description>combinatorial topology</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2006 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>combinatorial topology</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/combinatorial-topology/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/combinatorial-topology/</link>
     </image>
     
     <item>
       <title>Computation of homology groups and generators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-06-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/peltier-06-b/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-06-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/peltier-06-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computation of homology groups and generators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-05-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/peltier-05-a/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-05-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/peltier-05-a/</guid>
       <description></description>
     </item>
     

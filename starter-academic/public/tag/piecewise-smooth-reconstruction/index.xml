@@ -2,77 +2,77 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>piecewise smooth reconstruction | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/piecewise-smooth-reconstruction/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/piecewise-smooth-reconstruction/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/piecewise-smooth-reconstruction/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/piecewise-smooth-reconstruction/index.xml" rel="self" type="application/rss+xml" />
     <description>piecewise smooth reconstruction</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>piecewise smooth reconstruction</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/piecewise-smooth-reconstruction/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/piecewise-smooth-reconstruction/</link>
     </image>
     
     <item>
       <title>Digital Surface Regularization With Guarantees</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2021-tvcg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2021-tvcg/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2021-tvcg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2021-tvcg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A discrete calculus model of Ambrosio-Tortorelli’s functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
       <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete calculus model of Ambrosio-Tortorelli’s functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regularization of Voxel Art</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2018-siggraph/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2018-siggraph/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2018-siggraph/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2018-siggraph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Surface Regularization by Normal Vector Field Alignment</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2017-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2017-dgci/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2017-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2017-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Image restoration and segmentation using the Ambrosio-Tortorelli functional and discrete calculus</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-icpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/foare-2016-icpr/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-icpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/foare-2016-icpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Numerical implementation of the Ambrosio-Tortorelli functional using discrete calculus and application to image restoration and inpainting</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-rrpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/foare-2016-rrpr/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-rrpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/foare-2016-rrpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Piecewise smooth reconstruction of normal vector field on digital data</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2016-pg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2016-pg/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2016-pg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2016-pg/</guid>
       <description></description>
     </item>
     

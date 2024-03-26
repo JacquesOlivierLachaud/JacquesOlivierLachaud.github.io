@@ -2,21 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/project/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Projects</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/</link>
     </image>
     
     <item>
+      <title>AlgoSurfer</title>
+      <link>https://jacquesolivierlachaud.github.io/project/algosurfer/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/project/algosurfer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>StableProxies</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/stable-proxies/</link>
       <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/stable-proxies/</guid>
       <description>&lt;p&gt;Start date: Feb. 2023&lt;/p&gt;
 &lt;p&gt;The objective of the project is to propose new calculus models for the
 geometry processing of large, heterogeneous and complex geometrical
@@ -48,9 +56,9 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>PARADIS</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/paradis/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/paradis/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/paradis/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/paradis/</guid>
       <description>&lt;h2 id=&#34;consortium&#34;&gt;Consortium&lt;/h2&gt;
 &lt;p&gt;This project gathers members of three laboratories: LIRIS (Leader, Lyon), LAMA (Chambéry), LaBRI (Bordeaux).&lt;/p&gt;
 </description>
@@ -58,9 +66,9 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>CoMeDiC</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/comedic/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/comedic/</guid>
       <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
 and standard calculus in the case of the digital space Zn. The global
 idea is to reliably estimate a metric on digital curves and surfaces
@@ -93,9 +101,9 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>DigitalSnow</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/digital-snow/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/digital-snow/</link>
       <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/digital-snow/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/digital-snow/</guid>
       <description>&lt;h2 id=&#34;consortium&#34;&gt;Consortium&lt;/h2&gt;
 &lt;p&gt;This project gathers members of four laboratories: LIRIS (Leader, Lyon), LAMA (Chambéry), LJK (Grenoble), and CEN/Météofrance (Grenoble).&lt;/p&gt;
 </description>
@@ -103,26 +111,26 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>DGtal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/dgtal/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/dgtal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>FOGRIMMI</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/fogrimmi/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/fogrimmi/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/fogrimmi/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/fogrimmi/</guid>
       <description>&lt;p&gt;This project gathers members of four laboratories: GREYC (Leader, Caen), SIC (Poitiers), LIRIS (Lyon), LaBRI (Bordeaux) then LAMA (Chambéry), and the medical center François Baclesse.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>GeoDIB</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/geodib/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/geodib/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/geodib/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/geodib/</guid>
       <description>&lt;p&gt;This project gathered members of four laboratories: LORIA (Leader, Nancy), LIRIS (Lyon), LAIC (Clermont), LaBRI (Bordeaux) then LAMA (Chambéry).&lt;/p&gt;
 </description>
     </item>

@@ -2,1619 +2,1689 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication-type/2/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/lectures/info601cmi/</loc>
+    <lastmod>2024-03-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/</loc>
+    <lastmod>2024-03-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/lectures/</loc>
+    <lastmod>2024-03-04T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/lectures/info804/</loc>
+    <lastmod>2024-01-08T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/project/algosurfer/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/fun/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/project/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tags/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/webgl/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/lectures/info505/</loc>
+    <lastmod>2023-09-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/lectures/info702/</loc>
+    <lastmod>2023-09-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/publication-type/2/</loc>
+    <lastmod>2023-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/publication/feschet-2023-jmiv/</loc>
+    <lastmod>2023-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-convexity/</loc>
+    <lastmod>2023-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-geometry/</loc>
+    <lastmod>2023-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/envelope-operator/</loc>
+    <lastmod>2023-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/full-convexity/</loc>
+    <lastmod>2023-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/nd/</loc>
+    <lastmod>2023-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/polyhedral-model/</loc>
+    <lastmod>2023-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/publication_types/</loc>
+    <lastmod>2023-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/publication/</loc>
+    <lastmod>2023-07-17T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/3d/</loc>
+    <lastmod>2023-07-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/curvature-estimator/</loc>
+    <lastmod>2023-07-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/curvature-measures/</loc>
+    <lastmod>2023-07-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/geometric-inference/</loc>
+    <lastmod>2023-07-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2023-cgf/</loc>
+    <lastmod>2023-07-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/normal-current/</loc>
+    <lastmod>2023-07-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/point-clouds/</loc>
+    <lastmod>2023-07-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/stability/</loc>
+    <lastmod>2023-07-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/talk/full-convexity-new-characterisations-and-applications/</loc>
+    <lastmod>2023-05-15T09:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/polyhedralization/</loc>
+    <lastmod>2023-05-15T09:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/event/</loc>
+    <lastmod>2023-05-15T09:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/talk/</loc>
+    <lastmod>2023-05-15T09:30:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/ambrosio-tortorelli-functional/</loc>
     <lastmod>2023-04-16T12:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/ambrosio-tortorelli-functional/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/discrete-calculus/</loc>
     <lastmod>2023-04-16T12:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-calculus/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/joint-distortion-and-cut/</loc>
     <lastmod>2023-04-16T12:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/weill-duflos-2023-gmp/</loc>
     <lastmod>2023-04-16T12:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/joint-distortion-and-cut/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/mesh-parameterization/</loc>
     <lastmod>2023-04-16T12:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/weill-duflos-2023-gmp/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/uv-mapping/</loc>
     <lastmod>2023-04-16T12:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/mesh-parameterization/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/variational-model/</loc>
     <lastmod>2023-04-16T12:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication_types/</loc>
-    <lastmod>2023-04-16T12:39:45+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/</loc>
-    <lastmod>2023-04-16T12:39:45+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tags/</loc>
-    <lastmod>2023-04-16T12:39:45+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/uv-mapping/</loc>
-    <lastmod>2023-04-16T12:39:45+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/variational-model/</loc>
-    <lastmod>2023-04-16T12:39:45+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/dgtal/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/dgtal/</loc>
     <lastmod>2022-10-24T09:30:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/dgtal-tutorial-at-dgmm2022/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/dgtal-tutorial-at-dgmm2022/</loc>
     <lastmod>2022-10-24T09:30:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-geometry/</loc>
-    <lastmod>2022-11-03T17:40:11+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/event/</loc>
-    <lastmod>2022-10-24T09:30:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/talk/</loc>
-    <lastmod>2022-10-24T09:30:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/3d/</loc>
-    <lastmod>2022-11-03T17:40:11+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/cloud-of-points/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/cloud-of-points/</loc>
     <lastmod>2022-09-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/computational-geometry/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/computational-geometry/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-measure-theory/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/geometric-measure-theory/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometry-processing/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/geometry-processing/</loc>
     <lastmod>2022-11-03T17:40:09+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/</loc>
-    <lastmod>2022-09-01T00:00:00+00:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/shape-optimization/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/shape-optimization/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/project/stable-proxies/</loc>
     <lastmod>2022-09-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication-type/1/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication-type/1/</loc>
     <lastmod>2022-11-03T17:40:12+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2022-dgmm/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2022-dgmm/</loc>
     <lastmod>2022-11-03T17:39:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-jmiv/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-jmiv/</loc>
     <lastmod>2022-11-03T17:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-dcg/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-dcg/</loc>
     <lastmod>2022-11-03T17:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/curvature-estimator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-surface/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/curvature-measures/</loc>
-    <lastmod>2022-11-03T17:39:46+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-convexity/</loc>
-    <lastmod>2022-11-03T17:40:05+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-surface/</loc>
-    <lastmod>2022-11-03T17:40:11+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-differential-operator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/discrete-differential-operator/</loc>
     <lastmod>2022-11-03T17:39:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-geometric-estimator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/discrete-geometric-estimator/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/feschet-2022-dgmm/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/feschet-2022-dgmm/</loc>
     <lastmod>2022-11-03T17:39:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-analysis/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/geometric-analysis/</loc>
     <lastmod>2022-11-03T17:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/multigrid-convergence/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/multigrid-convergence/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/nd/</loc>
-    <lastmod>2022-11-03T17:40:11+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/polgonal-mesh/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/polgonal-mesh/</loc>
     <lastmod>2022-11-03T17:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/polyhedral-model/</loc>
-    <lastmod>2022-11-03T17:39:54+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/reconstruction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/reconstruction/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/shortest-paths/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/shortest-paths/</loc>
     <lastmod>2022-11-03T17:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/tangential-cover/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/tangential-cover/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-topology/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-topology/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/distance-transform/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/distance-transform/</loc>
     <lastmod>2021-07-11T13:30:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</loc>
     <lastmod>2021-07-11T13:30:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</loc>
     <lastmod>2021-03-29T09:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/event/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/event/</loc>
     <lastmod>2021-03-29T09:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-analysis/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/image-analysis/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-dgmm/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/antunes-2021-dgmm/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2021-dgmm/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2021-dgmm/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-jmiv/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/antunes-2021-jmiv/</loc>
     <lastmod>2022-11-03T17:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/arithmetic-planes/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/arithmetic-planes/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/curvature/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/curvature/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-estimators/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-estimators/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-surface-reconstruction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-surface-reconstruction/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2021-tvcg/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2021-tvcg/</loc>
     <lastmod>2022-11-03T17:39:46+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-optimization/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/discrete-optimization/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/elastica-model/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/elastica-model/</loc>
     <lastmod>2022-11-03T17:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-prior/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/geometric-prior/</loc>
     <lastmod>2022-11-03T17:39:45+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-segmentation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/image-segmentation/</loc>
     <lastmod>2022-11-03T17:40:09+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/piecewise-smooth-reconstruction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/piecewise-smooth-reconstruction/</loc>
     <lastmod>2022-11-03T17:39:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/simple-connectedness/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/simple-connectedness/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/academic/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/academic/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/categories/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/categories/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/category/demo/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/category/demo/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/post/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/post/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/post/getting-started/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/post/getting-started/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/%E5%BC%80%E6%BA%90/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/%E5%BC%80%E6%BA%90/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/category/%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/category/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2020-12-13T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</loc>
     <lastmod>2020-07-07T15:30:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/polygonal-mesh/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/polygonal-mesh/</loc>
     <lastmod>2022-11-03T17:39:46+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-jmiv/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-jmiv/</loc>
     <lastmod>2022-11-03T17:39:46+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-planarity/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-planarity/</loc>
     <lastmod>2022-11-03T17:40:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-cgf/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-cgf/</loc>
     <lastmod>2022-11-03T17:39:46+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/normal-current/</loc>
-    <lastmod>2022-11-03T17:39:46+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/plane-probing/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/plane-probing/</loc>
     <lastmod>2022-11-03T17:39:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</loc>
     <lastmod>2019-11-25T14:45:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-straightness/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-straightness/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/pattern-recognition/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/pattern-recognition/</loc>
     <lastmod>2019-11-25T14:45:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/post/writing-technical-content/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/post/writing-technical-content/</loc>
     <lastmod>2019-07-12T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</loc>
     <lastmod>2019-05-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-denoising/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/image-denoising/</loc>
     <lastmod>2019-05-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-inpainting/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/image-inpainting/</loc>
     <lastmod>2022-11-03T17:39:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/mesh-denoising/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/mesh-denoising/</loc>
     <lastmod>2019-05-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/mesh-inpainting/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/mesh-inpainting/</loc>
     <lastmod>2019-05-23T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/mesh-segmentation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/mesh-segmentation/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</loc>
     <lastmod>2019-03-03T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/post/jupyter/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/post/jupyter/</loc>
     <lastmod>2019-09-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/slides/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/slides/example/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/slides/example/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/2d/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/2d/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2019-tcs/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/said-2019-tcs/</loc>
     <lastmod>2022-11-03T17:39:46+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/delanoy-2019-cg/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/delanoy-2019-cg/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/curve-evolution/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/curve-evolution/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/deep-learning/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/deep-learning/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/depixelizing-pixel-art/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/depixelizing-pixel-art/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/differential-geometry/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/differential-geometry/</loc>
     <lastmod>2022-11-03T17:39:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2019-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/antunes-2019-dgci/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-deformable-model/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-deformable-model/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-geometry-application/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-geometry-application/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-plane-recognition/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-plane-recognition/</loc>
     <lastmod>2022-11-03T17:39:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2019-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/roussillon-2019-dgci/</loc>
     <lastmod>2022-11-03T17:39:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-straight-segment-recognition/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-straight-segment-recognition/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-total-variation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/geometric-total-variation/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2019-acpr/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-2019-acpr/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-synthesis/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/image-synthesis/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-vectorization/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/image-vectorization/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-zooming/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/image-zooming/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2019-jmiv/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/caissard-2019-jmiv/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/laplace-beltrami-operator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/laplace-beltrami-operator/</loc>
     <lastmod>2022-11-03T17:39:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/multi-view-reconstruction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/multi-view-reconstruction/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/multiscale-geometry/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/multiscale-geometry/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/normal-vector-estimation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/normal-vector-estimation/</loc>
     <lastmod>2022-11-03T17:39:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/parameter-free-estimator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/parameter-free-estimator/</loc>
     <lastmod>2022-11-03T17:40:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2019-m-2-an/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/bretin-2019-m-2-an/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/stern-brocot-tree/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/stern-brocot-tree/</loc>
     <lastmod>2022-11-03T17:40:05+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/total-variation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/total-variation/</loc>
     <lastmod>2022-11-03T17:39:55+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/triangulation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/triangulation/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/arithmetic/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/arithmetic/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/paradis/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/project/paradis/</loc>
     <lastmod>2018-12-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/denoising/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/privacy/</loc>
+    <lastmod>2018-06-28T00:00:00+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/tag/denoising/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/embossing/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/embossing/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/inpainting/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/inpainting/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/mesh-processing/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/mesh-processing/</loc>
     <lastmod>2022-11-03T17:39:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/mumford-shah-functional/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/mumford-shah-functional/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bonneel-2018-cgf/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/bonneel-2018-cgf/</loc>
     <lastmod>2022-11-03T17:39:47+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2018-siggraph/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2018-siggraph/</loc>
     <lastmod>2022-11-03T17:39:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication-type/6/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication-type/6/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/curvature-estimation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/curvature-estimation/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digial-plane-recognition/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digial-plane-recognition/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-moments/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-moments/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2017-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2017-dgci/</loc>
     <lastmod>2022-11-03T17:39:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2017-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/caissard-2017-dgci/</loc>
     <lastmod>2022-11-03T17:39:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/integral-invariants/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/integral-invariants/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/lattice-reduction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/lattice-reduction/</loc>
     <lastmod>2022-11-03T17:39:58+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/multigridconvergence/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/multigridconvergence/</loc>
     <lastmod>2022-11-03T17:39:56+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/normal-estimation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/normal-estimation/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-lnm/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-lnm/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-jmiv/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-jmiv/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/area-estimation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/area-estimation/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</loc>
     <lastmod>2016-04-18T09:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-integration/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-integration/</loc>
     <lastmod>2022-11-03T17:39:58+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/moment-estimation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/moment-estimation/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/stability/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/volume-estimation/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/volume-estimation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/voronoi-covariance-measure/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/voronoi-covariance-measure/</loc>
-    <lastmod>2022-11-03T17:39:59+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/65d18/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/65d18/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/65d30/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/65d30/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/68u05/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/68u05/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/accumulation-map/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/accumulation-map/</loc>
     <lastmod>2022-11-03T17:39:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-tcs/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-tcs/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/centerline-detection/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/centerline-detection/</loc>
     <lastmod>2022-11-03T17:39:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2016-icpr/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-2016-icpr/</loc>
     <lastmod>2022-11-03T17:39:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/centerline-extraction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/centerline-extraction/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci/</loc>
     <lastmod>2022-11-03T17:39:58+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/confidence-vote/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/confidence-vote/</loc>
     <lastmod>2022-11-03T17:39:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci-inv/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci-inv/</loc>
     <lastmod>2022-11-03T17:39:58+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/delaunay-triangulation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/delaunay-triangulation/</loc>
     <lastmod>2022-11-03T17:40:09+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-integral/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-integral/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/feature-detection/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/feature-detection/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/gauss-digitization/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/gauss-digitization/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-inference/</loc>
-    <lastmod>2022-11-03T17:39:59+01:00</lastmod>
-    <changefreq>weekly</changefreq>
-  </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/gpu/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/gpu/</loc>
     <lastmod>2022-11-03T17:39:58+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-restoration/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/image-restoration/</loc>
     <lastmod>2022-11-03T17:39:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-icpr/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/foare-2016-icpr/</loc>
     <lastmod>2022-11-03T17:39:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/integral-invariant/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/integral-invariant/</loc>
     <lastmod>2022-11-03T17:39:58+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/perrier-2016-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/perrier-2016-dgci/</loc>
     <lastmod>2022-11-03T17:39:58+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/interactive-visualisation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/interactive-visualisation/</loc>
     <lastmod>2022-11-03T17:39:58+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/multidimensional-continued-fractions/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/multidimensional-continued-fractions/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/normal-estimator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/normal-estimator/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-rrpr/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/foare-2016-rrpr/</loc>
     <lastmod>2022-11-03T17:39:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2016-rrpr/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-2016-rrpr/</loc>
     <lastmod>2022-11-03T17:39:57+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2016-pg/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2016-pg/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-jmiv/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-jmiv/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/recognition/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/recognition/</loc>
     <lastmod>2022-11-03T17:39:58+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/set-with-positive-reach/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/set-with-positive-reach/</loc>
     <lastmod>2022-11-03T17:39:48+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</loc>
     <lastmod>2015-11-09T09:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/project/comedic/</loc>
     <lastmod>2015-10-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2015-iciap/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-2015-iciap/</loc>
     <lastmod>2022-11-03T17:39:58+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/asymptotic-digital-geometry/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/asymptotic-digital-geometry/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/cross-section-extraction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/cross-section-extraction/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/k-distance/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/k-distance/</loc>
     <lastmod>2022-11-03T17:39:49+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/medical-image-analysis/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/medical-image-analysis/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/grelard-2015-caip/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/grelard-2015-caip/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2015-siims/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/cuel-2015-siims/</loc>
     <lastmod>2022-11-03T17:39:49+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2015-cg-smi/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/levallois-2015-cg-smi/</loc>
     <lastmod>2022-11-03T17:39:49+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/tubular-objects/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/tubular-objects/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/asymptotic-digital-geoemtry/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/asymptotic-digital-geoemtry/</loc>
     <lastmod>2022-11-03T17:39:49+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/connected-component/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/connected-component/</loc>
     <lastmod>2022-11-03T17:39:49+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-contour/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-contour/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-straight-segment/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-straight-segment/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-ipol/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2014-ipol/</loc>
     <lastmod>2022-11-03T17:39:49+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2014-ipol/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-2014-ipol/</loc>
     <lastmod>2022-11-03T17:39:49+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-cviu/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2014-cviu/</loc>
     <lastmod>2022-11-03T17:39:49+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/noise-detection/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/noise-detection/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2014-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/levallois-2014-dgci/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2014-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/cuel-2014-dgci/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/maximal-digital-circular-arc/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/maximal-digital-circular-arc/</loc>
     <lastmod>2013-11-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/multigrid-convergence-of-digital-curvature-estimators/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/multigrid-convergence-of-digital-curvature-estimators/</loc>
     <lastmod>2013-11-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/willmore-model/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/willmore-model/</loc>
     <lastmod>2013-11-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2013-dc/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2013-dc/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/vacavant-2013-cviu/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/vacavant-2013-cviu/</loc>
     <lastmod>2022-11-03T17:39:50+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/christoffel-word/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/christoffel-word/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/continued-fraction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/continued-fraction/</loc>
     <lastmod>2022-11-03T17:40:05+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-geometry/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/discrete-geometry/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/fuzzy-segment/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/fuzzy-segment/</loc>
     <lastmod>2022-11-03T17:39:50+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2013-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2013-dgci/</loc>
     <lastmod>2022-11-03T17:39:59+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/multiscale-analysis/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/multiscale-analysis/</loc>
     <lastmod>2022-11-03T17:40:02+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/noisy-object-analysis/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/noisy-object-analysis/</loc>
     <lastmod>2022-11-03T17:39:50+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/pattern/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/pattern/</loc>
     <lastmod>2022-11-03T17:40:05+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2013-dam/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2013-dam/</loc>
     <lastmod>2022-11-03T17:39:50+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/3d-digital-curve/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/3d-digital-curve/</loc>
     <lastmod>2022-11-03T17:40:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/tangent-estimation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/tangent-estimation/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/postolski-2012-icpr/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/postolski-2012-icpr/</loc>
     <lastmod>2022-11-03T17:40:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-tutorial-for-dgtal-library-2012/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/a-tutorial-for-dgtal-library-2012/</loc>
     <lastmod>2012-06-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/tutorial/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/tutorial/</loc>
     <lastmod>2012-06-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/contour-analysis/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/contour-analysis/</loc>
     <lastmod>2022-11-03T17:40:02+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2012-adgmm/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2012-adgmm/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-geometric-estimators/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/discrete-geometric-estimators/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/length-estimator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/length-estimator/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/meaningful-scale/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/meaningful-scale/</loc>
     <lastmod>2022-11-03T17:40:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/meaningful-scales/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/meaningful-scales/</loc>
     <lastmod>2022-11-03T17:40:02+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-tpami/</loc>
     <lastmod>2022-11-03T17:39:50+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-icpram/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-icpram/</loc>
     <lastmod>2022-11-03T17:40:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2012-dga/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2012-dga/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/polygonal-curve/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/polygonal-curve/</loc>
     <lastmod>2022-11-03T17:40:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/tangent-estimator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/tangent-estimator/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/applied-mathematics/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/applied-mathematics/</loc>
     <lastmod>2011-11-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/digital-snow/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/project/digital-snow/</loc>
     <lastmod>2011-11-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/microtomography/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/microtomography/</loc>
     <lastmod>2011-11-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/snow-metamorphism/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/snow-metamorphism/</loc>
     <lastmod>2011-11-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-tutorial-for-dgtal-library-2011/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/a-tutorial-for-dgtal-library-2011/</loc>
     <lastmod>2011-09-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/circular-arc-recognition/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/circular-arc-recognition/</loc>
     <lastmod>2022-11-03T17:40:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2011-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-2011-dgci/</loc>
     <lastmod>2022-11-03T17:40:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2011-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/said-2011-dgci/</loc>
     <lastmod>2022-11-03T17:40:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-dgci/</loc>
     <lastmod>2022-11-03T17:40:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/tangent-space/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/tangent-space/</loc>
     <lastmod>2022-11-03T17:40:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/voronoi-diagram/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/voronoi-diagram/</loc>
     <lastmod>2022-11-03T17:40:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/asymptotic-linear-digital-geometry/</loc>
     <lastmod>2011-02-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry-and-applications/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/talk/asymptotic-linear-digital-geometry-and-applications/</loc>
     <lastmod>2011-02-08T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/patterns/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/patterns/</loc>
     <lastmod>2022-11-03T17:40:02+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/word-combinatorics/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/word-combinatorics/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-iwcia/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-iwcia/</loc>
     <lastmod>2022-11-03T17:40:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-iwcia/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/damiand-2011-iwcia/</loc>
     <lastmod>2022-11-03T17:40:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/computational-complexity/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/computational-complexity/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/convex-relaxation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/convex-relaxation/</loc>
     <lastmod>2022-11-03T17:39:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-partition/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-partition/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-deformable-model/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/discrete-deformable-model/</loc>
     <lastmod>2022-11-03T17:40:08+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2011-iwcia/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2011-iwcia/</loc>
     <lastmod>2022-11-03T17:40:00+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-prl/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/damiand-2011-prl/</loc>
     <lastmod>2022-11-03T17:39:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/maximal-digital-planes/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/maximal-digital-planes/</loc>
     <lastmod>2022-11-03T17:40:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/charrier-2011-iwcia/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/charrier-2011-iwcia/</loc>
     <lastmod>2022-11-03T17:40:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/minimum-length-polygon/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/minimum-length-polygon/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/minimum-perimeter-polygon/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/minimum-perimeter-polygon/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/phase-field-model/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/phase-field-model/</loc>
     <lastmod>2022-11-03T17:39:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2011-jmiv/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/bretin-2011-jmiv/</loc>
     <lastmod>2022-11-03T17:39:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/simple-points/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/simple-points/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/stability-to-noise/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/stability-to-noise/</loc>
     <lastmod>2022-11-03T17:40:01+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2011-dam/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2011-dam/</loc>
     <lastmod>2022-11-03T17:39:50+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/willmore-energy/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/willmore-energy/</loc>
     <lastmod>2022-11-03T17:39:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-arc-recognition/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-arc-recognition/</loc>
     <lastmod>2022-11-03T17:40:02+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/nguyen-2010-iccvg/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/nguyen-2010-iccvg/</loc>
     <lastmod>2022-11-03T17:40:02+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2010-icpr/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/said-2010-icpr/</loc>
     <lastmod>2022-11-03T17:40:02+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/project/dgtal/</loc>
     <lastmod>2010-01-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2010-wadgmm/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-2010-wadgmm/</loc>
     <lastmod>2022-11-03T17:40:12+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/adaptive-tangent-estimator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/adaptive-tangent-estimator/</loc>
     <lastmod>2022-11-03T17:39:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/approximation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/approximation/</loc>
     <lastmod>2022-11-03T17:39:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-pr/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-pr/</loc>
     <lastmod>2022-11-03T17:39:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-tangent-estimator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/discrete-tangent-estimator/</loc>
     <lastmod>2022-11-03T17:39:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/fitting/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/fitting/</loc>
     <lastmod>2022-11-03T17:39:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/active-contour/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/active-contour/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/christoffel-words/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/christoffel-words/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/convex-hull/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/convex-hull/</loc>
     <lastmod>2022-11-03T17:39:53+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-pr/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-pr/</loc>
     <lastmod>2022-11-03T17:39:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-dgci/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/histological-image/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/histological-image/</loc>
     <lastmod>2022-11-03T17:40:02+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-2009-pr/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/brlek-2009-pr/</loc>
     <lastmod>2022-11-03T17:39:51+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/lyndon-words/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/lyndon-words/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/dupas-2009-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/dupas-2009-dgci/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/multi-resolution/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/multi-resolution/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-iwcia/</loc>
     <lastmod>2022-11-03T17:40:02+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2009-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/said-2009-dgci/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/robustness-to-noise/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/robustness-to-noise/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/snake/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/snake/</loc>
     <lastmod>2022-11-03T17:40:09+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-isvc/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-isvc/</loc>
     <lastmod>2022-11-03T17:40:02+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/provencal-2009-dgci/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/provencal-2009-dgci/</loc>
     <lastmod>2022-11-03T17:40:03+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-b/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-08-b/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/contour-extraction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/contour-extraction/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/corner-detection/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/corner-detection/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-c/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-08-c/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometry-of-noisy-shapes/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/geometry-of-noisy-shapes/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/global-curvature-estimator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/global-curvature-estimator/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/shape-of-reference/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/shape-of-reference/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-imagery/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/discrete-imagery/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-08-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/alayrangues-08-a/</loc>
     <lastmod>2022-11-03T17:39:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/equivalence-of-combinatorial-structures/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/equivalence-of-combinatorial-structures/</loc>
     <lastmod>2022-11-03T17:39:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/generalized-maps/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/generalized-maps/</loc>
     <lastmod>2022-11-03T17:39:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-modeling/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/geometric-modeling/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/n-surfaces/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/n-surfaces/</loc>
     <lastmod>2022-11-03T17:39:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/subdivisions/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/subdivisions/</loc>
     <lastmod>2022-11-03T17:39:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-08-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/brlek-08-a/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/convexity-test/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/convexity-test/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/curvature-minimization/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/curvature-minimization/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/feature-extraction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/feature-extraction/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/optimization/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/optimization/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-08-a/</loc>
     <lastmod>2022-11-03T17:40:04+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-08-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-08-a/</loc>
     <lastmod>2022-11-03T17:40:05+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2008-ijsm/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/kerautret-2008-ijsm/</loc>
     <lastmod>2022-11-03T17:39:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/noisy-contour/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/noisy-contour/</loc>
     <lastmod>2022-11-03T17:39:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-07-a/</loc>
     <lastmod>2022-11-03T17:39:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/linear-time-algorithm/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/linear-time-algorithm/</loc>
     <lastmod>2022-11-03T17:39:52+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/asymptotic-geometry/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/asymptotic-geometry/</loc>
     <lastmod>2022-11-03T17:39:53+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/lattice-polytope/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/lattice-polytope/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-07-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-07-a/</loc>
     <lastmod>2022-11-03T17:39:53+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/curve-index/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/curve-index/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/deformable-models/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/deformable-models/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-homotopy/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-homotopy/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-surface-tracking/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/digital-surface-tracking/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-b/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-07-b/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-c/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-07-c/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/jordan-pairs/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/jordan-pairs/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/jordan-theorem/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/jordan-theorem/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/marching-cubes/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/marching-cubes/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/mesh-reconstruction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/mesh-reconstruction/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/mesh-simplification/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/mesh-simplification/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/remeshing/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/remeshing/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/surface-reconstruction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/surface-reconstruction/</loc>
     <lastmod>2022-11-03T17:40:11+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/combinatorial-map/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/combinatorial-map/</loc>
     <lastmod>2022-11-03T17:40:05+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/combinatorial-pyramid/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/combinatorial-pyramid/</loc>
     <lastmod>2022-11-03T17:40:05+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/braure-06-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/braure-06-a/</loc>
     <lastmod>2022-11-03T17:40:05+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-b/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-b/</loc>
     <lastmod>2022-11-03T17:40:05+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/energy-minimization/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/energy-minimization/</loc>
     <lastmod>2022-11-03T17:40:08+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/fogrimmi/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/project/fogrimmi/</loc>
     <lastmod>2006-11-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/geodib/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/project/geodib/</loc>
     <lastmod>2006-11-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/histological-images/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/histological-images/</loc>
     <lastmod>2006-11-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/large-images/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/large-images/</loc>
     <lastmod>2006-11-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/maximal-segments/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/maximal-segments/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/multiscale-image-segmentation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/multiscale-image-segmentation/</loc>
     <lastmod>2022-11-03T17:40:05+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/noisy-geometry/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/noisy-geometry/</loc>
     <lastmod>2006-11-01T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-a/</loc>
     <lastmod>2022-11-03T17:40:05+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/agoston-form/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/agoston-form/</loc>
     <lastmod>2022-11-03T17:39:53+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/betti-groups/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/betti-groups/</loc>
     <lastmod>2022-11-03T17:39:53+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/combinatorial-topology/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/combinatorial-topology/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-06-b/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/peltier-06-b/</loc>
     <lastmod>2022-11-03T17:39:53+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/homology/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/homology/</loc>
     <lastmod>2022-11-03T17:39:53+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/homology-computation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/homology-computation/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/homology-generator/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/homology-generator/</loc>
     <lastmod>2022-11-03T17:39:53+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/topological-invariants/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/topological-invariants/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-05-a/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/asymptotic-convergence/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/asymptotic-convergence/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-05-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/peltier-05-a/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/deformable-model/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/deformable-model/</loc>
     <lastmod>2022-11-03T17:40:09+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-b/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-05-b/</loc>
     <lastmod>2022-11-03T17:39:53+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/homology-generators/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/homology-generators/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-structure-tensor/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/image-structure-tensor/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/lattice-convex-polygon/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/lattice-convex-polygon/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-05-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-05-a/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/resolution-adaptation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/resolution-adaptation/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/riemannian-geometry/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/riemannian-geometry/</loc>
     <lastmod>2022-11-03T17:40:08+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/simplicial-homology/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/simplicial-homology/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/smith-normal-form/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/smith-normal-form/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/topology-adaptation/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/topology-adaptation/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/combinatorial-structure/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/combinatorial-structure/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-04-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/alayrangues-04-a/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/generalised-map/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/generalised-map/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/n-surface/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/n-surface/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-04-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-04-a/</loc>
     <lastmod>2022-11-03T17:40:06+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/subdivision/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/subdivision/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/adaptive-resolution/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/adaptive-resolution/</loc>
     <lastmod>2022-11-03T17:40:08+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/automated-topology-changes/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/automated-topology-changes/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/cellular-decomposition/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/cellular-decomposition/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-b/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-03-b/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-d/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-03-d/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/deformable-surface/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/deformable-surface/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-c/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-03-c/</loc>
     <lastmod>2022-11-03T17:40:07+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/lagrangian-mechanics/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/lagrangian-mechanics/</loc>
     <lastmod>2022-11-03T17:40:08+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/shape-recovery/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/shape-recovery/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/cell-complex/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/cell-complex/</loc>
     <lastmod>2022-11-03T17:40:08+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-02-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/alayrangues-02-a/</loc>
     <lastmod>2022-11-03T17:40:08+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/order/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/order/</loc>
     <lastmod>2022-11-03T17:40:08+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/weak-lighting-function/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/weak-lighting-function/</loc>
     <lastmod>2022-11-03T17:40:08+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/taton-02-b/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/taton-02-b/</loc>
     <lastmod>2022-11-03T17:40:08+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/snakes/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/snakes/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-01-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/attali-01-a/</loc>
     <lastmod>2022-11-03T17:39:53+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-01-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-01-a/</loc>
     <lastmod>2022-11-03T17:40:08+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/isosurface-extraction/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/isosurface-extraction/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/skeleton/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/skeleton/</loc>
     <lastmod>2022-11-03T17:40:09+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-00-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-00-a/</loc>
     <lastmod>2022-11-03T17:39:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/jordan-pair/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/jordan-pair/</loc>
     <lastmod>2022-11-03T17:39:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/jordan-brouwer-theorem/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/jordan-brouwer-theorem/</loc>
     <lastmod>2022-11-03T17:39:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/simplicial-complex/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/simplicial-complex/</loc>
     <lastmod>2022-11-03T17:39:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/3d-biomedical-imagery/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/3d-biomedical-imagery/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/3d-pyramid/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/3d-pyramid/</loc>
     <lastmod>2022-11-03T17:39:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/attali-99-b/</loc>
     <lastmod>2022-11-03T17:40:09+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-99-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-99-a/</loc>
     <lastmod>2022-11-03T17:39:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/medical-imaging/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/medical-imaging/</loc>
     <lastmod>2022-11-03T17:39:54+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/multiresolution/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/tag/multiresolution/</loc>
     <lastmod>2022-11-03T17:40:09+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-98-a/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-98-a/</loc>
     <lastmod>2022-11-03T17:40:09+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-c/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-96-c/</loc>
     <lastmod>2022-11-03T17:40:09+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-b/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-96-b/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-94/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/publication/lachaud-94/</loc>
     <lastmod>2022-11-03T17:40:10+01:00</lastmod>
     <changefreq>weekly</changefreq>
   </url><url>
-    <loc>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/admin/</loc>
+    <loc>https://jacquesolivierlachaud.github.io/admin/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/lectures/info804/tests/webgl/functions/</loc>
+    <changefreq>weekly</changefreq>
+  </url><url>
+    <loc>https://jacquesolivierlachaud.github.io/lectures/info804/tests/webgl/shaders/</loc>
     <changefreq>weekly</changefreq>
   </url>
 </urlset>

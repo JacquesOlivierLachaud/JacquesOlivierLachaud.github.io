@@ -2,21 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>3D | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/3d/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/3d/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/3d/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/3d/index.xml" rel="self" type="application/rss+xml" />
     <description>3D</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 02 Jul 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>3D</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/3d/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/3d/</link>
     </image>
     
     <item>
+      <title>Lightweight Curvature Estimation on Point Clouds with Randomized Corrected Curvature Measures</title>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2023-cgf/</link>
+      <pubDate>Sun, 02 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2023-cgf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>StableProxies</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/stable-proxies/</link>
       <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/stable-proxies/</guid>
       <description>&lt;p&gt;Start date: Feb. 2023&lt;/p&gt;
 &lt;p&gt;The objective of the project is to propose new calculus models for the
 geometry processing of large, heterogeneous and complex geometrical
@@ -48,25 +56,25 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>A Simple Discrete Calculus for Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2022-dgmm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2022-dgmm/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2022-dgmm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2022-dgmm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Corrected Curvature Measures</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-dcg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-dcg/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-dcg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-dcg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Graduate School on Digital Geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</link>
       <pubDate>Sun, 11 Jul 2021 13:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</guid>
       <description>&lt;p&gt;The code related to the paper is implemented in
 &lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -74,9 +82,9 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>Interpolated corrected curvature measures for polygonal surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</link>
       <pubDate>Tue, 07 Jul 2020 15:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</guid>
       <description>&lt;p&gt;The code related to the paper is implemented in
 &lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -84,33 +92,33 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>An Optimized Framework for Plane-Probing Algorithms</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-jmiv/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Interpolated corrected curvature measures for polygonal surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-cgf/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-cgf/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-cgf/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-cgf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combining voxel and normal predictions for multi-view 3D sketching</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/delanoy-2019-cg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/delanoy-2019-cg/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/delanoy-2019-cg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/delanoy-2019-cg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PARADIS</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/paradis/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/paradis/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/paradis/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/paradis/</guid>
       <description>&lt;h2 id=&#34;consortium&#34;&gt;Consortium&lt;/h2&gt;
 &lt;p&gt;This project gathers members of three laboratories: LIRIS (Leader, Lyon), LAMA (Chambéry), LaBRI (Bordeaux).&lt;/p&gt;
 </description>
@@ -118,33 +126,33 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>Heat Kernel Laplace-Beltrami Operator on Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2017-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/caissard-2017-dgci/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2017-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/caissard-2017-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Centerline detection on partial mesh scans by confidence vote in accumulation map</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2016-icpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2016-icpr/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2016-icpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2016-icpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Interactive Curvature Tensor Visualization on Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/perrier-2016-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/perrier-2016-dgci/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/perrier-2016-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/perrier-2016-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CoMeDiC</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/comedic/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/comedic/</guid>
       <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
 and standard calculus in the case of the digital space Zn. The global
 idea is to reliably estimate a metric on digital curves and surfaces
@@ -177,41 +185,41 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>3D Geometric Analysis of Tubular Objects Based on Surface Normal Accumulation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2015-iciap/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2015-iciap/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2015-iciap/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2015-iciap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Precise Cross-Section Estimation on Tubular Organs</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/grelard-2015-caip/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/grelard-2015-caip/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/grelard-2015-caip/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/grelard-2015-caip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scale-space feature extraction on digital surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2015-cg-smi/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/levallois-2015-cg-smi/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2015-cg-smi/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/levallois-2015-cg-smi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multigrid convergent principal curvature estimators in digital geometry </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-cviu/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2014-cviu/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-cviu/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2014-cviu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DigitalSnow</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/digital-snow/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/digital-snow/</link>
       <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/digital-snow/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/digital-snow/</guid>
       <description>&lt;h2 id=&#34;consortium&#34;&gt;Consortium&lt;/h2&gt;
 &lt;p&gt;This project gathers members of four laboratories: LIRIS (Leader, Lyon), LAMA (Chambéry), LJK (Grenoble), and CEN/Météofrance (Grenoble).&lt;/p&gt;
 </description>
@@ -219,114 +227,114 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>Fully deformable 3D digital partition model with topological control</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-prl/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/damiand-2011-prl/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-prl/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/damiand-2011-prl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maximal Planes and Multiscale Tangential Cover of 3D Digital Objects</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/charrier-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/charrier-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/charrier-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/charrier-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DGtal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/dgtal/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/dgtal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multi-Label Simple Points Definition for 3D Images Digital Deformable Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/dupas-2009-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/dupas-2009-dgci/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/dupas-2009-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/dupas-2009-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Géométrie discréte et images numériques</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-07-c/</link>
       <pubDate>Mon, 01 Jan 2007 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-07-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GeoDIB</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/geodib/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/geodib/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/geodib/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/geodib/</guid>
       <description>&lt;p&gt;This project gathered members of four laboratories: LORIA (Leader, Nancy), LIRIS (Lyon), LAIC (Clermont), LaBRI (Bordeaux) then LAMA (Chambéry).&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Deformable Model with Adaptive Mesh and Automated Topology Changes</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-d/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-03-d/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-d/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-03-d/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Delaunay conforming iso-surface; skeleton extraction and noise removal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-01-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/attali-01-a/</link>
       <pubDate>Mon, 01 Jan 2001 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-01-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/attali-01-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Continuous analogs of digital boundaries: A topological approach to iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-00-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-00-a/</link>
       <pubDate>Sat, 01 Jan 2000 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-00-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-00-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Constructing Iso-Surfaces Satisfying the Delaunay Constraint; Application to the Skeleton Computation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/attali-99-b/</link>
       <pubDate>Fri, 01 Jan 1999 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/attali-99-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Meshes with Automated Topology Changes for Coarse-to-fine 3D Surface Extraction</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-99-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-99-a/</link>
       <pubDate>Fri, 01 Jan 1999 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-99-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-99-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Surfaces as a Basis for Building Iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-98-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-98-a/</link>
       <pubDate>Thu, 01 Jan 1998 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-98-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-98-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Volumic Segmentation using Hierarchical Representation and Triangulated Surface</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-96-c/</link>
       <pubDate>Mon, 01 Apr 1996 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-96-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Topologically Defined Iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-96-b/</link>
       <pubDate>Mon, 01 Jan 1996 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-96-b/</guid>
       <description></description>
     </item>
     

@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>plane probing | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/plane-probing/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/plane-probing/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/plane-probing/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/plane-probing/index.xml" rel="self" type="application/rss+xml" />
     <description>plane probing</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>plane probing</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/plane-probing/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/plane-probing/</link>
     </image>
     
     <item>
       <title>An Optimized Framework for Plane-Probing Algorithms</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-jmiv/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Plane Recognition with Fewer Probes</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2019-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/roussillon-2019-dgci/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2019-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/roussillon-2019-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PARADIS</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/paradis/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/paradis/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/paradis/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/paradis/</guid>
       <description>&lt;h2 id=&#34;consortium&#34;&gt;Consortium&lt;/h2&gt;
 &lt;p&gt;This project gathers members of three laboratories: LIRIS (Leader, Lyon), LAMA (Chambéry), LaBRI (Bordeaux).&lt;/p&gt;
 </description>
@@ -40,9 +40,9 @@
     
     <item>
       <title>Two Plane-Probing Algorithms for the Computation of the Normal Vector to a Digital Plane</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-jmiv/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-jmiv/</guid>
       <description></description>
     </item>
     

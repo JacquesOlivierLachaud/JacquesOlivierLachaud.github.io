@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>noise detection | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/noise-detection/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/noise-detection/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/noise-detection/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/noise-detection/index.xml" rel="self" type="application/rss+xml" />
     <description>noise detection</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2014 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>noise detection</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/noise-detection/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/noise-detection/</link>
     </image>
     
     <item>
       <title>Meaningful Scales Detection: an Unsupervised Noise Detection Algorithm for Digital Contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2014-ipol/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2014-ipol/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2014-ipol/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2014-ipol/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Shape Analysis with Maximal Segments</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2012-adgmm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2012-adgmm/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2012-adgmm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2012-adgmm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Meaningful Scales Detection along Digital Contours for Unsupervised Local Noise Estimation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-tpami/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-tpami/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Meaningful Thickness Detection On Polygonal Curve</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-icpram/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-icpram/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-icpram/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-icpram/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unsupervised, Fast and Precise Recognition of Digital Arcs in Noisy Images</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/nguyen-2010-iccvg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/nguyen-2010-iccvg/</link>
       <pubDate>Wed, 01 Sep 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/nguyen-2010-iccvg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/nguyen-2010-iccvg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multiscale Analysis of Discrete Contours for Unsupervised Noise Detection</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-iwcia/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-iwcia/</guid>
       <description></description>
     </item>
     

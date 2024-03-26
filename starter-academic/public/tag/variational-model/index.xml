@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>variational model | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/variational-model/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/variational-model/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/variational-model/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/variational-model/index.xml" rel="self" type="application/rss+xml" />
     <description>variational model</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 16 Apr 2023 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>variational model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/variational-model/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/variational-model/</link>
     </image>
     
     <item>
       <title>Joint optimization of distortion and cut location for mesh parameterization using an Ambrosio-Tortorelli functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/weill-duflos-2023-gmp/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/weill-duflos-2023-gmp/</link>
       <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/weill-duflos-2023-gmp/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/weill-duflos-2023-gmp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Conference on Digital Geometry and Discrete Variational Calculus</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
       <pubDate>Mon, 29 Mar 2021 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
       <description>&lt;h2 id=&#34;post-conference-information&#34;&gt;Post conference information&lt;/h2&gt;
 &lt;p&gt;Slides and videos of the conference are available on the &lt;a href=&#34;https://dgdvc.sciencesconf.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;conference
 website&lt;/a&gt;.&lt;/p&gt;
@@ -60,41 +60,41 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>An Elastica-Driven Digital Curve Evolution Model for Image Segmentation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/antunes-2021-jmiv/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/antunes-2021-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Surface Regularization With Guarantees</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2021-tvcg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2021-tvcg/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2021-tvcg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2021-tvcg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A discrete calculus model of Ambrosio-Tortorelli’s functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
       <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete calculus model of Ambrosio-Tortorelli’s functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Geometric Total Variation for Image Vectorization, Zooming and Pixel Art Depixelizing</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2019-acpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2019-acpr/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2019-acpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2019-acpr/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Click on each icon below to see its zoomedx16 version !&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;tr&gt;
@@ -290,33 +290,33 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Mumford-Shah Mesh Processing using the Ambrosio-Tortorelli Functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bonneel-2018-cgf/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/bonneel-2018-cgf/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bonneel-2018-cgf/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/bonneel-2018-cgf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regularization of Voxel Art</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2018-siggraph/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2018-siggraph/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2018-siggraph/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2018-siggraph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Surface Regularization by Normal Vector Field Alignment</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2017-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2017-dgci/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2017-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2017-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cross Border Meeting on Discrete and Computational Geometry and Applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
       <pubDate>Mon, 09 Nov 2015 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
       <description>&lt;h2 id=&#34;invited-speakers&#34;&gt;Invited speakers&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Silvia Biasotti (CNR IMATI, Genova)&lt;/li&gt;
@@ -329,9 +329,9 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>CoMeDiC</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/comedic/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/comedic/</guid>
       <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
 and standard calculus in the case of the digital space Zn. The global
 idea is to reliably estimate a metric on digital curves and surfaces
@@ -364,89 +364,89 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>Combining Topological Maps, Multi-Label Simple Points, and Minimum-Length Polygons for Efficient Digital Partition Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/damiand-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/damiand-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regularization of Discrete Contour by Willmore Energy</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2011-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/bretin-2011-jmiv/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2011-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/bretin-2011-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Deformable Model Simulating Active Contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-dgci/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Top-Down Segmentation of Histological Images Using a Digital Deformable Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-isvc/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-isvc/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-isvc/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-isvc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combinatorial pyramids and discrete geometry for energy-minimizing segmentation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/braure-06-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/braure-06-a/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/braure-06-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/braure-06-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Model with a Complexity Independent from Image Resolution</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-05-b/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-05-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Resolution Independent Deformable Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-04-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-04-a/</link>
       <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-04-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-04-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Model with Adaptive Mesh and Automated Topology Changes</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-d/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-03-d/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-d/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-03-d/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Model with non-Euclidean Metrics</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/taton-02-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/taton-02-b/</link>
       <pubDate>Tue, 01 Jan 2002 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/taton-02-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/taton-02-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete deformable boundaries for the segmentation of multidimensional images</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-01-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-01-a/</link>
       <pubDate>Mon, 01 Jan 2001 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-01-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-01-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Meshes with Automated Topology Changes for Coarse-to-fine 3D Surface Extraction</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-99-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-99-a/</link>
       <pubDate>Fri, 01 Jan 1999 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-99-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-99-a/</guid>
       <description></description>
     </item>
     

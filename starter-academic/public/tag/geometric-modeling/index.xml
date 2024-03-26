@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>geometric modeling | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-modeling/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/geometric-modeling/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/geometric-modeling/index.xml" rel="self" type="application/rss+xml" />
     <description>geometric modeling</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 01 Sep 2008 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>geometric modeling</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/geometric-modeling/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/geometric-modeling/</link>
     </image>
     
     <item>
       <title>Equivalence between Closed Connected n-G-Maps without Multi-Incidence and n-Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-08-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/alayrangues-08-a/</link>
       <pubDate>Mon, 01 Sep 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-08-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/alayrangues-08-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Equivalence between Regular n-G-maps and n-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-04-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/alayrangues-04-a/</link>
       <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-04-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/alayrangues-04-a/</guid>
       <description></description>
     </item>
     

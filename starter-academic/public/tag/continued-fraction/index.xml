@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>continued fraction | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/continued-fraction/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/continued-fraction/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/continued-fraction/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/continued-fraction/index.xml" rel="self" type="application/rss+xml" />
     <description>continued fraction</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>continued fraction</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/continued-fraction/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/continued-fraction/</link>
     </image>
     
     <item>
       <title>Two efficient algorithms for computing the characteristics of a subsegment of a digital straight line </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2013-dam/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2013-dam/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2013-dam/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2013-dam/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computing the Characteristics of a SubSegment of a Digital Straight Line in Logarithmic Time</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2011-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/said-2011-dgci/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2011-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/said-2011-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Delaunay properties of digital straight segments</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-dgci/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Revisiting Digital Straight Segment Recognition</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-a/</link>
       <pubDate>Sun, 01 Oct 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-a/</guid>
       <description></description>
     </item>
     

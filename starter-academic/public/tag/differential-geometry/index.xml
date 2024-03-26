@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>differential geometry | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/differential-geometry/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/differential-geometry/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/differential-geometry/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/differential-geometry/index.xml" rel="self" type="application/rss+xml" />
     <description>differential geometry</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>differential geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/differential-geometry/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/differential-geometry/</link>
     </image>
     
     <item>
       <title>Laplace--Beltrami Operator on Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2019-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/caissard-2019-jmiv/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2019-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/caissard-2019-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Heat Kernel Laplace-Beltrami Operator on Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2017-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/caissard-2017-dgci/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2017-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/caissard-2017-dgci/</guid>
       <description></description>
     </item>
     

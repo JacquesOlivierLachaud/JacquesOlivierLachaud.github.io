@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>distance transform | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/distance-transform/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/distance-transform/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/distance-transform/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/distance-transform/index.xml" rel="self" type="application/rss+xml" />
     <description>distance transform</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 11 Jul 2021 13:30:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>distance transform</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/distance-transform/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/distance-transform/</link>
     </image>
     
     <item>
       <title>Graduate School on Digital Geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</link>
       <pubDate>Sun, 11 Jul 2021 13:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</guid>
       <description>&lt;p&gt;The code related to the paper is implemented in
 &lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
 </description>

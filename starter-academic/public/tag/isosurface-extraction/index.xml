@@ -2,53 +2,53 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>isosurface extraction | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/isosurface-extraction/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/isosurface-extraction/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/isosurface-extraction/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/isosurface-extraction/index.xml" rel="self" type="application/rss+xml" />
     <description>isosurface extraction</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jan 2001 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>isosurface extraction</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/isosurface-extraction/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/isosurface-extraction/</link>
     </image>
     
     <item>
       <title>Delaunay conforming iso-surface; skeleton extraction and noise removal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-01-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/attali-01-a/</link>
       <pubDate>Mon, 01 Jan 2001 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-01-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/attali-01-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Continuous analogs of digital boundaries: A topological approach to iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-00-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-00-a/</link>
       <pubDate>Sat, 01 Jan 2000 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-00-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-00-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Constructing Iso-Surfaces Satisfying the Delaunay Constraint; Application to the Skeleton Computation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/attali-99-b/</link>
       <pubDate>Fri, 01 Jan 1999 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/attali-99-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Surfaces as a Basis for Building Iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-98-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-98-a/</link>
       <pubDate>Thu, 01 Jan 1998 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-98-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-98-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Topologically Defined Iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-96-b/</link>
       <pubDate>Mon, 01 Jan 1996 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-96-b/</guid>
       <description></description>
     </item>
     

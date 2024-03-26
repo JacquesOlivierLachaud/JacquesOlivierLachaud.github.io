@@ -2,21 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Recent &amp; Upcoming Talks | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/event/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/event/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/event/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/event/index.xml" rel="self" type="application/rss+xml" />
     <description>Recent &amp; Upcoming Talks</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 09:30:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 May 2023 09:30:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Recent &amp; Upcoming Talks</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/event/</link>
+      <link>https://jacquesolivierlachaud.github.io/event/</link>
     </image>
     
     <item>
+      <title>Full convexity: new characterisations and applications</title>
+      <link>https://jacquesolivierlachaud.github.io/talk/full-convexity-new-characterisations-and-applications/</link>
+      <pubDate>Mon, 15 May 2023 09:30:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/talk/full-convexity-new-characterisations-and-applications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>DGtal tutorial at DGMM2022</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/dgtal-tutorial-at-dgmm2022/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/dgtal-tutorial-at-dgmm2022/</link>
       <pubDate>Mon, 24 Oct 2022 09:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/dgtal-tutorial-at-dgmm2022/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/dgtal-tutorial-at-dgmm2022/</guid>
       <description>&lt;p&gt;Tutorial prepared by D. Coeurjolly, B. Kerautret, J.-O. Lachaud, T. Roussillon&lt;/p&gt;
 &lt;h2 id=&#34;the-code-repository&#34;&gt;The code repository&lt;/h2&gt;
 &lt;p&gt;Get the code on &lt;a href=&#34;https://github.com/DGtal-team/DGtal-Tutorials-DGMM2022&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
@@ -35,9 +43,9 @@
     
     <item>
       <title>Graduate School on Digital Geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</link>
       <pubDate>Sun, 11 Jul 2021 13:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</guid>
       <description>&lt;p&gt;The code related to the paper is implemented in
 &lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -45,9 +53,9 @@
     
     <item>
       <title>Conference on Digital Geometry and Discrete Variational Calculus</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
       <pubDate>Mon, 29 Mar 2021 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
       <description>&lt;h2 id=&#34;post-conference-information&#34;&gt;Post conference information&lt;/h2&gt;
 &lt;p&gt;Slides and videos of the conference are available on the &lt;a href=&#34;https://dgdvc.sciencesconf.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;conference
 website&lt;/a&gt;.&lt;/p&gt;
@@ -83,9 +91,9 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Interpolated corrected curvature measures for polygonal surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</link>
       <pubDate>Tue, 07 Jul 2020 15:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</guid>
       <description>&lt;p&gt;The code related to the paper is implemented in
 &lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -93,41 +101,41 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Digital Geometry in Pattern Recognition: Extracting Geometric Features with DGtal and Applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</link>
       <pubDate>Mon, 25 Nov 2019 14:45:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A discrete calculus model of Ambrosio-Tortorelli’s functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
       <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete calculus model of Ambrosio-Tortorelli’s functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convergent Geometric Estimators with Digital Volume and Surface Integrals</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</link>
       <pubDate>Mon, 18 Apr 2016 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cross Border Meeting on Discrete and Computational Geometry and Applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
       <pubDate>Mon, 09 Nov 2015 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
       <description>&lt;h2 id=&#34;invited-speakers&#34;&gt;Invited speakers&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Silvia Biasotti (CNR IMATI, Genova)&lt;/li&gt;
@@ -140,17 +148,17 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Multigrid convergence of digital curvature estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/multigrid-convergence-of-digital-curvature-estimators/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/multigrid-convergence-of-digital-curvature-estimators/</link>
       <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/multigrid-convergence-of-digital-curvature-estimators/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/multigrid-convergence-of-digital-curvature-estimators/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A tutorial for  DGtal library (2012) </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-tutorial-for-dgtal-library-2012/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/a-tutorial-for-dgtal-library-2012/</link>
       <pubDate>Fri, 01 Jun 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-tutorial-for-dgtal-library-2012/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/a-tutorial-for-dgtal-library-2012/</guid>
       <description>&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;slides-intro.pdf&#34;&gt;Introduction&lt;/a&gt;  (D. Coeurjolly)&lt;/li&gt;
@@ -162,9 +170,9 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>A tutorial for  DGtal library (2011) </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-tutorial-for-dgtal-library-2011/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/a-tutorial-for-dgtal-library-2011/</link>
       <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-tutorial-for-dgtal-library-2011/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/a-tutorial-for-dgtal-library-2011/</guid>
       <description>&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;slides-intro.pdf&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
@@ -178,17 +186,17 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Asymptotic linear digital geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/asymptotic-linear-digital-geometry/</link>
       <pubDate>Tue, 08 Feb 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/asymptotic-linear-digital-geometry/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Asymptotic linear digital geometry and applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/asymptotic-linear-digital-geometry-and-applications/</link>
       <pubDate>Tue, 08 Feb 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/asymptotic-linear-digital-geometry-and-applications/</guid>
       <description></description>
     </item>
     

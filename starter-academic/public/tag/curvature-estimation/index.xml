@@ -2,157 +2,157 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>curvature estimation | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/curvature-estimation/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/curvature-estimation/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/curvature-estimation/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/curvature-estimation/index.xml" rel="self" type="application/rss+xml" />
     <description>curvature estimation</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>curvature estimation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/curvature-estimation/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/curvature-estimation/</link>
     </image>
     
     <item>
       <title>Robust and Convergent Curvature and Normal Estimators with Digital Integral Invariants</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-lnm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-lnm/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-lnm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-lnm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convergent Geometric Estimators with Digital Volume and Surface Integrals</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</link>
       <pubDate>Mon, 18 Apr 2016 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convergent Geometric Estimators with Digital Volume and Surface Integrals</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci-inv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci-inv/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci-inv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci-inv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Interactive Curvature Tensor Visualization on Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/perrier-2016-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/perrier-2016-dgci/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/perrier-2016-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/perrier-2016-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multigrid convergent principal curvature estimators in digital geometry </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-cviu/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2014-cviu/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-cviu/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2014-cviu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Parameter-Free and Multigrid Convergent Digital Curvature Estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2014-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/levallois-2014-dgci/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2014-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/levallois-2014-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multigrid convergence of digital curvature estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/multigrid-convergence-of-digital-curvature-estimators/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/multigrid-convergence-of-digital-curvature-estimators/</link>
       <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/multigrid-convergence-of-digital-curvature-estimators/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/multigrid-convergence-of-digital-curvature-estimators/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Integral based Curvature Estimators in Digital Geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2013-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2013-dgci/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2013-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2013-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Accurate Curvature Estimation along Digital Contours with Maximal Digital Circular Arcs</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Curvature estimation along noisy digital contours by approximate global optimization </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-pr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-pr/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-pr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-pr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Comparison of Discrete Curvature Estimators and Application to Corner Detection</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-b/</link>
       <pubDate>Mon, 01 Dec 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete Contour Extraction from Reference Curvature Function</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-c/</link>
       <pubDate>Mon, 01 Dec 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Robust estimation of curvature along digital contours with global optimization</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-a/</link>
       <pubDate>Tue, 01 Apr 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Curvature based corner detector for discrete, noisy and multi-scale contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2008-ijsm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2008-ijsm/</link>
       <pubDate>Tue, 01 Jan 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2008-ijsm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2008-ijsm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maximal digital straight segments and convergence of discrete geometric estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-07-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-07-a/</link>
       <pubDate>Thu, 01 Feb 2007 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-07-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-07-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Model with a Complexity Independent from Image Resolution</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-05-b/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-05-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maximal digital straight segments and convergence of discrete geometric estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-05-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-05-a/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-05-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-05-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Resolution Independent Deformable Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-04-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-04-a/</link>
       <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-04-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-04-a/</guid>
       <description></description>
     </item>
     

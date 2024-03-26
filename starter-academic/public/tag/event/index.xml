@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>event | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/event/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/event/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/event/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/event/index.xml" rel="self" type="application/rss+xml" />
     <description>event</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 29 Mar 2021 09:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>event</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/event/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/event/</link>
     </image>
     
     <item>
       <title>Conference on Digital Geometry and Discrete Variational Calculus</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
       <pubDate>Mon, 29 Mar 2021 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
       <description>&lt;h2 id=&#34;post-conference-information&#34;&gt;Post conference information&lt;/h2&gt;
 &lt;p&gt;Slides and videos of the conference are available on the &lt;a href=&#34;https://dgdvc.sciencesconf.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;conference
 website&lt;/a&gt;.&lt;/p&gt;
@@ -52,9 +52,9 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Cross Border Meeting on Discrete and Computational Geometry and Applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
       <pubDate>Mon, 09 Nov 2015 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
       <description>&lt;h2 id=&#34;invited-speakers&#34;&gt;Invited speakers&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Silvia Biasotti (CNR IMATI, Genova)&lt;/li&gt;

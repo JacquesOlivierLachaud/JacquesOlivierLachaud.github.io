@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>digital topology | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-topology/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-topology/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/digital-topology/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/digital-topology/index.xml" rel="self" type="application/rss+xml" />
     <description>digital topology</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 11 Jul 2021 13:30:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>digital topology</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/digital-topology/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/digital-topology/</link>
     </image>
     
     <item>
       <title>Graduate School on Digital Geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</link>
       <pubDate>Sun, 11 Jul 2021 13:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</guid>
       <description>&lt;p&gt;The code related to the paper is implemented in
 &lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -24,129 +24,129 @@
     
     <item>
       <title>Properties of Gauss Digitized Shapes and Digital Surface Integration</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-jmiv/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combining Topological Maps, Multi-Label Simple Points, and Minimum-Length Polygons for Efficient Digital Partition Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/damiand-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/damiand-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fully deformable 3D digital partition model with topological control</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-prl/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/damiand-2011-prl/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-prl/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/damiand-2011-prl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DGtal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/dgtal/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/dgtal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multi-Label Simple Points Definition for 3D Images Digital Deformable Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/dupas-2009-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/dupas-2009-dgci/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/dupas-2009-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/dupas-2009-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Géométrie discréte et images numériques</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-07-b/</link>
       <pubDate>Mon, 01 Jan 2007 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-07-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computation of homology groups and generators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-06-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/peltier-06-b/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-06-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/peltier-06-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computation of homology groups and generators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-05-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/peltier-05-a/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-05-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/peltier-05-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Coding cells of digital spaces: a framework to write generic digital topology algorithms</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-03-b/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-03-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Geometric measures on arbitrary dimensional digital surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-03-c/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-03-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Equivalence Between Order and Cell Complex Representations</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-02-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/alayrangues-02-a/</link>
       <pubDate>Fri, 01 Feb 2002 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-02-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/alayrangues-02-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Delaunay conforming iso-surface; skeleton extraction and noise removal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-01-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/attali-01-a/</link>
       <pubDate>Mon, 01 Jan 2001 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-01-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/attali-01-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Continuous analogs of digital boundaries: A topological approach to iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-00-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-00-a/</link>
       <pubDate>Sat, 01 Jan 2000 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-00-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-00-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Constructing Iso-Surfaces Satisfying the Delaunay Constraint; Application to the Skeleton Computation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/attali-99-b/</link>
       <pubDate>Fri, 01 Jan 1999 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/attali-99-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Surfaces as a Basis for Building Iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-98-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-98-a/</link>
       <pubDate>Thu, 01 Jan 1998 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-98-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-98-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Topologically Defined Iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-96-b/</link>
       <pubDate>Mon, 01 Jan 1996 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-96-b/</guid>
       <description></description>
     </item>
     

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>image analysis | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-analysis/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-analysis/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/image-analysis/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/image-analysis/index.xml" rel="self" type="application/rss+xml" />
     <description>image analysis</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 29 Mar 2021 09:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>image analysis</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/image-analysis/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/image-analysis/</link>
     </image>
     
     <item>
       <title>Conference on Digital Geometry and Discrete Variational Calculus</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
       <pubDate>Mon, 29 Mar 2021 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
       <description>&lt;h2 id=&#34;post-conference-information&#34;&gt;Post conference information&lt;/h2&gt;
 &lt;p&gt;Slides and videos of the conference are available on the &lt;a href=&#34;https://dgdvc.sciencesconf.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;conference
 website&lt;/a&gt;.&lt;/p&gt;
@@ -52,49 +52,49 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>An Elastica-Driven Digital Curve Evolution Model for Image Segmentation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/antunes-2021-jmiv/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/antunes-2021-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Geometry in Pattern Recognition: Extracting Geometric Features with DGtal and Applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</link>
       <pubDate>Mon, 25 Nov 2019 14:45:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Curvature Evolution Model for Image Segmentation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2019-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/antunes-2019-dgci/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2019-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/antunes-2019-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Image restoration and segmentation using the Ambrosio-Tortorelli functional and discrete calculus</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-icpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/foare-2016-icpr/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-icpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/foare-2016-icpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Numerical implementation of the Ambrosio-Tortorelli functional using discrete calculus and application to image restoration and inpainting</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-rrpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/foare-2016-rrpr/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-rrpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/foare-2016-rrpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CoMeDiC</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/comedic/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/comedic/</guid>
       <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
 and standard calculus in the case of the digital space Zn. The global
 idea is to reliably estimate a metric on digital curves and surfaces
@@ -127,114 +127,114 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>Meaningful Scales Detection along Digital Contours for Unsupervised Local Noise Estimation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-tpami/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-tpami/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unsupervised, Fast and Precise Recognition of Digital Arcs in Noisy Images</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/nguyen-2010-iccvg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/nguyen-2010-iccvg/</link>
       <pubDate>Wed, 01 Sep 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/nguyen-2010-iccvg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/nguyen-2010-iccvg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DGtal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/dgtal/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/dgtal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multiscale Analysis of Discrete Contours for Unsupervised Noise Detection</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-iwcia/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete Contour Extraction from Reference Curvature Function</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-c/</link>
       <pubDate>Mon, 01 Dec 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Géométrie discréte et images numériques</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-07-c/</link>
       <pubDate>Mon, 01 Jan 2007 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-07-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combinatorial pyramids and discrete geometry for energy-minimizing segmentation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/braure-06-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/braure-06-a/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/braure-06-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/braure-06-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>FOGRIMMI</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/fogrimmi/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/fogrimmi/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/fogrimmi/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/fogrimmi/</guid>
       <description>&lt;p&gt;This project gathers members of four laboratories: GREYC (Leader, Caen), SIC (Poitiers), LIRIS (Lyon), LaBRI (Bordeaux) then LAMA (Chambéry), and the medical center François Baclesse.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Deformable Model with a Complexity Independent from Image Resolution</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-05-b/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-05-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Resolution Independent Deformable Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-04-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-04-a/</link>
       <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-04-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-04-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete deformable boundaries for the segmentation of multidimensional images</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-01-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-01-a/</link>
       <pubDate>Mon, 01 Jan 2001 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-01-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-01-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Meshes with Automated Topology Changes for Coarse-to-fine 3D Surface Extraction</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-99-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-99-a/</link>
       <pubDate>Fri, 01 Jan 1999 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-99-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-99-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Volumic Segmentation using Hierarchical Representation and Triangulated Surface</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-96-c/</link>
       <pubDate>Mon, 01 Apr 1996 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-96-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A discrete adaptive model following topological modifications of volumes</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-94/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-94/</link>
       <pubDate>Thu, 01 Sep 1994 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-94/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-94/</guid>
       <description></description>
     </item>
     

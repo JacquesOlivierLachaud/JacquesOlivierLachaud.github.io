@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>integral invariant | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/integral-invariant/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/integral-invariant/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/integral-invariant/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/integral-invariant/index.xml" rel="self" type="application/rss+xml" />
     <description>integral invariant</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>integral invariant</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/integral-invariant/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/integral-invariant/</link>
     </image>
     
     <item>
       <title>Interactive Curvature Tensor Visualization on Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/perrier-2016-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/perrier-2016-dgci/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/perrier-2016-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/perrier-2016-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multigrid convergence of digital curvature estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/multigrid-convergence-of-digital-curvature-estimators/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/multigrid-convergence-of-digital-curvature-estimators/</link>
       <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/multigrid-convergence-of-digital-curvature-estimators/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/multigrid-convergence-of-digital-curvature-estimators/</guid>
       <description></description>
     </item>
     

@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>lattice reduction | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/lattice-reduction/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/lattice-reduction/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/lattice-reduction/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/lattice-reduction/index.xml" rel="self" type="application/rss+xml" />
     <description>lattice reduction</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>lattice reduction</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/lattice-reduction/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/lattice-reduction/</link>
     </image>
     
     <item>
       <title>Two Plane-Probing Algorithms for the Computation of the Normal Vector to a Digital Plane</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-jmiv/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computation of the Normal Vector to a Digital Plane by Sampling Significant Points</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci/</guid>
       <description></description>
     </item>
     

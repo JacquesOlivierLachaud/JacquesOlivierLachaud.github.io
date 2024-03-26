@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>discrete geometric estimator | Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-geometric-estimator/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-geometric-estimator/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/tag/discrete-geometric-estimator/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/tag/discrete-geometric-estimator/index.xml" rel="self" type="application/rss+xml" />
     <description>discrete geometric estimator</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jan 2022 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>discrete geometric estimator</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/tag/discrete-geometric-estimator/</link>
+      <link>https://jacquesolivierlachaud.github.io/tag/discrete-geometric-estimator/</link>
     </image>
     
     <item>
       <title>Corrected Curvature Measures</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-dcg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-dcg/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-dcg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-dcg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Graduate School on Digital Geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</link>
       <pubDate>Sun, 11 Jul 2021 13:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</guid>
       <description>&lt;p&gt;The code related to the paper is implemented in
 &lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -32,17 +32,17 @@
     
     <item>
       <title>Digital Surface Regularization With Guarantees</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2021-tvcg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2021-tvcg/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2021-tvcg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2021-tvcg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Interpolated corrected curvature measures for polygonal surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</link>
       <pubDate>Tue, 07 Jul 2020 15:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</guid>
       <description>&lt;p&gt;The code related to the paper is implemented in
 &lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -50,81 +50,81 @@
     
     <item>
       <title>An Optimized Framework for Plane-Probing Algorithms</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-jmiv/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Interpolated corrected curvature measures for polygonal surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-cgf/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-cgf/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-cgf/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-cgf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Geometry in Pattern Recognition: Extracting Geometric Features with DGtal and Applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</link>
       <pubDate>Mon, 25 Nov 2019 14:45:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combining voxel and normal predictions for multi-view 3D sketching</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/delanoy-2019-cg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/delanoy-2019-cg/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/delanoy-2019-cg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/delanoy-2019-cg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Plane Recognition with Fewer Probes</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2019-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/roussillon-2019-dgci/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2019-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/roussillon-2019-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regularization of Voxel Art</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2018-siggraph/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2018-siggraph/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2018-siggraph/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2018-siggraph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Surface Regularization by Normal Vector Field Alignment</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2017-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2017-dgci/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2017-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2017-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Robust and Convergent Curvature and Normal Estimators with Digital Integral Invariants</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-lnm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-lnm/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-lnm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-lnm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Two Plane-Probing Algorithms for the Computation of the Normal Vector to a Digital Plane</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-jmiv/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CoMeDiC</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/comedic/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/comedic/</guid>
       <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
 and standard calculus in the case of the digital space Zn. The global
 idea is to reliably estimate a metric on digital curves and surfaces
@@ -157,73 +157,73 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>Multigrid convergence of digital curvature estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/multigrid-convergence-of-digital-curvature-estimators/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/multigrid-convergence-of-digital-curvature-estimators/</link>
       <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/multigrid-convergence-of-digital-curvature-estimators/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/multigrid-convergence-of-digital-curvature-estimators/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DGtal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/dgtal/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/dgtal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Comparison of Discrete Curvature Estimators and Application to Corner Detection</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-b/</link>
       <pubDate>Mon, 01 Dec 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Robust estimation of curvature along digital contours with global optimization</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-a/</link>
       <pubDate>Tue, 01 Apr 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Experimental Comparison of Continuous and Discrete Tangent Estimators Along Digital Curves</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-08-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-08-a/</link>
       <pubDate>Sat, 01 Mar 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-08-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-08-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fast, Accurate and Convergent Tangent Estimation on Digital Contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-07-a/</link>
       <pubDate>Mon, 01 Oct 2007 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-07-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convex shapes and convergence speed of discrete tangent estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-b/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Analysis and comparative evaluation of discrete tangent estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-05-a/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-05-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Geometric measures on arbitrary dimensional digital surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-03-c/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-03-c/</guid>
       <description></description>
     </item>
     

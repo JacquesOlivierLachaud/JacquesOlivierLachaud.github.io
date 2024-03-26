@@ -2,29 +2,281 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jacques-Olivier Lachaud</title>
-    <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/</link>
-      <atom:link href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://jacquesolivierlachaud.github.io/</link>
+      <atom:link href="https://jacquesolivierlachaud.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Jacques-Olivier Lachaud</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 16 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 04 Mar 2024 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://jacquesolivierlachaud.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Jacques-Olivier Lachaud</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/</link>
+      <link>https://jacquesolivierlachaud.github.io/</link>
     </image>
     
     <item>
+      <title>INFO601_CMI Algorithmique numérique</title>
+      <link>https://jacquesolivierlachaud.github.io/lectures/info601cmi/</link>
+      <pubDate>Mon, 04 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/lectures/info601cmi/</guid>
+      <description>&lt;p&gt;Cours du semestre 6 de Licence Informatique, CMI3 Informatique, Licence Mathématique parcours Math-Info.&lt;/p&gt;
+&lt;p&gt;(Responsable 2023-2024 Cours/TD/TP : J.-O. Lachaud)&lt;/p&gt;
+&lt;h2 id=&#34;objectifs&#34;&gt;Objectifs&lt;/h2&gt;
+&lt;p&gt;Ce module vise à présenter les bases de l&amp;rsquo;algorithmique numérique, c&amp;rsquo;est-à-dire les algorithmes, les structures de données et les mathématiques nécessaires pour résoudre des problèmes de calcul scientifique. Les domaines d&amp;rsquo;application sont très vastes: mécanique des structures, mécanique des fluides, physique appliquée, problème d&amp;rsquo;optimisation géométriques, régularisation de formes, traitement et analyse d&amp;rsquo;image, analyse de données, apprentissage profond, pour n&amp;rsquo;en citer que quelques-uns.&lt;/p&gt;
+&lt;p&gt;On montrera d&amp;rsquo;abord quelques exemples de problèmes simples que l&amp;rsquo;on
+voudrait résoudre (recherche de solutions à des équations, équations
+différentielles ou minimisation de fonctionnelles). Ensuite, on
+décrira comment le problème se ramène assez souvent à de l&amp;rsquo;algèbre
+linéaire, ou à des problèmes plus difficiles que l&amp;rsquo;on résoudra
+itérativement.&lt;/p&gt;
+&lt;p&gt;Des travaux pratiques (en python et numpy) illustreront les méthodes
+de résolution numérique, leur stabilité, leurs problèmes numériques
+parfois.&lt;/p&gt;
+&lt;h2 id=&#34;quelques-ressources-pour-létudiant&#34;&gt;Quelques ressources pour l&amp;rsquo;étudiant&lt;/h2&gt;
+&lt;p&gt;Ces ressources sont des outils de travail et de révision. Elles ne
+remplacent pas les cours et/ou les td, qui peuvent contenir d&amp;rsquo;autres
+informations.&lt;/p&gt;
+&lt;h3 id=&#34;cours-exercices-tps&#34;&gt;Cours, Exercices, Tps&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://codimd.math.cnrs.fr/s/IWTaBkA9m&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Transparents du cours, Exercices, Rappels, TPs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Cours/moindres-carres.pdf&#34;&gt;Introduction par la méthode des moindres carrés (PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Cours/notes-de-cours.pdf&#34;&gt;Notes de cours (PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;fiches-de-tds&#34;&gt;Fiches de TDs&lt;/h3&gt;
+&lt;h3 id=&#34;annales&#34;&gt;Annales&lt;/h3&gt;
+&lt;h2 id=&#34;autres-ressources&#34;&gt;Autres ressources&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://jacquesolivierlachaud.github.io/lectures/info804/Tests/WebGL/shaders-implicit-surface-viewer.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Visualiseur de surfaces implicites, i.e. les solutions de F(x,y,z)=0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Cours/PolyDeriveesPartielles.pdf&#34;&gt;Notations pour les dérivées partielles, K. Santugini (PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ancien site web &lt;a href=&#34;http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI601_CMI_:_Algorithmique_num%c3%a9rique&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;VISI601_CMI Algorithmique numérique&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;historique&#34;&gt;Historique&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;responsable 2018-2023 Cours/TD/TP : J.-O. Lachaud&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>INFO804 Introduction à l&#39;informatique graphique</title>
+      <link>https://jacquesolivierlachaud.github.io/lectures/info804/</link>
+      <pubDate>Mon, 08 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/lectures/info804/</guid>
+      <description>&lt;p&gt;Cours du semestre 8 de Master Informatique, CMI4 Informatique.&lt;/p&gt;
+&lt;p&gt;(Responsable 2023-2024 Cours/TD/TP : J.-O. Lachaud)&lt;/p&gt;
+&lt;h2 id=&#34;quelques-ressources-pour-létudiant&#34;&gt;Quelques ressources pour l&amp;rsquo;étudiant&lt;/h2&gt;
+&lt;p&gt;Ces ressources sont des outils de travail et de révision. Elles ne
+remplacent pas les cours et/ou les td, qui peuvent contenir d&amp;rsquo;autres
+informations.&lt;/p&gt;
+&lt;h3 id=&#34;cours&#34;&gt;Cours&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;Cours/introduction.pdf&#34;&gt;Exposé introductif à l&amp;rsquo;imagerie 3D (PDF)&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;Cours/expose.pdf&#34;&gt;Transparents de cours (PDF)&lt;/a&gt;, version de travail.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;fiches-de-tds&#34;&gt;Fiches de TDs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;TDs/td-geometrie.pdf&#34;&gt;TD1 (PDF)&lt;/a&gt;, géométrie dans l&amp;rsquo;espace.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;TDs/td-rendu.pdf&#34;&gt;TD2 (PDF)&lt;/a&gt;, couleurs, rendu.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pages-des-tpstestshtml&#34;&gt;&lt;a href=&#34;Tests/html&#34;&gt;Pages des TPs&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;exemples-de-shaders-webgl--opengles&#34;&gt;Exemples de shaders WebGL / OpenGLES&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-basic.html&#34;&gt;rendu simple&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-gouraud-phong-interpolation.html&#34;&gt;rendu Gouraud/Phong&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-halo.html&#34;&gt;rendu halo statique&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-halo-shape.html&#34;&gt;rendu Gouraud/Phong + halo dynamique autour&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-edges.html&#34;&gt;rendu décomposition sommets + arêtes + faces&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-drawing.html&#34;&gt;rendu esquisse non photo-réaliste&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-color-drawing.html&#34;&gt;rendu tramage couleur non photo-réaliste&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-texture-map.html&#34;&gt;coordonnées UV + texture map&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-texture.html&#34;&gt;texture map variable&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-full.html&#34;&gt;comparaison rendus Gouraud/Phong + texture map + normal map + occlusion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-depth.html&#34;&gt;carte de profondeur + clipping space + camera fov&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-cube-2.html&#34;&gt;cube subdivisé dans le fragment shader (fixed on March 12, 2024)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Tests/WebGL/shaders-implicit-surface-viewer.html&#34;&gt;algebraic surface/implicit surface viewer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;annales&#34;&gt;Annales&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;Examens/examen-2022-2023.pdf&#34;&gt;Examen 2022-2023 (PDF)&lt;/a&gt; &lt;a href=&#34;Examens/examen-sol-2022-2023.pdf&#34;&gt;Corrigé (PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ancien-site-web-info804-informatique-graphiquehttpos-vps418infomaniakch1250mediawikiindexphpinfo804__introduction_à_l27informatique_graphique&#34;&gt;Ancien site web &lt;a href=&#34;http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO804_:_Introduction_%c3%a0_l%27Informatique_Graphique&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;INFO804 Informatique graphique&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&#34;historique&#34;&gt;Historique&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;responsable 2016-2023 Cours/TD/TP : J.-O. Lachaud&lt;/li&gt;
+&lt;li&gt;auparavant: Christophe Raffalli&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AlgoSurfer</title>
+      <link>https://jacquesolivierlachaud.github.io/project/algosurfer/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/project/algosurfer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>INFO505 Programmation C II</title>
+      <link>https://jacquesolivierlachaud.github.io/lectures/info505/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/lectures/info505/</guid>
+      <description>&lt;p&gt;Cours du semestre 5 de Licence Informatique, CMI3 Informatique, Licence Mathématique parcours Math-Info.&lt;/p&gt;
+&lt;p&gt;(Responsable 2023-2024 Cours/TD/TP : J.-O. Lachaud)&lt;/p&gt;
+&lt;h2 id=&#34;quelques-ressources-pour-létudiant&#34;&gt;Quelques ressources pour l&amp;rsquo;étudiant&lt;/h2&gt;
+&lt;p&gt;Ces ressources sont des outils de travail et de révision. Elles ne
+remplacent pas les cours et/ou les td, qui peuvent contenir d&amp;rsquo;autres
+informations.&lt;/p&gt;
+&lt;h3 id=&#34;notes-de-cours-pdfcoursnotes-de-courspdf-mise-à-jour-en-2019&#34;&gt;&lt;a href=&#34;Cours/notes-de-cours.pdf&#34;&gt;Notes de cours (PDF)&lt;/a&gt;, mise à jour en 2019.&lt;/h3&gt;
+&lt;h3 id=&#34;fiches-de-cours-mise-à-jour-en-2023&#34;&gt;Fiches de cours (Mise à jour en 2023)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;Cours/fiche-0.pdf&#34;&gt;Fiche 0 - éléments de base du langage C (PDF)&lt;/a&gt; à lire &amp;lsquo;&amp;lsquo;&amp;lsquo;avant&amp;rsquo;&amp;rsquo;&amp;rsquo; le premier cours, supposé acquis en L2&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Cours/fiche-1.pdf&#34;&gt;Fiche 1 - les fonctions en C (PDF)&lt;/a&gt;  supposé acquis en L2&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Cours/fiche-2.pdf&#34;&gt;Fiche 2 - les tableaux en C (PDF)&lt;/a&gt; accompagne le premier cours&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Cours/fiche-3.pdf&#34;&gt;Fiche 3 - structures et pointeurs en C (PDF)&lt;/a&gt; accompagne les deuxième et troisième cours&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Cours/fiche-4.pdf&#34;&gt;Fiche 4 - mécanismes d&amp;rsquo;allocation mémoire (PDF)&lt;/a&gt; accompagne le quatrième cours&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Cours/fiche-5.pdf&#34;&gt;Fiche 5 - structures auto-référentes, pointeurs de fonction, préprocesseur (PDF)&lt;/a&gt; accompagne le cinquième cours&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;problèmes&#34;&gt;Problèmes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;Problemes/probleme-1.pdf&#34;&gt;Problème 1 - Analyse de textes (PDF)&lt;/a&gt; / &lt;a href=&#34;Problemes/probleme-1-sol.pdf&#34;&gt;Corrigé (PDF)&lt;/a&gt;:
+Tableaux mono-dimensionnels, chaînes de caractères, fonctions,
+structures de données, pointeurs, passage par adresse, hachage.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Problemes/probleme-2.pdf&#34;&gt;Problème 2 - Plus grand rectangle vide (PDF)&lt;/a&gt; / &lt;a href=&#34;Problemes/probleme-2-sol.pdf&#34;&gt;Corrigé (PDF)&lt;/a&gt;: :
+tableaux bidimensionnels, boucles, structures, optimisation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Problemes/probleme-3.pdf&#34;&gt;Problème 3 - Tableaux associatifs (PDF)&lt;/a&gt; : (Listes, pile d’exécution, table de hachage, pointeurs de fonction, généricité)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;fiches-de-tds&#34;&gt;Fiches de TDs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;TDs/td-3.pdf&#34;&gt;TD3 - skip-listes (PDF)&lt;/a&gt; &lt;a href=&#34;TDs/td-3-sol.pdf&#34;&gt;Corrigé (PDF)&lt;/a&gt;: structures auto-référentes (listes), pointeurs, allocation dynamique.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;TDs/td-4.pdf&#34;&gt;TD4 - tableaux de bits (PDF)&lt;/a&gt; : pointeurs, manipulation de bits et tableau de bits, ensembles par fonction caractéristique&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pages-des-tpstestshtml&#34;&gt;&lt;a href=&#34;Tests/html&#34;&gt;Pages des TPs&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;quelques-exemples-de-code-c&#34;&gt;Quelques exemples de code C&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;Lessons/lesson-3-a.c&#34;&gt;labyrinthes&lt;/a&gt; &lt;a href=&#34;Lessons/lesson-3-b.c&#34;&gt;labyrinthes (résolution progressive)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;annales&#34;&gt;Annales&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;Examens/examen-2023-2024.pdf&#34;&gt;Examen 2023-2024 (PDF)&lt;/a&gt; &lt;a href=&#34;Examens/examen-sol-exo1-2023-2024.pdf&#34;&gt;Corrigé exo 1 (PDF)&lt;/a&gt; &lt;a href=&#34;Examens/examen-sol-2023-2024.pdf&#34;&gt;Corrigé exos 2 et 3 (PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Examens/examen-2022-2023.pdf&#34;&gt;Examen 2022-2023 (PDF)&lt;/a&gt; &lt;a href=&#34;Examens/examen-sol-2022-2023.pdf&#34;&gt;Corrigé exos 2 et 3 (PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Examens/examen-2021-2022.pdf&#34;&gt;Examen 2021-2022 (PDF)&lt;/a&gt; &lt;a href=&#34;Examens/examen-sol-2021-2022.pdf&#34;&gt;Corrigé complet (PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;Examens/examen-2017-2018.pdf&#34;&gt;Examen 2017-2018 (PDF)&lt;/a&gt; &lt;a href=&#34;Examens/examen-sol-exo1-2017-2018.pdf&#34;&gt;Corrigé exo 1 (PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ancien-site-web-info505-programmation-en-c-ii-httpos-vps418infomaniakch1250mediawikiindexphpinfo505__programmation_c&#34;&gt;Ancien site web &lt;a href=&#34;http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO505_:_Programmation_C&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;INFO505 Programmation en C II &lt;/a&gt;&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>INFO702 Programmation générique en C&#43;&#43;</title>
+      <link>https://jacquesolivierlachaud.github.io/lectures/info702/</link>
+      <pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/lectures/info702/</guid>
+      <description>&lt;p&gt;Cours du semestre 7 de Master Informatique, CMI4 Informatique.&lt;/p&gt;
+&lt;p&gt;(Responsable 2023-2024 Cours/TD/TP : J.-O. Lachaud)&lt;/p&gt;
+&lt;h2 id=&#34;quelques-ressources-pour-létudiant&#34;&gt;Quelques ressources pour l&amp;rsquo;étudiant&lt;/h2&gt;
+&lt;p&gt;Ces ressources sont des outils de travail et de révision. Elles ne
+remplacent pas les cours et/ou les td, qui peuvent contenir d&amp;rsquo;autres
+informations.&lt;/p&gt;
+&lt;h3 id=&#34;notes-de-cours-pdfcoursnotes-de-courspdf-mise-à-jour-en-92023&#34;&gt;&lt;a href=&#34;Cours/notes-de-cours.pdf&#34;&gt;Notes de cours (PDF)&lt;/a&gt;, mise à jour en 9/2023.&lt;/h3&gt;
+&lt;p&gt;Intègre notamment les concepts du standard c++20.&lt;/p&gt;
+&lt;h3 id=&#34;fiches-de-tds&#34;&gt;Fiches de TDs&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;TDs/td-1.pdf&#34;&gt;TD1  (PDF)&lt;/a&gt; Références, POO, surcharge d&amp;rsquo;opérateurs, polymorphisme&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;correction matrices, vecteurs: &lt;a href=&#34;TDs/Vecteur.hpp&#34;&gt;Vecteur.hpp&lt;/a&gt; &lt;a href=&#34;TDs/Vecteur.cpp&#34;&gt;Vecteur.cpp&lt;/a&gt; &lt;a href=&#34;TDs/Matrice.hpp&#34;&gt;Matrice.hpp&lt;/a&gt; &lt;a href=&#34;TDs/Matrice.cpp&#34;&gt;Matrice.cpp&lt;/a&gt; &lt;a href=&#34;TDs/spirograph.cpp&#34;&gt;spirograph.cpp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;correction damier &lt;a href=&#34;TDs/damier.cpp&#34;&gt;damier.cpp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;TDs/td-2.pdf&#34;&gt;TD2  (PDF)&lt;/a&gt; Fonctions génériques, classes génériques, spécialisation, lambdas&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;correction arbres/ABR &lt;a href=&#34;TDs/arbres.cpp&#34;&gt;arbres.cpp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;pages-des-tpstestshtml&#34;&gt;&lt;a href=&#34;Tests/html&#34;&gt;Pages des TPs&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;annales&#34;&gt;Annales&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;Annales/examen-2022-2023.pdf&#34;&gt;Examen 2022-2023 (PDF)&lt;/a&gt; / &lt;a href=&#34;Annales/examen-2022-2023-sol.pdf&#34;&gt;Corrigé (PDF)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;quelques-exemples-de-code-c&#34;&gt;Quelques exemples de code C++&lt;/h3&gt;
+&lt;p&gt;Les codes sont compilés à l&amp;rsquo;aide de la commande:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;g++ -std&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;c++11 lesson-x-y.cpp
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Premiers exemples de code C++, similitudes avec le C, couleurs dans la console, flux d&amp;rsquo;entrée/sortie, classe &lt;code&gt;std::string&lt;/code&gt;
+&lt;a href=&#34;Lessons/lesson-1-a.cpp&#34;&gt;lesson-1-a.cpp&lt;/a&gt;
+&lt;a href=&#34;Lessons/lesson-1-b.cpp&#34;&gt;lesson-1-b.cpp&lt;/a&gt;
+&lt;a href=&#34;Lessons/lesson-1-c.cpp&#34;&gt;lesson-1-c.cpp&lt;/a&gt;
+&lt;a href=&#34;Lessons/lesson-1-d.cpp&#34;&gt;lesson-1-d.cpp&lt;/a&gt;
+&lt;a href=&#34;Lessons/lesson-1-e.cpp&#34;&gt;lesson-1-e.cpp&lt;/a&gt;
+&lt;a href=&#34;Lessons/lesson-1-f.cpp&#34;&gt;lesson-1-f.cpp&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Traitement de tableaux, à la C, surcharge de fonctions
+&lt;a href=&#34;Lessons/lesson-2-a.cpp&#34;&gt;lesson-2-a.cpp&lt;/a&gt;
+&lt;a href=&#34;Lessons/lesson-2-b.cpp&#34;&gt;lesson-2-b.cpp&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;programmation objet et polymorphisme
+&lt;a href=&#34;Lessons/lesson-2-c.cpp&#34;&gt;lesson-2-c.cpp&lt;/a&gt;
+&lt;a href=&#34;Lessons/lesson-2-d.cpp&#34;&gt;lesson-2-d.cpp&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;fonctions génériques (template) à 1 ou plusieurs paramètres de type.
+&lt;a href=&#34;Lessons/lesson-2-e.cpp&#34;&gt;lesson-2-e.cpp&lt;/a&gt;
+&lt;a href=&#34;Lessons/lesson-2-f.cpp&#34;&gt;lesson-2-f.cpp&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Programmation fonctionnelle avec des lambda-expressions.
+&lt;a href=&#34;Lessons/lesson-2-g.cpp&#34;&gt;lesson-2-g.cpp&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;ancien-site-web-info702httpos-vps418infomaniakch1250mediawikiindexphpinfo702__programmation_générique_et_c2b2b-generic-programming-in-c-lecturesseminarspracticals&#34;&gt;Ancien site web &lt;a href=&#34;http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/INFO702_:_Programmation_g%c3%a9n%c3%a9rique_et_C%2B%2B&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;INFO702&lt;/a&gt; Generic programming in C++, (Lectures/Seminars/Practicals)&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>An Envelope Operator for Full Convexity to Define Polyhedral Models in Digital Spaces</title>
+      <link>https://jacquesolivierlachaud.github.io/publication/feschet-2023-jmiv/</link>
+      <pubDate>Mon, 17 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/publication/feschet-2023-jmiv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lightweight Curvature Estimation on Point Clouds with Randomized Corrected Curvature Measures</title>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2023-cgf/</link>
+      <pubDate>Sun, 02 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2023-cgf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Full convexity: new characterisations and applications</title>
+      <link>https://jacquesolivierlachaud.github.io/talk/full-convexity-new-characterisations-and-applications/</link>
+      <pubDate>Mon, 15 May 2023 09:30:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/talk/full-convexity-new-characterisations-and-applications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Joint optimization of distortion and cut location for mesh parameterization using an Ambrosio-Tortorelli functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/weill-duflos-2023-gmp/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/weill-duflos-2023-gmp/</link>
       <pubDate>Sun, 16 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/weill-duflos-2023-gmp/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/weill-duflos-2023-gmp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DGtal tutorial at DGMM2022</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/dgtal-tutorial-at-dgmm2022/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/dgtal-tutorial-at-dgmm2022/</link>
       <pubDate>Mon, 24 Oct 2022 09:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/dgtal-tutorial-at-dgmm2022/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/dgtal-tutorial-at-dgmm2022/</guid>
       <description>&lt;p&gt;Tutorial prepared by D. Coeurjolly, B. Kerautret, J.-O. Lachaud, T. Roussillon&lt;/p&gt;
 &lt;h2 id=&#34;the-code-repository&#34;&gt;The code repository&lt;/h2&gt;
 &lt;p&gt;Get the code on &lt;a href=&#34;https://github.com/DGtal-team/DGtal-Tutorials-DGMM2022&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
@@ -43,9 +295,9 @@
     
     <item>
       <title>StableProxies</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/stable-proxies/</link>
       <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/stable-proxies/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/stable-proxies/</guid>
       <description>&lt;p&gt;Start date: Feb. 2023&lt;/p&gt;
 &lt;p&gt;The objective of the project is to propose new calculus models for the
 geometry processing of large, heterogeneous and complex geometrical
@@ -77,41 +329,41 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>A Simple Discrete Calculus for Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2022-dgmm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2022-dgmm/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2022-dgmm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2022-dgmm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>An Alternative Definition for Digital Convexity</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-jmiv/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Corrected Curvature Measures</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-dcg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-dcg/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2022-dcg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2022-dcg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Full convexity for polyhedral models in digital spaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/feschet-2022-dgmm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/feschet-2022-dgmm/</link>
       <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/feschet-2022-dgmm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/feschet-2022-dgmm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Graduate School on Digital Geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</link>
       <pubDate>Sun, 11 Jul 2021 13:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/graduate-school-on-digital-geometry/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/graduate-school-on-digital-geometry/</guid>
       <description>&lt;p&gt;The code related to the paper is implemented in
 &lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -119,9 +371,9 @@ acquired with LiDAR or photogrammetry).&lt;/p&gt;
     
     <item>
       <title>Conference on Digital Geometry and Discrete Variational Calculus</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</link>
       <pubDate>Mon, 29 Mar 2021 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/conference-on-digital-geometry-and-discrete-variational-calculus/</guid>
       <description>&lt;h2 id=&#34;post-conference-information&#34;&gt;Post conference information&lt;/h2&gt;
 &lt;p&gt;Slides and videos of the conference are available on the &lt;a href=&#34;https://dgdvc.sciencesconf.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;conference
 website&lt;/a&gt;.&lt;/p&gt;
@@ -157,41 +409,41 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>A Maximum-Flow Model for Digital Elastica Shape Optimization</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-dgmm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/antunes-2021-dgmm/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-dgmm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/antunes-2021-dgmm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>An Alternative Definition for Digital Convexity</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2021-dgmm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2021-dgmm/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2021-dgmm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2021-dgmm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>An Elastica-Driven Digital Curve Evolution Model for Image Segmentation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/antunes-2021-jmiv/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2021-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/antunes-2021-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Surface Regularization With Guarantees</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2021-tvcg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2021-tvcg/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2021-tvcg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2021-tvcg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Welcome to Wowchemy, the website builder for Hugo</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/post/getting-started/</link>
+      <link>https://jacquesolivierlachaud.github.io/post/getting-started/</link>
       <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/post/getting-started/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/post/getting-started/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;libr&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
@@ -269,9 +521,9 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>Interpolated corrected curvature measures for polygonal surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</link>
       <pubDate>Tue, 07 Jul 2020 15:30:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/interpolated-corrected-curvature-measures-for-polygonal-surfaces/</guid>
       <description>&lt;p&gt;The code related to the paper is implemented in
 &lt;a href=&#34;https://dgtal-team.github.io/doc-nightly/moduleCurvatureMeasures.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DGtal&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -279,33 +531,33 @@ website&lt;/a&gt;.&lt;/p&gt;
     
     <item>
       <title>An Optimized Framework for Plane-Probing Algorithms</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-jmiv/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Interpolated corrected curvature measures for polygonal surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-cgf/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-cgf/</link>
       <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2020-cgf/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2020-cgf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Geometry in Pattern Recognition: Extracting Geometric Features with DGtal and Applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</link>
       <pubDate>Mon, 25 Nov 2019 14:45:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/digital-geometry-in-pattern-recognition-extracting-geometric-features-with-dgtal-and-applications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Writing technical content in Markdown</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/post/writing-technical-content/</link>
+      <link>https://jacquesolivierlachaud.github.io/post/writing-technical-content/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/post/writing-technical-content/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/post/writing-technical-content/</guid>
       <description>&lt;p&gt;Wowchemy is designed to give technical content creators a seamless experience. You can focus on the content and Wowchemy handles the rest.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Highlight your code snippets, take notes on math classes, and draw diagrams from textual representation.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;On this page, you&amp;rsquo;ll find some examples of the types of technical content that can be rendered with Wowchemy.&lt;/p&gt;
@@ -405,7 +657,7 @@ data.head()
 
 
 
-&lt;div id=&#34;chart-628793154&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-576984213&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -415,7 +667,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-628793154&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-576984213&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -697,25 +949,25 @@ Crash --&gt; [*]
     
     <item>
       <title>A discrete calculus model of Ambrosio-Tortorelli’s functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
       <pubDate>Thu, 23 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/a-discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete calculus model of Ambrosio-Tortorelli’s functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</link>
       <pubDate>Sun, 03 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/discrete-calculus-model-of-ambrosio-tortorellis-functional/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Display Jupyter Notebooks with Academic</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/post/jupyter/</link>
+      <link>https://jacquesolivierlachaud.github.io/post/jupyter/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/post/jupyter/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/post/jupyter/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;IPython.core.display&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Image&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;Image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;
@@ -772,9 +1024,9 @@ Crash --&gt; [*]
     
     <item>
       <title>Slides</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/slides/example/</link>
+      <link>https://jacquesolivierlachaud.github.io/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/slides/example/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/slides/example/</guid>
       <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://wowchemy.com/docs/content/slides/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -897,41 +1149,41 @@ $$&lt;/p&gt;
     
     <item>
       <title>Analytical description of digital intersections: Minimal parameters and multiscale representation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2019-tcs/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/said-2019-tcs/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2019-tcs/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/said-2019-tcs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combining voxel and normal predictions for multi-view 3D sketching</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/delanoy-2019-cg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/delanoy-2019-cg/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/delanoy-2019-cg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/delanoy-2019-cg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Curvature Evolution Model for Image Segmentation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2019-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/antunes-2019-dgci/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/antunes-2019-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/antunes-2019-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Plane Recognition with Fewer Probes</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2019-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/roussillon-2019-dgci/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2019-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/roussillon-2019-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Geometric Total Variation for Image Vectorization, Zooming and Pixel Art Depixelizing</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2019-acpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2019-acpr/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2019-acpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2019-acpr/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Click on each icon below to see its zoomedx16 version !&lt;/strong&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;tr&gt;
@@ -1127,171 +1379,211 @@ $$&lt;/p&gt;
     
     <item>
       <title>Laplace--Beltrami Operator on Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2019-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/caissard-2019-jmiv/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2019-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/caissard-2019-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Phase-field modelling and computing for a large number of phases</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2019-m-2-an/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/bretin-2019-m-2-an/</link>
       <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2019-m-2-an/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/bretin-2019-m-2-an/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PARADIS</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/paradis/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/paradis/</link>
       <pubDate>Sat, 01 Dec 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/paradis/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/paradis/</guid>
       <description>&lt;h2 id=&#34;consortium&#34;&gt;Consortium&lt;/h2&gt;
 &lt;p&gt;This project gathers members of three laboratories: LIRIS (Leader, Lyon), LAMA (Chambéry), LaBRI (Bordeaux).&lt;/p&gt;
 </description>
     </item>
     
     <item>
+      <title>Privacy policy and legal mentions</title>
+      <link>https://jacquesolivierlachaud.github.io/privacy/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/privacy/</guid>
+      <description>&lt;h1 id=&#34;privacy-policy&#34;&gt;Privacy policy&lt;/h1&gt;
+&lt;h2 id=&#34;collection-of-your-personal-information&#34;&gt;Collection of your personal information&lt;/h2&gt;
+&lt;p&gt;Nothing on this website requires you to identify yourself. This
+website does not collect any personal information. The only
+information stored is your preference for a dark or light theme, saved
+as a &lt;a href=&#34;https://www.youtube.com/watch?v=IPQhME1UYQU&#34;
+target=&#34;_blank&#34;&gt;cookie&lt;/a&gt;.  Most web browsers allow you to &lt;a
+href=&#34;https://cookies.insites.com/disable-cookies/&#34;
+target=&#34;_blank&#34;&gt;control handling of cookies&lt;/a&gt;.  To the best of my
+knowledge, you can disable all cookies for this website without in any
+way reducing the functionality for you.&lt;/p&gt;
+&lt;h2 id=&#34;sharing-of-your-personal-information&#34;&gt;Sharing of your personal information&lt;/h2&gt;
+&lt;p&gt;I don’t collect your personal information, so there is nothing I can share.&lt;/p&gt;
+&lt;h2 id=&#34;use-of-your-personal-information&#34;&gt;Use of your personal information&lt;/h2&gt;
+&lt;p&gt;I am not using any personal information, even anonymous, nor
+performing any traffic analysis.&lt;/p&gt;
+&lt;h1 id=&#34;legal-mentions--mentions-légales&#34;&gt;Legal mentions / Mentions Légales&lt;/h1&gt;
+&lt;p&gt;You are actually on the webiste [https://jacquesolivierlachaud.github.io/] (called thereafter website).&lt;/p&gt;
+&lt;p&gt;Vous vous trouvez actuellement sur le site Internet [https://jacquesolivierlachaud.github.io/] (ci-après le « Site »).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Phone / téléphone: 04 79 75 86 42&lt;/li&gt;
+&lt;li&gt;Adresse / Address: Laboratoire de Mathématiques (LAMA), Le Chablais, 21 Rue du Lac de la Thuile, 73370 Le Bourget-du-Lac.&lt;/li&gt;
+&lt;li&gt;Publication director / Directeur ou Directrice de la publication : Jacques-Olivier Lachaud&lt;/li&gt;
+&lt;li&gt;Webhost / Hébergeur: GitHub [https://github.com]&lt;/li&gt;
+&lt;li&gt;Personal information / Données personnelles: this website does not collect any personal information. Ce site ne conserve pas de données personnelles.&lt;/li&gt;
+&lt;li&gt;Cookies: This website uses one cookie that stores whether you prefer dark / white theme, and can be disabled without changing any other functionality.
+Ce site n&amp;rsquo;utilise qu&amp;rsquo;un cookie qui stocke votre préférence entre un thème clair / foncé, ce cookie pouvant être refusé sans la moindre perte d&amp;rsquo;autres fonctionnalités.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;intellectual-property--propriété-intellectuelle&#34;&gt;Intellectual property / Propriété intellectuelle&lt;/h2&gt;
+&lt;p&gt;Les contenus, les textes, y compris les vidéos, les marques, les logos et les images qui apparaissent ou sont disponibles sur le Site, sont protégés par le droit de la propriété intellectuelle. À ce titre, vous vous engagez à ne pas utiliser, extraire, copier, traduire, reproduire, vendre, publier, exploiter et diffuser des contenus du Site protégés par le droit de la propriété intellectuelle, sans autorisation préalable et écrite de Jacques-Olivier Lachaud. Dans le même sens, il est interdit d’utiliser le nom ou le logo d’un Laboratoire sans l’autorisation préalable et écrite des cotutelles de ce Laboratoire.&lt;/p&gt;
+&lt;h2 id=&#34;liens-hypertextes&#34;&gt;Liens hypertextes&lt;/h2&gt;
+&lt;p&gt;La mise en place de liens hypertextes par des tiers vers des pages ou des documents diffusés sur ce site, est autorisée sous réserve que les liens ne contreviennent pas aux intérêts du LAMA ou de Jacques-Olivier Lachaud, et, qu&amp;rsquo;ils garantissent la possibilité pour l&amp;rsquo;utilisateur d&amp;rsquo;identifier l&amp;rsquo;origine et l&amp;rsquo;auteur du document.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Mumford-Shah Mesh Processing using the Ambrosio-Tortorelli Functional</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bonneel-2018-cgf/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/bonneel-2018-cgf/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bonneel-2018-cgf/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/bonneel-2018-cgf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regularization of Voxel Art</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2018-siggraph/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2018-siggraph/</link>
       <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2018-siggraph/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2018-siggraph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Surface Regularization by Normal Vector Field Alignment</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2017-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2017-dgci/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2017-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2017-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Heat Kernel Laplace-Beltrami Operator on Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2017-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/caissard-2017-dgci/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/caissard-2017-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/caissard-2017-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Robust and Convergent Curvature and Normal Estimators with Digital Integral Invariants</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-lnm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-lnm/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-lnm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-lnm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Two Plane-Probing Algorithms for the Computation of the Normal Vector to a Digital Plane</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-jmiv/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2017-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2017-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convergent Geometric Estimators with Digital Volume and Surface Integrals</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</link>
       <pubDate>Mon, 18 Apr 2016 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/convergent-geometric-estimators-with-digital-volume-and-surface-integrals/</guid>
       <description></description>
     </item>
     
     <item>
       <title>An output-sensitive algorithm to compute the normal vector of a digital plane</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-tcs/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-tcs/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-tcs/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-tcs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Centerline detection on partial mesh scans by confidence vote in accumulation map</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2016-icpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2016-icpr/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2016-icpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2016-icpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computation of the Normal Vector to a Digital Plane by Sampling Significant Points</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convergent Geometric Estimators with Digital Volume and Surface Integrals</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci-inv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci-inv/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-dgci-inv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-dgci-inv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Image restoration and segmentation using the Ambrosio-Tortorelli functional and discrete calculus</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-icpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/foare-2016-icpr/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-icpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/foare-2016-icpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Interactive Curvature Tensor Visualization on Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/perrier-2016-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/perrier-2016-dgci/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/perrier-2016-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/perrier-2016-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Numerical implementation of the Ambrosio-Tortorelli functional using discrete calculus and application to image restoration and inpainting</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-rrpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/foare-2016-rrpr/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/foare-2016-rrpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/foare-2016-rrpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>On the Implementation of Centerline Extraction Based on Confidence Vote in Accumulation Map</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2016-rrpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2016-rrpr/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2016-rrpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2016-rrpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Piecewise smooth reconstruction of normal vector field on digital data</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2016-pg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2016-pg/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2016-pg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2016-pg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Properties of Gauss Digitized Shapes and Digital Surface Integration</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-jmiv/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2016-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2016-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cross Border Meeting on Discrete and Computational Geometry and Applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</link>
       <pubDate>Mon, 09 Nov 2015 09:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/cross-border-meeting-on-discrete-and-computational-geometry-and-applications/</guid>
       <description>&lt;h2 id=&#34;invited-speakers&#34;&gt;Invited speakers&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Silvia Biasotti (CNR IMATI, Genova)&lt;/li&gt;
@@ -1304,9 +1596,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>CoMeDiC</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/comedic/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/comedic/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/comedic/</guid>
       <description>&lt;p&gt;The CoMeDiC project aims at filling the gap between discrete calculus
 and standard calculus in the case of the digital space Zn. The global
 idea is to reliably estimate a metric on digital curves and surfaces
@@ -1339,129 +1631,129 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>3D Geometric Analysis of Tubular Objects Based on Surface Normal Accumulation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2015-iciap/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2015-iciap/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2015-iciap/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2015-iciap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Precise Cross-Section Estimation on Tubular Organs</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/grelard-2015-caip/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/grelard-2015-caip/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/grelard-2015-caip/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/grelard-2015-caip/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Robust Geometry Estimation Using the Generalized Voronoi Covariance Measure</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2015-siims/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/cuel-2015-siims/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2015-siims/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/cuel-2015-siims/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Scale-space feature extraction on digital surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2015-cg-smi/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/levallois-2015-cg-smi/</link>
       <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2015-cg-smi/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/levallois-2015-cg-smi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Extraction of Connected Region Boundary in Multidimensional Images</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-ipol/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2014-ipol/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-ipol/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2014-ipol/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Meaningful Scales Detection: an Unsupervised Noise Detection Algorithm for Digital Contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2014-ipol/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2014-ipol/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2014-ipol/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2014-ipol/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multigrid convergent principal curvature estimators in digital geometry </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-cviu/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2014-cviu/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2014-cviu/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2014-cviu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Parameter-Free and Multigrid Convergent Digital Curvature Estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2014-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/levallois-2014-dgci/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/levallois-2014-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/levallois-2014-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Voronoi-Based Geometry Estimator for 3D Digital Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2014-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/cuel-2014-dgci/</link>
       <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/cuel-2014-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/cuel-2014-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multigrid convergence of digital curvature estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/multigrid-convergence-of-digital-curvature-estimators/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/multigrid-convergence-of-digital-curvature-estimators/</link>
       <pubDate>Mon, 18 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/multigrid-convergence-of-digital-curvature-estimators/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/multigrid-convergence-of-digital-curvature-estimators/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multigrid convergence of digital curvature estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2013-dc/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2013-dc/</link>
       <pubDate>Fri, 01 Nov 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2013-dc/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2013-dc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A combined multi-scale/irregular algorithm for the vectorization of noisy digital contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/vacavant-2013-cviu/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/vacavant-2013-cviu/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/vacavant-2013-cviu/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/vacavant-2013-cviu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Integral based Curvature Estimators in Digital Geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2013-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2013-dgci/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2013-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2013-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Two efficient algorithms for computing the characteristics of a subsegment of a digital straight line </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2013-dam/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2013-dam/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2013-dam/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2013-dam/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tangent estimation along 3D digital curves</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/postolski-2012-icpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/postolski-2012-icpr/</link>
       <pubDate>Thu, 01 Nov 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/postolski-2012-icpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/postolski-2012-icpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A tutorial for  DGtal library (2012) </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-tutorial-for-dgtal-library-2012/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/a-tutorial-for-dgtal-library-2012/</link>
       <pubDate>Fri, 01 Jun 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-tutorial-for-dgtal-library-2012/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/a-tutorial-for-dgtal-library-2012/</guid>
       <description>&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;slides-intro.pdf&#34;&gt;Introduction&lt;/a&gt;  (D. Coeurjolly)&lt;/li&gt;
@@ -1473,41 +1765,41 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>Digital Shape Analysis with Maximal Segments</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2012-adgmm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2012-adgmm/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2012-adgmm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2012-adgmm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Meaningful Scales Detection along Digital Contours for Unsupervised Local Noise Estimation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-tpami/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-tpami/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-tpami/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Meaningful Thickness Detection On Polygonal Curve</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-icpram/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-icpram/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2012-icpram/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2012-icpram/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multigrid Convergence of Discrete Geometric Estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2012-dga/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2012-dga/</link>
       <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/coeurjolly-2012-dga/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/coeurjolly-2012-dga/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DigitalSnow</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/digital-snow/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/digital-snow/</link>
       <pubDate>Tue, 01 Nov 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/digital-snow/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/digital-snow/</guid>
       <description>&lt;h2 id=&#34;consortium&#34;&gt;Consortium&lt;/h2&gt;
 &lt;p&gt;This project gathers members of four laboratories: LIRIS (Leader, Lyon), LAMA (Chambéry), LJK (Grenoble), and CEN/Météofrance (Grenoble).&lt;/p&gt;
 </description>
@@ -1515,9 +1807,9 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>A tutorial for  DGtal library (2011) </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-tutorial-for-dgtal-library-2011/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/a-tutorial-for-dgtal-library-2011/</link>
       <pubDate>Thu, 01 Sep 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/a-tutorial-for-dgtal-library-2011/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/a-tutorial-for-dgtal-library-2011/</guid>
       <description>&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;slides-intro.pdf&#34;&gt;Introduction&lt;/a&gt;&lt;/li&gt;
@@ -1531,508 +1823,1731 @@ testbed for digital calculus.&lt;/p&gt;
     
     <item>
       <title>Circular arc reconstruction of digital contours with chosen Hausdorff error</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2011-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2011-dgci/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2011-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2011-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computing the Characteristics of a SubSegment of a Digital Straight Line in Logarithmic Time</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2011-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/said-2011-dgci/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2011-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/said-2011-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Delaunay properties of digital straight segments</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-dgci/</link>
       <pubDate>Fri, 01 Apr 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Asymptotic linear digital geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/asymptotic-linear-digital-geometry/</link>
       <pubDate>Tue, 08 Feb 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/asymptotic-linear-digital-geometry/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Asymptotic linear digital geometry and applications</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry-and-applications/</link>
+      <link>https://jacquesolivierlachaud.github.io/talk/asymptotic-linear-digital-geometry-and-applications/</link>
       <pubDate>Tue, 08 Feb 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/talk/asymptotic-linear-digital-geometry-and-applications/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/talk/asymptotic-linear-digital-geometry-and-applications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Accurate Curvature Estimation along Digital Contours with Maximal Digital Circular Arcs</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/roussillon-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/roussillon-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combining Topological Maps, Multi-Label Simple Points, and Minimum-Length Polygons for Efficient Digital Partition Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/damiand-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/damiand-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dynamic Minimum Length Polygon</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fully deformable 3D digital partition model with topological control</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-prl/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/damiand-2011-prl/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/damiand-2011-prl/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/damiand-2011-prl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maximal Planes and Multiscale Tangential Cover of 3D Digital Objects</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/charrier-2011-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/charrier-2011-iwcia/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/charrier-2011-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/charrier-2011-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regularization of Discrete Contour by Willmore Energy</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2011-jmiv/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/bretin-2011-jmiv/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/bretin-2011-jmiv/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/bretin-2011-jmiv/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Two linear-time algorithms for computing the minimum length polygon of a digital contour</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2011-dam/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2011-dam/</link>
       <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2011-dam/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2011-dam/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unsupervised, Fast and Precise Recognition of Digital Arcs in Noisy Images</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/nguyen-2010-iccvg/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/nguyen-2010-iccvg/</link>
       <pubDate>Wed, 01 Sep 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/nguyen-2010-iccvg/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/nguyen-2010-iccvg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multiscale Analysis of Digital Segments by Intersection of 2D Digital Lines</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2010-icpr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/said-2010-icpr/</link>
       <pubDate>Sun, 01 Aug 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2010-icpr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/said-2010-icpr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>DGtal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/dgtal/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/dgtal/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/dgtal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital shape analysis with maximal segments</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2010-wadgmm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-2010-wadgmm/</link>
       <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-2010-wadgmm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-2010-wadgmm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Comparison and improvement of tangent estimators on digital curves</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-pr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-pr/</link>
       <pubDate>Sat, 01 Aug 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-pr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-pr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Curvature estimation along noisy digital contours by approximate global optimization </title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-pr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-pr/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-pr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-pr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Deformable Model Simulating Active Contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-dgci/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lyndon &#43; Christoffel = digitally convex</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-2009-pr/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/brlek-2009-pr/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-2009-pr/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/brlek-2009-pr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multi-Label Simple Points Definition for 3D Images Digital Deformable Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/dupas-2009-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/dupas-2009-dgci/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/dupas-2009-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/dupas-2009-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multiscale Analysis of Discrete Contours for Unsupervised Noise Detection</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-iwcia/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2009-iwcia/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2009-iwcia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Multiscale Discrete Geometry</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2009-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/said-2009-dgci/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/said-2009-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/said-2009-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Top-Down Segmentation of Histological Images Using a Digital Deformable Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-isvc/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-isvc/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-2009-isvc/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-2009-isvc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Two linear-time algorithms for computing the minimum length polygon of a digital contour</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/provencal-2009-dgci/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/provencal-2009-dgci/</link>
       <pubDate>Thu, 01 Jan 2009 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/provencal-2009-dgci/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/provencal-2009-dgci/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Comparison of Discrete Curvature Estimators and Application to Corner Detection</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-b/</link>
       <pubDate>Mon, 01 Dec 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete Contour Extraction from Reference Curvature Function</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-c/</link>
       <pubDate>Mon, 01 Dec 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Equivalence between Closed Connected n-G-Maps without Multi-Incidence and n-Surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-08-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/alayrangues-08-a/</link>
       <pubDate>Mon, 01 Sep 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-08-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/alayrangues-08-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combinatorial view of digital convexity</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-08-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/brlek-08-a/</link>
       <pubDate>Tue, 01 Apr 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/brlek-08-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/brlek-08-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Robust estimation of curvature along digital contours with global optimization</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-08-a/</link>
       <pubDate>Tue, 01 Apr 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-08-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-08-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Experimental Comparison of Continuous and Discrete Tangent Estimators Along Digital Curves</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-08-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-08-a/</link>
       <pubDate>Sat, 01 Mar 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-08-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-08-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Curvature based corner detector for discrete, noisy and multi-scale contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2008-ijsm/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/kerautret-2008-ijsm/</link>
       <pubDate>Tue, 01 Jan 2008 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/kerautret-2008-ijsm/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/kerautret-2008-ijsm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fast, Accurate and Convergent Tangent Estimation on Digital Contours</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-07-a/</link>
       <pubDate>Mon, 01 Oct 2007 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-07-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maximal digital straight segments and convergence of discrete geometric estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-07-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-07-a/</link>
       <pubDate>Thu, 01 Feb 2007 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-07-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-07-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Géométrie discréte et images numériques</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-07-b/</link>
       <pubDate>Mon, 01 Jan 2007 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-07-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Géométrie discréte et images numériques</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-07-c/</link>
       <pubDate>Mon, 01 Jan 2007 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-07-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-07-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Combinatorial pyramids and discrete geometry for energy-minimizing segmentation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/braure-06-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/braure-06-a/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/braure-06-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/braure-06-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Convex shapes and convergence speed of discrete tangent estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-b/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>FOGRIMMI</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/fogrimmi/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/fogrimmi/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/fogrimmi/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/fogrimmi/</guid>
       <description>&lt;p&gt;This project gathers members of four laboratories: GREYC (Leader, Caen), SIC (Poitiers), LIRIS (Lyon), LaBRI (Bordeaux) then LAMA (Chambéry), and the medical center François Baclesse.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>GeoDIB</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/geodib/</link>
+      <link>https://jacquesolivierlachaud.github.io/project/geodib/</link>
       <pubDate>Wed, 01 Nov 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/project/geodib/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/project/geodib/</guid>
       <description>&lt;p&gt;This project gathered members of four laboratories: LORIA (Leader, Nancy), LIRIS (Lyon), LAIC (Clermont), LaBRI (Bordeaux) then LAMA (Chambéry).&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Revisiting Digital Straight Segment Recognition</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-a/</link>
       <pubDate>Sun, 01 Oct 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-06-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-06-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computation of homology groups and generators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-06-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/peltier-06-b/</link>
       <pubDate>Sun, 01 Jan 2006 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-06-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/peltier-06-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Analysis and comparative evaluation of discrete tangent estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-05-a/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-05-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computation of homology groups and generators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-05-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/peltier-05-a/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/peltier-05-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/peltier-05-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Model with a Complexity Independent from Image Resolution</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-05-b/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-05-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-05-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Maximal digital straight segments and convergence of discrete geometric estimators</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-05-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-05-a/</link>
       <pubDate>Sat, 01 Jan 2005 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/de-vieilleville-05-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/de-vieilleville-05-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Equivalence between Regular n-G-maps and n-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-04-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/alayrangues-04-a/</link>
       <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-04-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/alayrangues-04-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Resolution Independent Deformable Model</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-04-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-04-a/</link>
       <pubDate>Thu, 01 Jan 2004 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-04-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-04-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Coding cells of digital spaces: a framework to write generic digital topology algorithms</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-03-b/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-03-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Model with Adaptive Mesh and Automated Topology Changes</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-d/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-03-d/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-d/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-03-d/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Geometric measures on arbitrary dimensional digital surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-03-c/</link>
       <pubDate>Wed, 01 Jan 2003 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-03-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-03-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Equivalence Between Order and Cell Complex Representations</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-02-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/alayrangues-02-a/</link>
       <pubDate>Fri, 01 Feb 2002 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/alayrangues-02-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/alayrangues-02-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Model with non-Euclidean Metrics</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/taton-02-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/taton-02-b/</link>
       <pubDate>Tue, 01 Jan 2002 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/taton-02-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/taton-02-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Delaunay conforming iso-surface; skeleton extraction and noise removal</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-01-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/attali-01-a/</link>
       <pubDate>Mon, 01 Jan 2001 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-01-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/attali-01-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Discrete deformable boundaries for the segmentation of multidimensional images</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-01-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-01-a/</link>
       <pubDate>Mon, 01 Jan 2001 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-01-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-01-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Continuous analogs of digital boundaries: A topological approach to iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-00-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-00-a/</link>
       <pubDate>Sat, 01 Jan 2000 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-00-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-00-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Constructing Iso-Surfaces Satisfying the Delaunay Constraint; Application to the Skeleton Computation</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/attali-99-b/</link>
       <pubDate>Fri, 01 Jan 1999 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/attali-99-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/attali-99-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deformable Meshes with Automated Topology Changes for Coarse-to-fine 3D Surface Extraction</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-99-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-99-a/</link>
       <pubDate>Fri, 01 Jan 1999 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-99-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-99-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Digital Surfaces as a Basis for Building Iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-98-a/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-98-a/</link>
       <pubDate>Thu, 01 Jan 1998 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-98-a/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-98-a/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Volumic Segmentation using Hierarchical Representation and Triangulated Surface</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-c/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-96-c/</link>
       <pubDate>Mon, 01 Apr 1996 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-c/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-96-c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Topologically Defined Iso-surfaces</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-b/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-96-b/</link>
       <pubDate>Mon, 01 Jan 1996 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-96-b/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-96-b/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A discrete adaptive model following topological modifications of volumes</title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-94/</link>
+      <link>https://jacquesolivierlachaud.github.io/publication/lachaud-94/</link>
       <pubDate>Thu, 01 Sep 1994 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/publication/lachaud-94/</guid>
+      <guid>https://jacquesolivierlachaud.github.io/publication/lachaud-94/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/admin/config.yml</link>
+      <link>https://jacquesolivierlachaud.github.io/admin/config.yml</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.lama.univ-savoie.fr/pagesmembres/lachaud/public/admin/config.yml</guid>
+      <guid>https://jacquesolivierlachaud.github.io/admin/config.yml</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jacquesolivierlachaud.github.io/lectures/info804/tests/webgl/functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/lectures/info804/tests/webgl/functions/</guid>
+      <description>
+    
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-durchball&#34; style=&#34;display: none;&#34;&gt;
+    // Computes f(x,y,z). You may use x2 for x*x, x3 for x*x*x,
+// same holds for y and z. Constant must be floating numbers.
+// Durckblick + ball
+return ( x2 + y2 + z2 - a*a ) * ( x3 * y + x * z3 + y3 * z + 5. * z );
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-durchball&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Durchball&#34;,
+      &#34;frag&#34;           : &#34;durchball&#34;,
+      &#34;color_model&#34;    : [ 0, 1, 2, 3, 6, 8, 9, 10, 11 ],
+      &#34;a&#34;              : [1.0, 1.5],
+      &#34;scale&#34;          : [15.0, 20.0],
+      &#34;iso&#34;            : [-0.8, 0.8],
+      &#34;grid_size&#34;      : [0.3, 0.4 ],
+      &#34;grid_thickness&#34; : [0.0, 0.1 ],
+      &#34;curv_scale&#34;     : [1.0, 2.0 ],
+      &#34;princ_curv&#34;     : [0,2]
+    }
+&lt;/textarea&gt;
+    
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-crixxi&#34; style=&#34;display: none;&#34;&gt;
+    // Crixxi
+float d = y2 + z2 - a*a;
+float e = x2 + y2 - a*a;
+return 0.9*d*d + e*e*e;
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-crixxi&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Crixxi&#34;,
+      &#34;frag&#34;           : &#34;crixxi&#34;,
+      &#34;color_model&#34;    : [ 1, 6, 7, 8, 9, 10 ],
+      &#34;a&#34;              : [ 1.0, 1.0],
+      &#34;scale&#34;          : [30.0,30.0],
+      &#34;iso&#34;            : [-0.005, 0.005],
+      &#34;curv_scale&#34;     : [2.5, 2.5],
+      &#34;grid_size&#34;      : [0.1, 1.0],
+      &#34;grid_thickness&#34; : [0.0, 0.2]
+    }
+&lt;/textarea&gt;
+    
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-cayleycubic&#34; style=&#34;display: none;&#34;&gt;
+    // CayleyCubic
+return x2 + y2 + z2 + x2*z - y2*z - 1.;
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-cayleycubic&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Cayley cubic&#34;,
+      &#34;frag&#34;           : &#34;cayleycubic&#34;,
+      &#34;color_model&#34;    : [ 1, 2, 3, 4, 5, 6 ],
+      &#34;scale&#34;          : [10.0, 20.0],
+      &#34;iso&#34;            : [-0.1, 0.1],
+      &#34;grid_size&#34;      : [0.1, 1.0 ],
+      &#34;grid_thickness&#34; : [0.0, 0.1 ]
+    }
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-durchblick&#34; style=&#34;display: none;&#34;&gt;	  
+    // Durchblick
+return x3 * y + x * z3 + y3 * z + a*z3 + 5. * z;
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-durchblick&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Durchblick&#34;,
+      &#34;frag&#34;           : &#34;durchblick&#34;,
+      &#34;color_model&#34;    : [8, 10, 11 ], 
+      &#34;a&#34;              : [1.0, 1.5],
+      &#34;scale&#34;          : [15.0, 20.0],
+      &#34;iso&#34;            : [-0.1, 0.1],
+      &#34;grid_size&#34;      : [0.4, 0.5 ],
+      &#34;grid_thickness&#34; : [0.0, 0.0 ],
+      &#34;princ_curv&#34;     : [0,1,2],
+      &#34;curv_scale&#34;     : [1.0,1.0]
+    }
+&lt;/textarea&gt;
+&lt;!-- // [ 1, 6, 8, 9, 10, 11 ], --&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-barthsextic&#34; style=&#34;display: none;&#34;&gt;
+    // BarthSextic
+float x4 = x2*x2; float y4 = y2*y2; float z4 = z2*z2;
+return z4*z2 + 5.*(x2+y2)*(-z4 + (x2+y2)*z2) - 2.*(x4 - 10.*x2*y2+5.*y4)*x*z
+    + 1.25*pow(a*(x2+y2+z2-a*a),2.0);
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-barthsextic&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Barth sextic&#34;,
+      &#34;frag&#34;           : &#34;barthsextic&#34;,
+      &#34;color_model&#34;    : [ 0, 1, 6, 7, 10 ],
+      &#34;a&#34;              : [1.0, 1.0],
+      &#34;scale&#34;          : [10.0, 20.0],
+      &#34;iso&#34;            : [-0.2, 0.2],
+      &#34;grid_size&#34;      : [0.0, 0.0 ],
+      &#34;grid_thickness&#34; : [0.0, 0.0 ]
+    }
+&lt;/textarea&gt;
+    
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-clebschdcubic&#34; style=&#34;display: none;&#34;&gt;
+    // ClebschDCubic
+float d = x + y + z + a;
+return x3 + y3 + z3 + a*a*a - d*d*d;
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-clebschdcubic&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Clebsch diag. cubic&#34;,
+      &#34;frag&#34;           : &#34;clebschdcubic&#34;,
+      &#34;color_model&#34;    : [ 0, 1, 6, 7, 8, 10 ],
+      &#34;a&#34;              : [1.0, 1.0],
+      &#34;scale&#34;          : [20.0, 30.0],
+      &#34;iso&#34;            : [-0.2, 0.2],
+      &#34;grid_size&#34;      : [0.0, 0.0 ],
+      &#34;grid_thickness&#34; : [0.0, 0.0 ]
+    }
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-bohemiandome&#34; style=&#34;display: none;&#34;&gt;
+    // BohemianDome
+float d = x2 + y2 + z2 - a*a - b*b;
+return d*d - 4.*(a*a - x2)*(b*b - y2);
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-bohemiandome&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Bohemian dome&#34;,
+      &#34;frag&#34;           : &#34;bohemiandome&#34;,
+      &#34;color_model&#34;    : [ 1, 6, 7, 8, 9, 10 ],
+      &#34;a&#34;              : [0.8, 1.2],
+      &#34;b&#34;              : [0.8, 1.2],
+      &#34;scale&#34;          : [20.0, 23.0],
+      &#34;iso&#34;            : [-0.1, 0.1],
+      &#34;curv_scale&#34;     : [3.0, 3.0],
+      &#34;grid_size&#34;      : [0.0, 0.0 ],
+      &#34;grid_thickness&#34; : [0.0, 0.0 ]
+    }
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-gyroid&#34; style=&#34;display: none;&#34;&gt;
+    // Gyroid
+return a*cos(x)*sin(y)+b*cos(y)*sin(z)+c*cos(z)*sin(x);
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-gyroid&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Gyroid&#34;,
+      &#34;frag&#34;           : &#34;gyroid&#34;,
+      &#34;color_model&#34;    : [ 1, 2, 3, 6, 7, 8, 9, 11 ],
+      &#34;a&#34;              : [0.5, 1.5],
+      &#34;b&#34;              : [0.5, 1.5],
+      &#34;c&#34;              : [0.5, 1.5],
+      &#34;scale&#34;          : [14.0, 18.0],
+      &#34;iso&#34;            : [0.0, 0.0],
+      &#34;curv_scale&#34;     : [0.15, 0.15],
+      &#34;princ_curv&#34;     : [0,1,2],
+      &#34;grid_size&#34;      : [0.35, 0.4 ],
+      &#34;grid_thickness&#34; : [0.0, 0.1 ]
+    }
+&lt;/textarea&gt;
+
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-neovius&#34; style=&#34;display: none;&#34;&gt;
+    // Neovius
+return 3.*a*(cos(x) + cos(y) + cos(z)) + 4.*b*cos(x)*cos(y)*cos(z);
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-neovius&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Neovius&#34;,
+      &#34;frag&#34;           : &#34;neovius&#34;,
+      &#34;color_model&#34;    : [ 1, 2, 3, 6, 7, 8, 9 ],
+      &#34;a&#34;              : [0.5, 1.5],
+      &#34;b&#34;              : [0.5, 1.5],
+      &#34;scale&#34;          : [6.0, 15.0],
+      &#34;iso&#34;            : [-1.0, 1.0],
+      &#34;curv_scale&#34;     : [1.0, 1.0],
+      &#34;grid_size&#34;      : [0.1, 1.0 ],
+      &#34;grid_thickness&#34; : [0.0, 0.1 ]
+    }
+&lt;/textarea&gt;
+    
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-kleinbottle&#34; style=&#34;display: none;&#34;&gt;
+    // KleinBottle (Ian Stewart)
+float l2 = a*(x2+y2+z2);
+float w  = l2 - 2.0*y - b;
+return (l2 + 2.0*y - b)*(w*w - 8.0*z2) + 16.0*x*z*w;
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-kleinbottle&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Klein bottle&#34;,
+      &#34;frag&#34;           : &#34;kleinbottle&#34;,
+      &#34;color_model&#34;    : [ 6 ],
+      &#34;a&#34;              : [1.0, 1.0],
+      &#34;scale&#34;          : [10.0, 14.0],
+      &#34;iso&#34;            : [-0.1, 0.1],
+      &#34;grid_size&#34;      : [0.1, 1.0 ],
+      &#34;grid_thickness&#34; : [0.0, 0.1 ]
+    }
+&lt;/textarea&gt;
+
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-pluckerconoid&#34; style=&#34;display: none;&#34;&gt;
+    // PluckerConoid
+return z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*x*y2*y2);
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-pluckerconoid&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Plucker conoid&#34;,
+      &#34;frag&#34;           : &#34;pluckerconoid&#34;,
+      &#34;color_model&#34;    : [ 1, 6, 7, 8, 9, 10, 11 ],
+      &#34;a&#34;              : [1.0, 1.0],
+      &#34;scale&#34;          : [15.0, 15.0],
+      &#34;iso&#34;            : [-0.01, 0.01],
+      &#34;grid_size&#34;      : [0.5, 0.5 ],
+      &#34;grid_thickness&#34; : [0.0, 0.0 ],
+      &#34;princ_curv&#34;     : [0,1,2],
+      &#34;curv_scale&#34;     : [0.25,0.25]
+    }
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-ellipsoid&#34; style=&#34;display: none;&#34;&gt;
+    // Ellipsoid
+return (x2/(a*a)+y2/(b*b)+z2/(c*c)-1.);
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-ellipsoid&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34; : &#34;Ellipsoid&#34;,
+      &#34;frag&#34; : &#34;ellipsoid&#34;,
+      &#34;color_model&#34; : [ 11 ],
+      &#34;scale&#34; : [24.0, 24.0],
+      &#34;iso&#34;   : [0.0, 0.0],
+      &#34;a&#34;     : [2.0, 2.0],
+      &#34;b&#34;     : [1.5, 1.5],
+      &#34;c&#34;     : [1.0, 1.0],
+      &#34;grid_size&#34; : [0.2,0.3],
+      &#34;princ_curv&#34;: [0,1,2],
+      &#34;curv_scale&#34;: [1.0,1.0]
+    }
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-torus&#34; style=&#34;display: none;&#34;&gt;
+    // Torus
+return (x2+y2+z2+a*a-b*b)*(x2+y2+z2+a*a-b*b)-4.*a*a*(x2+y2);
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-torus&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34; : &#34;Torus&#34;,
+      &#34;frag&#34; : &#34;torus&#34;,
+      &#34;color_model&#34; : [ 8,9,10,11 ],
+      &#34;scale&#34; : [10.0, 12.5],
+      &#34;iso&#34;   : [0.0, 0.0],
+      &#34;a&#34;     : [1.75, 2.0],
+      &#34;b&#34;     : [1.0, 1.5],
+      &#34;princ_curv&#34; : [0],
+      &#34;grid_size&#34; : [0.2,0.3],
+      &#34;center_x&#34; : [0.3,0.3],
+      &#34;center_y&#34; : [0.1,0.2],      
+      &#34;center_z&#34; : [-0.1,0.1],
+      &#34;curv_scale&#34; : [0.25,0.25]
+    }
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-infinite-cubes&#34; style=&#34;display: none;&#34;&gt;
+    // Cubes in infinite directions
+float     d   = 0.5*a*b;
+return -0.25 + max( abs( mod( p.x, a ) - d ),
+		    max( abs( mod( p.y, a ) - d  ),
+	  		 abs( mod( p.z, a ) - d ) ) );
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-infinite-cubes&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34; : &#34;Infinite cubes&#34;,
+      &#34;frag&#34; : &#34;infinite-cubes&#34;,
+      &#34;color_model&#34; : [ 1, 7 ],
+      &#34;scale&#34; : [5.0, 15.0],
+      &#34;iso&#34;   : [0.0, 0.0],
+      &#34;a&#34;     : [1.0, 1.0],
+      &#34;b&#34;     : [0.2, 1.8],
+      &#34;view_shape&#34; : [0]
+    }
+&lt;/textarea&gt;
+
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-kleinian&#34; style=&#34;display: none;&#34;&gt;
+    // Kleinian variation (taken from shadertoy (Spudsville2018, by EvilRyu)
+const int depth = 8; //&lt; depth of the fractal ! Increase at your own risk...
+vec3 d = vec3( a, b, c ); //&lt; Try (1,0.225,1.15) 
+float scale = 1.0;
+for( int i = 0; i &lt; depth; i++)
+{
+    p        = 2.0*clamp(p, -d, d) - p;
+    float r2 = dot(p,p);
+    float k  = max((1.)/(r2), 0.03);
+    p       *= k;
+    scale   *= k;
+}
+float l   = length(p.xy);
+float rxy = l - 3.;
+float n   = l * p.z;
+rxy = max(rxy, -(n) / (length(p))-0.02);
+return (rxy) / abs(scale) + 0.0001; //thicken a little bit
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-kleinian&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;        : &#34;Kleinian variation&#34;,
+      &#34;frag&#34;        : &#34;kleinian&#34;,
+      &#34;color_model&#34; : [ 1, 7, 8, 10 ],
+      &#34;scale&#34;       : [10.0, 35.0],
+      &#34;iso&#34;         : [0.0, 0.0],
+      &#34;abc&#34;         : [ [0.475, 0.425, 1.15], [1.0, 0.2, 1.25] ],
+      &#34;curv_scale&#34;  : [50.0, 50.0],
+      &#34;grid_thickness&#34; : [0.0, 0.0 ]
+    }
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-virus&#34; style=&#34;display: none;&#34;&gt;
+      // Kind of virus
+const vec3 xc = vec3(0.,0.,0.);
+vec3 d  = vec3(x,y,z) - xc;
+vec3 n  = normalize( d );
+vec2 theta = normalize (d.xy);
+float dd = length( n.xy );
+float t   = atan( theta.y, theta.x );
+float phi = atan( n.z, dd );
+const float nbu = 22.;
+const float nbv = 26.;
+float u  = pow(cos( t * nbu ), 9.0);
+float v  = pow(cos( phi * nbv ), 9.0);
+float d2 = dot(d,d);
+return d2-a*a - 0.2*u*v/(1.+1.*d2);
+    &lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-virus&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;  : &#34;Virus&#34;,
+      &#34;frag&#34;  : &#34;virus&#34;,
+      &#34;color_model&#34; : [ 1, 7 ],
+      &#34;a&#34;     : [1.0,1.0],
+      &#34;b&#34;     : [1.0,1.0],
+      &#34;c&#34;     : [1.0,1.0],
+      &#34;scale&#34; : [30.0,35.0],
+      &#34;iso&#34;   : [-1.0, 1.0]
+    }
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-whitney-umbrella&#34; style=&#34;display: none;&#34;&gt;
+    // Whitney&#39;s umbrella
+return x2 - y2*z;
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-whitney-umbrella&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;  : &#34;Whitney umbrella&#34;,
+      &#34;frag&#34;  : &#34;whitney-umbrella&#34;,
+      &#34;color_model&#34; : [ 1,3,5,6,7 ],
+      &#34;scale&#34; : [10.0,20.0],
+      &#34;iso&#34;   : [0.0, 0.01]
+    }
+&lt;/textarea&gt;
+    
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-sierpinski-cube&#34; style=&#34;display: none;&#34;&gt;
+    // Sierpinski&#39;s cube / fractal
+const int n = 4; // depth of Sierpinski&#39;s cube (increase for less volume)
+float l = 3.0 * a;
+float d = max( max( x - l, -l - x ),
+               max( max( y - l, -l - y ), max( z - l, -l - z ) ) );
+vec3  c = vec3( 0., 0., 0. );
+for ( int i = 0; i &lt; n &amp;&amp; d &lt; 0.; i++ )
+  {
+    l /= 3.0;
+    float dx = abs(x - c.x);
+    float dy = abs(y - c.y);
+    float dz = abs(z - c.z);
+    float ax = max( dy, dz );
+    float ay = max( dx, dz );
+    float az = max( dx, dy );
+    float dp = min( ax, min( ay, az ) );
+    float nd = l - dp;
+    d = max( d, nd );
+    float ll = 2.0*l;
+    c.x += ll*round( (x - c.x) / ll );
+    c.y += ll*round( (y - c.y) / ll );
+    c.z += ll*round( (z - c.z) / ll );
+  }
+return d;
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-sierpinski-cube&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34; : &#34;Sierpinski&#39;s cube&#34;,
+      &#34;frag&#34; : &#34;sierpinski-cube&#34;,
+      &#34;color_model&#34; : [ 1, 7 ],
+      &#34;scale&#34; : [10.0, 10.0],
+      &#34;accuracy&#34; : 2.0,
+      &#34;iso&#34;   : [0.0, 0.0]
+    }
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-goursat-tetra&#34; style=&#34;display: none;&#34;&gt;
+    // Goursat&#39;surface (quartic) with tetrahedral symmetry.
+return (x+y+z-a)*(-x-y+z-a)*(x-y-z-a)*(-x+y-z-a)+b*(x2+y2+z2-3.*a)*(x2+y2+z2-3.*a);
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-goursat-tetra&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;  : &#34;Goursat tetra&#34;,
+      &#34;frag&#34;  : &#34;goursat-tetra&#34;,
+      &#34;color_model&#34; : [ 1,2,3,6,7,8,10 ],
+      &#34;scale&#34; : [10.0,14.0],
+      &#34;a&#34;     : [0.5,1.0],
+      &#34;b&#34;     : [0.5,1.0],
+      &#34;iso&#34;   : [-0.1, 0.1],
+      &#34;curv_scale&#34;  : [1.0, 1.0],
+      &#34;grid_size&#34; : [0.05, 0.5 ],
+      &#34;grid_thickness&#34; : [0.1, 0.1 ]
+    }
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-goursat-octa&#34; style=&#34;display: none;&#34;&gt;
+    // Goursat&#39;surface (quartic) with octahedral/cube symmetry.
+return x2*x2+y2*y2+z2*z2+a*(x2+y2+z2)*(x2+y2+z2)+b*(x2+y2+z2)+c;
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-goursat-octa&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;  : &#34;Goursat octa&#34;,
+      &#34;frag&#34;  : &#34;goursat-octa&#34;,
+      &#34;color_model&#34; : [ 1,6,8,9,10,11 ],
+      &#34;scale&#34; : [15.0,20.0],
+      &#34;abc&#34;   : [ [0.0,-1.0,0.0], [-1.0,-0.25,0.25], [-1.0,1.0,1.0], [0.0,-2.0,2.0],
+		  [-1.0,4.0,6.0], [-0.5,-1.0,0.5] ],
+      &#34;iso&#34;   : [-0.01, 0.01],
+      &#34;curv_scale&#34;  : [3.0, 3.0],
+      &#34;grid_thickness&#34; : [0.0, 0.0 ],
+      &#34;grid_size&#34;      : [0.25, 0.35 ],
+      &#34;princ_curv&#34;     : [0,1,2]
+    }
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-julia&#34; style=&#34;display: none;&#34;&gt;
+    // Julia set
+const int n = 30; //&lt; max iterations
+float cx = a;
+float cy = b;
+float zx = y;
+float zy = z;
+int i = 0;
+for ( i = 0; i &lt; n; i++ ){
+    vec2 nz = vec2( zx*zx - zy*zy + cx, 2.0*zx*zy + cy );
+    zx = nz.x; zy = nz.y;
+    // we know that the series is divergent when |z| &gt; 2.0
+   if ( dot(nz,nz) &gt; 4.0 ) break; 
+}
+return(2.0/(zx*zx+zy*zy)*float(i)/29.0) - 1.*(1.0-10.1*abs(x));
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;shape-julia&#34; style=&#34;display: none;&#34;&gt;
+    { &#34;name&#34;           : &#34;Julia set&#34;,
+      &#34;frag&#34;           : &#34;julia&#34;,
+      &#34;color_model&#34;    : [ 0, 1, 7 ],
+      &#34;a&#34;              : [-0.5, 0.5],
+      &#34;b&#34;              : [-0.5, 0.5],
+      &#34;scale&#34;          : [33.0, 40.0],
+      &#34;iso&#34;            : [0.0, 0.0],
+      &#34;view_shape&#34;     : [ 4,7 ],
+      &#34;animate_a&#34;      : [ 4.0, 0.3 ],
+      &#34;animate_b&#34;      : [ 2.0, 0.2 ]
+    }
+&lt;/textarea&gt;
+
+    &lt;!--
+///////////////////////////////////////////////////////////////////////////////
+// PREDEFINED SHAPES FRAGMENT SHADERS END
+///////////////////////////////////////////////////////////////////////////////
+--&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jacquesolivierlachaud.github.io/lectures/info804/tests/webgl/shaders/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://jacquesolivierlachaud.github.io/lectures/info804/tests/webgl/shaders/</guid>
+      <description>
+    &lt;script id=&#34;post-vert&#34; type=&#34;x-shader/x-vertex&#34;&gt;
+    // Vertex shader
+out vec3 vertPos;
+out vec3 projPos;
+out mat4 projViewInv;
+void main(){
+    vec4 vertPos4 = modelViewMatrix * vec4( position, 1.0);
+    vertPos       = position; 
+    gl_Position   = projectionMatrix * vertPos4;
+    projPos       = gl_Position.xyz / gl_Position.w;
+    projViewInv   = inverse( projectionMatrix * modelViewMatrix );
+}
+&lt;/script&gt;
+    &lt;!--
+//////////////////////////////////////////////////////////////////////////////
+// VERTEX SHADERS END
+//////////////////////////////////////////////////////////////////////////////
+--&gt;
+
+
+
+    &lt;!--
+//////////////////////////////////////////////////////////////////////////////
+// FRAGMENT SHADERS BEGIN
+//////////////////////////////////////////////////////////////////////////////
+--&gt;
+    
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-begin&#34; style=&#34;display: none;&#34;&gt;
+    // Fragment shader: initial chunk 
+uniform vec3 ambient_color;
+uniform vec3 int_diff_color;
+uniform vec3 ext_diff_color;
+uniform vec3 specular_color;
+uniform vec3 sing_color;
+uniform float shininess;
+uniform float opacity;
+uniform float curv_scale;
+uniform int   princ_curv;
+uniform vec3 light1_direction;
+uniform vec3 light1_color;
+uniform vec3 light2_direction;
+uniform vec3 light2_color;
+uniform vec3  bg_color;
+uniform float singularity;
+uniform float accuracy;
+uniform float iso;
+uniform float a;
+uniform float b;
+uniform float c;      
+uniform float scale;
+uniform float center_x;
+uniform float center_y;
+uniform float center_z;
+uniform float grid_size;
+uniform float grid_thickness;
+uniform float grid_attenuation;
+uniform int   shape;
+uniform int   color_model;
+    in vec3 vertPos;
+    in vec3 projPos;
+    in mat4 projViewInv;
+out vec4 outColor;
+
+// 3D function in cube
+const float width  = 100.0; // cube width  
+const float width2 = width*width; // cube width
+&lt;/textarea&gt;
+    
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-begin&#34; style=&#34;display: none;&#34;&gt;
+    // chunk for opening function definition.
+// As a user, do not use `p`, but use `x`, `y`, `z` instead, which have been translated.
+float f( vec3 p ) {
+    p.x     += center_x;
+    p.y     += center_y;
+    p.z     += center_z;
+    float x  = p.x; 
+    float y  = p.y;
+    float z  = p.z;
+    float x2 = x*x;
+    float y2 = y*y;
+    float z2 = z*z;
+    float x3 = x2*x;
+    float y3 = y2*y;
+    float z3 = z2*z;
+    &lt;/textarea&gt;
+	
+	&lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-fct-end&#34; style=&#34;display: none;&#34;&gt;
+	// chunk for closing function definition.
+}
+&lt;/textarea&gt;
+
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-phong&#34; style=&#34;display: none;&#34;&gt;
+    // Computes the Phong illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) &gt;= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-phong-grid&#34; style=&#34;display: none;&#34;&gt;
+    // Computes the Phong+Grid illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) &gt;= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    if (( mod( pos.x, grid_size ) &lt; bound
+	  || mod( pos.y, grid_size ) &lt; bound
+	  || mod( pos.z, grid_size ) &lt; bound ) )
+	color *= grid_attenuation;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-phong-spheres&#34; style=&#34;display: none;&#34;&gt;
+    // Computes the Phong+Spheres illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) &gt;= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    if ( mod( length( pos ), grid_size ) &lt; bound )
+	color *= grid_attenuation;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-gradf&#34; style=&#34;display: none;&#34;&gt;
+    // Estimates the gradient of f at position p
+vec3 gradf( vec3 p ) {
+    float eps  = scale * 0.0001;
+    // numerical centered derivatives
+    float gfx = f( p + vec3( eps, 0.0, 0.0 ) ) - f( p - vec3( eps, 0.0, 0.0 ) );
+    float gfy = f( p + vec3( 0.0, eps, 0.0 ) ) - f( p - vec3( 0.0, eps, 0.0 ) );
+    float gfz = f( p + vec3( 0.0, 0.0, eps ) ) - f( p - vec3( 0.0, 0.0, eps ) );
+    return vec3( gfx, gfy, gfz ) / ( 2.0 * eps );
+}
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-hessf&#34; style=&#34;display: none;&#34;&gt;
+    // Estimates the Hessian of f at position p
+mat3 hessf( vec3 p ) {
+    mat3 H;
+    float eps  = 0.1 / scale;
+    float eps2 = eps * eps;
+    // numerical centered derivatives
+    vec3  dx   = vec3( eps, 0.0, 0.0 );
+    vec3  dy   = vec3( 0.0, eps, 0.0 );
+    vec3  dz   = vec3( 0.0, 0.0, eps );
+    float fp   = f( p );
+    float fppdx= f( p+dx );
+    float fpmdx= f( p-dx );        
+    float fppdy= f( p+dy );
+    float fpmdy= f( p-dy );        
+    float fppdz= f( p+dz );
+    float fpmdz= f( p-dz );        
+    H[ 0 ][ 0 ] = ( fppdx - 2.*fp + fpmdx ) / eps2;
+    H[ 1 ][ 1 ] = ( fppdy - 2.*fp + fpmdy ) / eps2;
+    H[ 2 ][ 2 ] = ( fppdz - 2.*fp + fpmdz ) / eps2;
+    H[ 0 ][ 1 ] = ( ( f(p+dx+dy) - f(p-dx+dy) ) - ( f(p+dx-dy) - f(p-dx-dy) ) ) / (4.*eps2);
+    H[ 0 ][ 2 ] = ( ( f(p+dx+dz) - f(p-dx+dz) ) - ( f(p+dx-dz) - f(p-dx-dz) ) ) / (4.*eps2);
+    H[ 1 ][ 2 ] = ( ( f(p+dy+dz) - f(p-dy+dz) ) - ( f(p+dy-dz) - f(p-dy-dz) ) ) / (4.*eps2);
+    H[ 1 ][ 0 ] = H[ 0 ][ 1 ];
+    H[ 2 ][ 0 ] = H[ 0 ][ 2 ];
+    H[ 2 ][ 1 ] = H[ 1 ][ 2 ];        
+    return H;
+}
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-curvatures&#34; style=&#34;display: none;&#34;&gt;
+    // Estimates the curvatures of f at position p
+vec2 mean_gaussian_curvatures( vec3 p ) {
+    vec3  G = gradf( p );
+    float g = length( G );
+    mat3  H = hessf( p );
+    mat4  C = mat4( H );
+//    for ( int i = 0; i &lt; 3; i ++ )
+//	for ( int j = 0; j &lt; 3; j ++ )
+//	    C[ i ][ j ] = H[ i ][ j ];
+    C[0][3] = G[ 0 ];
+    C[1][3] = G[ 1 ];
+    C[2][3] = G[ 2 ];
+    C[3][0] = G[ 0 ];
+    C[3][1] = G[ 1 ];
+    C[3][2] = G[ 2 ];
+    C[3][3] = 0.0;
+    vec2 curv_hg;
+    curv_hg.y = - determinant( C ) / (g*g*g*g);
+    curv_hg.x = - 0.5*( dot( H*G, G ) - g * g * (H[0][0]+H[1][1]+H[2][2]) ) / (g*g*g);
+    return curv_hg;
+}
+// Estimates the principal curvatures of f at position p
+// k1 : first principal curvature (highest value k1 &gt;= k2)
+// k2 : second principal curvature (lowest value k2 &lt;= k1)
+void principal_curvatures( in vec3 p, out float k1, out float k2 ) {
+    vec2 curv_hg  = mean_gaussian_curvatures( p );
+    float dk = sqrt( max( 0.0, curv_hg.x*curv_hg.x - curv_hg.y ) );
+    k2       = curv_hg.x - dk;
+    k1       = curv_hg.x + dk;
+}
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-eigendecomposition&#34; style=&#34;display: none;&#34;&gt;
+    // Estimates the principal directions of curvatures of f at position p
+/*
+ * Copyright 2015 
+ * Hélène Perrier &lt;helene.perrier@liris.cnrs.fr&gt;
+ * Jérémy Levallois &lt;jeremy.levallois@liris.cnrs.fr&gt;
+ * David Coeurjolly &lt;david.coeurjolly@liris.cnrs.fr&gt;
+ * Jacques-Olivier Lachaud &lt;jacques-olivier.lachaud@univ-savoie.fr&gt;
+ * Jean-Philippe Farrugia &lt;jean-philippe.farrugia@liris.cnrs.fr&gt;
+ * Jean-Claude Iehl &lt;jean-claude.iehl@liris.cnrs.fr&gt;
+ * 
+ * This file is part of ICTV.
+ * 
+ * ICTV is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * ICTV is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with ICTV.  If not, see &lt;http://www.gnu.org/licenses/&gt;
+ */
+void getEigenValuesVectors( in mat3 mat_data,
+			    out mat3 vectors,
+			    out vec3 values )
+{ 
+    vec3 e = vec3(0);
+    int dimension = 3;
+    int dimensionMinusOne = 2;
+    for( int j = 0; j &lt; dimension; ++j )
+	values[ j ] =  mat_data[dimensionMinusOne][ j ];
+    // Householder reduction to tridiagonal form.
+    for( int i = dimensionMinusOne; i &gt; 0 &amp;&amp; i &lt;= dimensionMinusOne; --i ) {
+	// Scale to avoid under/overflow.
+	float scale = 0.0;
+	float h =  0.0;
+	for( int k = 0; k &lt; i; ++k )
+            scale += abs( values[ k ] );
+	if ( scale ==  0.0 ) {
+            e[ i ] = values[ i - 1 ];
+            for( int j = 0; j &lt; i; ++j ) {
+		values[ j ] = mat_data[ ( i - 1 ) ] [  j  ];
+		mat_data[ i ][ j ] = 0.0;
+		mat_data[ j ][ i ] = 0.0;
+            }
+	} else {
+            // Generate Householder vector.
+            for ( int k = 0; k &lt; i; ++k ) {
+		values[ k ] /= scale;
+		h += values[ k ] * values[ k ];
+            }
+            float f = values[ i - 1 ];
+            float g = sqrt( h );
+            if ( f &gt;  0.0 ) g = -g;
+            e[ i ] = scale * g;
+            h -= f * g;
+            values[ i - 1 ] = f - g;
+            for ( int j = 0; j &lt; i; ++j) e[ j ] =  0.0;
+            // Apply similarity transformation to remaining columns.
+            for ( int j = 0; j &lt; i; ++j ) {
+		f = values[ j ];
+		mat_data[ j ][ i ] = f;
+		g = e[ j ] +  mat_data[ j ][ j ] * f;
+		for ( int k = j + 1; k &lt;= i - 1; ++k ) {
+		    g +=  mat_data[ k ][ j ] * values[ k ];
+		    e[ k ] +=  mat_data[ k ][ j ] * f;
+		}
+		e[ j ] = g;
+            }
+            f = 0.0;
+            for ( int j = 0; j &lt; i; ++j ) {
+		e[ j ] /= h;
+		f += e[ j ] * values[ j ];
+            }
+            float hh = f / ( h + h );
+            for ( int j = 0; j &lt; i; ++j )
+		e[ j ] -= hh * values[ j ];
+            for ( int j = 0; j &lt; i; ++j ) {
+		f = values[ j ];
+		g = e[ j ];
+		for ( int k = j; k &lt;= i - 1; ++k )
+                    mat_data[ k ][ j ] = mat_data[ k ][ j ] - (f * e[ k ] + g * values[ k ]);
+		values[ j ] =  mat_data[ i - 1][ j ];
+		mat_data[ i ][ j ] = 0.0;
+            }
+	}
+	values[ i ] = h;
+    }
+    // Accumulate transformations.
+    for ( int i = 0; i &lt; dimensionMinusOne; ++i ) {
+	mat_data[dimensionMinusOne][ i ] =  mat_data[ i ][ i ];
+	mat_data[ i ][ i ] = 1.0;
+	float h = values[ i + 1 ];
+	if ( h != 0.0 ) {
+            for ( int k = 0; k &lt;= i; ++k )
+		values[ k ] =  mat_data[ k ][ i + 1 ] / h;
+            for ( int j = 0; j &lt;= i; ++j ) {
+		float g = 0.0;
+		for ( int k = 0; k &lt;= i; ++k )
+		    g +=  mat_data[ k ][ i + 1 ] *  mat_data[ k ][ j ];
+		for ( int k = 0; k &lt;= i; ++k )
+                    mat_data[ k ][ j ] =   mat_data[k][ j ] - ( g * values[ k ] );
+            }
+	}
+	for ( int k = 0; k &lt;= i; ++k )
+            mat_data[ k ][ i + 1 ] =  0.0;
+    }
+    for ( int j = 0; j &lt; dimension; ++j ) {
+        values[ j ] =  mat_data[ dimensionMinusOne ][ j ];
+	mat_data[ dimensionMinusOne ][ j ] = 0.0;
+    }
+    mat_data[ dimensionMinusOne ][ dimensionMinusOne ] =  1.0;
+    e[ 0 ] =  0.0;
+    for ( int i = 1; i &lt; dimension; ++i )
+	e[ i - 1 ] = e[ i ];
+    e[ dimensionMinusOne ] = 0.0;
+    float f = float( 0.0 );
+    float tst1 = float( 0.0 );
+    float eps = float( pow( 2.0, -52.0 ));
+    //float eps = float( pow( 2.0, -52.0 ));
+    for( int l = 0; l &lt; dimension; ++l ) {
+	// Find small subdiagonal element
+	tst1 = float( max( tst1, abs ( values[ l ] ) + abs( e[ l ] )));
+	int m = l;
+	while ( m &lt; dimension ) {
+          if ( abs ( e[ m ] ) &lt;= eps * tst1 ) break;
+            ++m;
+        }
+	// If m == l, d[l] is an eigenvalue,
+	// otherwise, iterate.
+	if( m &gt; l &amp;&amp; l&lt;2 ) {
+            int iter = 0;
+            do {
+		++iter;  // (Could check iteration count here.)
+		// Compute implicit shift
+		float g = values[ l ];
+		float p = ( values[ l + 1 ] - g ) / ( float( 2.0 ) * e[ l ] );
+		float r = float( sqrt ( p * p + float( 1.0 ) * float( 1.0 )));
+		if ( p &lt; 0.0 ) r = -r;
+		values[ l ] = e[ l ] / ( p + r );
+		values[ l + 1 ] = e[ l ] * ( p + r );
+		float dl1 = values[ l + 1 ];
+		float h = g - values[ l ];
+		for( int i = l + 2; i &lt; dimension; ++i )
+                    values[ i ] -= h;
+		f = f + h;
+		// Implicit QL transformation.
+		p = values[ m ];
+		float c = float( 1.0 );
+		float c2 = c;
+		float c3 = c;
+		float el1 = e[ l + 1 ];
+		float s = float( 0.0 );
+		float s2 = float( 0.0 );
+		for ( int i = m - 1; i &gt;= l &amp;&amp; i &lt;= m - 1; --i ) {
+                    c3 = c2;
+                    c2 = c;
+                    s2 = s;
+                    g = c * e[ i ];
+                    h = c * p;
+                    r = float( sqrt ( p * p + e[ i ] * e[ i ] ));
+                    e[ i + 1 ] = s * r;
+                    s = e[ i ] / r;
+                    c = p / r;
+                    p = c * values[ i ] - s * g;
+                    values[ i + 1 ] = h + s * ( c * g + s * values[ i ] );
+                    // Accumulate transformation.
+                    for( int k = 0; k &lt; dimension; ++k ) {
+			h =  mat_data[ k ][ i + 1 ];
+			mat_data[ k ][ i + 1 ] =  ( s *  mat_data[ k ][ i ] + c * h );
+			mat_data[ k ][ i ] = ( c *  mat_data[ k ][ i ] - s * h );
+                    }
+                }
+		p = - s * s2 * c3 * el1 * e[ l ] / dl1;
+		e[ l ] = s * p;
+		values[ l ] = c * p;
+		// Check for convergence.
+            } while ( abs ( e[ l ] ) &gt; eps * tst1 &amp;&amp; iter &lt; 30);
+        }
+	values[ l ] = values[ l ] + f;
+	e[ l ] = float( 0.0 );
+    }
+    // Sort eigenvalues and corresponding vectors.
+    for ( int i = 0; i &lt; dimensionMinusOne; ++i ) {
+	int k = i;
+	float p = values[ i ];
+	for ( int j = i + 1; j &lt; dimension; ++j ) {
+            if ( values[ j ] &lt; p ) {
+		k = j;
+		p = values[ j ];
+            }
+        }
+	if ( k != i ) {
+            values[ k ] = values[ i ];
+            values[ i ] = p;
+            for ( int j = 0; j &lt; dimension; ++j ) {
+		p =  mat_data[ j ][ i ];
+		mat_data[ j ][ i ] =  mat_data[ j ][ k ];
+		mat_data[ j ][ k ] = p;
+            }
+        }
+    }
+    for(int i=0; i&lt;3; i++)
+	for(int j=0; j&lt;3; j++)
+	    vectors[i][j] = mat_data[i][j];
+}
+&lt;/textarea&gt;
+
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-principal-dirs&#34; style=&#34;display: none;&#34;&gt;
+    // Estimates the principal directions of curvatures of f at position p
+// @param[in]   pos a point on the surface
+// @param[out]  d1 the unit first principal direction (lowest curvature)
+// @param[out]  d2 the unit second principal direction (highest curvature)
+// @param[out]  d3 the unit normal direction
+void principal_directions( in vec3 p, out vec3 d1, out vec3 d2, out vec3 d3 )
+{
+    vec3  G = gradf( p );
+    float g = length( G );
+    mat3  H = hessf( p );
+    for ( int i = 0; i &lt; 3; i++ )
+	for ( int j = 0; j &lt; 3; j++ )
+	    H[ i ][ j ] += 100.0*G[i]*G[j]/ (g*g);
+    mat3  V;
+    vec3  K;
+    getEigenValuesVectors( H, V, K );
+    const int i1 = 0;
+    const int i2 = 1;
+    //int i1 = abs( K[ 0 ] ) &gt; abs( K[ 1 ] ) ? 0 : 1;
+    //int i2 = 1 - i1;
+    d1 = normalize( vec3( V[ 0 ][ i1 ], V[ 1 ][ i1 ], V[ 2 ][ i1 ] ) );
+    d2 = normalize( vec3( V[ 0 ][ i2 ], V[ 1 ][ i2 ], V[ 2 ][ i2 ] ) );
+    d3 = normalize( vec3( V[ 0 ][ 2 ],  V[ 1 ][ 2 ],  V[ 2 ][ 2 ] )  );
+}
+&lt;/textarea&gt;
+
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-raytrace&#34; style=&#34;display: none;&#34;&gt;
+    // Approximates the solution f(x)=0 by bissection around two positions.
+// Invariant: f(p) &lt; lvl &lt;= f(q)
+vec3 bissection( vec3 p, vec3 q, float lvl )
+{   // 10: precision is 0.001
+    // 8: precision is 0.004
+    for ( int i = 0; i &lt; 8; i++ )
+    {
+	vec3 m = 0.5*(p + q);
+	float fm = f( m );
+	if ( fm &lt; lvl ) p = m;
+	else            q = m;
+    }
+    return 0.5*(p + q);
+}
+
+// Roughly approximates a position p, such that f(p)=0.
+// In practice, finds the first change of sign.
+vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
+{
+    d     *= step;
+    vec3 q = p;
+    if ( f( p ) &lt; lvl ) {
+	for ( int i = 0; i &lt; n; i++ ) {
+	    q  += d;
+	    if ( f( q ) &gt;= lvl ) return bissection( q - d, q, lvl );
+	}
+    } else {
+	for ( int i = 0; i &lt; n; i++ ) {
+	    q  += d;
+	    if ( f( q ) &lt;  lvl ) return bissection( q, q - d, lvl );
+	}
+    }
+    return q + normalize( d ) * 2. * width;
+}
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-common-begin&#34; style=&#34;display: none;&#34;&gt;
+    // main common to all color models
+void main() {
+    // we must compute the direction of the tracing ray within the cube
+    vec3 focal = vec3( 0.0, 0.0, -200.0 );
+    vec4 viewp4= projViewInv * vec4( focal, 1.0 );
+    vec3 viewp = normalize( viewp4.xyz / viewp4.w - vertPos );
+    float step = 0.1 * accuracy / scale;
+    int   n    = int( ceil( sqrt(3.0) * width / (scale*step) ) );
+    vec3 pos   = ray_trace( vertPos / scale , -viewp, iso, n, step );
+    vec3  g    = gradf( pos );
+    outColor.a = 1.0;
+    &lt;/textarea&gt;
+	&lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-common-end&#34; style=&#34;display: none;&#34;&gt;
+}
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-rgb&#34; style=&#34;display: none;&#34;&gt;
+    // RGB model
+if ( dot( pos, pos ) &gt; width2 ) // f( pos ) &gt; ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) &lt; singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+}
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-rgb-grid&#34; style=&#34;display: none;&#34;&gt;
+    // RGB+Grid model
+if ( dot( pos, pos ) &gt; width2 ) // f( pos ) &gt; ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) &lt; singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+    float  bound = grid_size * grid_thickness;
+    if ( ( mod( pos.x, grid_size ) &lt; bound
+	   || mod( pos.y, grid_size ) &lt; bound
+	   || mod( pos.z, grid_size ) &lt; bound ) )
+	outColor.rgb *= grid_attenuation;
+}
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-rgb-spheres&#34; style=&#34;display: none;&#34;&gt;
+    // RGB+Spheres model
+if ( dot( pos, pos ) &gt; width2 ) // f( pos ) &gt; ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) &lt; singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+    float  bound = grid_size * grid_thickness;
+    if ( mod( length( pos ), grid_size ) &lt; bound )
+	outColor.rgb *= grid_attenuation;
+}
+&lt;/textarea&gt;
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-phong&#34; style=&#34;display: none;&#34;&gt;    
+    vec3 radiance;
+    vec3 viewDir = normalize( -vertPos);
+    vec3 ld1  = normalize( light1_direction );
+    vec3 ld2  = normalize( light2_direction );
+    vec3 vn   = normalize( g );
+    radiance  = phongModel( pos, viewDir, vn, 
+			    viewp, ld1, light1_color );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, ld2, light2_color );
+    const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, viewp, front_light );
+    radiance += ambient_color;
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-phong-two-layers&#34; style=&#34;display: none;&#34;&gt;
+    // Two layers (with transparency) Phong model.
+if ( dot( pos, pos ) &gt; width2 ) // f( pos ) &gt; ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) &lt; singularity )
+    outColor.rgb = sing_color; // singularity
+else
+{
+    const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
+    vec3 radiance;
+    vec3 viewDir = normalize( -vertPos);
+    vec3 ld1  = normalize( light1_direction );
+    vec3 ld2  = normalize( light2_direction );
+    vec3 vn   = normalize( g );
+    radiance  = phongModel( pos, viewDir, vn, 
+			    viewp, ld1, light1_color );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, ld2, light2_color );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, viewp, front_light );
+    vec3 radiance2;
+    vec3 spos  = pos - viewp * step;
+    vec3 pos2  = ray_trace( spos, -viewp, iso, n, step );
+    vec3  g2   = gradf( pos2 );
+    if ( dot( pos2, pos2 ) &gt; width2 ) // f( pos ) &gt; ( iso + 0.01 ) )
+	radiance2 = bg_color; // ray did not find a surface
+    else if ( dot( g2, g2 ) &lt; singularity )
+	radiance2 = sing_color; // singularity
+    else
+    {
+	vec3 vn2  = normalize( g2 );
+	radiance2 = phongModel( pos2, viewDir, vn2, 
+				viewp, ld1, light1_color );
+	radiance2+= phongModel( pos2, viewDir, vn2, 
+				viewp, ld2, light2_color );
+    }
+    outColor.rgb = ambient_color + opacity*radiance + (1.0-opacity)*radiance2;
+}
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-simple-phong&#34; style=&#34;display: none;&#34;&gt;
+    // Simpler Phong model for faster display
+const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
+vec3 radiance = ambient_color;
+vec3 viewDir  = normalize( -vertPos);
+vec3 vn       = normalize( g );
+radiance     += phongModel( pos, viewDir, vn, 
+			    viewp, -viewp, front_light );
+&lt;/textarea&gt;
+
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-mean-curvatures&#34; style=&#34;display: none;&#34;&gt;
+    // Display mean curvatures
+const vec3 white    = vec3( 1.0, 1.0, 1.0 );
+vec2 curv_hg  = mean_gaussian_curvatures( pos );
+float H = min( 1.0, max( curv_hg.x / curv_scale, -1.0 ) );
+vec3 radiance = H &gt;= 0.0
+    ? ( (1.-H)*white + H*ext_diff_color )
+    : ( (1.+H)*white - H*int_diff_color );
+float  bound  = grid_size * grid_thickness;
+if ( mod( abs(H), grid_size ) &lt; bound )
+    radiance *= grid_attenuation;
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-gauss-curvatures&#34; style=&#34;display: none;&#34;&gt;
+    // Display mean curvatures
+const vec3 white    = vec3( 1.0, 1.0, 1.0 );
+vec2 curv_hg  = mean_gaussian_curvatures( pos );
+float G = min( 1.0, max( curv_hg.y / curv_scale, -1.0 ) );
+vec3 radiance = G &gt;= 0.0
+    ? ( (1.-G)*white + G*ext_diff_color )
+    : ( (1.+G)*white - G*int_diff_color );
+float  bound  = grid_size * grid_thickness * grid_thickness;
+if ( mod( abs(G), grid_size ) &lt; bound )
+    radiance *= grid_attenuation;
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-convex-concave&#34; style=&#34;display: none;&#34;&gt;
+    // Display convex-concave zones
+const vec3 white    = vec3( 1.0, 1.0, 1.0 );
+const vec3 red      = vec3( 1.0, 0.0, 0.0 );
+const vec3 green    = vec3( 0.0, 1.0, 0.0 );
+const vec3 blue     = vec3( 0.0, 0.0, 1.0 );
+vec2 curv_hg  = mean_gaussian_curvatures( pos );
+float dk = sqrt( max( 0.0, curv_hg.x*curv_hg.x - curv_hg.y ) );
+float k1 = curv_hg.x - dk;
+float k2 = curv_hg.x + dk;
+float force = min( max( abs(k1), abs(k2) ) / curv_scale, 1.0 );
+float theta = atan( k2, k1 );
+vec3 radiance = (1.0 - force) * white;
+const float pi_2  = 1.57079632679;
+const float pi    = 2.0*pi_2;
+const float pi_4  = 0.5*pi_2;
+const float pi3_4 = 3.0*pi_4;
+//const float band = 1.57079632679 / 100.0;
+if ( theta &lt;  0.0 ) theta += 4.0*pi_2;
+if ( theta &lt;= pi_2 ) {
+    float l   = (theta - pi_4) / pi_4;
+    radiance += force * vec3( 1.0, l, 0.0 );
+} else if ( theta &lt;= pi3_4 ) {
+    float l   = (theta - pi_2) / pi_4;
+    radiance += force * vec3( 1.0-l, 1.0, 0.0 );
+} else if ( theta &lt;= pi ) {
+    float l   = (theta - pi3_4) / pi_4;
+    radiance += force * vec3( 0.0, 1.0, l );
+} else {
+    float l   = (theta - pi) / pi_4;
+    radiance += force * vec3( 0.0, 1.0 - l, 1.0 );
+}
+float  bound  = grid_size * grid_thickness;
+// if ( mod( abs(force), grid_size ) &lt; bound )
+//     radiance *= grid_attenuation;
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-directions&#34; style=&#34;display: none;&#34;&gt;
+    // Display directions
+const float pi_2  = 1.57079632679;
+const float pi    = 2.0*pi_2;
+vec3  vn   = normalize( g );
+vec3  d1; // first principal direction (highest curvature)
+float k1; // highest curvature
+vec3  d2; // second principal direction (lowest curvature)
+float k2; // lowest curvature
+vec3  d3;
+principal_directions( pos, d1, d2, d3 );
+principal_curvatures( pos, k1, k2 );
+// we wish the direction orthogonal to first principal direction, hence d2 !
+// vec4  pd1_4 = projView * vec4( normalize( d2 ), 1.0 );
+// vec2  pd1   = normalize( pd1_4.xy / pd1_4.w ); // unit d1^perp as seen on the screen
+// vec4  pd2_4 = projView * vec4( normalize( d1 ), 1.0 );
+// vec2  pd2   = normalize( pd2_4.xy / pd2_4.w ); // unit d2^perp as seen on the screen
+
+float curv1 = min( abs( 10.0 * k1 / curv_scale ), 1.0 );
+float curv2 = min( abs( 10.0 * k2 / curv_scale ), 1.0 );
+float freq  = 10.0 / grid_size;
+// vec2  ppos  = gl_FragCoord.xy / 20.0;
+// float print1= 0.9 - abs(sin( freq * dot( pd1, ppos ) ));
+// float print2= 0.9 - abs(sin( freq * dot( pd2, ppos ) ));
+
+// float print1= 1.05 - 1.1 * abs(sin( freq * dot( d1, pos ) ) );
+// float print2= 1.05 - 1.1 * abs(sin( freq * dot( d2, pos ) ) );
+// float print1= 0.1+1.2*abs(sin( freq * dot( d1, pos ) ) );
+// float print2= 0.1+1.2*abs(sin( freq * dot( d2, pos ) ) );
+float print1= grid_thickness+(1.0+2.*grid_thickness)*abs(sin( freq * dot( d1, pos ) ) );
+float print2= grid_thickness+(1.0+2.*grid_thickness)*abs(sin( freq * dot( d2, pos ) ) );
+float lc    = max( curv1,curv2);
+vec3 radiance;
+if ( princ_curv == 0 )
+    radiance = (curv1 &gt;= print1)
+    ? curv1 * (vec3(1.0,1.0,1.0) - bg_color) + (1.-curv1) * bg_color
+    : bg_color;
+else if ( princ_curv == 1 )
+    radiance = (curv2 &gt;= print2)
+    ? curv2 * (vec3(1.0,1.0,1.0) - bg_color) + (1.-curv2) * bg_color
+    : bg_color;
+else // both direction
+    radiance = ( (curv1 &gt;= print1) || (curv2 &gt;= print2) )
+    ? lc * (vec3(1.0,1.0,1.0) - bg_color) + (1.-lc) * bg_color
+    : bg_color;
+    &lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-bg-singularity-crisp&#34; style=&#34;display: none;&#34;&gt;
+    // Crisp singularity + background
+if ( dot( pos, pos ) &gt; width2 ) // f( pos ) &gt; ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g2, g2 ) &lt; singularity )
+    outColor.rgb = sing_color; // singularity
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-bg-singularity-smooth&#34; style=&#34;display: none;&#34;&gt;
+    // Smooth fog background and progressive singularities.
+float delta   = max( dot( (- scale * pos), viewp ), 0.0);
+float ls      = exp( - dot( g, g ) / singularity ); //
+radiance      = (1.-ls)*radiance + ls * sing_color;
+float l       = clamp( delta / width, 0.0, 1.0 ); // compute fog
+outColor.rgb  = (1.-l)*radiance + l * bg_color;
+&lt;/textarea&gt;
+
+    &lt;textarea spellcheck=&#34;false&#34; id=&#34;frag-chunk-main-bg&#34; style=&#34;display: none;&#34;&gt;
+    // Smooth fog background and progressive singularities.
+float delta   = max( dot( (- scale * pos), viewp ), 0.0);
+float l       = clamp( delta / width, 0.0, 1.0 ); // compute fog
+outColor.rgb  = (1.-l)*radiance + l * bg_color;
+&lt;/textarea&gt;
+
+    &lt;!--
+//////////////////////////////////////////////////////////////////////////////
+// FRAGMENT SHADERS END
+//////////////////////////////////////////////////////////////////////////////
+--&gt;
+</description>
     </item>
     
   </channel>
