@@ -502,7 +502,7 @@ function initGui() {
 		updateRenderer();
 	    } );
     colors.add( settings, 'bg_mode', {
-	'Background color}' : 0, 'Sky (light)' : 1
+	'Background color}' : 0, 'Sky (light)' : 1, 'Sky (dark)' : 2
     } ).onChange
     ( function ( value ) { shader.uniforms.bg_mode.value = value; } );
     colors.addColor( settings, 'bg_color' ).onChange
