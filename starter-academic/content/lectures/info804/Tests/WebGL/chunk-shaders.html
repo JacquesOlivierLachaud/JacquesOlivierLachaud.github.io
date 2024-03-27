@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Functions</title>
+    <title>Shaders</title>
     <meta charset="utf-8">
   </head>
   <body>
@@ -14,6 +14,7 @@
     // Vertex shader
 out vec3 vertPos;
 out vec3 projPos;
+out vec3 surfNormal;
 out mat4 projViewInv;
 void main(){
     vec4 vertPos4 = modelViewMatrix * vec4( position, 1.0);
@@ -21,6 +22,7 @@ void main(){
     gl_Position   = projectionMatrix * vertPos4;
     projPos       = gl_Position.xyz / gl_Position.w;
     projViewInv   = inverse( projectionMatrix * modelViewMatrix );
+    surfNormal    = vec3(normalMatrix * normal );
 }
 </script>
     <!--
@@ -68,9 +70,12 @@ uniform float grid_thickness;
 uniform float grid_attenuation;
 uniform int   shape;
 uniform int   color_model;
+uniform float camera_distance;
+uniform float view_radius;
     in vec3 vertPos;
     in vec3 projPos;
     in mat4 projViewInv;
+    in vec3 surfNormal;
 out vec4 outColor;
 
 // 3D function in cube
@@ -510,12 +515,17 @@ vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
     // main common to all color models
 void main() {
     // we must compute the direction of the tracing ray within the cube
-    vec3 focal = vec3( 0.0, 0.0, -200.0 );
+    vec3 focal = vec3( 0.0, 0.0, -camera_distance );
     vec4 viewp4= projViewInv * vec4( focal, 1.0 );
     vec3 viewp = normalize( viewp4.xyz / viewp4.w - vertPos );
     float step = 0.1 * accuracy / scale;
-    int   n    = int( ceil( sqrt(3.0) * width / (scale*step) ) );
-    vec3 pos   = ray_trace( vertPos / scale , -viewp, iso, n, step );
+    int   n    = int( ceil( sqrt(3.0) * view_radius / (scale*step) ) );
+    // Check if we are looking from the inside of the viewing shape.
+    // If this is the case, we move backward the starting point of the ray-tracer?
+    vec3 tracePos = ( dot( surfNormal, focal ) > 0.0 )
+	? ( vertPos - 2.0*dot( vertPos, viewp ) * viewp ) / scale
+	: vertPos / scale;
+    vec3 pos   = ray_trace( tracePos /*vertPos / scale*/ , -viewp, iso, n, step );
     vec3  g    = gradf( pos );
     outColor.a = 1.0;
     </textarea>
@@ -566,20 +576,22 @@ else
 	outColor.rgb *= grid_attenuation;
 }
 </textarea>
+
     <textarea spellcheck="false" id="frag-chunk-main-phong" style="display: none;">    
-    vec3 radiance;
-    vec3 viewDir = normalize( -vertPos);
-    vec3 ld1  = normalize( light1_direction );
-    vec3 ld2  = normalize( light2_direction );
-    vec3 vn   = normalize( g );
-    radiance  = phongModel( pos, viewDir, vn, 
-			    viewp, ld1, light1_color );
-    radiance += phongModel( pos, viewDir, vn, 
-			    viewp, ld2, light2_color );
-    const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
-    radiance += phongModel( pos, viewDir, vn, 
-			    viewp, viewp, front_light );
-    radiance += ambient_color;
+
+vec3 radiance;
+vec3 viewDir = viewp; // vec3(0.0,0.0,1.0);  // normalize( -vertPos);
+vec3 ld1  = normalize( light1_direction );
+vec3 ld2  = normalize( light2_direction );
+vec3 vn   = normalize( g );
+radiance  = phongModel( pos, viewDir, vn, 
+			viewp, ld1, light1_color );
+radiance += phongModel( pos, viewDir, vn, 
+			viewp, ld2, light2_color );
+const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
+radiance += phongModel( pos, viewDir, vn, 
+			viewp, viewp, front_light );
+radiance += ambient_color;
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-main-phong-two-layers" style="display: none;">
@@ -592,7 +604,7 @@ else
 {
     const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
     vec3 radiance;
-    vec3 viewDir = normalize( -vertPos);
+    vec3 viewDir = viewp; // vec3(0.0,0.0,1.0); // normalize( -vertPos);
     vec3 ld1  = normalize( light1_direction );
     vec3 ld2  = normalize( light2_direction );
     vec3 vn   = normalize( g );
@@ -626,7 +638,7 @@ else
     // Simpler Phong model for faster display
 const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
 vec3 radiance = ambient_color;
-vec3 viewDir  = normalize( -vertPos);
+vec3 viewDir  = viewp; // vec3(0.0,0.0,1.0); //normalize( -vertPos);
 vec3 vn       = normalize( g );
 radiance     += phongModel( pos, viewDir, vn, 
 			    viewp, -viewp, front_light );
@@ -742,6 +754,7 @@ else // both direction
     ? lc * (vec3(1.0,1.0,1.0) - bg_color) + (1.-lc) * bg_color
     : bg_color;
     </textarea>
+
 
     <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-crisp" style="display: none;">
     // Crisp singularity + background

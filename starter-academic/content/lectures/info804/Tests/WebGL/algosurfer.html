@@ -252,7 +252,9 @@ function makeUniforms( settings ) {
 	grid_thickness  : { value: settings.grid_thickness },
 	grid_attenuation: { value: settings.grid_attenuation },	      	      
 	color_model     : { value: settings.color_model },	      
-	moment          : { value: 0.0 }
+	moment          : { value: 0.0 },
+	camera_distance : { value: settings.camera_distance },
+	view_radius     : { value: settings.view_radius },
     };
     return uniforms;
 }
@@ -369,7 +371,8 @@ function makeSettings( canvas_id ) {
 	    settings.rotation_x = 0;
 	    settings.rotation_y = 0;
 	    settings.rotation_z = 0;
-	}
+	},
+	camera_distance : distance
     };
     return settings;
 }
@@ -454,8 +457,10 @@ function render() {
 	    }
 	} );
 	camera.rotation.y = (i - 3.5) / 8.0 * Math.PI;
-	camera.position.x = ( 1.1 +(i%4)*0.2)/2.0 * Math.cos( timer + i * 0.2 ) * distance;
-	camera.position.z = ( 1.1 +((i+2)%3)*0.2)/2.0 * Math.sin( timer + i * 0.2 ) * distance;
+	camera.position.x = ( 0.7 +(i%4)*0.3)/2.0 * Math.cos( timer + i * 0.2 ) * distance;
+	camera.position.z = ( 0.9 +((i+2)%3)*0.25)/2.0 * Math.sin( timer + i * 0.2 ) * distance;
+	settings.camera_distance = camera.position.length();
+	uniforms.camera_distance.value = settings.camera_distance;
 	// camera.position.x = ( 1.1+(i % 4) )/2.0 * Math.cos( timer ) * distance;
 	// camera.position.z = ( 1.1+((i+2) % 3) )/2.0 * Math.sin( timer ) * distance;
 	let id = settings.shape;
@@ -512,7 +517,7 @@ function makeViewShape( value, radius ) {
     case 6: geometry = new THREE.BoxGeometry( 0.5*radius, radius, radius );
 	geometry.translate( -0.25*radius, 0.0, 0.0 );
 	break;
-    case 7: geometry = new THREE.BoxGeometry( 0.001, radius, radius );
+    case 7: geometry = new THREE.BoxGeometry( 0.01*radius, radius, radius );
 	break;
     }
     return geometry;
@@ -623,6 +628,7 @@ function makeFragmentShader( fct_value, color_model, uniforms ) {
 	fragmentShader: fragSrc, 
 	uniforms: uniforms
     } );
+    shader.side        = THREE.DoubleSide;
     shader.glslVersion = THREE.GLSL3;
     return shader;
 }

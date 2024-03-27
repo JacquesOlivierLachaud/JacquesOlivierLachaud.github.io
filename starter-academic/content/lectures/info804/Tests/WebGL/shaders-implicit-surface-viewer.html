@@ -69,7 +69,8 @@ button {
 	  "imports": {
 	      "three": "./three.module.js",
 	      "three/addons/": "./jsm/",
-	      "three/addons/controls/": "./examples/jsm/controls/"
+	      "three/addons/controls/": "./examples/jsm/controls/",
+	      "three/addons/effects/": "./examples/jsm/effects/"
 	  }
       }
 </script>
@@ -99,6 +100,7 @@ Contains the help text.
 import * as THREE from 'three';
 import { GUI } from 'three/addons/lil-gui.module.min.js';
 import { OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import { AnaglyphEffect } from 'three/addons/effects/AnaglyphEffect.js';
 
 ///////////////////////////////////////////////////////////////////////////////
 // Build predefined shapes
@@ -131,7 +133,8 @@ const color_model_names = [
 ];
 
 ///////////////////////////////////////////////////////////////////////////////
-// Build settings
+      // Build settings
+      let effect;
 let camera, scene, renderer, object;
 let distance = 200.0;
 let map;
@@ -175,7 +178,10 @@ let settings = {
 	settings.rotation_x = 0;
 	settings.rotation_y = 0;
 	settings.rotation_z = 0;
-    }
+    },
+    camera_distance : 200.0,
+    anaglyph      : 0,
+    eye_sep       : 0.15
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -272,8 +278,9 @@ function makeViewShape( value, radius ) {
 	object.geometry.translate( -0.25*radius, 0.0, 0.0 );
     }
     if ( value == 7 ) {
-	object.geometry = new THREE.BoxGeometry( 0.001, radius, radius );
+	object.geometry = new THREE.BoxGeometry( 0.01*radius, radius, radius );
     }
+    uniforms.view_radius.value = radius;
 }
 
 // @return the fragment shader code for the predefined function `value`
@@ -394,7 +401,6 @@ function updateShader() {
             + doc.getElementById("frag-chunk-main-bg").value
 	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
-
     }
     //console.log( fragSrc );
     shader = new THREE.ShaderMaterial( {
@@ -403,6 +409,7 @@ function updateShader() {
 	uniforms: uniforms
     } );
     shader.glslVersion = THREE.GLSL3;
+    shader.side        = THREE.DoubleSide;
 }
 
 // Update the renderer (here, only the material/shader of the viewing object).
@@ -546,6 +553,10 @@ function initGui() {
 		'Cylinder': 5, 'Half-Cube': 6, 'Plane': 7 } )
 	.onChange
     ( function( value ) { makeViewShape( value, settings.view_radius ) } );
+    view.add( settings, 'anaglyph', { 'Perspective': 0, 'Anaglyph': 1 } )
+	.name( "Camera" );
+    view.add( settings, 'eye_sep' ).name( "eye separation" )
+	.min( 0.01 ).max( 0.3 );
     view.add( settings, 'view_radius' ).min( 50.0 ).max( 200.0 ).onChange
     ( function ( value ) { makeViewShape( settings.view_shape, value ) } );
     view.add( settings, 'grid_size' ).min( 0.1 ).max( 1.0 ).onChange
@@ -582,7 +593,14 @@ function init() {
 	    document.getElementById("editable-code-fct_error").value =
 		error;
 	};
-    camera = new THREE.PerspectiveCamera( 45, canvas.width/canvas.height, 1, 2000 );
+    
+    const width  = canvas.width  || 2;
+    const height = canvas.height || 2;
+    effect = new AnaglyphEffect( renderer );
+    effect.setSize( width, height );
+    
+    camera = new THREE.PerspectiveCamera( 60, canvas.width/canvas.height,
+					  0.01, 2000 );
     camera.position.x = distance; // Math.cos( timer ) * distance;
     camera.position.z = 0.0; // Math.sin( timer ) * distance;
     camera.position.y = 0;
@@ -610,7 +628,7 @@ function init() {
     controls.dampingFactor = 0.15;
     controls.screenSpacePanning = false;
     controls.minDistance = 1;
-    controls.maxDistance = 200.0;
+    controls.maxDistance = distance;
     // controls.maxPolarAngle = Math.PI / 2;
     camera.lookAt( scene.position );
 
@@ -623,6 +641,7 @@ function onWindowResize() {
     camera.aspect = canvas.width / canvas.height;
     camera.updateProjectionMatrix();
     renderer.setSize( canvas.width, canvas.height );
+    effect.setSize( canvas.width, canvas.height );
     //renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
@@ -649,7 +668,15 @@ function render() {
 	    object.rotation.z += 0.01 * settings.rotation_z;		  
 	}
     } );
-    renderer.render( scene, camera );
+    settings.camera_distance = camera.position.length();
+    uniforms.camera_distance.value = settings.camera_distance;
+    if ( settings.anaglyph == 0 )
+	renderer.render( scene, camera );
+    else {
+	effect._stereo.eyeSep = settings.eye_sep;
+	effect.render( scene, camera );
+    }
+
 }
 
 function makeUniformColor( color ) {
@@ -686,7 +713,9 @@ function makeUniforms( settings ) {
 	grid_thickness  : { value: settings.grid_thickness },
 	grid_attenuation: { value: settings.grid_attenuation },	      	      
 	color_model     : { value: settings.color_model },	      
-	moment          : { value: 0.0 }
+	moment          : { value: 0.0 },
+	camera_distance : { value: settings.camera_distance },
+	view_radius     : { value: settings.view_radius }
     };
     return uniforms;
 }
