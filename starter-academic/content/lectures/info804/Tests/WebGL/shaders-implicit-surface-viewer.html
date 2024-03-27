@@ -190,12 +190,14 @@ let settings = {
 ///////////////////////////////////////////////////////////////////////////////
 // Read parameters given to the page
 const nbshapes = shape_models.length;
+console.log( "Found " + nbshapes + " different shapes" );
 if ( location.search != "" ) {
     var parameters = location.search.substring(1).split("&");
     for ( var p in parameters ) {
 	var node  = parameters[ p ].split("=");
 	var key   = node[ 0 ];
 	var value = node[ 1 ];
+	console.log( key + " : " + value );
 	if ( key === "shape" ) {
 	    var n = parseInt( unescape( value ) );
 	    if ( n >= 0 && n < nbshapes ) settings.shape = n;
@@ -217,6 +219,8 @@ if ( location.search != "" ) {
 	}
     }    
 }
+console.log( "Chosen shape is " + settings.shape );
+
 ///////////////////////////////////////////////////////////////////////////////
 // debug
 // settings.color_model = 11;
@@ -289,6 +293,8 @@ function makeViewShape( value, radius ) {
 // @return the fragment shader code for the predefined function `value`
 function makeFunctionShader( value ) {
     var code = "";
+    console.log( value );
+    console.log( shape_models[ value ]);
     if ( "frag" in shape_models[ value ] ) {
 	var str = "frag-chunk-fct-"+shape_models[ value ].frag;
 	code    = doc_functions.getElementById( str ).value;
