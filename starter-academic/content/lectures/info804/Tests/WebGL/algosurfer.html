@@ -424,6 +424,7 @@ function onWindowResize() {
 	let camera   = info.camera;
 	let renderer = info.renderer;
 	let settings = info.settings;
+	let uniforms = info.uniforms;
 	camera.aspect = ratio;
 	camera.updateProjectionMatrix();
 	renderer.setSize( width, height );
