@@ -41,6 +41,8 @@ void main(){
     
     <textarea spellcheck="false" id="frag-chunk-begin" style="display: none;">
     // Fragment shader: initial chunk 
+uniform float width; 
+uniform float height; 
 uniform vec3 ambient_color;
 uniform vec3 int_diff_color;
 uniform vec3 ext_diff_color;
@@ -54,6 +56,7 @@ uniform vec3 light1_direction;
 uniform vec3 light1_color;
 uniform vec3 light2_direction;
 uniform vec3 light2_color;
+uniform int   bg_mode;
 uniform vec3  bg_color;
 uniform float singularity;
 uniform float accuracy;
@@ -77,10 +80,9 @@ uniform float view_radius;
     in mat4 projViewInv;
     in vec3 surfNormal;
 out vec4 outColor;
-
-// 3D function in cube
-const float width  = 100.0; // cube width  
-const float width2 = width*width; // cube width
+// // 3D function in cube
+// float vwidth  = view_radius; // cube width  
+// float vwidth2 = vwidth*vwidth; // cube width
 </textarea>
     
     <textarea spellcheck="false" id="frag-chunk-fct-begin" style="display: none;">
@@ -108,6 +110,18 @@ float f( vec3 p ) {
 
 
     <textarea spellcheck="false" id="frag-chunk-phong" style="display: none;">
+    // Computes the Phong illumination model
+vec3 phongModel( vec3 color, vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    float  bound      = grid_size * grid_thickness;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
     // Computes the Phong illumination model
 vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
 {
@@ -508,7 +522,7 @@ vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
 	    if ( f( q ) <  lvl ) return bissection( q, q - d, lvl );
 	}
     }
-    return q + normalize( d ) * 2. * width;
+    return q + normalize( d ) * 2. * view_radius;
 }
 </textarea>
     <textarea spellcheck="false" id="frag-chunk-main-common-begin" style="display: none;">
@@ -534,7 +548,7 @@ void main() {
 </textarea>
     <textarea spellcheck="false" id="frag-chunk-main-rgb" style="display: none;">
     // RGB model
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+if ( dot( pos, pos ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
     outColor.rgb = bg_color; // ray did not find a surface
 else if ( dot( g, g ) < singularity )
     outColor.rgb = sing_color; // singularity
@@ -546,7 +560,7 @@ else
 </textarea>
     <textarea spellcheck="false" id="frag-chunk-main-rgb-grid" style="display: none;">
     // RGB+Grid model
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+if ( dot( pos, pos ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
     outColor.rgb = bg_color; // ray did not find a surface
 else if ( dot( g, g ) < singularity )
     outColor.rgb = sing_color; // singularity
@@ -563,7 +577,7 @@ else
 </textarea>
     <textarea spellcheck="false" id="frag-chunk-main-rgb-spheres" style="display: none;">
     // RGB+Spheres model
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+if ( dot( pos, pos ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
     outColor.rgb = bg_color; // ray did not find a surface
 else if ( dot( g, g ) < singularity )
     outColor.rgb = sing_color; // singularity
@@ -580,7 +594,7 @@ else
     <textarea spellcheck="false" id="frag-chunk-main-phong" style="display: none;">    
 
 vec3 radiance;
-vec3 viewDir = viewp; // vec3(0.0,0.0,1.0);  // normalize( -vertPos);
+vec3 viewDir = -viewp; // vec3(0.0,0.0,1.0);  // normalize( -vertPos);
 vec3 ld1  = normalize( light1_direction );
 vec3 ld2  = normalize( light2_direction );
 vec3 vn   = normalize( g );
@@ -590,13 +604,13 @@ radiance += phongModel( pos, viewDir, vn,
 			viewp, ld2, light2_color );
 const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
 radiance += phongModel( pos, viewDir, vn, 
-			viewp, viewp, front_light );
+			viewp, -viewp, front_light );
 radiance += ambient_color;
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-main-phong-two-layers" style="display: none;">
     // Two layers (with transparency) Phong model.
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+if ( dot( pos, pos ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
     outColor.rgb = bg_color; // ray did not find a surface
 else if ( dot( g, g ) < singularity )
     outColor.rgb = sing_color; // singularity
@@ -604,7 +618,7 @@ else
 {
     const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
     vec3 radiance;
-    vec3 viewDir = viewp; // vec3(0.0,0.0,1.0); // normalize( -vertPos);
+    vec3 viewDir = -viewp; // vec3(0.0,0.0,1.0); // normalize( -vertPos);
     vec3 ld1  = normalize( light1_direction );
     vec3 ld2  = normalize( light2_direction );
     vec3 vn   = normalize( g );
@@ -613,12 +627,12 @@ else
     radiance += phongModel( pos, viewDir, vn, 
 			    viewp, ld2, light2_color );
     radiance += phongModel( pos, viewDir, vn, 
-			    viewp, viewp, front_light );
+			    viewp, -viewp, front_light );
     vec3 radiance2;
     vec3 spos  = pos - viewp * step;
     vec3 pos2  = ray_trace( spos, -viewp, iso, n, step );
     vec3  g2   = gradf( pos2 );
-    if ( dot( pos2, pos2 ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
+    if ( dot( pos2, pos2 ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
 	radiance2 = bg_color; // ray did not find a surface
     else if ( dot( g2, g2 ) < singularity )
 	radiance2 = sing_color; // singularity
@@ -638,7 +652,7 @@ else
     // Simpler Phong model for faster display
 const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
 vec3 radiance = ambient_color;
-vec3 viewDir  = viewp; // vec3(0.0,0.0,1.0); //normalize( -vertPos);
+vec3 viewDir  = -viewp; // vec3(0.0,0.0,1.0); //normalize( -vertPos);
 vec3 vn       = normalize( g );
 radiance     += phongModel( pos, viewDir, vn, 
 			    viewp, -viewp, front_light );
@@ -743,41 +757,63 @@ float lc    = max( curv1,curv2);
 vec3 radiance;
 if ( princ_curv == 0 )
     radiance = (curv1 >= print1)
-    ? curv1 * (vec3(1.0,1.0,1.0) - bg_color) + (1.-curv1) * bg_color
-    : bg_color;
+    ? curv1 * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-curv1) * ambient_color
+    : ambient_color;
 else if ( princ_curv == 1 )
     radiance = (curv2 >= print2)
-    ? curv2 * (vec3(1.0,1.0,1.0) - bg_color) + (1.-curv2) * bg_color
-    : bg_color;
+    ? curv2 * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-curv2) * ambient_color
+    : ambient_color;
 else // both direction
     radiance = ( (curv1 >= print1) || (curv2 >= print2) )
-    ? lc * (vec3(1.0,1.0,1.0) - bg_color) + (1.-lc) * bg_color
-    : bg_color;
+    ? lc * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-lc) * ambient_color
+    : ambient_color;
+const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
+vec3 viewDir = -viewp; // vec3(0.0,0.0,1.0); //normalize( -vertPos);
+radiance     = phongModel( radiance, pos, viewDir, vn, 
+			   viewp, -viewp, front_light );
     </textarea>
 
-
+    <textarea spellcheck="false" id="frag-chunk-bg-color" style="display: none;">
+    // Compute a background color from a z in [-1,1]
+vec3 background_color( float z ) {
+    if ( bg_mode == 0 ) return bg_color;
+    //z = clamp( z, -1., 1. );
+    if ( z < -0.5 )
+	return (1. - 2.*(z+1.)) * vec3( 1.0,0.0,0.0) + 2.*(z+1.) * vec3(1.0,1.0,0.0);
+    else if ( z < 0. )
+	return (1. - 2.*(z+0.5)) * vec3( 1.0,1.0,0.0) + 2.*(z+0.5) * vec3(1.0,1.0,1.0);
+    else if ( z < 0.5 )
+	return (1. - 2.*z) * vec3( 1.0,1.0,1.0) + 2.*z * vec3(0.0,1.0,1.0);
+    else 
+	return (1. - 2.*(z-0.5)) * vec3( 0.0,1.0,1.0) + 2.*(z-0.5) * vec3(0.0,0.0,1.0);
+}
+</textarea>
+    
     <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-crisp" style="display: none;">
     // Crisp singularity + background
-if ( dot( pos, pos ) > width2 ) // f( pos ) > ( iso + 0.01 ) )
-    outColor.rgb = bg_color; // ray did not find a surface
+float z       = 2.*gl_FragCoord.y / height - 1.0;
+if ( dot( pos, pos ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = background_color( z ); // ray did not find a surface
 else if ( dot( g2, g2 ) < singularity )
     outColor.rgb = sing_color; // singularity
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-smooth" style="display: none;">
     // Smooth fog background and progressive singularities.
+float z       = 2.*gl_FragCoord.y / height - 1.0;
 float delta   = max( dot( (- scale * pos), viewp ), 0.0);
 float ls      = exp( - dot( g, g ) / singularity ); //
 radiance      = (1.-ls)*radiance + ls * sing_color;
-float l       = clamp( delta / width, 0.0, 1.0 ); // compute fog
-outColor.rgb  = (1.-l)*radiance + l * bg_color;
+float l       = clamp( delta / view_radius, 0.0, 1.0 ); // compute fog
+outColor.rgb  = (1.-l)*radiance + l * background_color( z );
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-main-bg" style="display: none;">
     // Smooth fog background and progressive singularities.
+float z       = 2.*gl_FragCoord.y / height - 1.0;
 float delta   = max( dot( (- scale * pos), viewp ), 0.0);
-float l       = clamp( delta / width, 0.0, 1.0 ); // compute fog
-outColor.rgb  = (1.-l)*radiance + l * bg_color;
+float l       = clamp( delta / view_radius, 0.0, 1.0 ); // compute fog
+outColor.rgb  = (1.-l)*radiance + l * background_color( z );
 </textarea>
 
     <!--

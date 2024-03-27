@@ -19,7 +19,7 @@ As part of a pedagogical project, do not expect clean javascript code. The focus
     <div class="mtextbox">Choose a predefined shape, or enter your own function to display it, navigate with the mouse</div>
     <div class="wrapper">
     <div class="box first">
-    <canvas id="webglcanvas0" style="border: none; background-color:#000000" width="200" height="200"></canvas>
+    <canvas id="webglcanvas0" style="border: none; backgrobg-lund-color:#000000" width="200" height="200"></canvas>
     <div class="mbox" id="subtitle0"></div>
     </div>
     <div class="box second">
@@ -206,9 +206,17 @@ function init( canvas_id, shape_id, shape_models ) {
     return cinfos;
 }
 
+function trimString(str, minLength, maxLength) { 
+    if (str.length > maxLength) { 
+        return str.slice(0, maxLength - 3) + '...'; 
+    }
+    while ( str.length < minLength ) str += '\xa0';
+    return str; 
+} 
+
 function updateCanvasSubtitle( canvas_id, str ) {
     let subtitle_name = "subtitle" + canvas_id;
-    document.getElementById( subtitle_name ).innerHTML = str;
+    document.getElementById( subtitle_name ).innerHTML = trimString(str, 25, 40);
 }
 
 function stringFromColorModel( color_model ) {
@@ -223,6 +231,9 @@ function makeUniformColor( color ) {
 }
 function makeUniforms( settings ) {
     let uniforms = {
+	width           : { value : settings.width },
+	height          : { value : settings.height },	
+	bg_mode         : { value : settings.bg_mode },
 	bg_color        : { value : makeUniformColor( settings.bg_color ) },
 	ambient_color   : { value : new THREE.Vector3( 0.01, 0.0, 0.0 ) },
 	ext_diff_color  : { value : makeUniformColor( settings.ext_diff_color ) },
@@ -279,7 +290,7 @@ function randomizeSettings( settings, shape_id, shape_models ) {
     else
 	settings.color_model = randomInt(0, 12);
     if ( settings.color_model == 11 )
-	settings.bg_color = [1.0,1.0,1.0];
+	settings.ambient_color = [0.95,0.95,0.95];
     if ( "scale" in model )
 	settings.scale = randomFloat( model.scale[ 0 ], model.scale[ 1 ] );
     else
@@ -332,7 +343,10 @@ function randomizeSettings( settings, shape_id, shape_models ) {
 //
 function makeSettings( canvas_id ) {
     var settings = {
-	id : canvas_id, 
+	id : canvas_id,
+	width         : 300,
+	height        : 300,
+	bg_mode       : 0,
 	bg_color      : [ 0.1, 0.1, 0.1 ],
 	ambient_color : [ 0.01, 0.0, 0.0 ],
 	ext_diff_color: [ 1.0, 0.25, 0.1 ],
@@ -409,9 +423,14 @@ function onWindowResize() {
 	let info = canvas_infos[ i ];
 	let camera   = info.camera;
 	let renderer = info.renderer;
+	let settings = info.settings;
 	camera.aspect = ratio;
 	camera.updateProjectionMatrix();
 	renderer.setSize( width, height );
+	settings.width        = canvas.width;
+	settings.height       = canvas.height;
+	uniforms.width.value  = canvas.width;
+	uniforms.height.value = canvas.height;    
     }
 }
 
@@ -532,7 +551,9 @@ function makeFragmentShader( fct_value, color_model, uniforms ) {
 	+ makeFunctionShader( fct_value )
 	+ doc.getElementById("frag-chunk-fct-end").value
 	+ doc.getElementById("frag-chunk-gradf").value
-	+ doc.getElementById("frag-chunk-raytrace").value;	  	  
+	+ doc.getElementById("frag-chunk-raytrace").value
+	+ doc.getElementById("frag-chunk-bg-color").value;
+
     switch ( color_model ) {
     case 0: // RGB
 	fragSrc += doc.getElementById("frag-chunk-main-common-begin").value

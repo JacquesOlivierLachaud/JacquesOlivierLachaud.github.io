@@ -140,6 +140,9 @@ let distance = 200.0;
 let map;
 let shader;
 let settings = {
+    width         : 500,
+    height        : 500,
+    bg_mode       : 0,
     bg_color      : [ 0.1, 0.1, 0.1 ],
     ambient_color : [ 0.01, 0.0, 0.0 ],
     ext_diff_color: [ 1.0, 0.25, 0.1 ],
@@ -312,7 +315,9 @@ function updateShader() {
 	+ document.getElementById("editable-code-fct").value
 	+ doc.getElementById("frag-chunk-fct-end").value
 	+ doc.getElementById("frag-chunk-gradf").value
-	+ doc.getElementById("frag-chunk-raytrace").value;	  	  
+	+ doc.getElementById("frag-chunk-raytrace").value
+	+ doc.getElementById("frag-chunk-bg-color").value;
+    
     switch (settings.color_model) {
     case 0: // RGB
 	fragSrc += doc.getElementById("frag-chunk-main-common-begin").value
@@ -496,6 +501,10 @@ function initGui() {
 		shader.uniforms.color_model.value = value;
 		updateRenderer();
 	    } );
+    colors.add( settings, 'bg_mode', {
+	'Background color}' : 0, 'Sky (light)' : 1
+    } ).onChange
+    ( function ( value ) { shader.uniforms.bg_mode.value = value; } );
     colors.addColor( settings, 'bg_color' ).onChange
     ( function ( value ) { shader.uniforms.bg_color.value = value; } );
     colors.addColor( settings, 'ambient_color' ).onChange
@@ -593,7 +602,9 @@ function init() {
 	    document.getElementById("editable-code-fct_error").value =
 		error;
 	};
-    
+    settings.width  = canvas.width;
+    settings.height = canvas.height; 
+
     const width  = canvas.width  || 2;
     const height = canvas.height || 2;
     effect = new AnaglyphEffect( renderer );
@@ -642,6 +653,8 @@ function onWindowResize() {
     camera.updateProjectionMatrix();
     renderer.setSize( canvas.width, canvas.height );
     effect.setSize( canvas.width, canvas.height );
+    uniforms.width.value  = canvas.width;
+    uniforms.height.value = canvas.height;    
     //renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
@@ -684,6 +697,9 @@ function makeUniformColor( color ) {
 }
 function makeUniforms( settings ) {
     let uniforms = {
+	width           : { value : settings.width },
+	height          : { value : settings.height },	
+	bg_mode         : { value : settings.bg_mode },
 	bg_color        : { value : makeUniformColor( settings.bg_color ) },
 	ambient_color   : { value : new THREE.Vector3( 0.01, 0.0, 0.0 ) },
 	ext_diff_color  : { value : makeUniformColor( settings.ext_diff_color ) },
