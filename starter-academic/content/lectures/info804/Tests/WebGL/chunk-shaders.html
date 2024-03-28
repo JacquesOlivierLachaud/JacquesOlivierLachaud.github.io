@@ -781,6 +781,49 @@ radiance     = phongModel( radiance, pos, viewDir, vn,
 			   viewp, -viewp, front_light );
     </textarea>
 
+    <textarea spellcheck="false" id="frag-chunk-main-phong-reflection" style="display: none;">
+
+// Compute one reflexion
+// intersection at pos, from direction  -viewp hitting at normal g
+const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
+vec3 viewDir  = -viewp; // vec3(0.0,0.0,1.0); //normalize( -vertPos);
+vec3 vn       = normalize( g );
+float delta   = max( dot( (- scale * pos), viewp ), 0.0);
+float l       = clamp( delta / view_radius, 0.0, 1.0 ); // compute fog
+float coef_r  = 0.0;
+vec3 rcolor   = vec3(0.0,0.0,0.0);
+if ( l < 1.0 ) {
+    coef_r     = clamp( 1.0 - 2.0*(opacity-0.5), 0.0, 1.0 );
+    vec3 rdir  = reflect( -viewp, vn );
+    vec3 rpos  = ray_trace( pos + 0.01*rdir, rdir, iso, n, step );
+    vec3 rg    = gradf( rpos );
+    vec3 rvn   = normalize( rg );
+    vec3 rrdir = reflect( rdir, rvn );
+    vec4 rray  = viewMatrix * vec4( rrdir, 0.0);
+    float rrz  = normalize( rray.xyz ).y;
+    vec3 bcol  = background_color( rrz ); 
+    rcolor     = coef_r * bcol +
+	(1. - coef_r ) * phongModel( rpos, viewDir, rvn,
+	 			     -rdir, -viewp, front_light );
+    vec4  ray  = viewMatrix * vec4( rdir, 0.0);
+    float rz   = normalize( ray.xyz ).y;
+    float rdelta= max( dot( (scale * rpos), rdir ), 0.0);
+    float rls  = exp( - dot( rg, rg ) / singularity ); //
+    rcolor     = (1.-rls)*rcolor + rls * sing_color;
+    float rl   = clamp( rdelta / view_radius, 0.0, 1.0 ); // compute fog
+    rcolor     = (1.-rl)*rcolor + rl * background_color( rz );
+}
+vec3 radiance = ambient_color;
+radiance     += phongModel( pos, viewDir, vn, 
+			    viewp, -viewp, front_light );
+float z       = 2.*gl_FragCoord.y / height - 1.0;
+float ls      = exp( - dot( g, g ) / singularity ); //
+radiance      = (1.-ls)*radiance + ls * sing_color;
+outColor.rgb  = coef_r * rcolor
+    + (1. -coef_r)*( (1.-l)*radiance + l * background_color( z ) );
+</textarea>
+
+
     <textarea spellcheck="false" id="frag-chunk-bg-color" style="display: none;">
     // Compute a background color from a z in [-1,1]
 vec3 background_color( float z ) {

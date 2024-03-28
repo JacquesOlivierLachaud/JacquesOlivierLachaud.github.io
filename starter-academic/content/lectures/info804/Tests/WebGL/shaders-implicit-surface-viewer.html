@@ -130,7 +130,7 @@ const color_model_names = [
     "RGB normals", "Phong", "RGB normals + grid", "Phong + grid",
     "RGB normals + spheres", "Phong + spheres", "Phong + transparency",
     "Phong (1 light)", "Mean curvatures", "Gaussian curv.",
-    "Convex/Concave", "Directions"
+    "Convex/Concave", "Directions", "Phong + reflections"
 ];
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -411,6 +411,12 @@ function updateShader() {
 	    + doc.getElementById("frag-chunk-main-common-begin").value
 	    + doc.getElementById("frag-chunk-main-directions").value
             + doc.getElementById("frag-chunk-main-bg").value
+	    + doc.getElementById("frag-chunk-main-common-end").value;
+	break;
+    case 12: // PhongReflection
+	fragSrc += doc.getElementById("frag-chunk-phong").value
+	    + doc.getElementById("frag-chunk-main-common-begin").value
+	    + doc.getElementById("frag-chunk-main-phong-reflection").value
 	    + doc.getElementById("frag-chunk-main-common-end").value;
 	break;
     }
