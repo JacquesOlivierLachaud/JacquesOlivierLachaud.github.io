@@ -72,12 +72,12 @@ As part of a pedagogical project, do not expect clean javascript code. The focus
 Contains the glsl code for functions used in the fragment shader,
 as well as their properties.
     -->
-    <iframe id="functions" title="function code definitions" src="./chunk-functions.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
+    <iframe id="imported-functions" title="function code definitions" src="chunk-functions.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
 
     <!--
 Contains the glsl code for the vertex and fragment shaders.
     -->
-    <iframe id="shaders" title="shaders code definitions" src="./chunk-shaders.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
+    <iframe id="imported-shaders" title="shaders code definitions" src="chunk-shaders.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
 
     <script type="importmap">
       {
@@ -101,6 +101,8 @@ import * as THREE from 'three';
 let nbcanvas = 12;
 if (window.matchMedia("(max-width: 767px)").matches)
     nbcanvas = 6; // cannot support probably more than 6 webgl canvas
+if (window.matchMedia("(max-width: 1024px)").matches)
+    nbcanvas = 9; // cannot support probably more than 9 webgl canvas
 ///////////////////////////////////////////////////////////////////////////////
 
 
@@ -108,10 +110,11 @@ if (window.matchMedia("(max-width: 767px)").matches)
 // Build predefined shapes
 var shapeRE       = /^shape/;
 var shape_models  = [];
-var functions     = document.querySelector("#functions"); // in <object> tag
+var functions     = document.querySelector( '#imported-functions'); // in <object> tag
 var doc_functions = functions.contentDocument;
-var shaders       = document.querySelector("#shaders"); // in <object> tag
+var shaders       = document.querySelector( '#imported-shaders'); // in <object> tag
 var doc_shaders   = shaders.contentDocument;
+console.log( doc_shaders );
 var els           = doc_functions.getElementsByTagName('*');
 //document.getElementsByTagName('*');
 let idx           = 0;
@@ -162,8 +165,8 @@ for ( let i = 0; i < nbcanvas; i++ )
 	window.location.href = 'shaders-implicit-surface-viewer.html?'
 	    + 'shape=' + shape_id
 	    + '&cmodel=' + cmodel_id
-	    + '&a=' + a + '&b=' + b + '&c=' + c
-	    + '&scale=' + scale;
+	    + '&a=' + a.toFixed(3) + '&b=' + b.toFixed(3) + '&c=' + c.toFixed(3)
+	    + '&scale=' + scale.toFixed(3);
     }, false);
 }
 

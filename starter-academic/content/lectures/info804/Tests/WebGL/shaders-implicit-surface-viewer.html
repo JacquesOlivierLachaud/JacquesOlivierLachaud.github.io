@@ -79,18 +79,18 @@ button {
 Contains the glsl code for functions used in the fragment shader,
 as well as their properties.
     -->
-    <iframe id="functions" title="function code definitions" src="./chunk-functions.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
+    <iframe id="imported-functions" title="function code definitions" src="./chunk-functions.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
 
     <!--
 Contains the glsl code for the vertex and fragment shaders.
     -->
-    <iframe id="shaders" title="shaders code definitions" src="./chunk-shaders.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
+    <iframe id="imported-shaders" title="shaders code definitions" src="./chunk-shaders.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
 
     <!--
 Contains the help text.
     <object type="text/html" id="helper"   data="./chunk-info.html"></object>
     -->
-    <iframe id="helper" title="helper text" src="./chunk-info.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
+    <iframe id="imported-helper" title="helper text" src="./chunk-info.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
 
 
     <script type="module">
@@ -106,11 +106,12 @@ import { AnaglyphEffect } from 'three/addons/effects/AnaglyphEffect.js';
 // Build predefined shapes
 var shapeRE      = /^shape/;
 var shape_models = [];
-var functions     = document.querySelector("#functions"); // in <object> tag
+var functions     = document.querySelector( '#imported-functions' ); // in <object> tag
 var doc_functions = functions.contentDocument;
-var shaders       = document.querySelector("#shaders"); // in <object> tag
+var shaders       = document.querySelector( '#imported-shaders' ); // in <object> tag
 var doc_shaders   = shaders.contentDocument;
-var helper        = document.querySelector("#helper"); // in <object> tag
+console.log( doc_shaders );
+var helper        = document.querySelector( '#imported-helper' ); // in <object> tag
 var doc_helper    = helper.contentDocument;
 var els           = doc_functions.getElementsByTagName('*');
 //var els          = document.getElementsByTagName('*');
