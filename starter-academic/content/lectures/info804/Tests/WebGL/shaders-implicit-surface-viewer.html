@@ -217,6 +217,12 @@ if ( location.search != "" ) {
 	} else if ( key === "c" ) {
 	    var n = parseFloat( unescape( value ) );
 	    settings.c = n;
+	} else if ( key === "bg_mode" ) {
+	    var n = parseInt( unescape( value ) );
+	    settings.bg_mode = n;
+	} else if ( key === "opacity" ) {
+	    var n = parseFloat( unescape( value ) );
+	    settings.opacity = n;
 	}
     }    
 }

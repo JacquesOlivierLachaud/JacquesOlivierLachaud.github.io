@@ -16,6 +16,7 @@ out vec3 vertPos;
 out vec3 projPos;
 out vec3 surfNormal;
 out mat4 projViewInv;
+out mat4 myModelViewMatrix;
 void main(){
     vec4 vertPos4 = modelViewMatrix * vec4( position, 1.0);
     vertPos       = position; 
@@ -23,6 +24,7 @@ void main(){
     projPos       = gl_Position.xyz / gl_Position.w;
     projViewInv   = inverse( projectionMatrix * modelViewMatrix );
     surfNormal    = vec3(normalMatrix * normal );
+    myModelViewMatrix  = modelViewMatrix;
 }
 </script>
     <!--
@@ -78,6 +80,7 @@ uniform float view_radius;
     in vec3 vertPos;
     in vec3 projPos;
     in mat4 projViewInv;
+    in mat4 myModelViewMatrix;
     in vec3 surfNormal;
 out vec4 outColor;
 // // 3D function in cube
@@ -799,13 +802,13 @@ if ( l < 1.0 ) {
     vec3 rg    = gradf( rpos );
     vec3 rvn   = normalize( rg );
     vec3 rrdir = reflect( rdir, rvn );
-    vec4 rray  = viewMatrix * vec4( rrdir, 0.0);
+    vec4 rray  = myModelViewMatrix * vec4( rrdir, 0.0);
     float rrz  = normalize( rray.xyz ).y;
     vec3 bcol  = background_color( rrz ); 
     rcolor     = coef_r * bcol +
 	(1. - coef_r ) * phongModel( rpos, viewDir, rvn,
 	 			     -rdir, -viewp, front_light );
-    vec4  ray  = viewMatrix * vec4( rdir, 0.0);
+    vec4  ray  = myModelViewMatrix * vec4( rdir, 0.0);
     float rz   = normalize( ray.xyz ).y;
     float rdelta= max( dot( (scale * rpos), rdir ), 0.0);
     float rls  = exp( - dot( rg, rg ) / singularity ); //

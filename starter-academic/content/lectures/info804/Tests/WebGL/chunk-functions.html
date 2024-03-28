@@ -20,7 +20,7 @@ return ( x2 + y2 + z2 - a*a ) * ( x3 * y + x * z3 + y3 * z + 5. * z );
     <textarea spellcheck="false" id="shape-durchball" style="display: none;">
     { "name"           : "Durchball",
       "frag"           : "durchball",
-      "color_model"    : [ 0, 1, 2, 3, 6, 8, 9, 10, 11 ],
+      "color_model"    : [ 0, 1, 2, 3, 6, 8, 9, 10, 11, 12 ],
       "a"              : [1.0, 1.5],
       "scale"          : [15.0, 20.0],
       "iso"            : [-0.8, 0.8],
@@ -40,7 +40,7 @@ return 0.9*d*d + e*e*e;
     <textarea spellcheck="false" id="shape-crixxi" style="display: none;">
     { "name"           : "Crixxi",
       "frag"           : "crixxi",
-      "color_model"    : [ 1, 6, 7, 8, 9, 10 ],
+      "color_model"    : [ 1, 6, 7, 8, 9, 10, 12 ],
       "a"              : [ 1.0, 1.0],
       "scale"          : [30.0,30.0],
       "iso"            : [-0.005, 0.005],
@@ -57,7 +57,7 @@ return x2 + y2 + z2 + x2*z - y2*z - 1.;
     <textarea spellcheck="false" id="shape-cayleycubic" style="display: none;">
     { "name"           : "Cayley cubic",
       "frag"           : "cayleycubic",
-      "color_model"    : [ 1, 2, 3, 4, 5, 6 ],
+      "color_model"    : [ 1, 2, 3, 4, 5, 6, 12 ],
       "scale"          : [10.0, 20.0],
       "iso"            : [-0.1, 0.1],
       "grid_size"      : [0.1, 1.0 ],
@@ -72,7 +72,7 @@ return x3 * y + x * z3 + y3 * z + a*z3 + 5. * z;
     <textarea spellcheck="false" id="shape-durchblick" style="display: none;">
     { "name"           : "Durchblick",
       "frag"           : "durchblick",
-      "color_model"    : [8, 10, 11 ], 
+      "color_model"    : [8, 10, 11, 12 ], 
       "a"              : [1.0, 1.5],
       "scale"          : [15.0, 20.0],
       "iso"            : [-0.1, 0.1],
@@ -92,7 +92,7 @@ return z4*z2 + 5.*(x2+y2)*(-z4 + (x2+y2)*z2) - 2.*(x4 - 10.*x2*y2+5.*y4)*x*z
     <textarea spellcheck="false" id="shape-barthsextic" style="display: none;">
     { "name"           : "Barth sextic",
       "frag"           : "barthsextic",
-      "color_model"    : [ 0, 1, 6, 7, 10 ],
+      "color_model"    : [ 0, 1, 6, 7, 10, 12 ],
       "a"              : [1.0, 1.0],
       "scale"          : [10.0, 20.0],
       "iso"            : [-0.2, 0.2],
@@ -185,7 +185,7 @@ return (l2 + 2.0*y - b)*(w*w - 8.0*z2) + 16.0*x*z*w;
     <textarea spellcheck="false" id="shape-kleinbottle" style="display: none;">
     { "name"           : "Klein bottle",
       "frag"           : "kleinbottle",
-      "color_model"    : [ 6 ],
+      "color_model"    : [ 6, 12 ],
       "a"              : [1.0, 1.0],
       "scale"          : [10.0, 14.0],
       "iso"            : [-0.1, 0.1],
@@ -202,7 +202,7 @@ return z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*x*y2*y2);
     <textarea spellcheck="false" id="shape-pluckerconoid" style="display: none;">
     { "name"           : "Plucker conoid",
       "frag"           : "pluckerconoid",
-      "color_model"    : [ 1, 6, 7, 8, 9, 10, 11 ],
+      "color_model"    : [ 1, 6, 7, 8, 9, 10, 11, 12 ],
       "a"              : [1.0, 1.0],
       "scale"          : [15.0, 15.0],
       "iso"            : [-0.01, 0.01],
@@ -239,7 +239,7 @@ return (x2+y2+z2+a*a-b*b)*(x2+y2+z2+a*a-b*b)-4.*a*a*(x2+y2);
     <textarea spellcheck="false" id="shape-torus" style="display: none;">
     { "name" : "Torus",
       "frag" : "torus",
-      "color_model" : [ 8,9,10,11 ],
+      "color_model" : [ 8,9,10,11,12 ],
       "scale" : [10.0, 12.5],
       "iso"   : [0.0, 0.0],
       "a"     : [1.75, 2.0],
@@ -323,7 +323,7 @@ return d2-a*a - 0.2*u*v/(1.+1.*d2);
     <textarea spellcheck="false" id="shape-virus" style="display: none;">
     { "name"  : "Virus",
       "frag"  : "virus",
-      "color_model" : [ 1, 7 ],
+      "color_model" : [ 1, 7, 12 ],
       "a"     : [1.0,1.0],
       "b"     : [1.0,1.0],
       "c"     : [1.0,1.0],
