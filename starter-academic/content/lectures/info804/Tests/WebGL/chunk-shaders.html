@@ -751,22 +751,30 @@ float freq  = 10.0 / grid_size;
 // float print2= 1.05 - 1.1 * abs(sin( freq * dot( d2, pos ) ) );
 // float print1= 0.1+1.2*abs(sin( freq * dot( d1, pos ) ) );
 // float print2= 0.1+1.2*abs(sin( freq * dot( d2, pos ) ) );
-float print1= grid_thickness+(1.0+2.*grid_thickness)*abs(sin( freq * dot( d1, pos ) ) );
-float print2= grid_thickness+(1.0+2.*grid_thickness)*abs(sin( freq * dot( d2, pos ) ) );
-float lc    = max( curv1,curv2);
-vec3 radiance;
-if ( princ_curv == 0 )
-    radiance = (curv1 >= print1)
-    ? curv1 * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-curv1) * ambient_color
-    : ambient_color;
-else if ( princ_curv == 1 )
-    radiance = (curv2 >= print2)
-    ? curv2 * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-curv2) * ambient_color
-    : ambient_color;
-else // both direction
-    radiance = ( (curv1 >= print1) || (curv2 >= print2) )
-    ? lc * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-lc) * ambient_color
-    : ambient_color;
+float print1 = grid_thickness+(1.0+6.*grid_thickness)*abs(sin( freq * dot( d1, pos ) ) );
+float print2 = grid_thickness+(1.0+6.*grid_thickness)*abs(sin( freq * dot( d2, pos ) ) );
+float lc     = max( curv1,curv2);
+vec3  col_in = vec3(1.0,1.0,1.0) - ambient_color;
+vec3  col_out= ambient_color;
+float lambda = 3.0 * ( 0.5 + curv1 - print1 );
+if ( princ_curv == 1 )      lambda = 10.0 * ( 0.5 + curv2 - print2 );
+else if ( princ_curv == 2 ) lambda = max( lambda, 10.0 * ( 0.5 + curv2 - print2 ) );
+// float lambda = 0.8;
+vec3 radiance = clamp( lc * lambda * col_in + (1.-lc)*(1.-lambda) * col_out,
+		       min( col_in, col_out ), max( col_in, col_out ) );
+// vec3 radiance;
+// if ( princ_curv == 0 )
+//     radiance = (curv1 >= print1)
+//     ? curv1 * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-curv1) * ambient_color
+//     : ambient_color;
+// else if ( princ_curv == 1 )
+//     radiance = (curv2 >= print2)
+//     ? curv2 * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-curv2) * ambient_color
+//     : ambient_color;
+// else // both direction
+//     radiance = ( (curv1 >= print1) || (curv2 >= print2) )
+//     ? lc * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-lc) * ambient_color
+//     : ambient_color;
 const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
 vec3 viewDir = -viewp; // vec3(0.0,0.0,1.0); //normalize( -vertPos);
 radiance     = phongModel( radiance, pos, viewDir, vn, 
