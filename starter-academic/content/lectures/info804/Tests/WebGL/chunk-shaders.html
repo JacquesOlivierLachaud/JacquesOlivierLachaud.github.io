@@ -16,6 +16,7 @@ out vec3 vertPos;
 out vec3 projPos;
 out vec3 surfNormal;
 out mat4 projViewInv;
+out mat4 myModelMatrix;
 out mat4 myModelViewMatrix;
 void main(){
     vec4 vertPos4 = modelViewMatrix * vec4( position, 1.0);
@@ -25,6 +26,7 @@ void main(){
     projViewInv   = inverse( projectionMatrix * modelViewMatrix );
     surfNormal    = vec3(normalMatrix * normal );
     myModelViewMatrix  = modelViewMatrix;
+    myModelMatrix  = modelMatrix;
 }
 </script>
     <!--
@@ -77,9 +79,11 @@ uniform int   shape;
 uniform int   color_model;
 uniform float camera_distance;
 uniform float view_radius;
+uniform samplerCube cubeMap;
     in vec3 vertPos;
     in vec3 projPos;
     in mat4 projViewInv;
+    in mat4 myModelMatrix;
     in mat4 myModelViewMatrix;
     in vec3 surfNormal;
 out vec4 outColor;
@@ -802,77 +806,109 @@ if ( l < 1.0 ) {
     vec3 rg    = gradf( rpos );
     vec3 rvn   = normalize( rg );
     vec3 rrdir = reflect( rdir, rvn );
-    vec4 rray  = myModelViewMatrix * vec4( rrdir, 0.0);
-    float rrz  = normalize( rray.xyz ).y;
-    vec3 bcol  = background_color( rrz ); 
+    // vec4 rray  = myModelViewMatrix * vec4( rrdir, 0.0);
+    // float rrz  = normalize( rray.xyz ).y;
+    vec3 bcol  = background_color( rrdir /*rrz*/ ); 
     rcolor     = coef_r * bcol +
 	(1. - coef_r ) * phongModel( rpos, viewDir, rvn,
 	 			     -rdir, -viewp, front_light );
-    vec4  ray  = myModelViewMatrix * vec4( rdir, 0.0);
-    float rz   = normalize( ray.xyz ).y;
+    //vec4  ray  = myModelViewMatrix * vec4( rdir, 0.0);
+    //float rz   = normalize( ray.xyz ).y;
     float rdelta= max( dot( (scale * rpos), rdir ), 0.0);
     float rls  = exp( - dot( rg, rg ) / singularity ); //
     rcolor     = (1.-rls)*rcolor + rls * sing_color;
     float rl   = clamp( rdelta / view_radius, 0.0, 1.0 ); // compute fog
-    rcolor     = (1.-rl)*rcolor + rl * background_color( rz );
+    rcolor     = (1.-rl)*rcolor + rl * background_color( rdir /* rz */ );
 }
 vec3 radiance = ambient_color;
 radiance     += phongModel( pos, viewDir, vn, 
 			    viewp, -viewp, front_light );
-float z       = 2.*gl_FragCoord.y / height - 1.0;
+//float z       = 2.*gl_FragCoord.y / height - 1.0;
 float ls      = exp( - dot( g, g ) / singularity ); //
 radiance      = (1.-ls)*radiance + ls * sing_color;
 outColor.rgb  = coef_r * rcolor
-    + (1. -coef_r)*( (1.-l)*radiance + l * background_color( z ) );
+    + (1. -coef_r)*( (1.-l)*radiance + l * background_color( -viewp ) );
 </textarea>
 
 
     <textarea spellcheck="false" id="frag-chunk-bg-color" style="display: none;">
     // Compute a background color from a z in [-1,1]
 vec3 background_color( float z ) {
-    if ( bg_mode == 0 ) return bg_color;
+    //if ( bg_mode == 0 ) return bg_color;
     z = clamp( z, -1., 1. );
-    vec3 c0 = ( bg_mode == 1 ) ? vec3( 1.0,0.0,0.0) : vec3( 0.3,  0.0, 0.0 );
-    vec3 c1 = ( bg_mode == 1 ) ? vec3( 1.0,1.0,0.0) : vec3( 0.15, 0.0, 0.0 );
-    vec3 c2 = ( bg_mode == 1 ) ? vec3( 1.0,1.0,1.0) : vec3( 0.05, 0.05, 0.05 );
-    vec3 c3 = ( bg_mode == 1 ) ? vec3( 0.0,1.0,1.0) : vec3( 0.0,  0.0, 0.2 );
-    vec3 c4 = ( bg_mode == 1 ) ? vec3( 0.0,0.0,1.0) : vec3( 0.0,  0.0, 0.4  );
+    vec3 c0 = vec3( 1.0,0.0,0.0);
+    vec3 c1 = vec3( 1.0,1.0,0.0);
+    vec3 c2 = vec3( 1.0,1.0,1.0);
+    vec3 c3 = vec3( 0.0,1.0,1.0);
+    vec3 c4 = vec3( 0.0,0.0,1.0);
+    vec3 c5 = vec3( 0.0,0.0,0.0);
     if ( z < -0.5 )
 	return (1. - 2.*(z+1.)) * c0 + 2.*(z+1.) * c1;
     else if ( z < 0. )
 	return (1. - 2.*(z+0.5)) * c1 + 2.*(z+0.5) * c2;
     else if ( z < 0.5 )
 	return (1. - 2.*z) * c2 + 2.*z * c3;
+    else if ( z < 0.75 )
+	return (1. - 4.*(z-0.5)) * c3 + 4.*(z-0.5) * c4;
     else 
-	return (1. - 2.*(z-0.5)) * c3 + 2.*(z-0.5) * c4;
+	return (1. - 4.*(z-0.75)) * c4 + 4.*(z-0.75) * c5;
 }
+
+vec3 background_color( vec3 dir ) {
+    // static backgrounds
+    vec3 vdir  = (myModelMatrix * vec4( dir.x, dir.y, dir.z, 0.0 )).xyz; 
+    if ( bg_mode == 0 ) return bg_color;
+    else if ( bg_mode == 1 ) {
+	//vec3 c     = textureCube( cubeMap, vec3( -vdir.x, vdir.y, vdir.z) ).rgb;
+	//	float z       = 2.*gl_FragCoord.y / height - 1.0;
+	return background_color( vdir.y );
+    } else if ( bg_mode == 2 ) {
+	if ( vdir.y >= 0.0 ) return background_color( vdir.y );
+	float x = -0.5 * vdir.x / vdir.y;
+	float y = -0.5 * vdir.z / vdir.y;
+	float d = sqrt( x*x + y*y );
+	float t = min( d, 30.0 ) / 30.0;
+	x -= floor( x );
+	y -= floor( y );
+	if ( ( ( x >= 0.5 ) && ( y >= 0.5 ) ) || ( ( x < 0.5 ) && ( y < 0.5 ) ) )
+	    return (1.0 - t)*vec3( 0.2, 0.2, 0.2 ) + t * vec3( 1.0, 1.0, 1.0 );
+	else
+	    return (1.0 - t)*vec3( 0.4, 0.4, 0.4 ) + t * vec3( 1.0, 1.0, 1.0 );
+    } else {
+	// dynamic background
+	// Take into account the possible rotation of the object.
+	vec3 c     = textureCube( cubeMap, vec3( -vdir.x, vdir.y, vdir.z) ).rgb;
+	// Gamma correction needed for background photo.
+	const float gamma = 1./2.2; 
+	return vec3( pow( c.r, gamma ), pow( c.g, gamma ), pow( c.b, gamma ) );
+    }
+}
+    
 </textarea>
     
     <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-crisp" style="display: none;">
     // Crisp singularity + background
-float z       = 2.*gl_FragCoord.y / height - 1.0;
+//float z       = 2.*gl_FragCoord.y / height - 1.0;
 if ( dot( pos, pos ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
-    outColor.rgb = background_color( z ); // ray did not find a surface
+    outColor.rgb = background_color( -viewp ); // ray did not find a surface
 else if ( dot( g2, g2 ) < singularity )
     outColor.rgb = sing_color; // singularity
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-smooth" style="display: none;">
     // Smooth fog background and progressive singularities.
-float z       = 2.*gl_FragCoord.y / height - 1.0;
 float delta   = max( dot( (- scale * pos), viewp ), 0.0);
 float ls      = exp( - dot( g, g ) / singularity ); //
 radiance      = (1.-ls)*radiance + ls * sing_color;
 float l       = clamp( delta / view_radius, 0.0, 1.0 ); // compute fog
-outColor.rgb  = (1.-l)*radiance + l * background_color( z );
+outColor.rgb  = (1.-l)*radiance + l * background_color( -viewp );
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-main-bg" style="display: none;">
     // Smooth fog background and progressive singularities.
-float z       = 2.*gl_FragCoord.y / height - 1.0;
 float delta   = max( dot( (- scale * pos), viewp ), 0.0);
 float l       = clamp( delta / view_radius, 0.0, 1.0 ); // compute fog
-outColor.rgb  = (1.-l)*radiance + l * background_color( z );
+outColor.rgb  = (1.-l)*radiance + l * background_color( -viewp );
 </textarea>
 
     <!--

@@ -46,7 +46,8 @@ return 0.9*d*d + e*e*e;
       "iso"            : [-0.005, 0.005],
       "curv_scale"     : [2.5, 2.5],
       "grid_size"      : [0.1, 1.0],
-      "grid_thickness" : [0.0, 0.2]
+      "grid_thickness" : [0.0, 0.2],
+      "view_shape"     : [4]
     }
 </textarea>
     
@@ -61,7 +62,8 @@ return x2 + y2 + z2 + x2*z - y2*z - 1.;
       "scale"          : [10.0, 20.0],
       "iso"            : [-0.1, 0.1],
       "grid_size"      : [0.1, 1.0 ],
-      "grid_thickness" : [0.0, 0.1 ]
+      "grid_thickness" : [0.0, 0.1 ],
+      "view_shape"     : [4]
     }
 </textarea>
 
@@ -79,7 +81,8 @@ return x3 * y + x * z3 + y3 * z + a*z3 + 5. * z;
       "grid_size"      : [0.4, 0.5 ],
       "grid_thickness" : [0.1, 0.1 ],
       "princ_curv"     : [0,1,2],
-      "curv_scale"     : [1.0,1.0]
+      "curv_scale"     : [1.0,1.0],
+      "view_shape"     : [4]
     }
 </textarea>
 <!-- // [ 1, 6, 8, 9, 10, 11 ], -->
@@ -97,7 +100,8 @@ return z4*z2 + 5.*(x2+y2)*(-z4 + (x2+y2)*z2) - 2.*(x4 - 10.*x2*y2+5.*y4)*x*z
       "scale"          : [10.0, 20.0],
       "iso"            : [-0.2, 0.2],
       "grid_size"      : [0.0, 0.0 ],
-      "grid_thickness" : [0.0, 0.0 ]
+      "grid_thickness" : [0.0, 0.0 ],
+      "view_shape"     : [4]
     }
 </textarea>
     
@@ -109,7 +113,7 @@ return x3 + y3 + z3 + a*a*a - d*d*d;
     <textarea spellcheck="false" id="shape-clebschdcubic" style="display: none;">
     { "name"           : "Clebsch diag. cubic",
       "frag"           : "clebschdcubic",
-      "color_model"    : [ 0, 1, 6, 7, 8, 10 ],
+      "color_model"    : [ 0, 1, 6, 8, 10, 12 ],
       "a"              : [1.0, 1.0],
       "scale"          : [20.0, 30.0],
       "iso"            : [-0.2, 0.2],
@@ -185,12 +189,14 @@ return (l2 + 2.0*y - b)*(w*w - 8.0*z2) + 16.0*x*z*w;
     <textarea spellcheck="false" id="shape-kleinbottle" style="display: none;">
     { "name"           : "Klein bottle",
       "frag"           : "kleinbottle",
-      "color_model"    : [ 6, 12 ],
+      "color_model"    : [ 6, 11, 12 ],
       "a"              : [1.0, 1.0],
-      "scale"          : [10.0, 14.0],
+      "scale"          : [10.0, 13.0],
       "iso"            : [-0.1, 0.1],
-      "grid_size"      : [0.1, 1.0 ],
-      "grid_thickness" : [0.0, 0.1 ]
+      "grid_size"      : [0.25, 0.25 ],
+      "grid_thickness" : [0.4, 0.5 ],
+      "princ_curv"     : [1,2],
+      "view_shape"     : [4]
     }
 </textarea>
 
@@ -209,7 +215,8 @@ return z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*x*y2*y2);
       "grid_size"      : [0.5, 0.5 ],
       "grid_thickness" : [0.1, 0.1 ],
       "princ_curv"     : [0,1,2],
-      "curv_scale"     : [0.25,0.25]
+      "curv_scale"     : [0.25,0.25],
+      "view_shape"     : [4]
     }
 </textarea>
 
@@ -249,7 +256,8 @@ return (x2+y2+z2+a*a-b*b)*(x2+y2+z2+a*a-b*b)-4.*a*a*(x2+y2);
       "center_x" : [0.3,0.3],
       "center_y" : [0.1,0.2],      
       "center_z" : [-0.1,0.1],
-      "curv_scale" : [0.25,0.25]
+      "curv_scale" : [0.25,0.25],
+      "view_shape"     : [4]
     }
 </textarea>
 
@@ -328,7 +336,8 @@ return d2-a*a - 0.2*u*v/(1.+1.*d2);
       "b"     : [1.0,1.0],
       "c"     : [1.0,1.0],
       "scale" : [30.0,35.0],
-      "iso"   : [-1.0, 1.0]
+      "iso"   : [-1.0, 1.0],
+      "view_shape" : [4]
     }
 </textarea>
 

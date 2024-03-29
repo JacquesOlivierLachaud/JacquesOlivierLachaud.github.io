@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>three.js webgl - simple implicit surface viewer (J.-O. Lachaud)</title>
+    <title>AlgoSurfer</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <link type="text/css" rel="stylesheet" href="main.css">
@@ -37,7 +37,7 @@ button {
 }
     </style>
 
-    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> A simple implicit surface viewer, by <a href="https://jacquesolivierlachaud.github.io" target="_blank" rel="noopener">J.-O. Lachaud</a>, fps: <span id="fps"></span></div>
+    <div id="info"> AlgoSurfer - an implicit surface viewer, by <a href="https://jacquesolivierlachaud.github.io" target="_blank" rel="noopener">J.-O. Lachaud</a>, fps: <span id="fps"></span></div>
     <div id="update-fct">
       <table>
 	<tr>
@@ -259,6 +259,7 @@ let   canvas;
 let   controls;
 var   uniforms;
 let   then     = 0;
+let   textureCube;
 const fpsElem  = document.querySelector("#fps");
 // run everything
 init();
@@ -521,9 +522,15 @@ function initGui() {
 		updateRenderer();
 	    } );
     colors.add( settings, 'bg_mode', {
-	'Background color}' : 0, 'Sky (light)' : 1, 'Sky (dark)' : 2
+	'Background color}' : 0, 'Sky (light)' : 1, 'Sky (grid)' : 2,
+	'Sky (image)' : 3
     } ).onChange
-    ( function ( value ) { shader.uniforms.bg_mode.value = value; } );
+    ( function ( value ) {
+	shader.uniforms.bg_mode.value = value;
+	if ( value < 3 ) scene.background = null;
+	else scene.background = textureCube;
+	scene.needsUpdate = true;
+    } );
     colors.addColor( settings, 'bg_color' ).onChange
     ( function ( value ) { shader.uniforms.bg_color.value = value; } );
     colors.addColor( settings, 'ambient_color' ).onChange
@@ -628,15 +635,21 @@ function init() {
     const height = canvas.height || 2;
     effect = new AnaglyphEffect( renderer );
     effect.setSize( width, height );
+
+    scene = new THREE.Scene();
+    const loader = new THREE.CubeTextureLoader();
+    loader.setPath( 'images/skybox/' );
+    textureCube = loader.load( [ 'posx.jpg', 'negx.jpg', 'posy.jpg', 'negy.jpg', 'posz.jpg', 'negz.jpg' ] );
+    scene.background = null;//textureCube;
     
     camera = new THREE.PerspectiveCamera( 60, canvas.width/canvas.height,
 					  0.01, 2000 );
     camera.position.x = distance; // Math.cos( timer ) * distance;
     camera.position.z = 0.0; // Math.sin( timer ) * distance;
     camera.position.y = 0;
-    uniforms = makeUniforms( settings ); 
-    scene = new THREE.Scene();
     scene.add( camera );
+
+    uniforms = makeUniforms( settings ); 
 
     shader = new THREE.MeshBasicMaterial( { color: 0x000000, } );
     //    updateShader();
@@ -692,7 +705,9 @@ function render() {
     
     // camera.position.x = distance; // Math.cos( timer ) * distance;
     // camera.position.z = 0.0; // Math.sin( timer ) * distance;
-    
+    // camera.rotation.x += 0.01 * settings.rotation_x;
+    // camera.rotation.y += 0.01 * settings.rotation_y;
+    // camera.rotation.z += 0.01 * settings.rotation_z;
     scene.traverse( function ( object ) {
 	if ( object.isMesh === true ) {
 	    object.rotation.x += 0.01 * settings.rotation_x;
@@ -750,7 +765,8 @@ function makeUniforms( settings ) {
 	color_model     : { value: settings.color_model },	      
 	moment          : { value: 0.0 },
 	camera_distance : { value: settings.camera_distance },
-	view_radius     : { value: settings.view_radius }
+	view_radius     : { value: settings.view_radius },
+	cubeMap         : { value: textureCube }
     };
     return uniforms;
 }
