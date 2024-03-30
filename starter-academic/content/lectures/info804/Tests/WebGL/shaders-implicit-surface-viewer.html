@@ -185,7 +185,8 @@ let settings = {
     },
     camera_distance : 200.0,
     anaglyph      : 0,
-    eye_sep       : 0.15
+    eye_sep       : 0.15,
+    time          : 0.0
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -701,7 +702,7 @@ function render() {
     const deltaTime = now - then;          // compute time since last frame
     then = now;                            // remember time for next frame
     const fps = 1 / deltaTime;             // compute frames per second
-    fpsElem.textContent = fps.toFixed(1);
+    fpsElem.textContent = fps.toFixed(0);
     
     // camera.position.x = distance; // Math.cos( timer ) * distance;
     // camera.position.z = 0.0; // Math.sin( timer ) * distance;
@@ -715,8 +716,11 @@ function render() {
 	    object.rotation.z += 0.01 * settings.rotation_z;		  
 	}
     } );
+    //settings.time = now;
+    //uniforms.time.value += deltaTime;
+    shader.uniforms.time.value += 0.01;
     settings.camera_distance = camera.position.length();
-    uniforms.camera_distance.value = settings.camera_distance;
+    shader.uniforms.camera_distance.value = settings.camera_distance;
     if ( settings.anaglyph == 0 )
 	renderer.render( scene, camera );
     else {
@@ -763,7 +767,7 @@ function makeUniforms( settings ) {
 	grid_thickness  : { value: settings.grid_thickness },
 	grid_attenuation: { value: settings.grid_attenuation },	      	      
 	color_model     : { value: settings.color_model },	      
-	moment          : { value: 0.0 },
+	time            : { value: settings.time },
 	camera_distance : { value: settings.camera_distance },
 	view_radius     : { value: settings.view_radius },
 	cubeMap         : { value: textureCube }

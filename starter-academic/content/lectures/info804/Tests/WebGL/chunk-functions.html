@@ -315,17 +315,17 @@ return (rxy) / abs(scale) + 0.0001; //thicken a little bit
     <textarea spellcheck="false" id="frag-chunk-fct-virus" style="display: none;">
       // Kind of virus
 const vec3 xc = vec3(0.,0.,0.);
-vec3 d  = vec3(x,y,z) - xc;
-vec3 n  = normalize( d );
-vec2 theta = normalize (d.xy);
-float dd = length( n.xy );
-float t   = atan( theta.y, theta.x );
-float phi = atan( n.z, dd );
+vec3  d       = vec3(x,y,z) - xc;
+vec3  n       = normalize( d );
+vec2  theta   = normalize (d.xy);
+float dd      = length( n.xy );
+float tt      = atan( theta.y, theta.x );
+float phi     = atan( n.z, dd );
 const float nbu = 22.;
 const float nbv = 26.;
-float u  = pow(cos( t * nbu ), 9.0);
-float v  = pow(cos( phi * nbv ), 9.0);
-float d2 = dot(d,d);
+float u       = pow(cos( tt * nbu ), 9.0);
+float v       = pow(cos( phi * nbv ), 9.0);
+float d2      = dot(d,d);
 return d2-a*a - 0.2*u*v/(1.+1.*d2);
     </textarea>
     <textarea spellcheck="false" id="shape-virus" style="display: none;">
@@ -456,6 +456,36 @@ return(2.0/(zx*zx+zy*zy)*float(i)/29.0) - 1.*(1.0-10.1*abs(x));
       "animate_b"      : [ 2.0, 0.2 ]
     }
 </textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-fct-beating-heart" style="display: none;">
+    // Beating heart
+const float amp = 0.2;
+float ft = -abs(cos(6.*t));
+float ax = z*(1.+amp*ft);
+float ay = x*(1.+amp*ft);
+float az = y*(1.+amp*ft);
+float ax2 = ax*ax;
+float ax3 = ax*ax2;
+float ay2 = ay*ay;
+float ay3 = ay*ay2;
+float az2 = az*az;
+float az3 = az*az2;
+float w = ax2+9./4.*ay2+az2-1.;
+return (w*w*w - ax2*az3 - 9./80.*ay2*az3);  
+</textarea>
+    <textarea spellcheck="false" id="shape-beating-heart" style="display: none;">
+    { "name"           : "Beating heart",
+      "frag"           : "beating-heart",
+      "color_model"    : [ 1, 8, 12 ],
+      "scale"          : [25.0, 25.0],
+      "iso"            : [0.0, 0.0],
+      "view_shape"     : [ 4 ],
+      "grid_size"      : [1.0,1.0],
+      "grid_thickness" : [0.0,0.0],
+      "singularity"    : 0.0
+    }
+</textarea>
+
 
     <!--
 ///////////////////////////////////////////////////////////////////////////////

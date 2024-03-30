@@ -274,6 +274,7 @@ function makeUniforms( settings ) {
 	moment          : { value: 0.0 },
 	camera_distance : { value: settings.camera_distance },
 	view_radius     : { value: settings.view_radius },
+	time            : { value: settings.time }
     };
     return uniforms;
 }
@@ -307,7 +308,8 @@ function randomizeSettings( settings, shape_id, shape_models ) {
 	settings.scale = randomFloat( model.scale[ 0 ], model.scale[ 1 ] );
     else
 	settings.scale       = 10.0*(1.0+Math.random());
-    if ( "accuracy" in model ) settings.accuracy    = model.accuracy;
+    if ( "accuracy" in model )    settings.accuracy    = model.accuracy;
+    if ( "singularity" in model ) settings.singularity = model.singularity;
     if ( "view_shape" in model )
 	settings.view_shape = model.view_shape[ randomInt( 0, model.view_shape.length ) ]; 
     else
@@ -398,7 +400,8 @@ function makeSettings( canvas_id ) {
 	    settings.rotation_y = 0;
 	    settings.rotation_z = 0;
 	},
-	camera_distance : distance
+	camera_distance : distance,
+	time          : 0.0
     };
     return settings;
 }
@@ -491,6 +494,7 @@ function render() {
 	camera.rotation.y = (i - 3.5) / 8.0 * Math.PI;
 	camera.position.x = ( 0.7 +(i%4)*0.3)/2.0 * Math.cos( timer + i * 0.2 ) * distance;
 	camera.position.z = ( 0.9 +((i+2)%3)*0.25)/2.0 * Math.sin( timer + i * 0.2 ) * distance;
+	uniforms.time.value += 0.01;
 	settings.camera_distance = camera.position.length();
 	uniforms.camera_distance.value = settings.camera_distance;
 	// camera.position.x = ( 1.1+(i % 4) )/2.0 * Math.cos( timer ) * distance;
