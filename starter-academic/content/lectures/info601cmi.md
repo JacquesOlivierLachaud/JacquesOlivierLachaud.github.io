@@ -35,10 +35,18 @@ informations.
 * [Transparents du cours, Exercices, Rappels, TPs](https://codimd.math.cnrs.fr/s/IWTaBkA9m)
 * [Introduction par la méthode des moindres carrés (PDF)](Cours/moindres-carres.pdf)
 * [Notes de cours (PDF)](Cours/notes-de-cours.pdf)
+* [Linear algebra cheat sheet](Cours/linalg-cheat-sheet.pdf)
 
 ### Fiches de TDs
 
+* [TD: normes vectorielles et matricielles, matrices orthogonales (PDF)](TDs/td-normes.pdf)
+* [TD: calculs en virgules flottantes, erreurs num ́eriques](TDs/td-errnum.pdf)
+* [TD: matrices creuses](TDs/td-matrices-creuses.pdf)
+
 ### Annales
+
+* [Examen 2022-2023 (PDF)](Annales/examen-2022-2023.pdf) / [Corrigé (PDF)](Annales/examen-2022-2023-sol.pdf)
+
 
 ## Autres ressources
 
