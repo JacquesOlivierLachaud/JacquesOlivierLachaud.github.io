@@ -8,7 +8,7 @@
     </head>
 
     <!--
-AlgoSurfer, (c) 2024 by Jacques-Olivier Lachaud
+AlgoSurfer, (c) 2024 by Jacques-Olivier Lachaud, v1.0
 
 As part of a pedagogical project, do not expect clean javascript code. The focus was on displaying implicit surfaces with a massive use of GPU computations. 
     -->
@@ -72,12 +72,12 @@ As part of a pedagogical project, do not expect clean javascript code. The focus
 Contains the glsl code for functions used in the fragment shader,
 as well as their properties.
     -->
-    <iframe id="imported-functions" title="function code definitions" src="chunk-functions.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
+    <iframe id="imported-functions" title="function code definitions" src="./chunk-functions.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
 
     <!--
 Contains the glsl code for the vertex and fragment shaders.
     -->
-    <iframe id="imported-shaders" title="shaders code definitions" src="chunk-shaders.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
+    <iframe id="imported-shaders" title="shaders code definitions" src="./chunk-shaders-reorg.html" width="0" height="0" style="border: none; background-color:#000000"></iframe>
 
     <script type="importmap">
       {
@@ -87,6 +87,7 @@ Contains the glsl code for the vertex and fragment shaders.
 	  }
       }
     </script>
+
 
     <script type="module">
 
@@ -131,6 +132,10 @@ console.log( "Read " + shape_models.length + " shape models" );
 ///////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////
+let   textureCube = null;
+///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
 // create several rendering canvases
 const distance     = 200.0; //< distance of camera to shape center
 let next_canvas_id = 0;
@@ -157,20 +162,24 @@ for ( let i = 0; i < nbcanvas; i++ )
     canvas.addEventListener('click', function( event ) {
 	let index    = parseInt( event.currentTarget.id.substring( canvas_base.length ) );
 	let shape_id = canvas_infos[ index ].settings.shape; 
+	let dmode_id = canvas_infos[ index ].settings.display_mode;
 	let cmodel_id= canvas_infos[ index ].settings.color_model;
 	let a        = canvas_infos[ index ].settings.a;
 	let b        = canvas_infos[ index ].settings.b;
 	let c        = canvas_infos[ index ].settings.c;
 	let scale    = canvas_infos[ index ].settings.scale;
 	let bg_mode  = canvas_infos[ index ].settings.bg_mode;
-	let opacity  = canvas_infos[ index ].settings.opacity;
-	window.location.href = 'shaders-implicit-surface-viewer.html?'
+	let transparency = canvas_infos[ index ].settings.transparency;
+	let reflection = canvas_infos[ index ].settings.reflection;
+	window.location.href = 'algosurfer-implicit-surface-viewer.html?'
 	    + 'shape=' + shape_id
+	    + '&dmode=' + dmode_id
 	    + '&cmodel=' + cmodel_id
 	    + '&a=' + a.toFixed(3) + '&b=' + b.toFixed(3) + '&c=' + c.toFixed(3)
 	    + '&scale=' + scale.toFixed(3)
 	    + '&bg_mode=' + bg_mode
-	    + '&opacity=' + opacity.toFixed(2);
+	    + '&tra=' + transparency.toFixed(2)
+	    + '&ref=' + reflection.toFixed(2);
     }, false);
 }
 
@@ -199,14 +208,15 @@ function init( canvas_id, shape_id, shape_models ) {
     var uniforms = makeUniforms( settings ); 
     //
     scene = new THREE.Scene();
-    var shader   = makeFragmentShader( settings.shape, settings.color_model, uniforms );    
+    var shader   = makeFragmentShader( settings, uniforms );    
     var geometry = makeViewShape( settings.view_shape, settings.view_radius );
     object = new THREE.Mesh( geometry, shader );
     object.position.set( 0, 0, 0 );
     scene.add( object );
     // camera.lookAt( object.position );
     let subtitle = shape_models[ settings.shape ].name
-	+ " (" + stringFromColorModel( settings.color_model ) + ")";
+	+ " (" + stringFromDisplayMode( settings.display_mode )
+	+ " / " + stringFromColorModel( settings.color_model ) + ")";
     updateCanvasSubtitle( canvas_id, subtitle );
     
     //var CanvasInfo = makeStruct("id renderer camera scene settings uniforms");
@@ -228,15 +238,21 @@ function updateCanvasSubtitle( canvas_id, str ) {
 }
 
 function stringFromColorModel( color_model ) {
-    const name = [ "RGB normals", "Phong", "RGB normals + grid", "Phong + grid",
-		   "RGB normals + spheres", "Phong + spheres", "Phong + transparency",
-		   "Phong (1 light)", "Mean curvatures", "Gaussian curv.",
-		   "Convex/Concave", "Directions", "Phong + reflections" ];
+    const name = [ "Basic", "Phong", "Phong+lights" ];
     return name[ color_model ];
 }
+function stringFromDisplayMode( display_mode ) {
+    const name = [ "Surface", "Normals", "Mean curvatures", "Gaussian curvatures",
+		   "Convex/Concave", "Principal dirs" ];
+    if ( display_mode >= name.length )
+	console.log( "Error: display_mode = " + display_mode );
+    return name[ display_mode ];
+}
+
 function makeUniformColor( color ) {
     return new THREE.Vector3( color[ 0 ], color[ 1 ], color[ 2 ] );
 }
+
 function makeUniforms( settings ) {
     let uniforms = {
 	width           : { value : settings.width },
@@ -250,6 +266,8 @@ function makeUniforms( settings ) {
 	sing_color      : { value : new THREE.Vector3( 1.0, 1.0, 1.0 ) },	      
 	shininess       : { value: settings.shininess },
 	opacity         : { value: settings.opacity },
+	transparency    : { value: settings.transparency },
+	reflection      : { value: settings.reflection },
 	curv_scale      : { value: settings.curv_scale },
 	princ_curv      : { value: settings.princ_curv },
 	light1_color    : { value : new THREE.Vector3( 0.95, 0.8, 0.0 ) },
@@ -270,11 +288,21 @@ function makeUniforms( settings ) {
 	grid_size       : { value: settings.grid_size },
 	grid_thickness  : { value: settings.grid_thickness },
 	grid_attenuation: { value: settings.grid_attenuation },	      	      
-	color_model     : { value: settings.color_model },	      
-	moment          : { value: 0.0 },
+	display_mode    : { value: settings.display_mode },
+	color_model     : { value: settings.color_model },
+	grid_mode       : { value: settings.grid_mode },
+	time            : { value: settings.time },
 	camera_distance : { value: settings.camera_distance },
 	view_radius     : { value: settings.view_radius },
-	time            : { value: settings.time }
+	cubeMap         : { value: textureCube },
+	nb_bissections  : { value: settings.nb_bissections },
+	nb_reflections  : { value: settings.nb_reflections },
+	nb_refractions  : { value: settings.nb_refractions },
+	interior_index  : { value: settings.interior_index },
+	dir_color_on    : { value: makeUniformColor( settings.dir_color_on ) },
+	dir_color_off   : { value: makeUniformColor( settings.dir_color_off ) },
+	dir_on_opacity  : { value: settings.dir_on_opacity },
+	dir_off_opacity : { value: settings.dir_off_opacity }
     };
     return uniforms;
 }
@@ -293,17 +321,32 @@ function randomFloat(min, max) {
 function randomizeSettings( settings, shape_id, shape_models ) {
     settings.shape = shape_id;
     // settings.shape = randomInt(0, shape_models.length);
+    settings.bg_mode = 0;
     let model      = shape_models[ settings.shape ];
     if ( "color_model" in model )
 	settings.color_model = model.color_model[ randomInt( 0, model.color_model.length ) ];
     else
-	settings.color_model = randomInt(0, 12);
-    if ( settings.color_model == 11 )
-	settings.ambient_color = [0.95,0.95,0.95];
-    if ( settings.color_model == 12 ) {
+	settings.color_model = randomInt(0, 3);
+    settings.display_mode = randomInt(0, 6);
+    if ( "display_mode" in model )
+	settings.display_mode = model.display_mode[ randomInt( 0, model.display_mode.length ) ];
+    if ( settings.display_mode == 5 )
+    {
+	settings.bg_color = [0.95,0.95,0.95];
+	settings.bg_mode = randomInt(0,3);
+    }	
+    else if ( settings.display_mode == 6 )
+    { // reflection
+	settings.display_mode = 0;
+	settings.reflection = 0.7;
 	settings.bg_mode = randomInt(1,3);
-	settings.opacity = 0.75;
-    } else settings.bg_mode = 0;
+    }
+    else if ( settings.display_mode >= 7 )
+    { // transparency
+	settings.display_mode = 0;
+	settings.transparency = 0.6;
+	settings.bg_mode = randomInt(1,3);
+    }
     if ( "scale" in model )
 	settings.scale = randomFloat( model.scale[ 0 ], model.scale[ 1 ] );
     else
@@ -340,13 +383,14 @@ function randomizeSettings( settings, shape_id, shape_models ) {
     settings.int_diff_color[ 0 ] = 0.5*Math.random();
     settings.int_diff_color[ 1 ] = 0.5*Math.random();
     settings.int_diff_color[ 2 ] = 0.5+0.5*Math.random();
-    if ( settings.color_model == 8 || settings.color_model == 9 ) { // curvatures
+    if ( settings.display_mode == 2 || settings.display_mode == 3 ) { // curvatures
 	settings.ext_diff_color[ 0 ] = 1.0;
 	settings.ext_diff_color[ 1 ] = 0.0;
 	settings.ext_diff_color[ 2 ] = 0.0;
 	settings.int_diff_color[ 0 ] = 0.0;
 	settings.int_diff_color[ 1 ] = 0.0;
 	settings.int_diff_color[ 2 ] = 1.0;
+	settings.color_model = 0;
     }	
     settings.rotation_x  = 0.5*(Math.random()-0.5);
     settings.rotation_y  = 0.275*(Math.random()-0.5);
@@ -360,48 +404,62 @@ function makeSettings( canvas_id ) {
 	id : canvas_id,
 	width         : 300,
 	height        : 300,
-	bg_mode       : 0,
-	bg_color      : [ 0.1, 0.1, 0.1 ],
-	ambient_color : [ 0.01, 0.0, 0.0 ],
-	ext_diff_color: [ 1.0, 0.25, 0.1 ],
-	int_diff_color: [ 0.25, 0.8, 1.0 ],
-	specular_color: [ 1.0, 1.0, 1.0 ],
-	sing_color    : [ 1.0, 1.0, 1.0 ],	  
-	shininess     : 10.0,
-	opacity       : 0.6,
-	light1        : 1,
-	light1_color  : [ 0.95, 0.8, 0.0 ],
-	light2        : 0,
-	light2_color  : [ 0.1, 0.1, 1.0 ],
-	singularity   : 0.1,
-	accuracy      : 5.0,
-	curv_scale    : 1.0,
-	princ_curv    : 0,
-	scale         : 10.0,
-	shape         : 0,
-	iso           : 0.0,
-	a             : 1.0,
-	b             : 1.0,
-	c             : 1.0,
-	center_x      : 0.0,
-	center_y      : 0.0,
-	center_z      : 0.0, 	  	  
-	color_model   : 3,
-	view_shape    : 0,
-	view_radius   : 100.0,
-	grid_size     : 1.0,
-	grid_thickness: 0.1,
-	grid_attenuation: 0.5,	  	  
-	rotation_x    : 0.0,
-	rotation_y    : 0.0,
-	rotation_z    : 0.0,
-	stop          : function() {
-	    settings.rotation_x = 0;
-	    settings.rotation_y = 0;
-	    settings.rotation_z = 0;
-	},
-	camera_distance : distance,
-	time          : 0.0
+    bg_mode       : 0,
+    bg_color      : [ 0.1, 0.1, 0.1 ],
+    ambient_color : [ 0.01, 0.0, 0.0 ],
+    ext_diff_color: [ 1.0, 0.25, 0.1 ],
+    int_diff_color: [ 0.25, 0.8, 1.0 ],
+    specular_color: [ 1.0, 1.0, 1.0 ],
+    sing_color    : [ 1.0, 1.0, 1.0 ],	  
+    shininess     : 10.0,
+    opacity       : 0.6,
+    transparency  : 0.0,
+    reflection    : 0.0,
+    curv_scale    : 1.0,
+    princ_curv    : 0,
+    light1        : 1,
+    light1_color  : [ 0.95, 0.8, 0.0 ],
+    light2        : 0,
+    light2_color  : [ 0.1, 0.1, 1.0 ],
+    singularity   : 0.6,
+    accuracy      : 5.0,
+    scale         : 10.0,
+    shape         : 0,
+    iso           : 0.0,
+    a             : 1.0,
+    b             : 1.0,
+    c             : 1.0,
+    center_x      : 0.0,
+    center_y      : 0.0,
+    center_z      : 0.0, 	  	  
+    display_mode  : 0,
+    color_model   : 1,
+    grid_mode     : 0,
+    view_shape    : 0,
+    view_radius   : 100.0,
+    grid_size     : 1.0,
+    grid_thickness: 0.1,
+    grid_attenuation: 0.5,	  	  
+    rotation_x    : 0.0,
+    rotation_y    : 0.0,
+    rotation_z    : 0.0,
+    stop          : function() {
+	settings.rotation_x = 0;
+	settings.rotation_y = 0;
+	settings.rotation_z = 0;
+    },
+    camera_distance : 200.0,
+    anaglyph      : 0,
+    eye_sep       : 0.15,
+    time          : 0.0,
+    nb_bissections: 8,
+    nb_reflections: 3,
+    nb_refractions: 3,    
+    interior_index: 1.1,
+    dir_color_on  : [1.0,1.0,1.0],
+    dir_on_opacity: 1.0,
+    dir_color_off : [0.0,0.0,0.0],
+    dir_off_opacity: 1.0
     };
     return settings;
 }
@@ -559,122 +617,192 @@ function makeViewShape( value, radius ) {
     return geometry;
 }
 
-// Creates the fragment shader from the different chunks.
-function makeFragmentShader( fct_value, color_model, uniforms ) {
+// Builds the fragment shader from the different chunks.
+function makeFragmentShader( settings, uniforms ) {
     // Build fragment shader from chunks
     var doc     = doc_shaders;
-    var fragSrc = doc.getElementById("frag-chunk-begin").value
+    var fragSrc = '#define GRID_MODE '+ settings.grid_mode + '\n';
+    fragSrc += doc.getElementById("frag-chunk-begin").value
 	+ doc.getElementById("frag-chunk-fct-begin").value
-	+ makeFunctionShader( fct_value )
+        + makeFunctionShader( settings.shape )
+	// + document.getElementById("editable-code-fct").value
 	+ doc.getElementById("frag-chunk-fct-end").value
 	+ doc.getElementById("frag-chunk-gradf").value
 	+ doc.getElementById("frag-chunk-raytrace").value
-	+ doc.getElementById("frag-chunk-bg-color").value;
-
-    switch ( color_model ) {
-    case 0: // RGB
-	fragSrc += doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-rgb").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
+	+ doc.getElementById("frag-chunk-bg-color").value
+	+ doc.getElementById("frag-chunk-phong").value;
+    switch ( settings.color_model ) {
+    case 0: fragSrc += doc.getElementById("frag-chunk-illumination-basic").value;
 	break;
-    case 1: // Phong
-	fragSrc += doc.getElementById("frag-chunk-phong").value
-	    + doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-phong").value
-	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
+    case 1: fragSrc += doc.getElementById("frag-chunk-illumination-phong").value;
 	break;
-    case 2: // RGB+Grid
-	fragSrc += doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-rgb-grid").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
-	break;
-    case 3: // Phong+Grid
-	fragSrc += doc.getElementById("frag-chunk-phong-grid").value
-	    + doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-phong").value
-	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
-	break;
-    case 4: // RGB+Spheres
-	fragSrc += doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-rgb-spheres").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
-	break;
-    case 5: // Phong+Spheres
-	fragSrc += doc.getElementById("frag-chunk-phong-spheres").value
-	    + doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-phong").value
-	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
-	break;
-    case 6: // Phong2Layers
-	fragSrc += doc.getElementById("frag-chunk-phong").value
-	    + doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-phong-two-layers").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
-	break;
-    case 7: // SimplePhong
-	fragSrc += doc.getElementById("frag-chunk-phong").value
-	    + doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-simple-phong").value
-	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
-	break;
-    case 8: // Mean Curvatures
-	fragSrc += doc.getElementById("frag-chunk-phong").value
-	    + doc.getElementById("frag-chunk-hessf").value
-	    + doc.getElementById("frag-chunk-curvatures").value	
-	    + doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-mean-curvatures").value
-	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
-	break;
-    case 9: // Gauss Curvatures
-	fragSrc += doc.getElementById("frag-chunk-phong").value
-	    + doc.getElementById("frag-chunk-hessf").value
-	    + doc.getElementById("frag-chunk-curvatures").value	
-	    + doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-gauss-curvatures").value
-	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
-	break;
-    case 10: // Convex+concave
-	fragSrc += doc.getElementById("frag-chunk-phong").value
-	    + doc.getElementById("frag-chunk-hessf").value
-	    + doc.getElementById("frag-chunk-curvatures").value	
-	    + doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-convex-concave").value
-	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
-	break;
-    case 11: // Directions
-	fragSrc += doc.getElementById("frag-chunk-phong").value
-	    + doc.getElementById("frag-chunk-hessf").value
-	    + doc.getElementById("frag-chunk-curvatures").value	
-	    + doc.getElementById("frag-chunk-eigendecomposition").value	
-	    + doc.getElementById("frag-chunk-principal-dirs").value	
-	    + doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-directions").value
-            + doc.getElementById("frag-chunk-main-bg").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
-	break;
-    case 12: // PhongReflection
-	fragSrc += doc.getElementById("frag-chunk-phong").value
-	    + doc.getElementById("frag-chunk-main-common-begin").value
-	    + doc.getElementById("frag-chunk-main-phong-reflection").value
-	    + doc.getElementById("frag-chunk-main-common-end").value;
+    case 2: fragSrc += doc.getElementById("frag-chunk-illumination-phong-lights").value;
 	break;
     }
-    let shader = new THREE.ShaderMaterial( {
+    switch ( settings.display_mode ) {
+    case 0: fragSrc += doc.getElementById("frag-chunk-display-surface").value;
+	break;
+    case 1: fragSrc += doc.getElementById("frag-chunk-display-normals").value;
+	break;
+    case 2: fragSrc += doc.getElementById("frag-chunk-hessf").value
+	+ doc.getElementById("frag-chunk-curvatures").value
+	+ doc.getElementById("frag-chunk-display-mean-curvatures").value;
+	break;
+    case 3: fragSrc += doc.getElementById("frag-chunk-hessf").value
+	+ doc.getElementById("frag-chunk-curvatures").value
+	+ doc.getElementById("frag-chunk-display-gauss-curvatures").value;
+	break;
+    case 4: fragSrc += doc.getElementById("frag-chunk-hessf").value
+	+ doc.getElementById("frag-chunk-curvatures").value
+	+ doc.getElementById("frag-chunk-display-convex-concave").value;
+	break;
+    case 5: fragSrc += doc.getElementById("frag-chunk-hessf").value
+	+ doc.getElementById("frag-chunk-curvatures").value
+	+ doc.getElementById("frag-chunk-eigendecomposition").value
+	+ doc.getElementById("frag-chunk-principal-dirs").value
+	+ doc.getElementById("frag-chunk-display-directions").value;
+	break;
+    }
+    fragSrc += doc.getElementById("frag-chunk-singularity").value
+	+ doc.getElementById("frag-chunk-fog").value
+        + doc.getElementById("frag-chunk-main-common-begin").value
+	+ doc.getElementById("frag-chunk-main-common-end").value;    
+
+    //console.log( fragSrc );
+    let nshader = new THREE.ShaderMaterial( {
 	vertexShader: doc.querySelector( '#post-vert' ).textContent.trim(),
-	fragmentShader: fragSrc, 
+	fragmentShader: fragSrc, // document.querySelector( '#post-frag' ).textContent.trim(),
 	uniforms: uniforms
     } );
-    shader.side        = THREE.DoubleSide;
-    shader.glslVersion = THREE.GLSL3;
-    return shader;
+    nshader.glslVersion = THREE.GLSL3;
+    nshader.side        = THREE.DoubleSide;
+    return nshader;
 }
+
+// Update the renderer (here, only the material/shader of the viewing object).
+export function updateRenderer() {
+    document.getElementById("editable-code-fct_error").value = "";
+    updateShader();
+    object.material             = shader;
+    object.material.needsUpdate = true;
+}
+
+// // Creates the fragment shader from the different chunks.
+// function makeFragmentShader( fct_value, color_model, uniforms ) {
+//     // Build fragment shader from chunks
+//     var doc     = doc_shaders;
+//     var fragSrc = doc.getElementById("frag-chunk-begin").value
+// 	+ doc.getElementById("frag-chunk-fct-begin").value
+// 	+ makeFunctionShader( fct_value )
+// 	+ doc.getElementById("frag-chunk-fct-end").value
+// 	+ doc.getElementById("frag-chunk-gradf").value
+// 	+ doc.getElementById("frag-chunk-raytrace").value
+// 	+ doc.getElementById("frag-chunk-bg-color").value;
+
+//     switch ( color_model ) {
+//     case 0: // RGB
+// 	fragSrc += doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-rgb").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 1: // Phong
+// 	fragSrc += doc.getElementById("frag-chunk-phong").value
+// 	    + doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-phong").value
+// 	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 2: // RGB+Grid
+// 	fragSrc += doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-rgb-grid").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 3: // Phong+Grid
+// 	fragSrc += doc.getElementById("frag-chunk-phong-grid").value
+// 	    + doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-phong").value
+// 	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 4: // RGB+Spheres
+// 	fragSrc += doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-rgb-spheres").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 5: // Phong+Spheres
+// 	fragSrc += doc.getElementById("frag-chunk-phong-spheres").value
+// 	    + doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-phong").value
+// 	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 6: // Phong2Layers
+// 	fragSrc += doc.getElementById("frag-chunk-phong").value
+// 	    + doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-phong-two-layers").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 7: // SimplePhong
+// 	fragSrc += doc.getElementById("frag-chunk-phong").value
+// 	    + doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-simple-phong").value
+// 	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 8: // Mean Curvatures
+// 	fragSrc += doc.getElementById("frag-chunk-phong").value
+// 	    + doc.getElementById("frag-chunk-hessf").value
+// 	    + doc.getElementById("frag-chunk-curvatures").value	
+// 	    + doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-mean-curvatures").value
+// 	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 9: // Gauss Curvatures
+// 	fragSrc += doc.getElementById("frag-chunk-phong").value
+// 	    + doc.getElementById("frag-chunk-hessf").value
+// 	    + doc.getElementById("frag-chunk-curvatures").value	
+// 	    + doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-gauss-curvatures").value
+// 	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 10: // Convex+concave
+// 	fragSrc += doc.getElementById("frag-chunk-phong").value
+// 	    + doc.getElementById("frag-chunk-hessf").value
+// 	    + doc.getElementById("frag-chunk-curvatures").value	
+// 	    + doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-convex-concave").value
+// 	    + doc.getElementById("frag-chunk-main-bg-singularity-smooth").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 11: // Directions
+// 	fragSrc += doc.getElementById("frag-chunk-phong").value
+// 	    + doc.getElementById("frag-chunk-hessf").value
+// 	    + doc.getElementById("frag-chunk-curvatures").value	
+// 	    + doc.getElementById("frag-chunk-eigendecomposition").value	
+// 	    + doc.getElementById("frag-chunk-principal-dirs").value	
+// 	    + doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-directions").value
+//             + doc.getElementById("frag-chunk-main-bg").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     case 12: // PhongReflection
+// 	fragSrc += doc.getElementById("frag-chunk-phong").value
+// 	    + doc.getElementById("frag-chunk-main-common-begin").value
+// 	    + doc.getElementById("frag-chunk-main-phong-reflection").value
+// 	    + doc.getElementById("frag-chunk-main-common-end").value;
+// 	break;
+//     }
+//     let shader = new THREE.ShaderMaterial( {
+// 	vertexShader: doc.querySelector( '#post-vert' ).textContent.trim(),
+// 	fragmentShader: fragSrc, 
+// 	uniforms: uniforms
+//     } );
+//     shader.side        = THREE.DoubleSide;
+//     shader.glslVersion = THREE.GLSL3;
+//     return shader;
+// }
 
 
 // @return the fragment shader code for the predefined function `value`
