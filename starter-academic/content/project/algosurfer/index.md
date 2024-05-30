@@ -39,7 +39,7 @@ A real-time visualisation tool for implicit surfaces, i.e. isolevels
 of real-value functions f(x,y,z). It casts rays through each pixel and
 computes intersections with the surface.
 
-<p style="text-align: center;"> <a href="https://jacquesolivierlachaud.github.io/AlgoSurfer"> <b>Go to AlgoSurfer Demo</b> </a> </p>
+<p style="text-align: center;"> Go to <a href="https://jacquesolivierlachaud.github.io/AlgoSurfer"> <b>AlgoSurfer Demo</b> </a> | <a href="https://jacquesolivierlachaud.github.io/AlgoSurfer/algosurfer-implicit-surface-viewer.html"> <b>AlgoSurfer</b> </a> </p>
 
 ## Main features
 
