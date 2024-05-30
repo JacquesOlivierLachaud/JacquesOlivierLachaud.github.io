@@ -42,7 +42,7 @@ publication_types:
 
 abstract: 'Defining consistent calculus frameworks on discrete meshes is useful for processing the geometry of meshes or model numerical simulations and variational problems onto them. However digital surfaces (boundary of voxels) cannot benefit directly from the classical mesh calculus frameworks, since their vertex and face geometry is too poor to capture the geometry of the underlying smooth Euclidean surface well enough. This paper proposes two new calculus frameworks dedicated to digital surfaces, which exploit a corrected normal field, in a manner similar to the recent digital calculus of [3]. First we build a corrected interpolated calculus by defining inner products with position and normal interpolation in the Grassmannian. Second we present a corrected finite element method which adapts the standard Finite Element Method with a corrected metric per element. Experiments show that these digital calculus frameworks seem to converge toward the continuous calculus, offer a valid alternative to classical mesh calculus, and induce effective tools for digital surface processing tasks.'
         
-publication: 'In: Brunetti, S., Frosini, A., Rinaldi, S. (eds) *Discrete Geometry and Mathematical Morphology*. DGMM 2024, volume 14605 of Lecture Notes in Computer Science, pp 93-106, 2024. Springer, Cham.'
+publication: 'In: Brunetti, S., Frosini, A., Rinaldi, S. (eds) *Discrete Geometry and Mathematical Morphology*. DGMM 2024, volume 14605 of Lecture Notes in Computer Science, pp 93-106, 2024. Springer, Cham'
 
 links:
 - name: Slides
