@@ -68,8 +68,8 @@ the continuous rotations.
 <td> <img src="./turbine-RBC.gif"> </td>
 <td> <img src="./turbine-OTC2.gif"> </td>
 <tr>
-<td><b>Bijective rotation along circles (RBC)</b></td>
-<td><b>Bijective rotation along rings of radius 2 and optimal transport (OTC2)</b></td>
+<td><b>Bijective rotation along rings of radius 3 and optimal transport (OTC3)</b></td>
+<td><b>Bijective rotation along rings of radius 4 and optimal transport (OTC4)</b></td>
 </tr>
 <tr>
 <td> <img src="./turbine-OTC3.gif"> </td>
