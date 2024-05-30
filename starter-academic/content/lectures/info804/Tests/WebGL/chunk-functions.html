@@ -20,7 +20,8 @@ return ( x2 + y2 + z2 - a*a ) * ( x3 * y + x * z3 + y3 * z + 5. * z );
     <textarea spellcheck="false" id="shape-durchball" style="display: none;">
     { "name"           : "Durchball",
       "frag"           : "durchball",
-      "color_model"    : [ 0, 1, 2, 3, 6, 8, 9, 10, 11, 12 ],
+      "display_mode"   : [ 0, 2, 5, 6, 7 ],
+      "color_model"    : [ 1, 2 ],
       "a"              : [1.0, 1.5],
       "scale"          : [15.0, 20.0],
       "iso"            : [-0.8, 0.8],
@@ -40,7 +41,8 @@ return 0.9*d*d + e*e*e;
     <textarea spellcheck="false" id="shape-crixxi" style="display: none;">
     { "name"           : "Crixxi",
       "frag"           : "crixxi",
-      "color_model"    : [ 1, 6, 7, 8, 9, 10, 12 ],
+      "display_mode"   : [ 0, 2, 4, 6 ],
+      "color_model"    : [ 1, 2 ],
       "a"              : [ 1.0, 1.0],
       "scale"          : [30.0,30.0],
       "iso"            : [-0.005, 0.005],
@@ -58,7 +60,8 @@ return x2 + y2 + z2 + x2*z - y2*z - 1.;
     <textarea spellcheck="false" id="shape-cayleycubic" style="display: none;">
     { "name"           : "Cayley cubic",
       "frag"           : "cayleycubic",
-      "color_model"    : [ 1, 2, 3, 4, 5, 6, 12 ],
+      "display_mode"   : [ 0, 1, 6 ],
+      "color_model"    : [ 1, 2 ],
       "scale"          : [10.0, 20.0],
       "iso"            : [-0.1, 0.1],
       "grid_size"      : [0.1, 1.0 ],
@@ -74,7 +77,8 @@ return x3 * y + x * z3 + y3 * z + a*z3 + 5. * z;
     <textarea spellcheck="false" id="shape-durchblick" style="display: none;">
     { "name"           : "Durchblick",
       "frag"           : "durchblick",
-      "color_model"    : [8, 10, 11, 12 ], 
+      "display_mode"   : [ 2, 3, 5, 6, 7 ],
+      "color_model"    : [ 1, 2 ],
       "a"              : [1.0, 1.5],
       "scale"          : [15.0, 20.0],
       "iso"            : [-0.1, 0.1],
@@ -95,7 +99,8 @@ return z4*z2 + 5.*(x2+y2)*(-z4 + (x2+y2)*z2) - 2.*(x4 - 10.*x2*y2+5.*y4)*x*z
     <textarea spellcheck="false" id="shape-barthsextic" style="display: none;">
     { "name"           : "Barth sextic",
       "frag"           : "barthsextic",
-      "color_model"    : [ 0, 1, 6, 7, 10, 12 ],
+      "display_mode"   : [ 0, 1, 2, 6, 7 ],
+      "color_model"    : [ 0, 1 ],
       "a"              : [1.0, 1.0],
       "scale"          : [10.0, 20.0],
       "iso"            : [-0.2, 0.2],
@@ -113,12 +118,13 @@ return x3 + y3 + z3 + a*a*a - d*d*d;
     <textarea spellcheck="false" id="shape-clebschdcubic" style="display: none;">
     { "name"           : "Clebsch diag. cubic",
       "frag"           : "clebschdcubic",
-      "color_model"    : [ 0, 1, 6, 8, 10, 12 ],
+      "display_mode"   : [ 0, 1, 5, 6 ],
+      "color_model"    : [ 0, 1, 2 ],
       "a"              : [1.0, 1.0],
       "scale"          : [20.0, 30.0],
       "iso"            : [-0.2, 0.2],
-      "grid_size"      : [0.0, 0.0 ],
-      "grid_thickness" : [0.0, 0.0 ]
+      "grid_size"      : [0.35, 0.4 ],
+      "grid_thickness" : [0.0, 0.1 ]
     }
 </textarea>
 
@@ -130,7 +136,8 @@ return d*d - 4.*(a*a - x2)*(b*b - y2);
     <textarea spellcheck="false" id="shape-bohemiandome" style="display: none;">
     { "name"           : "Bohemian dome",
       "frag"           : "bohemiandome",
-      "color_model"    : [ 1, 6, 7, 8, 9, 10 ],
+      "display_mode"   : [ 0, 2, 3, 4, 6, 7 ],
+      "color_model"    : [ 1, 2 ],
       "a"              : [0.8, 1.2],
       "b"              : [0.8, 1.2],
       "scale"          : [20.0, 23.0],
@@ -148,7 +155,8 @@ return a*cos(x)*sin(y)+b*cos(y)*sin(z)+c*cos(z)*sin(x);
     <textarea spellcheck="false" id="shape-gyroid" style="display: none;">
     { "name"           : "Gyroid",
       "frag"           : "gyroid",
-      "color_model"    : [ 1, 2, 3, 6, 7, 8, 9, 11 ],
+      "display_mode"   : [ 0, 2, 3, 4, 5 ],
+      "color_model"    : [ 1, 2 ],
       "a"              : [0.5, 1.5],
       "b"              : [0.5, 1.5],
       "c"              : [0.5, 1.5],
@@ -169,7 +177,8 @@ return 3.*a*(cos(x) + cos(y) + cos(z)) + 4.*b*cos(x)*cos(y)*cos(z);
     <textarea spellcheck="false" id="shape-neovius" style="display: none;">
     { "name"           : "Neovius",
       "frag"           : "neovius",
-      "color_model"    : [ 1, 2, 3, 6, 7, 8, 9 ],
+      "display_mode"   : [ 0, 2, 3, 4, 5 ],
+      "color_model"    : [ 1, 2 ],
       "a"              : [0.5, 1.5],
       "b"              : [0.5, 1.5],
       "scale"          : [6.0, 15.0],
@@ -189,7 +198,8 @@ return (l2 + 2.0*y - b)*(w*w - 8.0*z2) + 16.0*x*z*w;
     <textarea spellcheck="false" id="shape-kleinbottle" style="display: none;">
     { "name"           : "Klein bottle",
       "frag"           : "kleinbottle",
-      "color_model"    : [ 6, 11, 12 ],
+      "display_mode"   : [ 5, 6, 7 ],
+      "color_model"    : [ 1, 2 ],
       "a"              : [1.0, 1.0],
       "scale"          : [10.0, 13.0],
       "iso"            : [-0.1, 0.1],
@@ -208,7 +218,8 @@ return z*pow( x2+y2, 2.5 ) - (x3*x2 - 10.0*x3*y2 + 5.0*x*y2*y2);
     <textarea spellcheck="false" id="shape-pluckerconoid" style="display: none;">
     { "name"           : "Plucker conoid",
       "frag"           : "pluckerconoid",
-      "color_model"    : [ 1, 6, 7, 8, 9, 10, 11, 12 ],
+      "display_mode"   : [ 0, 2, 3, 4, 5, 6, 7 ],
+      "color_model"    : [ 1, 2 ],
       "a"              : [1.0, 1.0],
       "scale"          : [15.0, 15.0],
       "iso"            : [-0.01, 0.01],
@@ -227,7 +238,8 @@ return (x2/(a*a)+y2/(b*b)+z2/(c*c)-1.);
     <textarea spellcheck="false" id="shape-ellipsoid" style="display: none;">
     { "name" : "Ellipsoid",
       "frag" : "ellipsoid",
-      "color_model" : [ 11 ],
+      "display_mode"   : [ 5 ],
+      "color_model"    : [ 0, 1 ],
       "scale" : [24.0, 24.0],
       "iso"   : [0.0, 0.0],
       "a"     : [2.0, 2.0],
@@ -246,7 +258,8 @@ return (x2+y2+z2+a*a-b*b)*(x2+y2+z2+a*a-b*b)-4.*a*a*(x2+y2);
     <textarea spellcheck="false" id="shape-torus" style="display: none;">
     { "name" : "Torus",
       "frag" : "torus",
-      "color_model" : [ 8,9,10,11,12 ],
+      "display_mode"   : [ 2, 3, 5, 6, 7 ],
+      "color_model"    : [ 1, 2 ],
       "scale" : [10.0, 12.5],
       "iso"   : [0.0, 0.0],
       "a"     : [1.75, 2.0],
@@ -271,7 +284,8 @@ return -0.25 + max( abs( mod( p.x, a ) - d ),
     <textarea spellcheck="false" id="shape-infinite-cubes" style="display: none;">
     { "name" : "Infinite cubes",
       "frag" : "infinite-cubes",
-      "color_model" : [ 1, 7 ],
+      "display_mode"   : [ 0, 1 ],
+      "color_model"    : [ 1, 2 ],
       "scale" : [5.0, 15.0],
       "iso"   : [0.0, 0.0],
       "a"     : [1.0, 1.0],
@@ -303,7 +317,8 @@ return (rxy) / abs(scale) + 0.0001; //thicken a little bit
     <textarea spellcheck="false" id="shape-kleinian" style="display: none;">
     { "name"        : "Kleinian variation",
       "frag"        : "kleinian",
-      "color_model" : [ 1, 7, 8, 10 ],
+      "display_mode"   : [ 0, 2 ],
+      "color_model"    : [ 1 ],
       "scale"       : [10.0, 35.0],
       "iso"         : [0.0, 0.0],
       "abc"         : [ [0.475, 0.425, 1.15], [1.0, 0.2, 1.25] ],
@@ -331,7 +346,8 @@ return d2-a*a - 0.2*u*v/(1.+1.*d2);
     <textarea spellcheck="false" id="shape-virus" style="display: none;">
     { "name"  : "Virus",
       "frag"  : "virus",
-      "color_model" : [ 1, 7, 12 ],
+      "display_mode"   : [ 0, 6 ],
+      "color_model"    : [ 1, 2 ],
       "a"     : [1.0,1.0],
       "b"     : [1.0,1.0],
       "c"     : [1.0,1.0],
@@ -342,13 +358,14 @@ return d2-a*a - 0.2*u*v/(1.+1.*d2);
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-fct-whitney-umbrella" style="display: none;">
-    // Whitney's umbrella
+    // Whitney umbrella
 return x2 - y2*z;
 </textarea>
     <textarea spellcheck="false" id="shape-whitney-umbrella" style="display: none;">
     { "name"  : "Whitney umbrella",
       "frag"  : "whitney-umbrella",
-      "color_model" : [ 1,3,5,6,7 ],
+      "display_mode"   : [ 0, 6, 7 ],
+      "color_model"    : [ 1, 2 ],
       "scale" : [10.0,20.0],
       "iso"   : [0.0, 0.01]
     }
@@ -383,7 +400,8 @@ return d;
     <textarea spellcheck="false" id="shape-sierpinski-cube" style="display: none;">
     { "name" : "Sierpinski's cube",
       "frag" : "sierpinski-cube",
-      "color_model" : [ 1, 7 ],
+      "display_mode"   : [ 0, 6 ],
+      "color_model"    : [ 1 ],
       "scale" : [10.0, 10.0],
       "accuracy" : 2.0,
       "iso"   : [0.0, 0.0]
@@ -391,13 +409,14 @@ return d;
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-fct-goursat-tetra" style="display: none;">
-    // Goursat'surface (quartic) with tetrahedral symmetry.
+    // Goursat surface (quartic) with tetrahedral symmetry.
 return (x+y+z-a)*(-x-y+z-a)*(x-y-z-a)*(-x+y-z-a)+b*(x2+y2+z2-3.*a)*(x2+y2+z2-3.*a);
 </textarea>
     <textarea spellcheck="false" id="shape-goursat-tetra" style="display: none;">
     { "name"  : "Goursat tetra",
       "frag"  : "goursat-tetra",
-      "color_model" : [ 1,2,3,6,7,8,10 ],
+      "display_mode"   : [ 0, 1, 2, 5, 6 ],
+      "color_model"    : [ 1, 2 ],
       "scale" : [10.0,14.0],
       "a"     : [0.5,1.0],
       "b"     : [0.5,1.0],
@@ -409,13 +428,14 @@ return (x+y+z-a)*(-x-y+z-a)*(x-y-z-a)*(-x+y-z-a)+b*(x2+y2+z2-3.*a)*(x2+y2+z2-3.*
 </textarea>
 
     <textarea spellcheck="false" id="frag-chunk-fct-goursat-octa" style="display: none;">
-    // Goursat'surface (quartic) with octahedral/cube symmetry.
+    // Goursat surface (quartic) with octahedral/cube symmetry.
 return x2*x2+y2*y2+z2*z2+a*(x2+y2+z2)*(x2+y2+z2)+b*(x2+y2+z2)+c;
 </textarea>
     <textarea spellcheck="false" id="shape-goursat-octa" style="display: none;">
     { "name"  : "Goursat octa",
       "frag"  : "goursat-octa",
-      "color_model" : [ 1,6,8,9,10,11 ],
+      "display_mode"   : [ 0, 1, 2, 5, 6 ],
+      "color_model"    : [ 1, 2 ],
       "scale" : [15.0,20.0],
       "abc"   : [ [0.0,-1.0,0.0], [-1.0,-0.25,0.25], [-1.0,1.0,1.0], [0.0,-2.0,2.0],
 		  [-1.0,4.0,6.0], [-0.5,-1.0,0.5], [-0.075, -1.5, 1.3] ],
@@ -446,7 +466,8 @@ return(2.0/(zx*zx+zy*zy)*float(i)/29.0) - 1.*(1.0-10.1*abs(x));
     <textarea spellcheck="false" id="shape-julia" style="display: none;">
     { "name"           : "Julia set",
       "frag"           : "julia",
-      "color_model"    : [ 0, 1, 7 ],
+      "display_mode"   : [ 0 ],
+      "color_model"    : [ 1 ],
       "a"              : [-0.5, 0.5],
       "b"              : [-0.5, 0.5],
       "scale"          : [33.0, 40.0],
@@ -476,7 +497,8 @@ return (w*w*w - ax2*az3 - 9./80.*ay2*az3);
     <textarea spellcheck="false" id="shape-beating-heart" style="display: none;">
     { "name"           : "Beating heart",
       "frag"           : "beating-heart",
-      "color_model"    : [ 1, 8, 12 ],
+      "display_mode"   : [ 0, 2, 6 ],
+      "color_model"    : [ 1 ],
       "scale"          : [25.0, 25.0],
       "iso"            : [0.0, 0.0],
       "view_shape"     : [ 4 ],
