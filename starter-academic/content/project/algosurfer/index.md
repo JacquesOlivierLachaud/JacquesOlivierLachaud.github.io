@@ -39,7 +39,7 @@ A real-time visualisation tool for implicit surfaces, i.e. isolevels
 of real-value functions f(x,y,z). It casts rays through each pixel and
 computes intersections with the surface.
 
-<p style="text-align: center;"> [Go to AlgoSurfer Demo](https://jacquesolivierlachaud.github.io/AlgoSurfer) </p>
+<p style="text-align: center;"> <a href="https://jacquesolivierlachaud.github.io/AlgoSurfer"> <b>Go to AlgoSurfer Demo</b> </a> </p>
 
 ## Main features
 
@@ -68,7 +68,9 @@ Obviously, you have access to `x`, `y`, `z` variables (and even a temporal `t`),
 You can also access user-interface parameters `a`, `b`, `c`.
 
 
-The code should be written in GLSL (C-like) and then press `View Surface`.
+The code should be written in GLSL (C-like) and then press `View
+Surface`. If you do not know GLSL, the simplest way is to take
+inspiration of the code written for predefined shapes.
 
 
 ## Details
