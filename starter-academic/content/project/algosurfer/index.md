@@ -7,13 +7,13 @@ summary: |2-
 
   Mar. 2024 - May. 2024
 
-  ** Creator **
+  **Creator**
 
 tags:
   - fun
   - webgl
 
-date: '2024-01-01'
+date: '2024-05-30'
 
 # Optional external URL for project (replaces project detail page).
 external_link: ''
@@ -21,6 +21,7 @@ external_link: ''
 image:
   caption: "Several views of a Klein surface (often called Klein bottle): principal directions, mean and Gaussian curvature, transparent view, surface view with reflections"
   focal_point: Smart
+  url: https://jacquesolivierlachaud.github.io/AlgoSurfer
 
 links:
   - icon: earth-europe
@@ -38,6 +39,8 @@ A real-time visualisation tool for implicit surfaces, i.e. isolevels
 of real-value functions f(x,y,z). It casts rays through each pixel and
 computes intersections with the surface.
 
+<p style="text-align: center;"> [Go to AlgoSurfer Demo](https://jacquesolivierlachaud.github.io/AlgoSurfer) </p>
+
 ## Main features
 
 - it displays any implicit surface, either predefined or user-written, in real time.
@@ -45,7 +48,7 @@ computes intersections with the surface.
 - you can choose different illumination models (basic, Phong) but also use transparent materials or reflecting materials
 - you can navigate around the shape with the mouse
 
-# Predefined shapes
+## Predefined shapes
 
 The tool offers several classical algebraic (Cayley Cubic, Whitney surface, etc) or implicit surfaces (Sierpinski cube, Kleinian variation, etc).
 
