@@ -53,3 +53,26 @@ links:
 #  url: 'slides.pdf'
 
 ---
+
+## Visual comparison of a few bjective rotations in Z2
+
+The bigger the radius, the closer the digital rotations are close to
+the continuous rotations.
+
+<table>
+<tr>
+<td><b>Bijective rotation along circles (RBC)</b></td>
+<td><b>Bijective rotation along rings of radius 2 and optimal transport (OTC2)</b></td>
+</tr>
+<tr>
+<td> <img src="./turbine-RBC.gif"> </td>
+<td> <img src="./turbine-OTC2.gif"> </td>
+<tr>
+<td><b>Bijective rotation along circles (RBC)</b></td>
+<td><b>Bijective rotation along rings of radius 2 and optimal transport (OTC2)</b></td>
+</tr>
+<tr>
+<td> <img src="./turbine-OTC3.gif"> </td>
+<td> <img src="./turbine-OTC4.gif"> </td>
+<tr>
+</table>
