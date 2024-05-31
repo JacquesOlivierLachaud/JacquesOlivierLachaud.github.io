@@ -13,7 +13,7 @@ tags: [ "mesh parameterization", "UV mapping", "variational model", "Ambrosio-To
 categories: []
 date: '2023-04-16'
 lastmod: 2023-04-16T12:39:45+01:00
-featured: true
+featured: false
 draft: false
 url_code: 'https://github.com/Lieunoir/UV-AT'
 

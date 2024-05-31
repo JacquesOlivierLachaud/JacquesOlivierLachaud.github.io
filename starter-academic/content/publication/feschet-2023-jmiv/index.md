@@ -11,7 +11,7 @@ tags: [ "digital geometry", "digital convexity", "full convexity", "polyhedral m
 categories: []
 date: '2023-07-17'
 lastmod: '2023-07-17'
-featured: true
+featured: false
 draft: false
 url_code: 'https://dgtal-team.github.io/doc-nightly/moduleEnvelope.html'
 

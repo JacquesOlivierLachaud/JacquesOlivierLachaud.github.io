@@ -17,7 +17,7 @@ tags: [ "digital geometry", "digital calculus", "Laplace operator", "3D" ]
 categories: []
 date: '2024-04-01'
 lastmod: 2024-04-01T17:39:54+01:00
-featured: false
+featured: true
 draft: false
 # url_slides: 'slides.pdf'
 # url_code: 'https://dgtal-team.github.io/doc-nightly/moduleDigitalConvexity.html'

@@ -11,7 +11,7 @@ tags: [ "variational model", "total variation", "geometric total variation", "tr
 categories: []
 date: '2019-01-01'
 lastmod: 2022-11-03T17:39:55+01:00
-featured: true
+featured: false
 draft: false
 
 # Featured image

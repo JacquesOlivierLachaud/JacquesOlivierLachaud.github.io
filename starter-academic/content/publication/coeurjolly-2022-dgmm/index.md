@@ -11,7 +11,7 @@ tags: [ "discrete calculus", "digital surface", "3D", "discrete differential ope
 categories: []
 date: '2022-01-01'
 lastmod: 2022-11-03T17:39:54+01:00
-featured: true
+featured: false
 draft: false
 url_code: 'https://dgtal-team.github.io/doc-nightly/modulePolygonalCalculus.html'
   
