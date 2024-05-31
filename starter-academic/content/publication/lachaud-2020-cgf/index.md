@@ -9,7 +9,7 @@ authors:
 - Pascal Romon
 - Boris Thibert
 - David Coeurjolly
-tags: [ "normal current", "curvature measures", "curvature estimator", "discrete geometric estimator", "3D", "polygonal mesh" ]
+tags: [ "normal current", "curvature measures", "curvature estimation", "discrete geometric estimator", "3D", "polygonal mesh" ]
 categories: []
 date: '2020-01-01'
 lastmod: 2022-11-03T17:39:46+01:00

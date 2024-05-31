@@ -8,7 +8,7 @@ authors:
 - admin
 - Pascal Romon
 - Boris Thibert
-tags: [ "geometric measure theory", "curvature estimator", "curvature measures", "digital geometry", "digital surface", "polgonal mesh", "discrete geometric estimator", "3D", "multigrid convergence" ]
+tags: [ "geometric measure theory", "curvature estimation", "curvature measures", "digital geometry", "digital surface", "polgonal mesh", "discrete geometric estimator", "3D", "multigrid convergence" ]
 categories: []
 date: '2022-01-01'
 lastmod: 2022-11-03T17:39:45+01:00

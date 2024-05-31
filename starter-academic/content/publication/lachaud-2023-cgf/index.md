@@ -10,7 +10,7 @@ authors:
 - Céline Labart
 - Pascal Romon
 - Boris Thibert
-tags: [ "normal current", "curvature measures", "curvature estimator", "3D", "point clouds", "geometric inference", "stability" ]
+tags: [ "normal current", "curvature measures", "curvature estimation", "3D", "point clouds", "geometric inference", "stability" ]
 categories: []
 date: '2023-07-02'
 lastmod: 2023-07-02
