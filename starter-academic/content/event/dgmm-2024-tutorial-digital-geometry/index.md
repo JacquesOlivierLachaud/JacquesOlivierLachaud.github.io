@@ -1,5 +1,5 @@
 ---
-title: DGtal tutorial at DGMM2022
+title: Tutorial on digital geometry at DGMM2024
 
 event: Conference on Digital Geometry and Mathematical Morphology
 event_url: https://dgmm2024.dimai.unifi.it
