@@ -85,7 +85,9 @@ projects:
 
 ### Final conference
 
-* Geometry & Computing, CIRM, Luminy, **Oct 21-25, 2024**. (More info coming soon).
+* [Geometry & Computing 2024](https://geocomp2024.sciencesconf.org), **Oct 21-25, 2024**, CIRM, Luminy
+  - 23 invited speakers
+  - 101 participants
   
 
 ## Steering committee
