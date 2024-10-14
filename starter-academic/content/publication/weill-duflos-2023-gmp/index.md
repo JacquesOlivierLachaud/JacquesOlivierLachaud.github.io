@@ -57,13 +57,14 @@ constraints on the parameterization is provided (packing constraints,
 seam visibility).'
 
 
-publication: '*Computer Aided Geometric Design*, Proc. International Conference on Geometric Modeling and Processing (GMP 2023), Genoa, Italy. Accepted. To appear.'
+publication: '*Computer Aided Geometric Design*, Proc. International Conference on Geometric Modeling and Processing (GMP 2023), Genoa, Italy. 102231, 2023.'
+
 doi: 10.1016/j.cagd.2023.102231
 
 links:
 - name: Slides
   url: 'slides.pdf'
 - name: URL
-  url: https://doi.org/10.1016/j.cagd.2023.102231
+  url: https://www.sciencedirect.com/science/article/pii/S0167839623000638
 
 ---

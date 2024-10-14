@@ -40,4 +40,7 @@ the minimal set of parameters (i.e. slope (a,b), shift (µ), parity (even or odd
 and the coordinates of the upper leaning points) for each line and their intersections.'
 
 publication: '*Theoretical Computer Science*, 784: 99-112, 2019'
+
+doi: 10.1016/j.tcs.2019.03.042
 ---
+
