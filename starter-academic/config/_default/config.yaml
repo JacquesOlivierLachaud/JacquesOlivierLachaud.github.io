@@ -32,7 +32,10 @@ module:
 
 enableGitInfo: false
 summaryLength: 30
-paginate: 10
+pagination:
+  disableAliases: false
+  pagerSize: 10
+  path: page
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
@@ -80,7 +83,7 @@ privacy:
     disable: true
   instagram:
     disable: true
-  twitter:
+  x:
     disable: true
   vimeo:
     disable: true
