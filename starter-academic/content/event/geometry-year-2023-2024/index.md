@@ -11,8 +11,8 @@ abstract: 'The national research groups GDR IM and GDR IG-RV proposes a thematic
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2023-01-1T9:00:00Z'
-date_end: '2024-12-31T23:00:00Z'
+date: '2023-01-1'
+date_end: '2024-12-31'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
