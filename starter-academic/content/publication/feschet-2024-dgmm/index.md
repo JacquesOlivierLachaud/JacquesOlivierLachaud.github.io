@@ -16,7 +16,7 @@ tags: [ "digital geometry", "digital convexity", "full convexity", "nD" ]
 categories: []
 date: '2024-04-01'
 lastmod: 2024-04-01T17:39:54+01:00
-featured: true
+featured: false
 draft: false
 # url_slides: 'slides.pdf'
 # url_code: 'https://dgtal-team.github.io/doc-nightly/moduleDigitalConvexity.html'

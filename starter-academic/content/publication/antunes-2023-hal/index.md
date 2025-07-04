@@ -12,7 +12,7 @@ tags: [ "image segmentation", "image analysis", "variational model", "geometric 
 categories: []
 date: '2023-01-01'
 lastmod: 2023-11-03T17:39:45+01:00
-featured: true
+featured: false
 draft: false
 
 # Featured image

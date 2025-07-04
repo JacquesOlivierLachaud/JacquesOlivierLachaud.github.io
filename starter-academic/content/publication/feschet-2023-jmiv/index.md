@@ -36,7 +36,7 @@ publication_types:
 abstract: 'In a recent work, full convexity has been proposed as an alternative definition of digital convexity. It solves many problems related to its usual definitions, for instance: Fully convex sets are digitally convex in the usual sense, but are also connected and simply connected. However, full convexity is not a monotone property; hence, intersections of fully convex sets may be neither fully convex nor connected. This defect might forbid digital polyhedral models with fully convex faces and edges. This can be detrimental since classical standard and naive planes are fully convex. In this paper, we study several methods that builds a fully convex set from a digital set. One is particularly appealing and is based on an iterative process: This envelope operator solves in arbitrary dimension the problem of extending a digital set into a fully convex set, while leaving fully convex sets invariant. This extension naturally leads to digital polyhedra whose cells are fully convex. Then a relative envelope operator is proposed, which can be used to force digital planarity of fully convex sets. We provide experiments showing that our method produces coherent polyhedral models for any polyhedron in arbitrary dimension. Finally we study how we can speed up full convexity checks and envelope operations, with a worst-case complexity lowered by a factor $2^d$ in ${\mathbb {Z}}^d$.'
 
 
-publication: '*J. Math. Imaging Vis.*, 2023'
+publication: '*J. Math. Imaging Vis.*, 65(5): 754-769, 2023'
 doi: 10.1007/s10851-023-01155-w
 links:
 - name: URL

@@ -13,7 +13,7 @@ tags: [ "digital plane recognition", "plane probing", "Delaunay property", "3D" 
 categories: []
 date: '2024-07-01'
 lastmod: 2024-07-01T17:39:46+01:00
-featured: true
+featured: false
 draft: false
 
 # Featured image
