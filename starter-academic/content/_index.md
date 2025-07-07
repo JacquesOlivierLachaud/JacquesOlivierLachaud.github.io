@@ -32,6 +32,7 @@ sections:
         folders:
           - publication
         featured_only: true
+      count: 6
     design:
       view: article-grid
 #      view: card
