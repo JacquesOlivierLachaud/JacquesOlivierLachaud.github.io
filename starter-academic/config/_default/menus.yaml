@@ -5,40 +5,40 @@
 
 main:
   - name: Home
-    url: '#about'
+    url: /
     weight: 10
   - name: Featured Research
-    url: '#featured'
+    url: /#featured
     weight: 20
   - name: Publications
-    url: '#publications'
+    url: /#publications
     weight: 25
   - name: Talks
-    url: '#talks'
+    url: /#talks
     weight: 30
   - name: Events
-    url: '#events'
+    url: /#events
     weight: 35
   - name: Projects
-    url: '#projects'
+    url: /#projects
     weight: 40
   - name: Gallery
-    url: '#gallery'
+    url: /#gallery
     weight: 50
-  - name: Teaching
-    url: '#teaching'
+  - name: Teaching 
+    url: /teaching/
     weight: 55
   - name: Experience
-    url: '#experience'
+    url: /experience/
     weight: 60
   - name: Students
-    url: '#students'
+    url: /students/
     weight: 65
   - name: Contact
-    url: '#contact'
+    url: /#contact
     weight: 80
   - name: Privacy/Legal mentions
-    url: '/privacy'
+    url: /privacy
     weight: 100
     
 # - name: Awards

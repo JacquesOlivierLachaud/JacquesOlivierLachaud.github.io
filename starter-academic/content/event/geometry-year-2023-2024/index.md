@@ -6,8 +6,9 @@ event_url: https://www.gdr-ifm.fr/annee-geometrie/
 
 # location: CIRM, Luminy, France (virtual)
 
-summary: 'Co-pilot (with M. Desbrun).'
+summary:  'Chair (with M. Desbrun) of Thematic year on "Geometry"'
 abstract: 'The national research groups GDR IM and GDR IG-RV proposes a thematic year "Geometry" for 2023-2024. the objective is to illustrate the rich scientific researches in geometry related to computer science, to identify important challenges and bottlenecks in the domain, and to foster new projects and collaborations onto these themes. Several colloquia and conferences are organized during this year.'
+
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -18,7 +19,7 @@ all_day: false
 # Schedule page publish date (NOT talk date).
 publishDate: '2023-01-01T00:00:00Z'
 
-authors: [ admin ]
+authors: [ admin, Mathieu Desbrun ]
 tags: [ "event", "digital geometry", "computational geometry", "geometric modeling", "geometry processings" ]
 
 
@@ -73,6 +74,7 @@ projects:
 # # Further event details, including [page elements](https://wowchemy.com/docs/writing-markdown-latex/) such as image galleries, can be added to the body of this page.
 
 ---
+
 
 ## Events
 

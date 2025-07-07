@@ -1,6 +1,6 @@
 ---
 title: AlgoSurfer
-summary: |2-
+summary: |-
   *implicit/algebraic surface viewer*
 
   (project for pedagogy and fun)

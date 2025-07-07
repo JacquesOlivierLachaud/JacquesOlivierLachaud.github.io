@@ -55,3 +55,10 @@ informations.
 * responsable 2016-2023 Cours/TD/TP : J.-O. Lachaud
 * auparavant: Christophe Raffalli
 
+### Temporary
+
+* [tmp1](Tests/WebGL/algosurfer-implicit-surface-viewer.html)
+* [tmp2](Tests/WebGL/chunk-anaglyph.html)
+* [tmp3](Tests/WebGL/chunk-functions.html)
+* [tmp4](Tests/WebGL/chunk-info.html)
+* [tmp5](Tests/WebGL/algosurfer.html)

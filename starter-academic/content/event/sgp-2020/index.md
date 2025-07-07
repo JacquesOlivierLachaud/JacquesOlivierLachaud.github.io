@@ -6,8 +6,8 @@ event_url: https://sgp2020.sites.uu.nl
 
 location: Utrecht, Netherland (virtual)
 
-summary: 'The video of the talk I gave at SGP about our paper *Interpolated corrected curvature measures for polygonal surfaces*.'
-abstract:
+summary: 
+abstract: 'The video of the talk I gave at SGP about our paper *Interpolated corrected curvature measures for polygonal surfaces*.'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
