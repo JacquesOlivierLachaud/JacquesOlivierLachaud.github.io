@@ -28,7 +28,7 @@ main:
   - name: Teaching 
     url: /teaching/
     weight: 55
-  - name: Experience
+  - name: Experience & Education
     url: /experience/
     weight: 60
   - name: Students
@@ -37,7 +37,7 @@ main:
   - name: Contact
     url: /#contact
     weight: 80
-  - name: Privacy/Legal mentions
+  - name: Privacy & Legal mentions
     url: /privacy
     weight: 100
     

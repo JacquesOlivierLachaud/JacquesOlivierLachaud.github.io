@@ -143,18 +143,21 @@ highlight_name: true
 ---
 
 I am Professor of Computer Science at [University Savoie Mont
-Blanc](https://www.univ-smb.fr), and member of the [Laboratory of
-Mathematics](https://www.lama.univ-smb.fr). I am responsible of the
-[Cursus Master en Ingénierie
-Informatique](https://www.lama.univ-savoie.fr/CMI_Info/), and I teach
-in the Computer Science department of [UFR Science and
-Montagne](https://www.univ-smb.fr/scem/). My research interests
-includes digital geometry and topology, image segmentation and
-analysis, geometry processing, variational models, and discrete
-calculus. Albeit not an expert, I am also quite fond of arithmetic,
-word combinatorics, computational geometry, combinatorial topology,
-differential geometry and I often use several related results in my
-research.
+Blanc](https://www.univ-smb.fr). I do my research in the [Laboratory
+of Mathematics](https://www.lama.univ-smb.fr). I teach in the Computer
+Science department of [UFR Science and
+Montagne](https://www.univ-smb.fr/scem/).  I was head of the [Cursus
+Master en Ingénierie
+Informatique](https://www.lama.univ-savoie.fr/CMI_Info/) till August
+2024.  My research interests include digital geometry and topology,
+image segmentation and analysis, geometry processing, variational
+models, and discrete calculus. Albeit not an expert, I am also quite
+fond of arithmetic, word combinatorics, computational geometry,
+combinatorial topology, differential geometry and I often use several
+related results in my research.
 
+{{< icon name="cloud-arrow-down">}}[CV (english)](https://jacquesolivierlachaud.github.io/uploads/cv-short-en.pdf)
+/ {{< icon name="cloud-arrow-down">}} [CV (french)](https://jacquesolivierlachaud.github.io/uploads/cv-short.pdf)
+/ {{< icon name="cloud-arrow-down">}} [CV (long)](https://jacquesolivierlachaud.github.io/uploads/resume.pdf)
 
 
