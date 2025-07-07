@@ -51,7 +51,7 @@ sections:
         folders:
           - publication
         exclude_featured: false
-      count: 10
+      count: 25
     design:
       view: citation
 #view: compact
