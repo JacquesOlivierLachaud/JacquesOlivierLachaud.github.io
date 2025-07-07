@@ -36,6 +36,7 @@ interests:
 # Education to show in About widget
 education:
     - area: HDR in Computer science (Habilitation à Diriger des Recherches)
+      year: 2006
       date_start: 2006-12-06
       date_end: 2006-12-06
       institution: University Bordeaux 1
@@ -48,6 +49,7 @@ education:
         text: 'Read thesis'
         url:  uploads/hdr-lachaud.pdf
     - area: PhD in Computer Science
+      year: 1998
       date_start: 1994-10-01
       date_end:	1998-07-09
       institution: University Joseph Fourier
@@ -64,6 +66,7 @@ education:
     - area: Engineer in Applied Mathematics and Computer Science
       date_start: 1991-09-01
       date_end:	1994-06-30
+      year: 1994
       institution: ENSIMAG School of Engineering
       link: https://ensimag.grenoble-inp.fr
 
