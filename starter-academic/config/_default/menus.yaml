@@ -34,6 +34,9 @@ main:
   - name: Students
     url: /students/
     weight: 65
+  - name: Tags
+    url: /#tags
+    weight: 70
   - name: Contact
     url: /#contact
     weight: 80

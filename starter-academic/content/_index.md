@@ -182,7 +182,17 @@ sections:
       spacing:
         padding: [0, 0, 0, 0]
 
+  - block: markdown
+    id: tags
+    content:
+      title: Tags
+      text: |-
+        {{% callout note %}}
+        [See all tags.](/tags/)
+        {{% /callout %}}
 
+        ![tags](bag-of-words.png)
+        
   - block: markdown
     id: contact
     content:
