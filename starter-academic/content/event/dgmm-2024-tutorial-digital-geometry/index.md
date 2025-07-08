@@ -1,12 +1,12 @@
 ---
-title: Tutorial on digital geometry at DGMM2024
+title: Introduction to digital geometry
 
 event: Conference on Digital Geometry and Mathematical Morphology
 event_url: https://dgmm2024.dimai.unifi.it
 
-location: Florence, Italy
+location: Firenze, Italy
 
-summary: Introduction to digital geometry
+summary: Tutorial talk, DGMM2024, Firenze, Italy.
 abstract:
 
 # Talk start and end times.

@@ -6,7 +6,7 @@ event_url: https://sgp2021.github.io/
 
 location: Toronto, Ontario (virtual)
 
-summary: 'A graduate school on digital geometry for the geometry processing community.'
+summary: 'Graduate school lecture, Symposium on Geometry Processing 2021, Toronto, Ontario.'
 abstract: 'Digital Geometry is about the processing of topological and geometrical objects defined in regular lattices (e.g. collection of voxels in 3d). Whereas representing quantities on regular, hierarchical or adaptive grids is a classical approach to spatially discretize a domain, processing the geometry of such objects requires us to revisit classical results from continuous or discrete mathematics.  In this course, we will review tools and results that have been designed specifically to the geometry processing in Z^d. More precisely, we will present how processing regularly spaced data with integer coordinate embeddings may impact computational geometry algorithms, and how stability results (multigrid convergence) of differential quantities estimators (curvature tensor, Laplace-Beltrami,..) on boundaries of digital objects can be designed. Finally, we will present some elements of discrete calculus on digital surfaces. Lastly, we will briefly give a demo of the DGtal library (dgtal.org) which contains a wide class of algorithms dedicated to the processing of such specific data.'
 
 # Talk start and end times.

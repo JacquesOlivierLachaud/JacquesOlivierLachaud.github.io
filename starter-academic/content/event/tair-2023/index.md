@@ -34,6 +34,8 @@ image:
 #     name: Follow
 #     url: https://twitter.com/georgecushen
 links:
+  - name: Slides (PDF)
+    url: 'slides.pdf'
     
 url_code: 'https://github.com/DGtal-team/DGtal'
 url_pdf: ''

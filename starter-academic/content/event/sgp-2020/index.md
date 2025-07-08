@@ -6,7 +6,7 @@ event_url: https://sgp2020.sites.uu.nl
 
 location: Utrecht, Netherland (virtual)
 
-summary: 
+summary: 'Talk at Symposium on Geometry Processing 2020, Utrecht, Netherland.' 
 abstract: 'The video of the talk I gave at SGP about our paper *Interpolated corrected curvature measures for polygonal surfaces*.'
 
 # Talk start and end times.

@@ -6,7 +6,7 @@ event_url: https://www.birs.ca/events/2019/5-day-workshops/19w5207
 
 location: Banff International Research Station, Banff, Alberta, Canada
 
-summary: 'Invited talk.'
+summary: 'Invited talk at Workshop Phase-field models of fracture, BIRS, Banff.'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.

@@ -1,12 +1,12 @@
 ---
-title: DGtal tutorial at DGMM2022
+title: DGtal tutorial
 
 event: Conference on Digital Geometry and Mathematical Morphology
 event_url: https://dgmm2022.sciencesconf.org/
 
 location: Strasbourg, France
 
-summary: A tutorial on the DGtal library with several practicals.
+summary: Tutorial on the DGtal library,  DGMM2022, Strasbourg, France.
 abstract:
 
 # Talk start and end times.

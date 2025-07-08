@@ -6,7 +6,7 @@ event_url: https://www.lama.univ-smb.fr/
 
 location: Laboratoire de Mathématiques, LAMA, Chambéry, France
 
-summary: 'Invited talk.'
+summary: 'Invited talk. Autour des Mathématiques, 80 ans du CNRS.'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
