@@ -10,14 +10,23 @@ cascade:
       show_breadcrumb: true
 
 sections:
+  - block: collection
+    id: lectures
+    content:
+      title: Lectures in Computer Science
+      filters:
+        folders:
+          - teaching
+    design:
+      view: article-grid
+      columns: 2
+
   - block: markdown
     id: teaching
     content:
-      title: 'Lectures in Computer Science'
+      title: 'List of lectures'
       text: |2-
-
-        ![logo-usmb](logo-usmb-wo-txt.png)
-        [University Savoie Mont Blanc](www.univ-smb.fr) / UFR Sciences et Montagne
+        <small>
 
         * **2023--2024** **B. Sc. Licence/CMI L1 L2 L3**
 
@@ -37,16 +46,11 @@ sections:
           * M2 Info/Math / M2 CMI Info/Math: [INFO911 Traitement et analyse d'image / Image processing and analysis](https://codimd.math.cnrs.fr/s/UE_B59gMy) (Cours, TD, TP / Lectures, Seminars, Practicals)
           * M2 CMI Info: [INFO001 Traitement et analyse d'image avancé / Advanced image processing and analysis](https://codimd.math.cnrs.fr/s/U_hz-OPpK) (Cours, TD, TP / Lectures, Seminars, Practicals)
           * M2 CMI Info: [PROJ002 Project in image processing and analysis](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/PROJ002_CMI_:_Projet_en_traitement_et_analyse_d%27image)
-
-  - block: collection
-    id: lectures
-    content:
-      title: Lectures
-      filters:
-        folders:
-          - teaching
-    design:
-      view: article-grid
-      columns: 2
+        </small>
 ---
+
+<!---
+![logo-usmb](logo-usmb-wo-txt.png)
+        [University Savoie Mont Blanc](www.univ-smb.fr) / UFR Sciences et Montagne
+-->
 

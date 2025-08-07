@@ -20,7 +20,7 @@ all_day: false
 publishDate: '2023-01-01T00:00:00Z'
 
 authors: [ admin, Mathieu Desbrun ]
-tags: [ "event", "digital geometry", "computational geometry", "geometric modeling", "geometry processings" ]
+tags: [ "event", "digital geometry", "computational geometry", "geometric modeling", "geometry processing" ]
 
 
 # Is this a featured talk? (true/false)

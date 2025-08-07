@@ -146,7 +146,7 @@ I am Professor of Computer Science at [University Savoie Mont
 Blanc](https://www.univ-smb.fr). I do my research in the [Laboratory
 of Mathematics](https://www.lama.univ-smb.fr). I teach in the Computer
 Science department of [UFR Science and
-Montagne](https://www.univ-smb.fr/scem/).  I was head of the [Cursus
+Montagne](https://www.univ-smb.fr/scem/). I was co-chair of the [thematic year "Geometry"](/talk/thematic-year-geometry-of-gdr-ifm-and-igrv/) of the [GdR IFM](https://www.gdr-ifm.fr) and [IGRV](https://gdr-igrv.fr) during 2023-2024. I was head of the [Cursus
 Master en Ingénierie
 Informatique](https://www.lama.univ-savoie.fr/CMI_Info/) till August
 2024.  My research interests include digital geometry and topology,
