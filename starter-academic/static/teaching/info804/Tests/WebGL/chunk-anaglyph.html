@@ -1,0 +1,62 @@
+    <textarea spellcheck="false" id="frag-chunk-main-anaglyph-begin" style="display: none;">
+    // main for anaglyph color model
+void main() {
+    // we must compute the direction of the tracing ray within the cube
+    float eye_distance = (10.0*(grid_thickness-0.5)) * 200.0;
+    float step = 0.1 * accuracy / scale;
+    int   n    = int( ceil( sqrt(3.0) * width / (scale*step) ) );
+    vec3 focalg = vec3( -eye_distance*0.5, 0.0, -200.0 );
+    vec3 focald = vec3(  eye_distance*0.5, 0.0, -200.0 );
+    vec3 focal  = vec3(  0.0, 0.0, -200.0 );
+    vec4 viewp4 = projViewInv * vec4( focal, 1.0 );
+    vec3 viewp  = normalize( viewp4.xyz / viewp4.w - vertPos );
+    vec4 viewpg4= projViewInv * vec4( focalg, 1.0 );
+    vec3 viewpg = normalize( viewpg4.xyz / viewpg4.w - vertPos );
+    vec3 posg   = ray_trace( vertPos / scale , -viewpg, iso, n, step );
+    vec4 viewpd4= projViewInv * vec4( focald, 1.0 );
+    vec3 viewpd = normalize( viewpd4.xyz / viewpd4.w - vertPos );
+    vec3 posd   = ray_trace( vertPos / scale , -viewpd, iso, n, step );
+    vec3 gg     = gradf( posg );
+    vec3 gd     = gradf( posd );
+    outColor.a = 1.0;
+    </textarea>
+	<textarea spellcheck="false" id="frag-chunk-main-anaglyph-end" style="display: none;">
+	// main for anaglyph color model
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-anaglyph-phong" style="display: none;">
+    // Simpler Phong model for faster display
+const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
+//vec3 radiance  = ambient_color;
+vec3 viewDirg  = normalize( focalg );//normalize( -vertPos);
+vec3 viewDird  = normalize( focald );//normalize( -vertPos);
+vec3 viewDir   = normalize( focal  );//normalize( -vertPos);
+vec3 vng       = normalize( gg );
+vec3 vnd       = normalize( gd );
+vec3 lDir      = vec3( 0., 1.0, 0.0 );
+vec3 left      = phongModel( posg, viewDir, vng, 
+			     viewpg, lDir /* -viewp */, front_light );
+vec3 right     = phongModel( posd, viewDir, vnd, 
+			     viewpd, lDir /* -viewp */, front_light );
+    // Smooth fog background and progressive singularities.
+float deltag  = max( dot( (- scale * posg), viewpg ), 0.0);
+float lsg     = exp( - dot( gg, gg ) / singularity ); //
+left          = (1.-lsg)*left + lsg * sing_color;
+float lg      = clamp( deltag / width, 0.0, 1.0 ); // compute fog
+left          = (1.-lg)*left + lg * bg_color;
+float deltad  = max( dot( (- scale * posd), viewpd ), 0.0);
+float lsd     = exp( - dot( gd, gd ) / singularity ); //
+right         = (1.-lsd)*right + lsd * sing_color;
+float ld      = clamp( deltad / width, 0.0, 1.0 ); // compute fog
+right         = (1.-ld)*right + ld * bg_color;
+//float l      = clamp( 0.5*(deltag+deltad) / width, 0.0, 1.0 ); // compute fog
+// outColor.rgb  = vec3( (left.r + left.g + left.b),
+// 		      (right.r + 2.0*right.g),
+// 		      (right.r + 2.0*right.b) ) / 3.0;
+// outColor.rgb  = vec3( (right.r + right.g + right.b),
+// 		      (left.r + 2.0*left.g),
+// 		      (left.r + 2.0*left.b) ) / 3.0;
+outColor.rgb  = vec3( left.r, right.g, right.b );
+//outColor.rgb  = vec3( right.r, left.g, left.b );
+</textarea>
+

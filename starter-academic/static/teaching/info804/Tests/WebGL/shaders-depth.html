@@ -1,0 +1,185 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <title>three.js webgl - geometries</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="main.css">
+    </head>
+    <body>
+    
+    <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> Depth and clip space</div>
+    
+    <script type="importmap">
+    {
+	"imports": {
+	    "three": "./three.module.js",
+	    "three/addons/": "./jsm/"
+	}
+    }
+</script>
+    <script id="post-vert" type="x-shader/x-vertex">
+    // Vertex shader
+out vec3  clipPos; // position du sommet dans le repère camera
+out float depth;   // profondeur du sommet dans la vue perspective camera.
+void main()
+{
+    // On tranforme les coordonnées monde de position vers les coordonnées camera
+    // Xp = V^-1 * position
+    vec4 Xp       = modelViewMatrix * vec4( position, 1.0);
+    // On utilise la matrice de projection pour se placer dans le clip-space
+    gl_Position   = projectionMatrix * Xp;
+    // La coordonnée z est la profondeur
+    depth         = gl_Position.z;
+    clipPos       = gl_Position.xyz;
+}
+</script>
+    <script id="post-frag" type="x-shader/x-fragment">
+    // Fragment shader
+    in vec3  clipPos;
+    in float depth;
+uniform bool color;
+uniform float cameraNear;
+uniform float cameraFar;
+uniform float windowWidth;
+uniform float windowHeight;
+out vec4 outColor;
+void main() {
+    float delta = cameraFar - cameraNear;
+    float d = depth / delta;
+    float x = 4.0 * clipPos.x / windowWidth + 0.5;
+    float y = 4.0 * clipPos.y / windowHeight + 0.5;
+    outColor.rgb = color ? vec3( x, y, d ) : vec3( d, d, d );
+    outColor.a = 1.0;
+}
+</script>
+
+    <script type="module">
+
+import * as THREE from 'three';
+import { GUI } from 'three/addons/lil-gui.module.min.js';
+
+let camera, scene, renderer, object;
+let distance = 200.0;
+let map;
+let shader;
+let uniforms;
+let textureCube;
+let settings = { background: false,
+		 color:      false,
+		 cameraFOV:   50.0,
+		 cameraNear:  10.0,
+		 cameraFar:  400.0 };
+init();
+animate();
+initGui();
+
+// Init gui
+function initGui() {
+    const gui = new GUI();
+    gui.add( settings, 'background' ).onChange(
+	function( value ) {
+	    settings.background = value;
+	    if ( value ) scene.background = textureCube;
+	    else         scene.background = null;
+	} );
+    gui.add( settings, 'color' ).onChange(
+	function( value ) {
+	    shader.uniforms.color.value = value;
+	} );
+    
+    gui.add( settings, 'cameraFOV' ).min( 10.0 ).max( 160.0 ).onChange(
+	function ( value ) {
+	    camera.fov = value;
+	    camera.updateProjectionMatrix();
+	    shader.uniforms.cameraFOV.value = value;
+	} );
+    gui.add( settings, 'cameraNear' ).min( 0.001 ).max( distance ).onChange(
+	function ( value ) {
+	    camera.near = value;
+	    camera.updateProjectionMatrix();
+	    shader.uniforms.cameraNear.value = value;
+	} );
+    gui.add( settings, 'cameraFar' ).min( distance ).max( 2000.0 ).onChange(
+	function ( value ) {
+	    camera.far = value;
+	    camera.updateProjectionMatrix();
+	    shader.uniforms.cameraFar.value = value;
+	} );
+}
+
+function init() {
+    camera = new THREE.PerspectiveCamera( settings.cameraFOV,
+					  window.innerWidth / window.innerHeight,
+					  settings.cameraNear, settings.cameraFar );
+    camera.position.y = 0;
+    uniforms = {
+	color:        { value: false },
+	cameraFOV:    { value: settings.cameraFOV },	
+	cameraNear:   { value: settings.cameraNear },
+	cameraFar:    { value: settings.cameraFar },
+	windowWidth:  { value: window.innerWidth },
+	windowHeight: { value: window.innerHeight },
+	moment:       { value: 0.0 }
+    };
+    scene = new THREE.Scene();
+    
+    shader = new THREE.ShaderMaterial( {
+	vertexShader: document.querySelector( '#post-vert' ).textContent.trim(),
+	fragmentShader: document.querySelector( '#post-frag' ).textContent.trim(),
+	uniforms: uniforms
+    } );
+    shader.glslVersion = THREE.GLSL3;
+    //
+    object = new THREE.Mesh( new THREE.TorusKnotGeometry( 50, 10, 50, 10, 2, 3 ),
+			     shader ); // material );
+    object.position.set( 0, 0, 0 );
+    scene.add( object );
+
+    // Add background
+    var path = "images/MilkyWay/";
+    var format = '.jpg';
+    var urls = [
+	path + 'posx' + format, path + 'negx' + format,
+	path + 'posy' + format, path + 'negy' + format,
+	path + 'posz' + format, path + 'negz' + format
+    ];
+      
+    textureCube        = new THREE.CubeTextureLoader().load( urls );
+    textureCube.type   = THREE.UnsignedByteType;
+    textureCube.format = THREE.RGBAFormat;
+    
+    //
+    renderer = new THREE.WebGLRenderer( { antialias: true } );
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    document.body.appendChild( renderer.domElement );
+    
+    //
+    window.addEventListener( 'resize', onWindowResize );
+    
+}
+
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize( window.innerWidth, window.innerHeight );
+}
+
+//
+function animate() {
+    requestAnimationFrame( animate );
+    render();
+}
+
+function render() {
+    const timer = Date.now() * 0.0001;
+    camera.position.x = Math.cos( timer ) * distance;
+    camera.position.z = Math.sin( timer ) * distance;
+    camera.lookAt( scene.position );
+    renderer.render( scene, camera );
+}
+</script>
+    
+</body>
+    </html>

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Shaders</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <!--
+//////////////////////////////////////////////////////////////////////////////
+// VERTEX SHADERS BEGIN
+//////////////////////////////////////////////////////////////////////////////
+-->
+    <script id="post-vert" type="x-shader/x-vertex">
+    // Vertex shader
+out vec3 vertPos;
+out vec3 projPos;
+out vec3 surfNormal;
+out mat4 projViewInv;
+out mat4 myModelMatrix;
+out mat4 myModelViewMatrix;
+void main(){
+    vec4 vertPos4 = modelViewMatrix * vec4( position, 1.0);
+    vertPos       = position; 
+    gl_Position   = projectionMatrix * vertPos4;
+    projPos       = gl_Position.xyz / gl_Position.w;
+    projViewInv   = inverse( projectionMatrix * modelViewMatrix );
+    surfNormal    = vec3(normalMatrix * normal );
+    myModelViewMatrix  = modelViewMatrix;
+    myModelMatrix  = modelMatrix;
+}
+</script>
+    <!--
+//////////////////////////////////////////////////////////////////////////////
+// VERTEX SHADERS END
+//////////////////////////////////////////////////////////////////////////////
+-->
+
+
+
+    <!--
+//////////////////////////////////////////////////////////////////////////////
+// FRAGMENT SHADERS BEGIN
+//////////////////////////////////////////////////////////////////////////////
+-->
+    
+    <textarea spellcheck="false" id="frag-chunk-begin" style="display: none;">
+    // Fragment shader: initial chunk 
+uniform float width; 
+uniform float height; 
+uniform vec3 ambient_color;
+uniform vec3 int_diff_color;
+uniform vec3 ext_diff_color;
+uniform vec3 specular_color;
+uniform vec3 sing_color;
+uniform float shininess;
+uniform float opacity;
+uniform float curv_scale;
+uniform int   princ_curv;
+uniform vec3 light1_direction;
+uniform vec3 light1_color;
+uniform vec3 light2_direction;
+uniform vec3 light2_color;
+uniform int   bg_mode;
+uniform vec3  bg_color;
+uniform float singularity;
+uniform float accuracy;
+uniform float iso;
+uniform float a;
+uniform float b;
+uniform float c;      
+uniform float scale;
+uniform float center_x;
+uniform float center_y;
+uniform float center_z;
+uniform float grid_size;
+uniform float grid_thickness;
+uniform float grid_attenuation;
+uniform int   shape;
+uniform int   color_model;
+uniform float camera_distance;
+uniform float view_radius;
+uniform float time;
+uniform samplerCube cubeMap;
+    in vec3 vertPos;
+    in vec3 projPos;
+    in mat4 projViewInv;
+    in mat4 myModelMatrix;
+    in mat4 myModelViewMatrix;
+    in vec3 surfNormal;
+out vec4 outColor;
+// // 3D function in cube
+// float vwidth  = view_radius; // cube width  
+// float vwidth2 = vwidth*vwidth; // cube width
+</textarea>
+    
+    <textarea spellcheck="false" id="frag-chunk-fct-begin" style="display: none;">
+    // chunk for opening function definition.
+// As a user, do not use `p`, but use `x`, `y`, `z` instead, which have been translated.
+float f( vec3 p ) {
+    p.x     += center_x;
+    p.y     += center_y;
+    p.z     += center_z;
+    float x  = p.x; 
+    float y  = p.y;
+    float z  = p.z;
+    float x2 = x*x;
+    float y2 = y*y;
+    float z2 = z*z;
+    float x3 = x2*x;
+    float y3 = y2*y;
+    float z3 = z2*z;
+    float t  = time;
+    </textarea>
+	
+	<textarea spellcheck="false" id="frag-chunk-fct-end" style="display: none;">
+	// chunk for closing function definition.
+}
+</textarea>
+
+
+    <textarea spellcheck="false" id="frag-chunk-phong" style="display: none;">
+    // Computes the Phong illumination model
+vec3 phongModel( vec3 color, vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    float  bound      = grid_size * grid_thickness;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+    // Computes the Phong illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-phong-grid" style="display: none;">
+    // Computes the Phong+Grid illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    if (( mod( pos.x, grid_size ) < bound
+	  || mod( pos.y, grid_size ) < bound
+	  || mod( pos.z, grid_size ) < bound ) )
+	color *= grid_attenuation;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-phong-spheres" style="display: none;">
+    // Computes the Phong+Spheres illumination model
+vec3 phongModel(vec3 pos, vec3 viewDir, vec3 normal, vec3 rayDir, vec3 lightDir, vec3 lightCol )
+{
+    float sirradiance = dot(lightDir, normal);
+    float irradiance  = abs( sirradiance ); //max(dot(lightDir, normal), 0.0);
+    vec3  color       = dot( rayDir, normal ) >= 0.0 ? ext_diff_color : int_diff_color;
+    float  bound      = grid_size * grid_thickness;
+    if ( mod( length( pos ), grid_size ) < bound )
+	color *= grid_attenuation;
+    vec3  reflectDir  = reflect(-lightDir, normal);
+    float  specDot    = max(dot(reflectDir, viewDir), 0.0);
+    color            += pow(specDot, shininess) * specular_color;
+    color            *= lightCol * irradiance;
+    return color;
+}
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-gradf" style="display: none;">
+    // Estimates the gradient of f at position p
+vec3 gradf( vec3 p ) {
+    float eps  = scale * 0.0001;
+    // numerical centered derivatives
+    float gfx = f( p + vec3( eps, 0.0, 0.0 ) ) - f( p - vec3( eps, 0.0, 0.0 ) );
+    float gfy = f( p + vec3( 0.0, eps, 0.0 ) ) - f( p - vec3( 0.0, eps, 0.0 ) );
+    float gfz = f( p + vec3( 0.0, 0.0, eps ) ) - f( p - vec3( 0.0, 0.0, eps ) );
+    return vec3( gfx, gfy, gfz ) / ( 2.0 * eps );
+}
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-hessf" style="display: none;">
+    // Estimates the Hessian of f at position p
+mat3 hessf( vec3 p ) {
+    mat3 H;
+    float eps  = 0.1 / scale;
+    float eps2 = eps * eps;
+    // numerical centered derivatives
+    vec3  dx   = vec3( eps, 0.0, 0.0 );
+    vec3  dy   = vec3( 0.0, eps, 0.0 );
+    vec3  dz   = vec3( 0.0, 0.0, eps );
+    float fp   = f( p );
+    float fppdx= f( p+dx );
+    float fpmdx= f( p-dx );        
+    float fppdy= f( p+dy );
+    float fpmdy= f( p-dy );        
+    float fppdz= f( p+dz );
+    float fpmdz= f( p-dz );        
+    H[ 0 ][ 0 ] = ( fppdx - 2.*fp + fpmdx ) / eps2;
+    H[ 1 ][ 1 ] = ( fppdy - 2.*fp + fpmdy ) / eps2;
+    H[ 2 ][ 2 ] = ( fppdz - 2.*fp + fpmdz ) / eps2;
+    H[ 0 ][ 1 ] = ( ( f(p+dx+dy) - f(p-dx+dy) ) - ( f(p+dx-dy) - f(p-dx-dy) ) ) / (4.*eps2);
+    H[ 0 ][ 2 ] = ( ( f(p+dx+dz) - f(p-dx+dz) ) - ( f(p+dx-dz) - f(p-dx-dz) ) ) / (4.*eps2);
+    H[ 1 ][ 2 ] = ( ( f(p+dy+dz) - f(p-dy+dz) ) - ( f(p+dy-dz) - f(p-dy-dz) ) ) / (4.*eps2);
+    H[ 1 ][ 0 ] = H[ 0 ][ 1 ];
+    H[ 2 ][ 0 ] = H[ 0 ][ 2 ];
+    H[ 2 ][ 1 ] = H[ 1 ][ 2 ];        
+    return H;
+}
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-curvatures" style="display: none;">
+    // Estimates the curvatures of f at position p
+vec2 mean_gaussian_curvatures( vec3 p ) {
+    vec3  G = gradf( p );
+    float g = length( G );
+    mat3  H = hessf( p );
+    mat4  C = mat4( H );
+//    for ( int i = 0; i < 3; i ++ )
+//	for ( int j = 0; j < 3; j ++ )
+//	    C[ i ][ j ] = H[ i ][ j ];
+    C[0][3] = G[ 0 ];
+    C[1][3] = G[ 1 ];
+    C[2][3] = G[ 2 ];
+    C[3][0] = G[ 0 ];
+    C[3][1] = G[ 1 ];
+    C[3][2] = G[ 2 ];
+    C[3][3] = 0.0;
+    vec2 curv_hg;
+    curv_hg.y = - determinant( C ) / (g*g*g*g);
+    curv_hg.x = - 0.5*( dot( H*G, G ) - g * g * (H[0][0]+H[1][1]+H[2][2]) ) / (g*g*g);
+    return curv_hg;
+}
+// Estimates the principal curvatures of f at position p
+// k1 : first principal curvature (highest value k1 >= k2)
+// k2 : second principal curvature (lowest value k2 <= k1)
+void principal_curvatures( in vec3 p, out float k1, out float k2 ) {
+    vec2 curv_hg  = mean_gaussian_curvatures( p );
+    float dk = sqrt( max( 0.0, curv_hg.x*curv_hg.x - curv_hg.y ) );
+    k2       = curv_hg.x - dk;
+    k1       = curv_hg.x + dk;
+}
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-eigendecomposition" style="display: none;">
+    // Estimates the principal directions of curvatures of f at position p
+/*
+ * Copyright 2015 
+ * Hélène Perrier <helene.perrier@liris.cnrs.fr>
+ * Jérémy Levallois <jeremy.levallois@liris.cnrs.fr>
+ * David Coeurjolly <david.coeurjolly@liris.cnrs.fr>
+ * Jacques-Olivier Lachaud <jacques-olivier.lachaud@univ-savoie.fr>
+ * Jean-Philippe Farrugia <jean-philippe.farrugia@liris.cnrs.fr>
+ * Jean-Claude Iehl <jean-claude.iehl@liris.cnrs.fr>
+ * 
+ * This file is part of ICTV.
+ * 
+ * ICTV is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * ICTV is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with ICTV.  If not, see <http://www.gnu.org/licenses/>
+ */
+void getEigenValuesVectors( in mat3 mat_data,
+			    out mat3 vectors,
+			    out vec3 values )
+{ 
+    vec3 e = vec3(0);
+    int dimension = 3;
+    int dimensionMinusOne = 2;
+    for( int j = 0; j < dimension; ++j )
+	values[ j ] =  mat_data[dimensionMinusOne][ j ];
+    // Householder reduction to tridiagonal form.
+    for( int i = dimensionMinusOne; i > 0 && i <= dimensionMinusOne; --i ) {
+	// Scale to avoid under/overflow.
+	float scale = 0.0;
+	float h =  0.0;
+	for( int k = 0; k < i; ++k )
+            scale += abs( values[ k ] );
+	if ( scale ==  0.0 ) {
+            e[ i ] = values[ i - 1 ];
+            for( int j = 0; j < i; ++j ) {
+		values[ j ] = mat_data[ ( i - 1 ) ] [  j  ];
+		mat_data[ i ][ j ] = 0.0;
+		mat_data[ j ][ i ] = 0.0;
+            }
+	} else {
+            // Generate Householder vector.
+            for ( int k = 0; k < i; ++k ) {
+		values[ k ] /= scale;
+		h += values[ k ] * values[ k ];
+            }
+            float f = values[ i - 1 ];
+            float g = sqrt( h );
+            if ( f >  0.0 ) g = -g;
+            e[ i ] = scale * g;
+            h -= f * g;
+            values[ i - 1 ] = f - g;
+            for ( int j = 0; j < i; ++j) e[ j ] =  0.0;
+            // Apply similarity transformation to remaining columns.
+            for ( int j = 0; j < i; ++j ) {
+		f = values[ j ];
+		mat_data[ j ][ i ] = f;
+		g = e[ j ] +  mat_data[ j ][ j ] * f;
+		for ( int k = j + 1; k <= i - 1; ++k ) {
+		    g +=  mat_data[ k ][ j ] * values[ k ];
+		    e[ k ] +=  mat_data[ k ][ j ] * f;
+		}
+		e[ j ] = g;
+            }
+            f = 0.0;
+            for ( int j = 0; j < i; ++j ) {
+		e[ j ] /= h;
+		f += e[ j ] * values[ j ];
+            }
+            float hh = f / ( h + h );
+            for ( int j = 0; j < i; ++j )
+		e[ j ] -= hh * values[ j ];
+            for ( int j = 0; j < i; ++j ) {
+		f = values[ j ];
+		g = e[ j ];
+		for ( int k = j; k <= i - 1; ++k )
+                    mat_data[ k ][ j ] = mat_data[ k ][ j ] - (f * e[ k ] + g * values[ k ]);
+		values[ j ] =  mat_data[ i - 1][ j ];
+		mat_data[ i ][ j ] = 0.0;
+            }
+	}
+	values[ i ] = h;
+    }
+    // Accumulate transformations.
+    for ( int i = 0; i < dimensionMinusOne; ++i ) {
+	mat_data[dimensionMinusOne][ i ] =  mat_data[ i ][ i ];
+	mat_data[ i ][ i ] = 1.0;
+	float h = values[ i + 1 ];
+	if ( h != 0.0 ) {
+            for ( int k = 0; k <= i; ++k )
+		values[ k ] =  mat_data[ k ][ i + 1 ] / h;
+            for ( int j = 0; j <= i; ++j ) {
+		float g = 0.0;
+		for ( int k = 0; k <= i; ++k )
+		    g +=  mat_data[ k ][ i + 1 ] *  mat_data[ k ][ j ];
+		for ( int k = 0; k <= i; ++k )
+                    mat_data[ k ][ j ] =   mat_data[k][ j ] - ( g * values[ k ] );
+            }
+	}
+	for ( int k = 0; k <= i; ++k )
+            mat_data[ k ][ i + 1 ] =  0.0;
+    }
+    for ( int j = 0; j < dimension; ++j ) {
+        values[ j ] =  mat_data[ dimensionMinusOne ][ j ];
+	mat_data[ dimensionMinusOne ][ j ] = 0.0;
+    }
+    mat_data[ dimensionMinusOne ][ dimensionMinusOne ] =  1.0;
+    e[ 0 ] =  0.0;
+    for ( int i = 1; i < dimension; ++i )
+	e[ i - 1 ] = e[ i ];
+    e[ dimensionMinusOne ] = 0.0;
+    float f = float( 0.0 );
+    float tst1 = float( 0.0 );
+    float eps = float( pow( 2.0, -52.0 ));
+    //float eps = float( pow( 2.0, -52.0 ));
+    for( int l = 0; l < dimension; ++l ) {
+	// Find small subdiagonal element
+	tst1 = float( max( tst1, abs ( values[ l ] ) + abs( e[ l ] )));
+	int m = l;
+	while ( m < dimension ) {
+          if ( abs ( e[ m ] ) <= eps * tst1 ) break;
+            ++m;
+        }
+	// If m == l, d[l] is an eigenvalue,
+	// otherwise, iterate.
+	if( m > l && l<2 ) {
+            int iter = 0;
+            do {
+		++iter;  // (Could check iteration count here.)
+		// Compute implicit shift
+		float g = values[ l ];
+		float p = ( values[ l + 1 ] - g ) / ( float( 2.0 ) * e[ l ] );
+		float r = float( sqrt ( p * p + float( 1.0 ) * float( 1.0 )));
+		if ( p < 0.0 ) r = -r;
+		values[ l ] = e[ l ] / ( p + r );
+		values[ l + 1 ] = e[ l ] * ( p + r );
+		float dl1 = values[ l + 1 ];
+		float h = g - values[ l ];
+		for( int i = l + 2; i < dimension; ++i )
+                    values[ i ] -= h;
+		f = f + h;
+		// Implicit QL transformation.
+		p = values[ m ];
+		float c = float( 1.0 );
+		float c2 = c;
+		float c3 = c;
+		float el1 = e[ l + 1 ];
+		float s = float( 0.0 );
+		float s2 = float( 0.0 );
+		for ( int i = m - 1; i >= l && i <= m - 1; --i ) {
+                    c3 = c2;
+                    c2 = c;
+                    s2 = s;
+                    g = c * e[ i ];
+                    h = c * p;
+                    r = float( sqrt ( p * p + e[ i ] * e[ i ] ));
+                    e[ i + 1 ] = s * r;
+                    s = e[ i ] / r;
+                    c = p / r;
+                    p = c * values[ i ] - s * g;
+                    values[ i + 1 ] = h + s * ( c * g + s * values[ i ] );
+                    // Accumulate transformation.
+                    for( int k = 0; k < dimension; ++k ) {
+			h =  mat_data[ k ][ i + 1 ];
+			mat_data[ k ][ i + 1 ] =  ( s *  mat_data[ k ][ i ] + c * h );
+			mat_data[ k ][ i ] = ( c *  mat_data[ k ][ i ] - s * h );
+                    }
+                }
+		p = - s * s2 * c3 * el1 * e[ l ] / dl1;
+		e[ l ] = s * p;
+		values[ l ] = c * p;
+		// Check for convergence.
+            } while ( abs ( e[ l ] ) > eps * tst1 && iter < 30);
+        }
+	values[ l ] = values[ l ] + f;
+	e[ l ] = float( 0.0 );
+    }
+    // Sort eigenvalues and corresponding vectors.
+    for ( int i = 0; i < dimensionMinusOne; ++i ) {
+	int k = i;
+	float p = values[ i ];
+	for ( int j = i + 1; j < dimension; ++j ) {
+            if ( values[ j ] < p ) {
+		k = j;
+		p = values[ j ];
+            }
+        }
+	if ( k != i ) {
+            values[ k ] = values[ i ];
+            values[ i ] = p;
+            for ( int j = 0; j < dimension; ++j ) {
+		p =  mat_data[ j ][ i ];
+		mat_data[ j ][ i ] =  mat_data[ j ][ k ];
+		mat_data[ j ][ k ] = p;
+            }
+        }
+    }
+    for(int i=0; i<3; i++)
+	for(int j=0; j<3; j++)
+	    vectors[i][j] = mat_data[i][j];
+}
+</textarea>
+
+
+    <textarea spellcheck="false" id="frag-chunk-principal-dirs" style="display: none;">
+    // Estimates the principal directions of curvatures of f at position p
+// @param[in]   pos a point on the surface
+// @param[out]  d1 the unit first principal direction (lowest curvature)
+// @param[out]  d2 the unit second principal direction (highest curvature)
+// @param[out]  d3 the unit normal direction
+void principal_directions( in vec3 p, out vec3 d1, out vec3 d2, out vec3 d3 )
+{
+    vec3  G = gradf( p );
+    float g = length( G );
+    mat3  H = hessf( p );
+    for ( int i = 0; i < 3; i++ )
+	for ( int j = 0; j < 3; j++ )
+	    H[ i ][ j ] += 100.0*G[i]*G[j]/ (g*g);
+    mat3  V;
+    vec3  K;
+    getEigenValuesVectors( H, V, K );
+    const int i1 = 0;
+    const int i2 = 1;
+    //int i1 = abs( K[ 0 ] ) > abs( K[ 1 ] ) ? 0 : 1;
+    //int i2 = 1 - i1;
+    d1 = normalize( vec3( V[ 0 ][ i1 ], V[ 1 ][ i1 ], V[ 2 ][ i1 ] ) );
+    d2 = normalize( vec3( V[ 0 ][ i2 ], V[ 1 ][ i2 ], V[ 2 ][ i2 ] ) );
+    d3 = normalize( vec3( V[ 0 ][ 2 ],  V[ 1 ][ 2 ],  V[ 2 ][ 2 ] )  );
+}
+</textarea>
+
+
+    <textarea spellcheck="false" id="frag-chunk-raytrace" style="display: none;">
+    // Approximates the solution f(x)=0 by bissection around two positions.
+// Invariant: f(p) < lvl <= f(q)
+vec3 bissection( vec3 p, vec3 q, float lvl )
+{   // 10: precision is 0.001
+    // 8: precision is 0.004
+    for ( int i = 0; i < 8; i++ )
+    {
+	vec3 m = 0.5*(p + q);
+	float fm = f( m );
+	if ( fm < lvl ) p = m;
+	else            q = m;
+    }
+    return 0.5*(p + q);
+}
+
+// Roughly approximates a position p, such that f(p)=0.
+// In practice, finds the first change of sign.
+vec3 ray_trace( vec3 p, vec3 d, float lvl, int n, float step )
+{
+    d     *= step;
+    vec3 q = p;
+    if ( f( p ) < lvl ) {
+	for ( int i = 0; i < n; i++ ) {
+	    q  += d;
+	    if ( f( q ) >= lvl ) return bissection( q - d, q, lvl );
+	}
+    } else {
+	for ( int i = 0; i < n; i++ ) {
+	    q  += d;
+	    if ( f( q ) <  lvl ) return bissection( q, q - d, lvl );
+	}
+    }
+    return q + normalize( d ) * 2. * view_radius;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-common-begin" style="display: none;">
+    // main common to all color models
+void main() {
+    // we must compute the direction of the tracing ray within the cube
+    vec3 focal = vec3( 0.0, 0.0, -camera_distance );
+    vec4 viewp4= projViewInv * vec4( focal, 1.0 );
+    vec3 viewp = normalize( viewp4.xyz / viewp4.w - vertPos );
+    float step = 0.1 * accuracy / scale;
+    int   n    = int( ceil( sqrt(3.0) * view_radius / (scale*step) ) );
+    // Check if we are looking from the inside of the viewing shape.
+    // If this is the case, we move backward the starting point of the ray-tracer?
+    vec3 tracePos = ( dot( surfNormal, focal ) > 0.0 )
+	? ( vertPos - 2.0*dot( vertPos, viewp ) * viewp ) / scale
+	: vertPos / scale;
+    vec3 pos   = ray_trace( tracePos /*vertPos / scale*/ , -viewp, iso, n, step );
+    vec3  g    = gradf( pos );
+    outColor.a = 1.0;
+    </textarea>
+	<textarea spellcheck="false" id="frag-chunk-main-common-end" style="display: none;">
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-rgb" style="display: none;">
+    // RGB model
+if ( dot( pos, pos ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-rgb-grid" style="display: none;">
+    // RGB+Grid model
+if ( dot( pos, pos ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+    float  bound = grid_size * grid_thickness;
+    if ( ( mod( pos.x, grid_size ) < bound
+	   || mod( pos.y, grid_size ) < bound
+	   || mod( pos.z, grid_size ) < bound ) )
+	outColor.rgb *= grid_attenuation;
+}
+</textarea>
+    <textarea spellcheck="false" id="frag-chunk-main-rgb-spheres" style="display: none;">
+    // RGB+Spheres model
+if ( dot( pos, pos ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else 
+{
+    vec3 vn      = normalize( g );
+    outColor.rgb = vec3( abs( vn.x ), abs( vn.y ), abs( vn.z ) );
+    float  bound = grid_size * grid_thickness;
+    if ( mod( length( pos ), grid_size ) < bound )
+	outColor.rgb *= grid_attenuation;
+}
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-phong" style="display: none;">    
+
+vec3 radiance;
+vec3 viewDir = -viewp; // vec3(0.0,0.0,1.0);  // normalize( -vertPos);
+vec3 ld1  = normalize( light1_direction );
+vec3 ld2  = normalize( light2_direction );
+vec3 vn   = normalize( g );
+radiance  = phongModel( pos, viewDir, vn, 
+			viewp, ld1, light1_color );
+radiance += phongModel( pos, viewDir, vn, 
+			viewp, ld2, light2_color );
+const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
+radiance += phongModel( pos, viewDir, vn, 
+			viewp, -viewp, front_light );
+radiance += ambient_color;
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-phong-two-layers" style="display: none;">
+    // Two layers (with transparency) Phong model.
+if ( dot( pos, pos ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = bg_color; // ray did not find a surface
+else if ( dot( g, g ) < singularity )
+    outColor.rgb = sing_color; // singularity
+else
+{
+    const vec3 front_light = vec3( 0.6, 0.6, 0.6 );
+    vec3 radiance;
+    vec3 viewDir = -viewp; // vec3(0.0,0.0,1.0); // normalize( -vertPos);
+    vec3 ld1  = normalize( light1_direction );
+    vec3 ld2  = normalize( light2_direction );
+    vec3 vn   = normalize( g );
+    radiance  = phongModel( pos, viewDir, vn, 
+			    viewp, ld1, light1_color );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, ld2, light2_color );
+    radiance += phongModel( pos, viewDir, vn, 
+			    viewp, -viewp, front_light );
+    vec3 radiance2;
+    vec3 spos  = pos - viewp * step;
+    vec3 pos2  = ray_trace( spos, -viewp, iso, n, step );
+    vec3  g2   = gradf( pos2 );
+    if ( dot( pos2, pos2 ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
+	radiance2 = bg_color; // ray did not find a surface
+    else if ( dot( g2, g2 ) < singularity )
+	radiance2 = sing_color; // singularity
+    else
+    {
+	vec3 vn2  = normalize( g2 );
+	radiance2 = phongModel( pos2, viewDir, vn2, 
+				viewp, ld1, light1_color );
+	radiance2+= phongModel( pos2, viewDir, vn2, 
+				viewp, ld2, light2_color );
+    }
+    outColor.rgb = ambient_color + opacity*radiance + (1.0-opacity)*radiance2;
+}
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-simple-phong" style="display: none;">
+    // Simpler Phong model for faster display
+const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
+vec3 radiance = ambient_color;
+vec3 viewDir  = -viewp; // vec3(0.0,0.0,1.0); //normalize( -vertPos);
+vec3 vn       = normalize( g );
+radiance     += phongModel( pos, viewDir, vn, 
+			    viewp, -viewp, front_light );
+</textarea>
+
+
+    <textarea spellcheck="false" id="frag-chunk-main-mean-curvatures" style="display: none;">
+    // Display mean curvatures
+const vec3 white    = vec3( 1.0, 1.0, 1.0 );
+vec2 curv_hg  = mean_gaussian_curvatures( pos );
+float H = min( 1.0, max( curv_hg.x / curv_scale, -1.0 ) );
+vec3 radiance = H >= 0.0
+    ? ( (1.-H)*white + H*ext_diff_color )
+    : ( (1.+H)*white - H*int_diff_color );
+float  bound  = grid_size * grid_thickness;
+if ( mod( abs(H), grid_size ) < bound )
+    radiance *= grid_attenuation;
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-gauss-curvatures" style="display: none;">
+    // Display mean curvatures
+const vec3 white    = vec3( 1.0, 1.0, 1.0 );
+vec2 curv_hg  = mean_gaussian_curvatures( pos );
+float G = min( 1.0, max( curv_hg.y / curv_scale, -1.0 ) );
+vec3 radiance = G >= 0.0
+    ? ( (1.-G)*white + G*ext_diff_color )
+    : ( (1.+G)*white - G*int_diff_color );
+float  bound  = grid_size * grid_thickness * grid_thickness;
+if ( mod( abs(G), grid_size ) < bound )
+    radiance *= grid_attenuation;
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-convex-concave" style="display: none;">
+    // Display convex-concave zones
+const vec3 white    = vec3( 1.0, 1.0, 1.0 );
+const vec3 red      = vec3( 1.0, 0.0, 0.0 );
+const vec3 green    = vec3( 0.0, 1.0, 0.0 );
+const vec3 blue     = vec3( 0.0, 0.0, 1.0 );
+vec2 curv_hg  = mean_gaussian_curvatures( pos );
+float dk = sqrt( max( 0.0, curv_hg.x*curv_hg.x - curv_hg.y ) );
+float k1 = curv_hg.x - dk;
+float k2 = curv_hg.x + dk;
+float force = min( max( abs(k1), abs(k2) ) / curv_scale, 1.0 );
+float theta = atan( k2, k1 );
+vec3 radiance = (1.0 - force) * white;
+const float pi_2  = 1.57079632679;
+const float pi    = 2.0*pi_2;
+const float pi_4  = 0.5*pi_2;
+const float pi3_4 = 3.0*pi_4;
+//const float band = 1.57079632679 / 100.0;
+if ( theta <  0.0 ) theta += 4.0*pi_2;
+if ( theta <= pi_2 ) {
+    float l   = (theta - pi_4) / pi_4;
+    radiance += force * vec3( 1.0, l, 0.0 );
+} else if ( theta <= pi3_4 ) {
+    float l   = (theta - pi_2) / pi_4;
+    radiance += force * vec3( 1.0-l, 1.0, 0.0 );
+} else if ( theta <= pi ) {
+    float l   = (theta - pi3_4) / pi_4;
+    radiance += force * vec3( 0.0, 1.0, l );
+} else {
+    float l   = (theta - pi) / pi_4;
+    radiance += force * vec3( 0.0, 1.0 - l, 1.0 );
+}
+float  bound  = grid_size * grid_thickness;
+// if ( mod( abs(force), grid_size ) < bound )
+//     radiance *= grid_attenuation;
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-directions" style="display: none;">
+    // Display directions
+const float pi_2  = 1.57079632679;
+const float pi    = 2.0*pi_2;
+vec3  vn   = normalize( g );
+vec3  d1; // first principal direction (highest curvature)
+float k1; // highest curvature
+vec3  d2; // second principal direction (lowest curvature)
+float k2; // lowest curvature
+vec3  d3;
+principal_directions( pos, d1, d2, d3 );
+principal_curvatures( pos, k1, k2 );
+// we wish the direction orthogonal to first principal direction, hence d2 !
+// vec4  pd1_4 = projView * vec4( normalize( d2 ), 1.0 );
+// vec2  pd1   = normalize( pd1_4.xy / pd1_4.w ); // unit d1^perp as seen on the screen
+// vec4  pd2_4 = projView * vec4( normalize( d1 ), 1.0 );
+// vec2  pd2   = normalize( pd2_4.xy / pd2_4.w ); // unit d2^perp as seen on the screen
+
+float curv1 = min( abs( 10.0 * k1 / curv_scale ), 1.0 );
+float curv2 = min( abs( 10.0 * k2 / curv_scale ), 1.0 );
+float freq  = 10.0 / grid_size;
+// vec2  ppos  = gl_FragCoord.xy / 20.0;
+// float print1= 0.9 - abs(sin( freq * dot( pd1, ppos ) ));
+// float print2= 0.9 - abs(sin( freq * dot( pd2, ppos ) ));
+
+// float print1= 1.05 - 1.1 * abs(sin( freq * dot( d1, pos ) ) );
+// float print2= 1.05 - 1.1 * abs(sin( freq * dot( d2, pos ) ) );
+// float print1= 0.1+1.2*abs(sin( freq * dot( d1, pos ) ) );
+// float print2= 0.1+1.2*abs(sin( freq * dot( d2, pos ) ) );
+float print1 = grid_thickness+(1.0+6.*grid_thickness)*abs(sin( freq * dot( d1, pos ) ) );
+float print2 = grid_thickness+(1.0+6.*grid_thickness)*abs(sin( freq * dot( d2, pos ) ) );
+float lc     = max( curv1,curv2);
+vec3  col_in = vec3(1.0,1.0,1.0) - ambient_color;
+vec3  col_out= ambient_color;
+float lambda = 3.0 * ( 0.5 + curv1 - print1 );
+if ( princ_curv == 1 )      lambda = 10.0 * ( 0.5 + curv2 - print2 );
+else if ( princ_curv == 2 ) lambda = max( lambda, 10.0 * ( 0.5 + curv2 - print2 ) );
+// float lambda = 0.8;
+vec3 radiance = clamp( lc * lambda * col_in + (1.-lc)*(1.-lambda) * col_out,
+		       min( col_in, col_out ), max( col_in, col_out ) );
+// vec3 radiance;
+// if ( princ_curv == 0 )
+//     radiance = (curv1 >= print1)
+//     ? curv1 * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-curv1) * ambient_color
+//     : ambient_color;
+// else if ( princ_curv == 1 )
+//     radiance = (curv2 >= print2)
+//     ? curv2 * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-curv2) * ambient_color
+//     : ambient_color;
+// else // both direction
+//     radiance = ( (curv1 >= print1) || (curv2 >= print2) )
+//     ? lc * (vec3(1.0,1.0,1.0) - ambient_color) + (1.-lc) * ambient_color
+//     : ambient_color;
+const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
+vec3 viewDir = -viewp; // vec3(0.0,0.0,1.0); //normalize( -vertPos);
+radiance     = phongModel( radiance, pos, viewDir, vn, 
+			   viewp, -viewp, front_light );
+    </textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-phong-reflection" style="display: none;">
+
+// Compute one reflexion
+// intersection at pos, from direction  -viewp hitting at normal g
+const vec3 front_light = vec3( 1.0, 1.0, 1.0 );
+vec3 viewDir  = -viewp; // vec3(0.0,0.0,1.0); //normalize( -vertPos);
+vec3 vn       = normalize( g );
+float delta   = max( dot( (- scale * pos), viewp ), 0.0);
+float l       = clamp( delta / view_radius, 0.0, 1.0 ); // compute fog
+float coef_r  = 0.0;
+vec3 rcolor   = vec3(0.0,0.0,0.0);
+if ( l < 1.0 ) {
+    coef_r     = clamp( 1.0 - 2.0*(opacity-0.5), 0.0, 1.0 );
+    vec3 rdir  = reflect( -viewp, vn );
+    vec3 rpos  = ray_trace( pos + 0.01*rdir, rdir, iso, n, step );
+    vec3 rg    = gradf( rpos );
+    vec3 rvn   = normalize( rg );
+    vec3 rrdir = reflect( rdir, rvn );
+    // vec4 rray  = myModelViewMatrix * vec4( rrdir, 0.0);
+    // float rrz  = normalize( rray.xyz ).y;
+    vec3 bcol  = background_color( rrdir /*rrz*/ ); 
+    rcolor     = coef_r * bcol +
+	(1. - coef_r ) * phongModel( rpos, viewDir, rvn,
+	 			     -rdir, -viewp, front_light );
+    //vec4  ray  = myModelViewMatrix * vec4( rdir, 0.0);
+    //float rz   = normalize( ray.xyz ).y;
+    float rdelta= max( dot( (scale * rpos), rdir ), 0.0);
+    float rls  = exp( - dot( rg, rg ) / singularity ); //
+    rcolor     = (1.-rls)*rcolor + rls * sing_color;
+    float rl   = clamp( rdelta / view_radius, 0.0, 1.0 ); // compute fog
+    rcolor     = (1.-rl)*rcolor + rl * background_color( rdir /* rz */ );
+}
+vec3 radiance = ambient_color;
+radiance     += phongModel( pos, viewDir, vn, 
+			    viewp, -viewp, front_light );
+//float z       = 2.*gl_FragCoord.y / height - 1.0;
+float ls      = exp( - dot( g, g ) / singularity ); //
+radiance      = (1.-ls)*radiance + ls * sing_color;
+outColor.rgb  = coef_r * rcolor
+    + (1. -coef_r)*( (1.-l)*radiance + l * background_color( -viewp ) );
+</textarea>
+
+
+    <textarea spellcheck="false" id="frag-chunk-bg-color" style="display: none;">
+    // Compute a background color from a z in [-1,1]
+vec3 background_color( float z ) {
+    //if ( bg_mode == 0 ) return bg_color;
+    z = clamp( z, -1., 1. );
+    vec3 c0 = vec3( 1.0,0.0,0.0);
+    vec3 c1 = vec3( 1.0,1.0,0.0);
+    vec3 c2 = vec3( 1.0,1.0,1.0);
+    vec3 c3 = vec3( 0.0,1.0,1.0);
+    vec3 c4 = vec3( 0.0,0.0,1.0);
+    vec3 c5 = vec3( 0.0,0.0,0.0);
+    if ( z < -0.5 )
+	return (1. - 2.*(z+1.)) * c0 + 2.*(z+1.) * c1;
+    else if ( z < 0. )
+	return (1. - 2.*(z+0.5)) * c1 + 2.*(z+0.5) * c2;
+    else if ( z < 0.5 )
+	return (1. - 2.*z) * c2 + 2.*z * c3;
+    else if ( z < 0.75 )
+	return (1. - 4.*(z-0.5)) * c3 + 4.*(z-0.5) * c4;
+    else 
+	return (1. - 4.*(z-0.75)) * c4 + 4.*(z-0.75) * c5;
+}
+
+vec3 background_color( vec3 dir ) {
+    // static backgrounds
+    vec3 vdir  = (myModelMatrix * vec4( dir.x, dir.y, dir.z, 0.0 )).xyz; 
+    if ( bg_mode == 0 ) return bg_color;
+    else if ( bg_mode == 1 ) {
+	//vec3 c     = textureCube( cubeMap, vec3( -vdir.x, vdir.y, vdir.z) ).rgb;
+	//	float z       = 2.*gl_FragCoord.y / height - 1.0;
+	return background_color( vdir.y );
+    } else if ( bg_mode == 2 ) {
+	if ( vdir.y >= 0.0 ) return background_color( vdir.y );
+	float x = -0.5 * vdir.x / vdir.y;
+	float y = -0.5 * vdir.z / vdir.y;
+	float d = sqrt( x*x + y*y );
+	float t = min( d, 30.0 ) / 30.0;
+	x -= floor( x );
+	y -= floor( y );
+	if ( ( ( x >= 0.5 ) && ( y >= 0.5 ) ) || ( ( x < 0.5 ) && ( y < 0.5 ) ) )
+	    return (1.0 - t)*vec3( 0.2, 0.2, 0.2 ) + t * vec3( 1.0, 1.0, 1.0 );
+	else
+	    return (1.0 - t)*vec3( 0.4, 0.4, 0.4 ) + t * vec3( 1.0, 1.0, 1.0 );
+    } else {
+	// dynamic background
+	// Take into account the possible rotation of the object.
+	vec3 c     = textureCube( cubeMap, vec3( -vdir.x, vdir.y, vdir.z) ).rgb;
+	// Gamma correction needed for background photo.
+	const float gamma = 1./2.2; 
+	return vec3( pow( c.r, gamma ), pow( c.g, gamma ), pow( c.b, gamma ) );
+    }
+}
+    
+</textarea>
+    
+    <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-crisp" style="display: none;">
+    // Crisp singularity + background
+//float z       = 2.*gl_FragCoord.y / height - 1.0;
+if ( dot( pos, pos ) > view_radius*view_radius ) // f( pos ) > ( iso + 0.01 ) )
+    outColor.rgb = background_color( -viewp ); // ray did not find a surface
+else if ( dot( g2, g2 ) < singularity )
+    outColor.rgb = sing_color; // singularity
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-bg-singularity-smooth" style="display: none;">
+    // Smooth fog background and progressive singularities.
+float delta   = max( dot( (- scale * pos), viewp ), 0.0);
+float ls      = exp( - dot( g, g ) / singularity ); //
+radiance      = (1.-ls)*radiance + ls * sing_color;
+float l       = clamp( delta / view_radius, 0.0, 1.0 ); // compute fog
+outColor.rgb  = (1.-l)*radiance + l * background_color( -viewp );
+</textarea>
+
+    <textarea spellcheck="false" id="frag-chunk-main-bg" style="display: none;">
+    // Smooth fog background and progressive singularities.
+float delta   = max( dot( (- scale * pos), viewp ), 0.0);
+float l       = clamp( delta / view_radius, 0.0, 1.0 ); // compute fog
+outColor.rgb  = (1.-l)*radiance + l * background_color( -viewp );
+</textarea>
+
+    <!--
+//////////////////////////////////////////////////////////////////////////////
+// FRAGMENT SHADERS END
+//////////////////////////////////////////////////////////////////////////////
+-->
+  </body>
+</html>  
