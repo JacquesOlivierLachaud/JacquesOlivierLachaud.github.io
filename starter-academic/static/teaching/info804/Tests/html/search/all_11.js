@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['il_20est_20temps_20de_20jouer_0',['4.5 - Il est temps de jouer !',['../ig_tp2.html#ig_tp2_4_5',1,'']]],
+  ['image2d_1',['Image2D',['../classrt_1_1Image2D.html',1,'rt']]],
+  ['image2dwriter_2',['Image2DWriter',['../classrt_1_1Image2DWriter.html',1,'rt']]],
+  ['image2dwriter_3c_20color_20_3e_3',['Image2DWriter&lt; Color &gt;',['../classrt_1_1Image2DWriter_3_01Color_01_4.html',1,'rt']]],
+  ['image2dwriter_3c_20unsigned_20char_20_3e_4',['Image2DWriter&lt; unsigned char &gt;',['../classrt_1_1Image2DWriter_3_01unsigned_01char_01_4.html',1,'rt']]],
+  ['images_20faites_20par_20les_20étudiants_20sur_20le_20tp_20ray_20tracing_5',['Quelques images faites par les étudiants sur le tp ray-tracing',['../ig_tp2_etds.html',1,'']]],
+  ['in_5frefractive_5findex_6',['in_refractive_index',['../structrt_1_1Material.html#a7e754d8c44481b500cae8a376a5e0eca',1,'rt::Material']]],
+  ['index_20d_20une_20cellule_7',['4.2 - Zipper et index d&apos;une cellule',['../ig_tp1.html#ig_tp1_4_2',1,'']]],
+  ['infini_8',['5.1 Un nouvel objet graphique: le plan infini (*)',['../ig_tp2.html#ig_tp2_5_1',1,'']]],
+  ['infini_20l_20eau_20calme_9',['5.2 Une variante du plan infini, l&apos;eau calme (***)',['../ig_tp2.html#ig_tp2_5_2',1,'']]],
+  ['influence_20de_20la_20profondeur_20de_20réflexion_20réfraction_10',['4.4 - De l&apos;influence de la profondeur de réflexion / réfraction',['../ig_tp2.html#ig_tp2_4_4',1,'']]],
+  ['info_202023_202024_11',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]],
+  ['info804_20m1_20info_202023_202024_12',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]],
+  ['informatique_20graphique_20info804_20m1_20info_202023_202024_13',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]],
+  ['init_14',['init',['../classrt_1_1Viewer.html#a255cc2d6f55fc8565e614618d41589b1',1,'rt::Viewer::init()'],['../structrt_1_1Sphere.html#a19959ebd259a61462bfaa00ce1646b63',1,'rt::Sphere::init()'],['../structrt_1_1Scene.html#a2da8f0b8825e7a7c75567b706176385c',1,'rt::Scene::init()'],['../structrt_1_1Light.html#a2e8e11c22af30ac83168917784fe5918',1,'rt::Light::init()'],['../structrt_1_1PointLight.html#aa640ae91baa6c907fff896b3d6d70e85',1,'rt::PointLight::init()'],['../structrt_1_1GraphicalObject.html#a7e44e4ceb4562f25aca3864840f06e22',1,'rt::GraphicalObject::init()'],['../classViewer.html#a255cc2d6f55fc8565e614618d41589b1',1,'Viewer::init()']]],
+  ['initial_20application_20minimale_20libqglviewer_15',['2 - Code initial, application minimale libQGLViewer',['../ig_tp1.html#ig_tp1_2',1,'']]],
+  ['initiale_16',['2.2 - Construire l&apos;application initiale',['../ig_tp2.html#ig_tp2_2_2',1,'']]],
+  ['installation_20de_20three_20js_20et_20d_20un_20serveur_20web_20local_17',['1.1 - Installation de three.js et d&apos;un serveur web local',['../ig_tp3.html#ig_tp3_1_1',1,'']]],
+  ['intersecté_18',['3.3 - Couleur directe de l&apos;objet intersecté',['../ig_tp2.html#ig_tp2_3_3',1,'']]],
+  ['intersection_20avec_20l_20objet_20le_20plus_20proche_20sur_20le_20trajet_20du_20rayon_19',['3.2 - Rendu minimal, intersection avec l&apos;objet le plus proche sur le trajet du rayon.',['../ig_tp2.html#ig_tp2_3_2',1,'']]],
+  ['intersection_20rayon_20sphère_20',['3.1 - Intersection rayon / sphère',['../ig_tp2.html#ig_tp2_3_1',1,'']]],
+  ['iterator_21',['Iterator',['../structrt_1_1Image2D_1_1Iterator.html',1,'rt::Image2D']]]
+];
