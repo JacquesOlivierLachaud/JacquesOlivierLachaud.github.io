@@ -2,6 +2,7 @@
 title: INFO804
 summary: Introduction à l'informatique graphique
 date: 2025-08-01
+lastmod: 2025-08-06
 type: docs
 tags:
   - lecture
