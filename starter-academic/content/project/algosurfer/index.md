@@ -1,13 +1,6 @@
 ---
 title: AlgoSurfer
-summary: |-
-  *implicit/algebraic surface viewer*
-
-  (project for pedagogy and fun)
-
-  Mar. 2024 - May. 2024
-
-  **Creator**
+summary: 'implicit/algebraic surface viewer (project for pedagogy and fun)  Mar. 2024 - May. 2024 / Creator'
 
 tags:
   - fun

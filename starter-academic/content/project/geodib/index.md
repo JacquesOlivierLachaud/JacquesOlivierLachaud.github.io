@@ -1,13 +1,6 @@
 ---
 title: GeoDIB
-summary: |2-
-  *Géométrie des Objets Discrets Bruités*
-
-  (ANR project ANR-06-BLANC-0225)
-
-  Nov. 2006 - May. 2011
-
-  **Team leader**  LaBRI/LAMA
+summary: 'Géométrie des Objets Discrets Bruités (ANR project ANR-06-BLANC-0225) Nov. 2006 - May. 2011 / Team leader  LaBRI/LAMA'
 
 tags:
   - digital geometry

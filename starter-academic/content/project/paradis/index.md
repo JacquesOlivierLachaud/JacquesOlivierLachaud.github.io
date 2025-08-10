@@ -1,13 +1,6 @@
 ---
 title: PARADIS
-summary: |2-
-  *PARameter-free Analysis of DIgital Surfaces*
-
-  (ANR JCJC project ANR-18-CE23-0007-01)
-
-  Dec. 2018 - Mar. 2024
-
-  **Member**
+summary: 'PARameter-free Analysis of DIgital Surfaces (ANR JCJC project ANR-18-CE23-0007-01) Dec. 2018 - Mar. 2024 / Member'
 
 tags:
   - plane probing

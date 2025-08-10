@@ -1,13 +1,6 @@
 ---
 title: FOGRIMMI
-summary: |2-
-  *FOuille de GRandes IMages MIcroscopiques*
-
-  (ANR project ANR-06-MDCA-0008)
-
-  Nov. 2006 - Oct. 2010
-
-  **Team leader**  LaBRI/LAMA
+summary: 'FOuille de GRandes IMages MIcroscopiques (ANR project ANR-06-MDCA-0008) Nov. 2006 - Oct. 2010 / Team leader  LaBRI/LAMA'
 
 tags:
   - image analysis

@@ -1,13 +1,6 @@
 ---
 title: StableProxies
-summary: |2-
-  *Stable Geometry Processing and High Performance Calculus on Heterogeneous Geometrical Data*
-
-  (ANR project ANR-22-CE46)
-
-  Feb. 2023 - Jan. 2028
-
-  **Team Leader** LAMA
+summary: 'Stable Geometry Processing and High Performance Calculus on Heterogeneous Geometrical Data (ANR project ANR-22-CE46) Feb. 2023 - Jan. 2028 / Team Leader LAMA'
 
 tags:
   - digital geometry

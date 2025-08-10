@@ -1,13 +1,6 @@
 ---
 title: DGtal
-summary: |2-
-  *Digital geometry tools and Algorithm.*
-
-  Since 2010.
-
-  An open-source generic C++ library for digital geometry.
-
-  **Co-founder**
+summary: 'Digital geometry tools and Algorithm (Since 2010) An open-source generic C++ library for digital geometry / Co-founder'
 
 tags:
   - digital geometry

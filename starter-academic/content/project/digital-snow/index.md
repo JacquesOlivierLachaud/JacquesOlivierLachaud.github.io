@@ -1,13 +1,6 @@
 ---
 title: DigitalSnow
-summary: |2-
-  *Discrete Geometry and Applied Mathematics for Snow Metamorphism*
-
-  (ANR Blanc project ANR-11-BS02-009)
-
-  Nov. 2011 - Aug. 2016
-
-  **Team Leader** LAMA
+summary: 'Discrete Geometry and Applied Mathematics for Snow Metamorphism  (ANR Blanc project ANR-11-BS02-009)  Nov. 2011 - Aug. 2016 / Team Leader LAMA'
 
 tags:
   - digital geometry

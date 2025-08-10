@@ -1,13 +1,6 @@
 ---
 title: CoMeDiC
-summary: |2-
-  *Convergent Metrics for Digital Calculus*
-
-  (ANR project ANR-15-CE40-0006)
-
-  Oct. 2015 - Jul. 2021
-  
-  **Principal Investigator**
+summary: 'Convergent Metrics for Digital Calculus (ANR project ANR-15-CE40-0006) Oct. 2015 - Jul. 2021 / Principal Investigator'
 
 tags:
   - digital geometry
