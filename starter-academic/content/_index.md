@@ -128,40 +128,42 @@ sections:
         </td><td width="50%>
 
         ![principal-directions](albums/demo/bunny64-NAdd-VCM-h1-dirs-fine-1.png 'Estimated principal directions of curvature on a digitized Stanford bunny shape (resolution 64x64x64) using corrected curvature measures; principal curvatures are depicted using colors (blue is very low negative, cyan is low negative, black is zero, yellow is high positive, red is very high positive).') 
-
+        [Discrete & Computational Geometry 2022]({{< relref "/publication/lachaud-2022-dcg" >}})
         </td>
         </tr>
         <tr>
         <td width="50%">
 
         ![mean-curvature](albums/demo/dragon-icnc-convergence-H.jpg 'Multigrid convergence of mean curvature estimator based on Corrected Normal Current. The finer the sampling, the more stable are the curvature estimations.')
-
+        [Discrete & Computational Geometry 2022]({{< relref "/publication/lachaud-2022-dcg" >}})
         </td><td width="50%>
 
         ![gaussian-curvature](albums/demo/dragon-icnc-convergence-G.jpg 'Multigrid convergence of Gaussian curvature estimator based on Corrected Normal Current. The finer the sampling, the more stable are the curvature estimations.')
-
+        [Discrete & Computational Geometry 2022]({{< relref "/publication/lachaud-2022-dcg" >}})
         </td>
         </tr>
         <tr>
         <td width="50%">
 
         ![curvature-k1](albums/demo/murex-k1.jpg 'Lowest principal curvatures on a "Murex" point cloud, estimated using randomized corrected curvature measures.')
-
+        [Computer Graphics Forum 2023 (SGP2023)]({{< relref "/publication/lachaud-2023-cgf" >}})
         </td><td width="50%>
         
         ![curvature-k2](albums/demo/murex-k2.jpg 'Highest principal curvatures on a "Murex" point cloud, estimated using randomized corrected curvature measures.')
-
+        [Computer Graphics Forum 2023 (SGP2023)]({{< relref "/publication/lachaud-2023-cgf" >}})
         </td>
         </tr>
         <tr>
         <td width="50%">
 
         ![depixelizing-1](albums/demo/pok-066.jpg 'Depixelizing pixel art: 16 x zoomed bitmap image using Geometric Total Variation.')
+        [ACPR2019]({{< relref "/publication/kerautret-2019-acpr" >}})
         
         </td><td width="50%>
 
         ![depixelizing-2](albums/demo/pok-085.jpg 'Depixelizing pixel art: 16 x zoomed bitmap image using Geometric Total Variation.')
-
+        [ACPR2019]({{< relref "/publication/kerautret-2019-acpr" >}})
+        
         </td>
         </tr>
         <tr>
