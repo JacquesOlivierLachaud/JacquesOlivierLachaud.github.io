@@ -42,8 +42,8 @@ tags:
 6. [Détection de points caractéristiques / features](https://codimd.math.cnrs.fr/s/A_-AUJ1ql)
 7. Formes: mesures, analyse et classification
 8. Apprentissage automatique et réseaux de neurones
-    a. [Introduction à l'apprentissage par réseaux de neurones](https://codimd.math.cnrs.fr/s/l4BaTcFGY)
-    b. [Apprentissage supervisé](https://codimd.math.cnrs.fr/s/PYL9ayApI)
+  - [Introduction à l'apprentissage par réseaux de neurones](https://codimd.math.cnrs.fr/s/l4BaTcFGY)
+  - [Apprentissage supervisé](https://codimd.math.cnrs.fr/s/PYL9ayApI)
 9. "Shape from X"
   - reconstruction 3D à partir de stéréovision / multivision
   - reconstruction 3D à partir d'ombrage
