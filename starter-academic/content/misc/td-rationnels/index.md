@@ -23,9 +23,9 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
    - un constructeur prenant deux entiers `(p, q)` ;
    - un constructeur par défaut représentant `0/1`.
 
->
-> :thinking: Pourquoi n'a-t-on pas besoin d'écrire un constructeur par copie ?
->
+   >
+   > :thinking: Pourquoi n'a-t-on pas besoin d'écrire un constructeur par copie ?
+   >
 
 2. **Ajouter une méthode `toString()`** qui retourne une chaîne de caractères de la forme `"num/den"`.  
    Tester la création et l’affichage de quelques rationnels.
@@ -41,15 +41,15 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
    Ajouter une méthode `reduce()` qui simplifie le rationnel.  
    Appeler `reduce()` dans le constructeur.
 
-> :memo: On rappelle qu'on utilise la formule `gcd(a,b)=gcd(b, a % b)`
->si `b > a > 0` et `gcd(a,0)=a` sinon.
+   > :memo: On rappelle qu'on utilise la formule `gcd(a,b)=gcd(b, a % b)`
+   > si `b > a > 0` et `gcd(a,0)=a` sinon.
 
-> :warning: Faut-il faire attention au signe de a ou b dans la
-> fonction `gcd` ? Si oui ou non, pourquoi ?
+   > :warning: Faut-il faire attention au signe de a ou b dans la
+   > fonction `gcd` ? Si oui ou non, pourquoi ?
 
-> :thinking: Pourquoi veut-on réduire la fraction (e.g. 3/10) plutôt
-> que de la laisser telle quelle (e.g 15/50) ? Y voyez-vous un ou des
-> avantages ?
+   > :thinking: Pourquoi veut-on réduire la fraction (e.g. 3/10) plutôt
+   > que de la laisser telle quelle (e.g 15/50) ? Y voyez-vous un ou des
+   > avantages ?
 
 
 ---
@@ -74,14 +74,11 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
    ```
 
    > :warning: Attention à la gestion de la division par zéro. On
-   > pourra lancer une exception `runtime_error`. On pourra aussi
-   > laisser l'état du rationnel à `1/0` ou `-1/0` (si le numérateur
-   > n'était pas nul) ou `0/0`. Cela permet de distinguer si le
-   > rationnel est infini ou non-valide.
+   > pourra aussi laisser l'état du rationnel à `1/0` ou `-1/0` (si le
+   > numérateur n'était pas nul) ou `0/0`. Cela permet de distinguer
+   > si le rationnel est infini ou non-valide.
 
-5. **Surcharger les opérateurs `+`, `-`, `*` et `/`.** Vérifier la
-   division par zéro dans `/`, et lancer une exception `runtime_error`
-   si nécessaire.
+5. **Surcharger les opérateurs `+`, `-`, `*` et `/`.** .
 
    Pour rappel, le prototype de la surcharge de l'opérateur `+` est :
    ```
@@ -116,26 +113,46 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 9. **Surcharger `operator<<`** pour afficher un rationnel dans un flux `ostream`.  
    **Surcharger `operator>>`** pour lire un rationnel depuis un flux `istream`.
 
-> :warning: Ces opérateurs sont forcéments des fonctions, pas des
-> méthodes. Par exemple, le prototype de `operator<<` est
-> `std::ostream& operator<<( std::ostream& out, const Rational& r );`
+   > :warning: Ces opérateurs sont forcéments des fonctions, pas des
+   > méthodes. Par exemple, le prototype de `operator<<` est
+   > ```
+   > std::ostream& operator<<( std::ostream& out, const Rational& r );
+   > ```
 
-10. **Ajouter un constructeur prenant un `int`.**  
-    Ajouter un `operator double()` pour convertir en flottant.
+10. **Ajouter un constructeur prenant un `int`.**
+
+   > :thinking: Peut-on maintenant écrire les lignes suivantes ?
+   > ```
+   > Rational r(9,4);
+   > Rational s = r + 2;
+   > s += -2;
+   > Rational t = 3 + r; 
+   > ```
+   
+11. Ajouter un `operator double()` pour convertir en flottant.
+    `x = double( Rational(4,3) )` donne 1.333333334.
+    
+---
+
+### Niveau 6 : Construction d'un rationnel approchant un nombre réel
+
+12. On cherche à écrire une méthode statique `approx( double x, int den )` qui
+   construit le rationnel qui est la meilleure approximation de `x` de
+   dénominateur inférieur ou égal à `den`. Comment faire ?
+
 
 ---
 
-### Niveau 6 : Bonnes pratiques et extensions
+### Bonnes pratiques et extensions
 
-11. **Lever une exception** si le dénominateur vaut zéro (dans le constructeur et dans `/`).
+12. **Lever une exception** si le dénominateur vaut zéro (dans le constructeur et dans `/`).
 
-12. **Rendre les méthodes et opérateurs `const`** lorsque c’est pertinent.  
-    Utiliser `friend` pour certains opérateurs.
+13. **Rendre les méthodes et opérateurs `const`** lorsque c’est pertinent.  
 
-13. **Exercices bonus :**
+14. **Exercices bonus :**
     - Implémenter `operator++` et `operator--` (préfixe et suffixe).
-    - Rendre la classe compatible avec `std::sort`.
-    - Écrire une version générique de `gcd` avec des `templates`.
+    - Vérifier que la classe est compatible avec `std::sort`.
+    - Ecrire une version générique de `Rational` où l'utilisateur peut choisir sont type d'entier (donc avoir une précision supérieure par exemple).
 
 ---
 
