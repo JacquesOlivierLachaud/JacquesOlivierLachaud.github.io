@@ -6,7 +6,7 @@ type: page
 tags:
   - lecture
   - c++
-slug: td-rationnels
+slug: /teaching/info702/td-rationnels
 ---
 
 ## POO/surcharge via la construction d'une classe représentant les rationnels
