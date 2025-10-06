@@ -23,6 +23,10 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
    - un constructeur prenant deux entiers `(p, q)` ;
    - un constructeur par défaut représentant `0/1`.
 
+:::info
+Pourquoi n'a-t-on pas besoin d'écrire un constructeur par copie ?
+:::
+
 2. **Ajouter une méthode `toString()`** qui retourne une chaîne de caractères de la forme `"num/den"`.  
    Tester la création et l’affichage de quelques rationnels.
 
@@ -35,6 +39,11 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
    Appeler `reduce()` dans le constructeur.
 
 4. **Modifier la classe** pour que le signe soit toujours porté par le numérateur (le dénominateur doit rester positif).
+
+:::warning
+Faut-il faire attention au signe de a ou b dans la fonction `gcd` ? Si oui ou non, pourquoi ?
+:::
+
 
 ---
 
