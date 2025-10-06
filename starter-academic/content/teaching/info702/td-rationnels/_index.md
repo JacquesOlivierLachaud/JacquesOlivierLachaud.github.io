@@ -6,7 +6,7 @@ type: page
 tags:
   - lecture
   - c++
-slug: '/'
+slug: td-rationnels
 ---
 
 ## POO/surcharge via la construction d'une classe représentant les rationnels
@@ -59,7 +59,19 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 
 6. **Surcharger les opérateurs `+=`, `-=, `*=`, `/=`**.
 
-   Pour rappel 
+   Pour rappel  le prototype de la surcharge de l'opérateur `+` est :
+   ```
+   class Rational { ...
+   // en tant que méthode
+   Rational& operator+=( const Rational& other );
+   ... };
+   ```
+
+   > :warning: Attention à la gestion de la division par zéro. On
+   > pourra lancer une exception `runtime_error`. On pourra aussi
+   > laisser l'état du rationnel à `1/0` ou `-1/0` (si le numérateur
+   > n'était pas nul) ou `0/0`. Cela permet de distinguer si le
+   > rationnel est infini ou non-valide.
 
 5. **Surcharger les opérateurs `+`, `-`, `*` et `/`.** Vérifier la
    division par zéro dans `/`, et lancer une exception `runtime_error`

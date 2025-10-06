@@ -6,7 +6,6 @@ type: docs
 tags:
   - lecture
   - c++
-slug: '/'  
 ---
 
 ## INFO702 - Programmation générique en C++
