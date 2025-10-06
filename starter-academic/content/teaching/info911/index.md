@@ -41,12 +41,14 @@ tags:
   - [Seuillage, clustering k-means](https://codimd.math.cnrs.fr/s/MV4f4ulxf)
 6. [Détection de points caractéristiques / features](https://codimd.math.cnrs.fr/s/A_-AUJ1ql)
 7. Formes: mesures, analyse et classification
-8. [Apprentissage et réseaux de neurones](https://codimd.math.cnrs.fr/s/PYL9ayApI)
-10. "Shape from X"
+8. Apprentissage automatique et réseaux de neurones
+    a. [Introduction à l'apprentissage par réseaux de neurones](https://codimd.math.cnrs.fr/s/l4BaTcFGY)
+    b. [Apprentissage supervisé](https://codimd.math.cnrs.fr/s/PYL9ayApI)
+9. "Shape from X"
   - reconstruction 3D à partir de stéréovision / multivision
   - reconstruction 3D à partir d'ombrage
   - reconstruction 3D à partir de flou/focus
-8. Video processing
+10. Video processing
   - Flot optique
         
 
@@ -56,10 +58,11 @@ tags:
 0. [Installation et prise en main d'OpenCV](https://codimd.math.cnrs.fr/s/JOXem7EID)
 1. [Colorimétrie, égalisation d'histogramme, tramage de Floyd-Steinberg](https://codimd.math.cnrs.fr/s/Ge-ZaHA3S)
 2. [Traitement d'image bas niveau - filtrage spatial](https://codimd.math.cnrs.fr/s/CeptN9xR8)
-3. Segmentation d’image, détection et classification d'objets par réseau de neurones convolutionnels
+3. [Segmentation d’image hiérarchique, scale sets](https://codimd.math.cnrs.fr/s/nbdrWcn_j)
+4.  Segmentation d’image, détection et classification d'objets par réseau de neurones convolutionnels
   - [détection et segmentation d'objets (Mask-R-CNN)](https://codimd.math.cnrs.fr/s/0fihmHphz)
-  - [détection d'objets (YOLO)](https://codimd.math.cnrs.fr/s/OWuiCfbAM)
-4. [Segmentation temps-réel semi-supervisée par distance d'histogramme de couleurs](https://codimd.math.cnrs.fr/s/vq-al56ul)
+  - [détection d'objets (YOLO v3)](https://codimd.math.cnrs.fr/s/OWuiCfbAM)
+5. [Segmentation temps-réel semi-supervisée par distance d'histogramme de couleurs](https://codimd.math.cnrs.fr/s/vq-al56ul)
 
 ### Ressources utiles
 1. [Notations utilisées dans le cours](https://codimd.math.cnrs.fr/s/DVZCRa3UZ)
