@@ -2,13 +2,13 @@
 title: INFO702 - TD rationnels
 summary: TD POO/surcharge
 date: 2025-08-01
-type: docs
+type: page
 tags:
   - lecture
   - c++
 ---
 
-## INFO702 - TD - POO/surcharge via la construction d'une classe représentant les rationnels
+## POO/surcharge via la construction d'une classe représentant les rationnels
 
 <a style="color:#907bf7;">[Jacques-Olivier Lachaud, August 2025]</a>
 
