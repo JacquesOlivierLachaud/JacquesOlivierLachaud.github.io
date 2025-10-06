@@ -6,6 +6,7 @@ type: page
 tags:
   - lecture
   - c++
+slug: '/'
 ---
 
 ## POO/surcharge via la construction d'une classe représentant les rationnels
@@ -37,7 +38,7 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 3. **Modifier la classe** pour que le signe soit toujours porté par le numérateur (le dénominateur doit rester positif).
 
 
-4. **Écrire une fonction privée `gcd(int a, int b)`** qui calcule le PGCD.  
+4. **Écrire une méthode statique privée `gcd(int a, int b)`** qui calcule le PGCD.  
    Ajouter une méthode `reduce()` qui simplifie le rationnel.  
    Appeler `reduce()` dans le constructeur.
 
@@ -56,7 +57,13 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 
 ### Niveau 3 : Surcharge d’opérateurs arithmétiques
 
-5. **Surcharger les opérateurs `+` et `-`.**
+6. **Surcharger les opérateurs `+=`, `-=, `*=`, `/=`**.
+
+   Pour rappel 
+
+5. **Surcharger les opérateurs `+`, `-`, `*` et `/`.** Vérifier la
+   division par zéro dans `/`, et lancer une exception `runtime_error`
+   si nécessaire.
 
    Pour rappel, le prototype de la surcharge de l'opérateur `+` est :
    ```
@@ -70,8 +77,7 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
    
    Exemple : On pourra vérifier que `Rational(1,2) + Rational(1,3) == Rational(5,6)`.
 
-6. **Surcharger les opérateurs `*` et `/`.**  
-   Vérifier la division par zéro dans `/`.
+
 
 ---
 
