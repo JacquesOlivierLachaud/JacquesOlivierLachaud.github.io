@@ -50,8 +50,19 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 
 ### Niveau 3 : Surcharge d’opérateurs arithmétiques
 
-5. **Surcharger les opérateurs `+` et `-`.**  
-   Exemple : `Rational(1,2) + Rational(1,3) == Rational(5,6)`.
+5. **Surcharger les opérateurs `+` et `-`.**
+
+   Pour rappel, le prototype de la surcharge de l'opérateur `+` est :
+   ```
+   class Rational { ...
+   // en tant que méthode
+   Rational operator+( const Rational& other ) const;
+   ... };
+   // en tant que fonction
+   Rational operator+( const Rational& r1, const Rational& r2 ) const;
+   ```
+   
+   Exemple : On pourra vérifier que `Rational(1,2) + Rational(1,3) == Rational(5,6)`.
 
 6. **Surcharger les opérateurs `*` et `/`.**  
    Vérifier la division par zéro dans `/`.
