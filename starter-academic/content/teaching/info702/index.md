@@ -31,6 +31,7 @@ informations.
 * [TD sur les rationnels](/teaching/info702/td-rationnels) POO, surcharge d'opérateurs
 * [TD sur les rationnels](td-rationnels) POO, surcharge d'opérateurs
 * [TD sur les rationnels](td-rationnels/) POO, surcharge d'opérateurs
+* [TD sur les rationnels](/misc/td-rationnels) POO, surcharge d'opérateurs
 
 * [TD2  (PDF)](TDs/td-2.pdf) Fonctions génériques, classes génériques, spécialisation, lambdas
   - correction arbres/ABR [arbres.cpp](TDs/arbres.cpp)

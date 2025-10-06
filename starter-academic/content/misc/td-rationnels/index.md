@@ -6,7 +6,6 @@ type: docs
 tags:
   - lecture
   - c++
-slug: /teaching/info702/td-rationnels
 ---
 
 ## POO/surcharge via la construction d'une classe représentant les rationnels
@@ -104,6 +103,8 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 
 7. **Implémenter `operator==` et `operator!=`.**
 
+   Vérifier que `Rational(3,4) == Rational(9,12)`.
+
 8. **Implémenter `<`, `<=`, `>`, `>=`** en comparant les produits croisés.  
    Exemple : `Rational(1,2) < Rational(2,3)`.
 
@@ -114,6 +115,10 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 
 9. **Surcharger `operator<<`** pour afficher un rationnel dans un flux `ostream`.  
    **Surcharger `operator>>`** pour lire un rationnel depuis un flux `istream`.
+
+> :warning: Ces opérateurs sont forcéments des fonctions, pas des
+> méthodes. Par exemple, le prototype de `operator<<` est
+> `std::ostream& operator<<( std::ostream& out, const Rational& r );`
 
 10. **Ajouter un constructeur prenant un `int`.**  
     Ajouter un `operator double()` pour convertir en flottant.
