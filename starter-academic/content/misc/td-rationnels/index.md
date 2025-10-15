@@ -30,6 +30,13 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 2. **Ajouter une méthode `toString()`** qui retourne une chaîne de caractères de la forme `"num/den"`.  
    Tester la création et l’affichage de quelques rationnels.
 
+   **Ajouter deux accesseurs `n()` et `d()`** en lecture pour le numérateur et dénominateur.
+
+   > :thinking: Pourquoi veut-on que `num` et `den` soit privé ? On
+   > pourrait juste les rendre publique et ne pas faire
+   > d'accesseur. Quel(s) serai(en)t le(s) défaut(s) de cette approche
+   > ?
+   
 ---
 
 ### Niveau 2 : Invariants et simplification
@@ -92,6 +99,7 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
    
    Exemple : On pourra vérifier que `Rational(1,2) + Rational(1,3) == Rational(5,6)`.
 
+   > 💡 On utilisera opportunément les surcharges précedentes.
 
 
 ---
@@ -105,6 +113,7 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 8. **Implémenter `<`, `<=`, `>`, `>=`** en comparant les produits croisés.  
    Exemple : `Rational(1,2) < Rational(2,3)`.
 
+   - Vérifier que la classe est compatible avec `std::sort`.
 
 ---
 
@@ -118,6 +127,7 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
    > ```
    > std::ostream& operator<<( std::ostream& out, const Rational& r );
    > ```
+   > :thinking: pourquoi ne peut-on écrire ces opérateurs comme méthodes ?
 
 10. **Ajouter un constructeur prenant un `int`.**
 
@@ -140,7 +150,8 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
    construit le rationnel qui est la meilleure approximation de `x` de
    dénominateur inférieur ou égal à `den`. Comment faire ?
 
-
+   > :thinking: La notion de [fraction continue](https://fr.wikipedia.org/wiki/Fraction_continue) sera explorée, voir aussi [Fraction continue et approximation diophantienne](https://fr.wikipedia.org/wiki/Fraction_continue_et_approximation_diophantienne).
+   
 ---
 
 ### Bonnes pratiques et extensions
@@ -151,7 +162,6 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 
 14. **Exercices bonus :**
     - Implémenter `operator++` et `operator--` (préfixe et suffixe).
-    - Vérifier que la classe est compatible avec `std::sort`.
     - Ecrire une version générique de `Rational` où l'utilisateur peut choisir sont type d'entier (donc avoir une précision supérieure par exemple).
 
 ---
