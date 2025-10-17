@@ -61,6 +61,7 @@ tags:
 3. [Segmentation d’image hiérarchique, scale sets](https://codimd.math.cnrs.fr/s/nbdrWcn_j)
 4.  Segmentation d’image, détection et classification d'objets par réseau de neurones convolutionnels
   - [détection et segmentation d'objets (Mask-R-CNN)](https://codimd.math.cnrs.fr/s/0fihmHphz)
+    > (deprecated)
   - [détection d'objets (YOLO v3)](https://codimd.math.cnrs.fr/s/OWuiCfbAM)
 5. [Segmentation temps-réel semi-supervisée par distance d'histogramme de couleurs](https://codimd.math.cnrs.fr/s/vq-al56ul)
 
@@ -72,6 +73,17 @@ tags:
 ### Evaluation
 
 Vous serez évalué sur votre participation ("présence" en cours, implication, participation au exercices, questions) et sur vos réalisations en TPs.
+
+Vous pouvez déposer une archive contenant le code du mini-projet
+"Segmentation temps réel" sur
+[TPlab](https://tplab.apps.math.cnrs.fr/). Premier dépôt avant le **17
+octobre** (même vide), dernier dépôt avant le **26 octobre**
+minuit. N'oubliez pas de mettre un fichier README indiquant les
+questions que vous abordez, ce qui marche ou pas.
+
+Enfin, **si vous voulez me montrer des réalisations supplémentaires
+sur vos autres TP**, vous pouvez aussi les déposer dans l'archive, en
+décrivant sur le README vos addendum.
 
 ### Historique
 
