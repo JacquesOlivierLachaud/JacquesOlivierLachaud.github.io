@@ -1,7 +1,7 @@
 ---
 title: INFO601cmi
 summary: Algorithmique numérique
-date: 2023-08-01
+date: 2025-08-01
 type: docs
 tags:
   - lecture

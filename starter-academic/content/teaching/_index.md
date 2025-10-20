@@ -17,10 +17,11 @@ sections:
       filters:
         folders:
           - teaching
+      count: 6
     design:
       view: article-grid
       columns: 3
-
+      
   - block: markdown
     id: teaching
     content:
