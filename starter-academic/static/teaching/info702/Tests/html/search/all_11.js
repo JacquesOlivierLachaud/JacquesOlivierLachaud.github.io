@@ -15,13 +15,14 @@ var searchData=
   ['importeur_20exporteur_20pbm_20générique_12',['5 - Un importeur / exporteur PBM générique',['../cpp_tp2.html#cpp_tp2_5',1,'']]],
   ['info_202023_202024_13',['TPs INFO702, M1 INFO (2023-2024)',['../index.html',1,'']]],
   ['info702_20m1_20info_202023_202024_14',['TPs INFO702, M1 INFO (2023-2024)',['../index.html',1,'']]],
-  ['intersect_15',['intersect',['../structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b',1,'LogicalScene::intersect(MasterShape *f1, MasterShape *f2)'],['../structLogicalScene.html#ae699c60b22a58543eb2086f5bf148508',1,'LogicalScene::intersect(MasterShape *f1)']]],
+  ['intersect_15',['intersect',['../structLogicalScene.html#ae699c60b22a58543eb2086f5bf148508',1,'LogicalScene::intersect(MasterShape *f1)'],['../structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b',1,'LogicalScene::intersect(MasterShape *f1, MasterShape *f2)']]],
   ['introduction_20des_20images_20couleurs_16',['3 - Introduction des images couleurs.',['../cpp_tp2.html#cpp_tp2_3',1,'']]],
   ['inverse_20les_20canaux_20rouge_20et_20bleu_17',['6 Premier test: on inverse les canaux rouge et bleu',['../cpp_tp2.html#cpp_tp2_6',1,'']]],
-  ['itérateur_20générique_18',['7 On rajoute les accesseurs et un itérateur générique',['../cpp_tp2.html#cpp_tp2_7',1,'']]],
-  ['itérateur_20sur_20images_20quelconques_19',['4 - Premier itérateur sur images quelconques.',['../cpp_tp2.html#cpp_tp2_4',1,'']]],
-  ['itérateurs_20',['TP2 Traitement d&apos;images en niveaux de gris et couleurs avec généricité (classes patrons, spécialisation, itérateurs).',['../cpp_tp2.html',1,'']]],
-  ['itérateurs_20génériques_20non_20constants_21',['9 Itérateurs génériques non constants',['../cpp_tp2.html#cpp_tp2_9',1,'']]],
-  ['iterateur_20pour_20les_20images_22',['4 - Un iterateur pour les images',['../cpp_tp1.html#cpp_tp1_4',1,'']]],
-  ['iterator_23',['Iterator',['../structGrayLevelImage2D_1_1Iterator.html',1,'GrayLevelImage2D']]]
+  ['itérateur_202d_20et_20gradient_20morphologique_18',['9 - Itérateur 2D et gradient morphologique',['../cpp_tp1.html#cpp_tp1_9',1,'']]],
+  ['itérateur_20générique_19',['7 On rajoute les accesseurs et un itérateur générique',['../cpp_tp2.html#cpp_tp2_7',1,'']]],
+  ['itérateur_20sur_20images_20quelconques_20',['4 - Premier itérateur sur images quelconques.',['../cpp_tp2.html#cpp_tp2_4',1,'']]],
+  ['itérateurs_21',['TP2 Traitement d&apos;images en niveaux de gris et couleurs avec généricité (classes patrons, spécialisation, itérateurs).',['../cpp_tp2.html',1,'']]],
+  ['itérateurs_20génériques_20non_20constants_22',['9 Itérateurs génériques non constants',['../cpp_tp2.html#cpp_tp2_9',1,'']]],
+  ['iterateur_20pour_20les_20images_23',['4 - Un iterateur pour les images',['../cpp_tp1.html#cpp_tp1_4',1,'']]],
+  ['iterator_24',['Iterator',['../structGrayLevelImage2D_1_1Iterator.html',1,'GrayLevelImage2D']]]
 ];

@@ -11,7 +11,7 @@ var searchData=
   ['d_20une_20classe_20pour_20représenter_20les_20images_8',['2 - Définition d&apos;une classe pour représenter les images',['../cpp_tp1.html#cpp_tp1_2',1,'']]],
   ['d_20une_20image_9',['7 - Histogramme et Histogramme cumulé d&apos;une image.',['../cpp_tp1.html#cpp_tp1_7',1,'']]],
   ['d_20une_20image_20couleur_10',['10 Espace TSV (HSV) et histogramme d&apos;une image couleur',['../cpp_tp2.html#cpp_tp2_10',1,'']]],
-  ['de_20bruit_11',['9 - Générateur de bruit',['../cpp_tp1.html#cpp_tp1_9',1,'']]],
+  ['de_20bruit_11',['10 - Générateur de bruit',['../cpp_tp1.html#cpp_tp1_10',1,'']]],
   ['de_20contraste_20par_20filtrage_20par_20convolution_12',['8 - Rehaussement de contraste par filtrage par convolution',['../cpp_tp1.html#cpp_tp1_8',1,'']]],
   ['de_20formes_20simples_13',['4 - Objets complexes par assemblage de formes simples',['../cpp_tp0.html#cpp_tp0_4',1,'']]],
   ['de_20gris_20et_20couleurs_20avec_20généricité_20classes_20patrons_20spécialisation_20itérateurs_14',['TP2 Traitement d&apos;images en niveaux de gris et couleurs avec généricité (classes patrons, spécialisation, itérateurs).',['../cpp_tp2.html',1,'']]],
