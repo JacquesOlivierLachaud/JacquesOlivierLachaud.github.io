@@ -494,7 +494,7 @@ prompt$ ./invert-red-blue kowloon.ppm kowloon-inv.ppm
 <li>on ne regarde que la valeur de la couleur dans le modèle TSV de couleur. Dans ce cas là, on ne regarde que la brillance de la couleur, pas sa teinte.</li>
 <li>on pourrait regarder d'autres modèles de couleur et ne garder qu'un seul axe.</li>
 </ul>
-<p>Or, nos itérateurs (<code>ConstIterator</code> et <code>Iterator</code>) sont un peu simplet. Leur valeur pointée est toujours une couleur. On va définir des itérateurs <b>sélectifs</b> qui ne voient qu'une composante de la couleur (en lecture et en écriture). Plutôt que de les réécrire à chaque fois, on définit la notion d'accesseur, puis nos nouveaux itérateurs seront paramétrés par un accesseur.</p>
+<p>Or, nos itérateurs (<code>ConstIterator</code> et <code>Iterator</code>) sont un peu simplets. Leur valeur pointée est toujours une couleur. On va définir des itérateurs <b>sélectifs</b> qui ne voient qu'une composante de la couleur (en lecture et en écriture). Plutôt que de les réécrire à chaque fois, on définit la notion d'accesseur, puis nos nouveaux itérateurs seront paramétrés par un accesseur.</p>
 <p>Dans ce TP, nos accesseurs n'auront même pas besoin d'instance pour fonctionner (e.g., sélectionner le canal rouge ne nécessite pas d'information propre). Leur méthodes <code>access</code> seront donc des méthodes de classe (mot-clé <code>static</code>) et non d'instance. Voilà ci-dessous deux exemples d'accesseur:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#ifndef _ACCESSOR_HPP_</span></div>
 <div class="line"><span class="preprocessor">#define _ACCESSOR_HPP_</span></div>
@@ -556,12 +556,12 @@ prompt$ ./invert-red-blue kowloon.ppm kowloon-inv.ppm
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#endif </span><span class="comment">// _ACCESSOR_HPP_</span></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Observez-bien l'accesseur à la composante verte (ColorGreenAccessor). Cet accesseur nous permettra de tranformer un itérateur <code>it</code> sur image de couleur (donc <code>*it</code> est la couleur de pixel, de type <a class="el" href="structColor.html">Color</a>) en un itérateur sur image couleur mais où <code>it</code> est la composante verte du pixel, de type <code>unsigned</code> <code>char</code>.</dd></dl>
-<p>Comment se servir des accesseurs dans les itérateurs ? On va "simplement" définir un itérateur générique (paramétré par un type <code>Accessor</code>) qui utilise l'accesseur au moment du déréférencement (<code>operator*</code>). Un extrait du code donne donc:</p>
+<p>Comment se servir des accesseurs dans les itérateurs ? On va "simplement" définir un itérateur générique (paramétré par un type <code>Accessor</code>), qui hérite de votre itérateur <code>ConstIterator</code>, et qui utilise l'accesseur au moment du déréférencement (<code>operator*</code>). Un extrait du code donne donc:</p>
 <div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TValue&gt;</div>
 <div class="line"><span class="keyword">struct </span><a class="code hl_class" href="classImage2D.html">Image2D</a> {</div>
 <div class="line">...</div>
 <div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TAccessor&gt; </div>
-<div class="line">  <span class="keyword">struct </span>GenericConstIterator : <span class="keyword">public</span> Container::const_iterator {</div>
+<div class="line">  <span class="keyword">struct </span>GenericConstIterator : <span class="keyword">public</span> ConstIterator {</div>
 <div class="line">    <span class="keyword">typedef</span> TAccessor Accessor;</div>
 <div class="line">    <span class="keyword">typedef</span> <span class="keyword">typename</span> Accessor::Argument  ImageValue; <span class="comment">// Color ou unsigned char</span></div>
 <div class="line">    <span class="keyword">typedef</span> <span class="keyword">typename</span> Accessor::Value     Value;      <span class="comment">// unsigned char (pour ColorGreenAccessor)</span></div>
@@ -571,11 +571,11 @@ prompt$ ./invert-red-blue kowloon.ppm kowloon-inv.ppm
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Accès en lecture (rvalue)</span></div>
 <div class="line">    Value operator*()<span class="keyword"> const</span></div>
-<div class="line"><span class="keyword">    </span>{ <span class="keywordflow">return</span> Accessor::access( Container::const_iterator::operator*() ); } <span class="comment">//&lt; Appel de op* de l&#39;térateur de vector</span></div>
+<div class="line"><span class="keyword">    </span>{ <span class="keywordflow">return</span> Accessor::access( ConstIterator::operator*() ); } <span class="comment">//&lt; Appel de op* de votre itérateur</span></div>
 <div class="line"> </div>
 <div class="line">  };</div>
 <div class="line">...</div>
-</div><!-- fragment --><p>Complétez le constructeur de <code>GenericConstIterator</code> (similaire à <code>Iterator</code>). Ensuite surchargez les méthodes <code>begin</code>, <code>end</code>, <code>start</code> de <a class="el" href="classImage2D.html" title="Classe générique pour représenter des images 2D.">Image2D</a> avec des patrons de méthodes. Par exemple, un <code>start</code> générique peut s'écrire ainsi:</p>
+</div><!-- fragment --><p>Complétez le constructeur de <code>GenericConstIterator</code> (qui doit appeler sa super-classe <code>ConstIterator</code>). Ensuite surchargez les méthodes <code>begin</code>, <code>end</code>, <code>start</code> de <a class="el" href="classImage2D.html" title="Classe générique pour représenter des images 2D.">Image2D</a> avec des patrons de méthodes. Par exemple, un <code>start</code> générique peut s'écrire ainsi:</p>
 <div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Accessor&gt;</div>
 <div class="line">GenericConstIterator&lt; Accessor &gt; start( <span class="keywordtype">int</span> x = 0, <span class="keywordtype">int</span> y = 0 )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword"></span>{ <span class="keywordflow">return</span> GenericConstIterator&lt; Accessor &gt;( *<span class="keyword">this</span>, x, y ); }</div>
@@ -649,7 +649,7 @@ prompt$ ./invert-red-blue kowloon.ppm kowloon-inv.ppm
 <tr>
 <td>Image papillon.ppm </td><td>Sa composante verte vue comme une image en niveaux de gris  </td></tr>
 </table>
-<dl class="section note"><dt>Note</dt><dd>La pré-incrémentation seule <code>++itGreen</code> marche car on n'exploite pas la valeur de l'itérateur. On peut donc directement appeler cet opérateur écrit dans la super-classe <code>Container::const_iterator</code>.</dd>
+<dl class="section note"><dt>Note</dt><dd>La pré-incrémentation seule <code>++itGreen</code> marche car on n'exploite pas la valeur de l'itérateur. On peut donc directement appeler cet opérateur écrit dans la super-classe <code>ConstIterator</code>.</dd>
 <dd>
 Si on veut écrire une expression comme <code>*itGreen++</code> alors l'opérateur de post-incrémentation (<code>operator++(int)</code>) par défaut de <code>Container::const_iterator</code> n'est pas correct (il retourne un <code>Container::const_iterator</code> au lieu d'un <code>GenericConstIterator</code>). On écrirait donc les lignes suivantes:</dd></dl>
 <div class="fragment"><div class="line"><span class="comment">// Post-incrémentation de l&#39;itérateur.</span></div>
@@ -676,7 +676,7 @@ Si on veut écrire une expression comme <code>*itGreen++</code> alors l'opérate
 <p>Les insectes butineurs (abeilles, guêpes, papillons) voient beaucoup mieux le bleu que nous (et d'ailleurs ils voient aussi un peu dans l'ultra-violet). L'image en composante bleue montre combien les fleurs (violettes) ressortent par rapport au fond vert, ceci afin d'attirer les insectes butineurs.</p>
 <h1><a class="anchor" id="cpp_tp2_9"></a>
 9 Itérateurs génériques non constants</h1>
-<p>Nous avons fait l'itérateur générique en lecture. Il faut faire maintenant l'itérateur générique en lecture/écriture (i.e. non <code>const</code>). Ce n'est pas difficile, il suffit de créer une classe générique <code>GenericIterator</code> sur le même modèle que <code>GenericConstIterator</code>, mais en dérivant cette fois de <code>Container::iterator</code>. L'opérateur de déréférencement pour les lvalue (lecture/écriture) s'écrit ainsi:</p>
+<p>Nous avons fait l'itérateur générique en lecture. Il faut faire maintenant l'itérateur générique en lecture/écriture (i.e. non <code>const</code>). Ce n'est pas difficile, il suffit de créer une classe générique <code>GenericIterator</code> sur le même modèle que <code>GenericConstIterator</code>, mais en dérivant cette fois de <code>Iterator</code>. L'opérateur de déréférencement pour les lvalue (lecture/écriture) s'écrit ainsi:</p>
 <div class="fragment"><div class="line"><span class="comment">// Accès en écriture (lvalue)</span></div>
 <div class="line">Reference operator*()</div>
 <div class="line">{ <span class="keywordflow">return</span> Accessor::access( Container::iterator::operator*() ); }</div>
@@ -794,7 +794,45 @@ prompt$ ./egaliseur-couleur papillon.ppm papillon-eg.ppm
 </table>
 <h1><a class="anchor" id="cpp_tp2_12"></a>
 12 Un peu d'imagination</h1>
-<p>Proposez un traitement quelconque (effet artistique, transformation sepia, flou, filtrage de bruit, fusion de photos, tourner les couleurs de 60°, saturer (rendre criard) ou désaturer (rendre pastel) une image, ...) et mettez le en oeuvre avec vos classes génériques.</p>
+<p>Proposez un traitement quelconque (effet artistique, transformation sepia, flou, filtrage de bruit, fusion de photos, tourner les couleurs de 60°, saturer (rendre criard) ou désaturer (rendre pastel) une image, ...) et mettez-le en oeuvre avec vos classes génériques.</p>
+<p>Voici quelques exemples obtenus en faisant des filtres différenciés suivant les canaux (R,G,B ou H,S,V).</p>
+<ul>
+<li>5 dilations morphologiques sur les 3 canaux RGB (élément structurant carré 3x3), suivis de 5 érosions morphologiques sur les 3 canaux RGB, suivi d'un rehaussement de contraste (alpha=5) sur le canal V.</li>
+</ul>
+<table class="doxtable">
+<tr>
+<td><img src="./kowloon.png" alt="" width="500" class="inline"/>  </td><td><img src="./kowloon-e4.png" alt="" width="500" class="inline"/>   </td></tr>
+</table>
+<ul>
+<li>dilation morphologique sur le canal V (élément structurant disque de rayon 5), suivis d'une ériosion morphologique sur ce même canal, suivi d'un rehaussement de contraste (alpha=1) sur le canal V.</li>
+</ul>
+<table class="doxtable">
+<tr>
+<td><img src="./papillon.png" alt="" width="500" class="inline"/>  </td><td><img src="./papillon-e1.png" alt="" width="500" class="inline"/>  </td></tr>
+<tr>
+<td><img src="./lena.png" alt="" width="500" class="inline"/>  </td><td><img src="./lena-e1.png" alt="" width="500" class="inline"/>  </td></tr>
+</table>
+<ul>
+<li>atténuation des couleurs vert et bleu, en baissant la saturation autour de ces couleurs (on regarde la valeur de teinte H), et si elle est autour de vert ou bleu on abaisse la saturation S).</li>
+</ul>
+<table class="doxtable">
+<tr>
+<td><img src="./papillon.png" alt="" width="500" class="inline"/>  </td><td><img src="./papillon-e2.png" alt="" width="500" class="inline"/>  </td></tr>
+</table>
+<ul>
+<li>atténuation des couleurs vert et bleu, en baissant la saturation autour de ces couleurs (on regarde la valeur de teinte H), et si elle est autour de vert ou bleu on abaisse la saturation S). Enfin, on décale la teinte de -60° sur le résultat.</li>
+</ul>
+<table class="doxtable">
+<tr>
+<td><img src="./papillon.png" alt="" width="500" class="inline"/>  </td><td><img src="./papillon-e5.png" alt="" width="500" class="inline"/>  </td></tr>
+</table>
+<ul>
+<li>dilation morphologique sur le canal S (élément structurant disque de rayon 5), suivis d'une ériosion morphologique sur ce même canal, suivi d'un rehaussement de contraste (alpha=1) sur le canal V.</li>
+</ul>
+<table class="doxtable">
+<tr>
+<td><img src="./kowloon.png" alt="" width="500" class="inline"/>  </td><td><img src="./kowloon-e3.png" alt="" width="500" class="inline"/>  </td></tr>
+</table>
 <h1><a class="anchor" id="cpp_tp2_13"></a>
 13 TP à rendre</h1>
 <p>Vous écrirez un compte-rendu de ce TP (format Open office, Word, texte, PDF, LaTeX au choix) dans lequel vous préciserez les points suivants :</p>
@@ -805,13 +843,13 @@ prompt$ ./egaliseur-couleur papillon.ppm papillon-eg.ppm
 <li>n'hésitez pas à étoffer de commentaires utiles vos travaux, ou d'images de tests.</li>
 <li>vous placerez dans une archive (zip ou tar.gz) votre compte-rendu ainsi que vos sources/entêtes/makefile, de façon à ce que je puisse tout recompiler en tapant "make".</li>
 <li>le nom de votre archive sera de la forme <code>TP-XXX-YYY.*</code> où <code>XXX</code> et <code>YYY</code> désignent les noms respectifs des étudiants du binôme.</li>
-<li>vous m'enverrez votre archive via <a href="https://tplab.apps.math.cnrs.fr">TPLab </a> avant la fin de la séance. Vous pouvez m'envoyer votre version finale avant le <b>vendredi</b> <b>3</b> <b>novembre</b> <b>2023</b> <b>minuit</b>. </li>
+<li>vous m'enverrez votre archive via <a href="https://tplab.apps.math.cnrs.fr">TPLab </a> avant la fin de la séance. Vous pouvez m'envoyer votre version finale avant une <b> date à définir </b>. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 31 2025 12:33:03 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Sun Nov 2 2025 18:55:56 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
