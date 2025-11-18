@@ -90,6 +90,7 @@ $(function() {
 <li class="level1"><a href="#cpp_tp1_8">8 - Rehaussement de contraste par filtrage par convolution</a></li>
 <li class="level1"><a href="#cpp_tp1_9">9 - Itérateur 2D et gradient morphologique</a></li>
 <li class="level1"><a href="#cpp_tp1_10">10 - Générateur de bruit</a></li>
+<li class="level1"><a href="#cpp_tp1_11">Notes finales</a></li>
 </ul>
 </div>
 <div class="textblock"><h1><a class="anchor" id="cpp_tp1_1"></a>
@@ -511,7 +512,9 @@ i/255 \). On écrit donc:</p>
 <tr>
 <td><img src="cameraman.png" alt="" class="inline"/> </td><td><img src="cameraman-grad-morpho.png" alt="" class="inline"/>  </td></tr>
 </table>
-</center><dl class="section note"><dt>Note</dt><dd>Vous pouvez maintenant réécrire vos fonctions de filtrage avec ces itérateurs.</dd></dl>
+</center><dl class="section note"><dt>Note</dt><dd>Vous pouvez maintenant réécrire vos fonctions de filtrage avec ces itérateurs.</dd>
+<dd>
+On peut facilement rajouter deux méthodes <code>x() const</code> et <code>y() const</code> qui calculent les "coordonnées" courantes de l'itérateur.</dd></dl>
 <h1><a class="anchor" id="cpp_tp1_10"></a>
 10 - Générateur de bruit</h1>
 <p>Mais pourquoi voudrait-on abîmer les images ? Une raison académique: pour tester ensuite les algorithmes de filtrage de bruit et de restauration. Une autre raison est parfois esthétique, par exemple pour donner l'illusion qu'une image fabriquée par ordinateur est une vraie photo. Le code ci-dessous vous montre comment on a généré le bruit impulsionnel ci-dessus.</p>
@@ -567,12 +570,15 @@ i/255 \). On écrit donc:</p>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Il est plus réaliste d'appliquer un bruit Gaussien sur les images, c'est-à-dire une perturbation de la valeur de gris par un écart qui suit une loi normale (ou Gaussienne). La <a href="http://fr.wikipedia.org/wiki/M%C3%A9thode_de_Box-Muller">méthode de Box-Muller</a> est la plus simple pour le faire. Elle créé deux valeurs aléatoires qui suivent une loi normale à partir de deux valeurs qui suivent une loi uniforme (genre <code>rand01()</code>).</p>
-<p>Ecrivez donc la commande <code>bruit-gaussien.cpp</code> en modifiant le fichier <code><a class="el" href="bruit-impulsionnel_8cpp_source.html">bruit-impulsionnel.cpp</a></code> ci-dessus. </p>
+<p>Ecrivez donc la commande <code>bruit-gaussien.cpp</code> en modifiant le fichier <code><a class="el" href="bruit-impulsionnel_8cpp_source.html">bruit-impulsionnel.cpp</a></code> ci-dessus.</p>
+<h1><a class="anchor" id="cpp_tp1_11"></a>
+Notes finales</h1>
+<p>Il n'est pas demandé de rendu sur ce TP. Néanmoins, pas mal d'éléments du TP sont réutilisés dans le TP suivant </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 10 2025 15:49:34 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Nov 18 2025 10:36:20 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
