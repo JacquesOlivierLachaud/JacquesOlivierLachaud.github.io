@@ -241,7 +241,8 @@ clean:
 <div class="line">  };</div>
 <div class="line">...</div>
 <div class="line">};</div>
-</div><!-- fragment --><p>Il ne reste plus qu'à écrire le constructeur de Iterator à partir d'une image et des coordonnées d'un pixel. Attention dans <code>GrayLevelImage2D.cpp</code>, le prototype du constructeur de <code>Iterator</code> est:</p>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Les <b>itérateurs</b> sont une abstraction des <b>pointeurs</b>, qui n'est pas limitée à des tableaux. Ils servent à visiter toute collection d'éléments de manière uniforme, que la collection soit un tableau, une liste, un ensemble, un arbre, etc.</dd></dl>
+<p>Il ne reste plus qu'à écrire le constructeur de Iterator à partir d'une image et des coordonnées d'un pixel. Attention dans <code>GrayLevelImage2D.cpp</code>, le prototype du constructeur de <code>Iterator</code> est:</p>
 <div class="fragment"><div class="line">GrayLevelImage2D::Iterator::Iterator( <a class="code hl_class" href="classGrayLevelImage2D.html">GrayLevelImage2D</a>&amp; Image, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y )</div>
 <div class="line">...</div>
 </div><!-- fragment --><p>On utilisera d'une part la méthode <code>std::vector::begin()</code> appliquée au vecteur <code>m_data</code> pour récupérer un itérateur sur le début du tableau, puis il suffira d'additionner l'indice du pixel (x,y) pour décaler l'itérateur au bon endroit.</p>
@@ -254,6 +255,8 @@ clean:
 <div class="fragment"><div class="line">    <span class="keywordflow">for</span> ( <a class="code hl_struct" href="structGrayLevelImage2D_1_1Iterator.html">GrayLevelImage2D::Iterator</a> it = img.begin(), itE = img.end(); it != itE; ++it )</div>
 <div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; (<span class="keywordtype">int</span>) *it; <span class="comment">// la conversion permet de voir les caractères sous forme d&#39;entiers.</span></div>
 <div class="ttc" id="astructGrayLevelImage2D_1_1Iterator_html"><div class="ttname"><a href="structGrayLevelImage2D_1_1Iterator.html">GrayLevelImage2D::Iterator</a></div><div class="ttdef"><b>Definition</b> <a href="GrayLevelImage2D_8hpp_source.html#l00020">GrayLevelImage2D.hpp:20</a></div></div>
+</div><!-- fragment --><p>On pourrait même écrire (depuis C++11) de façon concise </p><div class="fragment"><div class="line"><span class="keywordflow">for</span> ( <span class="keyword">auto</span> v : img ) <span class="comment">// équivalent d&#39;un foreach en lecture sur chaque élément</span></div>
+<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; (int) v; <span class="comment">// la conversion permet de voir les caractères sous forme d&#39;entiers.</span></div>
 </div><!-- fragment --><h1><a class="anchor" id="cpp_tp1_5"></a>
 5 - Import / Export en format PGM</h1>
 <p>Le format PGM [<a href="http://fr.wikipedia.org/wiki/Portable_pixmap">http://fr.wikipedia.org/wiki/Portable_pixmap</a> PBM image format] permet de stocker très simplement les images en niveaux de gris sous forme de fichier. Le format PGM a deux formes, selon que les valeurs sont stockées en clair sous forme ASCII (le fichier est lisible et éditable, mais prend 3 fois plus de place sur le disque), ou stockées en format brut octet par octet.</p>
@@ -578,7 +581,7 @@ Notes finales</h1>
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2025 10:36:20 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Nov 25 2025 13:09:33 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

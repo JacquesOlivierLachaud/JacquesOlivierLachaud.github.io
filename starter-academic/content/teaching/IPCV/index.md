@@ -47,10 +47,9 @@ processing. Coding will be in C++.
 
 **Visit and clone repository https://github.com/JacquesOlivierLachaud/IPCV-practicals**
 
+* digital topology
+    - TP0 [Homotopic thinning](https://codimd.math.cnrs.fr/s/bVqUMFbM5)
 
-
-
-### History
 
 ### Notes
 
