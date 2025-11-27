@@ -1,18 +1,20 @@
 ---
 title: INFO601cmi
-summary: Algorithmique numérique
-date: 2025-08-01
+summary: Algorithmique III
+date: 2025-11-27
 type: docs
 tags:
   - lecture
-  - programmation
+  - algorithms
+  - data structures
+  - computational geometry
   - C
 ---
 
-## INFO601_cmi - Algorithmique numérique
+## INFO601_cmi - Algorithmique III
 
 > Cours du semestre 6 de Licence Informatique, CMI3 Informatique.
-> <a style="color:#907bf7;">[Jacques-Olivier Lachaud, August 2023]</a>
+> <a style="color:#907bf7;">[Jacques-Olivier Lachaud, November 2025]</a>
 
 Ces ressources sont des outils de travail et de révision. Elles ne
 remplacent pas les cours et/ou les td, qui peuvent contenir d'autres
@@ -20,44 +22,53 @@ informations.
 
 ### Objectifs
 
-Ce module vise à présenter les bases de l'algorithmique numérique, c'est-à-dire les algorithmes, les structures de données et les mathématiques nécessaires pour résoudre des problèmes de calcul scientifique. Les domaines d'application sont très vastes: mécanique des structures, mécanique des fluides, physique appliquée, problème d'optimisation géométriques, régularisation de formes, traitement et analyse d'image, analyse de données, apprentissage profond, pour n'en citer que quelques-uns.
+Ce module propose quelques éléments nouveaux d'algorithmique, qui
+font suite à l'étude des structures de données linéaires et
+arborescentes, tout en restant assez indépendant des algorithmes sur
+les graphes. Il donne des techniques pour déterminer les temps
+d'exécution en pire cas des algorithmes, même dans le cas récursif.
+Il présente aussi l'analys amortie, qui permet d'affiner l'analyse de
+complexité en pire cas. Il présente aussi les structures de données
+pour représenter les ensembles disjoints (et donc les relations
+d'équivalence). Enfin quelques algorithmes classiques de géométrie
+algorithmique sont présentés.
 
-On montrera d'abord quelques exemples de problèmes simples que l'on
-voudrait résoudre (recherche de solutions à des équations, équations
-différentielles ou minimisation de fonctionnelles). Ensuite, on
-décrira comment le problème se ramène assez souvent à de l'algèbre
-linéaire, ou à des problèmes plus difficiles que l'on résoudra
-itérativement.
+Pour les travaux pratiques, il présuppose une certaine connaissance du
+langage C (vous pouvez vous référer aux notes de cours de INFO505 -
+Programmation C, sur le même site), notamment sa syntaxe, ses
+mécanismes d'allocation mémoire (pile, tas), son organisation
+(fichiers sources, fichiers en-tête), son cycle de développement.
 
-Des travaux pratiques (en python et numpy) illustreront les méthodes
-de résolution numérique, leur stabilité, leurs problèmes numériques
-parfois.
+### Cours, Leçons et exercices
 
-### Cours, Exercices, Tps
-
-* [Transparents du cours, Exercices, Rappels, TPs](https://codimd.math.cnrs.fr/s/IWTaBkA9m)
-* [Introduction par la méthode des moindres carrés (PDF)](Cours/moindres-carres.pdf)
 * [Notes de cours (PDF)](Cours/notes-de-cours.pdf)
-* [Linear algebra cheat sheet (PDF)](Cours/linalg-cheat-sheet.pdf)
+* [Leçon 1 : complexité des algorithmes (rappels), notations O, Theta, Omega](Lessons/lesson-1.pdf) / [Exercices](Lessons/exo-1.pdf) [Exercices (autres)](Lessons/exo-1-bis.pdf)
+* [Leçon 2 : analyse amortie des algorithmes](Lessons/lesson-2.pdf) / [Exercices](Lessons/exo-2.pdf)
+* [Leçon 3 : structures pour ensembles disjoints (union-find)](Lessons/lesson-3.pdf) / [Exercices](Lessons/exo-3.pdf)
+* [Leçon 4 : complexité des fonctions récursives](Lessons/lesson-4.pdf) / [Exercices](Lessons/exo-4.pdf)
+* [Leçon 5 : géométrie algorithmique](Lessons/lesson-5.pdf) / [Exercices](Lessons/exo-5.pdf)
 
-### Fiches de TDs
+### Anciennes fiches de TD
+* [complexité des fonctions récursives, complexité amortie](TDs/td-1.pdf)
+* [complexité des tableaux dynamiques](TDs/td-2.pdf)
 
-* [TD: normes vectorielles et matricielles, matrices orthogonales (PDF)](TDs/td-normes.pdf)
-* [TD: calculs en virgules flottantes, erreurs numériques (PDF)](TDs/td-errnum.pdf)
-* [TD: matrices creuses (PDF)](TDs/td-matrices-creuses.pdf)
+### TPs et autres travaux pratiques
+
+* Aller à la **[Pages des TPs](Tests/html/index.html)**.
+* Le langage choisi est le langage C.
+* Les TPs sont évalués et à rendre via [TPLab](https://tplab.apps.math.cnrs.fr/)
 
 ### Annales
+* Examen (2020-2021) : [sujet PDF](Annales/examen-2020-2021.pdf) [solution PDF](Annales/examen-2020-2021-sol.pdf)
+* Examen (2016-2017) : [sujet PDF](Annales/examen-2016-2017.pdf) [solution PDF](Annales/examen-2016-2017-sol.pdf)
 
-* [Examen 2022-2023 (PDF)](Annales/examen-2022-2023.pdf) / [Corrigé (PDF)](Annales/examen-2022-2023-sol.pdf)
-
-
-### Autres ressources
-
-* [Visualiseur de surfaces implicites, i.e. les solutions de F(x,y,z)=0](https://jacquesolivierlachaud.github.io/AlgoSurfer)
-* [Notations pour les dérivées partielles, K. Santugini (PDF)](Cours/PolyDeriveesPartielles.pdf)
-* Ancien site web [VISI601_CMI Algorithmique numérique](http://os-vps418.infomaniak.ch:1250/mediawiki/index.php/VISI601_CMI_:_Algorithmique_numérique)
+### Références
+* ''Introduction à l'Algorithmique'', de Cormen, Leiserson, Rivest et Stein, Ed. Dunod;
+* ''The C programming language'', de Kernighan et Ritchie;
+* ''Le langage C'', version française du précédent;
+* Le wikilivre [http://fr.wikibooks.org/wiki/Programmation_C ''Programmation C'']: un livre de cours sur le mode wikipedia.
 
 ### Historique
 
-* responsable 2018-2023 Cours/TD/TP : J.-O. Lachaud
+
 

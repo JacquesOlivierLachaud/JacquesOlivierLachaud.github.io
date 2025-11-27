@@ -1,0 +1,18 @@
+\_form#0:$ \pm (1,0), \pm (0,1) $
+\_form#1:$ [-1:1] \times [-1:1] $
+\_form#2:$\frac{\sqrt{2}}{2}$
+\_form#3:\[ \left(\begin{array}{c}x'\\ y'\end{array}\right) = \frac{\sqrt{2}}{4} \left(\begin{array}{cc}1&1\\-1&1\end{array}\right) \left(\begin{array}{c}x\\ y\end{array}\right). \]
+\_form#4:$ s = n^a $
+\_form#5:$ \Theta(n s) $
+\_form#6:$ \Theta(n) $
+\_form#7:$ S = \cup_i S_i $
+\_form#8:$ \forall i \neq j, S_i \cap S_j = \emptyset $
+\_form#9:$ \Theta(1) $
+\_form#10:$ \Theta(k) $
+\_form#11:$O(m \alpha(n)) $
+\_form#12:$ \alpha(n) $
+\_form#13:$ n \le 4 $
+\_form#14:$ \rho(x,x') $
+\_form#15:$ \rho $
+\_form#16:$ \alpha $
+\_form#17:$ \alpha \ge 0 $
