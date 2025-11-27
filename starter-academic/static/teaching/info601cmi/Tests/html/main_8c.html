@@ -798,7 +798,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="aparticules_8c_html_a9e1585effd76965177a9c69a83945bcf"><div class="ttname"><a href="particules_8c.html#a9e1585effd76965177a9c69a83945bcf">TabParticules_init</a></div><div class="ttdeci">void TabParticules_init(TabParticules *tab)</div><div class="ttdef"><b>Definition</b> <a href="particules_8c_source.html#l00018">particules.c:18</a></div></div>
 <div class="ttc" id="astructSContexte_html"><div class="ttname"><a href="structSContexte.html">SContexte</a></div><div class="ttdef"><b>Definition</b> <a href="union-find_8c_source.html#l00013">union-find.c:13</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="main_8c_source.html#l00238">creerIHM()</a>, <a class="el" href="main_8c_source.html#l00020">SContexte::TabP</a>, and <a class="el" href="particules_8c_source.html#l00018">TabParticules_init()</a>.</p>
+<p class="reference">References <a class="el" href="main_8c_source.html#l00238">creerIHM()</a>, <a class="el" href="union-find_8c_source.html#l00049">main()</a>, <a class="el" href="main_8c_source.html#l00020">SContexte::TabP</a>, and <a class="el" href="particules_8c_source.html#l00018">TabParticules_init()</a>.</p>
 
 </div>
 </div>
@@ -1033,14 +1033,14 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="lineno">  336</span>{</div>
 <div class="line"><span class="lineno">  337</span>  <a class="code hl_struct" href="structSContexte.html">Contexte</a>* pCtxt = (<a class="code hl_struct" href="structSContexte.html">Contexte</a>*) data;</div>
 <div class="line"><span class="lineno">  338</span>  <span class="keywordtype">char</span> buffer[ 128 ];</div>
-<div class="line"><span class="lineno">  339</span>  sprintf( buffer, <span class="stringliteral">&quot;%7d nb appels à distance()&quot;</span>, <a class="code hl_function" href="TP-Proximity_2points_8c.html#a02f66175ce0266f869400369bcf7a4f7">getCompteurDistance</a>() ),</div>
+<div class="line"><span class="lineno">  339</span>  sprintf( buffer, <span class="stringliteral">&quot;%7d nb appels à distance()&quot;</span>, <a class="code hl_function" href="TP-Proximity_2points_8c.html#a98b2b46df2853e9f678f0abd107332c8">getCompteurDistance</a>() ),</div>
 <div class="line"><span class="lineno">  340</span>  gtk_label_set_text( GTK_LABEL( pCtxt-&gt;<a class="code hl_variable" href="structSContexte.html#a057663a9739eb6ee1b1f622a2e00cfc6">label_distance</a> ), buffer );</div>
-<div class="line"><span class="lineno">  341</span>  <a class="code hl_function" href="TP-Proximity_2points_8c.html#a008207d94578830880045795b07f8289">resetCompteurDistance</a>();</div>
+<div class="line"><span class="lineno">  341</span>  <a class="code hl_function" href="TP-Proximity_2points_8c.html#ae62f4a9d17b0a9e2a1cb566093366e08">resetCompteurDistance</a>();</div>
 <div class="line"><span class="lineno">  342</span>  g_timeout_add (1000, <a class="code hl_function" href="main_8c.html#acf67b6f41a608ff7235fde67116e07ec">ticDistance</a>, (gpointer) pCtxt ); <span class="comment">// réenclenche le timer.</span></div>
 <div class="line"><span class="lineno">  343</span>  <span class="keywordflow">return</span> 0;</div>
 <div class="line"><span class="lineno">  344</span>}</div>
-<div class="ttc" id="aTP-Proximity_2points_8c_html_a008207d94578830880045795b07f8289"><div class="ttname"><a href="TP-Proximity_2points_8c.html#a008207d94578830880045795b07f8289">resetCompteurDistance</a></div><div class="ttdeci">void resetCompteurDistance()</div><div class="ttdoc">Remet à zéro le compteur du nombre d'appel à distance.</div><div class="ttdef"><b>Definition</b> <a href="TP-Proximity_2points_8c_source.html#l00059">points.c:59</a></div></div>
-<div class="ttc" id="aTP-Proximity_2points_8c_html_a02f66175ce0266f869400369bcf7a4f7"><div class="ttname"><a href="TP-Proximity_2points_8c.html#a02f66175ce0266f869400369bcf7a4f7">getCompteurDistance</a></div><div class="ttdeci">int getCompteurDistance()</div><div class="ttdef"><b>Definition</b> <a href="TP-Proximity_2points_8c_source.html#l00064">points.c:64</a></div></div>
+<div class="ttc" id="aTP-Proximity_2points_8c_html_a98b2b46df2853e9f678f0abd107332c8"><div class="ttname"><a href="TP-Proximity_2points_8c.html#a98b2b46df2853e9f678f0abd107332c8">getCompteurDistance</a></div><div class="ttdeci">int getCompteurDistance(void)</div><div class="ttdef"><b>Definition</b> <a href="TP-Proximity_2points_8c_source.html#l00064">points.c:64</a></div></div>
+<div class="ttc" id="aTP-Proximity_2points_8c_html_ae62f4a9d17b0a9e2a1cb566093366e08"><div class="ttname"><a href="TP-Proximity_2points_8c.html#ae62f4a9d17b0a9e2a1cb566093366e08">resetCompteurDistance</a></div><div class="ttdeci">void resetCompteurDistance(void)</div><div class="ttdoc">Remet à zéro le compteur du nombre d'appel à distance.</div><div class="ttdef"><b>Definition</b> <a href="TP-Proximity_2points_8c_source.html#l00059">points.c:59</a></div></div>
 </div><!-- fragment -->
 <p class="reference">References <a class="el" href="TP-Proximity_2points_8c_source.html#l00064">getCompteurDistance()</a>, <a class="el" href="main_8c_source.html#l00023">SContexte::label_distance</a>, <a class="el" href="TP-Proximity_2points_8c_source.html#l00059">resetCompteurDistance()</a>, and <a class="el" href="main_8c_source.html#l00335">ticDistance()</a>.</p>
 

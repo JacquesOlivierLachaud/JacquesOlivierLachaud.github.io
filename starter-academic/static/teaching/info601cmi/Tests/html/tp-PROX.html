@@ -167,7 +167,7 @@ Les particules sont maintenant générées avec un vecteur initial légèrement 
 <div class="line">}</div>
 </div><!-- fragment --><p>Il vous reste donc à:</p>
 <ul>
-<li>rajouter au contexte un champ <code>TabObstacles</code> <code>TabO</code>, et l'initialiser dans le <a class="el" href="union-find_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>.</li>
+<li>rajouter au contexte un champ <code>TabObstacles</code> <code>TabO</code>, et l'initialiser dans le main.</li>
 <li>compléter <code>mouse_clic_reaction</code> pour qu'il ajoute dans <code>TabO</code> un nouvel <code>Obstacle</code> aux coordonnées cliquées. Attention il faut utiliser la fonction <a class="el" href="main_8c.html#acaafb5db173fe34f4ea64ce334cdf69d">drawingAreaPoint2Point</a> pour convertir les coordonnées <b>pixel</b> en coordonnées <b>réelles</b>. On choisira dans un premier temps un rayon réel <code>r</code> de 0.05, et une atténuation <code>att</code> de 0.6.</li>
 <li>rajouter quelques lignes dans la fonction <a class="el" href="convex_8c.html#a23f093136857a9d27c727162c8ece026">on_draw</a> pour afficher tous les obstacles du contexte. N'oubliez pas d'utiliser la fonction de conversion de longueur réelle vers longueur pixel.</li>
 </ul>
