@@ -48,11 +48,13 @@ processing. Coding will be in C++.
 **Visit and clone repository https://github.com/JacquesOlivierLachaud/IPCV-practicals**
 
 * TP1 [Filtering and segmentation of 3D CT thoracic image](https://codimd.math.cnrs.fr/s/VSydn_j1G)
-    > (ready) 3d image filtering, digital surfaces
-* TP2 [Homotopic thinning](https://codimd.math.cnrs.fr/s/bVqUMFbM5) (wip)
-    > (wip) 3d shapes, digital topology, cubical complexes
+    > 3d image filtering, digital surfaces, connectedness
+* TP2 [Homotopic thinning](https://codimd.math.cnrs.fr/s/bVqUMFbM5)
+    > 3d shapes, digital topology, simple points, cubical complexes
 * TP3 [Geometric estimations on 3d digital surfaces](https://codimd.math.cnrs.fr/s/s2pNRQuga)
-    > (ready) 3d shapes, geometric estimators, multigrid convergence
+    > 3d shapes, geometric estimators, multigrid convergence
+* TP4 [Scale axis transform](https://codimd.math.cnrs.fr/s/hQb0tRXHP)
+    > 3d shapes, distance transform, scale axis, geometry processing
 
 
 ### Notes
