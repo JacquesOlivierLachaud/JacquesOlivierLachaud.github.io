@@ -33,7 +33,7 @@ The course takes place from December 9 to December 11, 2025, in Bordeaux.
 
 ### Lectures
 
-- [On-line lectures and practicals](https://codimd.math.cnrs.fr/s/dc2zU_Cui)
+- [On-line lectures and practicals](https://codimd.math.cnrs.fr/s/dc2zU_Cui) (wip)
 
 - See also <a href="https://jacquesolivierlachaud.github.io/talk/introduction-to-digital-geometry/"> Introduction to Digital Geometry </a>
 
@@ -47,8 +47,12 @@ processing. Coding will be in C++.
 
 **Visit and clone repository https://github.com/JacquesOlivierLachaud/IPCV-practicals**
 
-* digital topology
-    - TP0 [Homotopic thinning](https://codimd.math.cnrs.fr/s/bVqUMFbM5)
+* TP1 [Filtering and segmentation of 3D CT thoracic image](https://codimd.math.cnrs.fr/s/VSydn_j1G)
+    > (ready) 3d image filtering, digital surfaces
+* TP2 [Homotopic thinning](https://codimd.math.cnrs.fr/s/bVqUMFbM5) (wip)
+    > (wip) 3d shapes, digital topology, cubical complexes
+* TP3 [Geometric estimations on 3d digital surfaces](https://codimd.math.cnrs.fr/s/s2pNRQuga)
+    > (ready) 3d shapes, geometric estimators, multigrid convergence
 
 
 ### Notes
