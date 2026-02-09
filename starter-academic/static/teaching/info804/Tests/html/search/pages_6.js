@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['graphique_20info804_20m1_20info_202023_202024_0',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]]
+  ['faites_20par_20les_20étudiants_20sur_20le_20tp_20ray_20tracing_0',['Quelques images faites par les étudiants sur le tp ray-tracing',['../ig_tp2_etds.html',1,'']]]
 ];

@@ -123,7 +123,8 @@ $(function() {
 </ul>
 <h1><a class="anchor" id="ig_tp1_2"></a>
 2 - Code initial, application minimale libQGLViewer</h1>
-<p>On vous donne trois fichiers <a class="el" href="main_8cpp_source.html">main.cpp</a>, Viewer.h, Viewer.cpp, et un fichier de configuration Qt <a class="el" href="viewer_8pro_source.html">viewer.pro</a>. Il faut donc avoir installé <code>libqglviewer-dev</code> et Qt (qt5 ou qt6). A priori, tout le code peut marcher sous Windows ou MacOS. On utilise <code>qmake</code> pour construire un <code>Makefile</code> à partir du fichier <a class="el" href="viewer_8pro_source.html">viewer.pro</a>. Le fichier a la forme ci-dessous, à adapter selon votre configuration:</p>
+<p>On vous donne trois fichiers <a class="el" href="main_8cpp_source.html">main.cpp</a>, Viewer.h, Viewer.cpp, et un fichier de configuration Qt <a class="el" href="viewer_8pro_source.html">viewer.pro</a>. Il faut donc avoir installé <code>libqglviewer-dev</code> et Qt (qt6, même si qt5 peut fonctionner). A priori, tout le code peut marcher sous Windows ou MacOS. J'ai mis quelques informations sur la page <a class="el" href="ig_ext.html">Installation des bibliothèques externes</a>.</p>
+<p>On utilise <code>qmake</code> pour construire un <code>Makefile</code> à partir du fichier <a class="el" href="viewer_8pro_source.html">viewer.pro</a>. Le fichier a la forme ci-dessous, à adapter selon votre configuration:</p>
 <div class="fragment"><div class="line"># Ceci est un fichier de configuration pour une application Qt</div>
 <div class="line"># Il faut peut-etre legerement l adapter pour votre ordinateur.</div>
 <div class="line"> </div>
@@ -142,7 +143,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line"># Noms de vos fichiers entete</div>
 <div class="line">HEADERS = Viewer.h</div>
-<div class="line"># Noms de vos fichiers source (vous pouvez en mettre dautres)</div>
+<div class="line"># Noms de vos fichiers source (vous pouvez en mettre d&#39;autres)</div>
 <div class="line">SOURCES = Viewer.cpp main.cpp</div>
 <div class="line"> </div>
 <div class="line">###########################################################</div>
@@ -150,22 +151,23 @@ $(function() {
 <div class="line"># (Une config windows est possible)</div>
 <div class="line">###########################################################</div>
 <div class="line"> </div>
+<div class="line"># Exemple de configuration MacOSX/Qt5 ou Qt6 avec frameworks</div>
+<div class="line">INCLUDEPATH *= /Users/lachaud/local/src/libQGLViewer-3.0.0</div>
+<div class="line">LIBS *= -F/Users/lachaud/local/src/libQGLViewer-3.0.0/QGLViewer -framework QGLViewer</div>
+<div class="line"> </div>
 <div class="line"># Exemple de configuration Linux de Qt et libQGLViewer Qt5</div>
 <div class="line"># Ubuntu 20.04</div>
-<div class="line">LIBS *= -L/usr/lib/x86_64-linux-gnu -lQGLViewer-qt5</div>
+<div class="line"># LIBS *= -L/usr/lib/x86_64-linux-gnu -lQGLViewer-qt5</div>
 <div class="line"> </div>
 <div class="line"># Exemple de configuration MacOSX avec macports</div>
 <div class="line"># INCLUDEPATH *= /opt/local/include</div>
 <div class="line"># LIBS *= -L/opt/local/lib -lQGLViewer </div>
 <div class="line"> </div>
-<div class="line"># Exemple de configuration MacOSX/Qt5 ou Qt6 avec frameworks</div>
-<div class="line"># INCLUDEPATH *= /Users/me/local/src/libQGLViewer-2.9.1</div>
-<div class="line"># LIBS *= -F/Users/me/local/src/libQGLViewer-2.9.1/QGLViewer -framework QGLViewer</div>
-<div class="line"> </div>
 <div class="line"># Exemple de configuration Windows :</div>
 <div class="line"># LIBS *= -lopengl32 -lglu32</div>
-<div class="line"># INCLUDEPATH *= D:\Cours\Info805\TP1\libQGLViewer-2.7.1</div>
-<div class="line"># LIBS *= -LD:\Cours\Info805\TP1\libQGLViewer-2.7.1\QGLViewer -lQGLViewer2</div>
+<div class="line"># INCLUDEPATH *= D:\Cours\Info805\TP1\libQGLViewer-3.0.0</div>
+<div class="line"># LIBS *= -LD:\Cours\Info805\TP1\libQGLViewer-3.0.0\QGLViewer -lQGLViewer3</div>
+<div class="line"> </div>
 </div><!-- fragment --><p>Tapez donc</p>
 <pre class="fragment">$ qmake
 $ make
@@ -594,7 +596,7 @@ istream, string )</code> dans une chaîne de caractères <code>str</code>. Ensui
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Feb 16 2024 16:17:56 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Feb 9 2026 15:44:03 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

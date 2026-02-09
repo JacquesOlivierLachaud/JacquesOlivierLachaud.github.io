@@ -19,5 +19,6 @@ var searchData=
   ['et_20problèmes_20numériques_16',['5.3 Anti-aliasing et problèmes numériques (**)',['../ig_tp2.html#ig_tp2_5_3',1,'']]],
   ['et_20remise_20du_20tp_17',['5 - Conclusion et remise du TP',['../ig_tp1.html#ig_tp1_5',1,'']]],
   ['et_20transformations_20géométriques_18',['2.3 - Groupes et transformations géométriques',['../ig_tp3.html#ig_tp3_2_3',1,'']]],
-  ['eye_20tracing_19',['TP2 Algorithme de rendu par lancer de rayons (ray-tracing ou eye-tracing)',['../ig_tp2.html',1,'']]]
+  ['externes_19',['Installation des bibliothèques externes',['../ig_ext.html',1,'']]],
+  ['eye_20tracing_20',['TP2 Algorithme de rendu par lancer de rayons (ray-tracing ou eye-tracing)',['../ig_tp2.html',1,'']]]
 ];

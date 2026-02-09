@@ -14,12 +14,13 @@ var searchData=
   ['info_202023_202024_11',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]],
   ['info804_20m1_20info_202023_202024_12',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]],
   ['informatique_20graphique_20info804_20m1_20info_202023_202024_13',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]],
-  ['init_14',['init',['../classrt_1_1Viewer.html#a255cc2d6f55fc8565e614618d41589b1',1,'rt::Viewer::init()'],['../structrt_1_1Sphere.html#a19959ebd259a61462bfaa00ce1646b63',1,'rt::Sphere::init()'],['../structrt_1_1Scene.html#a2da8f0b8825e7a7c75567b706176385c',1,'rt::Scene::init()'],['../structrt_1_1Light.html#a2e8e11c22af30ac83168917784fe5918',1,'rt::Light::init()'],['../structrt_1_1PointLight.html#aa640ae91baa6c907fff896b3d6d70e85',1,'rt::PointLight::init()'],['../structrt_1_1GraphicalObject.html#a7e44e4ceb4562f25aca3864840f06e22',1,'rt::GraphicalObject::init()'],['../classViewer.html#a255cc2d6f55fc8565e614618d41589b1',1,'Viewer::init()']]],
+  ['init_14',['init',['../classViewer.html#a255cc2d6f55fc8565e614618d41589b1',1,'Viewer::init()'],['../classrt_1_1Viewer.html#a255cc2d6f55fc8565e614618d41589b1',1,'rt::Viewer::init()'],['../structrt_1_1Sphere.html#a19959ebd259a61462bfaa00ce1646b63',1,'rt::Sphere::init()'],['../structrt_1_1GraphicalObject.html#a7e44e4ceb4562f25aca3864840f06e22',1,'rt::GraphicalObject::init()'],['../structrt_1_1PointLight.html#aa640ae91baa6c907fff896b3d6d70e85',1,'rt::PointLight::init()'],['../structrt_1_1Scene.html#a2da8f0b8825e7a7c75567b706176385c',1,'rt::Scene::init()'],['../structrt_1_1Light.html#a2e8e11c22af30ac83168917784fe5918',1,'rt::Light::init()']]],
   ['initial_20application_20minimale_20libqglviewer_15',['2 - Code initial, application minimale libQGLViewer',['../ig_tp1.html#ig_tp1_2',1,'']]],
   ['initiale_16',['2.2 - Construire l&apos;application initiale',['../ig_tp2.html#ig_tp2_2_2',1,'']]],
   ['installation_20de_20three_20js_20et_20d_20un_20serveur_20web_20local_17',['1.1 - Installation de three.js et d&apos;un serveur web local',['../ig_tp3.html#ig_tp3_1_1',1,'']]],
-  ['intersecté_18',['3.3 - Couleur directe de l&apos;objet intersecté',['../ig_tp2.html#ig_tp2_3_3',1,'']]],
-  ['intersection_20avec_20l_20objet_20le_20plus_20proche_20sur_20le_20trajet_20du_20rayon_19',['3.2 - Rendu minimal, intersection avec l&apos;objet le plus proche sur le trajet du rayon.',['../ig_tp2.html#ig_tp2_3_2',1,'']]],
-  ['intersection_20rayon_20sphère_20',['3.1 - Intersection rayon / sphère',['../ig_tp2.html#ig_tp2_3_1',1,'']]],
-  ['iterator_21',['Iterator',['../structrt_1_1Image2D_1_1Iterator.html',1,'rt::Image2D']]]
+  ['installation_20des_20bibliothèques_20externes_18',['Installation des bibliothèques externes',['../ig_ext.html',1,'']]],
+  ['intersecté_19',['3.3 - Couleur directe de l&apos;objet intersecté',['../ig_tp2.html#ig_tp2_3_3',1,'']]],
+  ['intersection_20avec_20l_20objet_20le_20plus_20proche_20sur_20le_20trajet_20du_20rayon_20',['3.2 - Rendu minimal, intersection avec l&apos;objet le plus proche sur le trajet du rayon.',['../ig_tp2.html#ig_tp2_3_2',1,'']]],
+  ['intersection_20rayon_20sphère_21',['3.1 - Intersection rayon / sphère',['../ig_tp2.html#ig_tp2_3_1',1,'']]],
+  ['iterator_22',['Iterator',['../structrt_1_1Image2D_1_1Iterator.html',1,'rt::Image2D']]]
 ];
