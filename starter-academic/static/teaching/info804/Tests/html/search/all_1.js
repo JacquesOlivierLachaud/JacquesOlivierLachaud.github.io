@@ -20,6 +20,6 @@ var searchData=
   ['2_20rendu_20minimal_20intersection_20avec_20l_20objet_20le_20plus_20proche_20sur_20le_20trajet_20du_20rayon_17',['3.2 - Rendu minimal, intersection avec l&apos;objet le plus proche sur le trajet du rayon.',['../ig_tp2.html#ig_tp2_3_2',1,'']]],
   ['2_20une_20variante_20du_20plan_20infini_20l_20eau_20calme_18',['5.2 Une variante du plan infini, l&apos;eau calme (***)',['../ig_tp2.html#ig_tp2_5_2',1,'']]],
   ['2_20zipper_20et_20index_20d_20une_20cellule_19',['4.2 - Zipper et index d&apos;une cellule',['../ig_tp1.html#ig_tp1_4_2',1,'']]],
-  ['2023_202024_20',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]],
-  ['2024_21',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]]
+  ['2025_202026_20',['TPs Informatique graphique INFO804, M1 INFO (2025-2026)',['../index.html',1,'']]],
+  ['2026_21',['TPs Informatique graphique INFO804, M1 INFO (2025-2026)',['../index.html',1,'']]]
 ];

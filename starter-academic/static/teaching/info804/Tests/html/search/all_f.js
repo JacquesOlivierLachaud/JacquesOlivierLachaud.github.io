@@ -9,7 +9,7 @@ var searchData=
   ['graphicalobject_6',['graphicalobject',['../structrt_1_1GraphicalObject.html',1,'rt::GraphicalObject'],['../structrt_1_1GraphicalObject.html#ae1fee9fcd6346efe0a72b995824fdc44',1,'rt::GraphicalObject::GraphicalObject()']]],
   ['graphicalobject_2eh_7',['GraphicalObject.h',['../GraphicalObject_8h.html',1,'']]],
   ['graphique_20_3a_20le_20triangle_8',['5.4 Un nouvel objet graphique : le triangle (**)',['../ig_tp2.html#ig_tp2_5_4',1,'']]],
-  ['graphique_20info804_20m1_20info_202023_202024_9',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]],
+  ['graphique_20info804_20m1_20info_202025_202026_9',['TPs Informatique graphique INFO804, M1 INFO (2025-2026)',['../index.html',1,'']]],
   ['graphique_3a_20le_20plan_20infini_10',['5.1 Un nouvel objet graphique: le plan infini (*)',['../ig_tp2.html#ig_tp2_5_1',1,'']]],
   ['grille_20régulière_11',['4 - Compression par découpage sur une grille régulière',['../ig_tp1.html#ig_tp1_4',1,'']]],
   ['groupes_20et_20transformations_20géométriques_12',['2.3 - Groupes et transformations géométriques',['../ig_tp3.html#ig_tp3_2_3',1,'']]]

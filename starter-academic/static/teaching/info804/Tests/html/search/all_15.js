@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['m1_20info_202023_202024_0',['TPs Informatique graphique INFO804, M1 INFO (2023-2024)',['../index.html',1,'']]],
+  ['m1_20info_202025_202026_0',['TPs Informatique graphique INFO804, M1 INFO (2025-2026)',['../index.html',1,'']]],
   ['main_20du_20code_1',['2 - Prise en main du code',['../ig_tp2.html#ig_tp2_2',1,'']]],
   ['manipulator_2',['manipulator',['../structrt_1_1PointLight.html#a3b96f67310fdf9eafd4f340d6f169335',1,'rt::PointLight']]],
   ['matériaux_20et_20lumières_3',['2.2 - Matériaux et lumières',['../ig_tp3.html#ig_tp3_2_2',1,'']]],
