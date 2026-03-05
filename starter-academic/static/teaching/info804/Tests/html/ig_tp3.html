@@ -273,7 +273,7 @@ Premier exemple webgl</div></div>
 <p><b>Exercice</b> <b>2.2</b>. Remplacez le matériau de votre sphère par un <a href="https://threejs.org/docs/?q=meshphon#api/en/materials/MeshPhongMaterial">MeshPhongMaterial </a>. Donnez-lui une spécularité blanche bien visible.</p>
 <h2><a class="anchor" id="ig_tp3_2_3"></a>
 2.3 - Groupes et transformations géométriques</h2>
-<p><b> La scène est organisée sous forme d'un arbre. </b> Les objets géométriques ne sont pas seulement listés dans une scène géométrique, mais sont plutôt organisés sous forme d'une hiérarchie. L'intérêt (en dehors des aspects performances lorsqu'on ajoute des niveaux de détails) est qu'un transformation géométrique appliquée à un noeud est appliquée à tous les descendants du noeud. Ainsi, si on veut créer une voiture, on créera un noeud voiture, puis des descendants comme le chassis ou la carosserie, et les roues seront des descendants du chassis. On pourra faire tourner les roues par rapport au chassis, et un mouvement global de la voiture déplacera tout ce beau monde.</p>
+<p><b> La scène est organisée sous forme d'un arbre. </b> Les objets géométriques ne sont pas seulement listés dans une scène géométrique, mais sont plutôt organisés sous forme d'une hiérarchie. L'intérêt (en dehors des aspects performances lorsqu'on ajoute des niveaux de détails) est qu'un transformation géométrique appliquée à un noeud est appliquée à tous les descendants du noeud. Ainsi, si on veut créer une voiture, on créera un noeud voiture, puis des descendants comme le chassis ou la carosserie, les essieus seront des descendants du chassis, et les roues seront des descendants des essieus. On pourra faire tourner les roues par rapport aux essieus, et un mouvement global de la voiture déplacera tout ce beau monde.</p>
 <p>Tout objet géométrique (descendant de <code>Object3D</code>) peut avoir des fils, mais en général on préfère utiliser un <code>Group</code> pour rassembler des objets géométriques.</p>
 <p><b>Exercice</b> <b>2.3</b>. Créer une scène de type "système solaire" avec au centre le soleil (vous placez une lumière <code>PointLight</code> et une sphère), autour une planète terre (qui tourne autour du soleil), et autour de la terre une lune qui tourne autour. Vous pouvez aussi faire tourner la terre sur elle-même, sachant qu'elle a un axe tourné par rapport au soleil !</p>
 <div class="fragment"><div class="line"><span class="comment">// la terre est inclinée par rapport à son orbite.</span></div>
@@ -457,12 +457,12 @@ Le soleil est sur le point d'exploser en super-nova</div></div>
 <p>Vous pouvez compléter le système solaire, faire des planètes métalliques, des planètes de lave, des astéroïdes multiples sous forme de particules, utiliser d'autres materials, ou faire vos shaders, en vous inspirant de celui donné plus haut ou en regardant quelques exemples que j'ai mis sur mon site <a href="https://jacquesolivierlachaud.github.io/lectures/info804/">https://jacquesolivierlachaud.github.io/lectures/info804/</a> .</p>
 <p>Vous pouvez aussi faire quelque chose de complètement différent, dans la mesure où c'est un travail personnel.</p>
 <p>Bref, étonnez-moi !</p>
-<p>Vous me remettrez votre TP via <a href="https://tplab.apps.math.cnrs.fr">TPLab</a> seul ou en binôme avant le <b>vendredi</b> <b>23</b> <b>février</b> <b>2024</b> minuit, avec un README expliquant ce que vous avez fait d'original en plus des questions posées. Si vous préférez, vous pouvez aussi uploader votre TP sur un serveur web et me donner le lien. </p>
+<p>Vous me remettrez votre TP via <a href="https://tplab.apps.math.cnrs.fr">TPLab</a> seul ou en binôme à fin de la séance, puis la version finale avant le <b>dimanche</b> <b>22</b> <b>mars</b> <b>2026</b> minuit, avec un README expliquant ce que vous avez fait d'original en plus des questions posées. Si vous préférez (c'est souvent plus facile pour moi), vous pouvez aussi uploader votre TP sur un serveur web et me donner le lien. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 3 2026 08:22:59 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Thu Mar 5 2026 15:12:13 for INFO804 Introduction à l&#39;informatique graphique by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
