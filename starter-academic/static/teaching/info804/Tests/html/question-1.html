@@ -9,7 +9,7 @@
   <body>
     <div id="info"><a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> Q1: a rotating WebGL cube</div>
     <canvas id="webglcanvas" style="border: none;background-color:#000000"
-	    width="800" height="600"></canvas>
+             width="800" height="600"></canvas>
     
     <script type="importmap">
       {
@@ -32,9 +32,8 @@
 
       // Checks that your browser supports WebGL. 
       if ( ! ( window.WebGLRenderingContext
-	       && ( canvas.getContext('webgl')
-		    || canvas.getContext('experimental-webgl')) ) )
-	  console.log( "WebGL not supported on your browser." );
+               && canvas.getContext('webgl2') ) )
+           console.log( "WebGL not supported on your browser." );
       
       init();
       run();
@@ -43,8 +42,9 @@
       function init() {
 	  
 	  // Create the Three.js renderer and attach it to our canvas
+          let ctx_webgl = canvas.getContext( 'webgl2' );
 	  renderer = new THREE.WebGLRenderer( { canvas: canvas,
-						antialias: true } );
+	        				antialias: true } );
 	  // Set the viewport size
 	  renderer.setSize( canvas.width, canvas.height );
 	  // Create a new Three.js scene
