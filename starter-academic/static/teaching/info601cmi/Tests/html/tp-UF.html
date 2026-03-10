@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>INFO607: Structures Union-Find par forêts et application à la segmentation d&#39;image.</title>
+<title>INFO601_cmi: Structures Union-Find par forêts et application à la segmentation d&#39;image.</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,7 +25,7 @@ MathJax.Hub.Config({
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">INFO607
+   <div id="projectname">INFO601_cmi
    </div>
   </td>
  </tr>
@@ -70,9 +70,9 @@ $(function() {
 <div class="textblock"><h1><a class="anchor" id="tp-UF-1"></a>
 1 - Objectifs</h1>
 <p>L'objectif de ce TP est de vous faire mettre en oeuvre une structure de données efficace pour les ensembles disjoints : la forêt. On se servira de cette structure pour faire de la segmentation d'image, c'est-à-dire une partition de l'image en zones d'intérêt.</p>
-<p>Pour faciliter la visualisation, on utilisera la bibliothèque GTK (<a href="http://www.gtk.org">http://www.gtk.org</a>) comme interface graphique. Elle permet de charger les images, de les afficher, d'avoir des boutons et sélecteur de paramètres, etc. Vous vous en êtes déjà servi en INFO505 (<a href="http://www.lama.univ-savoie.fr/~lachaud/Cours/INFO504/Tests/doc/html/tp3.html">http://www.lama.univ-savoie.fr/~lachaud/Cours/INFO504/Tests/doc/html/tp3.html</a>) pour le TP Tetris graphique.</p>
+<p>Pour faciliter la visualisation, on utilisera la bibliothèque GTK (<a href="http://www.gtk.org">http://www.gtk.org</a>) comme interface graphique. Elle permet de charger les images, de les afficher, d'avoir des boutons et sélecteur de paramètres, etc.</p>
 <p>Pour vous faire gagner du temps, on vous donne une application de base <a class="el" href="union-find_8c.html">union-find.c</a> , qui charge une image et permet de choisir entre deux pixbufs pour la visualisation (l'image en entrée et l'image de sortie calculée).</p>
-<p>Prenez d'abord le temps de bien comprendre le code écrit, le source est consultable là: <a class="el" href="union-find_8c.html">union-find.c</a> et est présent dans l'archive, le makefile est ci-dessous:</p>
+<p>Prenez d'abord le temps de bien comprendre le code écrit, le source est consultable là: <a class="el" href="union-find_8c.html">union-find.c</a> et est présent dans l'archive, le fichier <a class="el" href="TP-UnionFind_2Makefile.html">Makefile</a> est ci-dessous:</p>
 <div class="fragment"><div class="line">SRC=union-find.c</div>
 <div class="line">CC=gcc</div>
 <div class="line">LD=gcc</div>
@@ -115,7 +115,7 @@ prompt$ ./union-find papillon-express.jpg</pre><h2><a class="anchor" id="tp-UF-1
 <div class="line"><span class="keywordflow">for</span> ( <span class="keywordtype">int</span> y = 0; y &lt; height; ++y )</div>
 <div class="line"> {</div>
 <div class="line">   <a class="code hl_struct" href="structPixel.html">Pixel</a>* pixel = (<a class="code hl_struct" href="structPixel.html">Pixel</a>*) data;</div>
-<div class="line">   <span class="keywordflow">for</span> ( x = 0; x &lt; width; ++x ) </div>
+<div class="line">   <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> x = 0; x &lt; width; ++x ) </div>
 <div class="line">     {</div>
 <div class="line">       pixel-&gt;<a class="code hl_variable" href="structPixel.html#a72a901ee374a0d5154d2a35e84fe9723">rouge</a> = 255; <span class="comment">// met le rouge à fond</span></div>
 <div class="line">       ++pixel;</div>
@@ -177,7 +177,7 @@ Image papillon-express seuillée à T=100</div></div>
 <p>On va maintenant coder une structure Union-Find pour calculer les composantes connexes de l'image seuillée. A une image seuillée, on associe un graphe dont les sommets sont les pixels et les arêtes relient deux pixels qui se touchent si ils ont même valeur. On cherchera à extraire les composantes connexes de ce graphe, c'est-à-dire les parties où il existe un chemin entre pixels. Dans un premier temps, on code une structure Union-Find, dans un deuxième temps on l'utilisera sur l'image.</p>
 <h2><a class="anchor" id="tp-UF-3-1"></a>
 3.1 Présentation des structures Union-Find par forêt</h2>
-<p>Une présentation plus détaillée est à la fin de la <a href="http://www.lama.univ-savoie.fr/pagesmembres/lachaud/Cours/INFO602/Cours/lesson-3.pdf">Leçon 3</a> d'INFO607. Les <b>forêts</b> constituent la structure de données la plus <b>efficace</b> pour coder les problèmes utilisant les ensembles disjoints (i.e. \( S = \cup_i S_i \) et \( \forall i
+<p>Une présentation plus détaillée est à la fin de la <a href="https://jacquesolivierlachaud.github.io/teaching/info601cmi/Lessons/lesson-3.pdf">Leçon 3</a> d'INFO601_cmi. Les <b>forêts</b> constituent la structure de données la plus <b>efficace</b> pour coder les problèmes utilisant les ensembles disjoints (i.e. \( S = \cup_i S_i \) et \( \forall i
    \neq j, S_i \cap S_j = \emptyset \)).</p>
 <p>Chaque sous-ensemble est représenté par un arbre, dont les noeuds sont les objets appartenant à l'ensemble et la racine est le représentant de l'ensemble. Chaque noeud d'un arbre a donc un pointeur vers son parent. La racine pointe vers elle-même et est le représentant du sous-ensemble constitué de tous les noeuds de l'arbre. Les fonctions sur les ensembles disjoints sont mis en oeuvre ainsi:</p>
 <ul>
@@ -237,7 +237,7 @@ Image papillon-express seuillée à T=100</div></div>
 <div class="line">  <span class="keywordtype">int</span> rang;</div>
 <div class="line">  <span class="keyword">struct </span>SObjet* pere;</div>
 <div class="line">} Objet;</div>
-</div><!-- fragment --><p>On va créer autant d'<code>Objet</code> que de pixels. On les place dans un grand tableau d'<code>Objet</code>, indicés de 0 à width*height-1, dans l'ordre habituel. Au début, chaque <code>Objet</code> doit pointer sur le bon pixel, avoir rang 0, et son père c'est lui-même. Ecrivez donc la fonction <code>creerEnsembles</code> qui fait ce travail et retourne ce tableau d'<code>Objet</code> alloué dynamiquement. Son prototype sera:</p>
+</div><!-- fragment --><p>On va créer autant d'<code>Objet</code> que de pixels. On les place dans un grand tableau d'<code>Objet</code>, indicés de <code>0</code> à <code>width*height-1</code>, dans l'ordre habituel. Au début, chaque <code>Objet</code> doit pointer sur le bon pixel, avoir rang 0, et son père c'est lui-même. Ecrivez donc la fonction <code>creerEnsembles</code> qui fait ce travail et retourne ce tableau d'<code>Objet</code> alloué dynamiquement. Son prototype sera:</p>
 <div class="fragment"><div class="line">Objet* CreerEnsembles( GdkPixbuf* pixbuf );</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Cette fonction est délicate. Vérifiez bien que les champs <code>pixel</code> et <code>pere</code> sont remplis correctement. Au besoin, me demander.</dd></dl>
 <p>Il faut ensuite créer les fonctions usuelles: </p><div class="fragment"><div class="line"><span class="comment">// Retourne le représentant de l&#39;objet obj</span></div>
@@ -262,8 +262,8 @@ Son graphe de connexité induit.</div></div>
    </td></tr>
 </table>
 <p>Créez maintenant un nouveau bouton "Composantes connexes" avec une réaction <code>ComposantesConnexes</code>. Elle réalisera l'algorithme ci-dessous:</p>
-<pre class="fragment">0) elle travaillera directement sur le \c pixbuf_output du contexte, en supposant que l'on a déjà appelé \c seuiller dessus.
-1) Objet* objets = CreerEnsembles( ... ); // elle commence par créer le tableau d'\c Objet.
+<pre class="fragment">0) elle travaillera directement sur le `pixbuf_output` du contexte, en supposant que l'on a déjà appelé `seuiller` dessus.
+1) Objet* objets = CreerEnsembles( ... ); // elle commence par créer le tableau d'`Objet`.
 2) Soit i = 0, le numero de l'objet courant
 3a) Pour toute paire d'objets objets[i] et objets[i+1] adjacents horizontalement,
       si ils ont même valeurs, on fait l'union.
@@ -300,7 +300,7 @@ GTKLIBS:=$(shell pkg-config --libs gtk+-3.0) -lrt
 </pre><p>Vous ferez un tableau où vous mesurerez les temps d'exécution avec plusieurs images de tailles différentes croisées avec les 4 algos Union-Find possible (Union-Find bête, Union-Find avec union par rang, Union-Find avec compression de chemins, Union-Find avec union par rang et compression de chemin). Vérifiez que le temps d'exécution est quasi-linéaire dans le dernier cas.</p>
 <h1><a class="anchor" id="tp-UF-4"></a>
 4 Affichage de la couleur moyenne pour chaque région</h1>
-<p>Pour faire plus "joli", plutôt que d'afficher une couleur aléatoire pour une région, on va afficher la couleur moyenne de tous les pixels de la même région. Pour nous, couleur moyenne sera les moyennes respectives de chaque canal de couleur (ce qui est un peu faux du point de vue vision humaine). On adapte la fonction précédentes <code>ComposantesConnexes</code> dans sa deuxième partie. On se donne d'abord une structure pour stocker les moyennes de couleur:</p>
+<p>Pour faire plus "joli", plutôt que d'afficher une couleur aléatoire pour une région, on va afficher la couleur moyenne de tous les pixels de la même région. Pour nous, la couleur moyenne sera les moyennes respectives de chaque canal de couleur (ce qui est un peu faux du point de vue vision humaine). On adapte la fonction précédentes <code>ComposantesConnexes</code> dans sa deuxième partie. On se donne d'abord une structure pour stocker les moyennes de couleur:</p>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
 <div class="line">  <span class="keywordtype">double</span> rouge;</div>
 <div class="line">  <span class="keywordtype">double</span> vert;</div>
@@ -341,8 +341,8 @@ Image papillon-express seuillée à T=135, puis dont les composantes connexes on
 <p>On utilise les définitions suivantes. Soit \( \rho(x,x&#39;) \) une fonction appelée <b>similitude</b> qui retourne un nombre &gt;= 0 étant donné deux pixels adjacents <em>x</em> et <em>x'</em>. Plus \( \rho \) est proche de 0, plus les pixels <em>x</em> et <em>x'</em> sont similaires. On dit que deux pixels arbitraires <em>x</em> et <em>y</em> (pas forcément adjacents) sont \( \alpha \)-<b>connexes</b> (pour \( \alpha
  \ge 0 \)) si et seulement si il existe un chemin de pixels deux à deux adjacents entre <em>x</em> et <em>y</em> tels que chacun de ces pixels adjacents ont une similitude inférieure ou égale à \( \alpha \).</p>
 <p>La relation d' \( \alpha \)-<b>connexité</b> est donc une généralisation de la connexité où deux pixels adjacents devaient être identiques (cf <a class="el" href="tp-UF.html#tp-UF-2">2 Seuillage de l'image</a> et <a class="el" href="tp-UF.html#tp-UF-3">3 Découpage de l'image seuillée en composantes connexes</a>). Maintenant, ils ont seulement besoin d'être similaire. En revanche, l'algorithme Union-Find fonctionnera toujours.</p>
-<pre class="fragment">0) elle travaillera directement sur le \c pixbuf_output du contexte, en supposant qu'on a copié l'input dessus avant.
-1) Objet* objets = CreerEnsembles( ... ); // elle commence par créer le tableau d'\c Objet.
+<pre class="fragment">0) On travaillera directement sur le `pixbuf_output` du contexte, en supposant qu'on a copié l'`input` dessus avant.
+1) Objet* objets = CreerEnsembles( ... ); // elle commence par créer le tableau d'`Objet`.
 2) Soit i = 0, le numero de l'objet courant
 3a) Pour toute paire d'objets objets[i] et objets[i+1] adjacents horizontalement,
       si ils sont similaires, on fait l'union.
@@ -383,9 +383,9 @@ Image kowloon-1000 dont les composantes connexes ont été extraites par similit
 6. Remise du tp</h1>
 <ul>
 <li>Ce TP peut être fait par binôme.</li>
-<li>vous déposerez votre travail à la fin de la séance via via <a href="http://www.lama.univ-savoie.fr/TPLab">TPLab</a>. Il faudra une archive nommée TP1-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, makefile. Vous ajouterez un petit README.txt indiquant les questions traitées complètement et celles traitées partiellement.</li>
-<li>Vous m'enverrez une version finale de votre TP au plus tard une semaine après via <a href="http://www.lama.univ-savoie.fr/TPLab">TPLab</a>. Il faudra une archive nommée TP1-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, makefile. Vous me ferez un petit <b>compte-rendu</b> précisant l'état d'avancement (ce qui marche, ce qui marche à moitié, et ce qui ne marche pas), qui donnera un tableau des temps de calcul de Union-Find, et qui pourra montrer quelques exemples de segmentation.</li>
-<li>Vous pouvez éventuellement mettre des exemples de segmentation dans votre compte-rendu.</li>
+<li>vous déposerez votre travail à la fin de la séance via <a href="http://www.lama.univ-savoie.fr/TPLab">TPLab</a>. Il faudra une archive nommée TP1-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, makefile. Vous ajouterez un petit <b>README.txt</b> indiquant les questions traitées complètement et celles traitées partiellement.</li>
+<li>Vous m'enverrez une version finale de votre TP au plus tard <b>dimanche</b> <b>15</b> <b>mars</b> <b>minuit</b> via <a href="https://tplab.apps.math.cnrs.fr">TPLab</a>. Il faudra une archive nommée TP1-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, Makefile. Vous me ferez un petit <b>compte-rendu</b> précisant l'état d'avancement (ce qui marche, ce qui marche à moitié, et ce qui ne marche pas), qui donnera un tableau des temps de calcul de Union-Find, et qui pourra montrer quelques exemples de segmentation.</li>
+<li>Vous pouvez éventuellement mettre des exemples de segmentation dans votre compte-rendu, avec d'autres images que celles fournies.</li>
 <li>Bien entendu, il faut que vos programmes compilent sous Linux. </li>
 </ul>
 </div></div><!-- contents -->
