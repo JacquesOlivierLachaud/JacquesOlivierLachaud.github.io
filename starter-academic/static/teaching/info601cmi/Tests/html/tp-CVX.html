@@ -70,7 +70,7 @@ $(function() {
 <div class="textblock"><h1><a class="anchor" id="tp-CVX-1"></a>
 1 - Objectifs</h1>
 <p>L'objectif de ce TP est de vous faire mettre en oeuvre des algorithmes efficaces pour calculer l'enveloppe convexe d'un ensemble de points.</p>
-<p>Pour faciliter la visualisation, on utilisera la bibliothèque GTK (<a href="http://www.gtk.org">http://www.gtk.org</a>) comme interface graphique. Elle permet de tracer des points et des lignes, d'avoir des boutons et sélecteur de paramètres, etc. Vous vous en êtes déjà servi en cours de C, INFO504 (<a href="https://www.lama.univ-savoie.fr/pagesmembres/lachaud/Cours/INFO504/Tests/doc/html/tp3.html">https://www.lama.univ-savoie.fr/pagesmembres/lachaud/Cours/INFO504/Tests/doc/html/tp3.html</a>) pour le TP Tetris graphique.</p>
+<p>Pour faciliter la visualisation, on utilisera la bibliothèque GTK (<a href="http://www.gtk.org">http://www.gtk.org</a>) comme interface graphique. Elle permet de tracer des points et des lignes, d'avoir des boutons et sélecteur de paramètres, etc. Vous vous en êtes déjà servi au TP précédent.</p>
 <p>Pour vous faire gagner du temps, on vous donne une application de base <a class="el" href="convex_8c.html">convex.c</a> , qui tire aléatoirement dix points dans le disque unité et affiche tous les points dans une zone de dessin.</p>
 <p>Prenez d'abord le temps de bien comprendre le code écrit, le source est consultable là: <a class="el" href="convex_8c.html">convex.c</a>, <a class="el" href="TP-Proximity_2points_8h.html">points.h</a>, <a class="el" href="TP-Proximity_2points_8c.html">points.c</a> et est présent dans l'archive, le makefile est ci-dessous:</p>
 <div class="fragment"><div class="line">CC=gcc</div>
@@ -115,7 +115,7 @@ prompt$ ./convex</pre><p>A l'issue de ce TP, vous aurez:</p><ul>
 2.2 - Variation du nombre de points ajouté.</h2>
 <p>Ajoutez un champ GTK_ENTRY pour que l'utilisateur puisse changer le nombre de points ajoutés lorsqu'il clique sur le bouton "Points
    aléatoires dans disque". Vous utiliserez les fonctions <code>gtk_entry_new</code> puis <code>gtk_entry_set_text</code> et <code>gtk_entry_get_text</code> pour ce faire. Vous ajouterez aussi un champ GTK_LABEL pour afficher le nombre <b>total</b> de points dans le tableau de points. Les fonctions utiles associées sont <code>gtk_label_new</code> et <code>gtk_label_set_text</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>Pour converter une chaîne de caractères vers un entier, on rappelle que vous disposez de la fonction <code>int atoi( char * )</code> dans <code>stdlib.h</code>. Pour faire l'inverse, on peut utiliser <code>sprintf</code> qui affiche dans un tableau de caractères.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Pour convertir une chaîne de caractères vers un entier, on rappelle que vous disposez de la fonction <code>int atoi( char * )</code> dans <code>stdlib.h</code>. Pour faire l'inverse, on peut utiliser <code>sprintf</code> qui affiche dans un tableau de caractères.</dd></dl>
 <div class="fragment"><div class="line"><span class="keywordtype">char</span>* txt = <span class="stringliteral">&quot;357&quot;</span>;</div>
 <div class="line"><span class="keywordtype">int</span>   nb  = atoi( txt );  <span class="comment">// nb = 357</span></div>
 <div class="line"><span class="keywordtype">char</span>  str[ 100 ];</div>
@@ -247,7 +247,7 @@ Balayage de Graham. Nombre de sommets de l'enveloppe convexe et temps d'exécuti
 5 - Remise du tp</h1>
 <ul>
 <li>Ce TP peut être fait par binôme.</li>
-<li>Vous m'enverrez votre première version du TP à la <b>fin</b> <b>de</b> <b>la</b> <b>séance</b>, puis la version finale au plus tard <b>dimanche</b> <b>7</b> <b>avril</b> <b>2023</b> <b>minuit</b>, via <a href="https://lama.univ-savoie.fr/TPLab">TPLab</a>. Il faudra une archive nommée TP2-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, makefile.</li>
+<li>Vous m'enverrez votre première version du TP à la <b>fin</b> <b>de</b> <b>la</b> <b>séance</b>, puis la version finale au plus tard <b>dimanche</b> <b>29</b> <b>mars</b> <b>2024</b> <b>minuit</b>, via <a href="https://tplab.apps.math.cnrs.fr">TPLab</a>. Il faudra une archive nommée TP2-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, makefile. Si je tape <code>make</code> puis <code>./convex</code>, votre programme doit s'exécuter.</li>
 <li>Vous <b>devez</b> inclure un petit compte-rendu précisant l'état d'avancement (ce qui marche, ce qui marche à moitié, et ce qui ne marche pas), qui donnera les graphiques demandés, et qui pourra montrer quelques exemples de calcul d'enveloppe convexe.</li>
 <li>Bien entendu, il faut que vos programmes compilent sous Linux. </li>
 </ul>
