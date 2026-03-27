@@ -6,7 +6,7 @@ event_url: 'https://20ansgdrifm.sciencesconf.org/'
 
 location: Internation Congress Center of Sorbonne University, Paris, France.
 
-summary:  Overview invited talk at JNIFM 2026, Paris, France.
+summary:  Invited overview talk at JNIFM 2026, Paris, France.
 abstract: 'This overview focuses on the geometry of subsets of the regular grid. Sets of pixels in 2D or voxels in 3D naturally appear as discretizations of Euclidean shapes and constitute the geometric objects of interest in photographic images or in 3D images from CT scans or MRIs, for example. We will first study which topological properties can be expected to be preserved after a discretization process and how we can calculate certain topological features. We will then address the problem of geometric inference. We will demonstrate some approaches for constructing geometric estimators with multi-grid convergence properties, that is, to what extent a geometric estimate on a discretized surface converges to the geometric quantity of the Euclidean object for increasingly fine discretizations. We will then show how it is possible to perform differential calculus on discrete surfaces, in a manner analogous to calculations on traditional meshes. Finally, we will present some emerging themes in the field.'
 
 # Talk start and end times.
