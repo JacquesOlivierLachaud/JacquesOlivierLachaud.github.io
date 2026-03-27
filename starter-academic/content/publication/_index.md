@@ -8,6 +8,7 @@ cms_exclude: true
 #   3 = Card
 #   4 = Citation
 view: citation
+count: 50
 
 # Optional header image (relative to `static/media/` folder).
 header:
