@@ -12,7 +12,7 @@ tags: [ "digital geometry", "discretized rotations", "bijective rotations" ]
 categories: []
 date: '2025-07-04'
 lastmod: '2025-07-04'
-featured: true
+featured: false
 draft: false
 
 # Featured image

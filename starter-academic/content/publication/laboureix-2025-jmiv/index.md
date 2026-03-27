@@ -13,7 +13,7 @@ tags: [ "digital geometry", "discrete lines", "arithmetic hyperplanes", "digital
 categories: []
 date: '2025-03-07'
 lastmod: '2025-03-07'
-featured: true
+featured: false
 draft: false
 
 # Featured image

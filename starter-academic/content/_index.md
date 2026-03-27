@@ -32,7 +32,7 @@ sections:
         folders:
           - publication
         featured_only: true
-      count: 6
+      count: 8
     design:
       view: article-grid
 #      view: card
@@ -52,7 +52,7 @@ sections:
         folders:
           - publication
         exclude_featured: false
-      count: 25
+      count: 30
     design:
       view: citation
 #view: compact
