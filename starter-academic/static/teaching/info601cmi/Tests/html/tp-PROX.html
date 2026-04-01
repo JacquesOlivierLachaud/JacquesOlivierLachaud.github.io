@@ -69,15 +69,15 @@ $(function() {
 <div class="textblock"><h1><a class="anchor" id="tp-PROX-1"></a>
 1 - Objectifs</h1>
 <p>L'objectif de ce TP est de vous faire mettre en oeuvre des algorithmes efficaces pour détecter les collisions entre objets dans le plan, au travers d'une application de simulation de déplacement de particules.</p>
-<p>Un premier moteur temps-réel de visualisation, basé sur la bibliothèque GTK (<a href="http://www.gtk.org">http://www.gtk.org</a>), vous est fourni. Vous vous en êtes déjà servi en cours de C, INFO505 (<a href="http://www.lama.univ-savoie.fr/~lachaud/Cours/INFO504/Tests/doc/html/tp3.html">http://www.lama.univ-savoie.fr/~lachaud/Cours/INFO504/Tests/doc/html/tp3.html</a>) pour le TP Tetris graphique. Vous reconnaîtrez l'utilisation des timers et des zones de dessins pour une application animée en temps-réel.</p>
+<p>Un premier moteur temps-réel de visualisation, basé sur la bibliothèque GTK (<a href="http://www.gtk.org">http://www.gtk.org</a>), vous est fourni. Vous vous en êtes déjà servi dans les deux TP précédents. Notez l'utilisation des timers et des zones de dessins pour une application animée en temps-réel.</p>
 <p>Pas mal de choses vous sont déjà fournis, histoire de se concentrer un peu plus sur les requêtes de proximité. On vous donne les fichiers suivants:</p>
 <ul>
 <li><a class="el" href="main_8c.html">main.c</a> : contient l'IHM, la partie temps-réel, le calcul de la dynamique des objets, l'affichage.</li>
-<li><a class="el" href="TP-Proximity_2points_8h.html">points.h</a>, <a class="el" href="TP-Proximity_2points_8c.html">points.c</a> : la structure de point "simple", avec quelques opérations point/vecteur.</li>
+<li><a class="el" href="TP-Proximity_2points_8h.html">points.h</a>, <a class="el" href="TP-Proximity_2points_8c.html">points.c</a> : la structure de point "simple", avec quelques opérations sur les points/vecteurs.</li>
 <li><a class="el" href="particules_8h.html">particules.h</a>, <a class="el" href="particules_8c.html">particules.c</a> : la structure de particules qui mémorise la position, le vecteur vitesse, les forces, la masse. On dispose aussi d'une structure de tableau dynamique de ces particules.</li>
 <li><a class="el" href="forces_8h.html">forces.h</a>, <a class="el" href="forces_8c.html">forces.c</a> : contient la structure pour représenter des forces, ici la simple gravité.</li>
 </ul>
-<p>Prenez d'abord le temps de bien comprendre le code écrit. Un Makefile vous est aussi fourni.</p>
+<p>Prenez d'abord le temps de bien comprendre le code écrit. Un fichier <code>Makefile</code> vous est aussi fourni.</p>
 <p>Il s'exécute ainsi: </p><pre class="fragment">prompt$ make
 prompt$ ./main</pre><p>L'exécution du programme donne quelque chose comme ceci:</p>
 <div class="image">
@@ -237,7 +237,7 @@ Les particules rebondissent sur les obstacles placés par l'utilisateur.</div></
 4 - Une structure pour accélerer les tests de collision</h1>
 <p>On voit que notre simulateur doit faire un nombre considérable de tests de collision, dès lors qu'on met un certain nombre d'obstacles. Ce serait encore plus vrai si on gérait les collisions entre particules. Comme nos obstacles sont statiques (ne se déplacent pas), on va les structurer dans un arbre k-D. Du coup on n'aura pas besoin de tester pour chaque particule ses collisions possibles avec tous les obstacles.</p>
 <p>Les arbres k-D sont des arbres binaires avec juste un fonctionnement un peu particulier. On vous donne donc les fichiers <a class="el" href="arbre_8h.html">arbre.h</a> et <a class="el" href="arbre_8c.html">arbre.c</a>, qui vous fournissent la structure <a class="el" href="arbre_8h.html#acf88594ceae6b727346db9a9f8c46577">Arbre</a> et des fonctions pour créer, modifier ou se déplacer dans les arbres.</p>
-<p>Les arbres k-D sont décrits dans la <a href="http://www.lama.univ-savoie.fr/pagesmembres/lachaud/Cours/INFO602/Cours/lesson-5.pdf">Leçon 5</a> d'INFO607. Les arbres k-D qui sont des arbres binaires. Chaque point situé à un noeud de l'arbre coupe l'espace en deux régions selon un plan qui dépend de la profondeur dans l'arbre. Ainsi les noeuds de profondeur 0 coupe l'espace selon leur première coordonnée \( x \), les noeuds de profondeur 1 coupe l'espace selon leur deuxième coordonnée \( y \), les noeuds de profondeur 2 coupe l'espace selon leur troisième coordonnée \( z
+<p>Les <b>arbres</b> <b>k-D</b> sont décrits dans la <a href="https://jacquesolivierlachaud.github.io/teaching/info601cmi/Lessons/lesson-5.pdf">Leçon 5 d'INFO601_CMI </a>. Les arbres k-D sont des arbres binaires. Chaque point situé à un noeud de l'arbre coupe l'espace en deux régions selon un plan qui dépend de la profondeur dans l'arbre. Ainsi les noeuds de profondeur 0 coupe l'espace selon leur première coordonnée \( x \), les noeuds de profondeur 1 coupe l'espace selon leur deuxième coordonnée \( y \), les noeuds de profondeur 2 coupe l'espace selon leur troisième coordonnée \( z
    \) en 3D, etc, en recommançant à la première coordonnée après avoir coupé selon la dernière.</p>
 <p>Il est facile d'équilibrer les arbres k-D. Il suffit en effet à chaque fois de choisir comme point de découpe le point situé à la médiane des points restants selon la direction de découpe. Une illustration est donnée ci-dessous.</p>
 <div class="image">
@@ -305,7 +305,7 @@ Algorithme de création d'un arbre k-D.</div></div>
 <div class="ttc" id="aarbre_8c_html_ab935ea02b09d64a33d679196e8e2fd45"><div class="ttname"><a href="arbre_8c.html#ab935ea02b09d64a33d679196e8e2fd45">Droit</a></div><div class="ttdeci">Noeud * Droit(Noeud *N)</div><div class="ttdef"><b>Definition</b> <a href="arbre_8c_source.html#l00128">arbre.c:128</a></div></div>
 <div class="ttc" id="aarbre_8c_html_ad7c02919ddc150c691a29ba5c4783f6a"><div class="ttname"><a href="arbre_8c.html#ad7c02919ddc150c691a29ba5c4783f6a">Valeur</a></div><div class="ttdeci">Donnee * Valeur(Noeud *N)</div><div class="ttdef"><b>Definition</b> <a href="arbre_8c_source.html#l00153">arbre.c:153</a></div></div>
 <div class="ttc" id="aconvex_8c_html_a84e7aa0206045214a119e09ade191be7"><div class="ttname"><a href="convex_8c.html#a84e7aa0206045214a119e09ade191be7">drawPoint</a></div><div class="ttdeci">void drawPoint(cairo_t *cr, Point p)</div><div class="ttdef"><b>Definition</b> <a href="convex_8c_source.html#l00113">convex.c:113</a></div></div>
-</div><!-- fragment --><p>On l'appelle ainsi dans expose_evt_reaction : </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structSPoint.html">Point</a> bg = { {-10.0, -10.0} };</div>
+</div><!-- fragment --><p>On l'appelle ainsi dans <a class="el" href="convex_8c.html#a23f093136857a9d27c727162c8ece026">on_draw</a>, avant ou après l'affichage des particules. </p><div class="fragment"><div class="line"><a class="code hl_struct" href="structSPoint.html">Point</a> bg = { {-10.0, -10.0} };</div>
 <div class="line"><a class="code hl_struct" href="structSPoint.html">Point</a> hd = { { 10.0,  10.0} };</div>
 <div class="line">viewerKDTree( pCtxt, cr, <a class="code hl_function" href="arbre_8c.html#a228f1d85433277e0605db3f1710e1df2">Racine</a>( pCtxt-&gt;kdtree ), bg, hd, 0 );</div>
 <div class="ttc" id="aarbre_8c_html_a228f1d85433277e0605db3f1710e1df2"><div class="ttname"><a href="arbre_8c.html#a228f1d85433277e0605db3f1710e1df2">Racine</a></div><div class="ttdeci">Noeud * Racine(Arbre *A)</div><div class="ttdef"><b>Definition</b> <a href="arbre_8c_source.html#l00092">arbre.c:92</a></div></div>
@@ -316,7 +316,7 @@ Algorithme de création d'un arbre k-D.</div></div>
 Visualisation de l'arbre k-D des obstacles.</div></div>
 <h2><a class="anchor" id="tp-PROX-4-2"></a>
 4.2 - Détection des obstacles proches de vos particules</h2>
-<p>Vous êtes presque au bout de vos peines. Il s'agit maintenant juste d'être un peu plus intelligent dans la fonction <a class="el" href="main_8c.html#aa7e673a44be06db2002069efb6bedd06">deplaceParticule</a>, en n'appelant la fonction <a class="el" href="TP-Proximity_2points_8c.html#a7d653a23bc3022afd9b32e419abbbc2d">distance</a> que sur les obstacles suffisamment près de la particule. On va donc utiliser l'algorithme <code>PointsDansBoule</code> vu en-cours et de prototype :</p>
+<p>Vous êtes presque au bout de vos peines. Il s'agit maintenant juste d'être un peu plus intelligent dans la fonction <a class="el" href="main_8c.html#aa7e673a44be06db2002069efb6bedd06">deplaceParticule</a>, en n'appelant la fonction <a class="el" href="TP-Proximity_2points_8c.html#a7d653a23bc3022afd9b32e419abbbc2d">distance</a> que sur les obstacles suffisamment près de la particule. On va donc utiliser l'algorithme <code>PointsDansBoule</code> pour détecter les collisions particule/obstacle. Le principe est de partir de la racine de l'arbre et de descendre seulement dans les branches qui peuvent contenir un obstacle proche de la particule donnée. Son prototype est :</p>
 <div class="fragment"><div class="line"><span class="comment">// Ajoute dans le tableau d&#39;obstacles F les obstacles de l&#39;arbre</span></div>
 <div class="line"><span class="comment">// désigné par le noeud racine N qui sont à une distance inférieure à</span></div>
 <div class="line"><span class="comment">// r du point p. Le paramètre a désigne l&#39;axe courant (0 ou 1) et</span></div>
@@ -362,18 +362,18 @@ Visualisation de l'arbre k-D des obstacles et accélération des tests de proxim
 <li>le transformer en jeu avec score et objectifs...</li>
 <li>...</li>
 </ul>
-<p>On note que gérer les collisions entre particules elles-mêmes est plus délicat, en tous cas avec les arbres k-D. Il faut en effet recréer les arbres stockant les particules à chaque itération.</p>
+<p>On note que gérer les collisions entre particules elles-mêmes est plus délicat, en tous cas avec les arbres k-D. Il faut en effet recréer les arbres stockant les particules à chaque itération. Les arbres k-D sont moins adaptés à ce problème. On utilise en général plutôt des structures plus simples de découpage en grille du domaine.</p>
 <h1><a class="anchor" id="tp-PROX-5"></a>
 5 - Remise du tp</h1>
 <ul>
 <li>Ce TP peut être fait par binôme.</li>
-<li>Vous m'enverrez par email votre TP avant le <b>25</b> <b>avril</b> <b>2023</b> <b>minuit</b>, via <a href="https://www.lama.univ-savoie.fr/TPLab">TPLab</a>. Il faudra une archive nommée TP3-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, makefile.</li>
+<li>Vous m'enverrez par email votre TP avant le <b>12</b> <b>avril</b> <b>2026</b> <b>minuit</b>, via <a href="https://tplab.apps.math.cnrs.fr">TPLab</a>. Il faudra une archive nommée TP3-[votre ou vos nom(s)] contenant tous les fichiers sources, entêtes, makefile.</li>
 <li>Bien entendu, il faut que vos programmes compilent sous Linux.</li>
 <li>si je fais <code>make</code>, ça doit compiler sans erreur et sans warning (dans vos sources).</li>
-<li>Vous me ferez un petit compte-rendu (README) précisant l'état d'avancement (ce qui marche, ce qui marche à moitié, et ce qui ne marche pas), ainsi que les éléments supplémentaires éventuels que vous avez rajoutés.</li>
+<li>Vous me ferez un petit compte-rendu texte (README) précisant l'état d'avancement (ce qui marche, ce qui marche à moitié, et ce qui ne marche pas), ainsi que les éléments supplémentaires éventuels que vous avez rajoutés.</li>
 </ul>
 <div class="image">
-<img src="proximity-5.png" alt="" width="60%"/>
+<img src="proximity-5.png" alt="" width="50%"/>
 </div>
  </div></div><!-- contents -->
 </div><!-- PageDoc -->
