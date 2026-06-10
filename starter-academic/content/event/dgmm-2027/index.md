@@ -11,12 +11,12 @@ abstract: ''
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2027-04-13T9:00:00Z'
+date: '2027-04-13T09:00:00Z'
 date_end: '2027-04-16T16:00:00Z'
 all_day: false
 
 # Schedule page publish date (NOT talk date).
-publishDate: '2026-06-10T10:00:00Z'
+publishDate: '2026-06-01T10:00:00Z'
 
 authors: [ "Isabelle Sivignon", admin, "Stéphane Breuils", "Dominique Attali", "Cédric Gérot" ]
 tags: [ "event", "digital geometry", "mathematical morphology", "geometry processing" ]
