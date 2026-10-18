@@ -16,47 +16,76 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 
 ---
 
-### Niveau 1 : Bases de la classe
+### Niveau 1 : Bases de la classe Rational
 
-0. **Structures, classes en C++**
+1. **Structures, classes en C++**
 
-> Comme beaucoup de langages, le C++ offre un moyen de définir de
-> nouveaux types complexes en agrégeant les types déjà créés via des
-> structures (enregistrements, {\em record}, classes). Il offre deux
-> mot-clés très similaires pour le faire: {\tt struct} et {\tt class}.
+> **Structures, classes en C++** Comme beaucoup de langages, le C++
+> offre un moyen de définir de nouveaux types complexes en agrégeant
+> les types déjà créés via des structures (enregistrements, record,
+> classes). Il offre deux mot-clés très similaires pour le faire:
+> `struct` et `class`.
 
 > La différence réside uniquement dans le fait que, par défaut, une
-> structure est {\em publique}, et que donc des fonctions extérieures
+> structure est *publique*, et que donc des fonctions extérieures
 > à la structure peuvent accéder aux champs et aux méthodes de la
-> structure, tandis qu'une classe est par défaut {\em privée} et
+> structure, tandis qu'une classe est par défaut *privée* et
 > interdit à toute fonction extérieure d'accéder à ses données :
 > seules ses méthodes ont ce droit-là. On voit donc que les deux
 > mot-clés ont été conservés uniquement pour que les structures aient
 > par défaut les mêmes propriétés qu'en langage C, tandis que les
-> classes poussent le programmeur à préserver l'{\em encapsulation}
+> classes poussent le programmeur à préserver l'*encapsulation*
 > des données.
 
-| C                | C++            |
-| :--------------- | :------------- | 
-| struct Point {   | class Point {
-|   double x;      |   double x; // en fait privé
-|   double y;      |   double y; // en fait privé
-| };               | };
-|  ...             | ...
-| Point p = {3,2}; | Point p = {3,2}; // invalide
-| p.x = 17; // ok  | p.x = 17; // invalide
+```
+// C             | C++            
+struct Point {   | class Point {
+double _x;     |   double _x; // en fait privé
+double _y;     |   double _y; // en fait privé
+};               | };
+...             | ...
+Point p = {3,2}; | Point p = {3,2}; // invalide
+p._x = 17; // ok | p._x = 17; // invalide
+```
 
+> L'initialisation des données membres d'une classe se fait via des
+> méthodes, soit à la construction de l'objet via un constructeur,
+> soit après via d'autres méthodes (type setter ou autres).
 
-1. **Définir une classe `Rational`** avec deux attributs privés `num` (numérateur) et `den` (dénominateur).  
+```
+// Les constructeurs et destructeurs sont des méthodes sans valeur de retour
+class A {
+public:  // essentiel sinon non accessibles
+~A()     { ... } // destructeur
+A()      { ... } // constructeur par défaut
+A(int i) { ... } // constructeur avec un entier
+A(A& a)  { ... } // constructeur par copie
+};
+```
+
+1.1 **Définir une classe `Rational`** avec deux attributs privés `num` (numérateur) et `den` (dénominateur).  
    Ajouter :
    - un constructeur prenant deux entiers `(p, q)` ;
    - un constructeur par défaut représentant `0/1`.
-
+   - créer un code qui instancie les rationnels 1/2 et 4/3.
+   
    >
    > :thinking: Pourquoi n'a-t-on pas besoin d'écrire un constructeur par copie ?
    >
 
-2. **Ajouter une méthode `toString()`** qui retourne une chaîne de caractères de la forme `"num/den"`.  
+> **Chaînes de caractères** On peut utiliser en C++ le même mécanisme
+> que le C pour les chaînes de caractères, c'est-à-dire les tableaux
+> de caractères terminés par le caractère 0 (ou `'\0'`). Néanmoins, on
+> sait que ce n'est pas toujours pratique, notamment si on veut
+> augmenter ou diminuer la taille de la chaîne. La STL fournit une
+> classe `string` (dans le namespace `std`) extrêmement pratique pour
+> manipuler les chaînes de caractères. Grâce à elle, il n'y a aucun
+> risque de dépassement de capacité, et on peut concaténer, découper,
+> dupliquer les chaînes très facilement.  On dispose des méthodes
+> `std::to_string(...)` pour convertir des types de base vers un
+> `string`.
+
+1.2. **Ajouter une méthode `toString()`** qui retourne une chaîne de caractères de la forme `"num/den"`.  
    Tester la création et l’affichage de quelques rationnels.
 
    **Ajouter deux accesseurs `n()` et `d()`** en lecture pour le numérateur et dénominateur.
@@ -65,7 +94,7 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
    > pourrait juste les rendre publique et ne pas faire
    > d'accesseur. Quel(s) serai(en)t le(s) défaut(s) de cette approche
    > ?
-   
+
 ---
 
 ### Niveau 2 : Invariants et simplification
