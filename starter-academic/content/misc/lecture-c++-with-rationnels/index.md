@@ -40,8 +40,8 @@ L'objectif de cette série d'exercices est de construire progressivement une cla
 ```
 // C             | C++            
 struct Point {   | class Point {
-double _x;     |   double _x; // en fait privé
-double _y;     |   double _y; // en fait privé
+  double _x;     |   double _x; // en fait privé
+  double _y;     |   double _y; // en fait privé
 };               | };
 ...             | ...
 Point p = {3,2}; | Point p = {3,2}; // invalide
@@ -55,11 +55,11 @@ p._x = 17; // ok | p._x = 17; // invalide
 ```
 // Les constructeurs et destructeurs sont des méthodes sans valeur de retour
 class A {
-public:  // essentiel sinon non accessibles
-~A()     { ... } // destructeur
-A()      { ... } // constructeur par défaut
-A(int i) { ... } // constructeur avec un entier
-A(A& a)  { ... } // constructeur par copie
+  public:  // essentiel sinon non accessibles
+  ~A()     { ... } // destructeur
+  A()      { ... } // constructeur par défaut
+  A(int i) { ... } // constructeur avec un entier
+  A(A& a)  { ... } // constructeur par copie
 };
 ```
 
@@ -120,6 +120,23 @@ A(A& a)  { ... } // constructeur par copie
 ---
 
 ### Niveau 3 : Surcharge d’opérateurs arithmétiques
+
+> **Surcharge de fonctions ou méthodes** Il est légitime
+> en C++ de *surcharger* des fonctions, c'est-à-dire de définir
+> des fonctions de même nom mais de signature différente (les
+> paramètres sont différents). C'est le compilateur qui choisit la
+> fonction la plus appropriée par rapport aux types que vous donnez en
+> paramètres. On note aussi que le C++ fait des conversions implicites
+> de type dans certains cas pour essayer de trouver la fonction
+> adéquate.
+
+> **Surcharge des opérateurs** En c++, les opérateurs `+`, `-`, `==`,
+> `[]`, `()`, etc, peuvent aussi être surchargés. Cela permet des
+> opérations arithmétiques ou de comparaison sur des vecteurs,
+> matrices, chaînes de caractères par exemple. La syntaxe utilise le
+> mot-clé `operator`.
+
+
 
 6. **Surcharger les opérateurs `+=`, `-=, `*=`, `/=`**.
 
