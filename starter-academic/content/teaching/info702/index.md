@@ -20,7 +20,9 @@ informations.
 ### Cours
 
 * [Notes de cours (PDF)](Cours/notes-de-cours.pdf), mise à jour en
-  9/2023. Intègre notamment les concepts du standard c++20.
+  27/10/2026. Version entièrement mise à jour, intègre notamment les
+  concepts du standard c++20, la méta-programmation moderne, les
+  exceptions, les vues, les ranges.
 
 * [Cours 1](/misc/lecture-c++-with-rationnels) références, POO, surcharge d'opérateurs 
 
