@@ -29,10 +29,13 @@ informations.
 
 ### Fiches de TDs
 
-* [TD1  (PDF)](TDs/td-1.pdf) Références, POO, surcharge d'opérateurs, polymorphisme
-  - correction matrices, vecteurs: [Vecteur.hpp](TDs/Vecteur.hpp) [Vecteur.cpp](TDs/Vecteur.cpp) [Matrice.hpp](TDs/Matrice.hpp) [Matrice.cpp](TDs/Matrice.cpp) [spirograph.cpp](TDs/spirograph.cpp)
+* [TD1  (PDF)](TDs/td-1.pdf) Références, POO, surcharge d'opérateurs, polymorphisme <a style="color:#ff0000;">[mise à jour, October 2026]</a>
+  - correction vecteurs: [Vecteur.hpp](TDs/Vecteur.hpp) [Vecteur.cpp](TDs/Vecteur.cpp)
+  <!--
+  - correction matrices: [Matrice.hpp](TDs/Matrice.hpp) [Matrice.cpp](TDs/Matrice.cpp) [spirograph.cpp](TDs/spirograph.cpp) 
   - correction damier [damier.cpp](TDs/damier.cpp)
-
+  -->
+  
 * [TD2  (PDF)](TDs/td-2.pdf) Fonctions génériques, classes génériques, spécialisation, lambdas
   - correction arbres/ABR [arbres.cpp](TDs/arbres.cpp)
 
