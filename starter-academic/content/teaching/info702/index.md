@@ -1,7 +1,7 @@
 ---
 title: INFO702
 summary: Programmation générique en C++
-date: 2025-08-01
+date: 2026-10-27
 type: docs
 tags:
   - lecture
@@ -12,6 +12,7 @@ tags:
 
 > Cours du semestre 7 de Master Informatique, CMI4 Informatique.
 > <a style="color:#907bf7;">[Jacques-Olivier Lachaud, August 2025]</a>
+> <a style="color:#ff0000;">[mise à jour, October 2026]</a>
 
 Ces ressources sont des outils de travail et de révision. Elles ne
 remplacent pas les cours et/ou les td, qui peuvent contenir d'autres
@@ -32,10 +33,13 @@ informations.
   - correction matrices, vecteurs: [Vecteur.hpp](TDs/Vecteur.hpp) [Vecteur.cpp](TDs/Vecteur.cpp) [Matrice.hpp](TDs/Matrice.hpp) [Matrice.cpp](TDs/Matrice.cpp) [spirograph.cpp](TDs/spirograph.cpp)
   - correction damier [damier.cpp](TDs/damier.cpp)
 
-* [TD sur les rationnels](/misc/td-rationnels) POO, surcharge d'opérateurs
-
 * [TD2  (PDF)](TDs/td-2.pdf) Fonctions génériques, classes génériques, spécialisation, lambdas
   - correction arbres/ABR [arbres.cpp](TDs/arbres.cpp)
+
+### Divers
+
+* [TD sur les rationnels](/misc/td-rationnels) POO, surcharge d'opérateurs
+
 
 ### TPs
 
