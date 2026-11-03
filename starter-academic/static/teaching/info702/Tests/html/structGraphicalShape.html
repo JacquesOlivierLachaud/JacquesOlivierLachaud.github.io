@@ -101,24 +101,84 @@ Inheritance diagram for GraphicalShape:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac6f4f45b07b49972fa022a8a2c676448" id="r_ac6f4f45b07b49972fa022a8a2c676448"><td class="memItemLeft" align="right" valign="top"><a id="ac6f4f45b07b49972fa022a8a2c676448" name="ac6f4f45b07b49972fa022a8a2c676448"></a>
-virtual QPointF&#160;</td><td class="memItemRight" valign="bottom"><b>randomPoint</b> () const =0</td></tr>
+<tr class="memitem:ac6f4f45b07b49972fa022a8a2c676448" id="r_ac6f4f45b07b49972fa022a8a2c676448"><td class="memItemLeft" align="right" valign="top">virtual QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGraphicalShape.html#ac6f4f45b07b49972fa022a8a2c676448">randomPoint</a> () const =0</td></tr>
+<tr class="memdesc:ac6f4f45b07b49972fa022a8a2c676448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a point in this item's PARENT coordinates.  <br /></td></tr>
 <tr class="separator:ac6f4f45b07b49972fa022a8a2c676448"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f0178f5d7c0f38f4fa16a6f36046586" id="r_a3f0178f5d7c0f38f4fa16a6f36046586"><td class="memItemLeft" align="right" valign="top"><a id="a3f0178f5d7c0f38f4fa16a6f36046586" name="a3f0178f5d7c0f38f4fa16a6f36046586"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isInside</b> (const QPointF &amp;p) const =0</td></tr>
+<tr class="memitem:a3f0178f5d7c0f38f4fa16a6f36046586" id="r_a3f0178f5d7c0f38f4fa16a6f36046586"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGraphicalShape.html#a3f0178f5d7c0f38f4fa16a6f36046586">isInside</a> (const QPointF &amp;p) const =0</td></tr>
+<tr class="memdesc:a3f0178f5d7c0f38f4fa16a6f36046586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests a point expressed in this item's PARENT coordinates.  <br /></td></tr>
 <tr class="separator:a3f0178f5d7c0f38f4fa16a6f36046586"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class that describes a graphical object with additional methods for testing collisions. </p>
 
-<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00023">23</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00033">33</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3f0178f5d7c0f38f4fa16a6f36046586" name="a3f0178f5d7c0f38f4fa16a6f36046586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f0178f5d7c0f38f4fa16a6f36046586">&#9670;&#160;</a></span>isInside()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool GraphicalShape::isInside </td>
+          <td>(</td>
+          <td class="paramtype">const QPointF &amp;&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tests a point expressed in this item's PARENT coordinates. </p>
+
+<p>Implemented in <a class="el" href="structMasterShape.html#a51a00d73f879dc3e5250b38e02f0c0c2">MasterShape</a>, and <a class="el" href="structDisk.html#a9818621599c16b784bddcaf8941932e5">Disk</a>.</p>
+
+</div>
+</div>
+<a id="ac6f4f45b07b49972fa022a8a2c676448" name="ac6f4f45b07b49972fa022a8a2c676448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f4f45b07b49972fa022a8a2c676448">&#9670;&#160;</a></span>randomPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual QPointF GraphicalShape::randomPoint </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a point in this item's PARENT coordinates. </p>
+
+<p>Implemented in <a class="el" href="structMasterShape.html#a055688fc482a7567657c5df7c87bff9f">MasterShape</a>, and <a class="el" href="structDisk.html#aa6f1bde78cef501abe793f844a95b1e2">Disk</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>TP0/<a class="el" href="objects_8hpp_source.html">objects.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 25 2025 13:09:34 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Nov 3 2026 18:30:01 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

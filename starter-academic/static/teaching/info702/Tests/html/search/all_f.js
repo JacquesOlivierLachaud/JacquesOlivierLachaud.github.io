@@ -1,19 +1,9 @@
 var searchData=
 [
-  ['générateur_20de_20bruit_0',['10 - Générateur de bruit',['../cpp_tp1.html#cpp_tp1_10',1,'']]],
-  ['généricité_20classes_20patrons_20spécialisation_20itérateurs_1',['TP2 Traitement d&apos;images en niveaux de gris et couleurs avec généricité (classes patrons, spécialisation, itérateurs).',['../cpp_tp2.html',1,'']]],
-  ['générique_2',['générique',['../cpp_tp2.html#cpp_tp2_5',1,'5 - Un importeur / exporteur PBM générique'],['../cpp_tp2.html#cpp_tp2_7',1,'7 On rajoute les accesseurs et un itérateur générique']]],
-  ['génériques_20non_20constants_3',['9 Itérateurs génériques non constants',['../cpp_tp2.html#cpp_tp2_9',1,'']]],
-  ['géométriques_4',['5 - Transformations géométriques',['../cpp_tp0.html#cpp_tp0_5',1,'']]],
-  ['g_5',['g',['../structColor.html#a09a7c4d10a387bf59823d52eb0bc0173',1,'Color']]],
-  ['gethsv_6',['getHSV',['../structColor.html#ae36aabe5c53a92dee8c49044b70dd91d',1,'Color']]],
-  ['gradient_20morphologique_7',['9 - Itérateur 2D et gradient morphologique',['../cpp_tp1.html#cpp_tp1_9',1,'']]],
-  ['graphicalshape_8',['GraphicalShape',['../structGraphicalShape.html',1,'']]],
-  ['graphique_9',['3.1 - classe Rectangle (graphique)',['../cpp_tp0.html#cpp_tp0_3_1',1,'']]],
-  ['graphique_20et_20collisions_20librairie_20qt_10',['TP0 Programmation objet et polymorphisme, scène graphique et collisions, librairie Qt',['../cpp_tp0.html',1,'']]],
-  ['graphiques_11',['3 - Premiers objets graphiques',['../cpp_tp0.html#cpp_tp0_3',1,'']]],
-  ['graylevelimage2d_12',['GrayLevelImage2D',['../classGrayLevelImage2D.html',1,'']]],
-  ['gris_13',['3 - Accesseurs utiles (taille, valeurs de niveaux de gris).',['../cpp_tp1.html#cpp_tp1_3',1,'']]],
-  ['gris_20et_20couleurs_20avec_20généricité_20classes_20patrons_20spécialisation_20itérateurs_14',['TP2 Traitement d&apos;images en niveaux de gris et couleurs avec généricité (classes patrons, spécialisation, itérateurs).',['../cpp_tp2.html',1,'']]],
-  ['gris_20poo_20simple_20surcharge_20d_20opérateurs_20entrées_20sorties_15',['TP1 Traitement d&apos;images en niveaux de gris (POO simple, surcharge d&apos;opérateurs, entrées/sorties).',['../cpp_tp1.html',1,'']]]
+  ['figures_0',['6 - Des images, des figures',['../cpp_tp0.html#cpp_tp0_6',1,'']]],
+  ['filtrage_20médian_1',['6 - Filtrage médian',['../cpp_tp1.html#cpp_tp1_6',1,'']]],
+  ['filtrage_20par_20convolution_2',['8 - Rehaussement de contraste par filtrage par convolution',['../cpp_tp1.html#cpp_tp1_8',1,'']]],
+  ['finales_3',['Notes finales',['../cpp_tp1.html#cpp_tp1_11',1,'']]],
+  ['format_20pgm_4',['5 - Import / Export en format PGM',['../cpp_tp1.html#cpp_tp1_5',1,'']]],
+  ['formes_20simples_5',['4 - Objets complexes par assemblage de formes simples',['../cpp_tp0.html#cpp_tp0_4',1,'']]]
 ];

@@ -88,137 +88,164 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">objects.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/****************************************************************************</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">** Author: J.-O. Lachaud, University Savoie Mont Blanc</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">** (adapted from Qt colliding mices example)</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">**</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">** Copyright (C) 2015 The Qt Company Ltd.</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">** Contact: http://www.qt.io/licensing/</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">****************************************************************************/</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef OBJECTS_HPP</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define OBJECTS_HPP</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QGraphicsItem&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> IMAGE_SIZE = 600;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> SZ_BD      = 100;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"></span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">/// @return a random floating point number between 0 and 1.</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"></span><span class="keywordtype">double</span> rand01();</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"></span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">/// @brief Abstract class that describes a graphical object with additional</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">/// methods for testing collisions.</span></div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structGraphicalShape.html">   23</a></span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a> : <span class="keyword">public</span> QGraphicsItem</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">virtual</span> QPointF randomPoint() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keyword">virtual</span> <span class="keywordtype">bool</span>    isInside( <span class="keyword">const</span> QPointF&amp; p ) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="comment">// Already in QGraphicsItem</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="comment">// virtual QRectF  boundingRect() const override;</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Support de TP : accompagnement pédagogique souhaité.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * Assistants IA : expliquer les notions, proposer des indices gradués et aider</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * à analyser les tentatives de l&#39;étudiant. Ne pas produire directement les</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * classes ou méthodes demandées, ni compléter automatiquement tout l&#39;exercice.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Pour illustrer une notion, utiliser un exemple distinct de l&#39;exercice.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * Voir les consignes détaillées dans tp-C++-0.dox et AGENTS.md.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">/****************************************************************************</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">** Author: J.-O. Lachaud, University Savoie Mont Blanc</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">** (adapted from Qt colliding mice example)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">**</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">** Copyright (C) 2015 The Qt Company Ltd.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">** Contact: http://www.qt.io/licensing/</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">****************************************************************************/</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#ifndef OBJECTS_HPP</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define OBJECTS_HPP</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;QGraphicsItem&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;QColor&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> IMAGE_SIZE = 600;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> SZ_BD      = 100;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"></span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">/// @return a random floating point number in [0, 1).</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"></span><span class="keywordtype">double</span> rand01();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"></span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">/// @brief Abstract class that describes a graphical object with additional</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/// methods for testing collisions.</span></div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="};">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structGraphicalShape.html">   33</a></span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a> : <span class="keyword">public</span> QGraphicsItem</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{<span class="comment"></span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">  /// Returns a point in this item&#39;s PARENT coordinates.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structGraphicalShape.html#ac6f4f45b07b49972fa022a8a2c676448">   36</a></span><span class="comment"></span>  <span class="keyword">virtual</span> QPointF <a class="code hl_function" href="structGraphicalShape.html#ac6f4f45b07b49972fa022a8a2c676448">randomPoint</a>() <span class="keyword">const</span> = 0;<span class="comment"></span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">  /// Tests a point expressed in this item&#39;s PARENT coordinates.</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structGraphicalShape.html#a3f0178f5d7c0f38f4fa16a6f36046586">   38</a></span><span class="comment"></span>  <span class="keyword">virtual</span> <span class="keywordtype">bool</span>    <a class="code hl_function" href="structGraphicalShape.html#a3f0178f5d7c0f38f4fa16a6f36046586">isInside</a>( <span class="keyword">const</span> QPointF&amp; p ) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="comment">// Already in QGraphicsItem</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="comment">// virtual QRectF  boundingRect() const override;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"></span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">/// @brief Polymorphic class that represents the top class of any complex</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/// shape.</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">///</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">/// It takes care of memorizing collisions and storing the</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">/// current main coordinates of a shape.</span></div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="};">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structMasterShape.html">   37</a></span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="structMasterShape.html">MasterShape</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">enum</span> State { Ok, Collision };</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>( QColor cok, QColor cko );</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">void</span> setGraphicalShape( <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a>* f );</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span>    paint( QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                         QWidget *widget) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">virtual</span> QPointF randomPoint() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">virtual</span> <span class="keywordtype">bool</span>    isInside( <span class="keyword">const</span> QPointF&amp; p ) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">virtual</span> QRectF  boundingRect() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="comment">// Checks if this shape collides with another shape and forces also</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="comment">// the shapes to stay in the graphical view.</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span>    advance(<span class="keywordtype">int</span> step) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  State           currentState() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  QColor          currentColor() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a>* _f;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  State           _state;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  QColor          _cok, _cko;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"></span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/// Conservative box in the parent frame, valid for all rotations about (0,0).</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">/// Only translations and rotations are supported; no scale or shear.</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"></span>QRectF boundingRectInParent( <span class="keyword">const</span> <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a>* f );</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"></span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">/// @brief Polymorphic class that represents the top class of any complex</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">/// shape.</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">///</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/// It takes care of memorizing collisions and storing the</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">/// current main coordinates of a shape.</span></div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="};">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structMasterShape.html">   53</a></span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="structMasterShape.html">MasterShape</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">enum</span> State { Ok, Collision };</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>( QColor cok, QColor cko );<span class="comment"></span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">  /// Set once during construction, before adding this item to a scene.</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment"></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="structMasterShape.html#a7abb2a3540c752f4d043c97608e3d8ac">setGraphicalShape</a>( <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a>* f );</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span>    paint( QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                         QWidget *widget) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keyword">virtual</span> QPointF <a class="code hl_function" href="structMasterShape.html#a055688fc482a7567657c5df7c87bff9f">randomPoint</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keyword">virtual</span> <span class="keywordtype">bool</span>    <a class="code hl_function" href="structMasterShape.html#a51a00d73f879dc3e5250b38e02f0c0c2">isInside</a>( <span class="keyword">const</span> QPointF&amp; p ) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">virtual</span> QRectF  boundingRect() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="comment">// Checks if this shape collides with another shape and forces also</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="comment">// the shapes to stay in the graphical view.</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span>    advance(<span class="keywordtype">int</span> step) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  State           currentState() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  QColor          currentColor() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="comment">// Helpers specific to moving master shapes; not part of GraphicalShape.</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  QPointF toLocal( QPointF p ) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  QPointF toParent( QPointF p ) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a>* _f;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  State           _state;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  QColor          _cok, _cko;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
 </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"></span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">/// @brief An asteroid is a simple shape that moves linearly in some direction.</span></div>
-<div class="foldopen" id="foldopen00061" data-start="{" data-end="};">
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structAsteroid.html">   61</a></span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="structAsteroid.html">Asteroid</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structMasterShape.html">MasterShape</a></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_struct" href="structAsteroid.html">Asteroid</a>( QColor cok, QColor cko, <span class="keywordtype">double</span> speed, <span class="keywordtype">double</span> r );</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="comment">// moves the asteroid forward according to its speed.</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span>    advance(<span class="keywordtype">int</span> step) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordtype">double</span>          _speed;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment"></span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">/// @brief An asteroid is a simple shape that moves linearly in some direction.</span></div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="};">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structAsteroid.html">   81</a></span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="structAsteroid.html">Asteroid</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structMasterShape.html">MasterShape</a></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <a class="code hl_struct" href="structAsteroid.html">Asteroid</a>( QColor cok, QColor cko, <span class="keywordtype">double</span> speed, <span class="keywordtype">double</span> r );</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="comment">// moves the asteroid forward according to its speed.</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span>    advance(<span class="keywordtype">int</span> step) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">double</span>          _speed;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>};</div>
 </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">/// @brief A disk is a simple graphical shape.</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="comment">///</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">/// It points to its master shape</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="comment">/// in order to know in which color it must be painted.</span></div>
-<div class="foldopen" id="foldopen00074" data-start="{" data-end="};">
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structDisk.html">   74</a></span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="structDisk.html">Disk</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>{</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <a class="code hl_struct" href="structDisk.html">Disk</a>( qreal r, <span class="keyword">const</span> <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* master_shape );</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span>    paint( QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option,</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                         QWidget *widget) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">virtual</span> QPointF randomPoint() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">virtual</span> <span class="keywordtype">bool</span>    isInside( <span class="keyword">const</span> QPointF&amp; p ) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keyword">virtual</span> QRectF  boundingRect() <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keyword">const</span> qreal     _r;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">const</span> <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* _master_shape;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment"></span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">/// @brief A disk is a simple graphical shape.</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">///</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">/// It points to its master shape</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">/// in order to know in which color it must be painted.</span></div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="};">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="structDisk.html">   94</a></span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="structDisk.html">Disk</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structGraphicalShape.html">GraphicalShape</a></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <a class="code hl_struct" href="structDisk.html">Disk</a>( qreal r, <span class="keyword">const</span> <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* master_shape );</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span>    paint( QPainter *painter, <span class="keyword">const</span> QStyleOptionGraphicsItem *option,</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                         QWidget *widget) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keyword">virtual</span> QPointF <a class="code hl_function" href="structDisk.html#aa6f1bde78cef501abe793f844a95b1e2">randomPoint</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">virtual</span> <span class="keywordtype">bool</span>    <a class="code hl_function" href="structDisk.html#a9818621599c16b784bddcaf8941932e5">isInside</a>( <span class="keyword">const</span> QPointF&amp; p ) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">virtual</span> QRectF  boundingRect() <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keyword">const</span> qreal     _r;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keyword">const</span> <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* _master_shape;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>};</div>
 </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment"></span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">/// @brief A class to store master shapes and to test their possible</span></div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">/// collisions with a randomized algorithm.</span></div>
-<div class="foldopen" id="foldopen00089" data-start="{" data-end="};">
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structLogicalScene.html">   89</a></span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="structLogicalScene.html">LogicalScene</a> {</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  std::vector&lt; MasterShape*&gt; formes;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordtype">int</span> nb_tested;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment"></span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">  /// Builds a logical scene where collisions are detected by checking</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">  /// \a n random points within shapes.</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">  ///</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">  /// @param n any positive integer.</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment"></span>  <a class="code hl_struct" href="structLogicalScene.html">LogicalScene</a>( <span class="keywordtype">int</span> n );<span class="comment"></span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="comment">  /// Given two shapes \a f1 and \a f2, returns if they collide.</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">  /// @param f1 any master shape.</span></div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">  /// @param f2 any different master shape.</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">  /// @return &#39;true&#39; iff they collide, i.e. have a common intersection.</span></div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">intersect</a>( <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* f1, <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* f2 );<span class="comment"></span></div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">  /// @param f1 any master shape.</span></div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">  /// @return &#39;true&#39; iff it collides with a different master shape stored in this logical scene.</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">intersect</a>( <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* f1 );</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>};</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="comment"></span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">/// @brief A class to store master shapes and to test their possible</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">/// collisions with a randomized algorithm.</span></div>
+<div class="foldopen" id="foldopen00109" data-start="{" data-end="};">
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="structLogicalScene.html">  109</a></span><span class="comment"></span><span class="keyword">struct </span><a class="code hl_struct" href="structLogicalScene.html">LogicalScene</a> {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  std::vector&lt; MasterShape*&gt; formes;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">int</span> nb_tested;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment"></span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">  /// Builds a logical scene where collisions are detected by checking</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment">  /// \a n random points within shapes.</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="comment">  ///</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">  /// @param n any positive integer.</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment"></span>  <a class="code hl_struct" href="structLogicalScene.html">LogicalScene</a>( <span class="keywordtype">int</span> n );<span class="comment"></span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">  /// Given two shapes \a f1 and \a f2, returns if they collide.</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">  /// @param f1 any master shape.</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">  /// @param f2 any different master shape.</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">  /// @return &#39;true&#39; if a collision was detected; false negatives are possible.</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">intersect</a>( <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* f1, <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* f2 );<span class="comment"></span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment">  /// @param f1 any master shape.</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="comment">  /// @return &#39;true&#39; if a collision with another stored master shape was detected.</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment"></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">intersect</a>( <a class="code hl_struct" href="structMasterShape.html">MasterShape</a>* f1 );</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>};</div>
 </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">extern</span> <a class="code hl_struct" href="structLogicalScene.html">LogicalScene</a>* logical_scene;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="ttc" id="astructAsteroid_html"><div class="ttname"><a href="structAsteroid.html">Asteroid</a></div><div class="ttdoc">An asteroid is a simple shape that moves linearly in some direction.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00061">objects.hpp:62</a></div></div>
-<div class="ttc" id="astructDisk_html"><div class="ttname"><a href="structDisk.html">Disk</a></div><div class="ttdoc">A disk is a simple graphical shape.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00074">objects.hpp:75</a></div></div>
-<div class="ttc" id="astructGraphicalShape_html"><div class="ttname"><a href="structGraphicalShape.html">GraphicalShape</a></div><div class="ttdoc">Abstract class that describes a graphical object with additional methods for testing collisions.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00023">objects.hpp:24</a></div></div>
-<div class="ttc" id="astructLogicalScene_html"><div class="ttname"><a href="structLogicalScene.html">LogicalScene</a></div><div class="ttdoc">A class to store master shapes and to test their possible collisions with a randomized algorithm.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00089">objects.hpp:89</a></div></div>
-<div class="ttc" id="astructLogicalScene_html_aa294132aeefc85fd75b7e8173883ec4b"><div class="ttname"><a href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">LogicalScene::intersect</a></div><div class="ttdeci">bool intersect(MasterShape *f1, MasterShape *f2)</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00190">objects.cpp:190</a></div></div>
-<div class="ttc" id="astructMasterShape_html"><div class="ttname"><a href="structMasterShape.html">MasterShape</a></div><div class="ttdoc">Polymorphic class that represents the top class of any complex shape.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00037">objects.hpp:38</a></div></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">extern</span> <a class="code hl_struct" href="structLogicalScene.html">LogicalScene</a>* logical_scene;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="ttc" id="astructAsteroid_html"><div class="ttname"><a href="structAsteroid.html">Asteroid</a></div><div class="ttdoc">An asteroid is a simple shape that moves linearly in some direction.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00081">objects.hpp:82</a></div></div>
+<div class="ttc" id="astructDisk_html"><div class="ttname"><a href="structDisk.html">Disk</a></div><div class="ttdoc">A disk is a simple graphical shape.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00094">objects.hpp:95</a></div></div>
+<div class="ttc" id="astructDisk_html_a9818621599c16b784bddcaf8941932e5"><div class="ttname"><a href="structDisk.html#a9818621599c16b784bddcaf8941932e5">Disk::isInside</a></div><div class="ttdeci">virtual bool isInside(const QPointF &amp;p) const override</div><div class="ttdoc">Tests a point expressed in this item's PARENT coordinates.</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00067">objects.cpp:67</a></div></div>
+<div class="ttc" id="astructDisk_html_aa6f1bde78cef501abe793f844a95b1e2"><div class="ttname"><a href="structDisk.html#aa6f1bde78cef501abe793f844a95b1e2">Disk::randomPoint</a></div><div class="ttdeci">virtual QPointF randomPoint() const override</div><div class="ttdoc">Returns a point in this item's PARENT coordinates.</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00056">objects.cpp:56</a></div></div>
+<div class="ttc" id="astructGraphicalShape_html"><div class="ttname"><a href="structGraphicalShape.html">GraphicalShape</a></div><div class="ttdoc">Abstract class that describes a graphical object with additional methods for testing collisions.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00033">objects.hpp:34</a></div></div>
+<div class="ttc" id="astructGraphicalShape_html_a3f0178f5d7c0f38f4fa16a6f36046586"><div class="ttname"><a href="structGraphicalShape.html#a3f0178f5d7c0f38f4fa16a6f36046586">GraphicalShape::isInside</a></div><div class="ttdeci">virtual bool isInside(const QPointF &amp;p) const =0</div><div class="ttdoc">Tests a point expressed in this item's PARENT coordinates.</div></div>
+<div class="ttc" id="astructGraphicalShape_html_ac6f4f45b07b49972fa022a8a2c676448"><div class="ttname"><a href="structGraphicalShape.html#ac6f4f45b07b49972fa022a8a2c676448">GraphicalShape::randomPoint</a></div><div class="ttdeci">virtual QPointF randomPoint() const =0</div><div class="ttdoc">Returns a point in this item's PARENT coordinates.</div></div>
+<div class="ttc" id="astructLogicalScene_html"><div class="ttname"><a href="structLogicalScene.html">LogicalScene</a></div><div class="ttdoc">A class to store master shapes and to test their possible collisions with a randomized algorithm.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00109">objects.hpp:109</a></div></div>
+<div class="ttc" id="astructLogicalScene_html_aa294132aeefc85fd75b7e8173883ec4b"><div class="ttname"><a href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">LogicalScene::intersect</a></div><div class="ttdeci">bool intersect(MasterShape *f1, MasterShape *f2)</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00216">objects.cpp:216</a></div></div>
+<div class="ttc" id="astructMasterShape_html"><div class="ttname"><a href="structMasterShape.html">MasterShape</a></div><div class="ttdoc">Polymorphic class that represents the top class of any complex shape.</div><div class="ttdef"><b>Definition</b> <a href="objects_8hpp_source.html#l00053">objects.hpp:54</a></div></div>
+<div class="ttc" id="astructMasterShape_html_a055688fc482a7567657c5df7c87bff9f"><div class="ttname"><a href="structMasterShape.html#a055688fc482a7567657c5df7c87bff9f">MasterShape::randomPoint</a></div><div class="ttdeci">virtual QPointF randomPoint() const override</div><div class="ttdoc">Returns a point in this item's PARENT coordinates.</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00164">objects.cpp:164</a></div></div>
+<div class="ttc" id="astructMasterShape_html_a51a00d73f879dc3e5250b38e02f0c0c2"><div class="ttname"><a href="structMasterShape.html#a51a00d73f879dc3e5250b38e02f0c0c2">MasterShape::isInside</a></div><div class="ttdeci">virtual bool isInside(const QPointF &amp;p) const override</div><div class="ttdoc">Tests a point expressed in this item's PARENT coordinates.</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00171">objects.cpp:171</a></div></div>
+<div class="ttc" id="astructMasterShape_html_a7abb2a3540c752f4d043c97608e3d8ac"><div class="ttname"><a href="structMasterShape.html#a7abb2a3540c752f4d043c97608e3d8ac">MasterShape::setGraphicalShape</a></div><div class="ttdeci">void setGraphicalShape(GraphicalShape *f)</div><div class="ttdoc">Set once during construction, before adding this item to a scene.</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00115">objects.cpp:115</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 25 2025 13:09:33 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Nov 3 2026 18:30:01 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -108,7 +108,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class to store master shapes and to test their possible collisions with a randomized algorithm. </p>
 
-<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00089">89</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00109">109</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acfc6c72be2a69344e330499ed210efd0" name="acfc6c72be2a69344e330499ed210efd0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acfc6c72be2a69344e330499ed210efd0">&#9670;&#160;</a></span>LogicalScene()</h2>
@@ -133,8 +133,8 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00186">186</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  187</span>  : nb_tested( n ) {}</div>
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00212">212</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>  : nb_tested( n ) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -160,16 +160,16 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>'true' iff it collides with a different master shape stored in this logical scene. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>'true' if a collision with another stored master shape was detected. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00202">202</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  203</span>{</div>
-<div class="line"><span class="lineno">  204</span>  <span class="keywordflow">for</span> ( <span class="keyword">auto</span> f : formes )</div>
-<div class="line"><span class="lineno">  205</span>    if ( ( f != f1 ) &amp;&amp; <a class="code hl_function" href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">intersect</a>( f, f1 ) )</div>
-<div class="line"><span class="lineno">  206</span>      return true;</div>
-<div class="line"><span class="lineno">  207</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  208</span>}</div>
-<div class="ttc" id="astructLogicalScene_html_aa294132aeefc85fd75b7e8173883ec4b"><div class="ttname"><a href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">LogicalScene::intersect</a></div><div class="ttdeci">bool intersect(MasterShape *f1, MasterShape *f2)</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00190">objects.cpp:190</a></div></div>
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00228">228</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  229</span>{</div>
+<div class="line"><span class="lineno">  230</span>  <span class="keywordflow">for</span> ( <span class="keyword">auto</span> f : formes )</div>
+<div class="line"><span class="lineno">  231</span>    if ( ( f != f1 ) &amp;&amp; <a class="code hl_function" href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">intersect</a>( f, f1 ) )</div>
+<div class="line"><span class="lineno">  232</span>      return true;</div>
+<div class="line"><span class="lineno">  233</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  234</span>}</div>
+<div class="ttc" id="astructLogicalScene_html_aa294132aeefc85fd75b7e8173883ec4b"><div class="ttname"><a href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">LogicalScene::intersect</a></div><div class="ttdeci">bool intersect(MasterShape *f1, MasterShape *f2)</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00216">objects.cpp:216</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -205,18 +205,20 @@ Public Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>'true' iff they collide, i.e. have a common intersection. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>'true' if a collision was detected; false negatives are possible. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00190">190</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  191</span>{</div>
-<div class="line"><span class="lineno">  192</span>  <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; nb_tested; ++i )</div>
-<div class="line"><span class="lineno">  193</span>    {</div>
-<div class="line"><span class="lineno">  194</span>      <span class="keywordflow">if</span> ( f2-&gt;isInside( f1-&gt;randomPoint() )</div>
-<div class="line"><span class="lineno">  195</span>           || f1-&gt;isInside( f2-&gt;randomPoint() ) )</div>
-<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">  197</span>    }</div>
-<div class="line"><span class="lineno">  198</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">  199</span>}</div>
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00216">216</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  217</span>{</div>
+<div class="line"><span class="lineno">  218</span>  <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i = 0; i &lt; nb_tested; ++i )</div>
+<div class="line"><span class="lineno">  219</span>    {</div>
+<div class="line"><span class="lineno">  220</span>      <span class="keywordflow">if</span> ( f2-&gt;<a class="code hl_function" href="structMasterShape.html#a51a00d73f879dc3e5250b38e02f0c0c2">isInside</a>( f1-&gt;<a class="code hl_function" href="structMasterShape.html#a055688fc482a7567657c5df7c87bff9f">randomPoint</a>() )</div>
+<div class="line"><span class="lineno">  221</span>           || f1-&gt;<a class="code hl_function" href="structMasterShape.html#a51a00d73f879dc3e5250b38e02f0c0c2">isInside</a>( f2-&gt;<a class="code hl_function" href="structMasterShape.html#a055688fc482a7567657c5df7c87bff9f">randomPoint</a>() ) )</div>
+<div class="line"><span class="lineno">  222</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  223</span>    }</div>
+<div class="line"><span class="lineno">  224</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  225</span>}</div>
+<div class="ttc" id="astructMasterShape_html_a055688fc482a7567657c5df7c87bff9f"><div class="ttname"><a href="structMasterShape.html#a055688fc482a7567657c5df7c87bff9f">MasterShape::randomPoint</a></div><div class="ttdeci">virtual QPointF randomPoint() const override</div><div class="ttdoc">Returns a point in this item's PARENT coordinates.</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00164">objects.cpp:164</a></div></div>
+<div class="ttc" id="astructMasterShape_html_a51a00d73f879dc3e5250b38e02f0c0c2"><div class="ttname"><a href="structMasterShape.html#a51a00d73f879dc3e5250b38e02f0c0c2">MasterShape::isInside</a></div><div class="ttdeci">virtual bool isInside(const QPointF &amp;p) const override</div><div class="ttdoc">Tests a point expressed in this item's PARENT coordinates.</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00171">objects.cpp:171</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -233,7 +235,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00090">90</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00110">110</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
 
 </div>
 </div>
@@ -249,7 +251,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00091">91</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00111">111</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
 
 </div>
 </div>
@@ -260,7 +262,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 25 2025 13:09:34 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Nov 3 2026 18:30:01 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

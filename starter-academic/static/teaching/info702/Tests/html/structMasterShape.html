@@ -79,6 +79,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="structMasterShape-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">MasterShape Struct Reference</div></div>
@@ -112,12 +113,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a76c757d142a743d3fda07498a5368ce0" id="r_a76c757d142a743d3fda07498a5368ce0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMasterShape.html#a76c757d142a743d3fda07498a5368ce0">MasterShape</a> (QColor cok, QColor cko)</td></tr>
 <tr class="separator:a76c757d142a743d3fda07498a5368ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7abb2a3540c752f4d043c97608e3d8ac" id="r_a7abb2a3540c752f4d043c97608e3d8ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMasterShape.html#a7abb2a3540c752f4d043c97608e3d8ac">setGraphicalShape</a> (<a class="el" href="structGraphicalShape.html">GraphicalShape</a> *f)</td></tr>
+<tr class="memdesc:a7abb2a3540c752f4d043c97608e3d8ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set once during construction, before adding this item to a scene.  <br /></td></tr>
 <tr class="separator:a7abb2a3540c752f4d043c97608e3d8ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfbb851044324f7fe6e4ccceb4a2173e" id="r_abfbb851044324f7fe6e4ccceb4a2173e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMasterShape.html#abfbb851044324f7fe6e4ccceb4a2173e">paint</a> (QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override</td></tr>
 <tr class="separator:abfbb851044324f7fe6e4ccceb4a2173e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a055688fc482a7567657c5df7c87bff9f" id="r_a055688fc482a7567657c5df7c87bff9f"><td class="memItemLeft" align="right" valign="top">virtual QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMasterShape.html#a055688fc482a7567657c5df7c87bff9f">randomPoint</a> () const override</td></tr>
+<tr class="memdesc:a055688fc482a7567657c5df7c87bff9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a point in this item's PARENT coordinates.  <br /></td></tr>
 <tr class="separator:a055688fc482a7567657c5df7c87bff9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51a00d73f879dc3e5250b38e02f0c0c2" id="r_a51a00d73f879dc3e5250b38e02f0c0c2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMasterShape.html#a51a00d73f879dc3e5250b38e02f0c0c2">isInside</a> (const QPointF &amp;p) const override</td></tr>
+<tr class="memdesc:a51a00d73f879dc3e5250b38e02f0c0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests a point expressed in this item's PARENT coordinates.  <br /></td></tr>
 <tr class="separator:a51a00d73f879dc3e5250b38e02f0c0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e32366a004771c573fa48ed6b657f8f" id="r_a1e32366a004771c573fa48ed6b657f8f"><td class="memItemLeft" align="right" valign="top">virtual QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMasterShape.html#a1e32366a004771c573fa48ed6b657f8f">boundingRect</a> () const override</td></tr>
 <tr class="separator:a1e32366a004771c573fa48ed6b657f8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,6 +131,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6d5c48cba6cf5e37c808abc85158d274"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa77775d84498722a81862cfd36d0983d" id="r_aa77775d84498722a81862cfd36d0983d"><td class="memItemLeft" align="right" valign="top">QColor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMasterShape.html#aa77775d84498722a81862cfd36d0983d">currentColor</a> () const</td></tr>
 <tr class="separator:aa77775d84498722a81862cfd36d0983d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a83d4d88965b696c2e319fa5342adefc0" id="r_a83d4d88965b696c2e319fa5342adefc0"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMasterShape.html#a83d4d88965b696c2e319fa5342adefc0">toLocal</a> (QPointF p) const</td></tr>
+<tr class="separator:a83d4d88965b696c2e319fa5342adefc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70bcd51d468ef6b6ca67cbdc6fe13aae" id="r_a70bcd51d468ef6b6ca67cbdc6fe13aae"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structMasterShape.html#a70bcd51d468ef6b6ca67cbdc6fe13aae">toParent</a> (QPointF p) const</td></tr>
+<tr class="separator:a70bcd51d468ef6b6ca67cbdc6fe13aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -143,7 +154,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p>Polymorphic class that represents the top class of any complex shape. </p>
 <p>It takes care of memorizing collisions and storing the current main coordinates of a shape. </p>
 
-<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00037">37</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00053">53</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="abc3788e2af6a4c74ac1b20586872fc9d" name="abc3788e2af6a4c74ac1b20586872fc9d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc3788e2af6a4c74ac1b20586872fc9d">&#9670;&#160;</a></span>State</h2>
@@ -157,8 +168,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00039">39</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>{ Ok, Collision };</div>
+<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00055">55</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   55</span>{ Ok, Collision };</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -189,10 +200,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00068">68</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   69</span>  : _f( 0 ), _state( Ok ), _cok( cok ), _cko( cko )</div>
-<div class="line"><span class="lineno">   70</span>{</div>
-<div class="line"><span class="lineno">   71</span>}</div>
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00091">91</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>  : _f( 0 ), _state( Ok ), _cok( cok ), _cko( cko )</div>
+<div class="line"><span class="lineno">   93</span>{</div>
+<div class="line"><span class="lineno">   94</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -221,43 +232,26 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00100">100</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>{</div>
-<div class="line"><span class="lineno">  102</span>  <span class="keywordflow">if</span> ( !step ) <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>  <span class="comment">// (I) Garde les objets dans la scene.  </span></div>
-<div class="line"><span class="lineno">  105</span>  <span class="keyword">auto</span> p = scenePos(); <span class="comment">// pareil que pos si MasterShape est bien à la racine.</span></div>
-<div class="line"><span class="lineno">  106</span>  <span class="comment">// pos() est dans les coordonnées parent et setPos aussi.</span></div>
-<div class="line"><span class="lineno">  107</span>  <span class="keywordflow">if</span> ( p.x() &lt; -SZ_BD ) {</div>
-<div class="line"><span class="lineno">  108</span>    <span class="keyword">auto</span> point = parentItem() != 0</div>
-<div class="line"><span class="lineno">  109</span>      ? parentItem()-&gt;mapFromScene( QPointF( IMAGE_SIZE + SZ_BD - 1, p.y() ) )</div>
-<div class="line"><span class="lineno">  110</span>      : QPointF( IMAGE_SIZE + SZ_BD - 1, p.y() );</div>
-<div class="line"><span class="lineno">  111</span>    setPos(point);</div>
-<div class="line"><span class="lineno">  112</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( p.x() &gt; IMAGE_SIZE + SZ_BD ) {</div>
-<div class="line"><span class="lineno">  113</span>    <span class="keyword">auto</span> point = parentItem() != 0</div>
-<div class="line"><span class="lineno">  114</span>      ? parentItem()-&gt;mapFromScene( QPointF( -SZ_BD + 1, p.y() ) )</div>
-<div class="line"><span class="lineno">  115</span>      : QPointF( -SZ_BD + 1, p.y() );</div>
-<div class="line"><span class="lineno">  116</span>    setPos(point);</div>
-<div class="line"><span class="lineno">  117</span>  }</div>
-<div class="line"><span class="lineno">  118</span>  <span class="keywordflow">if</span> ( p.y() &lt; -SZ_BD ) {</div>
-<div class="line"><span class="lineno">  119</span>    <span class="keyword">auto</span> point = parentItem() != 0 ?</div>
-<div class="line"><span class="lineno">  120</span>      parentItem()-&gt;mapFromScene( QPointF( p.x(), IMAGE_SIZE + SZ_BD - 1 ) )</div>
-<div class="line"><span class="lineno">  121</span>      : QPointF( p.x(), IMAGE_SIZE + SZ_BD - 1 );</div>
-<div class="line"><span class="lineno">  122</span>    setPos(point);</div>
-<div class="line"><span class="lineno">  123</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( p.y() &gt; IMAGE_SIZE + SZ_BD ) {</div>
-<div class="line"><span class="lineno">  124</span>    <span class="keyword">auto</span> point = parentItem() != 0</div>
-<div class="line"><span class="lineno">  125</span>      ? parentItem()-&gt;mapFromScene( QPointF( p.x(), -SZ_BD + 1 ) )</div>
-<div class="line"><span class="lineno">  126</span>      : QPointF( p.x(), -SZ_BD + 1 );</div>
-<div class="line"><span class="lineno">  127</span>    setPos(point);</div>
-<div class="line"><span class="lineno">  128</span>  }</div>
-<div class="line"><span class="lineno">  129</span> </div>
-<div class="line"><span class="lineno">  130</span>  <span class="comment">// (II) regarde les intersections avec les autres objets.</span></div>
-<div class="line"><span class="lineno">  131</span>  <span class="keywordflow">if</span> ( logical_scene-&gt;<a class="code hl_function" href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">intersect</a>( <span class="keyword">this</span> ) )</div>
-<div class="line"><span class="lineno">  132</span>    _state = Collision;</div>
-<div class="line"><span class="lineno">  133</span>  <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">  134</span>    _state = Ok;</div>
-<div class="line"><span class="lineno">  135</span>}</div>
-<div class="ttc" id="astructLogicalScene_html_aa294132aeefc85fd75b7e8173883ec4b"><div class="ttname"><a href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">LogicalScene::intersect</a></div><div class="ttdeci">bool intersect(MasterShape *f1, MasterShape *f2)</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00190">objects.cpp:190</a></div></div>
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00143">143</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  144</span>{</div>
+<div class="line"><span class="lineno">  145</span>  <span class="keywordflow">if</span> ( !step ) <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  146</span> </div>
+<div class="line"><span class="lineno">  147</span>  <span class="comment">// All master shapes are scene roots: their parent frame is the scene frame.</span></div>
+<div class="line"><span class="lineno">  148</span>  assert( parentItem() == <span class="keyword">nullptr</span> );</div>
+<div class="line"><span class="lineno">  149</span>  QPointF p = pos();</div>
+<div class="line"><span class="lineno">  150</span>  <span class="keywordflow">if</span> ( p.x() &lt; -SZ_BD ) p.setX( IMAGE_SIZE + SZ_BD - 1 );</div>
+<div class="line"><span class="lineno">  151</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( p.x() &gt; IMAGE_SIZE + SZ_BD ) p.setX( -SZ_BD + 1 );</div>
+<div class="line"><span class="lineno">  152</span>  <span class="keywordflow">if</span> ( p.y() &lt; -SZ_BD ) p.setY( IMAGE_SIZE + SZ_BD - 1 );</div>
+<div class="line"><span class="lineno">  153</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( p.y() &gt; IMAGE_SIZE + SZ_BD ) p.setY( -SZ_BD + 1 );</div>
+<div class="line"><span class="lineno">  154</span>  setPos( p );</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>  <span class="comment">// (II) regarde les intersections avec les autres objets.</span></div>
+<div class="line"><span class="lineno">  157</span>  <span class="keywordflow">if</span> ( logical_scene-&gt;<a class="code hl_function" href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">intersect</a>( <span class="keyword">this</span> ) )</div>
+<div class="line"><span class="lineno">  158</span>    _state = Collision;</div>
+<div class="line"><span class="lineno">  159</span>  <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  160</span>    _state = Ok;</div>
+<div class="line"><span class="lineno">  161</span>}</div>
+<div class="ttc" id="astructLogicalScene_html_aa294132aeefc85fd75b7e8173883ec4b"><div class="ttname"><a href="structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b">LogicalScene::intersect</a></div><div class="ttdeci">bool intersect(MasterShape *f1, MasterShape *f2)</div><div class="ttdef"><b>Definition</b> <a href="objects_8cpp_source.html#l00216">objects.cpp:216</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -284,11 +278,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00152">152</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  153</span>{</div>
-<div class="line"><span class="lineno">  154</span>  assert( _f != 0 );</div>
-<div class="line"><span class="lineno">  155</span>  <span class="keywordflow">return</span> mapRectToParent( _f-&gt;boundingRect() );</div>
-<div class="line"><span class="lineno">  156</span>}</div>
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00178">178</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  179</span>{</div>
+<div class="line"><span class="lineno">  180</span>  assert( _f != 0 );</div>
+<div class="line"><span class="lineno">  181</span>  <span class="keywordflow">return</span> boundingRectInParent( _f );</div>
+<div class="line"><span class="lineno">  182</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -307,11 +301,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00081">81</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>{</div>
-<div class="line"><span class="lineno">   83</span>  <span class="keywordflow">if</span> ( _state == Ok ) <span class="keywordflow">return</span> _cok;</div>
-<div class="line"><span class="lineno">   84</span>  <span class="keywordflow">else</span>                <span class="keywordflow">return</span> _cko;</div>
-<div class="line"><span class="lineno">   85</span>}</div>
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00124">124</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>{</div>
+<div class="line"><span class="lineno">  126</span>  <span class="keywordflow">if</span> ( _state == Ok ) <span class="keywordflow">return</span> _cok;</div>
+<div class="line"><span class="lineno">  127</span>  <span class="keywordflow">else</span>                <span class="keywordflow">return</span> _cko;</div>
+<div class="line"><span class="lineno">  128</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -330,10 +324,10 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00088">88</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>{</div>
-<div class="line"><span class="lineno">   90</span>  <span class="keywordflow">return</span> _state;</div>
-<div class="line"><span class="lineno">   91</span>}</div>
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00131">131</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>{</div>
+<div class="line"><span class="lineno">  133</span>  <span class="keywordflow">return</span> _state;</div>
+<div class="line"><span class="lineno">  134</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -361,13 +355,16 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="structGraphicalShape.html">GraphicalShape</a>.</p>
+<p>Tests a point expressed in this item's PARENT coordinates. </p>
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00145">145</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  146</span>{</div>
-<div class="line"><span class="lineno">  147</span>  assert( _f != 0 );</div>
-<div class="line"><span class="lineno">  148</span>  <span class="keywordflow">return</span> _f-&gt;isInside( mapFromParent( p ) );</div>
-<div class="line"><span class="lineno">  149</span>}</div>
+<p>Implements <a class="el" href="structGraphicalShape.html#a3f0178f5d7c0f38f4fa16a6f36046586">GraphicalShape</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00171">171</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>{</div>
+<div class="line"><span class="lineno">  173</span>  assert( _f != 0 );</div>
+<div class="line"><span class="lineno">  174</span>  <span class="keywordflow">return</span> _f-&gt;<a class="code hl_function" href="structGraphicalShape.html#a3f0178f5d7c0f38f4fa16a6f36046586">isInside</a>( toLocal( p ) );</div>
+<div class="line"><span class="lineno">  175</span>}</div>
+<div class="ttc" id="astructGraphicalShape_html_a3f0178f5d7c0f38f4fa16a6f36046586"><div class="ttname"><a href="structGraphicalShape.html#a3f0178f5d7c0f38f4fa16a6f36046586">GraphicalShape::isInside</a></div><div class="ttdeci">virtual bool isInside(const QPointF &amp;p) const =0</div><div class="ttdoc">Tests a point expressed in this item's PARENT coordinates.</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -411,10 +408,10 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00094">94</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>{</div>
-<div class="line"><span class="lineno">   96</span>  <span class="comment">// nothing to do, Qt automatically calls paint of every QGraphicsItem</span></div>
-<div class="line"><span class="lineno">   97</span>}</div>
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00137">137</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>{</div>
+<div class="line"><span class="lineno">  139</span>  <span class="comment">// nothing to do, Qt automatically calls paint of every QGraphicsItem</span></div>
+<div class="line"><span class="lineno">  140</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -441,13 +438,16 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="structGraphicalShape.html">GraphicalShape</a>.</p>
+<p>Returns a point in this item's PARENT coordinates. </p>
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00138">138</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  139</span>{  </div>
-<div class="line"><span class="lineno">  140</span>  assert( _f != 0 );</div>
-<div class="line"><span class="lineno">  141</span>  <span class="keywordflow">return</span> mapToParent( _f-&gt;randomPoint() );</div>
-<div class="line"><span class="lineno">  142</span>}</div>
+<p>Implements <a class="el" href="structGraphicalShape.html#ac6f4f45b07b49972fa022a8a2c676448">GraphicalShape</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00164">164</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>{  </div>
+<div class="line"><span class="lineno">  166</span>  assert( _f != 0 );</div>
+<div class="line"><span class="lineno">  167</span>  <span class="keywordflow">return</span> toParent( _f-&gt;<a class="code hl_function" href="structGraphicalShape.html#ac6f4f45b07b49972fa022a8a2c676448">randomPoint</a>() );</div>
+<div class="line"><span class="lineno">  168</span>}</div>
+<div class="ttc" id="astructGraphicalShape_html_ac6f4f45b07b49972fa022a8a2c676448"><div class="ttname"><a href="structGraphicalShape.html#ac6f4f45b07b49972fa022a8a2c676448">GraphicalShape::randomPoint</a></div><div class="ttdeci">virtual QPointF randomPoint() const =0</div><div class="ttdoc">Returns a point in this item's PARENT coordinates.</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -467,11 +467,83 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00074">74</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   75</span>{</div>
-<div class="line"><span class="lineno">   76</span>  _f = f;</div>
-<div class="line"><span class="lineno">   77</span>  <span class="keywordflow">if</span> ( _f != 0 )  _f-&gt;setParentItem( <span class="keyword">this</span> );</div>
-<div class="line"><span class="lineno">   78</span>}</div>
+<p>Set once during construction, before adding this item to a scene. </p>
+
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00115">115</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>{</div>
+<div class="line"><span class="lineno">  117</span>  assert( _f == <span class="keyword">nullptr</span> ); <span class="comment">// Set once, before adding the item to a scene.</span></div>
+<div class="line"><span class="lineno">  118</span>  assert( f != <span class="keyword">nullptr</span> );</div>
+<div class="line"><span class="lineno">  119</span>  _f = f;</div>
+<div class="line"><span class="lineno">  120</span>  <span class="keywordflow">if</span> ( _f != 0 )  _f-&gt;setParentItem( <span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  121</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a83d4d88965b696c2e319fa5342adefc0" name="a83d4d88965b696c2e319fa5342adefc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83d4d88965b696c2e319fa5342adefc0">&#9670;&#160;</a></span>toLocal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF MasterShape::toLocal </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00106">106</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>{</div>
+<div class="line"><span class="lineno">  108</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> a = rotation() * std::acos( -1.0 ) / 180.0;</div>
+<div class="line"><span class="lineno">  109</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> c = std::cos( a ), s = std::sin( a );</div>
+<div class="line"><span class="lineno">  110</span>  p -= pos();</div>
+<div class="line"><span class="lineno">  111</span>  <span class="keywordflow">return</span> QPointF( c*p.x() + s*p.y(), -s*p.x() + c*p.y() );</div>
+<div class="line"><span class="lineno">  112</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a70bcd51d468ef6b6ca67cbdc6fe13aae" name="a70bcd51d468ef6b6ca67cbdc6fe13aae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70bcd51d468ef6b6ca67cbdc6fe13aae">&#9670;&#160;</a></span>toParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPointF MasterShape::toParent </td>
+          <td>(</td>
+          <td class="paramtype">QPointF&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="objects_8cpp_source.html#l00097">97</a> of file <a class="el" href="objects_8cpp_source.html">objects.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   98</span>{</div>
+<div class="line"><span class="lineno">   99</span>  <span class="comment">// Qt angles are in degrees. The transform origin is (0,0).</span></div>
+<div class="line"><span class="lineno">  100</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> a = rotation() * std::acos( -1.0 ) / 180.0;</div>
+<div class="line"><span class="lineno">  101</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> c = std::cos( a ), s = std::sin( a );</div>
+<div class="line"><span class="lineno">  102</span>  <span class="keywordflow">return</span> QPointF( c*p.x() - s*p.y(), s*p.x() + c*p.y() ) + pos();</div>
+<div class="line"><span class="lineno">  103</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -496,7 +568,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00057">57</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00077">77</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
 
 </div>
 </div>
@@ -520,7 +592,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00057">57</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00077">77</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
 
 </div>
 </div>
@@ -544,7 +616,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00055">55</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00075">75</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
 
 </div>
 </div>
@@ -568,7 +640,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00056">56</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="objects_8hpp_source.html#l00076">76</a> of file <a class="el" href="objects_8hpp_source.html">objects.hpp</a>.</p>
 
 </div>
 </div>
@@ -579,7 +651,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 25 2025 13:09:34 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Tue Nov 3 2026 18:30:01 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
