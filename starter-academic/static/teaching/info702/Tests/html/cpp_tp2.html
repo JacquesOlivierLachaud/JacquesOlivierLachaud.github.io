@@ -125,11 +125,10 @@ $(function() {
    prompt&gt; display toto.ppm </pre><h1><a class="anchor" id="cpp_tp2_2"></a>
 2 - Définition d'une classe pour représenter des images arbitraires</h1>
 <p>Nous cherchons à représenter des images dont le type des valeurs peut être défini à l'instanciation. Par exemple, on voudra écrire:</p>
-<div class="fragment"><div class="line"><a class="code hl_class" href="classImage2D.html">Image2D&lt;unsigned char&gt;</a> img_niv_de_gris( 256, 256, 0 );  <span class="comment">// image en niveaux de gris, noire au début</span></div>
-<div class="line"><a class="code hl_class" href="classImage2D.html">Image2D&lt;Color&gt;</a> img_couleur( 512, 512, <a class="code hl_struct" href="structColor.html">Color</a>(0,255,0) ); <span class="comment">// image en couleur, verte au début</span></div>
-<div class="ttc" id="aclassImage2D_html"><div class="ttname"><a href="classImage2D.html">Image2D</a></div><div class="ttdoc">Classe générique pour représenter des images 2D.</div><div class="ttdef"><b>Definition</b> <a href="Image2D_8hpp_source.html#l00008">Image2D.hpp:8</a></div></div>
-<div class="ttc" id="astructColor_html"><div class="ttname"><a href="structColor.html">Color</a></div><div class="ttdef"><b>Definition</b> <a href="Color_8hpp_source.html#l00009">Color.hpp:9</a></div></div>
-</div><!-- fragment --><p>Nous allons utiliser les patrons de classe avec le type de la valeur de chaque pixel comme paramètre. Comme dans le TP1 (<a class="el" href="cpp_tp1.html">TP1 Traitement d'images en niveaux de gris (POO simple, surcharge d'opérateurs, entrées/sorties).</a>), on utilisera le conteneur <a href="http://www.cplusplus.com/reference/vector/vector/">std::vector</a> pour stocker le tableau de taille W*H, avec W et H la largeur et la hauteur de l'image. Un extrait du fichier entête donne:</p>
+<div class="fragment"><div class="line">Image2D&lt;unsigned char&gt; img_niv_de_gris( 256, 256, 0 );  <span class="comment">// image en niveaux de gris, noire au début</span></div>
+<div class="line">Image2D&lt;Color&gt; img_couleur( 512, 512, <a class="code hl_struct" href="structColor.html">Color</a>(0,255,0) ); <span class="comment">// image en couleur, verte au début</span></div>
+<div class="ttc" id="astructColor_html"><div class="ttname"><a href="structColor.html">Color</a></div><div class="ttdef"><b>Definition</b> <a href="exemples-cpp20_8cpp_source.html#l00013">exemples-cpp20.cpp:13</a></div></div>
+</div><!-- fragment --><p>Nous allons utiliser les patrons de classe avec le type de la valeur de chaque pixel comme paramètre. Comme dans le TP1 (cpp_tp1), on utilisera le conteneur <a href="http://www.cplusplus.com/reference/vector/vector/">std::vector</a> pour stocker le tableau de taille W*H, avec W et H la largeur et la hauteur de l'image. Un extrait du fichier entête donne:</p>
 <div class="fragment"><div class="line"><span class="comment">// file Image2D.hpp</span></div>
 <div class="line"><span class="preprocessor">#ifndef _IMAGE2D_HPP_</span></div>
 <div class="line"><span class="preprocessor">#define _IMAGE2D_HPP_</span></div>
@@ -137,33 +136,33 @@ $(function() {
 <div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">/// Classe générique pour représenter des images 2D.</span></div>
 <div class="line"><span class="comment"></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TValue&gt;</div>
-<div class="line"><span class="keyword">class </span><a class="code hl_class" href="classImage2D.html">Image2D</a> {</div>
+<div class="line"><span class="keyword">class </span>Image2D {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code hl_class" href="classImage2D.html">Image2D&lt;TValue&gt;</a>    Self;      <span class="comment">// le type de *this</span></div>
+<div class="line">  <span class="keyword">typedef</span> Image2D&lt;TValue&gt;    Self;      <span class="comment">// le type de *this</span></div>
 <div class="line">  <span class="keyword">typedef</span> TValue             Value;     <span class="comment">// le type pour la valeur des pixels</span></div>
 <div class="line">  <span class="keyword">typedef</span> std::vector&lt;Value&gt; Container; <span class="comment">// le type pour stocker les valeurs des pixels de l&#39;image.</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Constructeur par défaut</span></div>
-<div class="line">  <a class="code hl_class" href="classImage2D.html">Image2D</a>();</div>
+<div class="line">  Image2D();</div>
 <div class="line">  <span class="comment">// Constructeur avec taille w x h. Remplit tout avec la valeur g</span></div>
 <div class="line">  <span class="comment">// (par défaut celle donnée par le constructeur par défaut).</span></div>
-<div class="line">  <a class="code hl_class" href="classImage2D.html">Image2D</a>( <span class="keywordtype">int</span> <a class="code hl_function" href="classImage2D.html#aff8813c066adc87fb9fe93f3d72926a8">w</a>, <span class="keywordtype">int</span> <a class="code hl_function" href="classImage2D.html#a6d09f340df0f5e4f15b1827253114d4c">h</a>, Value g = Value() );</div>
+<div class="line">  Image2D( <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, Value g = Value() );</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Remplit l&#39;image avec la valeur \a g.</span></div>
 <div class="line">  <span class="keywordtype">void</span> fill( Value g );</div>
 <div class="line">  <span class="comment"></span></div>
 <div class="line"><span class="comment">  /// @return la largeur de l&#39;image.</span></div>
-<div class="line"><span class="comment"></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classImage2D.html#aff8813c066adc87fb9fe93f3d72926a8">w</a>() <span class="keyword">const</span>;<span class="comment"></span></div>
+<div class="line"><span class="comment"></span>  <span class="keywordtype">int</span> w() <span class="keyword">const</span>;<span class="comment"></span></div>
 <div class="line"><span class="comment">  /// @return la hauteur de l&#39;image.</span></div>
-<div class="line"><span class="comment"></span>  <span class="keywordtype">int</span> <a class="code hl_function" href="classImage2D.html#a6d09f340df0f5e4f15b1827253114d4c">h</a>() <span class="keyword">const</span>;</div>
+<div class="line"><span class="comment"></span>  <span class="keywordtype">int</span> h() <span class="keyword">const</span>;</div>
 <div class="line">  <span class="comment"></span></div>
 <div class="line"><span class="comment">  /// Accesseur read-only à la valeur d&#39;un pixel.</span></div>
 <div class="line"><span class="comment">  /// @return la valeur du pixel(i,j)</span></div>
-<div class="line"><span class="comment"></span>  Value <a class="code hl_function" href="classImage2D.html#aaca38f7c267caf66ca12d882848d74b1">at</a>( <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j ) <span class="keyword">const</span>;</div>
+<div class="line"><span class="comment"></span>  Value at( <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j ) <span class="keyword">const</span>;</div>
 <div class="line">  <span class="comment"></span></div>
 <div class="line"><span class="comment">  /// Accesseur read-write à la valeur d&#39;un pixel.</span></div>
 <div class="line"><span class="comment">  /// @return une référence à la valeur du pixel(i,j)</span></div>
-<div class="line"><span class="comment"></span>  Value&amp; <a class="code hl_function" href="classImage2D.html#aaca38f7c267caf66ca12d882848d74b1">at</a>( <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j );</div>
+<div class="line"><span class="comment"></span>  Value&amp; at( <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j );</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  Container m_data; <span class="comment">// mes données; évitera de faire les allocations dynamiques</span></div>
@@ -174,15 +173,12 @@ $(function() {
 <div class="line"><span class="comment"></span>  <span class="keywordtype">int</span> index( <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j ) <span class="keyword">const</span>;</div>
 <div class="line">};</div>
 <div class="line"><span class="preprocessor">#endif </span><span class="comment">// _IMAGE2D_HPP_</span></div>
-<div class="ttc" id="aclassImage2D_html_a6d09f340df0f5e4f15b1827253114d4c"><div class="ttname"><a href="classImage2D.html#a6d09f340df0f5e4f15b1827253114d4c">Image2D::h</a></div><div class="ttdeci">int h() const</div></div>
-<div class="ttc" id="aclassImage2D_html_aaca38f7c267caf66ca12d882848d74b1"><div class="ttname"><a href="classImage2D.html#aaca38f7c267caf66ca12d882848d74b1">Image2D::at</a></div><div class="ttdeci">Value at(int i, int j) const</div></div>
-<div class="ttc" id="aclassImage2D_html_aff8813c066adc87fb9fe93f3d72926a8"><div class="ttname"><a href="classImage2D.html#aff8813c066adc87fb9fe93f3d72926a8">Image2D::w</a></div><div class="ttdeci">int w() const</div></div>
-</div><!-- fragment --><p>On utilisera la classe <a href="http://www.cplusplus.com/reference/vector/vector/">std::vector</a> de la STL. Cela nous évitera toute allocation dynamique ! Il suffit soit de l'initialiser avec la bonne taille (i.e. donc <code>largeur * hauteur</code>), soit d'appeler <code>vector::resize</code> pour changer la taille. Ecrivez donc cette première version de la classe <a class="el" href="classImage2D.html" title="Classe générique pour représenter des images 2D.">Image2D</a>, avec les deux constructeurs précisés. Faut-il réécrire le constructeur par copie et l'affectation ?</p>
-<dl class="section note"><dt>Note</dt><dd>Faites des copier/coller avec votre classe <a class="el" href="classGrayLevelImage2D.html">GrayLevelImage2D</a> du TP précédent.</dd>
+</div><!-- fragment --><p>On utilisera la classe <a href="http://www.cplusplus.com/reference/vector/vector/">std::vector</a> de la STL. Cela nous évitera toute allocation dynamique ! Il suffit soit de l'initialiser avec la bonne taille (i.e. donc <code>largeur * hauteur</code>), soit d'appeler <code>vector::resize</code> pour changer la taille. Ecrivez donc cette première version de la classe Image2D, avec les deux constructeurs précisés. Faut-il réécrire le constructeur par copie et l'affectation ?</p>
+<dl class="section note"><dt>Note</dt><dd>Faites des copier/coller avec votre classe GrayLevelImage2D du TP précédent.</dd>
 <dd>
-les méthodes seront aussi écrites dans le fichier entête <a class="el" href="Image2D_8hpp_source.html">Image2D.hpp</a>, soit directement, soit après la définition de la classe. Par exemple, on pourra écrire: <div class="fragment"><div class="line"><span class="keywordtype">int</span> w()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_width; }</div>
+les méthodes seront aussi écrites dans le fichier entête Image2D.hpp, soit directement, soit après la définition de la classe. Par exemple, on pourra écrire: <div class="fragment"><div class="line"><span class="keywordtype">int</span> w()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_width; }</div>
 </div><!-- fragment --></dd></dl>
-<p>On testera les méthodes précédents en créant un fichier <code>testGrayLevelImage2D.cpp</code> avec (au moins) les lignes suivantes.</p>
+<p>On testera les méthodes précédents en créant un fichier <code><a class="el" href="testGrayLevelImage2D_8cpp_source.html">testGrayLevelImage2D.cpp</a></code> avec (au moins) les lignes suivantes.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;Image2D.hpp&quot;</span></div>
@@ -192,8 +188,8 @@ les méthodes seront aussi écrites dans le fichier entête <a class="el" href="
 <div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv )</div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> GrayLevel;</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code hl_class" href="classImage2D.html">Image2D&lt;GrayLevel&gt;</a> <a class="code hl_class" href="classGrayLevelImage2D.html">GrayLevelImage2D</a>;</div>
-<div class="line">  <a class="code hl_class" href="classGrayLevelImage2D.html">GrayLevelImage2D</a> img( 8, 8, 5 ); <span class="comment">// imagette 8x8 remplie de 5</span></div>
+<div class="line">  <span class="keyword">typedef</span> Image2D&lt;GrayLevel&gt; GrayLevelImage2D;</div>
+<div class="line">  GrayLevelImage2D img( 8, 8, 5 ); <span class="comment">// imagette 8x8 remplie de 5</span></div>
 <div class="line">  <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> y = 0; y &lt; img.h(); ++y )</div>
 <div class="line">    {</div>
 <div class="line">      <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> x = 0; x &lt; img.w(); ++x )</div>
@@ -202,7 +198,6 @@ les méthodes seront aussi écrites dans le fichier entête <a class="el" href="
 <div class="line">    }</div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassGrayLevelImage2D_html"><div class="ttname"><a href="classGrayLevelImage2D.html">GrayLevelImage2D</a></div><div class="ttdef"><b>Definition</b> <a href="GrayLevelImage2D_8hpp_source.html#l00009">GrayLevelImage2D.hpp:9</a></div></div>
 </div><!-- fragment --><p>Vous pourrez utiliser le <code>Makefile</code> suivant:</p>
 <pre class="fragment">LD=g++
 CXX=g++ -g -c
@@ -236,10 +231,10 @@ clean:
    5 5 5 5 5 5 5 5 
    5 5 5 5 5 5 5 5 
    5 5 5 5 5 5 5 5 
-   5 5 5 5 5 5 5 5</pre><p>En un sens, vous avez transformé votre classe non générique <a class="el" href="classGrayLevelImage2D.html">GrayLevelImage2D</a> en une classe générique <a class="el" href="classImage2D.html" title="Classe générique pour représenter des images 2D.">Image2D</a>, puis vous avez paramétré <a class="el" href="classImage2D.html" title="Classe générique pour représenter des images 2D.">Image2D</a> de manière à représenter des images en niveaux de gris. Pour le moment, vous devez avoir l'impression d'avoir fait du boulot pour pas grand chose. C'est normal, mais ça va s'arranger.</p>
+   5 5 5 5 5 5 5 5</pre><p>En un sens, vous avez transformé votre classe non générique GrayLevelImage2D en une classe générique Image2D, puis vous avez paramétré Image2D de manière à représenter des images en niveaux de gris. Pour le moment, vous devez avoir l'impression d'avoir fait du boulot pour pas grand chose. C'est normal, mais ça va s'arranger.</p>
 <h1><a class="anchor" id="cpp_tp2_3"></a>
 3 - Introduction des images couleurs.</h1>
-<p>On va instancier une image couleur. Pour ce faire, il faut avoir une classe qui représente une couleur. C'est la classe <a class="el" href="structColor.html">Color</a> (fichier <a class="el" href="Color_8hpp_source.html">Color.hpp</a>) donnée ci-dessous.</p>
+<p>On va instancier une image couleur. Pour ce faire, il faut avoir une classe qui représente une couleur. C'est la classe <a class="el" href="structColor.html">Color</a> (fichier Color.hpp) donnée ci-dessous.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#ifndef _COLOR_HPP_</span></div>
 <div class="line"><span class="preprocessor">#define _COLOR_HPP_</span></div>
 <div class="line"><span class="comment"></span> </div>
@@ -252,80 +247,70 @@ clean:
 <div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> Byte;</div>
 <div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">  /// Code les 3 canaux RGB sur 3 octets.</span></div>
-<div class="line"><span class="comment"></span>  Byte <a class="code hl_variable" href="structColor.html#af84e8322aff195c692b0e5cf9ed01fe1">red</a>, green, blue;</div>
+<div class="line"><span class="comment"></span>  Byte red, green, blue;</div>
 <div class="line"> </div>
 <div class="line">  <a class="code hl_struct" href="structColor.html">Color</a>() {}<span class="comment"></span></div>
 <div class="line"><span class="comment">  /// Crée la couleur spécifiée par (_red,_green,_blue).</span></div>
 <div class="line"><span class="comment"></span>  <a class="code hl_struct" href="structColor.html">Color</a>( Byte _red, Byte _green, Byte _blue )</div>
-<div class="line">    : <a class="code hl_variable" href="structColor.html#af84e8322aff195c692b0e5cf9ed01fe1">red</a>( _red ), green( _green ), blue( _blue ) {}</div>
+<div class="line">    : red( _red ), green( _green ), blue( _blue ) {}</div>
 <div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">  /// @return l&#39;intensité de rouge (entre 0.0 et 1.0)</span></div>
-<div class="line"><span class="comment"></span>  <span class="keywordtype">float</span> <a class="code hl_function" href="structColor.html#acf37af858b317db5b9295b0fb4d6cc51">r</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ( (<span class="keywordtype">float</span>) <a class="code hl_variable" href="structColor.html#af84e8322aff195c692b0e5cf9ed01fe1">red</a> ) / 255.0; }<span class="comment"></span></div>
+<div class="line"><span class="comment"></span>  <span class="keywordtype">float</span> r()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ( (<span class="keywordtype">float</span>) red ) / 255.0; }<span class="comment"></span></div>
 <div class="line"><span class="comment">  /// @return l&#39;intensité de vert (entre 0.0 et 1.0)</span></div>
-<div class="line"><span class="comment"></span>  <span class="keywordtype">float</span> <a class="code hl_function" href="structColor.html#a09a7c4d10a387bf59823d52eb0bc0173">g</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ( (<span class="keywordtype">float</span>) green ) / 255.0; }<span class="comment"></span></div>
+<div class="line"><span class="comment"></span>  <span class="keywordtype">float</span> g()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ( (<span class="keywordtype">float</span>) green ) / 255.0; }<span class="comment"></span></div>
 <div class="line"><span class="comment">  /// @return l&#39;intensité de bleu (entre 0.0 et 1.0)</span></div>
-<div class="line"><span class="comment"></span>  <span class="keywordtype">float</span> <a class="code hl_function" href="structColor.html#a1d70a9e2386aa5d25cac60c9201b6269">b</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ( (<span class="keywordtype">float</span>) blue ) / 255.0; }</div>
+<div class="line"><span class="comment"></span>  <span class="keywordtype">float</span> b()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ( (<span class="keywordtype">float</span>) blue ) / 255.0; }</div>
 <div class="line"><span class="comment"></span> </div>
 <div class="line"><span class="comment">  /// Sert à désigner un canal.</span></div>
-<div class="line"><span class="comment"></span>  <span class="keyword">enum</span> <a class="code hl_enumeration" href="structColor.html#a3448cb532aae0ec54346036251d2e8db">Channel</a> { Red, Green, Blue };<span class="comment"></span></div>
+<div class="line"><span class="comment"></span>  <span class="keyword">enum</span> Channel { Red, Green, Blue };<span class="comment"></span></div>
 <div class="line"><span class="comment">  /// @return le canal le plus intense.</span></div>
-<div class="line"><span class="comment"></span>  <a class="code hl_enumeration" href="structColor.html#a3448cb532aae0ec54346036251d2e8db">Channel</a> <a class="code hl_function" href="structColor.html#a599f81b59dd9f1b3a1b2aac0476cab31">argmax</a>()<span class="keyword"> const </span></div>
+<div class="line"><span class="comment"></span>  Channel argmax()<span class="keyword"> const </span></div>
 <div class="line"><span class="keyword">  </span>{</div>
-<div class="line">    <span class="keywordflow">if</span> ( <a class="code hl_variable" href="structColor.html#af84e8322aff195c692b0e5cf9ed01fe1">red</a> &gt;= green ) <span class="keywordflow">return</span> <a class="code hl_variable" href="structColor.html#af84e8322aff195c692b0e5cf9ed01fe1">red</a> &gt;= blue ? Red : Blue;</div>
+<div class="line">    <span class="keywordflow">if</span> ( red &gt;= green ) <span class="keywordflow">return</span> red &gt;= blue ? Red : Blue;</div>
 <div class="line">    <span class="keywordflow">else</span>                <span class="keywordflow">return</span> green &gt;= blue ? Green : Blue;</div>
 <div class="line">  }<span class="comment"></span></div>
 <div class="line"><span class="comment">  /// @return l&#39;intensité maximale des canaux</span></div>
-<div class="line"><span class="comment"></span>  <span class="keywordtype">float</span> <a class="code hl_function" href="structColor.html#a34675116a2b47a2fa653f80a348742db">max</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::max( std::max( <a class="code hl_function" href="structColor.html#acf37af858b317db5b9295b0fb4d6cc51">r</a>(), <a class="code hl_function" href="structColor.html#a09a7c4d10a387bf59823d52eb0bc0173">g</a>() ), <a class="code hl_function" href="structColor.html#a1d70a9e2386aa5d25cac60c9201b6269">b</a>() ); }<span class="comment"></span></div>
+<div class="line"><span class="comment"></span>  <span class="keywordtype">float</span> max()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::max( std::max( r(), g() ), b() ); }<span class="comment"></span></div>
 <div class="line"><span class="comment">  /// @return l&#39;intensité minimale des canaux</span></div>
-<div class="line"><span class="comment"></span>  <span class="keywordtype">float</span> <a class="code hl_function" href="structColor.html#aee2b1830c034579b09e21d72d7ca8016">min</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::min( std::min( <a class="code hl_function" href="structColor.html#acf37af858b317db5b9295b0fb4d6cc51">r</a>(), <a class="code hl_function" href="structColor.html#a09a7c4d10a387bf59823d52eb0bc0173">g</a>() ), <a class="code hl_function" href="structColor.html#a1d70a9e2386aa5d25cac60c9201b6269">b</a>() ); }<span class="comment"></span></div>
+<div class="line"><span class="comment"></span>  <span class="keywordtype">float</span> min()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::min( std::min( r(), g() ), b() ); }<span class="comment"></span></div>
 <div class="line"><span class="comment">  /**</span></div>
 <div class="line"><span class="comment">     Convertit la couleur RGB en le modèle HSV (TSV en français).</span></div>
 <div class="line"><span class="comment">     @param h la teinte de la couleur (entre 0 et 359), hue en anglais.</span></div>
 <div class="line"><span class="comment">     @param s la saturation de la couleur (entre 0.0 et 1.0)</span></div>
 <div class="line"><span class="comment">     @param v la valeur ou brillance de la couleur (entre 0.0 et 1.0).</span></div>
 <div class="line"><span class="comment">  */</span></div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="structColor.html#ae36aabe5c53a92dee8c49044b70dd91d">getHSV</a>( <span class="keywordtype">int</span> &amp; h, <span class="keywordtype">float</span> &amp; s, <span class="keywordtype">float</span> &amp; v )<span class="keyword"> const</span></div>
+<div class="line">  <span class="keywordtype">void</span> getHSV( <span class="keywordtype">int</span> &amp; h, <span class="keywordtype">float</span> &amp; s, <span class="keywordtype">float</span> &amp; v )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword">  </span>{</div>
 <div class="line">    <span class="comment">// Taking care of hue</span></div>
-<div class="line">    <span class="keywordflow">if</span> ( <a class="code hl_function" href="structColor.html#a34675116a2b47a2fa653f80a348742db">max</a>() == <a class="code hl_function" href="structColor.html#aee2b1830c034579b09e21d72d7ca8016">min</a>() ) h = 0;</div>
+<div class="line">    <span class="keywordflow">if</span> ( max() == min() ) h = 0;</div>
 <div class="line">    <span class="keywordflow">else</span> {</div>
-<div class="line">      <span class="keywordflow">switch</span> ( <a class="code hl_function" href="structColor.html#a599f81b59dd9f1b3a1b2aac0476cab31">argmax</a>() ) {</div>
-<div class="line">      <span class="keywordflow">case</span> Red:   h = ( (int) ( 60.0 * ( <a class="code hl_function" href="structColor.html#a09a7c4d10a387bf59823d52eb0bc0173">g</a>() - <a class="code hl_function" href="structColor.html#a1d70a9e2386aa5d25cac60c9201b6269">b</a>() ) / ( <a class="code hl_function" href="structColor.html#a34675116a2b47a2fa653f80a348742db">max</a>() - <a class="code hl_function" href="structColor.html#aee2b1830c034579b09e21d72d7ca8016">min</a>() ) + 360.0 ) ) % 360;</div>
+<div class="line">      <span class="keywordflow">switch</span> ( argmax() ) {</div>
+<div class="line">      <span class="keywordflow">case</span> Red:   h = ( (int) ( 60.0 * ( g() - b() ) / ( max() - min() ) + 360.0 ) ) % 360;</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
-<div class="line">      <span class="keywordflow">case</span> Green: h = ( (int) ( 60.0 * ( <a class="code hl_function" href="structColor.html#a1d70a9e2386aa5d25cac60c9201b6269">b</a>() - <a class="code hl_function" href="structColor.html#acf37af858b317db5b9295b0fb4d6cc51">r</a>() ) / ( <a class="code hl_function" href="structColor.html#a34675116a2b47a2fa653f80a348742db">max</a>() - <a class="code hl_function" href="structColor.html#aee2b1830c034579b09e21d72d7ca8016">min</a>() ) + 120.0 ) );</div>
+<div class="line">      <span class="keywordflow">case</span> Green: h = ( (int) ( 60.0 * ( b() - r() ) / ( max() - min() ) + 120.0 ) );</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
-<div class="line">      <span class="keywordflow">case</span> Blue:  h = ( (int) ( 60.0 * ( <a class="code hl_function" href="structColor.html#acf37af858b317db5b9295b0fb4d6cc51">r</a>() - <a class="code hl_function" href="structColor.html#a09a7c4d10a387bf59823d52eb0bc0173">g</a>() ) / ( <a class="code hl_function" href="structColor.html#a34675116a2b47a2fa653f80a348742db">max</a>() - <a class="code hl_function" href="structColor.html#aee2b1830c034579b09e21d72d7ca8016">min</a>() ) + 240.0 ) );</div>
+<div class="line">      <span class="keywordflow">case</span> Blue:  h = ( (int) ( 60.0 * ( r() - g() ) / ( max() - min() ) + 240.0 ) );</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    <span class="comment">// Taking care of saturation</span></div>
-<div class="line">    s = <a class="code hl_function" href="structColor.html#a34675116a2b47a2fa653f80a348742db">max</a>() == 0.0 ? 0.0 : 1.0 - <a class="code hl_function" href="structColor.html#aee2b1830c034579b09e21d72d7ca8016">min</a>() / <a class="code hl_function" href="structColor.html#a34675116a2b47a2fa653f80a348742db">max</a>();</div>
+<div class="line">    s = max() == 0.0 ? 0.0 : 1.0 - min() / max();</div>
 <div class="line">    <span class="comment">// Taking care of value</span></div>
-<div class="line">    v = <a class="code hl_function" href="structColor.html#a34675116a2b47a2fa653f80a348742db">max</a>();</div>
+<div class="line">    v = max();</div>
 <div class="line">  }<span class="comment"></span></div>
 <div class="line"><span class="comment">  /**</span></div>
 <div class="line"><span class="comment">     TODO: Convertit la couleur donnée avec le modèle HSV (TSV en</span></div>
 <div class="line"><span class="comment">     français) en une couleur RGB.</span></div>
 <div class="line"><span class="comment">  */</span></div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="structColor.html#ae134ffc8127610be421018c041e1bff5">setHSV</a>( <span class="keywordtype">int</span> h, <span class="keywordtype">float</span> s, <span class="keywordtype">float</span> v )</div>
+<div class="line">  <span class="keywordtype">void</span> setHSV( <span class="keywordtype">int</span> h, <span class="keywordtype">float</span> s, <span class="keywordtype">float</span> v )</div>
 <div class="line">  {}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#endif </span><span class="comment">//_COLOR_HPP_</span></div>
-<div class="ttc" id="astructColor_html_a09a7c4d10a387bf59823d52eb0bc0173"><div class="ttname"><a href="structColor.html#a09a7c4d10a387bf59823d52eb0bc0173">Color::g</a></div><div class="ttdeci">float g() const</div><div class="ttdef"><b>Definition</b> <a href="Color_8hpp_source.html#l00023">Color.hpp:23</a></div></div>
-<div class="ttc" id="astructColor_html_a1d70a9e2386aa5d25cac60c9201b6269"><div class="ttname"><a href="structColor.html#a1d70a9e2386aa5d25cac60c9201b6269">Color::b</a></div><div class="ttdeci">float b() const</div><div class="ttdef"><b>Definition</b> <a href="Color_8hpp_source.html#l00025">Color.hpp:25</a></div></div>
-<div class="ttc" id="astructColor_html_a3448cb532aae0ec54346036251d2e8db"><div class="ttname"><a href="structColor.html#a3448cb532aae0ec54346036251d2e8db">Color::Channel</a></div><div class="ttdeci">Channel</div><div class="ttdoc">Sert à désigner un canal.</div><div class="ttdef"><b>Definition</b> <a href="Color_8hpp_source.html#l00028">Color.hpp:28</a></div></div>
-<div class="ttc" id="astructColor_html_a34675116a2b47a2fa653f80a348742db"><div class="ttname"><a href="structColor.html#a34675116a2b47a2fa653f80a348742db">Color::max</a></div><div class="ttdeci">float max() const</div><div class="ttdef"><b>Definition</b> <a href="Color_8hpp_source.html#l00036">Color.hpp:36</a></div></div>
-<div class="ttc" id="astructColor_html_a599f81b59dd9f1b3a1b2aac0476cab31"><div class="ttname"><a href="structColor.html#a599f81b59dd9f1b3a1b2aac0476cab31">Color::argmax</a></div><div class="ttdeci">Channel argmax() const</div><div class="ttdef"><b>Definition</b> <a href="Color_8hpp_source.html#l00030">Color.hpp:30</a></div></div>
-<div class="ttc" id="astructColor_html_acf37af858b317db5b9295b0fb4d6cc51"><div class="ttname"><a href="structColor.html#acf37af858b317db5b9295b0fb4d6cc51">Color::r</a></div><div class="ttdeci">float r() const</div><div class="ttdef"><b>Definition</b> <a href="Color_8hpp_source.html#l00021">Color.hpp:21</a></div></div>
-<div class="ttc" id="astructColor_html_ae134ffc8127610be421018c041e1bff5"><div class="ttname"><a href="structColor.html#ae134ffc8127610be421018c041e1bff5">Color::setHSV</a></div><div class="ttdeci">void setHSV(int h, float s, float v)</div><div class="ttdef"><b>Definition</b> <a href="Color_8hpp_source.html#l00068">Color.hpp:68</a></div></div>
-<div class="ttc" id="astructColor_html_ae36aabe5c53a92dee8c49044b70dd91d"><div class="ttname"><a href="structColor.html#ae36aabe5c53a92dee8c49044b70dd91d">Color::getHSV</a></div><div class="ttdeci">void getHSV(int &amp;h, float &amp;s, float &amp;v) const</div><div class="ttdef"><b>Definition</b> <a href="Color_8hpp_source.html#l00045">Color.hpp:45</a></div></div>
-<div class="ttc" id="astructColor_html_aee2b1830c034579b09e21d72d7ca8016"><div class="ttname"><a href="structColor.html#aee2b1830c034579b09e21d72d7ca8016">Color::min</a></div><div class="ttdeci">float min() const</div><div class="ttdef"><b>Definition</b> <a href="Color_8hpp_source.html#l00038">Color.hpp:38</a></div></div>
-<div class="ttc" id="astructColor_html_af84e8322aff195c692b0e5cf9ed01fe1"><div class="ttname"><a href="structColor.html#af84e8322aff195c692b0e5cf9ed01fe1">Color::red</a></div><div class="ttdeci">Byte red</div><div class="ttdoc">Code les 3 canaux RGB sur 3 octets.</div><div class="ttdef"><b>Definition</b> <a href="Color_8hpp_source.html#l00013">Color.hpp:13</a></div></div>
-</div><!-- fragment --><p>Ecrivez un petit programme de test <code>testColorImage2D.cpp</code> sur le modèle de <code>testGrayLevelImage2D.cpp</code> afin de tester l'instanciation d'une image couleur sous la forme</p>
+</div><!-- fragment --><p>Ecrivez un petit programme de test <code>testColorImage2D.cpp</code> sur le modèle de <code><a class="el" href="testGrayLevelImage2D_8cpp_source.html">testGrayLevelImage2D.cpp</a></code> afin de tester l'instanciation d'une image couleur sous la forme</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;Color.hpp&quot;</span></div>
 <div class="line"><span class="comment">//...</span></div>
-<div class="line"><span class="keyword">typedef</span> <a class="code hl_class" href="classImage2D.html">Image2D&lt;Color&gt;</a> ColorImage2D;</div>
+<div class="line"><span class="keyword">typedef</span> Image2D&lt;Color&gt; ColorImage2D;</div>
 <div class="line">ColorImage2D img( 8, 8, <a class="code hl_struct" href="structColor.html">Color</a>( 255, 0, 255 ) ); <span class="comment">// imagette 8x8 remplie de magenta</span></div>
 <div class="line"><span class="comment">//...</span></div>
 </div><!-- fragment --><h1><a class="anchor" id="cpp_tp2_4"></a>
@@ -353,7 +338,7 @@ clean:
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main()</div>
 <div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code hl_class" href="classImage2D.html">Image2D&lt;Color&gt;</a> ColorImage2D;</div>
+<div class="line">  <span class="keyword">typedef</span> Image2D&lt;Color&gt; ColorImage2D;</div>
 <div class="line">  <span class="keyword">typedef</span> ColorImage2D::Iterator Iterator;</div>
 <div class="line">  ColorImage2D img( 256, 256, <a class="code hl_struct" href="structColor.html">Color</a>( 0, 0, 0 ) );</div>
 <div class="line">  Iterator it = img.begin();</div>
@@ -374,7 +359,7 @@ clean:
 <div class="line">      <a class="code hl_struct" href="structColor.html">Color</a> c = *it;</div>
 <div class="line">      <span class="comment">// c.red, c.green et c.blue sont des `unsigned char`, donc la ligne ci-dessous</span></div>
 <div class="line">      <span class="comment">// écrit 3 octets sur le flux de sortie `output`.</span></div>
-<div class="line">      output &lt;&lt; c.<a class="code hl_variable" href="structColor.html#af84e8322aff195c692b0e5cf9ed01fe1">red</a> &lt;&lt; c.green &lt;&lt; c.blue;</div>
+<div class="line">      output &lt;&lt; c.red &lt;&lt; c.green &lt;&lt; c.blue;</div>
 <div class="line">    }</div>
 <div class="line">  output.close();</div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
@@ -393,14 +378,14 @@ Votre première image couleur.</div></div>
 <div class="line"><span class="keywordflow">for</span> ( ConstIterator it = cimg.begin(), itE = cimg.end(); it != itE; ++it ) <span class="comment">// (*)</span></div>
 <div class="line">  { </div>
 <div class="line">    <a class="code hl_struct" href="structColor.html">Color</a> c = *it;</div>
-<div class="line">    output &lt;&lt; c.<a class="code hl_variable" href="structColor.html#af84e8322aff195c692b0e5cf9ed01fe1">red</a> &lt;&lt; c.green &lt;&lt; c.blue;</div>
+<div class="line">    output &lt;&lt; c.red &lt;&lt; c.green &lt;&lt; c.blue;</div>
 <div class="line">  }</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>A partir de C++11, on écrirait aussi les méthodes <code>cbegin()</code> et <code>cend()</code> (et <code>cstart</code> ici) pour récupérer un const-itérateur, que l'on utiliserait si l'on veut forcer leur usage.</dd></dl>
 <div class="fragment"><div class="line"><span class="comment">// 2eme façon (plus C++11)</span></div>
 <div class="line"><span class="keywordflow">for</span> ( ConstIterator it = img.cbegin(), itE = img.cend(); it != itE; ++it ) <span class="comment">// (*)</span></div>
 <div class="line"> { </div>
 <div class="line">   <a class="code hl_struct" href="structColor.html">Color</a> c = *it;</div>
-<div class="line">   output &lt;&lt; c.<a class="code hl_variable" href="structColor.html#af84e8322aff195c692b0e5cf9ed01fe1">red</a> &lt;&lt; c.green &lt;&lt; c.blue;</div>
+<div class="line">   output &lt;&lt; c.red &lt;&lt; c.green &lt;&lt; c.blue;</div>
 <div class="line"> }</div>
 <div class="line"> <span class="comment">// 3eme façon avec (:)</span></div>
 <div class="line"><span class="keywordflow">for</span> ( <span class="keyword">const</span> <span class="keyword">auto</span> c : img )</div>
@@ -409,7 +394,7 @@ Votre première image couleur.</div></div>
 <div class="line">}</div>
 </div><!-- fragment --><h1><a class="anchor" id="cpp_tp2_5"></a>
 5 - Un importeur / exporteur PBM générique</h1>
-<p>Il est clair qu'on ne peut pas écrire le même code pour lire/écrire du PGM (image niveaux de gris) ou du PPM (image couleur). Cela va <em>a</em> <em>priori</em> à l'encontre de la généricité de <a class="el" href="classImage2D.html" title="Classe générique pour représenter des images 2D.">Image2D</a>. Ce n'est pas un problème ici, on va juste utiliser la spécialisation des classes. Comme on ne veut pas spécialiser tout <a class="el" href="classImage2D.html" title="Classe générique pour représenter des images 2D.">Image2D</a>, on va plutôt créer des classes à part pour importer ou exporter les images. Par exemple, pour exporter/sauvegarder une image, on définit une classe et ses spécialisations:</p>
+<p>Il est clair qu'on ne peut pas écrire le même code pour lire/écrire du PGM (image niveaux de gris) ou du PPM (image couleur). Cela va <em>a</em> <em>priori</em> à l'encontre de la généricité de Image2D. Ce n'est pas un problème ici, on va juste utiliser la spécialisation des classes. Comme on ne veut pas spécialiser tout Image2D, on va plutôt créer des classes à part pour importer ou exporter les images. Par exemple, pour exporter/sauvegarder une image, on définit une classe et ses spécialisations:</p>
 <div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TValue&gt; <span class="keyword">struct </span>Image2DWriter { ... };</div>
 <div class="line"><span class="comment">// spécialisée ensuite</span></div>
 <div class="line"><span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span>Image2DWriter&lt;unsigned char&gt; { ... }; <span class="comment">// PGM</span></div>
@@ -427,7 +412,7 @@ Votre première image couleur.</div></div>
 <div class="line"><span class="keyword">class </span>Image2DWriter {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">typedef</span> TValue Value;</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code hl_class" href="classImage2D.html">Image2D&lt;Value&gt;</a> Image;</div>
+<div class="line">  <span class="keyword">typedef</span> Image2D&lt;Value&gt; Image;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">bool</span> write( <span class="keyword">const</span> Image &amp; img, std::ostream &amp; output, <span class="keywordtype">bool</span> ascii )</div>
 <div class="line">  {</div>
@@ -441,7 +426,7 @@ Votre première image couleur.</div></div>
 <div class="line"><span class="keyword">class </span>Image2DWriter&lt;unsigned char&gt; {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> Value;</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code hl_class" href="classImage2D.html">Image2D&lt;Value&gt;</a> Image;</div>
+<div class="line">  <span class="keyword">typedef</span> Image2D&lt;Value&gt; Image;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">bool</span> write( <span class="keyword">const</span> Image &amp; img, std::ostream &amp; output, <span class="keywordtype">bool</span> ascii )</div>
 <div class="line">  {</div>
@@ -454,7 +439,7 @@ Votre première image couleur.</div></div>
 <div class="line"><span class="keyword">class </span>Image2DWriter&lt;<a class="code hl_struct" href="structColor.html">Color</a>&gt; {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">typedef</span> <a class="code hl_struct" href="structColor.html">Color</a> Value;</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code hl_class" href="classImage2D.html">Image2D&lt;Value&gt;</a> Image;</div>
+<div class="line">  <span class="keyword">typedef</span> Image2D&lt;Value&gt; Image;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">bool</span> write( <span class="keyword">const</span> Image &amp; img, std::ostream &amp; output, <span class="keywordtype">bool</span> ascii )</div>
 <div class="line">  {</div>
@@ -558,7 +543,7 @@ prompt$ ./invert-red-blue kowloon.ppm kowloon-inv.ppm
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Observez-bien l'accesseur à la composante verte (ColorGreenAccessor). Cet accesseur nous permettra de tranformer un itérateur <code>it</code> sur image de couleur (donc <code>*it</code> est la couleur de pixel, de type <a class="el" href="structColor.html">Color</a>) en un itérateur sur image couleur mais où <code>it</code> est la composante verte du pixel, de type <code>unsigned</code> <code>char</code>.</dd></dl>
 <p>Comment se servir des accesseurs dans les itérateurs ? On va "simplement" définir un itérateur générique (paramétré par un type <code>Accessor</code>), qui hérite de votre itérateur <code>ConstIterator</code>, et qui utilise l'accesseur au moment du déréférencement (<code>operator*</code>). Un extrait du code donne donc:</p>
 <div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> TValue&gt;</div>
-<div class="line"><span class="keyword">struct </span><a class="code hl_class" href="classImage2D.html">Image2D</a> {</div>
+<div class="line"><span class="keyword">struct </span>Image2D {</div>
 <div class="line">...</div>
 <div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TAccessor&gt; </div>
 <div class="line">  <span class="keyword">struct </span>GenericConstIterator : <span class="keyword">public</span> ConstIterator {</div>
@@ -567,7 +552,7 @@ prompt$ ./invert-red-blue kowloon.ppm kowloon-inv.ppm
 <div class="line">    <span class="keyword">typedef</span> <span class="keyword">typename</span> Accessor::Value     Value;      <span class="comment">// unsigned char (pour ColorGreenAccessor)</span></div>
 <div class="line">    <span class="keyword">typedef</span> <span class="keyword">typename</span> Accessor::Reference Reference;  <span class="comment">// ColorGreenReference (pour ColorGreenAccessor)</span></div>
 <div class="line"> </div>
-<div class="line">    GenericConstIterator( <span class="keyword">const</span> <a class="code hl_class" href="classImage2D.html">Image2D&lt;ImageValue&gt;</a>&amp; image, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y );</div>
+<div class="line">    GenericConstIterator( <span class="keyword">const</span> Image2D&lt;ImageValue&gt;&amp; image, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y );</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Accès en lecture (rvalue)</span></div>
 <div class="line">    Value operator*()<span class="keyword"> const</span></div>
@@ -575,7 +560,7 @@ prompt$ ./invert-red-blue kowloon.ppm kowloon-inv.ppm
 <div class="line"> </div>
 <div class="line">  };</div>
 <div class="line">...</div>
-</div><!-- fragment --><p>Complétez le constructeur de <code>GenericConstIterator</code> (qui doit appeler sa super-classe <code>ConstIterator</code>). Ensuite surchargez les méthodes <code>begin</code>, <code>end</code>, <code>start</code> de <a class="el" href="classImage2D.html" title="Classe générique pour représenter des images 2D.">Image2D</a> avec des patrons de méthodes. Par exemple, un <code>start</code> générique peut s'écrire ainsi:</p>
+</div><!-- fragment --><p>Complétez le constructeur de <code>GenericConstIterator</code> (qui doit appeler sa super-classe <code>ConstIterator</code>). Ensuite surchargez les méthodes <code>begin</code>, <code>end</code>, <code>start</code> de Image2D avec des patrons de méthodes. Par exemple, un <code>start</code> générique peut s'écrire ainsi:</p>
 <div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Accessor&gt;</div>
 <div class="line">GenericConstIterator&lt; Accessor &gt; start( <span class="keywordtype">int</span> x = 0, <span class="keywordtype">int</span> y = 0 )<span class="keyword"> const</span></div>
 <div class="line"><span class="keyword"></span>{ <span class="keywordflow">return</span> GenericConstIterator&lt; Accessor &gt;( *<span class="keyword">this</span>, x, y ); }</div>
@@ -591,7 +576,7 @@ prompt$ ./invert-red-blue kowloon.ppm kowloon-inv.ppm
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>** argv )</div>
 <div class="line">{</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code hl_class" href="classImage2D.html">Image2D&lt;Color&gt;</a> ColorImage2D;</div>
+<div class="line">  <span class="keyword">typedef</span> Image2D&lt;Color&gt; ColorImage2D;</div>
 <div class="line">  <span class="keyword">typedef</span> Image2DReader&lt;Color&gt; ColorImage2DReader;</div>
 <div class="line">  <span class="keyword">typedef</span> ColorImage2D::Iterator ColorIterator;</div>
 <div class="line">  <span class="keywordflow">if</span> ( argc &lt; 3 ) </div>
@@ -608,10 +593,10 @@ prompt$ ./invert-red-blue kowloon.ppm kowloon-inv.ppm
 <div class="line">       <span class="keywordflow">return</span> 1;</div>
 <div class="line">    }</div>
 <div class="line">  input.close();</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code hl_class" href="classImage2D.html">Image2D&lt;unsigned char&gt;</a> <a class="code hl_class" href="classGrayLevelImage2D.html">GrayLevelImage2D</a>;</div>
+<div class="line">  <span class="keyword">typedef</span> Image2D&lt;unsigned char&gt; GrayLevelImage2D;</div>
 <div class="line">  <span class="keyword">typedef</span> Image2DWriter&lt;unsigned char&gt; GrayLevelImage2DWriter;</div>
-<div class="line">  <span class="keyword">typedef</span> <a class="code hl_struct" href="structGrayLevelImage2D_1_1Iterator.html">GrayLevelImage2D::Iterator</a> GrayLevelIterator;</div>
-<div class="line">  <a class="code hl_class" href="classGrayLevelImage2D.html">GrayLevelImage2D</a> img2( img.w(), img.h() );</div>
+<div class="line">  <span class="keyword">typedef</span> GrayLevelImage2D::Iterator GrayLevelIterator;</div>
+<div class="line">  GrayLevelImage2D img2( img.w(), img.h() );</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">//-----------------------------------------------------------------------------</span></div>
 <div class="line">  <span class="comment">// vvvvvvvvv Toute la transformation couleur -&gt; canal vert est ici vvvvvvvvvvvv</span></div>
@@ -641,7 +626,6 @@ prompt$ ./invert-red-blue kowloon.ppm kowloon-inv.ppm
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="ttc" id="astructGrayLevelImage2D_1_1Iterator_html"><div class="ttname"><a href="structGrayLevelImage2D_1_1Iterator.html">GrayLevelImage2D::Iterator</a></div><div class="ttdef"><b>Definition</b> <a href="GrayLevelImage2D_8hpp_source.html#l00020">GrayLevelImage2D.hpp:20</a></div></div>
 </div><!-- fragment --><pre class="fragment">prompt$ ./save-green-channel papillon.ppm papillon-green.pgm
 </pre><table class="doxtable">
 <tr>
@@ -711,9 +695,9 @@ Si on veut écrire une expression comme <code>*itGreen++</code> alors l'opérate
 <p>Vérifiez donc que vos itérateurs fonctionnent correctement en créant ce petit programme.</p>
 <h1><a class="anchor" id="cpp_tp2_10"></a>
 10 Espace TSV (HSV) et histogramme d'une image couleur</h1>
-<p>Au TP précédent, vous avez vu comment calculer l'histogramme d'une image en niveaux de gris (voir <a class="el" href="cpp_tp1.html#cpp_tp1_7">7 - Histogramme et Histogramme cumulé d'une image.</a>). Qu'en est-il d'une image couleur ? Tel quel, cela n'a pas vraiment de sens de calculer l'histogramme dans l'espace RGB. En revanche, cela a plus de sens dans un autre espace de couleurs appelé Teinte Saturation Valeur (TSV) ou Hue Saturation Value (HSV) en anglais. La page [<a href="http://fr.wikipedia.org/wiki/Teinte_Saturation_Valeur">http://fr.wikipedia.org/wiki/Teinte_Saturation_Valeur</a> Wikipedia TSV] décrit cet espace de couleur ainsi que les fonctions pour transformer RGB vers TSV et réciproquement.</p>
-<p>Nous allons définir l'histogramme d'une image couleur comme l'histogramme des <b>valeurs</b> (au sens de TSV) des pixels. Pour ce faire, il faut d'abord enrichir la classe <a class="el" href="structColor.html">Color</a>, car elle ne comporte la méthode <a class="el" href="structColor.html#ae36aabe5c53a92dee8c49044b70dd91d">Color::getHSV</a> pour convertir RGB vers TSV, mais pas l'inverse. Ecrivez donc la méthode de <a class="el" href="structColor.html">Color</a> qui réalise la transformation TSV vers RGB, dont le prototype sera:</p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="structColor.html#ae134ffc8127610be421018c041e1bff5">Color::setHSV</a>( <span class="keywordtype">int</span> h, <span class="keywordtype">float</span> s, <span class="keywordtype">float</span> v ) { ... };</div>
+<p>Au TP précédent, vous avez vu comment calculer l'histogramme d'une image en niveaux de gris (voir cpp_tp1_7). Qu'en est-il d'une image couleur ? Tel quel, cela n'a pas vraiment de sens de calculer l'histogramme dans l'espace RGB. En revanche, cela a plus de sens dans un autre espace de couleurs appelé Teinte Saturation Valeur (TSV) ou Hue Saturation Value (HSV) en anglais. La page [<a href="http://fr.wikipedia.org/wiki/Teinte_Saturation_Valeur">http://fr.wikipedia.org/wiki/Teinte_Saturation_Valeur</a> Wikipedia TSV] décrit cet espace de couleur ainsi que les fonctions pour transformer RGB vers TSV et réciproquement.</p>
+<p>Nous allons définir l'histogramme d'une image couleur comme l'histogramme des <b>valeurs</b> (au sens de TSV) des pixels. Pour ce faire, il faut d'abord enrichir la classe <a class="el" href="structColor.html">Color</a>, car elle ne comporte la méthode Color::getHSV pour convertir RGB vers TSV, mais pas l'inverse. Ecrivez donc la méthode de <a class="el" href="structColor.html">Color</a> qui réalise la transformation TSV vers RGB, dont le prototype sera:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> Color::setHSV( <span class="keywordtype">int</span> h, <span class="keywordtype">float</span> s, <span class="keywordtype">float</span> v ) { ... };</div>
 </div><!-- fragment --><p>Ensuite, nous pouvons maintenant écrire un nouvel accesseur vers la <b>valeur</b> d'une couleur. Sa structure est ainsi, qu'il s'agit de compléter:</p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span>ColorValueAccessor {</div>
 <div class="line">  <span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> Value;</div>
@@ -750,27 +734,28 @@ Si on veut écrire une expression comme <code>*itGreen++</code> alors l'opérate
 <div class="line">  { ... }</div>
 <div class="line"> </div>
 <div class="line">};</div>
-</div><!-- fragment --><p>Il reste maintenant à écrire l'algorithme qui calcule l'histogramme et l'histogramme cumulé des valeurs de l'image couleur. Ecrivez donc une classe <code>Histogramme</code> qui contiendra deux tableaux de 256 entrées double, l'un pour l'histogramme \(h_I\), l'autre pour l'histograme cumulé \(H_I\). Pour calculer l'histogramme sur des images arbitraires, cette classe aura une méthode générique</p>
+</div><!-- fragment --><p>Il reste maintenant à écrire l'algorithme qui calcule l'histogramme et l'histogramme cumulé des valeurs de l'image couleur. Ecrivez donc une classe <code><a class="el" href="structHistogramme.html">Histogramme</a></code> qui contiendra deux tableaux de 256 entrées double, l'un pour l'histogramme \(h_I\), l'autre pour l'histograme cumulé \(H_I\). Pour calculer l'histogramme sur des images arbitraires, cette classe aura une méthode générique</p>
 <div class="fragment"><div class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> InputIterator&gt; <span class="keywordtype">void</span> init( InputIterator it, InputIterator itE ) { ... }</div>
 </div><!-- fragment --><p>qui parcourera l'intervalle [it,itE) pour calculer son histogramme et son histogramme cumulé. Ainsi on pourra se servir des histogrammes indifféremment pour les images couleurs et niveaux de gris, comme ci-dessous:</p>
-<div class="fragment"><div class="line">Histogramme H;</div>
-<div class="line"><a class="code hl_class" href="classGrayLevelImage2D.html">GrayLevelImage2D</a> img( 512, 512 );</div>
+<div class="fragment"><div class="line"><a class="code hl_struct" href="structHistogramme.html">Histogramme</a> H;</div>
+<div class="line">GrayLevelImage2D img( 512, 512 );</div>
 <div class="line">H.init( img.begin(), img.end() ); <span class="comment">// fonctionne, car l&#39;itérateur a une valeur de type unsigned char.</span></div>
 <div class="line">ColorImage2D img2( 512, 512 );</div>
 <div class="line">H.init( img2.begin&lt; ColorValueAccessor &gt;(),</div>
 <div class="line">        img2.end&lt; ColorValueAccessor &gt;() );  <span class="comment">// fonctionne, car l&#39;itérateur a une valeur de type unsigned char.</span></div>
+<div class="ttc" id="astructHistogramme_html"><div class="ttname"><a href="structHistogramme.html">Histogramme</a></div><div class="ttdef"><b>Definition</b> <a href="exemples-cpp20_8cpp_source.html#l00018">exemples-cpp20.cpp:18</a></div></div>
 </div><!-- fragment --><p>Ecrivez maintenant le programme <code>histogramme</code> qui prend en entrée une image couleur et qui sauvegarde une image en niveaux de gris qui représente l'histogramme des valeurs de l'image couleur.</p>
 <pre class="fragment">prompt$ ./histogramme kowloon.ppm kowloon-h.pgm
 </pre><table class="doxtable">
 <tr>
 <td><img src="./kowloon.png" alt="" width="500" height="328" class="inline"/>  </td><td><img src="./kowloon-h.png" alt="" width="512" height="328" class="inline"/>   </td></tr>
 <tr>
-<td>Image kowloon.ppm </td><td>Histogramme (à gauche) et histogramme cumulé (à droite)  </td></tr>
+<td>Image kowloon.ppm </td><td><a class="el" href="structHistogramme.html">Histogramme</a> (à gauche) et histogramme cumulé (à droite)  </td></tr>
 </table>
 <p>On note que l'image <code>kowloon.ppm</code> n'est pas parfaitement bien balancée.</p>
 <h1><a class="anchor" id="cpp_tp2_11"></a>
 11 Egalisation d'image couleur</h1>
-<p>D'après le TP précédent (<a class="el" href="cpp_tp1.html#cpp_tp1_7">7 - Histogramme et Histogramme cumulé d'une image.</a>), dès que l'on a un histogramme cumulé d'une image, il est maintenant facile d'égaliser l'image pour la rendre bien balancée. On reprendra donc la formule du TP précédent pour écrire la méthode <code>int egalisation( int i ) const</code> de la classe <code>Histogramme</code>.</p>
+<p>D'après le TP précédent (cpp_tp1_7), dès que l'on a un histogramme cumulé d'une image, il est maintenant facile d'égaliser l'image pour la rendre bien balancée. On reprendra donc la formule du TP précédent pour écrire la méthode <code>int egalisation( int i ) const</code> de la classe <code><a class="el" href="structHistogramme.html">Histogramme</a></code>.</p>
 <p>On utilisera cette fonction d'égalisation mais sur les <b>valeurs</b> des couleurs, via nos itérateurs génériques avec accesseur ColorValueAccessor. Vous écrirez donc le programme <code>egaliseur-couleur.cpp</code> qui réalise cette égalisation d'une image couleur. Par exemple</p>
 <pre class="fragment">prompt$ ./egaliseur-couleur kowloon.ppm kowloon-eg.ppm
 prompt$ ./egaliseur-couleur papillon.ppm papillon-eg.ppm
@@ -782,7 +767,7 @@ prompt$ ./egaliseur-couleur papillon.ppm papillon-eg.ppm
 <tr>
 <td><img src="./kowloon-h.png" alt="" width="512" height="256" class="inline"/>  </td><td><img src="./kowloon-v-eg-h.png" alt="" width="512" height="256" class="inline"/>   </td></tr>
 <tr>
-<td>Histogramme (à gauche) et histogramme cumulé (à droite) </td><td>Histogramme (à gauche) et histogramme cumulé (à droite)  </td></tr>
+<td><a class="el" href="structHistogramme.html">Histogramme</a> (à gauche) et histogramme cumulé (à droite) </td><td><a class="el" href="structHistogramme.html">Histogramme</a> (à gauche) et histogramme cumulé (à droite)  </td></tr>
 <tr>
 <td><img src="./papillon.png" alt="" width="500" height="328" class="inline"/>  </td><td><img src="./papillon-v-eg.png" alt="" width="500" height="328" class="inline"/>   </td></tr>
 <tr>
@@ -790,7 +775,7 @@ prompt$ ./egaliseur-couleur papillon.ppm papillon-eg.ppm
 <tr>
 <td><img src="./papillon-h.png" alt="" width="512" height="256" class="inline"/>  </td><td><img src="./papillon-v-eg-h.png" alt="" width="512" height="256" class="inline"/>   </td></tr>
 <tr>
-<td>Histogramme (à gauche) et histogramme cumulé (à droite) </td><td>Histogramme (à gauche) et histogramme cumulé (à droite)  </td></tr>
+<td><a class="el" href="structHistogramme.html">Histogramme</a> (à gauche) et histogramme cumulé (à droite) </td><td><a class="el" href="structHistogramme.html">Histogramme</a> (à gauche) et histogramme cumulé (à droite)  </td></tr>
 </table>
 <h1><a class="anchor" id="cpp_tp2_12"></a>
 12 Un peu d'imagination</h1>
@@ -849,7 +834,7 @@ prompt$ ./egaliseur-couleur papillon.ppm papillon-eg.ppm
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 3 2026 18:30:01 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Thu Nov 5 2026 18:11:42 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['max_0',['max',['../structColor.html#a34675116a2b47a2fa653f80a348742db',1,'Color']]],
-  ['min_1',['min',['../structColor.html#aee2b1830c034579b09e21d72d7ca8016',1,'Color']]]
+  ['w_0',['w',['../classGrayLevelImage2D.html#abef26bf39fa708316b52ce973396c43a',1,'GrayLevelImage2D']]]
 ];

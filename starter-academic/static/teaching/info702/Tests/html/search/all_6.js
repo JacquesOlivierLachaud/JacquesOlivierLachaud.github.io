@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['7_20développements_20optionnels_0',['7. Développements optionnels',['../cpp_tp0.html#cpp_tp0_7',1,'']]],
-  ['7_20histogramme_20et_20histogramme_20cumulé_20d_20une_20image_1',['7 - Histogramme et Histogramme cumulé d&apos;une image.',['../cpp_tp1.html#cpp_tp1_7',1,'']]],
-  ['7_20on_20rajoute_20les_20accesseurs_20et_20un_20itérateur_20générique_2',['7 On rajoute les accesseurs et un itérateur générique',['../cpp_tp2.html#cpp_tp2_7',1,'']]]
+  ['7_20—_20généraliser_20la_20structure_20de_20stockage_20des_20images_0',['7 — Généraliser la structure de stockage des images',['../cpp_tp_images.html#images_generique',1,'']]],
+  ['7_20développements_20optionnels_1',['7. Développements optionnels',['../cpp_tp_poo.html#cpp_tp0_7',1,'']]]
 ];

@@ -181,7 +181,7 @@ $(function() {
 <div class="line"><span class="comment">     @return une référence à la valeur du pixel(i,j)</span></div>
 <div class="line"><span class="comment">  */</span></div>
 <div class="line">  GrayLevel&amp; at( <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j );</div>
-</div><!-- fragment --><p>On testera les méthodes précédents en créant un fichier testGrayLevelImage2D.cpp. Vous pourrez utiliser le <code>Makefile</code> suivant:</p>
+</div><!-- fragment --><p>On testera les méthodes précédents en créant un fichier <a class="el" href="testGrayLevelImage2D_8cpp_source.html">testGrayLevelImage2D.cpp</a>. Vous pourrez utiliser le <code>Makefile</code> suivant:</p>
 <pre class="fragment">LD=g++
 CXX=g++ -Wall -std=c++11 -g -c
 
@@ -212,7 +212,7 @@ clean:
 	rm -f ${EXEC_PRG} ${MODULE_OBJ} ${EXEC_OBJ}
 
 </pre><p>Il vous suffira alors à vous de taper la commande <code>make</code> dans votre terminal pour que tout soit compilé.</p>
-<p>Le programme principal testGrayLevelImage2D.cpp contiendra au moins:</p>
+<p>Le programme principal <a class="el" href="testGrayLevelImage2D_8cpp_source.html">testGrayLevelImage2D.cpp</a> contiendra au moins:</p>
 <div class="fragment"><div class="line">    <a class="code hl_class" href="classGrayLevelImage2D.html">GrayLevelImage2D</a> img( 8, 8, 5 ); <span class="comment">// imagette 8x8 remplie de 5</span></div>
 <div class="line">    <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> y = 0; y &lt; img.h(); ++y )</div>
 <div class="line">      <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> x = 0; x &lt; img.w(); ++x )</div>
@@ -415,8 +415,8 @@ i/255 \). On écrit donc:</p>
 <p class="formulaDsp">
 \[ f : j \mapsto f(j) = 255 \times H_{I}( j ) \]
 </p>
-<p>Ecrivez une classe <code>Histogramme</code> qui contiendra deux tableaux de 256 entrées double, l'un pour \(h_I\), l'autre pour \(H_I\). Cette classe aura une méthode <code>void init( <a class="el" href="classGrayLevelImage2D.html">GrayLevelImage2D</a> &amp; img )</code>, qui parcourera l'image pour calculer son histogramme et son histogramme cummulé.</p>
-<p>Ecrivez alors la méthode <code>int egalisation( int j ) const</code> dans la classe <code>Histogramme</code>, qui est simplement la fonction <em>f</em> ci-dessus. Il ne vous reste plus qu'à faire le programme <code>egalise.cpp</code> qui utilise cette fonction d'égalisation sur tous les pixels de l'image. Sur l'image <code>lena.pgm</code> (légèrement sous-exposée) cela donne:</p>
+<p>Ecrivez une classe <code><a class="el" href="structHistogramme.html">Histogramme</a></code> qui contiendra deux tableaux de 256 entrées double, l'un pour \(h_I\), l'autre pour \(H_I\). Cette classe aura une méthode <code>void init( <a class="el" href="classGrayLevelImage2D.html">GrayLevelImage2D</a> &amp; img )</code>, qui parcourera l'image pour calculer son histogramme et son histogramme cummulé.</p>
+<p>Ecrivez alors la méthode <code>int egalisation( int j ) const</code> dans la classe <code><a class="el" href="structHistogramme.html">Histogramme</a></code>, qui est simplement la fonction <em>f</em> ci-dessus. Il ne vous reste plus qu'à faire le programme <code>egalise.cpp</code> qui utilise cette fonction d'égalisation sur tous les pixels de l'image. Sur l'image <code>lena.pgm</code> (légèrement sous-exposée) cela donne:</p>
 <p>NB: On pourra regarder avec <code>gimp</code> l'histogramme des images (menu Couleurs &gt; Niveaux).</p>
 <center> <table class="doxtable">
 <tr>
@@ -581,7 +581,7 @@ Notes finales</h1>
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 3 2026 18:30:01 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Thu Nov 5 2026 08:42:12 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>

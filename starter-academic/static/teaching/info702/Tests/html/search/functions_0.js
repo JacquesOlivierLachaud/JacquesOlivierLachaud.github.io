@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['argmax_0',['argmax',['../structColor.html#a599f81b59dd9f1b3a1b2aac0476cab31',1,'Color']]],
-  ['at_1',['at',['../classGrayLevelImage2D.html#a4f25298244f6cdb4a7dd9c3aaa5e60f8',1,'GrayLevelImage2D::at(int i, int j) const'],['../classGrayLevelImage2D.html#a1f9c49458d4c72e2bea1409220aa44de',1,'GrayLevelImage2D::at(int i, int j)'],['../classImage2D.html#aaca38f7c267caf66ca12d882848d74b1',1,'Image2D::at(int i, int j) const'],['../classImage2D.html#aa986ead082fcd57e924e386b115d8b10',1,'Image2D::at(int i, int j)']]]
+  ['intersect_0',['intersect',['../structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b',1,'LogicalScene::intersect(MasterShape *f1, MasterShape *f2)'],['../structLogicalScene.html#ae699c60b22a58543eb2086f5bf148508',1,'LogicalScene::intersect(MasterShape *f1)']]],
+  ['isinside_1',['isinside',['../structGraphicalShape.html#a3f0178f5d7c0f38f4fa16a6f36046586',1,'GraphicalShape::isInside()'],['../structMasterShape.html#a51a00d73f879dc3e5250b38e02f0c0c2',1,'MasterShape::isInside()'],['../structDisk.html#a9818621599c16b784bddcaf8941932e5',1,'Disk::isInside()']]]
 ];

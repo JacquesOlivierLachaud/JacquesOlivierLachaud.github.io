@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['classes_20patrons_20spécialisation_20itérateurs_0',['TP2 Traitement d&apos;images en niveaux de gris et couleurs avec généricité (classes patrons, spécialisation, itérateurs).',['../cpp_tp2.html',1,'']]],
-  ['collisions_20bibliothèque_20qt_1',['TP0 Programmation objet et polymorphisme, scène graphique et collisions, bibliothèque Qt',['../cpp_tp0.html',1,'']]],
-  ['couleurs_20avec_20généricité_20classes_20patrons_20spécialisation_20itérateurs_2',['TP2 Traitement d&apos;images en niveaux de gris et couleurs avec généricité (classes patrons, spécialisation, itérateurs).',['../cpp_tp2.html',1,'']]]
+  ['bibliothèque_20qt_0',['TP1 Programmation objet et polymorphisme, scène graphique et collisions, bibliothèque Qt',['../cpp_tp_poo.html',1,'']]]
 ];

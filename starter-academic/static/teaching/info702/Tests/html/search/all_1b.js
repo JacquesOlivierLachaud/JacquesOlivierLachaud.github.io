@@ -1,14 +1,15 @@
 var searchData=
 [
-  ['taille_20valeurs_20de_20niveaux_20de_20gris_0',['3 - Accesseurs utiles (taille, valeurs de niveaux de gris).',['../cpp_tp1.html#cpp_tp1_3',1,'']]],
-  ['test_3a_20on_20inverse_20les_20canaux_20rouge_20et_20bleu_1',['6 Premier test: on inverse les canaux rouge et bleu',['../cpp_tp2.html#cpp_tp2_6',1,'']]],
-  ['tp_20à_20rendre_2',['tp à rendre',['../cpp_tp2.html#cpp_tp2_13',1,'13 TP à rendre'],['../cpp_tp0.html#cpp_tp0_8',1,'TP à rendre']]],
-  ['tp0_20programmation_20objet_20et_20polymorphisme_20scène_20graphique_20et_20collisions_20bibliothèque_20qt_3',['TP0 Programmation objet et polymorphisme, scène graphique et collisions, bibliothèque Qt',['../cpp_tp0.html',1,'']]],
-  ['tp1_20traitement_20d_20images_20en_20niveaux_20de_20gris_20poo_20simple_20surcharge_20d_20opérateurs_20entrées_20sorties_4',['TP1 Traitement d&apos;images en niveaux de gris (POO simple, surcharge d&apos;opérateurs, entrées/sorties).',['../cpp_tp1.html',1,'']]],
-  ['tp2_20traitement_20d_20images_20en_20niveaux_20de_20gris_20et_20couleurs_20avec_20généricité_20classes_20patrons_20spécialisation_20itérateurs_5',['TP2 Traitement d&apos;images en niveaux de gris et couleurs avec généricité (classes patrons, spécialisation, itérateurs).',['../cpp_tp2.html',1,'']]],
-  ['tps_20info702_20m1_20info_202025_202026_6',['TPs INFO702, M1 INFO (2025-2026)',['../index.html',1,'']]],
-  ['traitement_20d_20images_20en_20niveaux_20de_20gris_20et_20couleurs_20avec_20généricité_20classes_20patrons_20spécialisation_20itérateurs_7',['TP2 Traitement d&apos;images en niveaux de gris et couleurs avec généricité (classes patrons, spécialisation, itérateurs).',['../cpp_tp2.html',1,'']]],
-  ['traitement_20d_20images_20en_20niveaux_20de_20gris_20poo_20simple_20surcharge_20d_20opérateurs_20entrées_20sorties_8',['TP1 Traitement d&apos;images en niveaux de gris (POO simple, surcharge d&apos;opérateurs, entrées/sorties).',['../cpp_tp1.html',1,'']]],
-  ['transformations_20géométriques_9',['5 - Transformations géométriques',['../cpp_tp0.html#cpp_tp0_5',1,'']]],
-  ['tsv_20hsv_20et_20histogramme_20d_20une_20image_20couleur_10',['10 Espace TSV (HSV) et histogramme d&apos;une image couleur',['../cpp_tp2.html#cpp_tp2_10',1,'']]]
+  ['télévision_0',['Application : effet vieille télévision',['../cpp_tp_images.html#images_tv',1,'']]],
+  ['toute_20séquence_20de_20niveaux_1',['11 — Un histogramme pour toute séquence de niveaux',['../cpp_tp_images.html#images_hist_generic',1,'']]],
+  ['tp_20à_20rendre_2',['TP à rendre',['../cpp_tp_poo.html#cpp_tp0_8',1,'']]],
+  ['tp1_20programmation_20objet_20et_20polymorphisme_20scène_20graphique_20et_20collisions_20bibliothèque_20qt_3',['TP1 Programmation objet et polymorphisme, scène graphique et collisions, bibliothèque Qt',['../cpp_tp_poo.html',1,'']]],
+  ['tp2_203_20—_20images_202d_20_3a_20de_20la_20programmation_20objet_20à_20la_20programmation_20générique_20c_2020_4',['TP2-3 — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
+  ['tps_20info702_20m1_20info_202026_202027_5',['TPs INFO702, M1 INFO (2026-2027)',['../index.html',1,'']]],
+  ['traitements_20et_20voisinages_6',['5 — Premiers traitements et voisinages',['../cpp_tp_images.html#images_traitements',1,'']]],
+  ['transformations_20géométriques_7',['5 - Transformations géométriques',['../cpp_tp_poo.html#cpp_tp0_5',1,'']]],
+  ['travail_8',['Environnement de travail',['../cpp_tp_images.html#images_env',1,'']]],
+  ['trois_20systèmes_9',['Ouvrir les fichiers de la même façon sur les trois systèmes',['../cpp_tp_images.html#images_portable',1,'']]],
+  ['txt_10',['Fichier CMakeLists.txt',['../cpp_images_cmake.html',1,'']]],
+  ['types_20de_20pixels_11',['Un programme qui doit compiler pour deux types de pixels',['../cpp_tp_images.html#images_test_generique',1,'']]]
 ];

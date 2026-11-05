@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['4_20objets_20complexes_20par_20assemblage_20de_20formes_20simples_0',['4 - Objets complexes par assemblage de formes simples',['../cpp_tp0.html#cpp_tp0_4',1,'']]],
-  ['4_20premier_20itérateur_20sur_20images_20quelconques_1',['4 - Premier itérateur sur images quelconques.',['../cpp_tp2.html#cpp_tp2_4',1,'']]],
-  ['4_20un_20iterateur_20pour_20les_20images_2',['4 - Un iterateur pour les images',['../cpp_tp1.html#cpp_tp1_4',1,'']]]
+  ['4_20—_20lire_20et_20écrire_20une_20image_20pgm_20de_20façon_20portable_0',['4 — Lire et écrire une image PGM de façon portable',['../cpp_tp_images.html#images_flux',1,'']]],
+  ['4_20objets_20complexes_20par_20assemblage_20de_20formes_20simples_1',['4 - Objets complexes par assemblage de formes simples',['../cpp_tp_poo.html#cpp_tp0_4',1,'']]]
 ];

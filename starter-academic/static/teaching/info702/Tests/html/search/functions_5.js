@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['intersect_0',['intersect',['../structLogicalScene.html#aa294132aeefc85fd75b7e8173883ec4b',1,'LogicalScene::intersect(MasterShape *f1, MasterShape *f2)'],['../structLogicalScene.html#ae699c60b22a58543eb2086f5bf148508',1,'LogicalScene::intersect(MasterShape *f1)']]],
-  ['isinside_1',['isinside',['../structGraphicalShape.html#a3f0178f5d7c0f38f4fa16a6f36046586',1,'GraphicalShape::isInside()'],['../structMasterShape.html#a51a00d73f879dc3e5250b38e02f0c0c2',1,'MasterShape::isInside()'],['../structDisk.html#a9818621599c16b784bddcaf8941932e5',1,'Disk::isInside()']]]
+  ['randompoint_0',['randompoint',['../structGraphicalShape.html#ac6f4f45b07b49972fa022a8a2c676448',1,'GraphicalShape::randomPoint()'],['../structMasterShape.html#a055688fc482a7567657c5df7c87bff9f',1,'MasterShape::randomPoint()'],['../structDisk.html#aa6f1bde78cef501abe793f844a95b1e2',1,'Disk::randomPoint()']]]
 ];

@@ -1,19 +1,14 @@
 var searchData=
 [
-  ['générateur_20de_20bruit_0',['10 - Générateur de bruit',['../cpp_tp1.html#cpp_tp1_10',1,'']]],
-  ['généricité_20classes_20patrons_20spécialisation_20itérateurs_1',['TP2 Traitement d&apos;images en niveaux de gris et couleurs avec généricité (classes patrons, spécialisation, itérateurs).',['../cpp_tp2.html',1,'']]],
-  ['générique_2',['générique',['../cpp_tp2.html#cpp_tp2_5',1,'5 - Un importeur / exporteur PBM générique'],['../cpp_tp2.html#cpp_tp2_7',1,'7 On rajoute les accesseurs et un itérateur générique']]],
-  ['génériques_20non_20constants_3',['9 Itérateurs génériques non constants',['../cpp_tp2.html#cpp_tp2_9',1,'']]],
-  ['géométriques_4',['géométriques',['../cpp_tp0.html#cpp_tp0_5',1,'5 - Transformations géométriques'],['../cpp_tp0.html#cpp_tp0_contrats',1,'Repères et contrats des services géométriques']]],
-  ['g_5',['g',['../structColor.html#a09a7c4d10a387bf59823d52eb0bc0173',1,'Color']]],
-  ['gethsv_6',['getHSV',['../structColor.html#ae36aabe5c53a92dee8c49044b70dd91d',1,'Color']]],
-  ['gradient_20morphologique_7',['9 - Itérateur 2D et gradient morphologique',['../cpp_tp1.html#cpp_tp1_9',1,'']]],
-  ['graphicalshape_8',['GraphicalShape',['../structGraphicalShape.html',1,'']]],
-  ['graphique_9',['3.1 - classe Rectangle (graphique)',['../cpp_tp0.html#cpp_tp0_3_1',1,'']]],
-  ['graphique_20et_20collisions_20bibliothèque_20qt_10',['TP0 Programmation objet et polymorphisme, scène graphique et collisions, bibliothèque Qt',['../cpp_tp0.html',1,'']]],
-  ['graphiques_11',['3 - Premiers objets graphiques',['../cpp_tp0.html#cpp_tp0_3',1,'']]],
-  ['graylevelimage2d_12',['GrayLevelImage2D',['../classGrayLevelImage2D.html',1,'']]],
-  ['gris_13',['3 - Accesseurs utiles (taille, valeurs de niveaux de gris).',['../cpp_tp1.html#cpp_tp1_3',1,'']]],
-  ['gris_20et_20couleurs_20avec_20généricité_20classes_20patrons_20spécialisation_20itérateurs_14',['TP2 Traitement d&apos;images en niveaux de gris et couleurs avec généricité (classes patrons, spécialisation, itérateurs).',['../cpp_tp2.html',1,'']]],
-  ['gris_20poo_20simple_20surcharge_20d_20opérateurs_20entrées_20sorties_15',['TP1 Traitement d&apos;images en niveaux de gris (POO simple, surcharge d&apos;opérateurs, entrées/sorties).',['../cpp_tp1.html',1,'']]]
+  ['généraliser_20la_20structure_20de_20stockage_20des_20images_0',['7 — Généraliser la structure de stockage des images',['../cpp_tp_images.html#images_generique',1,'']]],
+  ['génération_20de_20bruit_1',['13.3 — Génération de bruit',['../cpp_tp_images.html#images_bruit',1,'']]],
+  ['générique_20c_2020_2',['TP2-3 — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
+  ['générique_20pour_20les_20niveaux_20de_20gris_3',['2 — Une classe non générique pour les niveaux de gris',['../cpp_tp_images.html#images_classe',1,'']]],
+  ['géométriques_4',['géométriques',['../cpp_tp_poo.html#cpp_tp0_5',1,'5 - Transformations géométriques'],['../cpp_tp_poo.html#cpp_tp0_contrats',1,'Repères et contrats des services géométriques']]],
+  ['graphicalshape_5',['GraphicalShape',['../structGraphicalShape.html',1,'']]],
+  ['graphique_6',['3.1 - classe Rectangle (graphique)',['../cpp_tp_poo.html#cpp_tp0_3_1',1,'']]],
+  ['graphique_20et_20collisions_20bibliothèque_20qt_7',['TP1 Programmation objet et polymorphisme, scène graphique et collisions, bibliothèque Qt',['../cpp_tp_poo.html',1,'']]],
+  ['graphiques_8',['3 - Premiers objets graphiques',['../cpp_tp_poo.html#cpp_tp0_3',1,'']]],
+  ['gris_9',['gris',['../cpp_tp_images.html#images_classe',1,'2 — Une classe non générique pour les niveaux de gris'],['../cpp_tp_images.html#images_histogramme',1,'6 — Histogramme et égalisation en niveaux de gris']]],
+  ['gris_20et_20couleur_10',['Deux exemples : niveaux de gris et couleur',['../cpp_tp_images.html#images_bruit_exemples',1,'']]]
 ];

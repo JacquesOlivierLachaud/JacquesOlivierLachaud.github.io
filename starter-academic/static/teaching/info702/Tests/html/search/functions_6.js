@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logicalscene_0',['LogicalScene',['../structLogicalScene.html#acfc6c72be2a69344e330499ed210efd0',1,'LogicalScene']]]
+  ['setgraphicalshape_0',['setGraphicalShape',['../structMasterShape.html#a7abb2a3540c752f4d043c97608e3d8ac',1,'MasterShape']]]
 ];
