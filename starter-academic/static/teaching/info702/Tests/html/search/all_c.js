@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['c_2020_0',['TP2-3 — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
+  ['c_2020_0',['TP — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
   ['canal_20dans_20l_20image_20originale_1',['Modifier le canal dans l&apos;image originale',['../cpp_tp_images.html#images_ecriture',1,'']]],
   ['canal_20par_20canal_2',['Deuxième version : images PPM, canal par canal',['../cpp_tp_images.html#images_gradient_couleur',1,'']]],
   ['canal_20sans_20copier_20les_20pixels_3',['Extraire un canal sans copier les pixels',['../cpp_tp_images.html#images_lecture',1,'']]],
@@ -9,7 +9,7 @@ var searchData=
   ['classe_20non_20générique_20pour_20les_20niveaux_20de_20gris_6',['2 — Une classe non générique pour les niveaux de gris',['../cpp_tp_images.html#images_classe',1,'']]],
   ['classe_20rectangle_20graphique_7',['3.1 - classe Rectangle (graphique)',['../cpp_tp_poo.html#cpp_tp0_3_1',1,'']]],
   ['classe_20spacetruck_8',['3.2 - classe SpaceTruck',['../cpp_tp_poo.html#cpp_tp0_3_2',1,'']]],
-  ['cmake_20pour_20fabriquer_20le_20projet_9',['Utiliser CMake pour fabriquer le projet',['../cpp_tp_images.html#images_cmake',1,'']]],
+  ['cmake_20pour_20fabriquer_20le_20projet_20linux_20macos_20windows_9',['Utiliser CMake pour fabriquer le projet (Linux/macOS/Windows)',['../cpp_tp_images.html#images_cmake',1,'']]],
   ['cmakelists_20txt_10',['Fichier CMakeLists.txt',['../cpp_images_cmake.html',1,'']]],
   ['code_20compilation_20avec_20qt_11',['2 - Prise en main du code, compilation avec Qt',['../cpp_tp_poo.html#cpp_tp0_2',1,'']]],
   ['collisions_20bibliothèque_20qt_12',['TP1 Programmation objet et polymorphisme, scène graphique et collisions, bibliothèque Qt',['../cpp_tp_poo.html',1,'']]],

@@ -15,7 +15,7 @@ var searchData=
   ['portable_12',['4 — Lire et écrire une image PGM de façon portable',['../cpp_tp_images.html#images_flux',1,'']]],
   ['possibles_13',['13 — Approfondissements possibles',['../cpp_tp_images.html#images_spatial',1,'']]],
   ['pour_20deux_20types_20de_20pixels_14',['Un programme qui doit compiler pour deux types de pixels',['../cpp_tp_images.html#images_test_generique',1,'']]],
-  ['pour_20fabriquer_20le_20projet_15',['Utiliser CMake pour fabriquer le projet',['../cpp_tp_images.html#images_cmake',1,'']]],
+  ['pour_20fabriquer_20le_20projet_20linux_20macos_20windows_15',['Utiliser CMake pour fabriquer le projet (Linux/macOS/Windows)',['../cpp_tp_images.html#images_cmake',1,'']]],
   ['pour_20les_20images_20pgm_20et_20ppm_16',['Une commande pour les images PGM et PPM',['../cpp_tp_images.html#images_bruit_programme',1,'']]],
   ['pour_20les_20niveaux_20de_20gris_17',['2 — Une classe non générique pour les niveaux de gris',['../cpp_tp_images.html#images_classe',1,'']]],
   ['pour_20toute_20séquence_20de_20niveaux_18',['11 — Un histogramme pour toute séquence de niveaux',['../cpp_tp_images.html#images_hist_generic',1,'']]],
@@ -26,11 +26,11 @@ var searchData=
   ['premiers_20objets_20graphiques_23',['3 - Premiers objets graphiques',['../cpp_tp_poo.html#cpp_tp0_3',1,'']]],
   ['premiers_20traitements_20et_20voisinages_24',['5 — Premiers traitements et voisinages',['../cpp_tp_images.html#images_traitements',1,'']]],
   ['prise_20en_20main_20du_20code_20compilation_20avec_20qt_25',['2 - Prise en main du code, compilation avec Qt',['../cpp_tp_poo.html#cpp_tp0_2',1,'']]],
-  ['programmation_20objet_20à_20la_20programmation_20générique_20c_2020_26',['TP2-3 — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
+  ['programmation_20objet_20à_20la_20programmation_20générique_20c_2020_26',['TP — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
   ['programmation_20objet_20et_20polymorphisme_20scène_20graphique_20et_20collisions_20bibliothèque_20qt_27',['TP1 Programmation objet et polymorphisme, scène graphique et collisions, bibliothèque Qt',['../cpp_tp_poo.html',1,'']]],
   ['programme_20filtre_20moyenneur_28',['Programme filtre-moyenneur',['../cpp_tp_images.html#images_moyenneur',1,'']]],
   ['programme_20filtre_20rehausseur_29',['Programme filtre-rehausseur',['../cpp_tp_images.html#images_rehausseur',1,'']]],
   ['programme_20qui_20doit_20compiler_20pour_20deux_20types_20de_20pixels_30',['Un programme qui doit compiler pour deux types de pixels',['../cpp_tp_images.html#images_test_generique',1,'']]],
   ['programmes_20aux_20couleurs_31',['Adapter les deux programmes aux couleurs',['../cpp_tp_images.html#images_filtres_couleur',1,'']]],
-  ['projet_32',['Utiliser CMake pour fabriquer le projet',['../cpp_tp_images.html#images_cmake',1,'']]]
+  ['projet_20linux_20macos_20windows_32',['Utiliser CMake pour fabriquer le projet (Linux/macOS/Windows)',['../cpp_tp_images.html#images_cmake',1,'']]]
 ];

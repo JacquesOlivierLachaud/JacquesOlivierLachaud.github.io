@@ -6,7 +6,7 @@ var searchData=
   ['image_20originale_3',['Modifier le canal dans l&apos;image originale',['../cpp_tp_images.html#images_ecriture',1,'']]],
   ['image_20pgm_20de_20façon_20portable_4',['4 — Lire et écrire une image PGM de façon portable',['../cpp_tp_images.html#images_flux',1,'']]],
   ['images_5',['7 — Généraliser la structure de stockage des images',['../cpp_tp_images.html#images_generique',1,'']]],
-  ['images_202d_20_3a_20de_20la_20programmation_20objet_20à_20la_20programmation_20générique_20c_2020_6',['TP2-3 — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
+  ['images_202d_20_3a_20de_20la_20programmation_20objet_20à_20la_20programmation_20générique_20c_2020_6',['TP — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
   ['images_20des_20figures_7',['6 - Des images, des figures',['../cpp_tp_poo.html#cpp_tp0_6',1,'']]],
   ['images_20pgm_8',['Première version : images PGM',['../cpp_tp_images.html#images_gradient_gris',1,'']]],
   ['images_20pgm_20et_20ppm_9',['Une commande pour les images PGM et PPM',['../cpp_tp_images.html#images_bruit_programme',1,'']]],

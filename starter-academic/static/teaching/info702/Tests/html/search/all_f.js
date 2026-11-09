@@ -2,7 +2,7 @@ var searchData=
 [
   ['façon_20portable_0',['4 — Lire et écrire une image PGM de façon portable',['../cpp_tp_images.html#images_flux',1,'']]],
   ['façon_20sur_20les_20trois_20systèmes_1',['Ouvrir les fichiers de la même façon sur les trois systèmes',['../cpp_tp_images.html#images_portable',1,'']]],
-  ['fabriquer_20le_20projet_2',['Utiliser CMake pour fabriquer le projet',['../cpp_tp_images.html#images_cmake',1,'']]],
+  ['fabriquer_20le_20projet_20linux_20macos_20windows_2',['Utiliser CMake pour fabriquer le projet (Linux/macOS/Windows)',['../cpp_tp_images.html#images_cmake',1,'']]],
   ['fichier_20cmakelists_20txt_3',['Fichier CMakeLists.txt',['../cpp_images_cmake.html',1,'']]],
   ['fichiers_20de_20la_20même_20façon_20sur_20les_20trois_20systèmes_4',['Ouvrir les fichiers de la même façon sur les trois systèmes',['../cpp_tp_images.html#images_portable',1,'']]],
   ['figures_5',['6 - Des images, des figures',['../cpp_tp_poo.html#cpp_tp0_6',1,'']]],

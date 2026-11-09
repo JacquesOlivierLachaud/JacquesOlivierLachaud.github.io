@@ -12,7 +12,7 @@ var searchData=
   ['de_20gris_9',['de gris',['../cpp_tp_images.html#images_classe',1,'2 — Une classe non générique pour les niveaux de gris'],['../cpp_tp_images.html#images_histogramme',1,'6 — Histogramme et égalisation en niveaux de gris']]],
   ['de_20gris_20et_20couleur_10',['Deux exemples : niveaux de gris et couleur',['../cpp_tp_images.html#images_bruit_exemples',1,'']]],
   ['de_20la_20même_20façon_20sur_20les_20trois_20systèmes_11',['Ouvrir les fichiers de la même façon sur les trois systèmes',['../cpp_tp_images.html#images_portable',1,'']]],
-  ['de_20la_20programmation_20objet_20à_20la_20programmation_20générique_20c_2020_12',['TP2-3 — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
+  ['de_20la_20programmation_20objet_20à_20la_20programmation_20générique_20c_2020_12',['TP — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
   ['de_20niveaux_13',['11 — Un histogramme pour toute séquence de niveaux',['../cpp_tp_images.html#images_hist_generic',1,'']]],
   ['de_20pixels_14',['Un programme qui doit compiler pour deux types de pixels',['../cpp_tp_images.html#images_test_generique',1,'']]],
   ['de_20stockage_20des_20images_15',['7 — Généraliser la structure de stockage des images',['../cpp_tp_images.html#images_generique',1,'']]],

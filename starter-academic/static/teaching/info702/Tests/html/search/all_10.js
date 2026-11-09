@@ -2,7 +2,7 @@ var searchData=
 [
   ['généraliser_20la_20structure_20de_20stockage_20des_20images_0',['7 — Généraliser la structure de stockage des images',['../cpp_tp_images.html#images_generique',1,'']]],
   ['génération_20de_20bruit_1',['13.3 — Génération de bruit',['../cpp_tp_images.html#images_bruit',1,'']]],
-  ['générique_20c_2020_2',['TP2-3 — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
+  ['générique_20c_2020_2',['TP — Images 2D : de la programmation objet à la programmation générique (C++20)',['../cpp_tp_images.html',1,'']]],
   ['générique_20pour_20les_20niveaux_20de_20gris_3',['2 — Une classe non générique pour les niveaux de gris',['../cpp_tp_images.html#images_classe',1,'']]],
   ['géométriques_4',['géométriques',['../cpp_tp_poo.html#cpp_tp0_5',1,'5 - Transformations géométriques'],['../cpp_tp_poo.html#cpp_tp0_contrats',1,'Repères et contrats des services géométriques']]],
   ['graphicalshape_5',['GraphicalShape',['../structGraphicalShape.html',1,'']]],

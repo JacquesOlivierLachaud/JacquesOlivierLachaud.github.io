@@ -129,7 +129,7 @@ Utilisation des assistants IA</h2>
 <li><a href="http://www.cppreference.com/">Site C/C++: références très complètes</a></li>
 <li><a href="http://www.cplusplus.com/">Site C++: tutoriels, références</a></li>
 <li><a href="http://www.parashift.com/c++-faq-lite/index.html">C++ FAQ</a></li>
-<li><a href="https://doc.qt.io/qt-5">doc Qt5</a> <a href="https://doc.qt.io/qt-6">doc Qt6</a>.</li>
+<li><a href="https://doc.qt.io/qt-6">doc Qt6</a>.</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>Le projet utilise C++17 et Qt Widgets. Utilisez un compilateur compatible C++17 et le programme qmake de votre installation Qt (Qt6 recommandé).</dd>
 <dd>
@@ -137,8 +137,6 @@ Il n'y a pas d'IDE recommandé plus particulièrement qu'un autre, mais je const
 <li>un étudiant sous Linux avec un éditeur de texte (vim, emacs, sublime text, gedit) et la compilation via <code>make</code> démarre le TP en 5 minutes.</li>
 <li>un étudiant avec son IDE déjà bien configuré avant d'arriver en TP gagne 1h sur l'étudiant qui installe son IDE pendant le TP.</li>
 <li>la plupart des étudiants utilisent CodeBlocks, parfois Eclipse, parfois Visual Studio C++ ou CLion</li>
-<li>Windows entraîne des problèmes supplémentaires: bibliothèques manquantes, programme exécuté qui ne s'arrête jamais (vérifiez votre antivirus, certains avaient des problèmes avec AVAST), gestion des fichiers bizarre (Windows a deux modes: texte et binaire; les flux sont ouverts en mode texte par défaut. Pour des données binaires, utiliser <code>std::ios::binary</code> à l'ouverture des fichiers)</li>
-<li>Ce <a href="https://github.com/MASTER-UNIV-SMB/INFO702-ENVIRONNEMENT-WINDOWS">site</a>, gracieusement écrit par un ancien de la promotion, peut vous aider à installer Qt correctement sur un système Windows.</li>
 </ul>
 </dd></dl>
 <h1><a class="anchor" id="cpp_tp0_2"></a>
@@ -413,18 +411,19 @@ TP à rendre</h1>
 <ul>
 <li>Vous écrirez un petit README (texte) dans lequel vous préciserez les points suivants :<ul>
 <li>nom(s), prénom(s), groupe (monôme ou binôme)</li>
-<li>Vous listerez d'abord les points du TP que vous avez abordés, en précisant si selon vous, vous avez traité complètement ou traité partiellement la question. Précisez aussi pour chaque question si votre code fonctionne ou dans quelle mesure il fonctionne.</li>
-<li>vous placerez dans une archive (zip ou tar.gz) votre README ainsi que vos sources/en-têtes/fichiers de config/images utiles, de façon à ce que je puisse tout recompiler en tapant "qmake" puis "make" (ou "qmake6" pour sélectionner Qt6).</li>
-<li>le nom de votre archive sera de la forme <code>TP-XXX-YYY.*</code> où <code>XXX</code> et <code>YYY</code> désignent les noms respectifs des étudiants du binôme.</li>
-<li>vous m'enverrez votre archive via <a href="https://tplab.apps.math.cnrs.fr">TPLab </a>, une première version à la fin du TP, une autre avant la date limite annoncée en séance (pour les deux groupes). </li>
+<li>vous listerez d'abord les points du TP que vous avez abordés, en précisant si selon vous, vous avez traité complètement ou traité partiellement la question. Précisez aussi pour chaque question si votre code fonctionne ou dans quelle mesure il fonctionne.</li>
+<li>si vous avez utilisé l'IA pour vous aider, indiquez quel outil IA vous avez utilisé, comment vous l'avez utilisé (aide, génération de code, polissage du code, commentaires, compte-rendu, etc) et quelques prompts représentatifs.</li>
 </ul>
 </li>
+<li>vous placerez dans une archive (zip ou tar.gz) votre README ainsi que vos sources/en-têtes/fichiers de config/images utiles, de façon à ce que je puisse tout recompiler en tapant "qmake" puis "make" (avec Qt6).</li>
+<li>le nom de votre archive sera de la forme <code>TP-XXX-YYY.*</code> où <code>XXX</code> et <code>YYY</code> désignent les noms respectifs des étudiants du binôme.</li>
+<li>vous m'enverrez votre archive via <a href="https://tplab.apps.math.cnrs.fr">TPLab </a>, une première version à la fin de la séance, une autre avant <b>mardi 1er décembre, minuit</b>. </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 5 2026 18:31:46 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
+Generated on Mon Nov 9 2026 10:43:07 for INFO702 - TPs by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
 </small></address>
 </body>
 </html>
