@@ -11,7 +11,8 @@ tags:
 ## INFO911 - Traitement et analyse d'image
 
 > Cours du semestre 9 de Master Informatique, CMI5 Informatique.
-> <a style="color:#907bf7;">[Jacques-Olivier Lachaud, August 2025]</a>
+> <a style="color:#907bf7;">[Jacques-Olivier Lachaud, Août 2025]</a>
+> <a style="color:#907bf7;">[Jacques-Olivier Lachaud, Nov. 2026]</a>
 
 ### Cours
 
@@ -44,6 +45,7 @@ tags:
 8. Apprentissage automatique et réseaux de neurones
   - [Introduction à l'apprentissage par réseaux de neurones](https://codimd.math.cnrs.fr/s/l4BaTcFGY)
   - [Apprentissage supervisé](https://codimd.math.cnrs.fr/s/PYL9ayApI)
+  - [Détection et segmentation YOLO (a deep dive)](https://codimd.math.cnrs.fr/s/Dnl61oUpl)
 9. "Shape from X"
   - reconstruction 3D à partir de stéréovision / multivision
   - reconstruction 3D à partir d'ombrage
@@ -59,10 +61,7 @@ tags:
 1. [Colorimétrie, égalisation d'histogramme, tramage de Floyd-Steinberg](https://codimd.math.cnrs.fr/s/Ge-ZaHA3S)
 2. [Traitement d'image bas niveau - filtrage spatial](https://codimd.math.cnrs.fr/s/CeptN9xR8)
 3. [Segmentation d’image hiérarchique, scale sets](https://codimd.math.cnrs.fr/s/nbdrWcn_j)
-4.  Segmentation d’image, détection et classification d'objets par réseau de neurones convolutionnels
-  - [détection et segmentation d'objets (Mask-R-CNN)](https://codimd.math.cnrs.fr/s/0fihmHphz)
-    > (deprecated)
-  - [détection d'objets (YOLO v3)](https://codimd.math.cnrs.fr/s/OWuiCfbAM)
+4. [Segmentation d’image, détection et classification d'objets par réseau de neurones convolutionnels - YOLO v3](https://codimd.math.cnrs.fr/s/OWuiCfbAM)
 5. [Segmentation temps-réel semi-supervisée par distance d'histogramme de couleurs](https://codimd.math.cnrs.fr/s/vq-al56ul)
 
 ### Ressources utiles
@@ -72,7 +71,7 @@ tags:
 
 ### Evaluation
 
-Vous serez évalué sur votre participation ("présence" en cours, implication, participation au exercices, questions) et sur vos réalisations en TPs.
+Vous serez évalué sur votre participation ("présence" en cours, implication, participation au exercices, questions), sur de courtes interrogations de cours et sur vos réalisations en TPs.
 
 Vous pouvez déposer une archive contenant le code du mini-projet
 "Segmentation temps réel" sur
@@ -87,7 +86,7 @@ décrivant sur le README vos addendum.
 
 ### Historique
 
-* Responsable 2023-2024 Cours/TD/TP : J.-O. Lachaud
+* Responsable 2023-2026 Cours/TD/TP : J.-O. Lachaud
 
 ### Notes
 
