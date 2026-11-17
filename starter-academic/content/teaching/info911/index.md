@@ -61,7 +61,7 @@ tags:
 1. [Colorimétrie, égalisation d'histogramme, tramage de Floyd-Steinberg](https://codimd.math.cnrs.fr/s/Ge-ZaHA3S)
 2. [Traitement d'image bas niveau - filtrage spatial](https://codimd.math.cnrs.fr/s/CeptN9xR8)
 3. [Segmentation d’image hiérarchique, scale sets](https://codimd.math.cnrs.fr/s/nbdrWcn_j)
-4. [Segmentation d’image, détection et classification d'objets par réseau de neurones convolutionnels - YOLO v3](https://codimd.math.cnrs.fr/s/OWuiCfbAM)
+4. [Détection et classification d'objets par CNN - YOLO v3](https://codimd.math.cnrs.fr/s/rSGHuFptK)
 5. [Segmentation temps-réel semi-supervisée par distance d'histogramme de couleurs](https://codimd.math.cnrs.fr/s/vq-al56ul)
 
 ### Ressources utiles
@@ -75,10 +75,9 @@ Vous serez évalué sur votre participation ("présence" en cours, implication, 
 
 Vous pouvez déposer une archive contenant le code du mini-projet
 "Segmentation temps réel" sur
-[TPlab](https://tplab.apps.math.cnrs.fr/). Premier dépôt avant le **17
-octobre** (même vide), dernier dépôt avant le **26 octobre**
-minuit. N'oubliez pas de mettre un fichier README indiquant les
-questions que vous abordez, ce qui marche ou pas.
+[TPlab](https://tplab.apps.math.cnrs.fr/). Premier dépôt avant une
+date précisée en séance. N'oubliez pas de mettre un fichier README
+indiquant les questions que vous abordez, ce qui marche ou pas.
 
 Enfin, **si vous voulez me montrer des réalisations supplémentaires
 sur vos autres TP**, vous pouvez aussi les déposer dans l'archive, en
