@@ -73,8 +73,8 @@ tags:
 
 Vous serez évalué sur votre participation ("présence" en cours, implication, participation au exercices, questions), sur de courtes interrogations de cours et sur vos réalisations en TPs.
 
-Vous pouvez déposer une archive contenant le code du mini-projet
-"Segmentation temps réel" sur
+Pour compléter, je vous laisse explorer par binôme **un des 3 derniers TPs** ([TP3](https://codimd.math.cnrs.fr/s/nbdrWcn_j), [TP4](https://codimd.math.cnrs.fr/s/rSGHuFptK), [TP5](https://codimd.math.cnrs.fr/s/vq-al56ul)).
+Vous pouvez déposer une archive contenant votre code sur
 [TPlab](https://tplab.apps.math.cnrs.fr/). Premier dépôt avant une
 date précisée en séance. N'oubliez pas de mettre un fichier README
 indiquant les questions que vous abordez, ce qui marche ou pas.
@@ -82,6 +82,10 @@ indiquant les questions que vous abordez, ce qui marche ou pas.
 Enfin, **si vous voulez me montrer des réalisations supplémentaires
 sur vos autres TP**, vous pouvez aussi les déposer dans l'archive, en
 décrivant sur le README vos addendum.
+
+#### Solutions des interrogations
+1. [Interrogation 1: Parties 1,2,3,4a,4b](Interros/cc1-sol.pdf)
+2. [Interrogation 2: Parties 4c,4d,5a,5b,5c](Interros/cc2-sol.pdf)
 
 ### Historique
 
